@@ -1,6 +1,6 @@
 # NOZOE STUDIO — Instrucciones permanentes del proyecto
 
-> Este archivo se carga automáticamente al inicio de cada sesión de Claude Cowork/Code.
+> Este archivo se carga automáticamente al inicio de cada sesión de Claude Code.
 > Contiene toda la información crítica del proyecto para que no tengas que re-explicarla cada vez.
 
 ---
@@ -14,91 +14,25 @@
 **Audiencia objetivo:** Emprendedores latinos y brasileños residentes en Japón. NO el mercado japonés local. Acepta clientes puntuales de Perú y otras regiones de habla hispana.
 
 **Tecnología:**
-- WordPress + Divi 5 (con maquetador Divi 5)
-- Child theme custom con sistema de tokens CSS
-- Entorno local: Local by Flywheel en macOS
-- Versionado: Git + GitHub privado
+- Stack: HTML5 + CSS3 + JavaScript vanilla (estático puro)
+- Sin frameworks, sin build tools, sin dependencias de runtime
+- Servidor local de desarrollo: server.py (Python http.server)
+- Versionado: Git local (GitHub privado a futuro)
+- Deploy: estático (a definir host: Netlify, Cloudflare Pages u otro)
 
 ---
 
-## Sistema de diseño — tokens oficiales
+## Sistema de diseño
 
-### Paleta de colores
+La especificación completa del sistema (tokens, escalas, paletas, tipografía, spacing, breakpoints, componentes) vive en:
 
-```css
-/* Primarios */
---nz-ink: #1D2A40;           /* azul noche — texto principal, secciones oscuras, botones */
---nz-accent: #E94E1B;        /* naranja — máximo 5% de la superficie, solo acentos */
+- `nozoe-design-system/README.md` — documentación canónica
+- `nozoe-design-system/nozoe-tokens.json` — tokens en formato W3C DTCG
+- `nozoe-design-system/nozoe-tokens.css` — variables CSS de uso
 
-/* Neutros azulados */
---nz-neutral-700: #475773;   /* texto corrido y navegación secundaria */
---nz-neutral-500: #8B9DB7;   /* metadatos, labels, subtítulos */
---nz-neutral-300: #C6D5EA;   /* bordes, fondos suaves, avatares */
+Prefijo oficial: `--ns-` (ej: `--ns-ink-800`, `--ns-orange-500`, `--ns-fs-md`).
 
-/* Superficies cálidas */
---nz-surface-warm: #F4F1EC;  /* fondos de sección calidez */
---nz-surface-white: #FFFFFF; /* lienzo principal */
-
-/* Verde brasileño — solo para codificación de audiencias */
---nz-green-br: #2E9B5E;      /* banderita para "emprendedores brasileños" */
-```
-
-### Tipografía
-
-**Familia única:** Nunito (Google Fonts)
-**Pesos a cargar:** 300 (Light), 400 (Regular), 600 (SemiBold), 800 (ExtraBold)
-
-```css
---nz-font: 'Nunito', sans-serif;
---nz-weight-light: 300;
---nz-weight-regular: 400;
---nz-weight-semibold: 600;
---nz-weight-extrabold: 800;
-```
-
-**Jerarquía de tamaños (responsive con clamp):**
-
-```css
---nz-size-hero: clamp(32px, 7vw, 48px);        /* hero headline */
---nz-size-h1: clamp(28px, 5vw, 42px);          /* títulos de sección */
---nz-size-h2: clamp(22px, 4vw, 34px);          /* subtítulos */
---nz-size-h3: clamp(18px, 3vw, 24px);          /* encabezados menores */
---nz-size-body: clamp(14px, 2vw, 17px);        /* texto corrido */
---nz-size-small: clamp(12px, 1.5vw, 14px);     /* texto pequeño */
---nz-size-eyebrow: 11px;                        /* eyebrow labels en UPPERCASE */
-```
-
-### Espaciados
-
-```css
---nz-space-xs: 4px;
---nz-space-sm: 8px;
---nz-space-md: 16px;
---nz-space-lg: 24px;
---nz-space-xl: 40px;
---nz-space-2xl: 64px;
---nz-space-3xl: 80px;
-```
-
-### Breakpoints
-
-```css
---nz-bp-mobile: 768px;       /* mobile breakpoint */
---nz-bp-tablet: 1024px;      /* tablet breakpoint */
---nz-bp-desktop: 1280px;     /* desktop breakpoint */
-```
-
-### Bordes y radios
-
-```css
---nz-border-thin: 0.5px solid var(--nz-neutral-300);
---nz-border-regular: 1px solid var(--nz-neutral-300);
---nz-border-strong: 2px solid var(--nz-ink);
---nz-radius-sm: 4px;         /* imágenes de proyectos */
---nz-radius-md: 6px;         /* cards */
---nz-radius-lg: 10px;        /* secciones destacadas */
---nz-radius-pill: 999px;     /* botones */
-```
+No duplicar la documentación de tokens en este archivo. Para cualquier cambio o consulta sobre el sistema, ir directo al README.md.
 
 ---
 
@@ -150,31 +84,12 @@
 
 ---
 
-## Estructura del child theme
+## Flujo de trabajo con Claude Code
 
-```
-nozoe-child/
-├── style.css                  # header del theme + imports de tokens
-├── functions.php              # enqueue de styles, Nunito, overrides PHP
-├── tokens/
-│   └── nozoe-tokens.css      # todas las CSS variables
-├── components/
-│   ├── whatsapp-float.css    # botón flotante WhatsApp
-│   ├── confidence-bar.css    # barra con banderitas
-│   └── case-grid.css         # grid editorial asimétrico
-└── templates/
-    └── (templates futuros si se necesitan)
-```
-
----
-
-## Flujo de trabajo con Cowork/Code
-
-1. **Cowork** para tareas de proyecto (setup, migración, backup, generación de archivos nuevos).
-2. **Code** para edición de archivos con diffs visuales (cambios en CSS, ajustes de PHP).
-3. **Siempre** pedirle a Claude que muestre el plan antes de ejecutar cambios importantes.
-4. **Siempre** commit de git antes de experimentar algo grande.
-5. **Nunca** trabajar directo en producción. Todo en local, deploy solo cuando esté probado.
+1. **Claude Code** para edición de archivos con diffs visuales (CSS, HTML, JS) y tareas de proyecto.
+2. **Siempre** pedirle a Claude que muestre el plan antes de ejecutar cambios importantes.
+3. **Siempre** commit de git antes de experimentar algo grande.
+4. **Nunca** trabajar directo en producción. Todo en local, deploy solo cuando esté probado.
 
 ---
 
