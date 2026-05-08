@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nozoe Studio · Design System v1.0</title>
+<link rel="stylesheet" href="nozoe-tokens.css">
+<style>
+  /* ============================================================
+     Page-specific layout.
+     The component patterns shown below are PART of the system
+     reference — they demonstrate how to compose the tokens.
+     ============================================================ */
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Subtle grain texture for warmth */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(29,42,64,0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: var(--ns-z-behind);
+    opacity: 0.6;
+  }
+  [data-theme="dark"] body::before,
+  body[data-theme="dark"]::before {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(244,241,236,0.03) 1px, transparent 0);
+  }
+
+  /* --- HEADER ---------------------------------------------------- */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: var(--ns-z-sticky);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    background: color-mix(in srgb, var(--ns-surface-base) 80%, transparent);
+    border-bottom: 1px solid var(--ns-border-subtle);
+  }
+  .header-inner {
+    max-width: var(--ns-container-wide);
+    margin: 0 auto;
+    padding: var(--ns-space-4) var(--ns-space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ns-space-6);
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: var(--ns-space-3);
+    text-decoration: none;
+    color: var(--ns-text-primary);
+  }
+  .brand-mark {
+    font: var(--ns-fw-extrabold) var(--ns-fs-md)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-tight);
+  }
+  .brand-mark::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--ns-accent);
+    border-radius: 50%;
+    margin-left: 4px;
+    transform: translateY(-1px);
+  }
+  .brand-sub {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-widest);
+    text-transform: uppercase;
+    color: var(--ns-text-tertiary);
+  }
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--ns-space-6);
+  }
+  .header-version {
+    font: var(--ns-fw-regular) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+  }
+  @media (max-width: 640px) {
+    .header-version { display: none; }
+  }
+
+  /* Theme toggle */
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    background: var(--ns-surface-sunken);
+    border: 1px solid var(--ns-border-subtle);
+    border-radius: var(--ns-radius-md);
+    padding: 2px;
+    height: 32px;
+  }
+  .theme-toggle button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--ns-text-tertiary);
+    font: var(--ns-fw-semibold) 11px/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-wider);
+    text-transform: uppercase;
+    padding: 0 var(--ns-space-3);
+    height: 100%;
+    border-radius: var(--ns-radius-sm);
+    cursor: pointer;
+    transition: all var(--ns-dur-fast) var(--ns-ease-out);
+  }
+  .theme-toggle button[aria-pressed="true"] {
+    background: var(--ns-surface-raised);
+    color: var(--ns-text-primary);
+    box-shadow: var(--ns-elev-1);
+  }
+
+  /* --- LAYOUT ---------------------------------------------------- */
+  main {
+    max-width: var(--ns-container-wide);
+    margin: 0 auto;
+    padding: 0 var(--ns-space-6);
+  }
+  @media (min-width: 1024px) {
+    main { padding: 0 var(--ns-space-20); }
+  }
+
+  /* --- HERO ------------------------------------------------------ */
+  .hero {
+    padding: var(--ns-space-24) 0 var(--ns-space-32);
+    border-bottom: 1px solid var(--ns-border-subtle);
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--ns-space-12);
+    align-items: end;
+  }
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1fr auto;
+      gap: var(--ns-space-20);
+    }
+  }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: var(--ns-space-3);
+    margin-bottom: var(--ns-space-6);
+  }
+  .hero-eyebrow-line {
+    width: 48px;
+    height: 1px;
+    background: var(--ns-accent);
+  }
+  .hero-title {
+    font: var(--ns-fw-extrabold) clamp(3rem, 8vw, 6rem)/0.95 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-tightest);
+    margin: 0 0 var(--ns-space-8) 0;
+    color: var(--ns-text-primary);
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--ns-accent);
+  }
+  .hero-lede {
+    font: var(--ns-fw-light) var(--ns-fs-md)/var(--ns-lh-relaxed) var(--ns-font-sans);
+    color: var(--ns-text-secondary);
+    max-width: 56ch;
+  }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--ns-space-8) var(--ns-space-12);
+    padding-top: var(--ns-space-6);
+    border-top: 1px solid var(--ns-border-subtle);
+    min-width: 280px;
+  }
+  .hero-meta dt {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-widest);
+    text-transform: uppercase;
+    color: var(--ns-text-tertiary);
+    margin-bottom: var(--ns-space-1);
+  }
+  .hero-meta dd {
+    margin: 0;
+    font: var(--ns-fw-semibold) var(--ns-fs-base)/1.2 var(--ns-font-sans);
+    color: var(--ns-text-primary);
+  }
+  .jp-stamp {
+    font-family: var(--ns-font-jp);
+    font-feature-settings: "palt";
+  }
+
+  /* --- SECTION SHELL --------------------------------------------- */
+  .section {
+    padding: var(--ns-space-24) 0;
+    border-bottom: 1px solid var(--ns-border-subtle);
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--ns-space-4);
+    margin-bottom: var(--ns-space-16);
+    max-width: 720px;
+  }
+  @media (min-width: 768px) {
+    .section-head { grid-template-columns: auto 1fr; gap: var(--ns-space-12); align-items: start; }
+  }
+  .section-num {
+    font: var(--ns-fw-extrabold) var(--ns-fs-md)/1 var(--ns-font-mono);
+    color: var(--ns-accent);
+    letter-spacing: var(--ns-ls-tight);
+    padding-top: var(--ns-space-2);
+  }
+  .section-num::before { content: '— '; color: var(--ns-text-tertiary); }
+  .section-title {
+    font: var(--ns-fw-extrabold) var(--ns-fs-2xl)/var(--ns-lh-snug) var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-tight);
+    margin: 0 0 var(--ns-space-3) 0;
+  }
+  .section-desc {
+    font: var(--ns-fw-light) var(--ns-fs-md)/var(--ns-lh-relaxed) var(--ns-font-sans);
+    color: var(--ns-text-secondary);
+    margin: 0;
+  }
+
+  /* Subsection */
+  .sub {
+    margin-top: var(--ns-space-16);
+  }
+  .sub:first-child { margin-top: 0; }
+  .sub-head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--ns-space-4);
+    padding-bottom: var(--ns-space-4);
+    border-bottom: 1px solid var(--ns-border-subtle);
+    margin-bottom: var(--ns-space-8);
+  }
+  .sub-num {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+    letter-spacing: var(--ns-ls-tight);
+  }
+  .sub-title {
+    font: var(--ns-fw-semibold) var(--ns-fs-lg)/1.2 var(--ns-font-sans);
+    margin: 0;
+  }
+  .sub-desc {
+    margin-left: auto;
+    font: var(--ns-fw-regular) var(--ns-fs-sm)/var(--ns-lh-normal) var(--ns-font-sans);
+    color: var(--ns-text-tertiary);
+    max-width: 40ch;
+    text-align: right;
+  }
+  @media (max-width: 640px) {
+    .sub-desc { display: none; }
+  }
+
+  /* --- COLOR --------------------------------------------------- */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--ns-space-3);
+  }
+  .swatch {
+    border-radius: var(--ns-radius-md);
+    overflow: hidden;
+    border: 1px solid var(--ns-border-subtle);
+    background: var(--ns-surface-raised);
+    transition: transform var(--ns-dur-base) var(--ns-ease-out);
+  }
+  .swatch:hover { transform: translateY(-2px); }
+  .swatch-color {
+    aspect-ratio: 16/10;
+    border-bottom: 1px solid var(--ns-border-subtle);
+  }
+  .swatch-info {
+    padding: var(--ns-space-3);
+    display: grid;
+    gap: 2px;
+  }
+  .swatch-name {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1.2 var(--ns-font-sans);
+    color: var(--ns-text-primary);
+  }
+  .swatch-hex {
+    font: var(--ns-fw-regular) 11px/1 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+  }
+
+  /* Hero swatches: brand 5 */
+  .brand-swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--ns-space-2);
+    margin-bottom: var(--ns-space-10);
+  }
+  .brand-swatch {
+    aspect-ratio: 4/5;
+    border-radius: var(--ns-radius-md);
+    padding: var(--ns-space-5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  .brand-swatch.is-light { border-color: var(--ns-border-subtle); }
+  .brand-swatch-num {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    letter-spacing: var(--ns-ls-tight);
+    opacity: 0.7;
+  }
+  .brand-swatch-info {
+    display: grid;
+    gap: 2px;
+  }
+  .brand-swatch-name {
+    font: var(--ns-fw-extrabold) var(--ns-fs-md)/1.1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-tight);
+  }
+  .brand-swatch-hex {
+    font: var(--ns-fw-regular) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    opacity: 0.7;
+  }
+  .brand-swatch-meta {
+    font: var(--ns-fw-regular) 10px/1.4 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-wide);
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-top: var(--ns-space-2);
+  }
+
+  /* Semantic preview */
+  .semantic-preview {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--ns-space-4);
+    margin-top: var(--ns-space-8);
+  }
+  @media (min-width: 768px) {
+    .semantic-preview { grid-template-columns: 1fr 1fr; }
+  }
+  .preview-card {
+    border: 1px solid var(--ns-border-subtle);
+    border-radius: var(--ns-radius-md);
+    padding: var(--ns-space-6);
+    overflow: hidden;
+  }
+  .preview-card.is-light {
+    background: #F4F1EC;
+    color: #1D2A40;
+  }
+  .preview-card.is-dark {
+    background: #0A1119;
+    color: #F4F1EC;
+  }
+  .preview-label {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-widest);
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: var(--ns-space-4);
+  }
+  .preview-card h4 {
+    font: var(--ns-fw-extrabold) var(--ns-fs-xl)/1.2 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-tight);
+    margin: 0 0 var(--ns-space-2) 0;
+  }
+  .preview-card p {
+    font: var(--ns-fw-regular) var(--ns-fs-sm)/var(--ns-lh-relaxed) var(--ns-font-sans);
+    margin: 0 0 var(--ns-space-4) 0;
+    opacity: 0.75;
+  }
+  .preview-card .preview-btn {
+    display: inline-block;
+    padding: var(--ns-space-2) var(--ns-space-5);
+    border-radius: var(--ns-radius-md);
+    font: var(--ns-fw-semibold) var(--ns-fs-sm)/1 var(--ns-font-sans);
+    text-decoration: none;
+  }
+  .preview-card.is-light .preview-btn { background: #E94E1B; color: #FFFFFF; }
+  .preview-card.is-dark  .preview-btn { background: #FF6B3D; color: #FFFFFF; }
+
+  /* --- TYPOGRAPHY ----------------------------------------------- */
+  .type-list {
+    display: grid;
+    gap: 0;
+    margin: 0;
+  }
+  .type-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--ns-space-6);
+    align-items: baseline;
+    padding: var(--ns-space-5) 0;
+    border-bottom: 1px solid var(--ns-border-subtle);
+  }
+  @media (min-width: 768px) {
+    .type-row { grid-template-columns: 100px 140px 1fr; gap: var(--ns-space-8); }
+  }
+  .type-row:last-child { border-bottom: 0; }
+  .type-name {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+    letter-spacing: var(--ns-ls-tight);
+  }
+  .type-meta {
+    font: var(--ns-fw-regular) var(--ns-fs-xs)/1.4 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .type-meta { display: block; }
+  }
+  .type-sample {
+    color: var(--ns-text-primary);
+    overflow: hidden;
+  }
+
+  /* Typography weights showcase */
+  .weights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--ns-space-4);
+    margin-top: var(--ns-space-8);
+  }
+  .weight-card {
+    padding: var(--ns-space-6);
+    border: 1px solid var(--ns-border-subtle);
+    border-radius: var(--ns-radius-md);
+    background: var(--ns-surface-raised);
+  }
+  .weight-aa {
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: var(--ns-ls-tightest);
+    color: var(--ns-text-primary);
+    margin-bottom: var(--ns-space-3);
+  }
+  .weight-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: var(--ns-space-3);
+    border-top: 1px solid var(--ns-border-subtle);
+  }
+  .weight-name {
+    font: var(--ns-fw-semibold) var(--ns-fs-sm)/1 var(--ns-font-sans);
+  }
+  .weight-num {
+    font: var(--ns-fw-regular) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+  }
+
+  /* --- SPACING -------------------------------------------------- */
+  .space-list {
+    display: grid;
+    gap: var(--ns-space-2);
+  }
+  .space-row {
+    display: grid;
+    grid-template-columns: 80px 80px 1fr;
+    align-items: center;
+    gap: var(--ns-space-4);
+    padding: var(--ns-space-2) 0;
+  }
+  .space-name {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-text-secondary);
+  }
+  .space-px {
+    font: var(--ns-fw-regular) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+  }
+  .space-bar {
+    height: 16px;
+    background: var(--ns-accent);
+    border-radius: var(--ns-radius-xs);
+    transition: width var(--ns-dur-base) var(--ns-ease-out);
+  }
+
+  /* --- RADIUS / ELEVATION --------------------------------------- */
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--ns-space-4);
+  }
+  .demo-tile {
+    aspect-ratio: 1;
+    background: var(--ns-surface-raised);
+    border: 1px solid var(--ns-border-subtle);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ns-space-2);
+    color: var(--ns-text-secondary);
+  }
+  .demo-tile .demo-name {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-text-primary);
+  }
+  .demo-tile .demo-meta {
+    font: var(--ns-fw-regular) 10px/1 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+  }
+  .demo-tile.is-elevation {
+    border: none;
+  }
+
+  /* --- MOTION DEMO ---------------------------------------------- */
+  .motion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--ns-space-4);
+  }
+  .motion-card {
+    padding: var(--ns-space-6);
+    border: 1px solid var(--ns-border-subtle);
+    border-radius: var(--ns-radius-md);
+    background: var(--ns-surface-raised);
+    cursor: pointer;
+  }
+  .motion-card-name {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+    margin-bottom: var(--ns-space-4);
+  }
+  .motion-track {
+    height: 4px;
+    background: var(--ns-surface-sunken);
+    border-radius: var(--ns-radius-pill);
+    position: relative;
+    overflow: hidden;
+  }
+  .motion-dot {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background: var(--ns-accent);
+    border-radius: 50%;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-name: motionRun;
+  }
+  @keyframes motionRun {
+    0%, 100% { left: 0; }
+    50%      { left: 100%; }
+  }
+  .motion-card.is-out  .motion-dot { animation-timing-function: var(--ns-ease-out); }
+  .motion-card.is-in   .motion-dot { animation-timing-function: var(--ns-ease-in); }
+  .motion-card.is-io   .motion-dot { animation-timing-function: var(--ns-ease-in-out); }
+  .motion-card.is-anti .motion-dot { animation-timing-function: var(--ns-ease-anticipate); }
+
+  /* --- COMPONENTS ----------------------------------------------- */
+  .comp-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ns-space-3);
+    align-items: center;
+    padding: var(--ns-space-6);
+    border: 1px solid var(--ns-border-subtle);
+    border-radius: var(--ns-radius-md);
+    background: var(--ns-surface-raised);
+    margin-bottom: var(--ns-space-3);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--ns-space-2);
+    height: var(--ns-btn-h-md);
+    padding: 0 var(--ns-btn-px-md);
+    border-radius: var(--ns-radius-md);
+    font: var(--ns-fw-semibold) var(--ns-fs-sm)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-tight);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--ns-dur-fast) var(--ns-ease-out);
+    user-select: none;
+    white-space: nowrap;
+  }
+  .btn:disabled,
+  .btn[aria-disabled="true"] { cursor: not-allowed; opacity: 0.5; }
+
+  .btn-primary {
+    background: var(--ns-accent);
+    color: var(--ns-text-on-accent);
+  }
+  .btn-primary:hover:not(:disabled) { background: var(--ns-accent-hover); transform: translateY(-1px); }
+  .btn-primary:active { background: var(--ns-accent-active); transform: translateY(0); }
+
+  .btn-secondary {
+    background: var(--ns-surface-inverse);
+    color: var(--ns-text-inverse);
+  }
+  .btn-secondary:hover:not(:disabled) { transform: translateY(-1px); opacity: 0.92; }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ns-text-primary);
+    border-color: var(--ns-border-default);
+  }
+  .btn-ghost:hover:not(:disabled) { border-color: var(--ns-text-primary); }
+
+  .btn-text {
+    background: transparent;
+    color: var(--ns-text-primary);
+    padding: 0 var(--ns-space-2);
+  }
+  .btn-text:hover:not(:disabled) { color: var(--ns-accent); }
+  .btn-text::after {
+    content: '→';
+    transition: transform var(--ns-dur-fast) var(--ns-ease-out);
+  }
+  .btn-text:hover::after { transform: translateX(3px); }
+
+  .btn-sm { height: var(--ns-btn-h-sm); padding: 0 var(--ns-btn-px-sm); font-size: var(--ns-fs-xs); }
+  .btn-lg { height: var(--ns-btn-h-lg); padding: 0 var(--ns-btn-px-lg); font-size: var(--ns-fs-base); }
+
+  /* Inputs */
+  .input {
+    height: var(--ns-input-h-md);
+    padding: 0 var(--ns-space-3);
+    border: 1px solid var(--ns-border-default);
+    border-radius: var(--ns-radius-md);
+    background: var(--ns-surface-raised);
+    color: var(--ns-text-primary);
+    font: var(--ns-fw-regular) var(--ns-fs-sm)/1 var(--ns-font-sans);
+    transition: border-color var(--ns-dur-fast) var(--ns-ease-out);
+    width: 100%;
+    max-width: 320px;
+  }
+  .input::placeholder { color: var(--ns-text-tertiary); }
+  .input:hover { border-color: var(--ns-border-strong); }
+  .input:focus { outline: none; border-color: var(--ns-border-focus); box-shadow: var(--ns-elev-focus); }
+
+  .input-group {
+    display: grid;
+    gap: var(--ns-space-2);
+  }
+  .input-group label {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-wider);
+    text-transform: uppercase;
+    color: var(--ns-text-secondary);
+  }
+
+  /* Tags */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ns-space-1);
+    height: 24px;
+    padding: 0 var(--ns-space-3);
+    border-radius: var(--ns-radius-pill);
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-wide);
+    text-transform: uppercase;
+    background: var(--ns-surface-sunken);
+    color: var(--ns-text-secondary);
+    border: 1px solid var(--ns-border-subtle);
+  }
+  .tag.is-accent { background: var(--ns-accent-subtle); color: var(--ns-accent-active); border-color: transparent; }
+  .tag.is-success { background: var(--ns-success-subtle); color: var(--ns-success-strong); border-color: transparent; }
+  .tag.is-warning { background: var(--ns-warning-subtle); color: var(--ns-warning-strong); border-color: transparent; }
+  .tag.is-danger  { background: var(--ns-danger-subtle); color: var(--ns-danger-strong); border-color: transparent; }
+  [data-theme="dark"] .tag.is-success { background: rgba(62,142,92,0.18); color: #6BC58A; }
+  [data-theme="dark"] .tag.is-warning { background: rgba(194,138,14,0.18); color: #E5B445; }
+  [data-theme="dark"] .tag.is-danger  { background: rgba(198,58,45,0.18); color: #F18A7E; }
+
+  /* Cards */
+  .card {
+    background: var(--ns-surface-raised);
+    border: 1px solid var(--ns-border-subtle);
+    border-radius: var(--ns-radius-md);
+    padding: var(--ns-card-padding);
+  }
+  .card-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--ns-space-4);
+  }
+  .card-num {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-accent);
+    margin-bottom: var(--ns-space-4);
+  }
+  .card-title {
+    font: var(--ns-fw-extrabold) var(--ns-fs-lg)/1.2 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-tight);
+    margin: 0 0 var(--ns-space-2) 0;
+  }
+  .card-desc {
+    font: var(--ns-fw-regular) var(--ns-fs-sm)/var(--ns-lh-relaxed) var(--ns-font-sans);
+    color: var(--ns-text-secondary);
+    margin: 0;
+  }
+
+  /* Alerts */
+  .alert {
+    display: flex;
+    gap: var(--ns-space-3);
+    padding: var(--ns-space-4);
+    border-radius: var(--ns-radius-md);
+    border: 1px solid;
+    margin-bottom: var(--ns-space-3);
+  }
+  .alert-icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font: var(--ns-fw-extrabold) 11px/1 var(--ns-font-sans);
+  }
+  .alert-body { flex: 1; min-width: 0; }
+  .alert-title {
+    font: var(--ns-fw-semibold) var(--ns-fs-sm)/1.4 var(--ns-font-sans);
+    margin: 0 0 2px 0;
+  }
+  .alert-desc {
+    font: var(--ns-fw-regular) var(--ns-fs-sm)/var(--ns-lh-relaxed) var(--ns-font-sans);
+    margin: 0;
+    opacity: 0.85;
+  }
+  .alert-info    { background: var(--ns-info-subtle);    border-color: var(--ns-info-default);    color: var(--ns-info-strong); }
+  .alert-success { background: var(--ns-success-subtle); border-color: var(--ns-success-default); color: var(--ns-success-strong); }
+  .alert-warning { background: var(--ns-warning-subtle); border-color: var(--ns-warning-default); color: var(--ns-warning-strong); }
+  .alert-danger  { background: var(--ns-danger-subtle);  border-color: var(--ns-danger-default);  color: var(--ns-danger-strong); }
+  .alert-info .alert-icon    { background: var(--ns-info-default); }
+  .alert-success .alert-icon { background: var(--ns-success-default); }
+  .alert-warning .alert-icon { background: var(--ns-warning-default); }
+  .alert-danger .alert-icon  { background: var(--ns-danger-default); }
+  [data-theme="dark"] .alert {
+    background: var(--ns-surface-raised);
+  }
+
+  /* --- PATTERNS ------------------------------------------------- */
+  .pattern-block {
+    border: 1px solid var(--ns-border-subtle);
+    border-radius: var(--ns-radius-md);
+    overflow: hidden;
+    margin-bottom: var(--ns-space-8);
+  }
+  .pattern-label {
+    padding: var(--ns-space-3) var(--ns-space-4);
+    background: var(--ns-surface-sunken);
+    border-bottom: 1px solid var(--ns-border-subtle);
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+    letter-spacing: var(--ns-ls-tight);
+    display: flex;
+    justify-content: space-between;
+  }
+  .pattern-body {
+    padding: var(--ns-space-12) var(--ns-space-8);
+    background: var(--ns-surface-raised);
+  }
+
+  /* Hero pattern */
+  .pat-hero { display: grid; gap: var(--ns-space-8); }
+  @media (min-width: 768px) {
+    .pat-hero { grid-template-columns: 1.4fr 1fr; align-items: end; }
+  }
+  .pat-hero-eyebrow {
+    display: flex; align-items: center; gap: var(--ns-space-3);
+    margin-bottom: var(--ns-space-4);
+  }
+  .pat-hero-eyebrow span:first-child {
+    width: 32px; height: 1px; background: var(--ns-accent);
+  }
+  .pat-hero-eyebrow span:last-child {
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-widest);
+    text-transform: uppercase;
+    color: var(--ns-text-tertiary);
+  }
+  .pat-hero h2 {
+    font: var(--ns-fw-extrabold) clamp(2rem, 5vw, 3.5rem)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-tightest);
+    margin: 0 0 var(--ns-space-6) 0;
+  }
+  .pat-hero h2 em { font-style: normal; color: var(--ns-accent); }
+  .pat-hero p {
+    font: var(--ns-fw-light) var(--ns-fs-md)/var(--ns-lh-relaxed) var(--ns-font-sans);
+    color: var(--ns-text-secondary);
+    margin: 0 0 var(--ns-space-6) 0;
+  }
+  .pat-hero-cta {
+    display: flex; gap: var(--ns-space-3); flex-wrap: wrap;
+  }
+  .pat-hero-meta {
+    border-top: 1px solid var(--ns-border-subtle);
+    padding-top: var(--ns-space-4);
+    display: grid; gap: var(--ns-space-3);
+  }
+  .pat-hero-meta div {
+    display: flex; justify-content: space-between;
+    font: var(--ns-fw-regular) var(--ns-fs-sm)/1 var(--ns-font-sans);
+    color: var(--ns-text-secondary);
+  }
+  .pat-hero-meta strong {
+    color: var(--ns-text-primary);
+    font-weight: var(--ns-fw-semibold);
+  }
+
+  /* Project Card pattern */
+  .pat-projects { display: grid; gap: var(--ns-space-4); }
+  @media (min-width: 768px) {
+    .pat-projects { grid-template-columns: repeat(2, 1fr); }
+  }
+  .pat-project {
+    border: 1px solid var(--ns-border-subtle);
+    border-radius: var(--ns-radius-md);
+    overflow: hidden;
+    background: var(--ns-surface-base);
+    transition: transform var(--ns-dur-base) var(--ns-ease-out), box-shadow var(--ns-dur-base) var(--ns-ease-out);
+  }
+  .pat-project:hover { transform: translateY(-4px); box-shadow: var(--ns-elev-3); }
+  .pat-project-img {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--ns-ink-700) 0%, var(--ns-ink-800) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .pat-project-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(233,78,27,0.4) 0%, transparent 60%);
+  }
+  .pat-project-img.is-second {
+    background: linear-gradient(135deg, var(--ns-warm-300) 0%, var(--ns-warm-400) 100%);
+  }
+  .pat-project-img.is-second::after {
+    background: radial-gradient(circle at 30% 70%, rgba(29,42,64,0.2) 0%, transparent 60%);
+  }
+  .pat-project-body {
+    padding: var(--ns-space-5);
+  }
+  .pat-project-meta {
+    display: flex; justify-content: space-between;
+    margin-bottom: var(--ns-space-3);
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-widest);
+    text-transform: uppercase;
+    color: var(--ns-text-tertiary);
+  }
+  .pat-project h3 {
+    font: var(--ns-fw-extrabold) var(--ns-fs-lg)/1.2 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-tight);
+    margin: 0 0 var(--ns-space-2) 0;
+  }
+  .pat-project p {
+    font: var(--ns-fw-regular) var(--ns-fs-sm)/var(--ns-lh-relaxed) var(--ns-font-sans);
+    color: var(--ns-text-secondary);
+    margin: 0;
+  }
+
+  /* --- TOKENS REFERENCE ----------------------------------------- */
+  .tokens-table {
+    width: 100%;
+    border-collapse: collapse;
+    font: var(--ns-fw-regular) var(--ns-fs-sm)/1.4 var(--ns-font-sans);
+  }
+  .tokens-table th {
+    text-align: left;
+    padding: var(--ns-space-3) var(--ns-space-4);
+    background: var(--ns-surface-sunken);
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-sans);
+    letter-spacing: var(--ns-ls-widest);
+    text-transform: uppercase;
+    color: var(--ns-text-tertiary);
+    border-bottom: 1px solid var(--ns-border-default);
+  }
+  .tokens-table td {
+    padding: var(--ns-space-3) var(--ns-space-4);
+    border-bottom: 1px solid var(--ns-border-subtle);
+    vertical-align: middle;
+  }
+  .tokens-table code {
+    font-family: var(--ns-font-mono);
+    font-size: var(--ns-fs-xs);
+    color: var(--ns-text-primary);
+    background: var(--ns-surface-sunken);
+    padding: 2px var(--ns-space-2);
+    border-radius: var(--ns-radius-xs);
+  }
+
+  /* --- FOOTER --------------------------------------------------- */
+  .footer {
+    padding: var(--ns-space-16) var(--ns-space-6) var(--ns-space-12);
+    border-top: 1px solid var(--ns-border-subtle);
+    margin-top: var(--ns-space-16);
+  }
+  .footer-inner {
+    max-width: var(--ns-container-wide);
+    margin: 0 auto;
+    display: grid;
+    gap: var(--ns-space-12);
+  }
+  @media (min-width: 768px) {
+    .footer-inner { grid-template-columns: auto 1fr auto; align-items: end; }
+  }
+  .footer-stamp {
+    font-family: var(--ns-font-jp);
+    font-size: var(--ns-fs-md);
+    font-weight: var(--ns-fw-semibold);
+    letter-spacing: var(--ns-ls-wider);
+    color: var(--ns-text-primary);
+  }
+  .footer-stamp::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--ns-accent);
+    margin-left: var(--ns-space-3);
+    transform: translateY(-2px);
+  }
+  .footer-meta {
+    text-align: center;
+    font: var(--ns-fw-regular) var(--ns-fs-xs)/1.5 var(--ns-font-mono);
+    color: var(--ns-text-tertiary);
+  }
+  .footer-meta div { margin-bottom: var(--ns-space-1); }
+  .footer-version {
+    text-align: right;
+    font: var(--ns-fw-semibold) var(--ns-fs-xs)/1 var(--ns-font-mono);
+    letter-spacing: var(--ns-ls-tight);
+    color: var(--ns-text-tertiary);
+  }
+  @media (max-width: 767px) {
+    .footer-meta, .footer-version { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================ HEADER ================ -->
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="#">
+      <span class="brand-mark">nozoe studio</span>
+      <span class="brand-sub">Design System</span>
+    </a>
+    <div class="header-meta">
+      <span class="header-version">v1.0.0 · 2026</span>
+      <div class="theme-toggle" role="group" aria-label="Theme toggle">
+        <button type="button" data-theme-set="light" aria-pressed="true">Light</button>
+        <button type="button" data-theme-set="dark"  aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================ HERO ================ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-line"></span>
+        <span class="ns-eyebrow" style="color: var(--ns-text-tertiary);">Sistema de Diseño · v1.0</span>
+      </div>
+      <h1 class="hero-title">El sistema<br>visual de<br><em>Nozoe Studio</em>.</h1>
+      <p class="hero-lede">
+        Una arquitectura de tokens, tipografía, componentes y patrones diseñada para producir
+        trabajo coherente en web, mobile y print. Suiza editorial con calidez latina, operada
+        desde Tokio para clientes en Latinoamérica, Brasil y España.
+      </p>
+    </div>
+    <dl class="hero-meta">
+      <div>
+        <dt>Marco</dt>
+        <dd>Swiss · Warm</dd>
+      </div>
+      <div>
+        <dt>Origen</dt>
+        <dd class="jp-stamp">東京 · リマ</dd>
+      </div>
+      <div>
+        <dt>Tokens</dt>
+        <dd>W3C DTCG</dd>
+      </div>
+      <div>
+        <dt>Modos</dt>
+        <dd>Light + Dark</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================ 01 — COLOR ================ -->
+<section class="section" id="color">
+  <header class="section-head">
+    <span class="section-num">01</span>
+    <div>
+      <h2 class="section-title">Color</h2>
+      <p class="section-desc">
+        Una paleta dual: tinta navy como ancla estructural, naranja cálido como único acento.
+        Los neutros se construyen sobre matices fríos (sky) y cálidos (warm) para evitar
+        grises planos. El acento nunca supera el 5% de cualquier superficie.
+      </p>
+    </div>
+  </header>
+
+  <!-- Brand palette -->
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">01.1</span>
+      <h3 class="sub-title">Paleta de marca</h3>
+      <span class="sub-desc">Los cinco colores extraídos de la guía de logo original.</span>
+    </header>
+    <div class="brand-swatches">
+      <div class="brand-swatch" style="background: #1D2A40; color: #F4F1EC;">
+        <span class="brand-swatch-num">001</span>
+        <div>
+          <div class="brand-swatch-info">
+            <span class="brand-swatch-name">Ink</span>
+            <span class="brand-swatch-hex">#1D2A40</span>
+          </div>
+          <div class="brand-swatch-meta">Primario · Estructura</div>
+        </div>
+      </div>
+      <div class="brand-swatch" style="background: #E94E1B; color: #FFFFFF;">
+        <span class="brand-swatch-num">002</span>
+        <div>
+          <div class="brand-swatch-info">
+            <span class="brand-swatch-name">Orange</span>
+            <span class="brand-swatch-hex">#E94E1B</span>
+          </div>
+          <div class="brand-swatch-meta">Acento · Máx 5%</div>
+        </div>
+      </div>
+      <div class="brand-swatch" style="background: #475773; color: #F4F1EC;">
+        <span class="brand-swatch-num">003</span>
+        <div>
+          <div class="brand-swatch-info">
+            <span class="brand-swatch-name">Sky Dark</span>
+            <span class="brand-swatch-hex">#475773</span>
+          </div>
+          <div class="brand-swatch-meta">Secundario · Texto</div>
+        </div>
+      </div>
+      <div class="brand-swatch" style="background: #8B9DB7; color: #1D2A40;">
+        <span class="brand-swatch-num">004</span>
+        <div>
+          <div class="brand-swatch-info">
+            <span class="brand-swatch-name">Sky Mid</span>
+            <span class="brand-swatch-hex">#8B9DB7</span>
+          </div>
+          <div class="brand-swatch-meta">Terciario · UI</div>
+        </div>
+      </div>
+      <div class="brand-swatch is-light" style="background: #C6D5EA; color: #1D2A40;">
+        <span class="brand-swatch-num">005</span>
+        <div>
+          <div class="brand-swatch-info">
+            <span class="brand-swatch-name">Sky Light</span>
+            <span class="brand-swatch-hex">#C6D5EA</span>
+          </div>
+          <div class="brand-swatch-meta">Bordes · Divisores</div>
+        </div>
+      </div>
+      <div class="brand-swatch is-light" style="background: #F4F1EC; color: #1D2A40;">
+        <span class="brand-swatch-num">006</span>
+        <div>
+          <div class="brand-swatch-info">
+            <span class="brand-swatch-name">Warm</span>
+            <span class="brand-swatch-hex">#F4F1EC</span>
+          </div>
+          <div class="brand-swatch-meta">Fondo cálido</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color scales -->
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">01.2</span>
+      <h3 class="sub-title">Escalas (50–950)</h3>
+      <span class="sub-desc">Cada color brand se expande en una escala perceptualmente uniforme.</span>
+    </header>
+
+    <p class="ns-eyebrow" style="color: var(--ns-text-tertiary); margin: var(--ns-space-6) 0 var(--ns-space-3);">Ink</p>
+    <div class="color-grid" id="ink-scale"></div>
+
+    <p class="ns-eyebrow" style="color: var(--ns-text-tertiary); margin: var(--ns-space-8) 0 var(--ns-space-3);">Orange</p>
+    <div class="color-grid" id="orange-scale"></div>
+
+    <p class="ns-eyebrow" style="color: var(--ns-text-tertiary); margin: var(--ns-space-8) 0 var(--ns-space-3);">Sky</p>
+    <div class="color-grid" id="sky-scale"></div>
+
+    <p class="ns-eyebrow" style="color: var(--ns-text-tertiary); margin: var(--ns-space-8) 0 var(--ns-space-3);">Warm</p>
+    <div class="color-grid" id="warm-scale"></div>
+  </div>
+
+  <!-- Semantic mapping -->
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">01.3</span>
+      <h3 class="sub-title">Tokens semánticos</h3>
+      <span class="sub-desc">Light + Dark. Los componentes solo referencian estos tokens.</span>
+    </header>
+    <div class="semantic-preview">
+      <div class="preview-card is-light">
+        <div class="preview-label">Light Mode</div>
+        <h4>Diseño con dirección</h4>
+        <p>Soluciones visuales para emprendedores latinos y brasileños operando en Japón.</p>
+        <a class="preview-btn" href="#">Conversemos</a>
+      </div>
+      <div class="preview-card is-dark">
+        <div class="preview-label">Dark Mode</div>
+        <h4>Diseño con dirección</h4>
+        <p>Soluciones visuales para emprendedores latinos y brasileños operando en Japón.</p>
+        <a class="preview-btn" href="#">Conversemos</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback -->
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">01.4</span>
+      <h3 class="sub-title">Feedback</h3>
+      <span class="sub-desc">Estados informativos calibrados para convivir con la paleta brand.</span>
+    </header>
+    <div class="color-grid">
+      <div class="swatch"><div class="swatch-color" style="background: #3E8E5C;"></div><div class="swatch-info"><span class="swatch-name">Success</span><span class="swatch-hex">#3E8E5C</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #C28A0E;"></div><div class="swatch-info"><span class="swatch-name">Warning</span><span class="swatch-hex">#C28A0E</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #C63A2D;"></div><div class="swatch-info"><span class="swatch-name">Danger</span><span class="swatch-hex">#C63A2D</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background: #2C6BB0;"></div><div class="swatch-info"><span class="swatch-name">Info</span><span class="swatch-hex">#2C6BB0</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 02 — TYPOGRAPHY ================ -->
+<section class="section" id="typography">
+  <header class="section-head">
+    <span class="section-num">02</span>
+    <div>
+      <h2 class="section-title">Tipografía</h2>
+      <p class="section-desc">
+        Una sola familia: <strong>Nunito</strong>. Geométrica humanista, con cuatro pesos
+        cuidadosamente seleccionados para construir jerarquía sin cambios de fuente.
+        Para contenido japonés se acompaña de Noto Sans JP.
+      </p>
+    </div>
+  </header>
+
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">02.1</span>
+      <h3 class="sub-title">Pesos</h3>
+      <span class="sub-desc">Light, Regular, Semibold, Extrabold — toda la jerarquía nace de estos cuatro.</span>
+    </header>
+    <div class="weights-grid">
+      <div class="weight-card"><div class="weight-aa" style="font-weight: 300;">Aa</div><div class="weight-info"><span class="weight-name">Light</span><span class="weight-num">300</span></div></div>
+      <div class="weight-card"><div class="weight-aa" style="font-weight: 400;">Aa</div><div class="weight-info"><span class="weight-name">Regular</span><span class="weight-num">400</span></div></div>
+      <div class="weight-card"><div class="weight-aa" style="font-weight: 600;">Aa</div><div class="weight-info"><span class="weight-name">Semibold</span><span class="weight-num">600</span></div></div>
+      <div class="weight-card"><div class="weight-aa" style="font-weight: 800;">Aa</div><div class="weight-info"><span class="weight-name">Extrabold</span><span class="weight-num">800</span></div></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">02.2</span>
+      <h3 class="sub-title">Escala tipográfica</h3>
+      <span class="sub-desc">Modular ratio 1.25 anclado en 16px.</span>
+    </header>
+    <div class="type-list">
+      <div class="type-row"><span class="type-name">display-xl</span><span class="type-meta">96 / 1.05 / 800</span><span class="type-sample ns-display-xl">Tokio · Lima</span></div>
+      <div class="type-row"><span class="type-name">display-l</span><span class="type-meta">72 / 1.05 / 800</span><span class="type-sample ns-display-l">Tokio · Lima</span></div>
+      <div class="type-row"><span class="type-name">display-m</span><span class="type-meta">56 / 1.05 / 800</span><span class="type-sample ns-display-m">Diseño con dirección</span></div>
+      <div class="type-row"><span class="type-name">h1</span><span class="type-meta">40 / 1.2 / 800</span><span class="type-sample ns-h1">Diseño con dirección</span></div>
+      <div class="type-row"><span class="type-name">h2</span><span class="type-meta">28 / 1.2 / 600</span><span class="type-sample ns-h2">Diseño con dirección estratégica</span></div>
+      <div class="type-row"><span class="type-name">h3</span><span class="type-meta">22 / 1.2 / 600</span><span class="type-sample ns-h3">Diseño con dirección estratégica</span></div>
+      <div class="type-row"><span class="type-name">h4</span><span class="type-meta">18 / 1.2 / 600</span><span class="type-sample ns-h4">Diseño con dirección estratégica</span></div>
+      <div class="type-row"><span class="type-name">body-l</span><span class="type-meta">18 / 1.65 / 400</span><span class="type-sample ns-body-l">Estudio de diseño bicultural operando desde Japón.</span></div>
+      <div class="type-row"><span class="type-name">body</span><span class="type-meta">16 / 1.5 / 400</span><span class="type-sample ns-body">Estudio de diseño bicultural operando desde Japón.</span></div>
+      <div class="type-row"><span class="type-name">body-s</span><span class="type-meta">14 / 1.5 / 400</span><span class="type-sample ns-body-s">Estudio de diseño bicultural operando desde Japón.</span></div>
+      <div class="type-row"><span class="type-name">caption</span><span class="type-meta">12 / 1.5 / 400</span><span class="type-sample ns-caption">Estudio de diseño bicultural operando desde Japón.</span></div>
+      <div class="type-row"><span class="type-name">eyebrow</span><span class="type-meta">12 / 1.5 / 600</span><span class="type-sample ns-eyebrow">Estudio · Tokio Lima</span></div>
+      <div class="type-row"><span class="type-name">label</span><span class="type-meta">14 / 1.5 / 600</span><span class="type-sample ns-label">Nombre completo</span></div>
+      <div class="type-row"><span class="type-name">mono</span><span class="type-meta">14 / 1.5 / 400</span><span class="type-sample ns-mono">001 / TML CIPANGO / 2024</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 03 — SPACING & GRID ================ -->
+<section class="section" id="spacing">
+  <header class="section-head">
+    <span class="section-num">03</span>
+    <div>
+      <h2 class="section-title">Espaciado &amp; Grilla</h2>
+      <p class="section-desc">
+        Unidad base de <strong>4px</strong>. Cada espacio del sistema es múltiplo de esta unidad
+        para garantizar ritmo vertical y horizontal coherente. La grilla cambia de 12 a 8 a 4
+        columnas según breakpoint.
+      </p>
+    </div>
+  </header>
+
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">03.1</span>
+      <h3 class="sub-title">Escala de espaciado</h3>
+      <span class="sub-desc">17 valores. Los más usados: 2, 4, 6, 8, 12, 16.</span>
+    </header>
+    <div class="space-list" id="space-list"></div>
+  </div>
+
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">03.2</span>
+      <h3 class="sub-title">Grilla responsiva</h3>
+      <span class="sub-desc">Columnas y márgenes por breakpoint.</span>
+    </header>
+    <table class="tokens-table">
+      <thead>
+        <tr><th>Breakpoint</th><th>Columnas</th><th>Gutter</th><th>Margen</th><th>Container</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Mobile · &lt; 768</td><td>4</td><td>16px</td><td>20px</td><td>fluid</td></tr>
+        <tr><td>Tablet · 768–1023</td><td>8</td><td>16px</td><td>32px</td><td>fluid</td></tr>
+        <tr><td>Desktop · 1024–1279</td><td>12</td><td>24px</td><td>48px</td><td>1024–1200px</td></tr>
+        <tr><td>Wide · ≥ 1280</td><td>12</td><td>24px</td><td>80px</td><td>1440px max</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================ 04 — RADIUS & ELEVATION ================ -->
+<section class="section" id="surface">
+  <header class="section-head">
+    <span class="section-num">04</span>
+    <div>
+      <h2 class="section-title">Radio &amp; Elevación</h2>
+      <p class="section-desc">
+        Bordes mínimos (casi cuadrado) refuerzan la sensibilidad editorial suiza.
+        Las sombras son sutiles, basadas en tinta brand a baja opacidad — nunca grises planos.
+      </p>
+    </div>
+  </header>
+
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">04.1</span>
+      <h3 class="sub-title">Border radius</h3>
+      <span class="sub-desc">Máximo 4px en superficies. Pill solo para tags y avatares.</span>
+    </header>
+    <div class="demo-grid">
+      <div class="demo-tile" style="border-radius: 0;"><span class="demo-name">none</span><span class="demo-meta">0</span></div>
+      <div class="demo-tile" style="border-radius: 2px;"><span class="demo-name">xs</span><span class="demo-meta">2px</span></div>
+      <div class="demo-tile" style="border-radius: 3px;"><span class="demo-name">sm</span><span class="demo-meta">3px</span></div>
+      <div class="demo-tile" style="border-radius: 4px;"><span class="demo-name">md</span><span class="demo-meta">4px · default</span></div>
+      <div class="demo-tile" style="border-radius: 9999px;"><span class="demo-name">pill</span><span class="demo-meta">9999px</span></div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">04.2</span>
+      <h3 class="sub-title">Elevación</h3>
+      <span class="sub-desc">Cuatro niveles. Usar el menor que comunique la intención.</span>
+    </header>
+    <div class="demo-grid">
+      <div class="demo-tile is-elevation" style="background: var(--ns-surface-raised);"><span class="demo-name">elev-0</span><span class="demo-meta">none</span></div>
+      <div class="demo-tile is-elevation" style="background: var(--ns-surface-raised); box-shadow: var(--ns-elev-1);"><span class="demo-name">elev-1</span><span class="demo-meta">cards en reposo</span></div>
+      <div class="demo-tile is-elevation" style="background: var(--ns-surface-raised); box-shadow: var(--ns-elev-2);"><span class="demo-name">elev-2</span><span class="demo-meta">hover, dropdowns</span></div>
+      <div class="demo-tile is-elevation" style="background: var(--ns-surface-raised); box-shadow: var(--ns-elev-3);"><span class="demo-name">elev-3</span><span class="demo-meta">modales, popovers</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 05 — MOTION ================ -->
+<section class="section" id="motion">
+  <header class="section-head">
+    <span class="section-num">05</span>
+    <div>
+      <h2 class="section-title">Movimiento</h2>
+      <p class="section-desc">
+        Curvas precisas, nunca rebotantes. La duración base es <strong>250ms</strong>;
+        usar más rápido para hover/feedback inmediato y más lento solo para transiciones de página.
+      </p>
+    </div>
+  </header>
+
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">05.1</span>
+      <h3 class="sub-title">Curvas de easing</h3>
+      <span class="sub-desc">Pasa el cursor para reproducir.</span>
+    </header>
+    <div class="motion-grid">
+      <div class="motion-card is-out">
+        <div class="motion-card-name">ease-out · default</div>
+        <div class="motion-track"><div class="motion-dot"></div></div>
+      </div>
+      <div class="motion-card is-in">
+        <div class="motion-card-name">ease-in · saliendo</div>
+        <div class="motion-track"><div class="motion-dot"></div></div>
+      </div>
+      <div class="motion-card is-io">
+        <div class="motion-card-name">ease-in-out · cambios estado</div>
+        <div class="motion-track"><div class="motion-dot"></div></div>
+      </div>
+      <div class="motion-card is-anti">
+        <div class="motion-card-name">anticipate · enfático</div>
+        <div class="motion-track"><div class="motion-dot"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">05.2</span>
+      <h3 class="sub-title">Duraciones</h3>
+      <span class="sub-desc">5 valores cubren todo el sistema.</span>
+    </header>
+    <table class="tokens-table">
+      <thead><tr><th>Token</th><th>Valor</th><th>Uso</th></tr></thead>
+      <tbody>
+        <tr><td><code>--ns-dur-instant</code></td><td>0ms</td><td>Cambios sin transición</td></tr>
+        <tr><td><code>--ns-dur-fast</code></td><td>150ms</td><td>Hover, focus, feedback inmediato</td></tr>
+        <tr><td><code>--ns-dur-base</code></td><td>250ms</td><td>Default — entrada/salida componentes</td></tr>
+        <tr><td><code>--ns-dur-slow</code></td><td>400ms</td><td>Modales, drawers, transiciones grandes</td></tr>
+        <tr><td><code>--ns-dur-slower</code></td><td>600ms</td><td>Hero animations, page reveals</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================ 06 — COMPONENTS ================ -->
+<section class="section" id="components">
+  <header class="section-head">
+    <span class="section-num">06</span>
+    <div>
+      <h2 class="section-title">Componentes</h2>
+      <p class="section-desc">
+        Bloques de construcción. Todos componen tokens semánticos — funcionan en light y dark
+        sin modificación. Estados de focus accesibles (3px ring naranja) en cada elemento interactivo.
+      </p>
+    </div>
+  </header>
+
+  <!-- Buttons -->
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">06.1</span>
+      <h3 class="sub-title">Botones</h3>
+      <span class="sub-desc">Cuatro variantes, tres tamaños. Primary solo para CTAs principales.</span>
+    </header>
+
+    <div class="comp-row">
+      <button class="btn btn-primary">Conversemos</button>
+      <button class="btn btn-secondary">Ver portafolio</button>
+      <button class="btn btn-ghost">Cancelar</button>
+      <button class="btn btn-text">Saber más</button>
+    </div>
+    <div class="comp-row">
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary">Medium</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+    </div>
+  </div>
+
+  <!-- Inputs -->
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">06.2</span>
+      <h3 class="sub-title">Inputs &amp; Forms</h3>
+      <span class="sub-desc">Tres tamaños. Focus ring naranja a 3px. Soporte para todos los tipos de input nativos.</span>
+    </header>
+    <div class="comp-row" style="gap: var(--ns-space-6);">
+      <div class="input-group">
+        <label for="i1">Nombre</label>
+        <input class="input" id="i1" type="text" placeholder="Pedro Nozoe">
+      </div>
+      <div class="input-group">
+        <label for="i2">Email</label>
+        <input class="input" id="i2" type="email" placeholder="hola@nozoestudio.com">
+      </div>
+      <div class="input-group">
+        <label for="i3">Servicio</label>
+        <select class="input" id="i3">
+          <option>Identidad de marca</option>
+          <option>Diseño web</option>
+          <option>Contenido digital</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tags -->
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">06.3</span>
+      <h3 class="sub-title">Tags &amp; Badges</h3>
+      <span class="sub-desc">Para metadata, categorías, estados.</span>
+    </header>
+    <div class="comp-row">
+      <span class="tag">Branding</span>
+      <span class="tag is-accent">Destacado</span>
+      <span class="tag is-success">Activo</span>
+      <span class="tag is-warning">En revisión</span>
+      <span class="tag is-danger">Pausado</span>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">06.4</span>
+      <h3 class="sub-title">Cards</h3>
+      <span class="sub-desc">Bloque base. Numeración editorial opcional como sello Nozoe.</span>
+    </header>
+    <div class="card-stack">
+      <div class="card">
+        <div class="card-num">— 001</div>
+        <h4 class="card-title">Identidad de marca</h4>
+        <p class="card-desc">Sistemas visuales completos: naming, logo, paleta, tipografía, aplicaciones.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">— 002</div>
+        <h4 class="card-title">Diseño web</h4>
+        <p class="card-desc">Sitios construidos sobre WordPress + Divi 5 + Claude Code. SEO-ready.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">— 003</div>
+        <h4 class="card-title">Contenido digital</h4>
+        <p class="card-desc">Redes sociales, catálogos interactivos, newsletter editorial bilingüe.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alerts -->
+  <div class="sub">
+    <header class="sub-head">
+      <span class="sub-num">06.5</span>
+      <h3 class="sub-title">Alerts</h3>
+      <span class="sub-desc">Cuatro variantes semánticas. Iconografía circular consistente.</span>
+    </header>
+    <div class="alert alert-info">
+      <span class="alert-icon">i</span>
+      <div class="alert-body">
+        <p class="alert-title">Nueva versión del sistema disponible</p>
+        <p class="alert-desc">v1.0.0 incluye soporte completo para dark mode y tokens en formato W3C DTCG.</p>
+      </div>
+    </div>
+    <div class="alert alert-success">
+      <span class="alert-icon">✓</span>
+      <div class="alert-body">
+        <p class="alert-title">Mensaje enviado correctamente</p>
+        <p class="alert-desc">Recibirás respuesta en menos de 24 horas hábiles desde Tokio.</p>
+      </div>
+    </div>
+    <div class="alert alert-warning">
+      <span class="alert-icon">!</span>
+      <div class="alert-body">
+        <p class="alert-title">Revisión pendiente</p>
+        <p class="alert-desc">Hay tres archivos esperando aprobación antes del envío final.</p>
+      </div>
+    </div>
+    <div class="alert alert-danger">
+      <span class="alert-icon">×</span>
+      <div class="alert-body">
+        <p class="alert-title">Error al cargar el archivo</p>
+        <p class="alert-desc">El formato no es compatible. Acepta .pdf, .ai, .figma o .sketch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 07 — PATTERNS ================ -->
+<section class="section" id="patterns">
+  <header class="section-head">
+    <span class="section-num">07</span>
+    <div>
+      <h2 class="section-title">Patrones</h2>
+      <p class="section-desc">
+        Composiciones recurrentes de Nozoe Studio: hero editorial con metadata, grilla
+        de proyectos asimétrica, bloques de servicios numerados. La gramática del estudio.
+      </p>
+    </div>
+  </header>
+
+  <!-- Pattern: Hero -->
+  <div class="pattern-block">
+    <div class="pattern-label"><span>— 07.1 · HERO EDITORIAL</span><span>1440 × 720</span></div>
+    <div class="pattern-body">
+      <div class="pat-hero">
+        <div>
+          <div class="pat-hero-eyebrow">
+            <span></span>
+            <span>Estudio · Tokio Lima · 2026</span>
+          </div>
+          <h2>Diseño con<br><em>dirección</em>.</h2>
+          <p>Branding, web y contenido para emprendedores latinos y brasileños operando desde Japón. Sistema bicultural, ejecución meticulosa.</p>
+          <div class="pat-hero-cta">
+            <button class="btn btn-primary btn-lg">Conversemos</button>
+            <button class="btn btn-ghost btn-lg">Ver portafolio</button>
+          </div>
+        </div>
+        <div class="pat-hero-meta">
+          <div><span>Activo desde</span><strong>2024</strong></div>
+          <div><span>Proyectos</span><strong>40+</strong></div>
+          <div><span>Países</span><strong>Perú · Japón · Brasil</strong></div>
+          <div><span>Idiomas</span><strong>ES · PT · EN</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pattern: Project cards -->
+  <div class="pattern-block">
+    <div class="pattern-label"><span>— 07.2 · PORTFOLIO GRID</span><span>2 cols · responsive</span></div>
+    <div class="pattern-body">
+      <div class="pat-projects">
+        <article class="pat-project">
+          <div class="pat-project-img"></div>
+          <div class="pat-project-body">
+            <div class="pat-project-meta"><span>001 · Branding</span><span>2024</span></div>
+            <h3>TML Cipango</h3>
+            <p>Sistema visual completo para empresa de transporte y turismo bicultural Japón–Perú.</p>
+          </div>
+        </article>
+        <article class="pat-project">
+          <div class="pat-project-img is-second"></div>
+          <div class="pat-project-body">
+            <div class="pat-project-meta"><span>002 · Web</span><span>2025</span></div>
+            <h3>Restaurant case study</h3>
+            <p>Identidad gastronómica + sitio responsive para restaurante latino en Tokio.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 08 — TOKENS REFERENCE ================ -->
+<section class="section" id="tokens">
+  <header class="section-head">
+    <span class="section-num">08</span>
+    <div>
+      <h2 class="section-title">Referencia de tokens</h2>
+      <p class="section-desc">
+        Lista plana de los tokens semánticos más usados. Para la lista completa de
+        primitivos, escalas y component tokens, consultá <code>nozoe-tokens.json</code>.
+      </p>
+    </div>
+  </header>
+
+  <table class="tokens-table">
+    <thead>
+      <tr><th>Token CSS</th><th>Light</th><th>Dark</th><th>Uso</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>--ns-surface-base</code></td><td>#F4F1EC</td><td>#0A1119</td><td>Fondo de página</td></tr>
+      <tr><td><code>--ns-surface-raised</code></td><td>#FFFFFF</td><td>#1D2A40</td><td>Cards, modals</td></tr>
+      <tr><td><code>--ns-text-primary</code></td><td>#1D2A40</td><td>#F4F1EC</td><td>Texto principal</td></tr>
+      <tr><td><code>--ns-text-secondary</code></td><td>#475773</td><td>#C6D5EA</td><td>Subtítulos</td></tr>
+      <tr><td><code>--ns-text-tertiary</code></td><td>#8B9DB7</td><td>#8B9DB7</td><td>Captions, eyebrows</td></tr>
+      <tr><td><code>--ns-accent</code></td><td>#E94E1B</td><td>#FF6B3D</td><td>CTA, highlights</td></tr>
+      <tr><td><code>--ns-border-default</code></td><td>#C6D5EA</td><td>#243450</td><td>Bordes UI</td></tr>
+      <tr><td><code>--ns-border-focus</code></td><td>#E94E1B</td><td>#FF6B3D</td><td>Focus rings</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</main>
+
+<!-- ================ FOOTER ================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-stamp">東京 · リマ</div>
+    <div class="footer-meta">
+      <div>Nozoe Studio Design System</div>
+      <div>Diseñado en Tokio para Latinoamérica · Brasil · España</div>
+    </div>
+    <div class="footer-version">v1.0.0 / 2026</div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   Theme toggle
+   ============================================================ */
+(function() {
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('[data-theme-set]');
+
+  function setTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    buttons.forEach(b => {
+      b.setAttribute('aria-pressed', b.dataset.themeSet === theme ? 'true' : 'false');
+    });
+    try { localStorage.setItem('nozoe-theme', theme); } catch (e) {}
+  }
+
+  buttons.forEach(b => b.addEventListener('click', () => setTheme(b.dataset.themeSet)));
+
+  // Restore preference, fallback to system
+  try {
+    const saved = localStorage.getItem('nozoe-theme');
+    if (saved) setTheme(saved);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+  } catch (e) {}
+})();
+
+/* ============================================================
+   Generate color scales
+   ============================================================ */
+const scales = {
+  ink: {
+    '50':'#F0F2F5','100':'#D8DCE4','200':'#B5BDCC','300':'#8B97AE','400':'#67748F',
+    '500':'#475773','600':'#324461','700':'#243450','800':'#1D2A40','900':'#131C2C','950':'#0A1119'
+  },
+  orange: {
+    '50':'#FFEEE6','100':'#FCE8DD','200':'#FAC4A8','300':'#F7A077','400':'#F4754A',
+    '500':'#E94E1B','600':'#D14418','700':'#B83C15','800':'#8B2D10','900':'#5D1E0B'
+  },
+  sky: {
+    '50':'#F4F8FE','100':'#E8EFF8','200':'#C6D5EA','300':'#A8BDD8',
+    '400':'#8B9DB7','500':'#6E84A2','600':'#566B89','700':'#3F5471'
+  },
+  warm: {
+    '50':'#FBFAF7','100':'#F8F5EF','200':'#F4F1EC','300':'#ECE7DF','400':'#E0D9CD','500':'#C8BFB0'
+  }
+};
+
+function renderScale(scale, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  Object.entries(scale).forEach(([step, hex]) => {
+    const el = document.createElement('div');
+    el.className = 'swatch';
+    el.innerHTML = `
+      <div class="swatch-color" style="background: ${hex};"></div>
+      <div class="swatch-info">
+        <span class="swatch-name">${containerId.split('-')[0]} ${step}</span>
+        <span class="swatch-hex">${hex}</span>
+      </div>`;
+    container.appendChild(el);
+  });
+}
+renderScale(scales.ink,    'ink-scale');
+renderScale(scales.orange, 'orange-scale');
+renderScale(scales.sky,    'sky-scale');
+renderScale(scales.warm,   'warm-scale');
+
+/* ============================================================
+   Generate spacing visualization
+   ============================================================ */
+const spacings = [
+  ['0',  '0px',  0],   ['px', '1px',  1],   ['0.5','2px',  2],
+  ['1',  '4px',  4],   ['2',  '8px',  8],   ['3',  '12px', 12],
+  ['4',  '16px', 16],  ['5',  '20px', 20],  ['6',  '24px', 24],
+  ['8',  '32px', 32],  ['10', '40px', 40],  ['12', '48px', 48],
+  ['16', '64px', 64],  ['20', '80px', 80],  ['24', '96px', 96],
+  ['32', '128px',128], ['40', '160px',160]
+];
+const spaceList = document.getElementById('space-list');
+const maxSpace = 160;
+spacings.forEach(([name, px, val]) => {
+  const row = document.createElement('div');
+  row.className = 'space-row';
+  const width = val === 0 ? 1 : (val / maxSpace) * 100;
+  row.innerHTML = `
+    <span class="space-name">space-${name}</span>
+    <span class="space-px">${px}</span>
+    <div class="space-bar" style="width: ${Math.max(width, 0.5)}%;"></div>`;
+  spaceList.appendChild(row);
+});
+</script>
+
+</body>
+</html>

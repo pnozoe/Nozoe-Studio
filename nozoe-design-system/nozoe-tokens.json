@@ -1,0 +1,498 @@
+{
+  "$schema": "https://schemas.tr.designtokens.org/format/",
+  "$description": "Nozoe Studio Design System — W3C Design Tokens Format Module. Compatible with Tokens Studio for Figma, Style Dictionary, and any DTCG-compliant tool.",
+  "$version": "1.0.0",
+
+  "color": {
+    "$description": "Primitive color palette. Reference these via semantic tokens — never use primitives directly in components.",
+
+    "ink": {
+      "$description": "The brand's deep navy. Anchor for typography, backgrounds in dark mode, structural ink.",
+      "50":  { "$value": "#F0F2F5", "$type": "color" },
+      "100": { "$value": "#D8DCE4", "$type": "color" },
+      "200": { "$value": "#B5BDCC", "$type": "color" },
+      "300": { "$value": "#8B97AE", "$type": "color" },
+      "400": { "$value": "#67748F", "$type": "color" },
+      "500": { "$value": "#475773", "$type": "color" },
+      "600": { "$value": "#324461", "$type": "color" },
+      "700": { "$value": "#243450", "$type": "color" },
+      "800": { "$value": "#1D2A40", "$type": "color", "$description": "Brand ink — primary navy" },
+      "900": { "$value": "#131C2C", "$type": "color" },
+      "950": { "$value": "#0A1119", "$type": "color" }
+    },
+
+    "orange": {
+      "$description": "Single warm accent. Use sparingly — never exceeds 5% of any surface.",
+      "50":  { "$value": "#FFEEE6", "$type": "color" },
+      "100": { "$value": "#FCE8DD", "$type": "color" },
+      "200": { "$value": "#FAC4A8", "$type": "color" },
+      "300": { "$value": "#F7A077", "$type": "color" },
+      "400": { "$value": "#F4754A", "$type": "color" },
+      "500": { "$value": "#E94E1B", "$type": "color", "$description": "Brand orange — primary accent" },
+      "600": { "$value": "#D14418", "$type": "color" },
+      "700": { "$value": "#B83C15", "$type": "color" },
+      "800": { "$value": "#8B2D10", "$type": "color" },
+      "900": { "$value": "#5D1E0B", "$type": "color" }
+    },
+
+    "sky": {
+      "$description": "Cool neutral derived from #C6D5EA. For borders, dividers, subtle states.",
+      "50":  { "$value": "#F4F8FE", "$type": "color" },
+      "100": { "$value": "#E8EFF8", "$type": "color" },
+      "200": { "$value": "#C6D5EA", "$type": "color", "$description": "Brand sky — neutral border" },
+      "300": { "$value": "#A8BDD8", "$type": "color" },
+      "400": { "$value": "#8B9DB7", "$type": "color", "$description": "Brand sky-mid — secondary text" },
+      "500": { "$value": "#6E84A2", "$type": "color" },
+      "600": { "$value": "#566B89", "$type": "color" },
+      "700": { "$value": "#3F5471", "$type": "color" }
+    },
+
+    "warm": {
+      "$description": "Warm off-white system. The 'soul' of Swiss-warm aesthetic.",
+      "50":  { "$value": "#FBFAF7", "$type": "color" },
+      "100": { "$value": "#F8F5EF", "$type": "color" },
+      "200": { "$value": "#F4F1EC", "$type": "color", "$description": "Brand warm — base surface" },
+      "300": { "$value": "#ECE7DF", "$type": "color" },
+      "400": { "$value": "#E0D9CD", "$type": "color" },
+      "500": { "$value": "#C8BFB0", "$type": "color" }
+    },
+
+    "feedback": {
+      "$description": "Semantic feedback colors. Tuned to live next to brand palette without clashing.",
+      "success": {
+        "subtle":  { "$value": "#E5F1E8", "$type": "color" },
+        "default": { "$value": "#3E8E5C", "$type": "color" },
+        "strong":  { "$value": "#2A6E45", "$type": "color" }
+      },
+      "warning": {
+        "subtle":  { "$value": "#FBF1DC", "$type": "color" },
+        "default": { "$value": "#C28A0E", "$type": "color" },
+        "strong":  { "$value": "#8C6308", "$type": "color" }
+      },
+      "danger": {
+        "subtle":  { "$value": "#FBE3E0", "$type": "color" },
+        "default": { "$value": "#C63A2D", "$type": "color" },
+        "strong":  { "$value": "#8E281F", "$type": "color" }
+      },
+      "info": {
+        "subtle":  { "$value": "#E1ECF7", "$type": "color" },
+        "default": { "$value": "#2C6BB0", "$type": "color" },
+        "strong":  { "$value": "#1F4D80", "$type": "color" }
+      }
+    }
+  },
+
+  "semantic": {
+    "$description": "Use these tokens in components. They map to primitives and switch automatically between light & dark themes.",
+
+    "light": {
+      "surface": {
+        "base":    { "$value": "{color.warm.200}", "$type": "color", "$description": "Page background — warm cream" },
+        "raised":  { "$value": "#FFFFFF", "$type": "color", "$description": "Cards, modals, dropdowns" },
+        "sunken":  { "$value": "{color.warm.300}", "$type": "color", "$description": "Inset areas, code blocks" },
+        "inverse": { "$value": "{color.ink.800}", "$type": "color", "$description": "Inverted surfaces (dark CTAs in light mode)" }
+      },
+      "text": {
+        "primary":   { "$value": "{color.ink.800}", "$type": "color" },
+        "secondary": { "$value": "{color.ink.500}", "$type": "color" },
+        "tertiary":  { "$value": "{color.sky.400}", "$type": "color" },
+        "disabled":  { "$value": "{color.sky.300}", "$type": "color" },
+        "inverse":   { "$value": "{color.warm.200}", "$type": "color" },
+        "onAccent":  { "$value": "#FFFFFF", "$type": "color" },
+        "accent":    { "$value": "{color.orange.500}", "$type": "color" }
+      },
+      "border": {
+        "subtle":  { "$value": "{color.warm.400}", "$type": "color" },
+        "default": { "$value": "{color.sky.200}", "$type": "color" },
+        "strong":  { "$value": "{color.sky.400}", "$type": "color" },
+        "focus":   { "$value": "{color.orange.500}", "$type": "color" },
+        "inverse": { "$value": "{color.ink.800}", "$type": "color" }
+      },
+      "accent": {
+        "subtle":  { "$value": "{color.orange.100}", "$type": "color" },
+        "default": { "$value": "{color.orange.500}", "$type": "color" },
+        "hover":   { "$value": "{color.orange.600}", "$type": "color" },
+        "active":  { "$value": "{color.orange.700}", "$type": "color" }
+      }
+    },
+
+    "dark": {
+      "surface": {
+        "base":    { "$value": "{color.ink.950}", "$type": "color" },
+        "raised":  { "$value": "{color.ink.800}", "$type": "color" },
+        "sunken":  { "$value": "#080E18", "$type": "color" },
+        "inverse": { "$value": "{color.warm.200}", "$type": "color" }
+      },
+      "text": {
+        "primary":   { "$value": "{color.warm.200}", "$type": "color" },
+        "secondary": { "$value": "{color.sky.200}", "$type": "color" },
+        "tertiary":  { "$value": "{color.sky.400}", "$type": "color" },
+        "disabled":  { "$value": "{color.ink.500}", "$type": "color" },
+        "inverse":   { "$value": "{color.ink.800}", "$type": "color" },
+        "onAccent":  { "$value": "#FFFFFF", "$type": "color" },
+        "accent":    { "$value": "#FF6B3D", "$type": "color" }
+      },
+      "border": {
+        "subtle":  { "$value": "{color.ink.800}", "$type": "color" },
+        "default": { "$value": "{color.ink.700}", "$type": "color" },
+        "strong":  { "$value": "{color.ink.500}", "$type": "color" },
+        "focus":   { "$value": "#FF6B3D", "$type": "color" },
+        "inverse": { "$value": "{color.warm.200}", "$type": "color" }
+      },
+      "accent": {
+        "subtle":  { "$value": "#2A1812", "$type": "color" },
+        "default": { "$value": "#FF6B3D", "$type": "color" },
+        "hover":   { "$value": "#FF7E55", "$type": "color" },
+        "active":  { "$value": "#FF8E69", "$type": "color" }
+      }
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "sans":     { "$value": "Nunito, ui-sans-serif, system-ui, -apple-system, sans-serif", "$type": "fontFamily" },
+      "mono":     { "$value": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace", "$type": "fontFamily" },
+      "japanese": { "$value": "'Noto Sans JP', Nunito, sans-serif", "$type": "fontFamily", "$description": "For 東京・リマ stamp and JP-language content" }
+    },
+
+    "fontWeight": {
+      "light":     { "$value": 300, "$type": "fontWeight" },
+      "regular":   { "$value": 400, "$type": "fontWeight" },
+      "semibold":  { "$value": 600, "$type": "fontWeight" },
+      "extrabold": { "$value": 800, "$type": "fontWeight" }
+    },
+
+    "fontSize": {
+      "$description": "Modular scale based on 1.25 ratio anchored at 16px. Tabular figures recommended for numbers.",
+      "xs":   { "$value": "0.75rem",  "$type": "dimension" },
+      "sm":   { "$value": "0.875rem", "$type": "dimension" },
+      "base": { "$value": "1rem",     "$type": "dimension" },
+      "md":   { "$value": "1.125rem", "$type": "dimension" },
+      "lg":   { "$value": "1.375rem", "$type": "dimension" },
+      "xl":   { "$value": "1.75rem",  "$type": "dimension" },
+      "2xl":  { "$value": "2.5rem",   "$type": "dimension" },
+      "3xl":  { "$value": "3.5rem",   "$type": "dimension" },
+      "4xl":  { "$value": "4.5rem",   "$type": "dimension" },
+      "5xl":  { "$value": "6rem",     "$type": "dimension" }
+    },
+
+    "lineHeight": {
+      "tight":   { "$value": 1.05, "$type": "number", "$description": "Display headlines" },
+      "snug":    { "$value": 1.2,  "$type": "number", "$description": "Headings" },
+      "normal":  { "$value": 1.5,  "$type": "number", "$description": "Body text" },
+      "relaxed": { "$value": 1.65, "$type": "number", "$description": "Long-form reading" }
+    },
+
+    "letterSpacing": {
+      "tightest": { "$value": "-0.04em",  "$type": "dimension" },
+      "tighter":  { "$value": "-0.02em",  "$type": "dimension" },
+      "tight":    { "$value": "-0.01em",  "$type": "dimension" },
+      "normal":   { "$value": "0em",      "$type": "dimension" },
+      "wide":     { "$value": "0.04em",   "$type": "dimension" },
+      "wider":    { "$value": "0.08em",   "$type": "dimension" },
+      "widest":   { "$value": "0.16em",   "$type": "dimension", "$description": "All-caps labels, eyebrow text" }
+    },
+
+    "textStyle": {
+      "$description": "Composite typography tokens — use these as a single reference in Figma.",
+      "displayXL": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.5xl}",
+          "fontWeight":    "{typography.fontWeight.extrabold}",
+          "lineHeight":    "{typography.lineHeight.tight}",
+          "letterSpacing": "{typography.letterSpacing.tightest}"
+        }
+      },
+      "displayL": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.4xl}",
+          "fontWeight":    "{typography.fontWeight.extrabold}",
+          "lineHeight":    "{typography.lineHeight.tight}",
+          "letterSpacing": "{typography.letterSpacing.tighter}"
+        }
+      },
+      "displayM": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.3xl}",
+          "fontWeight":    "{typography.fontWeight.extrabold}",
+          "lineHeight":    "{typography.lineHeight.tight}",
+          "letterSpacing": "{typography.letterSpacing.tighter}"
+        }
+      },
+      "h1": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.2xl}",
+          "fontWeight":    "{typography.fontWeight.extrabold}",
+          "lineHeight":    "{typography.lineHeight.snug}",
+          "letterSpacing": "{typography.letterSpacing.tight}"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.xl}",
+          "fontWeight":    "{typography.fontWeight.semibold}",
+          "lineHeight":    "{typography.lineHeight.snug}",
+          "letterSpacing": "{typography.letterSpacing.tight}"
+        }
+      },
+      "h3": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.lg}",
+          "fontWeight":    "{typography.fontWeight.semibold}",
+          "lineHeight":    "{typography.lineHeight.snug}",
+          "letterSpacing": "{typography.letterSpacing.normal}"
+        }
+      },
+      "h4": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.md}",
+          "fontWeight":    "{typography.fontWeight.semibold}",
+          "lineHeight":    "{typography.lineHeight.snug}",
+          "letterSpacing": "{typography.letterSpacing.normal}"
+        }
+      },
+      "bodyL": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.md}",
+          "fontWeight":    "{typography.fontWeight.regular}",
+          "lineHeight":    "{typography.lineHeight.relaxed}",
+          "letterSpacing": "{typography.letterSpacing.normal}"
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.base}",
+          "fontWeight":    "{typography.fontWeight.regular}",
+          "lineHeight":    "{typography.lineHeight.normal}",
+          "letterSpacing": "{typography.letterSpacing.normal}"
+        }
+      },
+      "bodyS": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.sm}",
+          "fontWeight":    "{typography.fontWeight.regular}",
+          "lineHeight":    "{typography.lineHeight.normal}",
+          "letterSpacing": "{typography.letterSpacing.normal}"
+        }
+      },
+      "caption": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.xs}",
+          "fontWeight":    "{typography.fontWeight.regular}",
+          "lineHeight":    "{typography.lineHeight.normal}",
+          "letterSpacing": "{typography.letterSpacing.normal}"
+        }
+      },
+      "eyebrow": {
+        "$type": "typography",
+        "$description": "All-caps editorial label. The hallmark of Nozoe's Swiss-editorial voice.",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.xs}",
+          "fontWeight":    "{typography.fontWeight.semibold}",
+          "lineHeight":    "{typography.lineHeight.normal}",
+          "letterSpacing": "{typography.letterSpacing.widest}",
+          "textTransform": "uppercase"
+        }
+      },
+      "label": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.sans}",
+          "fontSize":      "{typography.fontSize.sm}",
+          "fontWeight":    "{typography.fontWeight.semibold}",
+          "lineHeight":    "{typography.lineHeight.normal}",
+          "letterSpacing": "{typography.letterSpacing.normal}"
+        }
+      },
+      "mono": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily":    "{typography.fontFamily.mono}",
+          "fontSize":      "{typography.fontSize.sm}",
+          "fontWeight":    "{typography.fontWeight.regular}",
+          "lineHeight":    "{typography.lineHeight.normal}",
+          "letterSpacing": "{typography.letterSpacing.normal}"
+        }
+      }
+    }
+  },
+
+  "spacing": {
+    "$description": "4px base unit. Use the smallest values for tight component padding, larger ones for layout rhythm.",
+    "0":   { "$value": "0",     "$type": "dimension" },
+    "px":  { "$value": "1px",   "$type": "dimension" },
+    "0.5": { "$value": "0.125rem", "$type": "dimension" },
+    "1":   { "$value": "0.25rem",  "$type": "dimension" },
+    "2":   { "$value": "0.5rem",   "$type": "dimension" },
+    "3":   { "$value": "0.75rem",  "$type": "dimension" },
+    "4":   { "$value": "1rem",     "$type": "dimension" },
+    "5":   { "$value": "1.25rem",  "$type": "dimension" },
+    "6":   { "$value": "1.5rem",   "$type": "dimension" },
+    "8":   { "$value": "2rem",     "$type": "dimension" },
+    "10":  { "$value": "2.5rem",   "$type": "dimension" },
+    "12":  { "$value": "3rem",     "$type": "dimension" },
+    "16":  { "$value": "4rem",     "$type": "dimension" },
+    "20":  { "$value": "5rem",     "$type": "dimension" },
+    "24":  { "$value": "6rem",     "$type": "dimension" },
+    "32":  { "$value": "8rem",     "$type": "dimension" },
+    "40":  { "$value": "10rem",    "$type": "dimension" },
+    "48":  { "$value": "12rem",    "$type": "dimension" }
+  },
+
+  "radius": {
+    "$description": "Minimal — casi cuadrado. The most rounded surface in the system is 4px.",
+    "none": { "$value": "0",     "$type": "dimension" },
+    "xs":   { "$value": "2px",   "$type": "dimension" },
+    "sm":   { "$value": "3px",   "$type": "dimension" },
+    "md":   { "$value": "4px",   "$type": "dimension", "$description": "Default — buttons, cards, inputs" },
+    "pill": { "$value": "9999px","$type": "dimension", "$description": "Tags, badges, avatar circles" }
+  },
+
+  "elevation": {
+    "$description": "Subtle, Swiss. Three steps. Shadows always use the brand ink at low opacity, never grey.",
+    "0": { "$value": "none", "$type": "shadow" },
+    "1": {
+      "$type": "shadow",
+      "$value": [
+        { "color": "rgba(29, 42, 64, 0.06)", "offsetX": "0", "offsetY": "1px", "blur": "2px", "spread": "0" }
+      ]
+    },
+    "2": {
+      "$type": "shadow",
+      "$value": [
+        { "color": "rgba(29, 42, 64, 0.06)", "offsetX": "0", "offsetY": "2px", "blur": "4px", "spread": "0" },
+        { "color": "rgba(29, 42, 64, 0.04)", "offsetX": "0", "offsetY": "4px", "blur": "12px", "spread": "0" }
+      ]
+    },
+    "3": {
+      "$type": "shadow",
+      "$value": [
+        { "color": "rgba(29, 42, 64, 0.08)", "offsetX": "0", "offsetY": "8px", "blur": "16px", "spread": "0" },
+        { "color": "rgba(29, 42, 64, 0.04)", "offsetX": "0", "offsetY": "16px", "blur": "32px", "spread": "0" }
+      ]
+    },
+    "focus": {
+      "$type": "shadow",
+      "$value": [
+        { "color": "rgba(233, 78, 27, 0.24)", "offsetX": "0", "offsetY": "0", "blur": "0", "spread": "3px" }
+      ]
+    }
+  },
+
+  "border": {
+    "width": {
+      "0":  { "$value": "0",   "$type": "dimension" },
+      "1":  { "$value": "1px", "$type": "dimension" },
+      "2":  { "$value": "2px", "$type": "dimension" },
+      "4":  { "$value": "4px", "$type": "dimension" }
+    }
+  },
+
+  "motion": {
+    "$description": "Easing curves selected to feel precise and editorial — never bouncy.",
+    "duration": {
+      "instant": { "$value": "0ms",   "$type": "duration" },
+      "fast":    { "$value": "150ms", "$type": "duration" },
+      "base":    { "$value": "250ms", "$type": "duration" },
+      "slow":    { "$value": "400ms", "$type": "duration" },
+      "slower":  { "$value": "600ms", "$type": "duration" }
+    },
+    "easing": {
+      "linear":     { "$value": "linear", "$type": "cubicBezier" },
+      "out":        { "$value": "cubic-bezier(0.16, 1, 0.3, 1)",   "$type": "cubicBezier", "$description": "Default — content entering" },
+      "in":         { "$value": "cubic-bezier(0.7, 0, 0.84, 0)",   "$type": "cubicBezier", "$description": "Content leaving" },
+      "inOut":      { "$value": "cubic-bezier(0.65, 0, 0.35, 1)",  "$type": "cubicBezier", "$description": "State changes" },
+      "anticipate": { "$value": "cubic-bezier(0.6, -0.05, 0.35, 1)", "$type": "cubicBezier", "$description": "Emphasized" }
+    }
+  },
+
+  "layout": {
+    "$description": "Container widths and breakpoints for editorial responsive grids.",
+    "breakpoint": {
+      "sm": { "$value": "640px",  "$type": "dimension" },
+      "md": { "$value": "768px",  "$type": "dimension" },
+      "lg": { "$value": "1024px", "$type": "dimension" },
+      "xl": { "$value": "1280px", "$type": "dimension" },
+      "2xl": { "$value": "1536px", "$type": "dimension" }
+    },
+    "container": {
+      "narrow": { "$value": "720px",  "$type": "dimension", "$description": "Long-form reading" },
+      "default": { "$value": "1200px", "$type": "dimension", "$description": "Standard pages" },
+      "wide":   { "$value": "1440px", "$type": "dimension", "$description": "Editorial / portfolio" },
+      "full":   { "$value": "100%",   "$type": "dimension" }
+    },
+    "grid": {
+      "columnsDesktop": { "$value": 12, "$type": "number" },
+      "columnsTablet":  { "$value": 8,  "$type": "number" },
+      "columnsMobile":  { "$value": 4,  "$type": "number" },
+      "gutterDesktop":  { "$value": "24px", "$type": "dimension" },
+      "gutterTablet":   { "$value": "16px", "$type": "dimension" },
+      "gutterMobile":   { "$value": "16px", "$type": "dimension" },
+      "marginDesktop":  { "$value": "80px", "$type": "dimension" },
+      "marginTablet":   { "$value": "32px", "$type": "dimension" },
+      "marginMobile":   { "$value": "20px", "$type": "dimension" }
+    }
+  },
+
+  "zIndex": {
+    "behind":     { "$value": -1,   "$type": "number" },
+    "base":       { "$value": 0,    "$type": "number" },
+    "raised":     { "$value": 10,   "$type": "number" },
+    "dropdown":   { "$value": 100,  "$type": "number" },
+    "sticky":     { "$value": 200,  "$type": "number" },
+    "overlay":    { "$value": 300,  "$type": "number" },
+    "modal":      { "$value": 400,  "$type": "number" },
+    "toast":      { "$value": 500,  "$type": "number" },
+    "tooltip":    { "$value": 600,  "$type": "number" }
+  },
+
+  "component": {
+    "$description": "Component-level tokens. Inherit from semantic tokens.",
+    "button": {
+      "height": {
+        "sm": { "$value": "32px", "$type": "dimension" },
+        "md": { "$value": "40px", "$type": "dimension" },
+        "lg": { "$value": "48px", "$type": "dimension" }
+      },
+      "paddingX": {
+        "sm": { "$value": "{spacing.3}", "$type": "dimension" },
+        "md": { "$value": "{spacing.5}", "$type": "dimension" },
+        "lg": { "$value": "{spacing.6}", "$type": "dimension" }
+      }
+    },
+    "input": {
+      "height": {
+        "sm": { "$value": "32px", "$type": "dimension" },
+        "md": { "$value": "40px", "$type": "dimension" },
+        "lg": { "$value": "48px", "$type": "dimension" }
+      }
+    },
+    "card": {
+      "padding":      { "$value": "{spacing.6}", "$type": "dimension" },
+      "paddingLarge": { "$value": "{spacing.8}", "$type": "dimension" }
+    }
+  }
+}

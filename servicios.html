@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nozoe Studio · Servicios</title>
+<meta name="description" content="Identidad de marca, diseño web y contenido gráfico. Diseño para emprendedores de habla hispana y portuguesa — desde Tokio para cualquier parte del mundo.">
+<meta property="og:title" content="Nozoe Studio · Servicios">
+<meta property="og:description" content="Identidad, web y contenido — capas del mismo sistema bicultural, diseñado para funcionar en cualquier canal y cultura.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.webp">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+
+<template id="__bundler_thumbnail" data-bg-color="#F4F1EC">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="1200" height="800" fill="#F4F1EC"/>
+    <rect x="0" y="0" width="1200" height="64" fill="#F4F1EC"/>
+    <rect x="80" y="140" width="80" height="8" rx="2" fill="#E94E1B" opacity="0.7"/>
+    <rect x="80" y="168" width="560" height="56" rx="2" fill="#1D2A40" opacity="0.9"/>
+    <rect x="80" y="236" width="420" height="56" rx="2" fill="#1D2A40" opacity="0.9"/>
+    <rect x="80" y="316" width="440" height="14" rx="2" fill="#8B9DB7" opacity="0.4"/>
+    <rect x="80" y="420" width="260" height="240" rx="4" fill="#ECE7DF" stroke="#C6D5EA" stroke-width="1"/>
+    <rect x="360" y="420" width="260" height="240" rx="4" fill="#1D2A40"/>
+    <rect x="640" y="420" width="260" height="240" rx="4" fill="#ECE7DF" stroke="#C6D5EA" stroke-width="1"/>
+    <rect x="920" y="420" width="200" height="240" rx="4" fill="#ECE7DF" stroke="#C6D5EA" stroke-width="1"/>
+  </svg>
+</template>
+
+<style>
+/* ─── Tokens ─── */
+:root {
+  --ink:        #1D2A40;
+  --ink-700:    #243450;
+  --ink-950:    #0A1119;
+  --slate:      #475773;
+  --mist:       #8B9DB7;
+  --sky:        #C6D5EA;
+  --warm:       #F4F1EC;
+  --warm-300:   #ECE7DF;
+  --warm-400:   #E0D9CD;
+  --ember:      #E94E1B;
+  --ember-h:    #D14418;
+  --sans: 'Nunito', ui-sans-serif, sans-serif;
+  --jp:   'Noto Sans JP', 'Nunito', sans-serif;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+body {
+  font-family: var(--sans);
+  background: var(--warm);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(29,42,64,0.042) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.hairline { height: 1px; background: rgba(139,157,183,0.28); }
+
+/* ─── Section mark ─── */
+.sm { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.sm-dot { width: 6px; height: 6px; background: var(--ember); flex-shrink: 0; }
+.sm-lbl { font: 600 10px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--mist); }
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 26px;
+  border: none;
+  border-radius: 4px;
+  font: 600 14px/1 var(--sans);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 150ms var(--ease), transform 150ms var(--ease);
+}
+.btn-ember { background: var(--ember); color: #fff; }
+.btn-ember:hover { background: var(--ember-h); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--sky); border: 1px solid rgba(139,157,183,0.4); }
+.btn-ghost:hover { border-color: var(--sky); }
+.btn-ink { background: var(--ink); color: var(--warm); }
+.btn-ink:hover { background: var(--ink-700); transform: translateY(-1px); }
+.btn-ghost-warm {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--sky);
+  height: 48px;
+  display: inline-flex; align-items: center;
+  padding: 0 26px;
+  border-radius: 4px;
+  font: 600 14px/1 var(--sans);
+  text-decoration: none;
+  transition: border-color 150ms var(--ease);
+}
+.btn-ghost-warm:hover { border-color: var(--ink); }
+
+.tlink {
+  font: 600 13px/1 var(--sans);
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.tlink::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--sky);
+  transition: background 150ms var(--ease);
+}
+.tlink:hover::after { background: var(--ink); }
+.tlink .arr { display: inline-block; margin-left: 4px; transition: transform 200ms var(--ease); }
+.tlink:hover .arr { transform: translateX(3px); }
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--warm) 88%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(139,157,183,0.22);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.nav-logo img { height: 30px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-link {
+  position: relative;
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-decoration: none;
+  padding: 0 14px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: color 120ms var(--ease), background 120ms var(--ease);
+}
+.nav-link:hover { color: var(--ink); background: rgba(29,42,64,0.05); }
+.nav-link.active {
+  font-weight: 800;
+  color: var(--ink);
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 14px; right: 14px;
+  height: 2px;
+  background: var(--ember);
+}
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 16px;
+  background: var(--ink);
+  color: var(--warm);
+  font: 600 12px/1 var(--sans);
+  border-radius: 4px;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background 120ms var(--ease);
+}
+.nav-cta:hover { background: var(--ink-700); }
+.wa-dot { width: 8px; height: 8px; background: #25D366; border-radius: 50%; flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.page-hero {
+  position: relative;
+  z-index: 1;
+  padding: 96px 0 72px;
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 0 64px;
+  align-items: end;
+}
+.hero-headline {
+  font: 800 clamp(3rem, 5vw, 4.6rem)/1.0 var(--sans);
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.hl-em { color: var(--ember); }
+.hero-lede {
+  font: 300 17px/1.65 var(--sans);
+  color: var(--slate);
+  max-width: 52ch;
+}
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+.hero-capsule {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.hero-capsule-num {
+  font: 800 clamp(2.4rem,3.5vw,3.2rem)/1 var(--sans);
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.hero-capsule-num .em { color: var(--ember); }
+.hero-capsule-lbl {
+  font: 600 9px/1 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+/* ══════════════════════════════════════
+   SERVICIOS SLIDER APPLE-STYLE
+══════════════════════════════════════ */
+.svc-section {
+  position: relative;
+  z-index: 1;
+  padding: 80px 0 80px;
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+  overflow: hidden;
+}
+
+/* header row */
+.svc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 80px;
+  max-width: 1360px;
+  margin: 0 auto 40px;
+  gap: 32px;
+}
+.svc-header-left {}
+.svc-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.svc-eyebrow-dot {
+  width: 6px; height: 6px;
+  background: var(--ember);
+  flex-shrink: 0;
+}
+.svc-eyebrow-lbl {
+  font: 600 10px/1 var(--sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.svc-headline {
+  font: 800 clamp(2rem,3.2vw,2.8rem)/1.05 var(--sans);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.svc-headline .em { color: var(--ember); }
+
+/* right: counter + dots */
+.svc-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.svc-counter {
+  font: 800 11px/1 var(--sans);
+  letter-spacing: 0.06em;
+  color: var(--mist);
+}
+.svc-counter .svc-counter-cur { color: var(--ink); }
+.svc-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.svc-dot {
+  height: 4px;
+  width: 14px;
+  border-radius: 999px;
+  background: var(--sky);
+  transition: width 300ms var(--ease), background 300ms var(--ease);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.svc-dot.active {
+  width: 28px;
+  background: var(--ember);
+}
+
+/* track */
+.svc-track-wrap {
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: max(80px, calc((100vw - 1360px) / 2 + 80px));
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 0 32px max(80px, calc((100vw - 1360px) / 2 + 80px));
+  cursor: grab;
+}
+.svc-track-wrap::-webkit-scrollbar { display: none; }
+.svc-track-wrap:active { cursor: grabbing; }
+
+.svc-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+}
+
+/* card — full-width 16/9, text inside */
+.svc-card {
+  width: min(calc(100vw - max(80px, (100vw - 1360px) / 2 + 80px) - 52px), 1200px);
+  max-width: 1200px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--ink);
+  transition: transform 300ms var(--ease);
+  display: flex;
+  align-items: flex-end;
+}
+.svc-card:hover { transform: translateY(-4px); }
+
+/* full-bleed image layer */
+.svc-card-img {
+  position: absolute;
+  inset: 0;
+  background-color: var(--ink);
+  /* ─────────────────────────────────────────────────────
+     IMAGEN: reemplazar background-color por:
+     background-image: url('ruta/imagen.jpg');
+     background-size: cover;
+     background-position: center;
+     ───────────────────────────────────────────────────── */
+}
+
+/* gradient overlay: ink→transparent, left to right */
+.svc-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(29,42,64,0.92) 0%,
+    transparent 75%
+  );
+  pointer-events: none;
+}
+
+/* decorative number — bottom right */
+.svc-card-num {
+  position: absolute;
+  bottom: -8px;
+  right: 28px;
+  font: 800 120px/1 var(--sans);
+  letter-spacing: -0.06em;
+  color: rgba(255,255,255,0.05);
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* text content — left 50% */
+.svc-card-body {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.svc-card-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 10px;
+  background: rgba(233,78,27,0.18);
+  border-radius: 4px;
+  font: 800 8px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ember);
+  align-self: flex-start;
+}
+.svc-card-tag.popular {
+  background: var(--ember);
+  color: #fff;
+}
+.svc-card-name {
+  font: 800 28px/1.1 var(--sans);
+  letter-spacing: -0.025em;
+  color: #fff;
+}
+.svc-card-desc {
+  font: 300 13px/1.65 var(--sans);
+  color: rgba(255,255,255,0.65);
+  max-width: 36ch;
+}
+.svc-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 4px;
+}
+.svc-card-price {
+  font: 800 14px/1 var(--sans);
+  color: #fff;
+}
+.svc-card-price span {
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  font-size: 12px;
+}
+.svc-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.06em;
+  color: #fff;
+  text-decoration: none;
+  transition: background 200ms var(--ease), border-color 200ms var(--ease);
+  cursor: pointer;
+}
+.svc-card-btn:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.4); }
+.svc-card-btn svg {
+  width: 10px; height: 10px;
+  stroke: #fff; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* arrow nav */
+.svc-arrows {
+  display: flex;
+  gap: 10px;
+  padding: 24px 0 0 max(80px, calc((100vw - 1360px) / 2 + 80px));
+}
+.svc-arrow {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(29,42,64,0.18);
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 200ms var(--ease), border-color 200ms var(--ease), opacity 200ms;
+  flex-shrink: 0;
+}
+.svc-arrow:hover:not(:disabled) { background: var(--warm-300); border-color: rgba(29,42,64,0.35); }
+.svc-arrow:disabled { opacity: 0.28; cursor: default; }
+.svc-arrow svg {
+  width: 14px; height: 14px;
+  stroke: var(--ink); stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+  fill: none;
+}
+
+/* ══════════════════════════════════════
+   PROCESO
+══════════════════════════════════════ */
+.proceso-section {
+  position: relative; z-index: 1;
+  padding: 80px 0;
+  background: var(--warm-300);
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+}
+.proceso-header {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+.section-headline {
+  font: 800 clamp(2rem,3vw,2.8rem)/1.05 var(--sans);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.section-headline .em { color: var(--ember); }
+.section-lede {
+  font: 300 16px/1.7 var(--sans);
+  color: var(--slate);
+  max-width: 44ch;
+  padding-top: 8px;
+}
+.proceso-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.proceso-step {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(139,157,183,0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.proceso-step-photo {
+  aspect-ratio: 16/9;
+  background: var(--warm-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 300 9px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+  flex-shrink: 0;
+}
+.proceso-step-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.step-num {
+  font: 300 28px/1 var(--sans);
+  color: var(--ember);
+  letter-spacing: -0.04em;
+  margin-bottom: 14px;
+}
+.step-title {
+  font: 800 14px/1 var(--sans);
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.step-desc {
+  font: 400 13px/1.7 var(--sans);
+  color: var(--slate);
+}
+
+/* ══════════════════════════════════════
+   FAQ
+══════════════════════════════════════ */
+.faq-section {
+  position: relative; z-index: 1;
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 64px;
+  align-items: start;
+}
+.faq-list { display: flex; flex-direction: column; }
+.faq-item {
+  border-top: 1px solid rgba(139,157,183,0.28);
+  overflow: hidden;
+}
+.faq-item:last-child { border-bottom: 1px solid rgba(139,157,183,0.28); }
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 22px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.faq-q-text {
+  font: 800 15px/1.35 var(--sans);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.faq-toggle {
+  font: 300 20px/1 var(--sans);
+  color: var(--ember);
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: transform 250ms var(--ease);
+  line-height: 1;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-a {
+  display: none;
+  padding-bottom: 22px;
+  font: 300 14px/1.75 var(--sans);
+  color: var(--slate);
+  max-width: 56ch;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ══════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════ */
+.cta-final {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  padding: 96px 0;
+}
+.cta-grid {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  gap: 64px;
+  align-items: start;
+}
+.cta-kicker {
+  font: 800 9px/1 var(--sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 16px;
+}
+.cta-headline {
+  font: 800 clamp(2.4rem,4vw,3.8rem)/1.02 var(--sans);
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.cta-lede {
+  font: 300 15px/1.7 var(--sans);
+  color: var(--mist);
+  max-width: 42ch;
+  margin-bottom: 36px;
+}
+.cta-btns { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.cta-contact { display: flex; flex-direction: column; gap: 24px; padding-top: 8px; }
+.cta-contact-item { display: flex; flex-direction: column; gap: 5px; }
+.cta-contact-role {
+  font: 800 9px/1 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.cta-contact-val {
+  font: 300 14px/1 var(--sans);
+  color: rgba(198,213,234,0.8);
+}
+.cta-stamp {
+  font: 300 18px/1 var(--jp);
+  color: rgba(139,157,183,0.3);
+  margin-top: 8px;
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+.footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid rgba(139,157,183,0.18);
+  background: var(--ink);
+  padding: 32px 0;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.footer-copy {
+  font: 300 11px/1.6 var(--sans);
+  color: rgba(139,157,183,0.5);
+}
+.footer-social { display: flex; gap: 20px; }
+.footer-social a {
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.06em;
+  color: rgba(139,157,183,0.45);
+  text-decoration: none;
+  transition: color 150ms var(--ease);
+}
+.footer-social a:hover { color: rgba(198,213,234,0.8); }
+
+/* ══════════════════════════════════════
+   SCROLL-REVEAL
+══════════════════════════════════════ */
+.anim {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms cubic-bezier(0.16,1,0.3,1), transform 700ms cubic-bezier(0.16,1,0.3,1);
+}
+.anim.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 60ms; }
+.d2 { transition-delay: 140ms; }
+.d3 { transition-delay: 230ms; }
+.d4 { transition-delay: 330ms; }
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .wrap { padding: 0 48px; }
+  .nav-inner { padding: 0 48px; }
+  .footer-inner { padding: 0 48px; }
+}
+
+@media (max-width: 900px) {
+  .wrap { padding: 0 32px; }
+  .nav-inner { padding: 0 32px; }
+
+  .hero-grid { grid-template-columns: 1fr !important; }
+  .hero-right { display: none; }
+
+  .g12 { grid-template-columns: 1fr; }
+  .svc-intro-left, .svc-intro-right { grid-column: 1 / -1; }
+
+  .svc-track-wrap { padding-left: 40px; scroll-padding-left: 40px; }
+  .svc-arrows { padding-left: 40px; }
+  .svc-card { width: calc(100vw - 40px - 36px) !important; min-width: calc(100vw - 40px - 36px) !important; }
+
+  .faq-grid { grid-template-columns: 1fr; }
+
+  .cta-grid { grid-template-columns: 1fr !important; }
+  .cta-left, .cta-right { grid-column: 1 / -1 !important; }
+
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; padding: 24px 32px; }
+}
+
+.nav-ham {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 120ms;
+  flex-shrink: 0;
+}
+.nav-ham:hover { background: rgba(29,42,64,0.06); }
+.nav-ham span { display: block; height: 2px; border-radius: 999px; background: var(--ink); }
+.nav-ham span:last-child { background: var(--ember); width: 65%; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--warm);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid rgba(139,157,183,0.22);
+    z-index: 99;
+    gap: 4px;
+    box-shadow: 0 8px 24px rgba(29,42,64,0.1);
+  }
+  .nav-link { height: 44px; font-size: 13px; }
+  .nav-ham { display: flex; }
+
+  .svc-track-wrap { padding-left: 20px; scroll-padding-left: 20px; }
+  .svc-arrows { padding-left: 20px; }
+  .svc-card { width: calc(100vw - 20px - 20px) !important; min-width: calc(100vw - 20px - 20px) !important; }
+
+  .proceso-steps { grid-template-columns: 1fr; }
+
+  .footer-inner { padding: 0 20px; }
+}
+
+/* ─── Drawer lateral de servicios ─── */
+.drawer { position: fixed; inset: 0; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity .35s cubic-bezier(0.16,1,0.3,1); }
+.drawer.active { opacity: 1; pointer-events: all; }
+.drawer-overlay { position: absolute; inset: 0; background: rgba(10,17,25,0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); cursor: pointer; }
+.drawer-panel { position: absolute; top: 0; right: 0; height: 100vh; width: 100%; max-width: 720px; background: var(--warm); transform: translateX(100%); transition: transform .5s cubic-bezier(0.16,1,0.3,1); display: flex; flex-direction: column; box-shadow: -24px 0 80px rgba(10,17,25,0.18); }
+.drawer.active .drawer-panel { transform: translateX(0); }
+.drawer-header { display: flex; justify-content: space-between; align-items: center; padding: 28px 48px 24px; border-bottom: 1px solid var(--warm-300); flex-shrink: 0; }
+.drawer-eyebrow { display: flex; align-items: center; gap: 12px; }
+.drawer-eyebrow-dot { width: 6px; height: 6px; background: var(--ember); border-radius: 50%; }
+.drawer-eyebrow-lbl { font: 600 11px/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate); }
+.drawer-close { background: transparent; border: 1px solid var(--warm-400); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .2s; color: var(--ink); flex-shrink: 0; }
+.drawer-close:hover { background: var(--ink); color: var(--warm); border-color: var(--ink); }
+.drawer-content { padding: 40px 48px 56px; overflow-y: auto; flex: 1; }
+.drawer-tag { font: 600 11px/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--mist); margin-bottom: 16px; }
+.drawer-tag.popular { color: var(--ember); }
+.drawer-headline { font: 300 38px/1.15 var(--sans); color: var(--ink); margin-bottom: 8px; letter-spacing: -0.02em; }
+.drawer-headline em { font-style: italic; color: var(--ember); font-weight: 300; }
+.drawer-section { margin-top: 44px; }
+.drawer-section-title { font: 700 12px/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
+.drawer-pkg { padding: 24px 0; border-top: 1px solid var(--warm-300); }
+.drawer-pkg:last-child { border-bottom: 1px solid var(--warm-300); }
+.drawer-pkg-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; gap: 16px; }
+.drawer-pkg-name { font: 700 18px/1.2 var(--sans); color: var(--ink); }
+.drawer-pkg-price { font: 700 16px/1.2 var(--sans); color: var(--ember); white-space: nowrap; }
+.drawer-pkg-meta { font: 400 11px/1 var(--sans); color: var(--mist); margin-bottom: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+.drawer-pkg-desc { font: 400 14px/1.65 var(--sans); color: var(--slate); }
+.drawer-list { list-style: none; padding: 0; margin: 0; font: 400 14px/1.8 var(--sans); color: var(--slate); }
+.drawer-list li { padding-left: 20px; position: relative; }
+.drawer-list li::before { content: '→'; position: absolute; left: 0; color: var(--ember); }
+.drawer-quote { font: italic 300 17px/1.5 var(--sans); color: var(--ink); padding: 20px 24px; border-left: 2px solid var(--ember); background: var(--warm-300); margin-top: 32px; }
+.drawer-cta { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--warm-300); }
+.drawer-cta p { font: 400 14px/1.6 var(--sans); color: var(--slate); margin-bottom: 16px; }
+.drawer-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: var(--ember); color: var(--warm); border-radius: 999px; font: 700 13px/1 var(--sans); text-decoration: none; transition: background .2s; letter-spacing: 0.04em; }
+.drawer-cta-btn:hover { background: var(--ember-h); }
+body.drawer-open { overflow: hidden; }
+@media (max-width: 720px) {
+  .drawer-panel { max-width: 100%; }
+  .drawer-header { padding: 20px 24px; }
+  .drawer-content { padding: 32px 24px 48px; }
+  .drawer-headline { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio">
+    </a>
+    <div class="nav-links">
+      <a href="estudio.html" class="nav-link">Estudio</a>
+      <a href="trabajo.html" class="nav-link">Trabajo</a>
+      <a href="#" class="nav-link active">Servicios</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+    </div>
+    <button class="nav-ham" id="nav-ham" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="https://wa.me/817022124910" class="nav-cta">
+      <span class="wa-dot"></span>WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="sm">
+          <span class="sm-dot"></span>
+          <span class="sm-lbl">Servicios</span>
+        </div>
+        <h1 class="hero-headline">
+          Diseño con precio,<br>plazo y alcance<br>claros<span class="hl-em">.</span>
+        </h1>
+        <p class="hero-lede">
+          Sabrás exactamente qué vas a recibir, cuánto cuesta y en qué fecha está listo. Si tu proyecto no encaja en uno de estos paquetes, armamos algo a medida.
+        </p>
+      </div>
+      <div class="hero-right">
+        <div class="hero-capsule">
+          <div class="hero-capsule-num">4</div>
+          <div class="hero-capsule-lbl">Áreas de servicio</div>
+        </div>
+        <div class="hero-capsule">
+          <div class="hero-capsule-num">24<span class="em">h</span></div>
+          <div class="hero-capsule-lbl">Tiempo de respuesta</div>
+        </div>
+        <div class="hero-capsule">
+          <div class="hero-capsule-num">30<span class="em">′</span></div>
+          <div class="hero-capsule-lbl">Llamada gratis de descubrimiento</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICIOS SCROLL ══ -->
+<section class="svc-section">
+
+  <!-- Header -->
+  <div class="svc-header">
+    <div class="svc-header-left">
+      <div class="svc-eyebrow">
+        <span class="svc-eyebrow-dot"></span>
+        <span class="svc-eyebrow-lbl">02 · Servicios</span>
+      </div>
+      <h2 class="svc-headline">Cuatro formas de trabajar juntos<span class="em">.</span></h2>
+    </div>
+    <div class="svc-scroll-hint">
+      <div class="svc-counter">
+        <span class="svc-counter-cur" id="svc-cur">01</span> / 04
+      </div>
+      <div class="svc-dots" id="svc-dots">
+        <span class="svc-dot active" data-idx="0"></span>
+        <span class="svc-dot" data-idx="1"></span>
+        <span class="svc-dot" data-idx="2"></span>
+        <span class="svc-dot" data-idx="3"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Track -->
+  <div class="svc-track-wrap" id="svc-track-wrap">
+    <div class="svc-track" id="svc-track">
+
+      <!-- CARD 1 · IDENTIDAD -->
+      <div class="svc-card">
+        <!-- IMAGEN: reemplazar background-color por background-image: url('ruta/identidad.jpg'); background-size: cover; background-position: center; -->
+        <div class="svc-card-img"></div>
+        <div class="svc-card-gradient"></div>
+        <span class="svc-card-num">01</span>
+        <div class="svc-card-body">
+          <span class="svc-card-tag">Marca · Sistemas</span>
+          <div class="svc-card-name">Identidad de marca</div>
+          <p class="svc-card-desc">Logo, sistema tipográfico, paleta y manual. Desde el primer boceto hasta los archivos finales listos para usar.</p>
+          <div class="svc-card-footer">
+            <div class="svc-card-price">desde $890 <span>· 3–12 semanas</span></div>
+            <a href="?paquete=identidad" data-drawer-target="identidad" class="svc-card-btn">
+              Ver paquetes
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 · WEB -->
+      <div class="svc-card">
+        <!-- IMAGEN: reemplazar background-color por background-image: url('ruta/web.jpg'); background-size: cover; background-position: center; -->
+        <div class="svc-card-img"></div>
+        <div class="svc-card-gradient"></div>
+        <span class="svc-card-num">02</span>
+        <div class="svc-card-body">
+          <span class="svc-card-tag">Digital · Webflow</span>
+          <div class="svc-card-name">Diseño web</div>
+          <p class="svc-card-desc">Landing pages, sitios institucionales y e-commerce. Diseño en Figma, desarrollo en Webflow. Sin plantillas.</p>
+          <div class="svc-card-footer">
+            <div class="svc-card-price">desde $680 <span>· 2–8 semanas</span></div>
+            <a href="?paquete=web" data-drawer-target="web" class="svc-card-btn">
+              Ver paquetes
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 · CONTENIDO -->
+      <div class="svc-card">
+        <!-- IMAGEN: reemplazar background-color por background-image: url('ruta/contenido.jpg'); background-size: cover; background-position: center; -->
+        <div class="svc-card-img"></div>
+        <div class="svc-card-gradient"></div>
+        <span class="svc-card-num">03</span>
+        <div class="svc-card-body">
+          <span class="svc-card-tag">Redes · Piezas</span>
+          <div class="svc-card-name">Contenido gráfico</div>
+          <p class="svc-card-desc">Campañas, decks y brand kits. Piezas que extienden tu identidad de forma coherente, sin improvisar estilos.</p>
+          <div class="svc-card-footer">
+            <div class="svc-card-price">desde $490 <span>· 1–4 semanas</span></div>
+            <a href="?paquete=publicitario" data-drawer-target="publicitario" class="svc-card-btn">
+              Ver paquetes
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 · RETAINER -->
+      <div class="svc-card">
+        <!-- IMAGEN: reemplazar background-color por background-image: url('ruta/retainer.jpg'); background-size: cover; background-position: center; -->
+        <div class="svc-card-img"></div>
+        <div class="svc-card-gradient"></div>
+        <span class="svc-card-num">04</span>
+        <div class="svc-card-body">
+          <span class="svc-card-tag popular">Más pedido</span>
+          <div class="svc-card-name">Retainer de diseño</div>
+          <p class="svc-card-desc">Capacidad dedicada cada mes. Canal Slack directo, prioridad garantizada y sin sorpresas en la factura.</p>
+          <div class="svc-card-footer">
+            <div class="svc-card-price">$690 <span>/ mes · mín. 3 meses</span></div>
+            <a href="?paquete=retainer" data-drawer-target="retainer" class="svc-card-btn">
+              Ver paquetes
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Arrow nav -->
+  <div class="svc-arrows">
+    <button class="svc-arrow" id="svc-prev" aria-label="Anterior" disabled>
+      <svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5"/></svg>
+    </button>
+    <button class="svc-arrow" id="svc-next" aria-label="Siguiente">
+      <svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5"/></svg>
+    </button>
+  </div>
+
+</section>
+
+<!-- ══ PROCESO ══ -->
+<section class="proceso-section">
+  <div class="wrap">
+    <div class="proceso-header">
+      <div>
+        <div class="sm">
+          <span class="sm-dot"></span>
+          <span class="sm-lbl">02 — Cómo trabajamos</span>
+        </div>
+        <h2 class="section-headline">Mismo proceso<br>para todos los paquetes<span class="em">.</span></h2>
+      </div>
+      <div>
+        <p class="section-lede">Sin sorpresas en el camino. Cada etapa tiene un entregable claro, una fecha y una decisión que te corresponde a ti.</p>
+      </div>
+    </div>
+    <div class="proceso-steps">
+      <div class="proceso-step">
+        <div class="proceso-step-photo">Foto</div>
+        <div class="proceso-step-body">
+          <div class="step-num">01</div>
+          <div class="step-title">Descubrimiento</div>
+          <p class="step-desc">Llamada de 30 min. Entendemos el negocio, los usuarios y los objetivos — no solo el gusto estético.</p>
+        </div>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-step-photo">Foto</div>
+        <div class="proceso-step-body">
+          <div class="step-num">02</div>
+          <div class="step-title">Dirección</div>
+          <p class="step-desc">Dos rutas creativas distintas. Eliges una dirección, ajustamos el enfoque, iteramos sobre esa sola ruta.</p>
+        </div>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-step-photo">Foto</div>
+        <div class="proceso-step-body">
+          <div class="step-num">03</div>
+          <div class="step-title">Diseño</div>
+          <p class="step-desc">Desarrollo completo del sistema y sus aplicaciones. Revisiones organizadas, no cambios ad-hoc por WhatsApp.</p>
+        </div>
+      </div>
+      <div class="proceso-step">
+        <div class="proceso-step-photo">Foto</div>
+        <div class="proceso-step-body">
+          <div class="step-num">04</div>
+          <div class="step-title">Entrega</div>
+          <p class="step-desc">Archivos organizados por plataforma, manual de uso y 30 días de soporte post-entrega sin costo adicional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq-section">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div>
+        <div class="sm">
+          <span class="sm-dot"></span>
+          <span class="sm-lbl">03 — Preguntas frecuentes</span>
+        </div>
+        <h2 class="section-headline">Lo que nos preguntan<br>antes de contratar<span class="em">.</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item open">
+          <div class="faq-q">
+            <span class="faq-q-text">¿Los precios incluyen impuestos?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Los precios son netos en USD. Si facturamos desde Japón, aplica el consumo japonés (10%) solo para clientes en Japón. Para LATAM y España, facturamos como servicio de exportación sin IVA local.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">¿Cómo funciona el pago si estoy en otro país?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Aceptamos transferencia bancaria internacional, Wise y tarjeta vía Stripe. Para proyectos sobre $1,000 pedimos 50% al inicio y 50% en la entrega final. Para retainers, la factura es mensual.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">¿Qué pasa si no me gusta ninguna de las propuestas iniciales?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Antes de diseñar hacemos una sesión de alineación estratégica. Si aun así las propuestas no te convencen, iteramos hasta encontrar la dirección correcta dentro del número de rondas acordado. Si el problema viene de un cambio de brief de tu lado, eso se cotiza aparte — lo cual es justo para ambos.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">¿La diferencia horaria con Japón es un problema?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">No. Tenemos clientes en LATAM, España y Japón operando en simultáneo. Usamos un sistema de trabajo asíncrono por etapas: cuando tú duermes, avanzamos; cuando despiertas, tienes algo nuevo para revisar. Las llamadas las coordinamos en horarios que funcionan para los dos lados.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">¿Me entregan los archivos editables?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Sí. Entregamos todos los archivos fuente: Figma, archivos AI/PDF vectoriales y fuentes. No ponemos trabas de licencia. La marca es tuya.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-final" id="contacto">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <div class="sm" style="--mist: rgba(139,157,183,0.5);">
+          <span class="sm-dot"></span>
+          <span class="sm-lbl" style="color: rgba(139,157,183,0.5);">04 — Empecemos</span>
+        </div>
+        <h2 class="cta-headline">Cuéntanos qué<br>tienes en mente<span style="color:var(--ember)">.</span></h2>
+        <p class="cta-lede">Respondemos en menos de 24 horas. Llamada de descubrimiento gratis y sin compromiso.</p>
+        <div class="cta-btns">
+          <a href="https://wa.me/817022124910" class="btn btn-ember">Escribir por WhatsApp →</a>
+          <a href="mailto:contacto@nozoestudio.com" class="btn btn-ghost">Email</a>
+        </div>
+      </div>
+      <div class="cta-contact">
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">Tokio (主拠点)</span>
+          <span class="cta-contact-val">contacto@nozoestudio.com</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">WhatsApp</span>
+          <span class="cta-contact-val">+81 70 2212 4910</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">Idiomas</span>
+          <span class="cta-contact-val">Español · Português</span>
+        </div>
+        <div class="cta-stamp">東京・リマ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="height:26px; width:auto; filter:brightness(0) invert(1);">
+    <div class="footer-copy">© 2026 Nozoe Studio · 東京・リマ</div>
+    <div class="footer-social">
+      <a href="#">Behance</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Slider: dots + contador sincronizados ──
+const trackWrap = document.getElementById('svc-track-wrap');
+const dots      = document.querySelectorAll('.svc-dot');
+const cards     = document.querySelectorAll('.svc-card');
+const curEl     = document.getElementById('svc-cur');
+
+function getCardWidth() {
+  return cards.length ? cards[0].offsetWidth + 12 : 0; // width + gap
+}
+
+function getActiveIdx() {
+  const cw = getCardWidth();
+  return cw ? Math.round(trackWrap.scrollLeft / cw) : 0;
+}
+
+const prevBtn = document.getElementById('svc-prev');
+const nextBtn = document.getElementById('svc-next');
+
+function updateUI() {
+  if (!trackWrap || !cards.length) return;
+  const idx = getActiveIdx();
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  if (curEl) curEl.textContent = String(idx + 1).padStart(2, '0');
+  if (prevBtn) prevBtn.disabled = idx === 0;
+  if (nextBtn) nextBtn.disabled = idx === cards.length - 1;
+}
+
+if (trackWrap) {
+  trackWrap.addEventListener('scroll', updateUI, { passive: true });
+  updateUI();
+
+  // arrow click → prev / next card
+  if (prevBtn) prevBtn.addEventListener('click', () => {
+    const idx = Math.max(0, getActiveIdx() - 1);
+    trackWrap.scrollTo({ left: idx * getCardWidth(), behavior: 'smooth' });
+  });
+  if (nextBtn) nextBtn.addEventListener('click', () => {
+    const idx = Math.min(cards.length - 1, getActiveIdx() + 1);
+    trackWrap.scrollTo({ left: idx * getCardWidth(), behavior: 'smooth' });
+  });
+
+  // dot click → scroll to card
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.dataset.idx, 10);
+      trackWrap.scrollTo({ left: idx * getCardWidth(), behavior: 'smooth' });
+    });
+  });
+
+  // drag-to-scroll (mouse)
+  let isDragging = false, startX, startScrollLeft;
+  trackWrap.addEventListener('mousedown', e => {
+    isDragging = true;
+    startX = e.pageX - trackWrap.offsetLeft;
+    startScrollLeft = trackWrap.scrollLeft;
+    trackWrap.style.userSelect = 'none';
+  });
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    trackWrap.style.userSelect = '';
+  });
+  trackWrap.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x    = e.pageX - trackWrap.offsetLeft;
+    const walk = (x - startX) * 1.4;
+    trackWrap.scrollLeft = startScrollLeft - walk;
+  });
+}
+
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item    = q.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// ── Scroll-reveal ──
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.anim').forEach(el => revealObserver.observe(el));
+
+const navHam = document.getElementById('nav-ham');
+const navMenu = document.querySelector('.nav-links');
+if (navHam && navMenu) {
+  navHam.addEventListener('click', () => navMenu.classList.toggle('open'));
+}
+</script>
+
+<!-- ══ DRAWERS DE SERVICIOS ══ -->
+<aside class="drawer" id="drawer-identidad" role="dialog" aria-modal="true" aria-labelledby="drawer-identidad-title">
+  <div class="drawer-overlay" data-drawer-close></div>
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <div class="drawer-eyebrow">
+        <span class="drawer-eyebrow-dot"></span>
+        <span class="drawer-eyebrow-lbl">01 · Marca · Sistemas</span>
+      </div>
+      <button class="drawer-close" data-drawer-close aria-label="Cerrar">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="drawer-content">
+      <div class="drawer-tag">Identidad de marca</div>
+      <h2 class="drawer-headline" id="drawer-identidad-title">Tu marca, construida<br>para durar <em>cinco años.</em></h2>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Paquetes</div>
+
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Esencial</div><div class="drawer-pkg-price">desde $890</div></div>
+          <div class="drawer-pkg-meta">3–5 semanas</div>
+          <p class="drawer-pkg-desc">Logo + paleta + tipografía. Para arrancar con un sistema visual sólido y aplicaciones básicas listas para usar.</p>
+        </div>
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Sistema completo</div><div class="drawer-pkg-price">desde $1,800</div></div>
+          <div class="drawer-pkg-meta">8–12 semanas</div>
+          <p class="drawer-pkg-desc">Identidad completa, manual de marca, papelería y plantillas. El equipo aplica el sistema sin improvisar estilos.</p>
+        </div>
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Rediseño</div><div class="drawer-pkg-price">desde $1,200</div></div>
+          <div class="drawer-pkg-meta">5–8 semanas</div>
+          <p class="drawer-pkg-desc">Auditoría visual + evolución de la identidad existente. Mantenemos el reconocimiento, ajustamos lo que ya no funciona.</p>
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Entregables incluidos</div>
+        <ul class="drawer-list">
+          <li>Archivos en AI, EPS, SVG y PDF</li>
+          <li>Manual de uso en PDF</li>
+          <li>Brandbook digital</li>
+          <li>Guía de aplicaciones</li>
+        </ul>
+      </div>
+
+      <div class="drawer-cta">
+        <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
+        <a href="https://wa.me/817022124910" class="drawer-cta-btn" target="_blank" rel="noopener">WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<aside class="drawer" id="drawer-web" role="dialog" aria-modal="true" aria-labelledby="drawer-web-title">
+  <div class="drawer-overlay" data-drawer-close></div>
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <div class="drawer-eyebrow">
+        <span class="drawer-eyebrow-dot"></span>
+        <span class="drawer-eyebrow-lbl">02 · Digital · Webflow</span>
+      </div>
+      <button class="drawer-close" data-drawer-close aria-label="Cerrar">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="drawer-content">
+      <div class="drawer-tag">Diseño web</div>
+      <h2 class="drawer-headline" id="drawer-web-title">Un sitio que vende <em>mientras duermes.</em></h2>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Paquetes</div>
+
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Landing</div><div class="drawer-pkg-price">desde $680</div></div>
+          <div class="drawer-pkg-meta">2–3 semanas</div>
+          <p class="drawer-pkg-desc">1 página, diseño Figma + desarrollo Webflow, dominio conectado y formulario operativo.</p>
+        </div>
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Sitio institucional</div><div class="drawer-pkg-price">desde $1,400</div></div>
+          <div class="drawer-pkg-meta">4–6 semanas</div>
+          <p class="drawer-pkg-desc">Hasta 6 páginas, CMS configurable, optimización SEO base y analytics conectados.</p>
+        </div>
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">E-commerce</div><div class="drawer-pkg-price">desde $2,200</div></div>
+          <div class="drawer-pkg-meta">6–8 semanas</div>
+          <p class="drawer-pkg-desc">Tienda en Webflow o Shopify, hasta 50 productos, pasarela de pago integrada y guía de carga del catálogo.</p>
+        </div>
+      </div>
+
+      <blockquote class="drawer-quote">"Sin plantillas. Cada sitio se diseña desde cero en Figma."</blockquote>
+
+      <div class="drawer-cta">
+        <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
+        <a href="https://wa.me/817022124910" class="drawer-cta-btn" target="_blank" rel="noopener">WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<aside class="drawer" id="drawer-publicitario" role="dialog" aria-modal="true" aria-labelledby="drawer-publicitario-title">
+  <div class="drawer-overlay" data-drawer-close></div>
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <div class="drawer-eyebrow">
+        <span class="drawer-eyebrow-dot"></span>
+        <span class="drawer-eyebrow-lbl">03 · Impreso · Digital</span>
+      </div>
+      <button class="drawer-close" data-drawer-close aria-label="Cerrar">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="drawer-content">
+      <div class="drawer-tag">Diseño publicitario</div>
+      <h2 class="drawer-headline" id="drawer-publicitario-title">Piezas que paran el ojo.<br>En papel <em>o en pantalla.</em></h2>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Paquetes</div>
+
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Pieza única</div><div class="drawer-pkg-price">desde $80</div></div>
+          <div class="drawer-pkg-meta">3–5 días</div>
+          <p class="drawer-pkg-desc">1 formato (flyer, póster, anuncio digital o valla) en 2 propuestas y 1 ronda de ajustes. Entrega en todos los formatos técnicos.</p>
+        </div>
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Campaña</div><div class="drawer-pkg-price">desde $490</div></div>
+          <div class="drawer-pkg-meta">1–2 semanas</div>
+          <p class="drawer-pkg-desc">Concepto gráfico unificado y hasta 5 formatos distintos (print y digital). Adaptaciones para redes, prensa y punto de venta.</p>
+        </div>
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Sistema publicitario</div><div class="drawer-pkg-price">desde $890</div></div>
+          <div class="drawer-pkg-meta">2–4 semanas</div>
+          <p class="drawer-pkg-desc">Identidad de campaña completa. Hasta 10 piezas: vallas, flyers, posts, banners web, stories, anuncios impresos. Manual de uso de campaña.</p>
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Entregables incluidos</div>
+        <ul class="drawer-list">
+          <li>PDF de impresión (300dpi + sangría)</li>
+          <li>PNG pantalla (72dpi)</li>
+          <li>Formatos editables en AI o Figma</li>
+        </ul>
+      </div>
+
+      <blockquote class="drawer-quote">"No adaptamos plantillas de Canva. Cada pieza se construye desde el concepto de tu marca."</blockquote>
+
+      <div class="drawer-cta">
+        <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
+        <a href="https://wa.me/817022124910" class="drawer-cta-btn" target="_blank" rel="noopener">WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<aside class="drawer" id="drawer-retainer" role="dialog" aria-modal="true" aria-labelledby="drawer-retainer-title">
+  <div class="drawer-overlay" data-drawer-close></div>
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <div class="drawer-eyebrow">
+        <span class="drawer-eyebrow-dot"></span>
+        <span class="drawer-eyebrow-lbl" style="color:var(--ember);">04 · Más pedido</span>
+      </div>
+      <button class="drawer-close" data-drawer-close aria-label="Cerrar">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <div class="drawer-content">
+      <div class="drawer-tag popular">Retainer de contenido visual</div>
+      <h2 class="drawer-headline" id="drawer-retainer-title">Tu diseñador de contenido,<br><em>activo cada mes.</em></h2>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Paquetes</div>
+
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Esencial</div><div class="drawer-pkg-price">$200/mes</div></div>
+          <div class="drawer-pkg-meta">8 piezas/mes</div>
+          <p class="drawer-pkg-desc">8 piezas digitales (posts o stories para redes). Ideal para mantener presencia mínima y coherente.</p>
+        </div>
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Profesional</div><div class="drawer-pkg-price">$300/mes</div></div>
+          <div class="drawer-pkg-meta">12 piezas/mes</div>
+          <p class="drawer-pkg-desc">12 piezas digitales (mix de posts, stories y thumbnails). Para creadores de contenido o marcas con publicación frecuente.</p>
+        </div>
+        <div class="drawer-pkg">
+          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Integral</div><div class="drawer-pkg-price">$500/mes</div></div>
+          <div class="drawer-pkg-meta">16 piezas/mes</div>
+          <p class="drawer-pkg-desc">16 piezas: posts + stories + 1 pieza impresa mensual + 1 banner web. Para negocios con campañas activas en múltiples canales.</p>
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Condiciones aplicables</div>
+        <ul class="drawer-list">
+          <li>Mínimo 3 meses. Las piezas no usadas en el mes no se acumulan.</li>
+          <li>Plazo de entrega: 48–72 h por pieza desde la aprobación del brief.</li>
+          <li>Hasta 2 rondas de ajustes incluidas por pieza.</li>
+          <li>Solicitudes durante la semana, producción concentrada en bloques de fin de semana.</li>
+        </ul>
+      </div>
+
+      <blockquote class="drawer-quote">"No pagas horas. Pagas resultados: un número concreto de piezas listas para publicar."</blockquote>
+
+      <div class="drawer-cta">
+        <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
+        <a href="https://wa.me/817022124910" class="drawer-cta-btn" target="_blank" rel="noopener">WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function() {
+  const SLUG_TO_ID = { identidad: 'drawer-identidad', web: 'drawer-web', publicitario: 'drawer-publicitario', retainer: 'drawer-retainer' };
+  const ID_TO_SLUG = Object.fromEntries(Object.entries(SLUG_TO_ID).map(([k,v]) => [v,k]));
+  const drawers = document.querySelectorAll('.drawer');
+
+  function openDrawer(id, updateUrl) {
+    const d = document.getElementById(id);
+    if (!d) return;
+    drawers.forEach(x => x.classList.remove('active'));
+    d.classList.add('active');
+    document.body.classList.add('drawer-open');
+    if (updateUrl && ID_TO_SLUG[id]) {
+      history.replaceState(null, '', '?paquete=' + ID_TO_SLUG[id]);
+    }
+  }
+  function closeDrawer() {
+    drawers.forEach(d => d.classList.remove('active'));
+    document.body.classList.remove('drawer-open');
+    history.replaceState(null, '', window.location.pathname);
+  }
+
+  document.querySelectorAll('[data-drawer-target]').forEach(t => {
+    t.addEventListener('click', e => {
+      e.preventDefault();
+      const slug = t.dataset.drawerTarget;
+      if (SLUG_TO_ID[slug]) openDrawer(SLUG_TO_ID[slug], true);
+    });
+  });
+  document.querySelectorAll('[data-drawer-close]').forEach(b => {
+    b.addEventListener('click', closeDrawer);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeDrawer();
+  });
+
+  // Auto-abrir desde ?paquete=X o #X al cargar
+  const params = new URLSearchParams(window.location.search);
+  const fromQuery = params.get('paquete');
+  const fromHash = window.location.hash.replace('#', '');
+  const slug = (fromQuery && SLUG_TO_ID[fromQuery]) ? fromQuery : (SLUG_TO_ID[fromHash] ? fromHash : null);
+  if (slug) setTimeout(() => openDrawer(SLUG_TO_ID[slug], false), 250);
+})();
+</script>
+
+</body>
+</html>

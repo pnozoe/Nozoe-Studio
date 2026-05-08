@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nozoe Studio · Diseño bicultural desde Tokio</title>
+<meta name="description" content="Estudio de diseño desde Tokio para emprendedores de habla hispana en todo el mundo. Identidad, web y contenido — +40 proyectos, 6+ años de oficio.">
+<meta property="og:title" content="Nozoe Studio · Diseño bicultural desde Tokio">
+<meta property="og:description" content="Marcas que hablan dos culturas sin elegir una. Diseño para emprendedores en Japón, Perú y Brasil.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.webp">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+
+<template id="__bundler_thumbnail" data-bg-color="#F4F1EC">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <!-- Nav bar -->
+    <rect x="0" y="0" width="1200" height="56" fill="#F4F1EC"/>
+    <rect x="0" y="55" width="1200" height="1" fill="#C6D5EA" opacity="0.6"/>
+    <!-- Logo placeholder -->
+    <rect x="80" y="18" width="120" height="20" rx="2" fill="#1D2A40" opacity="0.85"/>
+    <!-- Nav links -->
+    <rect x="480" y="22" width="48" height="10" rx="2" fill="#8B9DB7" opacity="0.5"/>
+    <rect x="544" y="22" width="48" height="10" rx="2" fill="#8B9DB7" opacity="0.5"/>
+    <rect x="608" y="22" width="56" height="10" rx="2" fill="#8B9DB7" opacity="0.5"/>
+    <!-- CTA pill -->
+    <rect x="1060" y="14" width="76" height="28" rx="4" fill="#1D2A40"/>
+
+    <!-- Hero left -->
+    <rect x="80" y="120" width="90" height="8" rx="2" fill="#8B9DB7" opacity="0.5"/>
+    <rect x="80" y="178" width="480" height="56" rx="2" fill="#1D2A40" opacity="0.9"/>
+    <rect x="80" y="246" width="420" height="56" rx="2" fill="#1D2A40" opacity="0.9"/>
+    <rect x="88" y="316" width="380" height="56" rx="2" fill="#475773" opacity="0.7"/>
+    <!-- Lede lines -->
+    <rect x="80" y="408" width="360" height="10" rx="2" fill="#8B9DB7" opacity="0.45"/>
+    <rect x="80" y="426" width="320" height="10" rx="2" fill="#8B9DB7" opacity="0.35"/>
+    <rect x="80" y="444" width="340" height="10" rx="2" fill="#8B9DB7" opacity="0.35"/>
+    <!-- CTA buttons -->
+    <rect x="80" y="500" width="140" height="44" rx="4" fill="#1D2A40"/>
+    <rect x="236" y="516" width="120" height="12" rx="2" fill="#1D2A40" opacity="0.4"/>
+
+    <!-- Hero right: tall image placeholder -->
+    <rect x="700" y="100" width="420" height="540" rx="4" fill="#ECE7DF" stroke="#C6D5EA" stroke-width="1"/>
+    <!-- diagonal lines texture -->
+    <line x1="700" y1="180" x2="780" y2="100" stroke="#C6D5EA" stroke-width="1" opacity="0.5"/>
+    <line x1="700" y1="280" x2="880" y2="100" stroke="#C6D5EA" stroke-width="1" opacity="0.5"/>
+    <line x1="700" y1="380" x2="980" y2="100" stroke="#C6D5EA" stroke-width="1" opacity="0.5"/>
+    <line x1="700" y1="480" x2="1080" y2="100" stroke="#C6D5EA" stroke-width="1" opacity="0.5"/>
+    <line x1="780" y1="640" x2="1120" y2="300" stroke="#C6D5EA" stroke-width="1" opacity="0.5"/>
+
+    <!-- Trust bar -->
+    <rect x="0" y="660" width="1200" height="44" fill="#ECE7DF"/>
+    <rect x="0" y="660" width="1200" height="1" fill="#C6D5EA" opacity="0.6"/>
+    <rect x="80" y="677" width="180" height="8" rx="2" fill="#8B9DB7" opacity="0.5"/>
+    <!-- flag dots -->
+    <rect x="296" y="677" width="14" height="10" rx="1" fill="#E94E1B"/>
+    <rect x="326" y="677" width="14" height="10" rx="1" fill="#2E9B5E"/>
+    <!-- ember dot accent -->
+    <circle cx="600" cy="52" r="3" fill="#E94E1B" opacity="0.8"/>
+  </svg>
+</template>
+<style>
+/* ─── Tokens ─── */
+:root {
+  --ink:        #1D2A40;
+  --ink-700:    #243450;
+  --ink-950:    #0A1119;
+  --slate:      #475773;
+  --mist:       #8B9DB7;
+  --sky:        #C6D5EA;
+  --warm:       #F4F1EC;
+  --warm-300:   #ECE7DF;
+  --warm-400:   #E0D9CD;
+  --ember:      #E94E1B;
+  --ember-h:    #D14418;
+  --sans: 'Nunito', ui-sans-serif, sans-serif;
+  --jp:   'Noto Sans JP', 'Nunito', sans-serif;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+body {
+  font-family: var(--sans);
+  background: var(--warm);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* dot-grid texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(29,42,64,0.042) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Layout helpers ─── */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.g12 {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  column-gap: 24px;
+}
+
+.hairline { height: 1px; background: rgba(139,157,183,0.28); }
+
+/* ─── Section mark ─── */
+.sm {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+.sm-num  { font: 300 12px/1 var(--sans); letter-spacing: 0.04em; color: var(--slate); }
+.sm-rule { width: 1px; height: 12px; background: var(--mist); opacity: 0.5; }
+.sm-lbl  { font: 600 10px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--mist); }
+
+/* ─── Links ─── */
+.tlink {
+  font: 600 13px/1 var(--sans);
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.tlink::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--sky);
+  transition: background 150ms var(--ease);
+}
+.tlink:hover::after { background: var(--ink); }
+.tlink .arr { display: inline-block; margin-left: 4px; transition: transform 200ms var(--ease); }
+.tlink:hover .arr { transform: translateX(3px); }
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 26px;
+  border: none;
+  border-radius: 4px;
+  font: 600 14px/1 var(--sans);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 150ms var(--ease), transform 150ms var(--ease);
+}
+.btn-ember { background: var(--ember); color: #fff; }
+.btn-ember:hover { background: var(--ember-h); transform: translateY(-1px); }
+.btn-ember:active { transform: translateY(0); background: #B83C15; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--sky);
+  height: 48px;
+}
+.btn-ghost:hover { border-color: var(--ink); }
+
+.btn-ink { background: var(--ink); color: var(--warm); }
+.btn-ink:hover { background: var(--ink-700); transform: translateY(-1px); }
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--warm) 88%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(139,157,183,0.22);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.nav-logo img { height: 30px; width: auto; display: block; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-link {
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-decoration: none;
+  padding: 0 14px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: color 120ms var(--ease), background 120ms var(--ease);
+}
+.nav-link:hover { color: var(--ink); background: rgba(29,42,64,0.05); }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 16px;
+  background: var(--ink);
+  color: var(--warm);
+  font: 600 12px/1 var(--sans);
+  border-radius: 4px;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background 120ms var(--ease);
+}
+.nav-cta:hover { background: var(--ink-700); }
+
+/* WhatsApp icon (inline SVG path) */
+.wa-dot {
+  width: 8px; height: 8px;
+  background: #25D366;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 96px 0 0;
+}
+
+.hero-grid {
+  grid-template-columns: 7fr 5fr;
+  align-items: start;
+  gap: 0 64px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 96px;
+}
+
+.hero-headline {
+  font: 800 clamp(3.2rem, 5.5vw, 5rem)/0.97 var(--sans);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+.hl-a { display: block; }
+.hl-b { display: block; }
+.hl-c { display: block; padding-left: 0.06em; color: var(--slate); }
+.hl-em { color: var(--ember); }
+
+.hero-lede {
+  font: 300 17px/1.7 var(--sans);
+  color: var(--slate);
+  max-width: 50ch;
+  margin-bottom: 48px;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Right: image placeholder + project tag stack */
+.hero-right {
+  padding-top: 0;
+  padding-bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-img-frame {
+  border: 1px solid rgba(139,157,183,0.3);
+  border-radius: 4px;
+  background: var(--warm-300);
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-img-frame::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg, transparent, transparent 18px,
+    rgba(139,157,183,0.07) 18px, rgba(139,157,183,0.07) 19px
+  );
+}
+.hero-img-frame::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 35% 65%, rgba(29,42,64,0.08) 0%, transparent 60%);
+}
+.img-ph-lbl {
+  font: 300 10px/1 var(--sans);
+  letter-spacing: 0.12em;
+  color: var(--mist);
+  writing-mode: vertical-rl;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-img-cap {
+  font: 300 10px/1 var(--sans);
+  letter-spacing: 0.1em;
+  color: var(--mist);
+  opacity: 0.7;
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-stamp { font: 300 12px/1 var(--jp); letter-spacing: 0.08em; color: var(--mist); }
+.hero-credit { font: 300 11px/1 var(--sans); color: var(--mist); opacity: 0.65; }
+
+/* ══════════════════════════════════════
+   TRUST BAR
+══════════════════════════════════════ */
+.trust {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(139,157,183,0.28);
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+  background: var(--warm-300);
+}
+.trust-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.trust-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.trust-lbl {
+  font: 600 10px/1 var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.trust-flag {
+  width: 14px; height: 10px;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+.trust-market {
+  font: 800 10px/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.trust-sep {
+  width: 1px; height: 20px;
+  background: rgba(139,157,183,0.35);
+}
+.trust-stat {
+  font: 600 10px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.trust-stat b { color: var(--ink); font-weight: 800; }
+.trust-stat .accent { color: var(--ember); }
+
+/* ══════════════════════════════════════
+   SERVICIOS
+══════════════════════════════════════ */
+.servicios {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  padding: 96px 0;
+}
+
+/* Tokens on dark bg */
+.servicios .sm-num  { color: rgba(198,213,234,0.55); }
+.servicios .sm-rule { background: rgba(139,157,183,0.4); }
+.servicios .sm-lbl  { color: rgba(139,157,183,0.7); }
+
+.svc-intro { padding-bottom: 72px; align-items: end; }
+.svc-intro-left  { grid-column: 1 / 7; }
+.svc-intro-right {
+  grid-column: 9 / 13;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4px;
+}
+
+.section-headline {
+  font: 800 clamp(2.4rem, 4vw, 3.5rem)/1.05 var(--sans);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 24px;
+  text-wrap: balance;
+}
+
+.section-lede {
+  font: 400 15px/1.7 var(--sans);
+  color: var(--slate);
+  max-width: 52ch;
+}
+
+/* ── Service cards: 2×2 grid ── */
+.svc-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.svc-card {
+  background: var(--warm);
+  border: 1px solid rgba(198,213,234,0.35);
+  border-radius: 4px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  cursor: pointer;
+  transition: background 220ms var(--ease), border-color 220ms var(--ease);
+  min-height: 340px;
+  overflow: hidden;
+}
+
+.svc-card:hover {
+  background: var(--warm-300);
+  border-color: rgba(198,213,234,0.6);
+}
+
+.svc-card-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(198,213,234,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.svc-card-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent, transparent 18px,
+    rgba(29,42,64,0.05) 18px, rgba(29,42,64,0.05) 19px
+  );
+}
+.svc-card-img-label {
+  font: 300 10px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(29,42,64,0.22);
+  position: relative;
+  z-index: 1;
+}
+.svc-card-body {
+  padding: 32px 40px 36px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.svc-card-num {
+  font: 600 18px/1 var(--sans);
+  letter-spacing: 0.04em;
+  color: var(--ember);
+  margin-bottom: 24px;
+}
+
+.svc-card-title {
+  font: 800 clamp(2rem, 3vw, 2.8rem)/1.0 var(--sans);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.svc-card-desc {
+  font: 300 15px/1.65 var(--sans);
+  color: #475773;
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
+.svc-card-link {
+  font: 600 12px/1 var(--sans);
+  letter-spacing: 0.01em;
+  color: #475773;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+}
+.svc-card-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: rgba(71,87,115,0.3);
+  transition: background 150ms var(--ease);
+}
+.svc-card:hover .svc-card-link::after { background: var(--slate); }
+.svc-card-link .arr {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform 200ms var(--ease);
+}
+.svc-card:hover .svc-card-link .arr { transform: translateX(3px); }
+
+/* dark bg section-lede override */
+.svc-lede-dark {
+  font: 300 16px/1.7 var(--sans);
+  color: rgba(139,157,183,0.75);
+  max-width: 44ch;
+}
+/* dark headline override */
+.svc-headline-dark {
+  font: 800 clamp(2.4rem,4vw,3.5rem)/1.05 var(--sans);
+  letter-spacing: -0.025em;
+  color: var(--warm);
+  margin-bottom: 0;
+  text-wrap: balance;
+}
+
+/* ══════════════════════════════════════
+   TRABAJO RECIENTE
+══════════════════════════════════════ */
+.trabajo {
+  position: relative; z-index: 1;
+  padding: 96px 0;
+  border-top: 1px solid rgba(139,157,183,0.28);
+}
+
+.trabajo-intro { padding-bottom: 56px; align-items: end; }
+.tj-intro-left  { grid-column: 1 / 8; }
+.tj-intro-right { grid-column: 10 / 13; display: flex; justify-content: flex-end; align-items: flex-end; }
+
+/* Featured project */
+.tj-featured {
+  align-items: center;
+  padding: 64px 0;
+  border-top: 1px solid rgba(139,157,183,0.28);
+}
+.tj-feat-img   { grid-column: 1 / 8; }
+.tj-feat-body  {
+  grid-column: 8 / 13;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-left: 24px;
+}
+
+.project-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--warm-300);
+  border: 1px solid rgba(139,157,183,0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.project-img.dark { background: var(--ink); }
+.project-img.mid  { background: var(--slate); }
+.project-img.sky  { background: var(--sky); }
+.project-img.ember { background: var(--ember); }
+
+.project-img::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 65% 35%, rgba(233,78,27,0.35) 0%, transparent 60%);
+}
+.project-img.sky::before { background: radial-gradient(circle at 30% 65%, rgba(29,42,64,0.1) 0%, transparent 60%); }
+.project-img.ember::before { background: radial-gradient(circle at 70% 30%, rgba(29,42,64,0.2) 0%, transparent 60%); }
+.project-img.mid::before { background: radial-gradient(circle at 50% 50%, rgba(198,213,234,0.15) 0%, transparent 55%); }
+
+.pimg-lbl {
+  font: 300 10px/1 var(--sans);
+  letter-spacing: 0.12em;
+  color: var(--mist);
+  position: relative;
+  z-index: 1;
+}
+.project-img.dark .pimg-lbl  { color: rgba(198,213,234,0.6); }
+.project-img.mid .pimg-lbl   { color: rgba(198,213,234,0.6); }
+.project-img.ember .pimg-lbl { color: rgba(29,42,64,0.55); }
+
+.feat-tag {
+  font: 300 9px/1 var(--sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ember);
+}
+.feat-title {
+  font: 800 clamp(2rem,3vw,2.8rem)/1.05 var(--sans);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.feat-meta {
+  font: 300 12px/1 var(--sans);
+  color: var(--slate);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.meta-sep { color: var(--mist); }
+.feat-desc {
+  font: 400 14px/1.7 var(--sans);
+  color: var(--slate);
+  max-width: 40ch;
+}
+
+/* 2×2 grid */
+.tj-grid-wrap {
+  padding-top: 64px;
+  border-top: 1px solid rgba(139,157,183,0.28);
+}
+.tj-grid-label {
+  font: 600 10px/1 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 32px;
+}
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 32px;
+}
+
+.proj-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+.proj-cell-img {
+  border: 1px solid rgba(139,157,183,0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.proj-cell-img .project-img {
+  border: none;
+  border-radius: 0;
+  transition: transform 240ms var(--ease);
+}
+.proj-cell:hover .project-img { transform: scale(1.01); }
+.proj-cell-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform 200ms var(--ease);
+}
+.proj-cell:hover .proj-cell-meta { transform: translateY(-1px); }
+.proj-name {
+  font: 800 20px/1.2 var(--sans);
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.proj-tags {
+  font: 300 12px/1 var(--sans);
+  color: var(--slate);
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+/* ══════════════════════════════════════
+   PROCESO — dark surface
+══════════════════════════════════════ */
+.proceso {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  color: var(--warm);
+  padding: 96px 0;
+}
+.proceso .sm-num  { color: var(--sky); }
+.proceso .sm-rule { background: var(--mist); }
+.proceso .sm-lbl  { color: var(--mist); }
+.proceso .section-headline { color: var(--warm); margin-bottom: 0; }
+.proceso-hl-em { color: var(--ember); }
+
+.proceso-intro { padding-bottom: 72px; align-items: end; }
+.proc-intro-left  { grid-column: 1 / 7; }
+.proc-intro-right { grid-column: 8 / 13; display: flex; align-items: flex-end; }
+.proc-sub {
+  font: 300 15px/1.7 var(--sans);
+  color: var(--mist);
+  max-width: 46ch;
+}
+
+.proc-steps {
+  border-top: 1px solid rgba(139,157,183,0.2);
+}
+.proc-step {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  column-gap: 24px;
+  align-items: start;
+  border-bottom: 1px solid rgba(139,157,183,0.15);
+  padding: 40px 0;
+}
+.proc-step-num {
+  grid-column: 1 / 2;
+  font: 300 2.5rem/1 var(--sans);
+  letter-spacing: -0.03em;
+  color: var(--ember);
+  opacity: 0.7;
+}
+.proc-step-title {
+  grid-column: 2 / 5;
+  font: 800 20px/1.2 var(--sans);
+  letter-spacing: -0.015em;
+  color: var(--warm);
+  padding-top: 6px;
+}
+.proc-step-body {
+  grid-column: 5 / 10;
+  font: 400 14px/1.7 var(--sans);
+  color: var(--mist);
+  padding-top: 6px;
+}
+.proc-step-detail {
+  grid-column: 10 / 13;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 6px;
+}
+.proc-badge {
+  font: 600 10px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+  border: 1px solid rgba(139,157,183,0.3);
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+/* ══════════════════════════════════════
+   PAQUETES
+══════════════════════════════════════ */
+.paquetes {
+  position: relative; z-index: 1;
+  padding: 96px 0;
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+}
+
+.pkg-intro { padding-bottom: 64px; align-items: end; }
+.pkg-intro-left  { grid-column: 1 / 7; }
+.pkg-intro-right { grid-column: 9 / 13; display: flex; align-items: flex-end; justify-content: flex-end; }
+
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
+
+.pkg-card {
+  border: 1px solid rgba(139,157,183,0.35);
+  border-radius: 4px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  background: var(--warm);
+}
+.pkg-card.featured {
+  border: 2px solid var(--ink);
+}
+
+.pkg-badge {
+  position: absolute;
+  top: -12px; left: 20px;
+  background: var(--ember);
+  color: #fff;
+  font: 800 9px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 4px;
+}
+
+.pkg-name {
+  font: 800 18px/1 var(--sans);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.pkg-sub {
+  font: 300 12px/1 var(--sans);
+  color: var(--mist);
+  margin-bottom: 24px;
+}
+.pkg-price {
+  font: 800 2rem/1 var(--sans);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.pkg-price .unit { font: 600 13px/1 var(--sans); color: var(--mist); }
+.pkg-from { font: 300 11px/1 var(--sans); color: var(--mist); display: block; margin-bottom: 4px; }
+.pkg-time {
+  font: 300 11px/1 var(--sans);
+  color: var(--mist);
+  margin: 6px 0 24px;
+}
+.pkg-divider { height: 1px; background: rgba(139,157,183,0.2); margin-bottom: 16px; }
+.pkg-includes {
+  font: 400 12px/1.75 var(--sans);
+  color: var(--slate);
+  flex: 1;
+}
+
+/* TESTIMONIO eliminado */
+
+/* ══════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════ */
+.cta-final {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  color: var(--warm);
+  padding: 96px 0;
+}
+
+.cta-final .sm-num  { color: var(--sky); }
+.cta-final .sm-rule { background: var(--mist); }
+.cta-final .sm-lbl  { color: var(--mist); }
+
+.cta-grid { align-items: start; }
+.cta-left  { grid-column: 1 / 7; }
+.cta-right { grid-column: 8 / 13; display: flex; flex-direction: column; gap: 16px; padding-top: 4px; }
+
+.cta-headline {
+  font: 800 clamp(3rem,5vw,4.5rem)/0.97 var(--sans);
+  letter-spacing: -0.03em;
+  color: var(--warm);
+  margin-bottom: 28px;
+}
+.cta-lede {
+  font: 300 15px/1.7 var(--sans);
+  color: var(--mist);
+  max-width: 44ch;
+  margin-bottom: 40px;
+}
+.cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.cta-contact-item {
+  border-top: 1px solid rgba(139,157,183,0.2);
+  padding: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cta-contact-item:first-child { border-top: none; padding-top: 0; }
+.cta-contact-role {
+  font: 600 9px/1 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.cta-contact-val {
+  font: 300 14px/1 var(--sans);
+  color: var(--sky);
+  letter-spacing: 0.01em;
+}
+.cta-stamp {
+  margin-top: 32px;
+  font: 300 14px/1 var(--jp);
+  letter-spacing: 0.08em;
+  color: var(--mist);
+  opacity: 0.7;
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+.footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid rgba(139,157,183,0.22);
+  padding: 32px 0;
+  background: var(--ink);
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.footer-logo img { height: auto; width: 120px; filter: brightness(0) invert(1); display: block; }
+.footer-copy {
+  font: 300 11px/1.6 var(--sans);
+  color: rgba(198,213,234,0.5);
+  text-align: center;
+}
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+.footer-social a {
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(198,213,234,0.45);
+  text-decoration: none;
+  transition: color 120ms var(--ease);
+}
+.footer-social a:hover { color: var(--sky); }
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@media (prefers-reduced-motion: no-preference) {
+  .anim {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise 700ms var(--ease) forwards;
+  }
+  .d1 { animation-delay:  60ms; }
+  .d2 { animation-delay: 140ms; }
+  .d3 { animation-delay: 230ms; }
+  .d4 { animation-delay: 330ms; }
+  .d5 { animation-delay: 440ms; }
+
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .wrap { padding: 0 48px; }
+  .nav-inner { padding: 0 48px; }
+  .hero-bottom { padding: 20px 48px; }
+  .trust-inner { padding: 0 48px; }
+  .footer-inner { padding: 0 48px; }
+  .cta-right { grid-column: 8 / 13; }
+}
+
+@media (max-width: 900px) {
+  .wrap { padding: 0 32px; }
+  .nav-inner { padding: 0 32px; }
+  .hero-bottom { padding: 20px 32px; }
+  .trust-inner { padding: 0 32px; }
+
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-right { padding-bottom: 0; }
+  .hero-img-frame { aspect-ratio: 16/9; }
+
+  .g12 { grid-template-columns: 1fr; }
+  .svc-intro-left, .svc-intro-right { grid-column: 1 / -1; }
+  .svc-intro-right { justify-content: flex-start; padding-top: 0; }
+
+  .svc-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .svc-card { min-height: auto; }
+  .svc-card-body { padding: 24px 32px 28px; }
+
+  .tj-intro-left, .tj-intro-right { grid-column: 1 / -1; }
+  .tj-intro-right { justify-content: flex-start; }
+  .tj-feat-img, .tj-feat-body { grid-column: 1 / -1; }
+  .tj-feat-body { padding-left: 0; padding-top: 24px; }
+
+  .proc-intro-left, .proc-intro-right { grid-column: 1 / -1; }
+  .proc-step { grid-template-columns: auto 1fr; row-gap: 8px; }
+  .proc-step-num { grid-column: 1 / 2; grid-row: 1 / 2; }
+  .proc-step-title { grid-column: 2 / -1; grid-row: 1 / 2; }
+  .proc-step-body { grid-column: 1 / -1; grid-row: 2 / 3; }
+  .proc-step-detail { grid-column: 1 / -1; grid-row: 3 / 4; justify-content: flex-start; }
+
+  .pkg-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .pkg-intro-left, .pkg-intro-right { grid-column: 1 / -1; }
+
+  .testi-inner { grid-column: 1 / -1; }
+
+  .cta-left, .cta-right { grid-column: 1 / -1; }
+
+  .proj-grid { gap: 24px; }
+
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-inner, .footer { padding: 24px 32px; }
+}
+
+/* Hamburger button */
+.nav-ham {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 120ms;
+  flex-shrink: 0;
+}
+.nav-ham:hover { background: rgba(29,42,64,0.06); }
+.nav-ham span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--ink);
+}
+.nav-ham span:last-child { background: var(--ember); width: 65%; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; }
+  .trust-inner { flex-direction: column; height: auto; padding: 14px 20px; gap: 8px; }
+  .trust-sep { display: none; }
+  .hero-bottom { padding: 16px 20px; }
+  .hero-credit { display: none; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--warm);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid rgba(139,157,183,0.22);
+    z-index: 99;
+    gap: 4px;
+    box-shadow: 0 8px 24px rgba(29,42,64,0.1);
+  }
+  .nav-link { height: 44px; font-size: 13px; }
+  .nav-ham { display: flex; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .pkg-grid { max-width: none; }
+  .svc-cards { grid-template-columns: 1fr !important; }
+  .footer-inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="width: 193px; height: auto">
+    </a>
+    <div class="nav-links">
+      <a href="estudio.html"   class="nav-link">Estudio</a>
+      <a href="trabajo.html"   class="nav-link">Trabajo</a>
+      <a href="servicios.html" class="nav-link">Servicios</a>
+      <a href="contacto.html"  class="nav-link">Contacto</a>
+    </div>
+    <button class="nav-ham" id="nav-ham" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="contacto.html" class="nav-cta">
+      <span class="wa-dot"></span>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="g12 hero-grid">
+
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="sm anim d1">
+          <span class="sm-num">01</span>
+          <span class="sm-rule"></span>
+          <span class="sm-lbl">Desde Tokio &mdash; para el mundo de habla hispana</span>
+        </div>
+        <h1 class="hero-headline anim d2">
+          <span class="hl-a">Marcas que hablan</span>
+          <span class="hl-b">dos culturas</span>
+          <span class="hl-c">sin elegir una<span class="hl-em">.</span></span>
+        </h1>
+        <p class="hero-lede anim d3">
+          Somos un estudio de diseño con base en Tokio y mirada latina. Trabajamos con emprendedores en Japón, América y Europa que quieren una marca que no suene genérica — porque nosotros tampoco lo somos.
+        </p>
+        <div class="hero-cta anim d4">
+          <a href="#trabajo" class="btn btn-ink">Ver el trabajo <span style="margin-left:4px">→</span></a>
+          <a href="#contacto" class="tlink">Escríbenos por WhatsApp<span class="arr"> →</span></a>
+        </div>
+      </div>
+
+      <!-- Right: tall image placeholder -->
+      <div class="hero-right anim d3">
+        <div class="hero-img-frame">
+          <img src="assets/img/hero-home.webp" alt="Nozoe Studio — Proyecto hero" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+        </div>
+        <span class="hero-img-cap">TML Cipango · Tokio · 2024</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom stamp + hairline -->
+  <div class="hero-bottom">
+    <span class="hero-stamp">東京・リマ</span>
+    <span class="hero-credit">Diseño bicultural · +40 proyectos</span>
+  </div>
+  <div class="hairline" style="position:relative;z-index:1;"></div>
+</section>
+
+<!-- ══ TRUST BAR ══ -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-group">
+      <span class="trust-lbl">Diseño desde Japón para</span>
+      <div class="trust-flag" style="background:#E94E1B;"></div>
+      <span class="trust-market">LATAM</span>
+      <div class="trust-flag" style="background:#475773;"></div>
+      <span class="trust-market">EUROPA</span>
+      <div class="trust-flag" style="background:#8B9DB7;"></div>
+      <span class="trust-market">NORTEAMÉRICA</span>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-stat"><b>+40</b> proyectos</div>
+    <div class="trust-sep"></div>
+    <div class="trust-stat"><b>6<span class="accent">+</span></b> años de oficio</div>
+    <div class="trust-sep"></div>
+    <div class="trust-stat" style="font-family:var(--jp);">東京・リマ</div>
+  </div>
+</div>
+
+<!-- ══ SERVICIOS ══ -->
+<section class="servicios" id="servicios">
+  <div class="wrap">
+
+    <!-- Intro -->
+    <div class="g12 svc-intro">
+      <div class="svc-intro-left">
+        <div class="sm">
+          <span class="sm-num">02</span>
+          <span class="sm-rule"></span>
+          <span class="sm-lbl">Servicios</span>
+        </div>
+        <h2 class="svc-headline-dark">
+          Cuatro formas<br>de trabajar juntos.
+        </h2>
+      </div>
+      <div class="svc-intro-right">
+        <p class="svc-lede-dark">
+          Identidad, web, contenido y retainer — capas del mismo sistema,
+          diseñado para que tu marca funcione en cualquier canal y cultura.
+        </p>
+      </div>
+    </div>
+
+    <!-- Cards 2×2 -->
+    <div class="svc-cards">
+
+      <div class="svc-card">
+        <div class="svc-card-img"><span class="svc-card-img-label">imagen próximamente</span></div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">01</div>
+          <div class="svc-card-title">Identidad de marca</div>
+          <p class="svc-card-desc">
+            Logo, sistema tipográfico, paleta y manual.<br>
+            Marcas que se sostienen cinco años después.
+          </p>
+          <a href="servicios.html?paquete=identidad" class="svc-card-link">Ver paquetes<span class="arr"> →</span></a>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card-img"><span class="svc-card-img-label">imagen próximamente</span></div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">02</div>
+          <div class="svc-card-title">Diseño web</div>
+          <p class="svc-card-desc">
+            Landing pages, sitios institucionales y e-commerce.<br>
+            Diseño en Figma, desarrollo en Webflow.
+          </p>
+          <a href="servicios.html?paquete=web" class="svc-card-link">Ver paquetes<span class="arr"> →</span></a>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card-img"><span class="svc-card-img-label">imagen próximamente</span></div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">03</div>
+          <div class="svc-card-title">Contenido gráfico</div>
+          <p class="svc-card-desc">
+            Campañas, decks y brand kits.<br>
+            Piezas coherentes que extienden tu identidad.
+          </p>
+          <a href="servicios.html?paquete=publicitario" class="svc-card-link">Ver paquetes<span class="arr"> →</span></a>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card-img"><span class="svc-card-img-label">imagen próximamente</span></div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">04</div>
+          <div class="svc-card-title">Retainer de diseño</div>
+          <p class="svc-card-desc">
+            Capacidad dedicada cada mes. Canal directo,<br>
+            prioridad garantizada sin sorpresas en la factura.
+          </p>
+          <a href="servicios.html?paquete=retainer" class="svc-card-link">Ver paquetes<span class="arr"> →</span></a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ TRABAJO RECIENTE ══ -->
+<section class="trabajo" id="trabajo">
+  <div class="wrap">
+
+    <!-- Intro -->
+    <div class="g12 trabajo-intro">
+      <div class="tj-intro-left">
+        <div class="sm">
+          <span class="sm-num">03</span>
+          <span class="sm-rule"></span>
+          <span class="sm-lbl">Trabajo Reciente</span>
+        </div>
+        <h2 class="section-headline">
+          Casos,<br>no decoración.
+        </h2>
+      </div>
+      <div class="tj-intro-right">
+        <a href="#" class="tlink">Ver portafolio completo<span class="arr"> →</span></a>
+      </div>
+    </div>
+
+    <!-- Featured -->
+    <div class="g12 tj-featured">
+      <div class="tj-feat-img">
+        <div class="project-img dark" style="aspect-ratio:4/3;">
+          <span class="pimg-lbl">TML Cipango</span>
+        </div>
+      </div>
+      <div class="tj-feat-body">
+        <span class="feat-tag">Proyecto ancla</span>
+        <h3 class="feat-title">TML Cipango</h3>
+        <div class="feat-meta">
+          <span>Identidad + Web</span>
+          <span class="meta-sep">·</span>
+          <span>2024</span>
+          <span class="meta-sep">·</span>
+          <span>Tokio</span>
+        </div>
+        <p class="feat-desc">
+          Un año construyendo el sistema visual completo —
+          marca editorial bilingüe para una publicación cultural
+          que habita entre Tokio y Lima.
+        </p>
+        <a href="caso-tml.html" class="tlink">Ver caso de estudio<span class="arr"> →</span></a>
+      </div>
+    </div>
+
+    <!-- 2×2 grid -->
+    <div class="tj-grid-wrap">
+      <p class="tj-grid-label">Otros proyectos recientes</p>
+      <div class="proj-grid">
+
+        <a href="#" class="proj-cell">
+          <div class="proj-cell-img">
+            <div class="project-img sky" style="aspect-ratio:4/3;">
+              <span class="pimg-lbl">Casa Forma</span>
+            </div>
+          </div>
+          <div class="proj-cell-meta">
+            <div class="proj-name">Casa Forma</div>
+            <div class="proj-tags">
+              <span>Identidad</span>
+              <span class="meta-sep">·</span>
+              <span>2023</span>
+              <span class="meta-sep">·</span>
+              <span>Lima</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="proj-cell">
+          <div class="proj-cell-img">
+            <div class="project-img ember" style="aspect-ratio:4/3;">
+              <span class="pimg-lbl">Guaraná</span>
+            </div>
+          </div>
+          <div class="proj-cell-meta">
+            <div class="proj-name">Guaraná</div>
+            <div class="proj-tags">
+              <span>Packaging</span>
+              <span class="meta-sep">·</span>
+              <span>2024</span>
+              <span class="meta-sep">·</span>
+              <span>Brasil</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="proj-cell">
+          <div class="proj-cell-img">
+            <div class="project-img mid" style="aspect-ratio:4/3;">
+              <span class="pimg-lbl">QuickPhone</span>
+            </div>
+          </div>
+          <div class="proj-cell-meta">
+            <div class="proj-name">QuickPhone</div>
+            <div class="proj-tags">
+              <span>Campaña · Ads</span>
+              <span class="meta-sep">·</span>
+              <span>2024</span>
+              <span class="meta-sep">·</span>
+              <span>Japón</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="proj-cell">
+          <div class="proj-cell-img">
+            <div class="project-img" style="aspect-ratio:4/3; background:var(--warm-400);">
+              <span class="pimg-lbl">Proyecto · 2025</span>
+            </div>
+          </div>
+          <div class="proj-cell-meta">
+            <div class="proj-name">Próximamente</div>
+            <div class="proj-tags">
+              <span>En producción</span>
+              <span class="meta-sep">·</span>
+              <span>2025</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ PROCESO ══ -->
+<section class="proceso" id="estudio">
+  <div class="wrap">
+    <div class="g12 proceso-intro">
+      <div class="proc-intro-left">
+        <div class="sm">
+          <span class="sm-num">04</span>
+          <span class="sm-rule"></span>
+          <span class="sm-lbl">Proceso</span>
+        </div>
+        <h2 class="section-headline">
+          Cuatro pasos.<br>Sin humo<span class="proceso-hl-em">.</span>
+        </h2>
+      </div>
+      <div class="proc-intro-right">
+        <p class="proc-sub">
+          Un proceso claro desde el primer email.
+          Sin sorpresas de precio ni de tiempos —
+          solo trabajo honesto y entregado a tiempo.
+        </p>
+      </div>
+    </div>
+
+    <div class="proc-steps">
+
+      <div class="proc-step">
+        <div class="proc-step-num">01</div>
+        <div class="proc-step-title">Conversamos</div>
+        <div class="proc-step-body">30 minutos por Zoom. Gratis, sin compromiso. Entendemos tu proyecto, tu mercado y tu objetivo real.</div>
+        <div class="proc-step-detail"><span class="proc-badge">Gratis · 30 min</span></div>
+      </div>
+
+      <div class="proc-step">
+        <div class="proc-step-num">02</div>
+        <div class="proc-step-title">Propuesta</div>
+        <div class="proc-step-body">Plan, tiempos y precio fijo en 48 horas. Sin letra pequeña — lo que acordamos es lo que recibes.</div>
+        <div class="proc-step-detail"><span class="proc-badge">48 horas</span></div>
+      </div>
+
+      <div class="proc-step">
+        <div class="proc-step-num">03</div>
+        <div class="proc-step-title">Diseñamos</div>
+        <div class="proc-step-body">Dos rondas de revisiones. Siempre a tiempo. Comunicación directa, sin intermediarios ni cuentas de agencia.</div>
+        <div class="proc-step-detail"><span class="proc-badge">2 revisiones</span></div>
+      </div>
+
+      <div class="proc-step" style="border-bottom:none;">
+        <div class="proc-step-num">04</div>
+        <div class="proc-step-title">Entregamos</div>
+        <div class="proc-step-body">Archivos listos para usar, manual completo y 30 días de soporte post-entrega incluidos.</div>
+        <div class="proc-step-detail"><span class="proc-badge">30 días soporte</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PAQUETES ══ -->
+<section class="paquetes">
+  <div class="wrap">
+    <div class="g12 pkg-intro">
+      <div class="pkg-intro-left">
+        <div class="sm">
+          <span class="sm-num">05</span>
+          <span class="sm-rule"></span>
+          <span class="sm-lbl">Paquetes</span>
+        </div>
+        <h2 class="section-headline">
+          Precios claros<br>desde el primer email.
+        </h2>
+      </div>
+      <div class="pkg-intro-right">
+        <a href="#contacto" class="tlink">Consultar precio personalizado<span class="arr"> →</span></a>
+      </div>
+    </div>
+
+    <div class="pkg-grid">
+
+      <div class="pkg-card">
+        <div class="pkg-name">Esencial</div>
+        <div class="pkg-sub">Para empezar bien</div>
+        <span class="pkg-from">desde</span>
+        <div class="pkg-price">$890</div>
+        <div class="pkg-time">Identidad + 1 aplicación</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-includes">Logo · tipografía · colores<br>Plantilla redes sociales</div>
+      </div>
+
+      <div class="pkg-card featured">
+        <div class="pkg-badge">Más pedido</div>
+        <div class="pkg-name">Studio</div>
+        <div class="pkg-sub">Marca completa + web</div>
+        <span class="pkg-from">desde</span>
+        <div class="pkg-price">$2,400</div>
+        <div class="pkg-time">6–8 semanas</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-includes">Identidad completa · manual<br>Web de 5 secciones · SEO base</div>
+      </div>
+
+      <div class="pkg-card">
+        <div class="pkg-name">Retainer</div>
+        <div class="pkg-sub">Diseño mes a mes</div>
+        <div class="pkg-price">$690<span class="unit">/mes</span></div>
+        <div class="pkg-time">Mínimo 3 meses</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-includes">Hasta 12 piezas/mes<br>Canal Slack directo · prioridad 48h</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-final" id="contacto">
+  <div class="wrap">
+    <div class="g12 cta-grid">
+
+      <div class="cta-left">
+        <div class="sm">
+          <span class="sm-num">07</span>
+          <span class="sm-rule"></span>
+          <span class="sm-lbl">Empecemos</span>
+        </div>
+        <h2 class="cta-headline">
+          Cuéntanos qué<br>tienes en mente.
+        </h2>
+        <p class="cta-lede">
+          Respondemos en menos de 24 horas.
+          Si la cosa va, agendamos una llamada gratis de 30 minutos.
+        </p>
+        <div class="cta-btns">
+          <a href="https://wa.me/817022124910" class="btn btn-ember">Escribir por WhatsApp <span style="margin-left:4px">→</span></a>
+          <a href="mailto:contacto@nozoestudio.com" class="btn btn-ghost" style="color:var(--sky);border-color:rgba(139,157,183,0.4);">Email</a>
+        </div>
+      </div>
+
+      <div class="cta-right">
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">Tokio (主拠点)</span>
+          <span class="cta-contact-val">contacto@nozoestudio.com</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">WhatsApp</span>
+          <span class="cta-contact-val">+81 70 2212 4910</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">Idiomas</span>
+          <span class="cta-contact-val">Español · Português</span>
+        </div>
+        <div class="cta-stamp">東京・リマ</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-logo">
+      <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="width: 144px">
+    </div>
+    <div class="footer-copy">
+      © 2026 Nozoe Studio · 東京・リマ<br>
+      Swiss premium + warm · Diseño bicultural
+    </div>
+    <div class="footer-social">
+      <a href="#">Behance</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const navHam = document.getElementById('nav-ham');
+const navMenu = document.querySelector('.nav-links');
+if (navHam && navMenu) {
+  navHam.addEventListener('click', () => navMenu.classList.toggle('open'));
+}
+</script>
+</body>
+</html>

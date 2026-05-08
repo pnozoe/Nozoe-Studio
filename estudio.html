@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nozoe Studio · Estudio</title>
+<meta name="description" content="Nozoe Studio es un estudio de diseño fundado por Pedro Nozoe, con base en Tokio. Diseñamos para emprendedores de habla hispana y portuguesa en cualquier parte del mundo.">
+<meta property="og:title" content="Nozoe Studio · Estudio">
+<meta property="og:description" content="Diseño desde Tokio para emprendedores de habla hispana en todo el mundo. +40 proyectos, 6+ años de oficio.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.webp">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ─── Tokens ─── */
+:root {
+  --ink:        #1D2A40;
+  --ink-700:    #243450;
+  --ink-950:    #0A1119;
+  --slate:      #475773;
+  --mist:       #8B9DB7;
+  --sky:        #C6D5EA;
+  --warm:       #F4F1EC;
+  --warm-300:   #ECE7DF;
+  --warm-400:   #E0D9CD;
+  --ember:      #E94E1B;
+  --ember-h:    #D14418;
+  --sans: 'Nunito', ui-sans-serif, sans-serif;
+  --jp:   'Noto Sans JP', 'Nunito', sans-serif;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+body {
+  font-family: var(--sans);
+  background: var(--warm);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(29,42,64,0.042) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.g12 {
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  column-gap: 24px;
+}
+
+.hairline { height: 1px; background: rgba(139,157,183,0.28); }
+
+/* ─── Section mark ─── */
+.sm { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.sm-dot { width: 6px; height: 6px; background: var(--ember); flex-shrink: 0; }
+.sm-lbl { font: 600 10px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--mist); }
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 26px;
+  border: none;
+  border-radius: 4px;
+  font: 600 14px/1 var(--sans);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 150ms var(--ease), transform 150ms var(--ease);
+}
+.btn-ember { background: var(--ember); color: #fff; }
+.btn-ember:hover { background: var(--ember-h); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--sky); border: 1px solid rgba(139,157,183,0.4); }
+.btn-ghost:hover { border-color: var(--sky); }
+.btn-ghost-warm { background: transparent; color: var(--ink); border: 1px solid var(--sky); height: 48px; display: inline-flex; align-items: center; padding: 0 26px; border-radius: 4px; font: 600 14px/1 var(--sans); text-decoration: none; transition: border-color 150ms var(--ease); }
+.btn-ghost-warm:hover { border-color: var(--ink); }
+
+/* ─── Scroll-reveal animations ─── */
+.anim {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+}
+.anim.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 60ms; }
+.d2 { transition-delay: 140ms; }
+.d3 { transition-delay: 230ms; }
+.d4 { transition-delay: 330ms; }
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--warm) 88%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(139,157,183,0.22);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.nav-logo img { height: 30px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-link {
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-decoration: none;
+  padding: 0 14px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: color 120ms var(--ease), background 120ms var(--ease);
+}
+.nav-link:hover { color: var(--ink); background: rgba(29,42,64,0.05); }
+.nav-link.active { color: var(--ink); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 16px;
+  background: var(--ink);
+  color: var(--warm);
+  font: 600 12px/1 var(--sans);
+  border-radius: 4px;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background 120ms var(--ease);
+}
+.nav-cta:hover { background: var(--ink-700); }
+.wa-dot { width: 8px; height: 8px; background: #25D366; border-radius: 50%; flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.page-hero {
+  position: relative; z-index: 1;
+  padding: 96px 0 80px;
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+}
+.hero-grid {
+  grid-template-columns: 7fr 5fr;
+  align-items: center;
+  gap: 0 64px;
+}
+.hero-left { display: flex; flex-direction: column; gap: 0; }
+.hero-headline {
+  font: 800 clamp(3rem, 5vw, 4.5rem)/0.97 var(--sans);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.hero-headline .hl-em { color: var(--ember); }
+.hero-lede {
+  font: 300 17px/1.7 var(--sans);
+  color: var(--slate);
+  max-width: 50ch;
+  margin-bottom: 48px;
+}
+.hero-cta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+/* Hero right: stats */
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.hero-stat-item {
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+}
+.hero-stat-item:first-child { border-top: 1px solid rgba(139,157,183,0.28); }
+.hero-stat-num {
+  font: 800 clamp(3rem,5vw,5rem)/1 var(--sans);
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.hero-stat-num .accent { color: var(--ember); }
+.hero-stat-lbl {
+  font: 300 13px/1.4 var(--sans);
+  color: var(--slate);
+  letter-spacing: 0.01em;
+}
+
+/* ══════════════════════════════════════
+   MANIFIESTO (dark)
+══════════════════════════════════════ */
+.manifiesto {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  padding: 96px 0;
+}
+.manif-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 0 64px;
+  align-items: start;
+}
+.manif-left { grid-column: 1 / 7; }
+.manif-right { grid-column: 7 / 13; }
+.manif-headline {
+  font: 800 clamp(2.4rem,4vw,3.8rem)/1.05 var(--sans);
+  letter-spacing: -0.025em;
+  color: var(--warm);
+  margin-bottom: 0;
+}
+.manif-headline .hl-em { color: var(--ember); }
+.manif-body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-top: 8px;
+}
+.manif-p {
+  font: 300 15px/1.75 var(--sans);
+  color: var(--mist);
+}
+.manif-stamp {
+  margin-top: 48px;
+  font: 400 14px/1 var(--jp);
+  letter-spacing: 0.06em;
+  color: rgba(198,213,234,0.35);
+}
+.manifiesto .sm-dot { background: var(--ember); }
+.manifiesto .sm-lbl { color: rgba(139,157,183,0.6); }
+
+/* ══════════════════════════════════════
+   EQUIPO
+══════════════════════════════════════ */
+.equipo {
+  position: relative; z-index: 1;
+  padding: 96px 0;
+}
+.equipo-intro { padding-bottom: 64px; }
+.equipo-intro h2 {
+  font: 800 clamp(2.2rem,3.8vw,3.2rem)/1.05 var(--sans);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.equipo-intro p {
+  font: 300 16px/1.7 var(--sans);
+  color: var(--slate);
+  max-width: 48ch;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.team-avatar {
+  background: var(--warm-300);
+  border: 1px solid rgba(139,157,183,0.3);
+  border-radius: 4px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.team-avatar::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg, transparent, transparent 18px,
+    rgba(139,157,183,0.07) 18px, rgba(139,157,183,0.07) 19px
+  );
+}
+.team-avatar-lbl {
+  font: 300 10px/1 var(--sans);
+  letter-spacing: 0.14em;
+  color: var(--mist);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.team-name {
+  font: 800 22px/1.1 var(--sans);
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.team-role {
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 8px;
+}
+.team-location {
+  font: 300 12px/1 var(--sans);
+  letter-spacing: 0.06em;
+  color: var(--mist);
+  margin-bottom: 14px;
+}
+.team-desc {
+  font: 400 14px/1.65 var(--sans);
+  color: var(--slate);
+}
+.team-kanji {
+  margin-top: 12px;
+  font: 400 22px/1 var(--jp);
+  color: var(--mist);
+  opacity: 0.4;
+}
+
+/* ══════════════════════════════════════
+   VALORES
+══════════════════════════════════════ */
+.valores {
+  position: relative; z-index: 1;
+  background: var(--warm-300);
+  border-top: 1px solid rgba(139,157,183,0.28);
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+  padding: 96px 0;
+}
+.valores-intro { padding-bottom: 64px; }
+.valores-intro h2 {
+  font: 800 clamp(2rem,3.5vw,3rem)/1.05 var(--sans);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 40px 32px;
+}
+.valor-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.valor-num {
+  font: 300 clamp(2rem,3vw,2.8rem)/1 var(--sans);
+  letter-spacing: -0.04em;
+  color: var(--ember);
+}
+.valor-title {
+  font: 800 17px/1.2 var(--sans);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.valor-desc {
+  font: 300 14px/1.7 var(--sans);
+  color: var(--slate);
+}
+
+/* ══════════════════════════════════════
+   CLIENTES
+══════════════════════════════════════ */
+.clientes {
+  position: relative; z-index: 1;
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+}
+.clientes-intro { padding-bottom: 40px; }
+.clientes-intro h2 {
+  font: 800 clamp(1.8rem,3vw,2.6rem)/1.1 var(--sans);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.logo-ph {
+  width: 120px;
+  height: 40px;
+  background: var(--warm-400);
+  border: 1px solid var(--sky);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-ph-lbl {
+  font: 600 9px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.clients-names {
+  font: 600 10px/1.4 var(--sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mist);
+  text-align: center;
+}
+
+/* ══════════════════════════════════════
+   CTA FINAL (dark)
+══════════════════════════════════════ */
+.cta-final {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  padding: 96px 0;
+}
+.cta-grid {
+  grid-template-columns: 7fr 5fr;
+  align-items: center;
+  gap: 0 64px;
+}
+.cta-left { grid-column: 1 / 8; display: flex; flex-direction: column; gap: 0; }
+.cta-right { grid-column: 8 / 13; display: flex; flex-direction: column; gap: 20px; }
+.cta-kicker {
+  font: 600 10px/1 var(--sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 20px;
+}
+.cta-headline {
+  font: 800 clamp(2.4rem,4vw,3.8rem)/1.05 var(--sans);
+  letter-spacing: -0.025em;
+  color: var(--warm);
+  margin-bottom: 24px;
+}
+.cta-headline .hl-em { color: var(--ember); }
+.cta-lede {
+  font: 300 15px/1.7 var(--sans);
+  color: var(--mist);
+  max-width: 44ch;
+  margin-bottom: 40px;
+}
+.cta-btns { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.cta-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(139,157,183,0.18);
+}
+.cta-contact-item:first-child { border-top: 1px solid rgba(139,157,183,0.18); }
+.cta-contact-role {
+  font: 600 10px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.cta-contact-val {
+  font: 400 14px/1 var(--sans);
+  color: var(--sky);
+}
+.cta-stamp {
+  font: 400 28px/1 var(--jp);
+  letter-spacing: 0.04em;
+  color: rgba(198,213,234,0.25);
+  margin-top: 8px;
+}
+.cta-final .sm-dot { background: var(--ember); }
+.cta-final .sm-lbl { color: rgba(139,157,183,0.6); }
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+.footer {
+  position: relative; z-index: 1;
+  background: var(--ink-950);
+  border-top: 1px solid rgba(139,157,183,0.12);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.footer-logo img { height: auto; width: 120px; filter: brightness(0) invert(1); display: block; }
+.footer-copy {
+  font: 300 11px/1.6 var(--sans);
+  color: var(--mist);
+  opacity: 0.7;
+}
+.footer-social { display: flex; gap: 20px; }
+.footer-social a {
+  font: 600 11px/1 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mist);
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 150ms var(--ease);
+}
+.footer-social a:hover { opacity: 1; color: var(--sky); }
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .wrap { padding: 0 48px; }
+  .nav-inner { padding: 0 48px; }
+  .footer-inner { padding: 0 48px; }
+  .cta-right { grid-column: 8 / 13; }
+}
+
+@media (max-width: 900px) {
+  .wrap { padding: 0 32px; }
+  .nav-inner { padding: 0 32px; }
+
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: row; gap: 0; }
+  .hero-stat-item { flex: 1; padding: 20px 16px; }
+
+  .g12 { grid-template-columns: 1fr; }
+  .manif-left, .manif-right { grid-column: 1 / -1; }
+
+  .team-grid { grid-template-columns: 1fr; max-width: 480px; }
+
+  .valores-grid { grid-template-columns: 1fr 1fr; }
+
+  .cta-left { grid-column: 1 / -1; }
+  .cta-right { grid-column: 1 / -1; }
+
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; padding: 24px 32px; }
+}
+
+.nav-ham {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 120ms;
+  flex-shrink: 0;
+}
+.nav-ham:hover { background: rgba(29,42,64,0.06); }
+.nav-ham span { display: block; height: 2px; border-radius: 999px; background: var(--ink); }
+.nav-ham span:last-child { background: var(--ember); width: 65%; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--warm);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid rgba(139,157,183,0.22);
+    z-index: 99;
+    gap: 4px;
+    box-shadow: 0 8px 24px rgba(29,42,64,0.1);
+  }
+  .nav-link { height: 44px; font-size: 13px; }
+  .nav-ham { display: flex; }
+
+  .hero-stats { flex-direction: column; }
+  .hero-stat-item { padding: 20px 0; }
+
+  .valores-grid { grid-template-columns: 1fr; }
+
+  .logo-row { justify-content: center; }
+  .clients-names { display: none; }
+
+  .footer-inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="width: 193px; height: auto">
+    </a>
+    <div class="nav-links">
+      <a href="estudio.html" class="nav-link active">Estudio</a>
+      <a href="trabajo.html" class="nav-link">Trabajo</a>
+      <a href="servicios.html" class="nav-link">Servicios</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+    </div>
+    <button class="nav-ham" id="nav-ham" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="https://wa.me/817022124910" class="nav-cta">
+      <span class="wa-dot"></span>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="g12 hero-grid">
+
+      <div class="hero-left anim d1">
+        <div class="sm" style="margin-bottom:32px;">
+          <span class="sm-dot"></span>
+          <span class="sm-lbl">Studio — Tokio · Lima</span>
+        </div>
+        <h1 class="hero-headline">
+          El estudio detrás<br>de las marcas<span class="hl-em">.</span>
+        </h1>
+        <p class="hero-lede">
+          Diseñamos para emprendedores que navegan entre culturas. No somos una agencia —
+          somos un equipo con oficio, en Tokio y Lima, que trabaja directamente contigo.
+        </p>
+        <div class="hero-cta">
+          <a href="trabajo.html" class="btn-ghost-warm">Ver el trabajo →</a>
+          <a href="contacto.html" style="font:600 13px/1 var(--sans);color:var(--slate);text-decoration:none;padding-bottom:2px;border-bottom:1px solid var(--sky);">Hablemos →</a>
+        </div>
+      </div>
+
+      <div class="hero-stats anim d2">
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">6<span class="accent">+</span></div>
+          <div class="hero-stat-lbl">años de trayectoria en diseño</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">+40</div>
+          <div class="hero-stat-lbl">proyectos entregados en 3 países</div>
+        </div>
+        <div class="hero-stat-item" style="border-bottom:none;">
+          <div class="hero-stat-num" style="font-size:2.2rem;font-family:var(--jp);">東京・リマ</div>
+          <div class="hero-stat-lbl">base Tokio, corazón latinoamericano</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ MANIFIESTO ══ -->
+<section class="manifiesto">
+  <div class="wrap">
+    <div class="g12">
+
+      <div class="manif-left anim d1">
+        <div class="sm">
+          <span class="sm-dot"></span>
+          <span class="sm-lbl">02 · Filosofía</span>
+        </div>
+        <h2 class="manif-headline">
+          Diseñar entre culturas<br>no es una limitación.<br>Es el trabajo<span class="hl-em">.</span>
+        </h2>
+        <div class="manif-stamp">東京・リマ · 2018—2026</div>
+      </div>
+
+      <div class="manif-right anim d2">
+        <div class="manif-body">
+          <p class="manif-p">
+            Nacimos entre dos mundos — el rigor formal japonés y la calidez expresiva latinoamericana.
+            Esa tensión, en lugar de resolverla, la convertimos en método.
+          </p>
+          <p class="manif-p">
+            Cada proyecto empieza preguntando qué mercado real quieres alcanzar, no qué te gusta visualmente.
+            El diseño es la respuesta a esa pregunta — y la respuesta tiene que funcionar en dos idiomas, dos culturas, dos pantallas.
+          </p>
+          <p class="manif-p">
+            No diseñamos para ganar premios. Diseñamos para que tu marca siga siendo tuya cinco años después.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ EQUIPO ══ -->
+<section class="equipo">
+  <div class="wrap">
+    <div class="equipo-intro anim">
+      <div class="sm">
+        <span class="sm-dot"></span>
+        <span class="sm-lbl">03 · El equipo</span>
+      </div>
+      <h2>Dos personas.<br>Un sistema.</h2>
+      <p style="margin-top:16px;">Sin cuentas de agencia, sin intermediarios. Siempre hablas con quien diseña.</p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card anim d1">
+        <div class="team-avatar">
+          <span class="team-avatar-lbl">Foto · Pedro Nozoe</span>
+        </div>
+        <div class="team-name">Pedro Nozoe</div>
+        <div class="team-role">Diseñador · Fundador</div>
+        <div class="team-location">Tokio, Japón · 東京</div>
+        <div class="team-desc">
+          Diseñador gráfico peruano-nikkei (sansei) con 25 años de oficio.
+          Desde Tokio para el mundo hispanohablante — entiende los dos lados desde adentro.
+        </div>
+        <div class="team-kanji">デザイナー</div>
+      </div>
+
+      <div class="team-card anim d2">
+        <div class="team-avatar" style="background:var(--warm-400);">
+          <span class="team-avatar-lbl">Próximamente</span>
+        </div>
+        <div class="team-name">—</div>
+        <div class="team-role">Diseño web · Desarrollo</div>
+        <div class="team-location">Lima, Perú</div>
+        <div class="team-desc">
+          El equipo crece. Buscamos un perfil web con sensibilidad editorial y
+          raíces latinoamericanas. ¿Eres tú?
+        </div>
+        <div class="team-kanji">ウェブ</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALORES ══ -->
+<section class="valores">
+  <div class="wrap">
+    <div class="valores-intro anim">
+      <div class="sm">
+        <span class="sm-dot"></span>
+        <span class="sm-lbl">04 · Cómo trabajamos</span>
+      </div>
+      <h2>Cuatro principios.<br>Sin letra pequeña.</h2>
+    </div>
+
+    <div class="valores-grid">
+
+      <div class="valor-item anim d1">
+        <div class="valor-num">01</div>
+        <div class="valor-title">Directo</div>
+        <div class="valor-desc">Sin cuentas de agencia. Siempre hablas con quien diseña — de principio a fin.</div>
+      </div>
+
+      <div class="valor-item anim d2">
+        <div class="valor-num">02</div>
+        <div class="valor-title">Bicultural</div>
+        <div class="valor-desc">Entendemos el mercado japonés y el latinoamericano de primera mano. No de manual.</div>
+      </div>
+
+      <div class="valor-item anim d3">
+        <div class="valor-num">03</div>
+        <div class="valor-title">Sistemático</div>
+        <div class="valor-desc">Diseñamos sistemas, no piezas sueltas. Tu marca escala contigo sin perder coherencia.</div>
+      </div>
+
+      <div class="valor-item anim d4">
+        <div class="valor-num">04</div>
+        <div class="valor-title">Transparente</div>
+        <div class="valor-desc">Precio fijo, tiempos claros, archivos tuyos desde el primer día. Sin sorpresas.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLIENTES ══ -->
+<section class="clientes">
+  <div class="wrap">
+    <div class="clientes-intro anim">
+      <div class="sm">
+        <span class="sm-dot"></span>
+        <span class="sm-lbl">05 · Han confiado en nosotros</span>
+      </div>
+      <h2>Marcas que ya cruzan fronteras.</h2>
+    </div>
+    <div class="logo-row anim d1">
+      <div class="logo-ph"><span class="logo-ph-lbl">TML Cipango</span></div>
+      <div class="logo-ph"><span class="logo-ph-lbl">Casa Forma</span></div>
+      <div class="logo-ph"><span class="logo-ph-lbl">QuickPhone</span></div>
+      <div class="logo-ph"><span class="logo-ph-lbl">Tierra Alta</span></div>
+      <div class="logo-ph"><span class="logo-ph-lbl">Guaraná</span></div>
+      <div class="logo-ph"><span class="logo-ph-lbl">Alphard</span></div>
+    </div>
+    <div class="clients-names anim d2">
+      TML Cipango · Casa Forma · QuickPhone · Tierra Alta · Guaraná · Alphard
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="g12 cta-grid">
+
+      <div class="cta-left anim d1">
+        <div class="sm">
+          <span class="sm-dot"></span>
+          <span class="sm-lbl">¿Tienes un proyecto?</span>
+        </div>
+        <h2 class="cta-headline">
+          Hablemos<br>sin rodeos<span class="hl-em">.</span>
+        </h2>
+        <p class="cta-lede">
+          Llamada de 30 minutos. Sin compromiso.
+          Solo para entender si tiene sentido trabajar juntos.
+        </p>
+        <div class="cta-btns">
+          <a href="https://wa.me/817022124910" class="btn btn-ember">Escribir por WhatsApp →</a>
+          <a href="servicios.html" class="btn btn-ghost">Ver servicios</a>
+        </div>
+      </div>
+
+      <div class="cta-right anim d2">
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">Tokio (主拠点)</span>
+          <span class="cta-contact-val">contacto@nozoestudio.com</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">WhatsApp</span>
+          <span class="cta-contact-val">+81 70 2212 4910</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">Idiomas</span>
+          <span class="cta-contact-val">Español · Português</span>
+        </div>
+        <div class="cta-stamp">東京・リマ</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-logo">
+      <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="width: 144px">
+    </div>
+    <div class="footer-copy">
+      © 2026 Nozoe Studio · 東京・リマ<br>
+      Swiss premium + warm · Diseño bicultural
+    </div>
+    <div class="footer-social">
+      <a href="#">Behance</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+const navHam = document.getElementById('nav-ham');
+const navMenu = document.querySelector('.nav-links');
+if (navHam && navMenu) {
+  navHam.addEventListener('click', () => navMenu.classList.toggle('open'));
+}
+</script>
+
+</body>
+</html>

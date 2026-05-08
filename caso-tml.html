@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nozoe Studio · Caso TML Cipango</title>
+<meta name="description" content="TML Cipango: identidad y dirección de contenido multimedia para una marca de turismo premium en Japón hecha por y para hispanohablantes. 14 meses, por Nozoe Studio.">
+<meta property="og:title" content="Nozoe Studio · Caso TML Cipango">
+<meta property="og:description" content="Identidad + Contenido para una marca de turismo premium en Japón. La voz de un peruano que lleva tres décadas en el país. El proyecto ancla de Nozoe Studio.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.webp">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ─── Tokens ─── */
+:root {
+  --ink:        #1D2A40;
+  --ink-700:    #243450;
+  --ink-950:    #0A1119;
+  --slate:      #475773;
+  --mist:       #8B9DB7;
+  --sky:        #C6D5EA;
+  --warm:       #F4F1EC;
+  --warm-300:   #ECE7DF;
+  --warm-400:   #E0D9CD;
+  --ember:      #E94E1B;
+  --ember-h:    #D14418;
+  --sans: 'Nunito', ui-sans-serif, sans-serif;
+  --jp:   'Noto Sans JP', 'Nunito', sans-serif;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+body {
+  font-family: var(--sans);
+  background: var(--warm);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(29,42,64,0.042) 1px, transparent 0);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 80px; }
+.g12 { display: grid; grid-template-columns: repeat(12,1fr); column-gap: 24px; }
+.hairline { height: 1px; background: rgba(139,157,183,0.28); }
+
+.sm { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.sm-dot { width: 6px; height: 6px; background: var(--ember); flex-shrink: 0; }
+.sm-lbl { font: 600 10px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--mist); }
+
+.btn {
+  display: inline-flex; align-items: center; height: 48px; padding: 0 26px;
+  border: none; border-radius: 4px; font: 600 14px/1 var(--sans);
+  cursor: pointer; text-decoration: none;
+  transition: background 150ms var(--ease), transform 150ms var(--ease);
+}
+.btn-ember { background: var(--ember); color: #fff; }
+.btn-ember:hover { background: var(--ember-h); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--sky); border: 1px solid rgba(139,157,183,0.4); }
+.btn-ghost:hover { border-color: var(--sky); }
+
+/* ─── Scroll-reveal ─── */
+.anim { opacity: 0; transform: translateY(14px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+.anim.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 60ms; }
+.d2 { transition-delay: 140ms; }
+.d3 { transition-delay: 230ms; }
+.d4 { transition-delay: 330ms; }
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--warm) 88%, transparent);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(139,157,183,0.22);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 80px;
+  height: 64px; display: flex; align-items: center;
+  justify-content: space-between; gap: 32px;
+}
+.nav-logo img { height: 30px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-link {
+  font: 600 11px/1 var(--sans); letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--slate); text-decoration: none; padding: 0 14px; height: 36px;
+  display: flex; align-items: center; border-radius: 4px;
+  transition: color 120ms var(--ease), background 120ms var(--ease);
+}
+.nav-link:hover { color: var(--ink); background: rgba(29,42,64,0.05); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 7px; height: 36px;
+  padding: 0 16px; background: var(--ink); color: var(--warm);
+  font: 600 12px/1 var(--sans); border-radius: 4px; text-decoration: none;
+  flex-shrink: 0; transition: background 120ms var(--ease);
+}
+.nav-cta:hover { background: var(--ink-700); }
+.wa-dot { width: 8px; height: 8px; background: #25D366; border-radius: 50%; flex-shrink: 0; }
+
+/* Breadcrumb */
+.breadcrumb {
+  position: relative; z-index: 1;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(139,157,183,0.18);
+}
+.breadcrumb-inner {
+  display: flex; align-items: center; gap: 8px;
+  font: 300 11px/1 var(--sans); color: var(--mist); letter-spacing: 0.04em;
+}
+.breadcrumb-inner a { color: var(--mist); text-decoration: none; transition: color 120ms var(--ease); }
+.breadcrumb-inner a:hover { color: var(--ink); }
+.breadcrumb-sep { color: var(--sky); }
+.breadcrumb-current { color: var(--ink); font-weight: 600; }
+
+/* ══════════════════════════════════════
+   HERO (dark)
+══════════════════════════════════════ */
+.case-hero {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  padding: 96px 0 80px;
+}
+.case-hero .sm-dot { background: var(--ember); }
+.case-hero .sm-lbl { color: rgba(139,157,183,0.6); }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--ember); color: #fff;
+  font: 800 9px/1 var(--sans); letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 6px 14px; border-radius: 4px;
+  margin-bottom: 32px;
+}
+.case-title {
+  font: 800 clamp(3.5rem,7vw,6rem)/0.95 var(--sans);
+  letter-spacing: -0.04em;
+  color: var(--warm);
+  margin-bottom: 16px;
+}
+.case-title .hl-em { color: var(--ember); }
+.case-subtitle {
+  font: 600 12px/1 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 32px;
+}
+.case-desc {
+  font: 300 17px/1.7 var(--sans);
+  color: var(--mist);
+  max-width: 52ch;
+  margin-bottom: 56px;
+}
+.case-meta {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(139,157,183,0.2);
+  padding-top: 32px;
+}
+.case-meta-item {
+  flex: 1;
+  padding-right: 32px;
+  border-right: 1px solid rgba(139,157,183,0.15);
+  margin-right: 32px;
+}
+.case-meta-item:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.case-meta-label {
+  font: 600 9px/1 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 8px;
+}
+.case-meta-val {
+  font: 800 14px/1.2 var(--sans);
+  color: var(--sky);
+}
+
+/* Hero image */
+.hero-img {
+  margin-top: 64px;
+  border-radius: 8px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border: 1px solid rgba(139,157,183,0.2);
+  background: var(--ink-700);
+}
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ══════════════════════════════════════
+   EL RETO
+══════════════════════════════════════ */
+.section-reto {
+  position: relative; z-index: 1;
+  padding: 96px 0;
+}
+.reto-grid {
+  grid-template-columns: 5fr 7fr;
+  gap: 0 64px;
+  align-items: start;
+}
+.reto-left { grid-column: 1 / 6; }
+.reto-right { grid-column: 6 / 13; }
+.section-h2 {
+  font: 800 clamp(2rem,3.5vw,3rem)/1.1 var(--sans);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.section-body {
+  font: 300 16px/1.75 var(--sans);
+  color: var(--slate);
+  max-width: 52ch;
+  margin-bottom: 40px;
+}
+.challenge-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+.challenge-card {
+  background: var(--warm-300);
+  border: 1px solid var(--sky);
+  border-radius: 4px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.challenge-dash {
+  font: 300 18px/1 var(--sans);
+  color: var(--ember);
+  flex-shrink: 0;
+}
+.challenge-text {
+  font: 600 13px/1.4 var(--sans);
+  color: var(--ink);
+}
+
+/* ══════════════════════════════════════
+   PROCESO (dark)
+══════════════════════════════════════ */
+.section-proceso {
+  position: relative; z-index: 1;
+  background: var(--warm-300);
+  border-top: 1px solid rgba(139,157,183,0.28);
+  border-bottom: 1px solid rgba(139,157,183,0.28);
+  padding: 96px 0;
+}
+.proceso-h2 {
+  font: 800 clamp(2rem,3.5vw,3rem)/1.1 var(--sans);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 56px;
+}
+.proceso-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 48px;
+}
+.fase-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 2px solid var(--ink);
+}
+.fase-num {
+  font: 300 2.2rem/1 var(--sans);
+  letter-spacing: -0.03em;
+  color: var(--ember);
+}
+.fase-title {
+  font: 800 18px/1.2 var(--sans);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.fase-desc {
+  font: 300 14px/1.7 var(--sans);
+  color: var(--slate);
+}
+
+/* ══════════════════════════════════════
+   GALERÍA
+══════════════════════════════════════ */
+.section-galeria {
+  position: relative; z-index: 1;
+  padding: 96px 0;
+}
+.galeria-h2 {
+  font: 800 clamp(2rem,3.5vw,3rem)/1.1 var(--sans);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 56px;
+}
+
+/* Galería rows */
+.gal-row {
+  margin-bottom: 32px;
+}
+.gal-row:last-child { margin-bottom: 0; }
+
+/* Fila 1 — tarjeta horizontal centrada */
+.gal-row-1 {
+  display: flex;
+  justify-content: center;
+}
+.gal-row-1 .gal-item {
+  width: 70%;
+  max-width: 760px;
+}
+
+/* Fila 2 — dos A4 verticales lado a lado */
+.gal-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* Fila 3 — post cuadrado + story vertical, alineados al top */
+.gal-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Item base */
+.gal-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  cursor: zoom-in;
+}
+.gal-item-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--warm-300);
+  border: 1px solid rgba(139,157,183,0.18);
+  transition: transform 300ms var(--ease), box-shadow 300ms var(--ease);
+}
+.gal-item:hover .gal-item-img {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -12px rgba(29,42,64,0.18);
+}
+.gal-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 600ms var(--ease);
+}
+.gal-item:hover .gal-item-img img {
+  transform: scale(1.02);
+}
+
+/* Aspect ratios por pieza */
+.gal-tarjeta    .gal-item-img { aspect-ratio: 1077/630;  }
+.gal-portada    .gal-item-img { aspect-ratio: 2000/2830; }
+.gal-itinerario .gal-item-img { aspect-ratio: 2000/2830; }
+.gal-flyer      .gal-item-img { aspect-ratio: 1/1;        }
+.gal-poster     .gal-item-img { aspect-ratio: 1080/2100; }
+
+/* Captions */
+.gal-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 0 4px;
+}
+.gal-caption-title {
+  font: 700 13px/1.3 var(--sans);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.gal-caption-desc {
+  font: 300 13px/1.3 var(--sans);
+  color: var(--slate);
+}
+.gal-caption-sep {
+  color: var(--ember);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ─── Lightbox ─── */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(10,17,25,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 240ms var(--ease);
+  cursor: zoom-out;
+  padding: 40px;
+}
+.lightbox.open {
+  display: flex;
+  opacity: 1;
+}
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 24px 80px -20px rgba(0,0,0,0.6);
+  transform: scale(0.96);
+  transition: transform 240ms var(--ease);
+  cursor: default;
+}
+.lightbox.open .lightbox-img {
+  transform: scale(1);
+}
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  color: var(--warm);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 160ms var(--ease), border-color 160ms var(--ease);
+}
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.3);
+}
+body.lightbox-open { overflow: hidden; }
+
+/* ══════════════════════════════════════
+   RESULTADOS (dark)
+══════════════════════════════════════ */
+.section-impacto {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  padding: 96px 0;
+}
+.section-impacto .sm-dot { background: var(--ember); }
+.section-impacto .sm-lbl { color: rgba(139,157,183,0.6); }
+.impacto-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 0;
+  margin-bottom: 72px;
+  border-top: 1px solid rgba(139,157,183,0.2);
+}
+.impacto-item {
+  padding: 48px 0 40px;
+  border-right: 1px solid rgba(139,157,183,0.15);
+  padding-right: 48px;
+  margin-right: 48px;
+}
+.impacto-item:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.impacto-num {
+  font: 800 clamp(3rem,5vw,5rem)/1 var(--sans);
+  letter-spacing: -0.04em;
+  color: var(--warm);
+  margin-bottom: 12px;
+}
+.impacto-num .accent { color: var(--ember); }
+.impacto-num .small { font-size: 1.4rem; font-weight: 600; color: var(--mist); }
+.impacto-desc {
+  font: 300 13px/1.6 var(--sans);
+  color: var(--mist);
+}
+
+/* Testimonio */
+.testi-wrap {
+  border-top: 1px solid rgba(139,157,183,0.2);
+  padding-top: 56px;
+}
+.testi-mark {
+  font: 800 6rem/1 var(--sans);
+  color: var(--ember);
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+.testi-quote {
+  font: 300 clamp(1.1rem,2.5vw,1.5rem)/1.5 var(--sans);
+  color: var(--sky);
+  max-width: 60ch;
+  margin-bottom: 32px;
+  font-style: italic;
+}
+.testi-author { display: flex; align-items: center; gap: 14px; }
+.testi-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--slate);
+  display: flex; align-items: center; justify-content: center;
+  font: 800 12px/1 var(--sans); color: var(--warm);
+  flex-shrink: 0;
+}
+.testi-name { font: 800 13px/1.2 var(--sans); color: var(--warm); }
+.testi-role { font: 300 11px/1.4 var(--sans); color: var(--mist); margin-top: 2px; }
+
+/* ══════════════════════════════════════
+   NAVEGACIÓN ENTRE CASOS
+══════════════════════════════════════ */
+.caso-nav {
+  position: relative; z-index: 1;
+  padding: 64px 0;
+  border-top: 1px solid rgba(139,157,183,0.28);
+}
+.caso-nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.caso-nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  padding: 24px;
+  border: 1px solid rgba(139,157,183,0.28);
+  border-radius: 4px;
+  transition: border-color 200ms var(--ease), background 200ms var(--ease);
+}
+.caso-nav-item:hover { border-color: var(--ink); background: rgba(29,42,64,0.02); }
+.caso-nav-dir {
+  font: 600 10px/1 var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.caso-nav-title {
+  font: 800 20px/1.2 var(--sans);
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.caso-nav-meta {
+  font: 300 12px/1 var(--sans);
+  color: var(--slate);
+  letter-spacing: 0.04em;
+}
+.caso-nav-right { text-align: right; }
+
+/* ══════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════ */
+.cta-final {
+  position: relative; z-index: 1;
+  background: var(--ink);
+  padding: 96px 0;
+}
+.cta-final .sm-dot { background: var(--ember); }
+.cta-final .sm-lbl { color: rgba(139,157,183,0.6); }
+.cta-grid {
+  grid-template-columns: 7fr 5fr;
+  align-items: center;
+  gap: 0 64px;
+}
+.cta-left { grid-column: 1 / 8; display: flex; flex-direction: column; gap: 0; }
+.cta-right { grid-column: 8 / 13; display: flex; flex-direction: column; gap: 20px; }
+.cta-headline {
+  font: 800 clamp(2.4rem,4vw,3.8rem)/1.05 var(--sans);
+  letter-spacing: -0.025em; color: var(--warm); margin-bottom: 24px;
+}
+.cta-headline .hl-em { color: var(--ember); }
+.cta-lede { font: 300 15px/1.7 var(--sans); color: var(--mist); max-width: 44ch; margin-bottom: 40px; }
+.cta-btns { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.cta-contact-item {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 16px 0; border-bottom: 1px solid rgba(139,157,183,0.18);
+}
+.cta-contact-item:first-child { border-top: 1px solid rgba(139,157,183,0.18); }
+.cta-contact-role { font: 600 10px/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--mist); }
+.cta-contact-val { font: 400 14px/1 var(--sans); color: var(--sky); }
+.cta-stamp { font: 400 28px/1 var(--jp); letter-spacing: 0.04em; color: rgba(198,213,234,0.25); margin-top: 8px; }
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+.footer {
+  position: relative; z-index: 1;
+  background: var(--ink-950);
+  border-top: 1px solid rgba(139,157,183,0.12);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto; padding: 28px 80px;
+  display: flex; align-items: center; justify-content: space-between; gap: 32px;
+}
+.footer-logo img { height: auto; width: 120px; filter: brightness(0) invert(1); display: block; }
+.footer-copy { font: 300 11px/1.6 var(--sans); color: var(--mist); opacity: 0.7; }
+.footer-social { display: flex; gap: 20px; }
+.footer-social a {
+  font: 600 11px/1 var(--sans); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--mist); text-decoration: none; opacity: 0.65;
+  transition: opacity 150ms var(--ease);
+}
+.footer-social a:hover { opacity: 1; color: var(--sky); }
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .wrap { padding: 0 48px; }
+  .nav-inner { padding: 0 48px; }
+  .footer-inner { padding: 0 48px; }
+  .cta-right { grid-column: 8 / 13; }
+}
+
+@media (max-width: 900px) {
+  .wrap { padding: 0 32px; }
+  .nav-inner { padding: 0 32px; }
+
+  .g12 { grid-template-columns: 1fr; }
+  .reto-left, .reto-right { grid-column: 1 / -1; }
+
+  .galeria-h2 { margin-bottom: 40px; }
+  .gal-row-1 .gal-item { width: 100%; max-width: none; }
+  .gal-row-2 { grid-template-columns: 1fr; gap: 24px; }
+  .gal-row-3 { grid-template-columns: 1fr; gap: 24px; }
+  .gal-row { margin-bottom: 24px; }
+
+  .proceso-grid { grid-template-columns: 1fr; }
+
+  .impacto-grid { grid-template-columns: 1fr; }
+  .impacto-item { border-right: none; margin-right: 0; padding-right: 0; border-bottom: 1px solid rgba(139,157,183,0.15); padding-bottom: 32px; margin-bottom: 32px; }
+  .impacto-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .caso-nav-grid { grid-template-columns: 1fr; }
+  .caso-nav-right { text-align: left; }
+
+  .case-meta { flex-direction: column; gap: 20px; }
+  .case-meta-item { border-right: none; margin-right: 0; padding-right: 0; border-bottom: 1px solid rgba(139,157,183,0.15); padding-bottom: 16px; }
+  .case-meta-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .cta-left { grid-column: 1 / -1; }
+  .cta-right { grid-column: 1 / -1; }
+
+  .footer-inner { flex-direction: column; gap: 16px; text-align: center; padding: 24px 32px; }
+}
+
+.nav-ham {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 120ms;
+  flex-shrink: 0;
+}
+.nav-ham:hover { background: rgba(29,42,64,0.06); }
+.nav-ham span { display: block; height: 2px; border-radius: 999px; background: var(--ink); }
+.nav-ham span:last-child { background: var(--ember); width: 65%; }
+
+@media (max-width: 600px) {
+  .wrap { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--warm);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid rgba(139,157,183,0.22);
+    z-index: 99;
+    gap: 4px;
+    box-shadow: 0 8px 24px rgba(29,42,64,0.1);
+  }
+  .nav-link { height: 44px; font-size: 13px; }
+  .nav-ham { display: flex; }
+
+  .footer-inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="width: 193px; height: auto">
+    </a>
+    <div class="nav-links">
+      <a href="estudio.html" class="nav-link">Estudio</a>
+      <a href="trabajo.html" class="nav-link">Trabajo</a>
+      <a href="servicios.html" class="nav-link">Servicios</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+    </div>
+    <button class="nav-ham" id="nav-ham" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="https://wa.me/817022124910" class="nav-cta">
+      <span class="wa-dot"></span>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="wrap breadcrumb-inner">
+    <a href="trabajo.html">Trabajo</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>Identidad</span>
+    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-current">TML Cipango</span>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="case-hero">
+  <div class="wrap">
+    <div class="anim d1">
+      <div class="hero-badge">
+        <span>★</span>
+        <span>Proyecto Ancla</span>
+      </div>
+    </div>
+    <h1 class="case-title anim d2">TML<br>Cipango<span class="hl-em">.</span></h1>
+    <p class="case-subtitle anim d2">Identidad + Contenido · 2024 · Tokio–Lima · 東京・リマ</p>
+    <p class="case-desc anim d3">
+      Un año construyendo el sistema visual completo para una marca de turismo premium
+      en Japón hecha por y para hispanohablantes. Identidad bicultural, arquitectura de marca
+      y dirección de contenido multimedia — la voz de un peruano que lleva tres décadas
+      viviendo en Japón y ahora guía a viajeros hispanos dentro del país.
+    </p>
+    <div class="case-meta anim d4">
+      <div class="case-meta-item">
+        <div class="case-meta-label">Tipo</div>
+        <div class="case-meta-val">Identidad + Contenido</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-label">Mercado</div>
+        <div class="case-meta-val">Japón · Latinoamérica</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-label">Duración</div>
+        <div class="case-meta-val">14 meses</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-label">Estado</div>
+        <div class="case-meta-val">Permanente</div>
+      </div>
+    </div>
+    <div class="hero-img anim d4">
+      <img src="assets/casos/tml/caso-tml-hero.webp" alt="TML Cipango · Sistema visual aplicado a piezas impresas" loading="eager" width="2500" height="1406">
+    </div>
+  </div>
+</section>
+
+<!-- ══ EL RETO ══ -->
+<section class="section-reto">
+  <div class="wrap">
+    <div class="g12 reto-grid">
+
+      <div class="reto-left anim d1">
+        <div class="sm">
+          <span class="sm-dot"></span>
+          <span class="sm-lbl">01 · El reto</span>
+        </div>
+        <h2 class="section-h2">Una marca que no traduce Japón.<br>Lo cuenta.</h2>
+        <p class="section-body">
+          El turismo hispanohablante en Japón está dominado por agencias locales que ofrecen
+          tours "en español" guiados por japoneses con dominio aproximado del idioma.
+          Carlos es peruano, lleva más de tres décadas en Japón y guía viajeros hispanos
+          como un par — no como traductor. El reto era construir una identidad que comunicara
+          esa diferencia sin caer en los clichés visuales del Japón postal, y que funcionara
+          igual de bien en redes sociales y en piezas impresas.
+        </p>
+      </div>
+
+      <div class="reto-right anim d2">
+        <div class="challenge-cards">
+          <div class="challenge-card">
+            <span class="challenge-dash">—</span>
+            <span class="challenge-text">Identidad humana, sin clichés del Japón postal</span>
+          </div>
+          <div class="challenge-card">
+            <span class="challenge-dash">—</span>
+            <span class="challenge-text">Sistema aplicable a redes sociales y material impreso</span>
+          </div>
+          <div class="challenge-card">
+            <span class="challenge-dash">—</span>
+            <span class="challenge-text">Voz latina nativa, no japonesa traducida</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESO ══ -->
+<section class="section-proceso">
+  <div class="wrap">
+    <div class="anim d1">
+      <div class="sm">
+        <span class="sm-dot"></span>
+        <span class="sm-lbl">02 · Proceso</span>
+      </div>
+      <h2 class="proceso-h2">Cuatro fases.<br>Un año de trabajo.</h2>
+    </div>
+
+    <div class="proceso-grid">
+
+      <div class="fase-item anim d1">
+        <div class="fase-num">01</div>
+        <div class="fase-title">Investigación</div>
+        <div class="fase-desc">
+          Mapeo del sector de turismo hispanohablante en Japón. Entrevistas con Carlos
+          sobre tres décadas de vivencia en el país. Análisis de competencia local
+          y definición del posicionamiento de marca.
+        </div>
+      </div>
+
+      <div class="fase-item anim d2">
+        <div class="fase-num">02</div>
+        <div class="fase-title">Dirección</div>
+        <div class="fase-desc">
+          Dos rutas creativas. Una ganó por claridad conceptual: identidad humana
+          antes que folklórica. El silencio como respeto, no como decoración japonesa importada.
+        </div>
+      </div>
+
+      <div class="fase-item anim d3">
+        <div class="fase-num">03</div>
+        <div class="fase-title">Sistema</div>
+        <div class="fase-desc">
+          Logo, paleta, tipografía, iconografía. Plantillas para redes sociales y piezas
+          impresas. Cada decisión documentada y justificada.
+        </div>
+      </div>
+
+      <div class="fase-item anim d4">
+        <div class="fase-num">04</div>
+        <div class="fase-title">Contenido</div>
+        <div class="fase-desc">
+          Dirección de contenido multimedia para redes — TikTok, Instagram. El verdadero
+          motor de crecimiento de la marca: testimonios, micro-historias culturales
+          y aplicación visual consistente. La plataforma web queda como fase futura.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALERÍA ══ -->
+<section class="section-galeria">
+  <div class="wrap">
+    <div class="anim d1">
+      <div class="sm">
+        <span class="sm-dot"></span>
+        <span class="sm-lbl">03 · El resultado</span>
+      </div>
+      <h2 class="galeria-h2">Sistema visual completo.</h2>
+    </div>
+
+    <!-- Fila 1 — Identidad humana -->
+    <div class="gal-row gal-row-1 anim d2">
+      <figure class="gal-item gal-tarjeta" data-lightbox-src="assets/casos/tml/tml-tarjeta-front.jpg" data-lightbox-alt="TML Cipango · Tarjeta personal de Carlos Antonio">
+        <div class="gal-item-img">
+          <img src="assets/casos/tml/tml-tarjeta-front.jpg" alt="Tarjeta personal TML Cipango — Carlos Antonio, guía turístico y conductor" loading="lazy" width="1077" height="630">
+        </div>
+        <figcaption class="gal-caption">
+          <span class="gal-caption-title">Tarjeta personal</span>
+          <span class="gal-caption-sep">—</span>
+          <span class="gal-caption-desc">La primera impresión, en mano</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Fila 2 — Sistema editorial impreso -->
+    <div class="gal-row gal-row-2 anim d3">
+      <figure class="gal-item gal-portada" data-lightbox-src="assets/casos/tml/tml-portada-itinerario.jpg" data-lightbox-alt="TML Cipango · Portada del itinerario A4 con composición fotográfica de Japón">
+        <div class="gal-item-img">
+          <img src="assets/casos/tml/tml-portada-itinerario.jpg" alt="Portada del itinerario TML Cipango — composición fotográfica con templos, Monte Fuji y flota VIP" loading="lazy" width="2000" height="2830">
+        </div>
+        <figcaption class="gal-caption">
+          <span class="gal-caption-title">Portada del itinerario</span>
+          <span class="gal-caption-sep">—</span>
+          <span class="gal-caption-desc">El viaje empieza aquí</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gal-item gal-itinerario" data-lightbox-src="assets/casos/tml/tml-A4-Itinerario.jpg" data-lightbox-alt="TML Cipango · Página interior del itinerario A4">
+        <div class="gal-item-img">
+          <img src="assets/casos/tml/tml-A4-Itinerario.jpg" alt="Itinerario A4 TML Cipango — página interior con cabecera de marca y datos de contacto" loading="lazy" width="2000" height="2830">
+        </div>
+        <figcaption class="gal-caption">
+          <span class="gal-caption-title">Itinerario A4</span>
+          <span class="gal-caption-sep">—</span>
+          <span class="gal-caption-desc">La hoja de ruta del viajero</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Fila 3 — Comunicación digital -->
+    <div class="gal-row gal-row-3 anim d4">
+      <figure class="gal-item gal-flyer" data-lightbox-src="assets/casos/tml/tml-flyer.jpg" data-lightbox-alt="TML Cipango · Post para Instagram con servicios turísticos">
+        <div class="gal-item-img">
+          <img src="assets/casos/tml/tml-flyer.jpg" alt="Post de Instagram TML Cipango — Explora Tokyo, servicio turístico en español" loading="lazy" width="1920" height="1920">
+        </div>
+        <figcaption class="gal-caption">
+          <span class="gal-caption-title">Post para redes</span>
+          <span class="gal-caption-sep">—</span>
+          <span class="gal-caption-desc">Captación en feed</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gal-item gal-poster" data-lightbox-src="assets/casos/tml/tml-poster.jpg" data-lightbox-alt="TML Cipango · Story vertical para redes sociales">
+        <div class="gal-item-img">
+          <img src="assets/casos/tml/tml-poster.jpg" alt="Story vertical TML Cipango — Explora Tokyo en español, chóferes y guías hispanohablantes" loading="lazy" width="1080" height="2100">
+        </div>
+        <figcaption class="gal-caption">
+          <span class="gal-caption-title">Story / Reel</span>
+          <span class="gal-caption-sep">—</span>
+          <span class="gal-caption-desc">El motor real del crecimiento</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar vista ampliada">×</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ══ IMPACTO ══ -->
+<section class="section-impacto">
+  <div class="wrap">
+    <div class="anim d1">
+      <div class="sm">
+        <span class="sm-dot"></span>
+        <span class="sm-lbl">04 · Impacto</span>
+      </div>
+    </div>
+
+    <div class="impacto-grid anim d2">
+      <div class="impacto-item">
+        <div class="impacto-num">30<span class="accent">+</span></div>
+        <div class="impacto-desc">años de Carlos viviendo y trabajando en Japón</div>
+      </div>
+      <div class="impacto-item">
+        <div class="impacto-num">100<span class="accent">+</span></div>
+        <div class="impacto-desc">testimonios de turistas hispanos que validan el servicio</div>
+      </div>
+      <div class="impacto-item">
+        <div class="impacto-num">14 <span class="small">meses</span></div>
+        <div class="impacto-desc">de colaboración continua y permanente activa</div>
+      </div>
+    </div>
+
+    <div class="testi-wrap anim d3">
+      <div class="testi-mark" aria-hidden="true">"</div>
+      <blockquote class="testi-quote">
+        Pedro entendió nuestra realidad como emprendedores acá en Tokio.
+        No tuvimos que explicarle nada — sabía exactamente cómo debíamos vernos
+        para el público latino y para el mercado local al mismo tiempo.
+      </blockquote>
+      <div class="testi-author">
+        <div class="testi-avatar">TC</div>
+        <div>
+          <div class="testi-name">Cliente · TML Cipango</div>
+          <div class="testi-role">Fundador · Tokio, Japón</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="g12 cta-grid">
+
+      <div class="cta-left anim d1">
+        <div class="sm">
+          <span class="sm-dot"></span>
+          <span class="sm-lbl">¿Tu proyecto es parecido?</span>
+        </div>
+        <h2 class="cta-headline">
+          Hablemos<span class="hl-em">.</span>
+        </h2>
+        <p class="cta-lede">
+          30 minutos, sin compromiso. Te digo si puedo ayudarte
+          o te recomiendo a alguien que sí.
+        </p>
+        <div class="cta-btns">
+          <a href="https://wa.me/" class="btn btn-ember">WhatsApp →</a>
+          <a href="trabajo.html" class="btn btn-ghost">Ver más proyectos</a>
+        </div>
+      </div>
+
+      <div class="cta-right anim d2">
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">Tokio (主拠点)</span>
+          <span class="cta-contact-val">hola@nozoe.studio</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">Lima</span>
+          <span class="cta-contact-val">pedro@nozoe.studio</span>
+        </div>
+        <div class="cta-contact-item">
+          <span class="cta-contact-role">WhatsApp</span>
+          <span class="cta-contact-val">+81 · disponible en español</span>
+        </div>
+        <div class="cta-stamp">東京・リマ</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-logo">
+      <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="width: 144px">
+    </div>
+    <div class="footer-copy">
+      © 2026 Nozoe Studio · 東京・リマ<br>
+      Swiss premium + warm · Diseño bicultural
+    </div>
+    <div class="footer-social">
+      <a href="#">Behance</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+const navHam = document.getElementById('nav-ham');
+const navMenu = document.querySelector('.nav-links');
+if (navHam && navMenu) {
+  navHam.addEventListener('click', () => navMenu.classList.toggle('open'));
+}
+
+/* ─── Lightbox ─── */
+(function() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  if (!lightbox || !lightboxImg) return;
+
+  const open = (src, alt) => {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('open');
+    document.body.classList.add('lightbox-open');
+  };
+
+  const close = () => {
+    lightbox.classList.remove('open');
+    document.body.classList.remove('lightbox-open');
+    // limpiar src tras la transición para liberar memoria
+    setTimeout(() => { lightboxImg.src = ''; }, 260);
+  };
+
+  document.querySelectorAll('[data-lightbox-src]').forEach(item => {
+    item.addEventListener('click', () => {
+      open(item.dataset.lightboxSrc, item.dataset.lightboxAlt);
+    });
+  });
+
+  // cerrar: clic fuera de la imagen, botón ×, tecla Esc
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) close();
+  });
+  lightboxClose.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) close();
+  });
+
+  // evitar que el clic en la imagen cierre el modal
+  lightboxImg.addEventListener('click', (e) => e.stopPropagation());
+})();
+</script>
+
+</body>
+</html>
