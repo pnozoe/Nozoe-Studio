@@ -8,8 +8,8 @@ Léeme antes de modificar cualquier archivo.
 ## 1. Contexto del proyecto
 
 **Nozoe Studio** es un estudio de diseño gráfico bicultural Japón-Latam, 
-con sede en (Ibaraki, Japón). Atiende clientes de habla hispana
-y audiencia hispanohablante a través de redes sociales y web.
+con sede en (Ibaraki, Japón). Atiende clientes locales de Perú, Brasil y Argentina.
+Además, audiencia hispanohablante a través de redes sociales y web.
 
 Este repositorio contiene el **rediseño 2026 de la web del estudio**. 
 La web es la pieza central de la marca: portafolio, voz editorial, 
