@@ -93,6 +93,12 @@ El sistema de diseño es un **paquete autocontenido** dentro de
 Este archivo se enlaza desde el `<head>` de cada página del sitio.
 
 **Reglas de uso:**
+- **Preferir tokens semánticos sobre tokens primitivos.** 
+  Usar `--ns-surface-base` en lugar de `--ns-warm-200`, 
+  `--ns-text-primary` en lugar de `--ns-ink-800`, etc. 
+  Los tokens semánticos están preparados para soportar 
+  modo claro/oscuro; los primitivos no. Solo usar primitivos 
+  cuando no exista un semántico apropiado.
 - Nunca hardcodear colores, tamaños tipográficos, espaciados o radios. 
   Usar siempre `var(--ns-…)`.
 - Si un valor necesario no existe como token, primero proponer 
