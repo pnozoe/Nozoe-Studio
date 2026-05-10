@@ -53,13 +53,68 @@ colores no cambiarán al alternar el modo.
 
 ## Prioridad media
 
-(Vacío por ahora — agregar mejoras conforme se detecten)
+### Armonización tipográfica con el Design System
+**Detectado:** mayo 2026, durante análisis de Fase 1.1.
+**Contexto:** index.html (y probablemente otras páginas) usan 8+
+tamaños tipográficos fuera de la escala oficial del DS: 9px, 10px,
+11px, 13px, 15px, 17px, 20px, 2rem. La escala del DS no contempla
+estos valores actualmente.
+**Propuesta:** Decisión editorial entre dos caminos:
+- (A) Reemplazar cada uso por el token DS más cercano. Cambio
+  visual perceptible pero genera disciplina sistémica.
+- (B) Expandir el DS con tokens nuevos (--ns-fs-2xs, --ns-fs-13,
+  --ns-fs-15) que documenten oficialmente la escala usada. Mantiene
+  visual actual pero rompe la disciplina del sistema actual.
+- (C) Híbrido: armonizar lo que sea natural, expandir el DS solo
+  donde sea necesario.
+**Páginas afectadas:** todas las del sitio (probablemente).
+**Estimación:** 1 sesión + decisiones editoriales con Pedro.
+**Dependencias:** ninguna técnica. Decisión de diseño.
+
+---
+
+### Investigación y limpieza de `<template id="__bundler_thumbnail">`
+**Detectado:** mayo 2026, durante análisis de Fase 1.1.
+**Contexto:** En el `<head>` de index.html (líneas 15-61) hay un
+`<template>` con SVG embebido (~46 líneas) que parece autogenerado
+por una herramienta externa. Pedro no recuerda haberlo agregado
+ni qué herramienta lo produjo. Posibles orígenes: Adobe Express
+export, Figma plugin, AI tool de generación de thumbnails, bundler
+del editor.
+**Propuesta:**
+- Determinar origen (revisar herramientas usadas en la creación
+  del archivo, buscar el ID en plugins instalados, comparar con
+  exports de las herramientas mencionadas).
+- Verificar si tiene función real (¿OG image fallback? ¿metadata
+  para previews? ¿bundler que lo procesa?).
+- Decidir: eliminar si es residuo, mantener si tiene función,
+  documentar si es necesario para alguna pipeline.
+- Verificar si el mismo template existe en las otras 5 páginas.
+**Páginas afectadas:** index.html confirmado, otras a verificar.
+**Estimación:** 30-60 min de investigación.
+**Dependencias:** ninguna.
 
 ---
 
 ## Prioridad baja / nice-to-have
 
-(Vacío por ahora — agregar mejoras conforme se detecten)
+### Tokens de overlay y hairline para el DS
+**Detectado:** mayo 2026, durante análisis de Fase 1.1.
+**Contexto:** index.html usa 28 valores rgba únicos como bordes
+sutiles, separadores hairline, y overlays de superficie. Son
+colores del DS con alpha compositing variable. El DS actual no
+expone tokens semánticos para estos casos.
+**Propuesta:** Expandir el DS con tokens semánticos como:
+- --ns-border-hairline (rgba sky-400 0.15)
+- --ns-border-subtle (rgba sky-400 0.25)
+- --ns-overlay-subtle (rgba ink-800 0.05)
+- --ns-overlay-medium (rgba ink-800 0.1)
+- (etc., una vez auditados todos los usos reales)
+**Beneficio:** Coherencia sistémica + soporte automático de dark
+mode + reducción de hardcodes en el sitio.
+**Estimación:** 1-2 horas (auditoría de usos + diseño de escala
++ documentación + migración del sitio).
+**Dependencias:** post-cierre del refactor de Fase 1-2.
 
 ---
 

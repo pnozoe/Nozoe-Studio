@@ -1,0 +1,20 @@
+/* ═══════════════════════════════════════════════════════
+   site.css — Nozoe Studio Web 2026
+
+   CSS común externalizado del sitio. Refactorizado en Fase 1
+   del cierre del proyecto.
+
+   Estructura:
+   - Reset / base
+   - Layout / grid
+   - Componentes (header, nav, footer, cards, etc.)
+   - Utilidades
+   - Media queries (mobile-first)
+
+   Reglas:
+   - Usa variables CSS del DS (--ns-*) - nunca hardcodear
+   - Prefiere tokens semánticos sobre primitivos
+   - Mobile-first: media queries de menor a mayor
+   ═══════════════════════════════════════════════════════ */
+
+/* Contenido CSS migrado en Fase 1.2 */
