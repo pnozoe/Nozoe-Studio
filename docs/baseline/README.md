@@ -54,7 +54,7 @@ cada sub-fase del refactor para detectar regresiones.
 - Tamaño en bytes: **47.695** (~46,6 KB)
 - Líneas dentro de `<style>`: **1.026** (≈65 % del archivo)
 - Líneas dentro de `<script>`: **5**
-- Elementos `<section>`: **6** (más 1 `section.paquetes` sin id, total 7)
+- Elementos `<section>`: **6** (5 con id + 1 sin id — `section.paquetes`)
 - Elementos `<nav>`: **1**
 - Elementos `<footer>`: **1**
 - Elementos `<header>`: **0** (esperado — pendiente Fase 1.4)
