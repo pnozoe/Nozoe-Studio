@@ -147,8 +147,8 @@ sistema, leer `nozoe-design-system/README.md`.
 
 ## 6. Estado actual del proyecto
 
-**Fase:** cierre del rediseño 2026 (estimado en 70-75% real al 
-momento de redactar este CLAUDE.md, mayo 2026).
+**Fase actual:** cierre del rediseño 2026 (estimado en 75-80% real 
+al actualizar este documento).
 
 **Trabajo en rama:** `cierre-final` (creada desde `main`).
 **Baseline seguro:** `main` (commit inicial `997ce0f`).
@@ -156,19 +156,74 @@ momento de redactar este CLAUDE.md, mayo 2026).
 **Páginas existentes (6):** index, estudio, servicios, trabajo, 
 contacto, caso-tml.
 
-**Deuda técnica conocida (a resolver en esta fase):**
-1. CSS inline en cada página (~4.450 líneas duplicadas) → 
-   externalizar a `assets/css/site.css`.
-2. Tokens del DS no aplicados al sitio (~125 colores hardcodeados) → 
-   reemplazar por `var(--ns-…)`.
-3. Falta de `<header>` y `<main>` semánticos en las 6 páginas.
-4. Footer divergente entre `servicios`/`trabajo` y el resto.
-5. Imágenes JPG pesadas con `.webp` ya disponibles (8.9 MB evitables).
-6. SEO técnico incompleto: sin canonical, sin sitemap.xml, 
-   sin robots.txt, sin JSON-LD, OG tags incompletos.
+### Roadmap de cierre — sub-fases
 
-**Estrategia de cierre:** página piloto (`index.html`) → patrón → 
-replicación a las otras 5.
+**Fase 1 — Refactor técnico de index.html (página piloto)**
+- ✅ Fase 1.1: Preparación e infraestructura (commit 24df36b)
+- ✅ Fase 1.2: Externalización de CSS (commit f32581b)
+- ⏳ Fase 1.3: Aplicación de tokens del DS
+- ⏳ Fase 1.4: Estructura semántica + JS
+- ⏳ Cierre Fase 1: Documentación del patrón (docs/REFACTOR_PATTERN.md)
+
+**Fase 2 — Replicación a las 5 páginas restantes**
+Aplicar el patrón documentado en Fase 1 a: estudio, servicios, 
+trabajo, contacto, caso-tml. Unificar header/footer divergentes.
+
+**Fase 3 — Optimización técnica de assets existentes**
+- Reemplazar JPGs por WebPs ya disponibles (~8.9 MB de ahorro)
+- Agregar `loading="lazy"` donde corresponda
+- Decidir destino de SVGs no usados
+
+**Fase 3.5 — Actualización de contenido visual**
+Integrar las 52 imágenes WebP nuevas organizadas por Pedro en 
+`~/Desktop/Imagenes web 2026/`:
+- 2 archivos para Estudio (Pedro-Perfil, web-perfil)
+- 8 archivos para Servicios (4 Como Trabajamos + 4 Servicios)
+- 38 archivos para Trabajo (12 Ads + 5 Editorial + 2 Flyer 
+  + 7 Identidad + 2 Packaging + 1 Web)
+Decisiones pendientes: curaduría de portafolio (¿mostrar todas 
+o seleccionar 12-15?), nomenclatura final en assets/, alt text 
+editorial.
+
+**Fase 4 — SEO técnico y pre-producción**
+Canonical, sitemap.xml, robots.txt, completar OG tags, Twitter 
+Cards, JSON-LD (Organization, LocalBusiness, ItemList para 
+portafolio, Article para casos de estudio).
+
+**Fase 4.7 — Refinamiento editorial de copy**
+Decisión sobre estructura de precios (Opción D confirmada: 
+"Desde $X" con doble moneda ¥/US$). Capa pedagógica antes de 
+los precios en la página Servicios. Revisión integral del copy 
+de Home y Servicios. Coherencia bicultural según BRAND.md.
+
+**Fase 5 — QA final + deploy**
+Validación cross-browser, Lighthouse, merge cierre-final → main, 
+deploy estático.
+
+**Post-deploy (en BACKLOG.md):**
+- Actualización integral de perfiles sociales (Behance, LinkedIn, 
+  Instagram)
+- FAB WhatsApp móvil
+- Toggle dark/light mode
+- Armonización tipográfica
+- Estrategia de contenido orgánico (sección de recursos)
+
+### Deuda técnica detectada (a resolver en estas fases)
+
+1. CSS inline en cada página (~4.450 líneas duplicadas) → 
+   externalizar a `assets/css/site.css`. ✅ Resuelto para index 
+   en Fase 1.2.
+2. Tokens del DS no aplicados al sitio (~125 colores hardcodeados) 
+   → reemplazar por `var(--ns-…)`. Próximo en Fase 1.3.
+3. Falta de `<header>` y `<main>` semánticos. Programado en Fase 1.4.
+4. Footer divergente entre `servicios`/`trabajo` y el resto. 
+   A resolver en Fase 2.
+5. Imágenes JPG pesadas con `.webp` ya disponibles (8.9 MB 
+   evitables). A resolver en Fase 3.
+6. SEO técnico incompleto. A resolver en Fase 4.
+
+**Estrategia de cierre:** página piloto (`index.html`) → patrón 
+documentado → replicación mecánica a las otras 5.
 
 ---
 

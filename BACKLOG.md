@@ -53,6 +53,47 @@ colores no cambiarán al alternar el modo.
 
 ## Prioridad media
 
+### Actualización integral de perfiles sociales
+**Detectado:** mayo 2026, durante planificación de roadmap completo.
+**Contexto:** Los enlaces en el footer (Behance, LinkedIn, Instagram) 
+apuntan a perfiles existentes que requieren actualización integral: 
+curaduría de piezas de portafolio, bios alineadas con BRAND.md, 
+posibles imágenes de portada nuevas, sincronización entre plataformas.
+**Propuesta:** Sesión dedicada post-deploy del sitio. No mezclar 
+con el cierre técnico del proyecto web (separación de concerns).
+**Páginas afectadas:** ninguna del sitio (los enlaces ya funcionan).
+**Estimación:** 1-2 sesiones de trabajo curatorial + redacción.
+**Dependencias:** que el sitio esté desplegado y operativo.
+
+---
+
+### Estrategia de contenido orgánico (sección de recursos)
+**Detectado:** mayo 2026, durante planificación de roadmap completo.
+**Contexto:** Pedro planea una segunda fase del estudio post-deploy 
+orientada a generar tráfico orgánico vía content marketing. Idea 
+inicial: página/sección adicional con recursos descargables, 
+artículos pillar de SEO, y notas de actualidad.
+**Propuesta de 3 capas:**
+- Capa 1 — Lead magnets descargables (guías biculturales, 
+  checklists editoriales, plantillas de brief en español neutro, 
+  glosario bicultural).
+- Capa 2 — Artículos pillar (contenido extenso 2000+ palabras 
+  para SEO de cola larga: "diseñar para audiencias biculturales", 
+  "elegir tipografías japonés-español", "el precio del diseño 
+  explicado").
+- Capa 3 — Notas y casos breves (cadencia mensual o quincenal).
+**Decisiones técnicas pendientes:** estructura de URL 
+(`/recursos/`, `/diario/`, `/notas/`), si se justifica un generador 
+estático como 11ty/Astro solo para esta sección, schema.org 
+BlogPosting/Article.
+**Decisión actual:** NO incluir en V1 del sitio. Sin ítem de menú 
+reservado. Se construye como V1.1 post-deploy.
+**Estimación:** proyecto en sí mismo, no una fase corta.
+**Dependencias:** sitio publicado + análisis de keywords + 
+producción editorial sostenida.
+
+---
+
 ### Armonización tipográfica con el Design System
 **Detectado:** mayo 2026, durante análisis de Fase 1.1.
 **Contexto:** index.html (y probablemente otras páginas) usan 8+
