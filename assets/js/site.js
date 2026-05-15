@@ -10,4 +10,11 @@
    - Sin frameworks, sin librerías
    ═══════════════════════════════════════════════════════ */
 
-/* Contenido JS migrado en Fase 1.4 */
+document.addEventListener('DOMContentLoaded', () => {
+  /* Menú hamburguesa */
+  const navHam = document.getElementById('nav-ham');
+  const navMenu = document.querySelector('.nav-links');
+  if (navHam && navMenu) {
+    navHam.addEventListener('click', () => navMenu.classList.toggle('open'));
+  }
+});

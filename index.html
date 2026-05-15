@@ -65,26 +65,30 @@
 <body>
 
 <!-- ══ NAV ══ -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="width: 193px; height: auto">
-    </a>
-    <div class="nav-links">
-      <a href="estudio.html"   class="nav-link">Estudio</a>
-      <a href="trabajo.html"   class="nav-link">Trabajo</a>
-      <a href="servicios.html" class="nav-link">Servicios</a>
-      <a href="contacto.html"  class="nav-link">Contacto</a>
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="width: 193px; height: auto">
+      </a>
+      <div class="nav-links">
+        <a href="estudio.html"   class="nav-link">Estudio</a>
+        <a href="trabajo.html"   class="nav-link">Trabajo</a>
+        <a href="servicios.html" class="nav-link">Servicios</a>
+        <a href="contacto.html"  class="nav-link">Contacto</a>
+      </div>
+      <button class="nav-ham" id="nav-ham" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="contacto.html" class="nav-cta">
+        <span class="wa-dot"></span>
+        WhatsApp
+      </a>
     </div>
-    <button class="nav-ham" id="nav-ham" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-    <a href="contacto.html" class="nav-cta">
-      <span class="wa-dot"></span>
-      WhatsApp
-    </a>
-  </div>
-</nav>
+  </nav>
+</header>
+
+<main id="contenido">
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="inicio">
@@ -132,7 +136,7 @@
 </section>
 
 <!-- ══ TRUST BAR ══ -->
-<div class="trust">
+<section class="trust" aria-label="Cobertura y trayectoria">
   <div class="trust-inner">
     <div class="trust-group">
       <span class="trust-lbl">Diseño desde Japón para</span>
@@ -150,7 +154,7 @@
     <div class="trust-sep"></div>
     <div class="trust-stat" style="font-family:var(--jp);">東京・リマ</div>
   </div>
-</div>
+</section>
 
 <!-- ══ SERVICIOS ══ -->
 <section class="servicios" id="servicios">
@@ -422,7 +426,7 @@
 </section>
 
 <!-- ══ PAQUETES ══ -->
-<section class="paquetes">
+<section class="paquetes" id="paquetes">
   <div class="wrap">
     <div class="g12 pkg-intro">
       <div class="pkg-intro-left">
@@ -520,6 +524,8 @@
   </div>
 </section>
 
+</main>
+
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="wrap footer-inner">
@@ -538,12 +544,6 @@
   </div>
 </footer>
 
-<script>
-const navHam = document.getElementById('nav-ham');
-const navMenu = document.querySelector('.nav-links');
-if (navHam && navMenu) {
-  navHam.addEventListener('click', () => navMenu.classList.toggle('open'));
-}
-</script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
