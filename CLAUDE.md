@@ -161,9 +161,9 @@ contacto, caso-tml.
 **Fase 1 — Refactor técnico de index.html (página piloto)**
 - ✅ Fase 1.1: Preparación e infraestructura (commit 24df36b)
 - ✅ Fase 1.2: Externalización de CSS (commit f32581b)
-- ⏳ Fase 1.3: Aplicación de tokens del DS
-- ⏳ Fase 1.4: Estructura semántica + JS
-- ⏳ Cierre Fase 1: Documentación del patrón (docs/REFACTOR_PATTERN.md)
+- ✅ Fase 1.3: Aplicación de tokens del DS (commits d6c40eb + ca07e6d)
+- ✅ Fase 1.4: Estructura semántica + JS (commit 667677b)
+- ✅ Cierre Fase 1: Patrón documentado (docs/REFACTOR_PATTERN.md)
 
 **Fase 2 — Replicación a las 5 páginas restantes**
 Aplicar el patrón documentado en Fase 1 a: estudio, servicios, 
