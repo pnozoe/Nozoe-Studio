@@ -48,6 +48,66 @@ Hash del CSS extraído debe coincidir con el hash del CSS original.
 
 ---
 
+## ⚠️ Lección aprendida en servicios.html — Scoping de selectores
+
+Al externalizar el CSS de una página a site.css, los selectores
+que coinciden con selectores ya existentes en bloques anteriores
+pueden causar conflictos de cascada.
+
+### El problema
+
+site.css acumula CSS de todas las páginas en orden:
+
+    /* ─── index.html ─── */     → selectores de index
+    /* ─── contacto.html ─── */  → selectores de contacto
+    /* ─── estudio.html ─── */   → selectores de estudio
+    /* ─── servicios.html ─── */ → selectores de servicios ← pueden pisar a los anteriores
+
+Si servicios.html tiene `.nav-link`, `.footer-inner`, `.btn-ember`
+con propiedades distintas, esas reglas afectan a TODAS las páginas
+que usan site.css, no solo a servicios.html.
+
+Caso real (commit 9dd0434 → fix 232eb31): tras externalizar el CSS
+de servicios.html, en index.html la imagen del hero desapareció
+(`.hero-right { align-items: flex-end }` colapsaba `.hero-img-frame`
+a ancho 0) y el grid 2×2 de cards se rompió (`.svc-card`,
+`.svc-card-img`, `.svc-card-num` con valores incompatibles).
+
+### La solución: scoping por página desde el inicio
+
+Los selectores específicos de una página deben ir bajo un
+selector padre único:
+
+    /* MAL — afecta a todas las páginas */
+    .svc-card { justify-content: flex-start; }
+
+    /* BIEN — solo afecta a servicios.html */
+    .servicios-page .svc-card { justify-content: flex-start; }
+
+### Cómo aplicarlo en las páginas restantes
+
+Antes de externalizar el CSS de cada página:
+
+1. Identificar qué selectores del CSS inline YA EXISTEN en
+   site.css (de páginas anteriores)
+2. Para selectores COMUNES con mismos valores: eliminarlos del
+   bloque de la página nueva (ya están definidos)
+3. Para selectores COMUNES con valores diferentes: scopearlos
+   bajo la clase de la página (ej: `.trabajo-page`, `.caso-page`)
+4. Agregar la clase identificadora al `<body>` o `<main>`:
+
+       <main id="contenido" class="trabajo-page">
+
+### Alternativa usada en servicios.html
+
+En servicios.html se scopeó bajo parents que YA existen como
+clases únicas de esa página (`.page-hero`, `.svc-section`),
+evitando agregar una clase extra al `<main>`. Funciona cuando
+la página tiene contenedores con clases distintivas. Si no los
+tiene, usar el approach de `.trabajo-page` en `<main>`.
+
+---
+
 ## Sub-operación 2 — Aplicar tokens del DS
 
 ### Regla principal
