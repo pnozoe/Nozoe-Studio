@@ -165,7 +165,7 @@ contacto, caso-tml.
 - ✅ Fase 1.4: Estructura semántica + JS (commit 667677b)
 - ✅ Cierre Fase 1: Patrón documentado (docs/REFACTOR_PATTERN.md)
 
-**Fase 2 — Replicación a las 5 páginas restantes**
+**✅ Fase 2 — Replicación a las 5 páginas restantes (commits e41ec6c → 07cc399)**
 Aplicar el patrón documentado en Fase 1 a: estudio, servicios, 
 trabajo, contacto, caso-tml. Unificar header/footer divergentes.
 
