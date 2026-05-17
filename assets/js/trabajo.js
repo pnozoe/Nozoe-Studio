@@ -1,33 +1,13 @@
 /* ═══════════════════════════════════════════════════════
    trabajo.js — Nozoe Studio Web 2026
-   JS específico de trabajo.html
+   JS específico de trabajo.html (lightbox del portafolio)
    ═══════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  const pills = document.querySelectorAll('.fpill');
   const cards = document.querySelectorAll('.proj-card');
 
-  /* ── Filter pills ── */
-  pills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      pills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      const filter = pill.dataset.filter;
-      cards.forEach(card => {
-        if (filter === 'all' || card.dataset.cat === filter) {
-          card.style.opacity = '';
-          card.style.pointerEvents = '';
-          card.style.visibility = '';
-        } else {
-          card.style.opacity = '0.2';
-          card.style.pointerEvents = 'none';
-        }
-      });
-    });
-  });
-
-  /* ── Modal de proyecto ── */
+  /* ── Modal de proyecto (lightbox) ── */
   const modal      = document.getElementById('proj-modal');
   const modalClose = document.getElementById('modal-close');
   const modalSlot  = document.getElementById('modal-thumb-slot');
@@ -44,18 +24,25 @@ document.addEventListener('DOMContentLoaded', function() {
     cards.forEach(card => {
       card.addEventListener('click', e => {
         e.preventDefault();
-        const thumb = card.querySelector('.proj-thumb');
-        const meta  = card.querySelector('.proj-meta');
-        if (!thumb) return;
-        const cloned = thumb.cloneNode(true);
-        cloned.classList.remove('proj-thumb-4-3', 'proj-thumb-3-4', 'proj-thumb-1-1');
-        cloned.style.aspectRatio = '4/3';
-        if (modalSlot) {
+        const thumbImg = card.querySelector('.proj-thumb img');
+        if (!thumbImg) return;
+
+        const src = thumbImg.getAttribute('src');
+        const alt = thumbImg.getAttribute('alt') || '';
+        const name = card.querySelector('.proj-name');
+        const tags = card.querySelector('.proj-tags');
+
+        if (modalSlot && src) {
           modalSlot.innerHTML = '';
-          modalSlot.appendChild(cloned);
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = alt;
+          // estilos en CSS (.modal-inner img); aquí solo se setean src/alt
+          modalSlot.appendChild(img);
         }
-        if (modalLabel) modalLabel.textContent = meta ? meta.querySelector('span:first-child').textContent : '';
-        if (modalYear)  modalYear.textContent  = meta ? meta.querySelector('.proj-meta-year').textContent : '';
+        if (modalLabel) modalLabel.textContent = name ? name.textContent : '';
+        if (modalYear)  modalYear.textContent  = tags ? tags.textContent : '';
+
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
       });
@@ -64,28 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (modalClose) modalClose.addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-  }
-
-  /* ── Load more ── */
-  const loadMoreBtn  = document.getElementById('load-more-btn');
-  const group2020    = document.getElementById('group-2020');
-  const loadMoreWrap = document.getElementById('load-more-wrap');
-
-  if (loadMoreBtn && group2020 && loadMoreWrap) {
-    loadMoreBtn.addEventListener('click', () => {
-      group2020.style.display = '';
-      loadMoreWrap.style.display = 'none';
-      const active = document.querySelector('.fpill.active');
-      if (active && active.dataset.filter !== 'all') {
-        const filter = active.dataset.filter;
-        group2020.querySelectorAll('.proj-card').forEach(card => {
-          if (card.dataset.cat !== filter) {
-            card.style.opacity = '0.2';
-            card.style.pointerEvents = 'none';
-          }
-        });
-      }
-    });
   }
 
 });
