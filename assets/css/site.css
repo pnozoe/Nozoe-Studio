@@ -2190,44 +2190,44 @@ body::before {
   padding: 96px 0 72px;
   border-bottom: 1px solid rgba(139,157,183,0.28);
 }
-.hero-grid {
+.page-hero .hero-grid {
   display: grid;
   grid-template-columns: 7fr 5fr;
   gap: 0 64px;
   align-items: end;
 }
-.hero-headline {
+.page-hero .hero-headline {
   font: 800 clamp(3rem, 5vw, 4.6rem)/1.0 var(--ns-font-sans);
   letter-spacing: -0.035em;
   color: var(--ns-text-primary);
   margin-bottom: 24px;
 }
-.hl-em { color: var(--ns-accent); }
-.hero-lede {
+.page-hero .hl-em { color: var(--ns-accent); }
+.page-hero .hero-lede {
   font: 300 17px/1.65 var(--ns-font-sans);
   color: var(--ns-text-secondary);
   max-width: 52ch;
 }
-.hero-right {
+.page-hero .hero-right {
   display: flex;
   flex-direction: column;
   gap: 28px;
   align-items: flex-end;
   padding-bottom: 8px;
 }
-.hero-capsule {
+.page-hero .hero-capsule {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 4px;
 }
-.hero-capsule-num {
+.page-hero .hero-capsule-num {
   font: 800 clamp(2.4rem,3.5vw,3.2rem)/1 var(--ns-font-sans);
   letter-spacing: -0.04em;
   color: var(--ns-text-primary);
 }
-.hero-capsule-num .em { color: var(--ns-accent); }
-.hero-capsule-lbl {
+.page-hero .hero-capsule-num .em { color: var(--ns-accent); }
+.page-hero .hero-capsule-lbl {
   font: 600 9px/1 var(--ns-font-sans);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -2334,7 +2334,7 @@ body::before {
 }
 
 /* card — full-width 16/9, text inside */
-.svc-card {
+.svc-section .svc-card {
   width: min(calc(100vw - max(80px, (100vw - 1360px) / 2 + 80px) - 52px), 1200px);
   max-width: 1200px;
   flex-shrink: 0;
@@ -2353,10 +2353,10 @@ body::before {
   border: 0;
   padding: 0;
 }
-.svc-card:hover { transform: translateY(-4px); }
+.svc-section .svc-card:hover { transform: translateY(-4px); }
 
 /* full-bleed image layer */
-.svc-card-img {
+.svc-section .svc-card-img {
   position: absolute;
   inset: 0;
   background-color: var(--ns-text-primary);
@@ -2373,7 +2373,7 @@ body::before {
 .svc-section .svc-card-img::before { content: none; }
 
 /* gradient overlay: ink→transparent, left to right */
-.svc-card-gradient {
+.svc-section .svc-card-gradient {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -2385,7 +2385,7 @@ body::before {
 }
 
 /* decorative number — bottom right */
-.svc-card-num {
+.svc-section .svc-card-num {
   position: absolute;
   bottom: -8px;
   right: 28px;
@@ -2398,7 +2398,7 @@ body::before {
 }
 
 /* text content — left 50% */
-.svc-card-body {
+.svc-section .svc-card-body {
   position: relative;
   z-index: 2;
   width: 50%;
@@ -2409,7 +2409,7 @@ body::before {
   /* override: cancelar flex:1 heredado del bloque index */
   flex: initial;
 }
-.svc-card-tag {
+.svc-section .svc-card-tag {
   display: inline-flex;
   align-items: center;
   height: 22px;
@@ -2422,38 +2422,38 @@ body::before {
   color: var(--ns-accent);
   align-self: flex-start;
 }
-.svc-card-tag.popular {
+.svc-section .svc-card-tag.popular {
   background: var(--ns-accent);
   color: #fff;
 }
-.svc-card-name {
+.svc-section .svc-card-name {
   font: 800 28px/1.1 var(--ns-font-sans);
   letter-spacing: -0.025em;
   color: #fff;
 }
-.svc-card-desc {
+.svc-section .svc-card-desc {
   font: 300 13px/1.65 var(--ns-font-sans);
   color: rgba(255,255,255,0.65);
   max-width: 36ch;
   /* override: cancelar margin-bottom: 32px heredado del bloque index */
   margin-bottom: 0;
 }
-.svc-card-footer {
+.svc-section .svc-card-footer {
   display: flex;
   align-items: center;
   gap: 16px;
   padding-top: 4px;
 }
-.svc-card-price {
+.svc-section .svc-card-price {
   font: 800 14px/1 var(--ns-font-sans);
   color: #fff;
 }
-.svc-card-price span {
+.svc-section .svc-card-price span {
   font-weight: 300;
   color: rgba(255,255,255,0.45);
   font-size: 12px;
 }
-.svc-card-btn {
+.svc-section .svc-card-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2470,8 +2470,8 @@ body::before {
   transition: background 200ms var(--ns-ease-out), border-color 200ms var(--ns-ease-out);
   cursor: pointer;
 }
-.svc-card-btn:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.4); }
-.svc-card-btn svg {
+.svc-section .svc-card-btn:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.4); }
+.svc-section .svc-card-btn svg {
   width: 10px; height: 10px;
   stroke: #fff; stroke-width: 1.8;
   stroke-linecap: round; stroke-linejoin: round;
@@ -2722,20 +2722,20 @@ body::before {
   .wrap { padding: 0 32px; }
   .nav-inner { padding: 0 32px; }
 
-  .hero-grid { grid-template-columns: 1fr !important; }
-  .hero-right { display: none; }
+  .page-hero .hero-grid { grid-template-columns: 1fr !important; }
+  .page-hero .hero-right { display: none; }
 
   .g12 { grid-template-columns: 1fr; }
   .svc-intro-left, .svc-intro-right { grid-column: 1 / -1; }
 
   .svc-track-wrap { padding-left: 40px; scroll-padding-left: 40px; }
   .svc-arrows { padding-left: 40px; }
-  .svc-card { width: calc(100vw - 40px - 36px) !important; min-width: calc(100vw - 40px - 36px) !important; }
+  .svc-section .svc-card { width: calc(100vw - 40px - 36px) !important; min-width: calc(100vw - 40px - 36px) !important; }
   /* en mobile la card muestra solo título + precio + botón para evitar desborde */
-  .svc-card-body { width: auto; padding: 28px 32px; gap: 14px; }
-  .svc-card-tag { display: none; }
-  .svc-card-desc { display: none; }
-  .svc-card-name { font-size: 22px; }
+  .svc-section .svc-card-body { width: auto; padding: 28px 32px; gap: 14px; }
+  .svc-section .svc-card-tag { display: none; }
+  .svc-section .svc-card-desc { display: none; }
+  .svc-section .svc-card-name { font-size: 22px; }
 
   .faq-grid { grid-template-columns: 1fr; }
 
@@ -2784,7 +2784,7 @@ body::before {
 
   .svc-track-wrap { padding-left: 20px; scroll-padding-left: 20px; }
   .svc-arrows { padding-left: 20px; }
-  .svc-card { width: calc(100vw - 20px - 20px) !important; min-width: calc(100vw - 20px - 20px) !important; }
+  .svc-section .svc-card { width: calc(100vw - 20px - 20px) !important; min-width: calc(100vw - 20px - 20px) !important; }
 
   .proceso-steps { grid-template-columns: 1fr; }
 
