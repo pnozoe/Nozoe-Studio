@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,33 @@
 <meta name="description" content="Portafolio de Nozoe Studio — +40 proyectos de identidad, web y contenido para emprendedores en Japón, América y Europa.">
 <meta property="og:title" content="Nozoe Studio · Trabajo">
 <meta property="og:description" content="Casos donde el diseño cambió algo real: cómo vendía un cliente, cómo lo veían sus pares, cómo crecía su marca.">
-<meta property="og:image" content="assets/og-image.png">
+<meta property="og:image" content="https://nozoestudio.com/assets/og-image.png">
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://nozoestudio.com/trabajo.html">
+<meta property="og:url" content="https://nozoestudio.com/trabajo.html">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Nozoe Studio">
+<meta property="og:image:alt" content="Portafolio de proyectos — Nozoe Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nozoe Studio · Trabajo">
+<meta name="twitter:description" content="28+ proyectos de diseño en identidad, web, publicidad y packaging. Clientes en Japón, Perú y Brasil.">
+<meta name="twitter:image" content="https://nozoestudio.com/assets/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "url": "https://nozoestudio.com/trabajo.html",
+  "name": "Portafolio — Nozoe Studio",
+  "description": "28+ proyectos de diseño en identidad de marca, diseño web, publicidad y packaging.",
+  "creator": { "@type": "Organization", "name": "Nozoe Studio", "url": "https://nozoestudio.com" }
+}
+</script>
 <link rel="icon" href="assets/favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
 
 <template id="__bundler_thumbnail" data-bg-color="#F4F1EC">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -24,830 +47,36 @@
   </svg>
 </template>
 
-<style>
-/* ─── Tokens ─── */
-:root {
-  --ink:        #1D2A40;
-  --ink-700:    #243450;
-  --ink-950:    #0A1119;
-  --slate:      #475773;
-  --mist:       #8B9DB7;
-  --sky:        #C6D5EA;
-  --warm:       #F4F1EC;
-  --warm-300:   #ECE7DF;
-  --warm-400:   #E0D9CD;
-  --ember:      #E94E1B;
-  --ember-h:    #D14418;
-  --sans: 'Nunito', ui-sans-serif, sans-serif;
-  --jp:   'Noto Sans JP', 'Nunito', sans-serif;
-  --ease: cubic-bezier(0.16,1,0.3,1);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-
-body {
-  font-family: var(--sans);
-  background: var(--warm);
-  color: var(--ink);
-  overflow-x: hidden;
-}
-
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(29,42,64,0.042) 1px, transparent 0);
-  background-size: 28px 28px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 80px;
-}
-
-/* ── Nav ── */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: color-mix(in srgb, var(--warm) 88%, transparent);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(139,157,183,0.22);
-}
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 80px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-}
-.nav-logo img { height: 30px; width: auto; display: block; }
-.nav-links { display: flex; align-items: center; gap: 2px; }
-.nav-link {
-  font: 600 11px/1 var(--sans);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--slate);
-  text-decoration: none;
-  padding: 0 14px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  border-radius: 4px;
-  transition: color 120ms var(--ease), background 120ms var(--ease);
-}
-.nav-link:hover { color: var(--ink); background: rgba(29,42,64,0.05); }
-.nav-link.active { color: var(--ink); }
-.nav-link.active::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: -1px;
-  left: 14px; right: 14px;
-  height: 2px;
-  background: var(--ember);
-}
-.nav-link { position: relative; }
-.nav-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  height: 36px;
-  padding: 0 16px;
-  background: var(--ink);
-  color: var(--warm);
-  font: 600 12px/1 var(--sans);
-  border-radius: 4px;
-  text-decoration: none;
-  flex-shrink: 0;
-  transition: background 120ms var(--ease);
-}
-.nav-cta:hover { background: var(--ink-700); }
-.wa-dot { width: 8px; height: 8px; background: #25D366; border-radius: 50%; flex-shrink: 0; }
-
-/* ── Section mark ── */
-.sm { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
-.sm-dot { width: 6px; height: 6px; background: var(--ember); flex-shrink: 0; }
-.sm-lbl { font: 600 10px/1 var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--mist); }
-
-/* ── Hairline ── */
-.hairline { height: 1px; background: rgba(139,157,183,0.28); }
-
-/* ══ HERO ══ */
-.page-hero {
-  position: relative;
-  z-index: 1;
-  padding: 96px 0 72px;
-  border-bottom: 1px solid rgba(139,157,183,0.28);
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 7fr 5fr;
-  gap: 0 64px;
-  align-items: end;
-}
-.hero-headline {
-  font: 800 clamp(3rem, 5vw, 4.6rem)/1.0 var(--sans);
-  letter-spacing: -0.035em;
-  color: var(--ink);
-  margin-bottom: 24px;
-}
-.hl-em { color: var(--ember); }
-.hero-lede {
-  font: 300 17px/1.65 var(--sans);
-  color: var(--slate);
-  max-width: 52ch;
-}
-.hero-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  align-items: flex-end;
-  padding-bottom: 8px;
-}
-.hero-stat-item { text-align: right; }
-.hero-stat-num {
-  font: 800 clamp(2.4rem,3.5vw,3.2rem)/1 var(--sans);
-  letter-spacing: -0.04em;
-  color: var(--ink);
-}
-.hero-stat-num .em { color: var(--ember); }
-.hero-stat-lbl {
-  font: 600 9px/1 var(--sans);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--mist);
-  margin-top: 6px;
-}
-
-/* ══ FILTROS ══ */
-.filters-bar {
-  position: relative;
-  z-index: 1;
-  border-bottom: 1px solid rgba(139,157,183,0.28);
-  background: color-mix(in srgb, var(--warm) 92%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-.filters-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 80px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.filter-pills { display: flex; align-items: center; gap: 4px; }
-.fpill {
-  height: 32px;
-  padding: 0 14px;
-  border-radius: 4px;
-  border: none;
-  background: transparent;
-  font: 600 11px/1 var(--sans);
-  letter-spacing: 0.04em;
-  color: var(--slate);
-  cursor: pointer;
-  transition: background 120ms var(--ease), color 120ms var(--ease);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.fpill:hover { background: rgba(29,42,64,0.06); color: var(--ink); }
-.fpill.active { background: var(--ink); color: var(--warm); }
-.fpill .count { font-weight: 300; opacity: 0.6; font-size: 10px; }
-.fpill.active .count { opacity: 0.55; color: var(--sky); }
-.sort-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font: 600 10px/1 var(--sans);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mist);
-}
-.sort-group select {
-  background: none;
-  border: none;
-  font: 800 11px/1 var(--sans);
-  letter-spacing: 0.04em;
-  color: var(--ink);
-  cursor: pointer;
-  outline: none;
-  appearance: none;
-  padding-right: 14px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238B9DB7' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0 center;
-}
-
-/* ══ PROYECTO ANCLA ══ */
-.ancla-section {
-  position: relative; z-index: 1;
-  padding: 72px 0;
-  border-bottom: 1px solid rgba(139,157,183,0.28);
-}
-.ancla-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  height: 26px;
-  padding: 0 12px;
-  background: var(--ember);
-  border-radius: 4px;
-  font: 800 9px/1 var(--sans);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 40px;
-}
-.ancla-grid {
-  display: grid;
-  grid-template-columns: 5fr 4fr;
-  gap: 64px;
-  align-items: center;
-}
-.ancla-body { display: flex; flex-direction: column; gap: 20px; }
-.ancla-kicker {
-  font: 800 10px/1 var(--sans);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mist);
-}
-.ancla-title {
-  font: 800 clamp(2.8rem, 4.5vw, 4.2rem)/1.0 var(--sans);
-  letter-spacing: -0.035em;
-  color: var(--ink);
-}
-.ancla-title .em { color: var(--ember); }
-.ancla-desc {
-  font: 300 16px/1.7 var(--sans);
-  color: var(--slate);
-  max-width: 44ch;
-}
-.ancla-meta {
-  display: flex;
-  gap: 40px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(139,157,183,0.28);
-}
-.meta-item {}
-.meta-label {
-  font: 800 8px/1 var(--sans);
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--mist);
-  margin-bottom: 6px;
-}
-.meta-value {
-  font: 800 14px/1 var(--sans);
-  letter-spacing: -0.01em;
-  color: var(--ink);
-}
-.ancla-visual {
-  background: var(--ink);
-  border-radius: 4px;
-  aspect-ratio: 4/5;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-}
-.ancla-visual::before {
-  content: '';
-  position: absolute;
-  bottom: 0; right: 0;
-  width: 60%; height: 60%;
-  background: radial-gradient(circle at 100% 100%, rgba(233,78,27,0.22) 0%, transparent 65%);
-}
-.ancla-vis-kicker {
-  font: 800 9px/1 var(--sans);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(139,157,183,0.6);
-}
-.ancla-vis-mark {
-  font: 800 clamp(1.8rem,3vw,2.8rem)/1 var(--sans);
-  letter-spacing: -0.03em;
-  color: var(--warm);
-  position: relative;
-  z-index: 1;
-}
-.ancla-vis-mark span { color: var(--ember); }
-.ancla-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font: 600 13px/1 var(--sans);
-  letter-spacing: 0.01em;
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--sky);
-  padding-bottom: 2px;
-  transition: border-color 150ms var(--ease);
-  align-self: flex-start;
-}
-.ancla-link:hover { border-color: var(--ink); }
-.ancla-link .arr { transition: transform 200ms var(--ease); }
-.ancla-link:hover .arr { transform: translateX(3px); }
-
-/* ══ GRID DE PROYECTOS ══ */
-.proyectos-section {
-  position: relative; z-index: 1;
-  padding: 72px 0 96px;
-}
-.year-group { margin-bottom: 72px; }
-.year-group:last-child { margin-bottom: 0; }
-
-.year-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(139,157,183,0.28);
-  margin-bottom: 40px;
-}
-.year-label {
-  font: 300 11px/1 var(--sans);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--mist);
-}
-.year-count {
-  font: 300 10px/1 var(--sans);
-  letter-spacing: 0.1em;
-  color: rgba(139,157,183,0.5);
-}
-
-/* Row 1: 5fr 3fr */
-.proj-row-a {
-  display: grid;
-  grid-template-columns: 5fr 3fr;
-  gap: 24px;
-}
-/* Row 2: 3 cols */
-.proj-row-b {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
-}
-/* Row 3: 3fr 5fr */
-.proj-row-c {
-  display: grid;
-  grid-template-columns: 3fr 5fr;
-  gap: 24px;
-}
-/* Row 4: 1fr 1fr */
-.proj-row-d {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-/* Uniform vertical spacing between rows */
-.proj-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* Asymmetric rows: thumbs fill the full card height so no empty space below shorter card */
-.proj-row-a .proj-card,
-.proj-row-c .proj-card {
-  display: flex;
-  flex-direction: column;
-}
-.proj-row-a .proj-thumb,
-.proj-row-c .proj-thumb {
-  flex: 1;
-  aspect-ratio: unset;
-  min-height: 260px;
-}
-
-.proj-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
-.proj-thumb {
-  border-radius: 4px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  transition: transform 260ms var(--ease);
-}
-.proj-card:hover .proj-thumb { transform: translateY(-2px); }
-
-.proj-thumb-4-3  { aspect-ratio: 4/3; }
-.proj-thumb-3-4  { aspect-ratio: 3/4; }
-.proj-thumb-1-1  { aspect-ratio: 1/1; }
-
-.thumb-ink   { background: var(--ink); }
-.thumb-ember { background: var(--ember); }
-.thumb-sky   { background: var(--sky); }
-.thumb-warm  { background: var(--warm-400); border: 1px solid rgba(139,157,183,0.28); }
-.thumb-slate { background: var(--slate); }
-.thumb-muted { background: #A89076; }
-
-.proj-thumb-type {
-  font: 800 9px/1 var(--sans);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-.on-dark  { color: rgba(139,157,183,0.65); }
-.on-ember { color: rgba(29,42,64,0.65); }
-.on-sky   { color: rgba(29,42,64,0.65); }
-.on-warm  { color: var(--slate); }
-.on-muted { color: rgba(29,42,64,0.65); }
-
-.proj-thumb-name {
-  font: 800 clamp(1.2rem,2.2vw,1.8rem)/1.05 var(--sans);
-  letter-spacing: -0.025em;
-}
-.name-dark  { color: var(--warm); }
-.name-light { color: var(--ink); }
-
-.proj-thumb-sub {
-  font: 300 13px/1.5 var(--sans);
-  margin-top: 6px;
-  max-width: 26ch;
-}
-.sub-dark  { color: rgba(139,157,183,0.75); }
-.sub-light { color: rgba(71,87,115,0.85); }
-.sub-ember { color: rgba(29,42,64,0.7); }
-
-.proj-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 4px 0;
-  font: 600 10px/1 var(--sans);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--mist);
-}
-.proj-meta-year { color: rgba(139,157,183,0.6); }
-
-/* ── Modal / Lightbox ── */
-.proj-modal {
-  position: fixed; inset: 0; z-index: 1000;
-  background: rgba(10,17,25,0.92);
-  display: flex; align-items: center; justify-content: center;
-  padding: 40px;
-  opacity: 0; pointer-events: none;
-  transition: opacity 280ms var(--ease);
-  backdrop-filter: blur(6px);
-}
-.proj-modal.active { opacity: 1; pointer-events: all; }
-.modal-close {
-  position: absolute; top: 24px; right: 28px;
-  width: 44px; height: 44px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(198,213,234,0.18);
-  border-radius: 50%;
-  font: 300 24px/1 var(--sans); color: var(--warm);
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: background 150ms var(--ease);
-}
-.modal-close:hover { background: rgba(255,255,255,0.16); }
-.modal-inner {
-  width: 100%; max-width: 780px;
-  border-radius: 6px;
-  overflow: hidden;
-  transform: translateY(12px);
-  transition: transform 280ms var(--ease);
-}
-.proj-modal.active .modal-inner { transform: translateY(0); }
-.modal-inner .proj-thumb {
-  aspect-ratio: 4/3 !important;
-  padding: 48px !important;
-  width: 100%;
-}
-.modal-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 20px;
-  background: rgba(29,42,64,0.95);
-  font: 600 10px/1 var(--sans);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--mist);
-}
-.modal-meta-year { color: rgba(139,157,183,0.55); }
-
-/* Load more */
-.load-more-wrap {
-  display: flex;
-  justify-content: center;
-  padding-top: 56px;
-}
-.load-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  height: 48px;
-  padding: 0 28px;
-  border: 1px solid var(--sky);
-  border-radius: 4px;
-  background: none;
-  font: 600 12px/1 var(--sans);
-  letter-spacing: 0.05em;
-  color: var(--slate);
-  cursor: pointer;
-  transition: border-color 150ms var(--ease), color 150ms var(--ease);
-}
-.load-more-btn:hover { border-color: var(--ink); color: var(--ink); }
-.load-more-count {
-  font: 300 11px/1 var(--sans);
-  color: var(--mist);
-}
-
-/* ══ STATS ══ */
-.stats-section {
-  position: relative; z-index: 1;
-  background: var(--warm-300);
-  border-top: 1px solid rgba(139,157,183,0.28);
-  border-bottom: 1px solid rgba(139,157,183,0.28);
-  padding: 72px 0;
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-}
-.stat-item {
-  padding: 0 40px;
-  border-right: 1px solid rgba(139,157,183,0.28);
-}
-.stat-item:first-child { padding-left: 0; }
-.stat-item:last-child  { border-right: none; }
-.stat-num {
-  font: 800 clamp(3rem,5vw,4.8rem)/1 var(--sans);
-  letter-spacing: -0.04em;
-  color: var(--ink);
-  margin-bottom: 10px;
-}
-.stat-num .em { color: var(--ember); }
-.stat-lbl {
-  font: 600 10px/1 var(--sans);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--slate);
-  line-height: 1.6;
-}
-
-/* ══ CTA FINAL ══ */
-.cta-final {
-  position: relative; z-index: 1;
-  background: var(--ink);
-  padding: 96px 0;
-}
-.cta-grid {
-  display: grid;
-  grid-template-columns: 6fr 4fr;
-  gap: 80px;
-  align-items: center;
-}
-.cta-kicker {
-  font: 800 10px/1 var(--sans);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ember);
-  margin-bottom: 24px;
-}
-.cta-headline {
-  font: 800 clamp(2.4rem,4vw,3.6rem)/1.04 var(--sans);
-  letter-spacing: -0.03em;
-  color: var(--warm);
-  margin-bottom: 20px;
-}
-.cta-headline .em { color: var(--ember); }
-.cta-lede {
-  font: 300 15px/1.7 var(--sans);
-  color: rgba(139,157,183,0.8);
-  max-width: 44ch;
-  margin-bottom: 36px;
-}
-.cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  height: 48px;
-  padding: 0 26px;
-  border: none;
-  border-radius: 4px;
-  font: 600 13px/1 var(--sans);
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 150ms var(--ease), transform 150ms var(--ease);
-}
-.btn-ember { background: var(--ember); color: #fff; }
-.btn-ember:hover { background: var(--ember-h); transform: translateY(-1px); }
-.btn-ghost-light {
-  background: transparent;
-  color: var(--sky);
-  border: 1px solid rgba(139,157,183,0.35);
-  height: 48px;
-}
-.btn-ghost-light:hover { border-color: var(--sky); }
-
-.cta-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.cta-contact-item {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.cta-contact-role {
-  font: 600 9px/1 var(--sans);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(139,157,183,0.5);
-}
-.cta-contact-val {
-  font: 400 14px/1 var(--sans);
-  color: rgba(198,213,234,0.85);
-}
-.cta-stamp {
-  font: 300 28px/1 var(--jp);
-  color: rgba(139,157,183,0.18);
-  margin-top: 16px;
-}
-
-/* ══ FOOTER ══ */
-.footer {
-  position: relative; z-index: 1;
-  border-top: 1px solid rgba(139,157,183,0.18);
-  background: var(--ink);
-  padding: 32px 0;
-}
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-}
-.footer-copy {
-  font: 300 11px/1.6 var(--sans);
-  color: rgba(139,157,183,0.5);
-}
-.footer-social { display: flex; gap: 20px; }
-.footer-social a {
-  font: 600 11px/1 var(--sans);
-  letter-spacing: 0.06em;
-  color: rgba(139,157,183,0.45);
-  text-decoration: none;
-  transition: color 150ms var(--ease);
-}
-.footer-social a:hover { color: rgba(198,213,234,0.8); }
-
-/* ── Filter JS ── */
-.proj-card[data-cat] { transition: opacity 240ms var(--ease), transform 240ms var(--ease); }
-.proj-card.hidden { opacity: 0; pointer-events: none; position: absolute; }
-
-/* ══════════════════════════════════════
-   SCROLL-REVEAL
-══════════════════════════════════════ */
-.anim {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 700ms cubic-bezier(0.16,1,0.3,1), transform 700ms cubic-bezier(0.16,1,0.3,1);
-}
-.anim.visible { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: 60ms; }
-.d2 { transition-delay: 140ms; }
-.d3 { transition-delay: 230ms; }
-.d4 { transition-delay: 330ms; }
-
-/* ══════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .wrap { padding: 0 48px; }
-  .nav-inner { padding: 0 48px; }
-  .footer-inner { padding: 0 48px; }
-}
-
-@media (max-width: 900px) {
-  .wrap { padding: 0 32px; }
-  .nav-inner { padding: 0 32px; }
-
-  .hero-grid { grid-template-columns: 1fr !important; }
-  .hero-stats { flex-direction: row; flex-wrap: wrap; gap: 20px; }
-  .hero-stat { flex: 1 1 120px; }
-
-  .g12 { grid-template-columns: 1fr; }
-
-  .ancla-grid { grid-template-columns: 1fr !important; }
-  .ancla-img, .ancla-body { grid-column: 1 / -1 !important; }
-  .ancla-body { padding-left: 0; padding-top: 24px; }
-
-  .proj-row-a, .proj-row-b, .proj-row-c, .proj-row-d { grid-template-columns: 1fr !important; }
-
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-
-  .filters-inner { gap: 8px; }
-
-  .cta-grid { grid-template-columns: 1fr !important; }
-  .cta-left, .cta-right { grid-column: 1 / -1 !important; }
-
-  .footer-inner { flex-direction: column; gap: 16px; text-align: center; padding: 24px 32px; }
-}
-
-.nav-ham {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 36px; height: 36px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
-  transition: background 120ms;
-  flex-shrink: 0;
-}
-.nav-ham:hover { background: rgba(29,42,64,0.06); }
-.nav-ham span { display: block; height: 2px; border-radius: 999px; background: var(--ink); }
-.nav-ham span:last-child { background: var(--ember); width: 65%; }
-
-@media (max-width: 600px) {
-  .wrap { padding: 0 20px; }
-  .nav-inner { padding: 0 20px; }
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex !important;
-    flex-direction: column;
-    position: fixed;
-    top: 64px; left: 0; right: 0;
-    background: var(--warm);
-    padding: 12px 20px 20px;
-    border-bottom: 1px solid rgba(139,157,183,0.22);
-    z-index: 99;
-    gap: 4px;
-    box-shadow: 0 8px 24px rgba(29,42,64,0.1);
-  }
-  .nav-link { height: 44px; font-size: 13px; }
-  .nav-ham { display: flex; }
-
-  .filters-inner { flex-direction: column; align-items: flex-start; }
-
-  .stats-grid { grid-template-columns: 1fr; }
-
-  .footer-inner { padding: 0 20px; }
-}
-</style>
 </head>
 <body>
 
 <!-- ══ NAV ══ -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio">
-    </a>
-    <div class="nav-links">
-      <a href="estudio.html" class="nav-link">Estudio</a>
-      <a href="#" class="nav-link active">Trabajo</a>
-      <a href="servicios.html" class="nav-link">Servicios</a>
-      <a href="contacto.html" class="nav-link">Contacto</a>
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/nozoe-studio-logo-color.svg" alt="Nozoe Studio" style="width: 193px; height: auto">
+      </a>
+      <div class="nav-links">
+        <a href="estudio.html" class="nav-link">Estudio</a>
+        <a href="#" class="nav-link active">Trabajo</a>
+        <a href="servicios.html" class="nav-link">Servicios</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </div>
+      <button class="nav-ham" id="nav-ham" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="https://wa.me/817022124910" class="nav-cta">
+        <span class="wa-dot"></span>WhatsApp
+      </a>
     </div>
-    <button class="nav-ham" id="nav-ham" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-    <a href="https://wa.me/817022124910" class="nav-cta">
-      <span class="wa-dot"></span>WhatsApp
-    </a>
-  </div>
-</nav>
+  </nav>
+</header>
+
+<main id="contenido" class="trabajo-page">
 
 <!-- ══ HERO ══ -->
-<section class="page-hero">
+<section class="page-hero" id="intro">
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -864,7 +93,7 @@ body::before {
       </div>
       <div class="hero-stats">
         <div class="hero-stat-item">
-          <div class="hero-stat-num">12</div>
+          <div class="hero-stat-num">28<span class="em">+</span></div>
           <div class="hero-stat-lbl">Proyectos publicados</div>
         </div>
         <div class="hero-stat-item">
@@ -872,7 +101,7 @@ body::before {
           <div class="hero-stat-lbl">Países · PE · JP · BR</div>
         </div>
         <div class="hero-stat-item">
-          <div class="hero-stat-num">6<span class="em">+</span></div>
+          <div class="hero-stat-num">15<span class="em">+</span></div>
           <div class="hero-stat-lbl">Años de trayectoria</div>
         </div>
       </div>
@@ -880,28 +109,8 @@ body::before {
   </div>
 </section>
 
-<!-- ══ FILTROS ══ -->
-<div class="filters-bar" id="filtros">
-  <div class="filters-inner">
-    <div class="filter-pills">
-      <button class="fpill active" data-filter="all">Todos <span class="count">12</span></button>
-      <button class="fpill" data-filter="identidad">Identidad <span class="count">5</span></button>
-      <button class="fpill" data-filter="web">Web <span class="count">3</span></button>
-      <button class="fpill" data-filter="packaging">Packaging <span class="count">2</span></button>
-      <button class="fpill" data-filter="campana">Campañas <span class="count">2</span></button>
-    </div>
-    <div class="sort-group">
-      ORDENAR
-      <select>
-        <option>Recientes</option>
-        <option>Antiguos</option>
-      </select>
-    </div>
-  </div>
-</div>
-
 <!-- ══ PROYECTO ANCLA ══ -->
-<section class="ancla-section">
+<section class="ancla-section" id="ancla">
   <div class="wrap">
     <div class="ancla-badge">
       <span>Proyecto ancla</span>
@@ -928,238 +137,393 @@ body::before {
         <a href="caso-tml.html" class="ancla-link">Ver caso completo <span class="arr">→</span></a>
       </div>
       <div class="ancla-visual">
-        <div class="ancla-vis-kicker">Sistema Visual</div>
-        <div>
-          <div class="ancla-vis-mark">TML<br>Cipango<span>.</span></div>
-        </div>
+        <img src="assets/casos/tml/tml-flyer.webp"
+             alt="TML Cipango — Flyer promocional: Explora Tokyo en español, servicio turístico con chóferes y guías"
+             loading="lazy"
+             style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══ GRID DE PROYECTOS ══ -->
-<section class="proyectos-section">
+<section class="proyectos-section" id="proyectos">
   <div class="wrap">
-
-    <!-- ─ 2024–2025 ─ -->
-    <div class="year-group">
-      <div class="year-header">
-        <span class="year-label">2024 — 2025</span>
-        <span class="year-count">5 proyectos</span>
+    <div class="proj-grid">
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/identidad/identidad-brand-cassaforma.webp"
+               alt="Cassaforma — brand book inmobiliario"
+               loading="lazy" width="2816" height="1536">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Cassaforma</span>
+              <span class="proj-tags">Identidad</span>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="proj-rows">
-      <!-- Fila A: grande + pequeño -->
-      <div class="proj-row-a">
-        <a href="#" class="proj-card" data-cat="identidad">
-          <div class="proj-thumb proj-thumb-4-3 thumb-sky">
-            <div class="proj-thumb-type on-sky">Identidad</div>
-            <div>
-              <div class="proj-thumb-name name-light" style="font-size: clamp(1.6rem,2.5vw,2.4rem)">Casa Forma</div>
-              <div class="proj-thumb-sub sub-light">Una inmobiliaria que no parece inmobiliaria.</div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/identidad/identidad-logo-cassaforma.webp"
+               alt="Cassaforma — logo y marca"
+               loading="lazy" width="1200" height="1200">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Cassaforma</span>
+              <span class="proj-tags">Identidad</span>
             </div>
           </div>
-          <div class="proj-meta">
-            <span>Inmobiliario · Perú</span>
-            <span class="proj-meta-year">2025</span>
-          </div>
-        </a>
-        <a href="#" class="proj-card" data-cat="packaging">
-          <div class="proj-thumb proj-thumb-4-3 thumb-ember">
-            <div class="proj-thumb-type on-ember">Packaging</div>
-            <div>
-              <div class="proj-thumb-name name-light">Guaraná</div>
-              <div class="proj-thumb-sub sub-ember">Del mercado local a la góndola premium.</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Bebidas · Brasil</span>
-            <span class="proj-meta-year">2025</span>
-          </div>
-        </a>
+        </div>
       </div>
-
-      <!-- Fila B: 3 columnas -->
-      <div class="proj-row-b">
-        <a href="#" class="proj-card" data-cat="identidad">
-          <div class="proj-thumb proj-thumb-3-4 thumb-warm">
-            <div class="proj-thumb-type on-warm">Identidad</div>
-            <div>
-              <div class="proj-thumb-name name-light" style="font-style: italic">Alphard</div>
-              <div class="proj-thumb-sub sub-light">Marca boutique para exportación.</div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/identidad/identidad-logo-tml.webp"
+               alt="TML Cipango — logo turismo"
+               loading="lazy" width="1200" height="1200">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">TML Cipango</span>
+              <span class="proj-tags">Identidad</span>
             </div>
           </div>
-          <div class="proj-meta">
-            <span>Gastronomía · JP</span>
-            <span class="proj-meta-year">2024</span>
-          </div>
-        </a>
-        <a href="#" class="proj-card" data-cat="campana">
-          <div class="proj-thumb proj-thumb-3-4 thumb-slate">
-            <div class="proj-thumb-type on-dark">Campaña</div>
-            <div>
-              <div class="proj-thumb-name name-dark">QuickPhone</div>
-              <div class="proj-thumb-sub sub-dark">Reparación de móviles para Japón.</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Servicios · Japón</span>
-            <span class="proj-meta-year">2024</span>
-          </div>
-        </a>
-        <a href="#" class="proj-card" data-cat="packaging">
-          <div class="proj-thumb proj-thumb-3-4 thumb-muted">
-            <div class="proj-thumb-type on-muted">Packaging</div>
-            <div>
-              <div class="proj-thumb-name name-light">Tierra Alta</div>
-              <div class="proj-thumb-sub sub-light" style="color:rgba(29,42,64,0.65)">Café de altura, etiqueta editorial.</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Café · Perú</span>
-            <span class="proj-meta-year">2024</span>
-          </div>
-        </a>
+        </div>
       </div>
-      </div><!-- /proj-rows -->
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/identidad/identidad-tipografia-cassaforma.webp"
+               alt="Cassaforma — sistema tipográfico"
+               loading="lazy" width="1000" height="611">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Cassaforma</span>
+              <span class="proj-tags">Identidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/identidad/identidad-logo-wilkamikuy.webp"
+               alt="Wilkamikuy — logo gastronomía andina"
+               loading="lazy" width="1200" height="1200">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Wilkamikuy</span>
+              <span class="proj-tags">Identidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/identidad/identidad-logo-francisco.webp"
+               alt="Papa Francisco — logo"
+               loading="lazy" width="1600" height="891">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Papa Francisco</span>
+              <span class="proj-tags">Identidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/identidad/identidad-brand-francisco.webp"
+               alt="Papa Francisco — identidad editorial"
+               loading="lazy" width="2816" height="1536">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Papa Francisco</span>
+              <span class="proj-tags">Identidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/flyer/flyer-cassaforma-1.webp"
+               alt="Cassaforma — flyer 1"
+               loading="lazy" width="1389" height="2049">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Cassaforma</span>
+              <span class="proj-tags">Identidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/flyer/flyer-cassaforma-2.webp"
+               alt="Cassaforma — flyer 2"
+               loading="lazy" width="1500" height="2100">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Cassaforma</span>
+              <span class="proj-tags">Identidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-pfizer.webp"
+               alt="Pfizer — aviso institucional"
+               loading="lazy" width="1151" height="2000">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Pfizer</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-sabor-latino-pollo.webp"
+               alt="Sabor Latino — pollería peruana"
+               loading="lazy" width="1200" height="1200">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Sabor Latino</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-aviso-dubom.webp"
+               alt="DuBom — aviso editorial"
+               loading="lazy" width="1584" height="2200">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">DuBom</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-quickphone-lima.webp"
+               alt="QuickPhone — lanzamiento Lima"
+               loading="lazy" width="1358" height="1624">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">QuickPhone</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-quickphone.webp"
+               alt="QuickPhone — campaña principal"
+               loading="lazy" width="1240" height="1754">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">QuickPhone</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-metro-quickphone.webp"
+               alt="QuickPhone — aviso en metro"
+               loading="lazy" width="1701" height="2386">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">QuickPhone</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-poster-quickphone.webp"
+               alt="QuickPhone — poster gráfico"
+               loading="lazy" width="1500" height="2129">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">QuickPhone</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-promocion-progressgold.webp"
+               alt="Progress Gold — promoción"
+               loading="lazy" width="1200" height="1193">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Progress Gold</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-sale-guarana.webp"
+               alt="Guaraná — promoción de venta"
+               loading="lazy" width="1500" height="1500">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Guaraná</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-cartel-westernunion.webp"
+               alt="Western Union — cartel de remesas"
+               loading="lazy" width="1700" height="854">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Western Union</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/ads/ads-banners-papa-francisco.webp"
+               alt="Papa Francisco — banners editoriales"
+               loading="lazy" width="1800" height="1943">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Papa Francisco</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/editorial/editorial-afiche-progress-gold.webp"
+               alt="Progress Gold — afiche editorial"
+               loading="lazy" width="1715" height="2141">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Progress Gold</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/editorial/editorial-afiche-vivesalsa.webp"
+               alt="Vive Salsa — afiche cultural"
+               loading="lazy" width="1600" height="2000">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Vive Salsa</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/editorial/editorial-calendario-francisco-a.webp"
+               alt="Papa Francisco — calendario A"
+               loading="lazy" width="1500" height="1130">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Papa Francisco</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/editorial/editorial-calendario-francisco-b.webp"
+               alt="Papa Francisco — calendario B"
+               loading="lazy" width="1500" height="1130">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Papa Francisco</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/editorial/editorial-brochure-dubom.webp"
+               alt="DuBom — brochure de marca"
+               loading="lazy" width="2500" height="1782">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">DuBom</span>
+              <span class="proj-tags">Publicidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/packaging/packaging-caja-progressgold.webp"
+               alt="Progress Gold — caja primaria"
+               loading="lazy" width="1200" height="1286">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Progress Gold</span>
+              <span class="proj-tags">Empaque</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/packaging/packaging-bidonera-pg.webp"
+               alt="Progress Gold — bidonera 5 L"
+               loading="lazy" width="600" height="1550">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Progress Gold</span>
+              <span class="proj-tags">Empaque</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-card anim">
+        <div class="proj-thumb">
+          <img src="assets/casos/trabajo/web/web-cassaforma-home.webp"
+               alt="Cassaforma — sitio web inmobiliario"
+               loading="lazy" width="3444" height="1871">
+          <div class="proj-overlay">
+            <div class="proj-meta">
+              <span class="proj-name">Cassaforma</span>
+              <span class="proj-tags">Web</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- ─ 2022–2023 ─ -->
-    <div class="year-group">
-      <div class="year-header">
-        <span class="year-label">2022 — 2023</span>
-        <span class="year-count">4 proyectos</span>
-      </div>
-
-      <div class="proj-rows">
-      <!-- Fila C: pequeño + grande -->
-      <div class="proj-row-c">
-        <a href="#" class="proj-card" data-cat="identidad">
-          <div class="proj-thumb proj-thumb-4-3 thumb-ink">
-            <div class="proj-thumb-type on-dark">Identidad</div>
-            <div>
-              <div class="proj-thumb-name name-dark">Pollo Brasa</div>
-              <div class="proj-thumb-sub sub-dark">Identidad para cadena familiar.</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Gastronomía · Perú</span>
-            <span class="proj-meta-year">2023</span>
-          </div>
-        </a>
-        <a href="#" class="proj-card" data-cat="web">
-          <div class="proj-thumb proj-thumb-4-3 thumb-sky">
-            <div class="proj-thumb-type on-sky">Web</div>
-            <div>
-              <div class="proj-thumb-name name-light" style="font-size: clamp(1.6rem,2.2vw,2.2rem)">Papa Francisco</div>
-              <div class="proj-thumb-sub sub-light">Sitio editorial con más de 200 artículos.</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Editorial · Global</span>
-            <span class="proj-meta-year">2023</span>
-          </div>
-        </a>
-      </div>
-
-      <!-- Fila D: 2 cuadrados -->
-      <div class="proj-row-d">
-        <a href="#" class="proj-card" data-cat="campana">
-          <div class="proj-thumb proj-thumb-1-1 thumb-warm">
-            <div class="proj-thumb-type on-warm">Campaña</div>
-            <div>
-              <div class="proj-thumb-name name-light">Serie A3<br>Posters</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Editorial · Japón</span>
-            <span class="proj-meta-year">2022</span>
-          </div>
-        </a>
-        <a href="#" class="proj-card" data-cat="web">
-          <div class="proj-thumb proj-thumb-1-1 thumb-muted">
-            <div class="proj-thumb-type on-muted">Web</div>
-            <div>
-              <div class="proj-thumb-name name-light">Cajapg</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Fintech · Perú</span>
-            <span class="proj-meta-year">2022</span>
-          </div>
-        </a>
-      </div>
-      </div><!-- /proj-rows -->
-    </div>
-
-    <!-- ─ 2020–2021 (hidden, load more) ─ -->
-    <div class="year-group" id="group-2020" style="display:none">
-      <div class="year-header">
-        <span class="year-label">2020 — 2021</span>
-        <span class="year-count">3 proyectos</span>
-      </div>
-      <div class="proj-rows">
-      <div class="proj-row-b">
-        <a href="#" class="proj-card" data-cat="identidad">
-          <div class="proj-thumb proj-thumb-3-4 thumb-ember">
-            <div class="proj-thumb-type on-ember">Identidad</div>
-            <div>
-              <div class="proj-thumb-name name-light">Inka Roots</div>
-              <div class="proj-thumb-sub sub-ember">Superfoods para exportación a Europa.</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Alimentación · Perú</span>
-            <span class="proj-meta-year">2021</span>
-          </div>
-        </a>
-        <a href="#" class="proj-card" data-cat="web">
-          <div class="proj-thumb proj-thumb-3-4 thumb-ink">
-            <div class="proj-thumb-type on-dark">Web</div>
-            <div>
-              <div class="proj-thumb-name name-dark">Kaizen Lab</div>
-              <div class="proj-thumb-sub sub-dark">Plataforma e-learning para profesionales.</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Educación · Japón</span>
-            <span class="proj-meta-year">2021</span>
-          </div>
-        </a>
-        <a href="#" class="proj-card" data-cat="identidad">
-          <div class="proj-thumb proj-thumb-3-4 thumb-slate">
-            <div class="proj-thumb-type on-dark">Identidad</div>
-            <div>
-              <div class="proj-thumb-name name-dark">Norma Sur</div>
-              <div class="proj-thumb-sub sub-dark">Consultora con presencia binacional.</div>
-            </div>
-          </div>
-          <div class="proj-meta">
-            <span>Legal · PE · JP</span>
-            <span class="proj-meta-year">2020</span>
-          </div>
-        </a>
-      </div>
-      </div><!-- /proj-rows -->
-    </div>
-
-    <!-- Load more -->
-    <div class="load-more-wrap" id="load-more-wrap">
-      <button class="load-more-btn" id="load-more-btn">
-        Cargar más proyectos
-        <span class="load-more-count">3 restantes</span>
-      </button>
-    </div>
-
   </div>
 </section>
 
 <!-- ══ STATS ══ -->
-<section class="stats-section">
+<section class="stats-section" id="stats">
   <div class="wrap">
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="stat-num">12</div>
+        <div class="stat-num">28<span class="em">+</span></div>
         <div class="stat-lbl">Proyectos<br>publicados</div>
       </div>
       <div class="stat-item">
@@ -1167,7 +531,7 @@ body::before {
         <div class="stat-lbl">Países ·<br>PE · JP · BR</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">6<span class="em">+</span></div>
+        <div class="stat-num">15<span class="em">+</span></div>
         <div class="stat-lbl">Años de<br>trayectoria</div>
       </div>
     </div>
@@ -1206,7 +570,9 @@ body::before {
   </div>
 </section>
 
-<!-- ══ MODAL ══ -->
+</main>
+
+<!-- ══ MODAL ══ (overlay — fuera de <main>) -->
 <div id="proj-modal" class="proj-modal" role="dialog" aria-modal="true">
   <button id="modal-close" class="modal-close" aria-label="Cerrar">×</button>
   <div class="modal-inner" id="modal-inner">
@@ -1220,9 +586,14 @@ body::before {
 
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
-  <div class="footer-inner">
-    <img src="assets/nozoe-studio-logo.png" alt="Nozoe Studio" style="height:26px; width:auto; filter:brightness(0) invert(1);">
-    <div class="footer-copy">© 2026 Nozoe Studio · 東京・リマ</div>
+  <div class="wrap footer-inner">
+    <div class="footer-logo">
+      <img src="assets/nozoe-studio-logo-color.svg" alt="Nozoe Studio" style="width: 144px">
+    </div>
+    <div class="footer-copy">
+      © 2026 Nozoe Studio · 東京・リマ<br>
+      Swiss premium + warm · Diseño bicultural
+    </div>
     <div class="footer-social">
       <a href="#">Behance</a>
       <a href="#">Instagram</a>
@@ -1231,96 +602,8 @@ body::before {
   </div>
 </footer>
 
-<script>
-// ── Filter ──
-const pills = document.querySelectorAll('.fpill');
-const cards = document.querySelectorAll('.proj-card');
-
-pills.forEach(pill => {
-  pill.addEventListener('click', () => {
-    pills.forEach(p => p.classList.remove('active'));
-    pill.classList.add('active');
-    const filter = pill.dataset.filter;
-    cards.forEach(card => {
-      if (filter === 'all' || card.dataset.cat === filter) {
-        card.style.opacity = '';
-        card.style.pointerEvents = '';
-        card.style.visibility = '';
-      } else {
-        card.style.opacity = '0.2';
-        card.style.pointerEvents = 'none';
-      }
-    });
-  });
-});
-
-// ── Modal ──
-const modal      = document.getElementById('proj-modal');
-const modalClose = document.getElementById('modal-close');
-const modalSlot  = document.getElementById('modal-thumb-slot');
-const modalLabel = document.getElementById('modal-label');
-const modalYear  = document.getElementById('modal-year');
-
-cards.forEach(card => {
-  card.addEventListener('click', e => {
-    e.preventDefault();
-    const thumb   = card.querySelector('.proj-thumb');
-    const meta    = card.querySelector('.proj-meta');
-    const cloned  = thumb.cloneNode(true);
-    cloned.classList.remove('proj-thumb-4-3', 'proj-thumb-3-4', 'proj-thumb-1-1');
-    cloned.style.aspectRatio = '4/3';
-    modalSlot.innerHTML = '';
-    modalSlot.appendChild(cloned);
-    modalLabel.textContent = meta ? meta.querySelector('span:first-child').textContent : '';
-    modalYear.textContent  = meta ? meta.querySelector('.proj-meta-year').textContent : '';
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeModal() {
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
-}
-modalClose.addEventListener('click', closeModal);
-modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-// ── Load more ──
-const loadMoreBtn = document.getElementById('load-more-btn');
-const group2020   = document.getElementById('group-2020');
-const loadMoreWrap = document.getElementById('load-more-wrap');
-
-loadMoreBtn.addEventListener('click', () => {
-  group2020.style.display = '';
-  loadMoreWrap.style.display = 'none';
-  // Re-apply current filter
-  const active = document.querySelector('.fpill.active');
-  if (active && active.dataset.filter !== 'all') {
-    const filter = active.dataset.filter;
-    group2020.querySelectorAll('.proj-card').forEach(card => {
-      if (card.dataset.cat !== filter) {
-        card.style.opacity = '0.2';
-        card.style.pointerEvents = 'none';
-      }
-    });
-  }
-});
-
-// ── Scroll-reveal ──
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.anim').forEach(el => revealObserver.observe(el));
-
-const navHam = document.getElementById('nav-ham');
-const navMenu = document.querySelector('.nav-links');
-if (navHam && navMenu) {
-  navHam.addEventListener('click', () => navMenu.classList.toggle('open'));
-}
-</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/trabajo.js" defer></script>
 
 </body>
 </html>
