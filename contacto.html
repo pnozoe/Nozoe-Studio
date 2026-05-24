@@ -130,18 +130,17 @@
 
       <!-- Formulario -->
       <form class="anim d1" id="contact-form"
-            action="https://formsubmit.co/pnozoe@gmail.com"
+            action="https://api.web3forms.com/submit"
             method="POST">
         <div class="form-eyebrow">Formulario breve</div>
         <h2 class="form-title">Tres datos y una idea.<br>Nosotros seguimos el hilo.</h2>
 
-        <!-- Config Formsubmit.co -->
-        <input type="hidden" name="_subject" value="Nuevo contacto desde nozoestudio.com">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="true">
-        <input type="hidden" name="_next" value="https://nozoestudio.com/contacto.html?ok=1">
+        <!-- Config Web3Forms -->
+        <input type="hidden" name="access_key" value="46460805-3d4f-4345-904a-3f8c98aa21b4">
+        <input type="hidden" name="subject" value="Nuevo contacto desde nozoestudio.com">
+        <input type="hidden" name="redirect" value="https://nozoestudio.com/contacto.html?ok=1">
         <!-- Honeypot anti-spam: si un bot lo rellena, el envío se descarta -->
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="field">
           <label class="field-label" for="cf-nombre">Nombre</label>
@@ -336,7 +335,7 @@
       });
     });
 
-    // Mensaje de confirmación tras envío exitoso (?ok=1 viene del _next de Formsubmit)
+    // Mensaje de confirmación tras envío exitoso (?ok=1 viene del redirect de Web3Forms)
     if (new URLSearchParams(window.location.search).get('ok') === '1') {
       var form = document.getElementById('contact-form');
       if (form) {
