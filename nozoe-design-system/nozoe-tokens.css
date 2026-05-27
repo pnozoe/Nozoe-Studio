@@ -82,7 +82,7 @@
      ---------------------------------------------------------------- */
   --ns-font-sans: 'Nunito', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --ns-font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
-  --ns-font-jp:   'Noto Sans JP', 'Nunito', sans-serif;
+  --ns-font-jp:   'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', 'Yu Gothic', 'Meiryo', 'Nunito', sans-serif;
 
   --ns-fw-light:     300;
   --ns-fw-regular:   400;
