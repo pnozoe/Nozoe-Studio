@@ -11,10 +11,12 @@
    ================================================================ */
 
 /* ----------------------------------------------------------------
-   1. FONT IMPORT
-   Google Fonts CDN. Replace with self-hosted .woff2 in production.
+   1. FONT LOADING
+   La fuente Nunito se carga vía <link rel="stylesheet"> en cada HTML
+   para evitar el bloqueo de render secuencial de @import.
+   Los glifos japoneses (kanji decorativos) usan la fuente CJK del
+   sistema operativo (ver --ns-font-jp más abajo).
    ---------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&family=Noto+Sans+JP:wght@400;600&display=swap');
 
 /* ----------------------------------------------------------------
    2. PRIMITIVE TOKENS — Raw palette. Never reference in components.
