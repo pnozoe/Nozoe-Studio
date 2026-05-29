@@ -32,8 +32,11 @@ Para identidad de marca, voz, tono y dirección visual, ver `BRAND.md`.
 - **JavaScript** vanilla (sin frameworks, sin librerías de terceros)
 - **Sin build tools, sin bundlers, sin dependencias de runtime**
 - Servidor local de desarrollo: `server.py` (Python http.server)
-- Versionado: Git local
-- Deploy: estático (host por definir)
+- Versionado: Git + GitHub (repo `pnozoe/Nozoe-Studio`, rama `main`)
+- Deploy: **Cloudflare Pages** con auto-deploy en cada `git push` a `main`
+- Dominio: `nozoestudio.com` (registrado en Hostinger, DNS gestionado
+  por Cloudflare). Email corporativo sigue en Hostinger.
+- Formulario de contacto: **Web3Forms** (POST sin backend)
 
 **Decisión cerrada:** este proyecto es y será HTML estático. No se 
 migrará a WordPress, React, Next.js u otro framework. Cualquier 
@@ -266,14 +269,28 @@ y el riesgo es romper lo que ya funciona, no la falta de avance.
 
 ---
 
-## 9. Flujo de trabajo con Git
+## 9. Flujo de trabajo con Git y deploy
 
-- Trabajo activo en `cierre-final`.
-- `main` queda intocable como punto de restauración.
-- Commits frecuentes, mensajes en español, descriptivos.
-- Al cierre del proyecto: merge `cierre-final` → `main` con 
-  revisión final.
+- **Rama de trabajo y producción:** `main`. El sitio ya está en vivo;
+  cada `push` a `main` dispara un **deploy automático en Cloudflare
+  Pages** (~30-60s). No hay rama de staging separada.
+- **Implicación:** `main` ES producción. Trabajar con cuidado, en
+  commits pequeños y atómicos, validando antes de hacer push.
+- Commits frecuentes, mensajes en español, descriptivos, en imperativo.
+- Repo remoto: `github.com/pnozoe/Nozoe-Studio` (`origin`).
+
+### Notas operativas de infraestructura
+
+- **Deploy:** GitHub `push` → Cloudflare Pages build → producción.
+- **Caché de Cloudflare:** si un cambio no se refleja en producción,
+  purgar caché (Cloudflare → Caching → Purge Everything).
+- **Procesamiento de imágenes:** usar `Pillow` (Python) para
+  redimensionar/convertir WebP. `sips` (nativo macOS) **lee pero no
+  escribe** WebP. Pillow es herramienta local, NO dependencia del sitio.
+- **Rendimiento móvil (mayo 2026):** optimizado de 81 → 93 (PageSpeed
+  mobile). Pendiente opcional: `srcset` responsive y CSS crítico inline
+  (rendimiento decreciente, no prioritario).
 
 ---
 
-*Última actualización: mayo 2026 — fase de cierre.*
+*Última actualización: mayo 2026 — sitio en producción (Cloudflare Pages).*
