@@ -3884,3 +3884,35 @@ body.lightbox-open { overflow: hidden; }
 
   .footer-inner { padding: 0 20px; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   FAB WhatsApp — botón flotante circular, solo en móvil
+   Reemplaza al pill .nav-cta (que se cortaba en pantallas
+   estrechas). CSS puro, sin JS.
+   ══════════════════════════════════════════════════════════ */
+.wa-fab { display: none; }
+
+@media (max-width: 600px) {
+  /* Ocultar el pill de WhatsApp del header: lo sustituye el FAB */
+  .nav-cta { display: none; }
+
+  .wa-fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 16px;
+    /* Respeta la barra inferior del iPhone (home indicator) */
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 56px;
+    height: 56px;
+    background: #25D366; /* verde de marca WhatsApp (tercero) */
+    border-radius: 50%;
+    /* Sombra propia: los tokens --ns-elev son muy sutiles para un FAB de color */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.24);
+    z-index: 900;
+    transition: transform 150ms var(--ns-ease-out);
+  }
+  .wa-fab:active { transform: scale(0.94); }
+  .wa-fab svg { width: 30px; height: 30px; fill: #FFFFFF; }
+}
