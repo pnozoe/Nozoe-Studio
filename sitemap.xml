@@ -6,27 +6,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nozoestudio.com/estudio.html</loc>
+    <loc>https://nozoestudio.com/estudio</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nozoestudio.com/servicios.html</loc>
+    <loc>https://nozoestudio.com/servicios</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nozoestudio.com/trabajo.html</loc>
+    <loc>https://nozoestudio.com/trabajo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nozoestudio.com/contacto.html</loc>
+    <loc>https://nozoestudio.com/contacto</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nozoestudio.com/caso-tml.html</loc>
+    <loc>https://nozoestudio.com/caso-tml</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
