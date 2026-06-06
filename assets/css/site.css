@@ -3993,8 +3993,12 @@ body.lightbox-open { overflow: hidden; }
     .reveal-scroll {
       animation: revealUp linear both;
       animation-timeline: view();
-      animation-range: entry 5% cover 22%;
+      animation-range: entry 4% cover 24%;
     }
+    /* Stagger sutil: cada hermano se revela un poco más tarde */
+    .reveal-scroll:nth-child(2) { animation-range: entry 8% cover 28%; }
+    .reveal-scroll:nth-child(3) { animation-range: entry 12% cover 32%; }
+    .reveal-scroll:nth-child(4) { animation-range: entry 16% cover 36%; }
     @keyframes revealUp {
       from { opacity: 0; transform: translateY(42px); }
       to   { opacity: 1; transform: translateY(0); }

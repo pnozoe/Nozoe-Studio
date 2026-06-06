@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
 (function(){
   if (!window.matchMedia('(pointer: fine)').matches) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var STRENGTH = 0.3;
+  var STRENGTH = 0.2;
   document.querySelectorAll('.btn-ember, .btn-ink').forEach(function(btn){
     btn.addEventListener('mousemove', function(e){
       var r = btn.getBoundingClientRect();
