@@ -3967,3 +3967,43 @@ body.lightbox-open { overflow: hidden; }
 @media (max-width: 560px) { .hero-wall { grid-template-columns: repeat(2, 1fr); height: 380px; } }
 @media (prefers-reduced-motion: reduce) { .hw-col { animation: none !important; } }
 .hero--wall .hero-left { padding-bottom: 0; }
+
+/* ════════════════════════════════════════════════════════════
+   DINAMISMO MODERNO (rama feature) — web nativa, sin librerías
+   Progressive enhancement: si el navegador no lo soporta, se
+   ignora sin romper nada. Respeta prefers-reduced-motion.
+   ════════════════════════════════════════════════════════════ */
+
+/* 1) VIEW TRANSITIONS — navegación fluida entre páginas.
+   El logo persiste mientras el resto hace cross-fade. */
+@view-transition { navigation: auto; }
+.nav-logo { view-transition-name: site-logo; }
+::view-transition-group(root) { animation-duration: .42s; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
+}
+
+/* 2) SCROLL-DRIVEN REVEALS — el elemento se revela ligado al
+   scroll. Guardado por @supports: si no hay soporte, el
+   contenido se ve normal (nunca queda oculto). */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-scroll {
+      animation: revealUp linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 22%;
+    }
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(42px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  }
+}
+
+/* 3) BOTONES MAGNÉTICOS — transición suave para el retorno.
+   El desplazamiento lo aplica site.js solo en punteros finos. */
+@media (pointer: fine) {
+  .btn-ember, .btn-ink { transition: transform .25s cubic-bezier(0.16,1,0.3,1), background 120ms var(--ns-ease-out); will-change: transform; }
+}
