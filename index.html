@@ -41,7 +41,6 @@
 <link rel="icon" href="assets/favicon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/img/hero-home.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -123,7 +122,7 @@
 <main id="contenido">
 
 <!-- ══ HERO ══ -->
-<section class="hero" id="inicio">
+<section class="hero hero--wall" id="inicio">
   <div class="wrap">
     <div class="g12 hero-grid">
 
@@ -135,25 +134,76 @@
           <span class="sm-lbl">Desde Tokio &mdash; para el mundo de habla hispana</span>
         </div>
         <h1 class="hero-headline anim d2">
-          <span class="hl-a">Marcas que hablan</span>
-          <span class="hl-b">dos culturas</span>
-          <span class="hl-c">sin elegir una<span class="hl-em">.</span></span>
+          <span class="hl-a">Una pared</span>
+          <span class="hl-b">de trabajo</span>
+          <span class="hl-c">que no para<span class="hl-em">.</span></span>
         </h1>
         <p class="hero-lede anim d3">
-          Somos un estudio de diseño con base en Tokio y mirada latina. Trabajamos con emprendedores en Japón, América y Europa que quieren una marca que no suene genérica — porque nosotros tampoco lo somos.
+          Identidad, web y contenido para emprendedores latinos y brasileños entre Japón y América. Mira el portafolio moverse — cada pieza, una decisión de negocio.
         </p>
         <div class="hero-cta anim d4">
-          <a href="#trabajo" class="btn btn-ink">Ver el trabajo <span style="margin-left:4px">→</span></a>
-          <a href="#contacto" class="tlink">Escríbenos por WhatsApp<span class="arr"> →</span></a>
+          <a href="trabajo" class="btn btn-ember">Ver el trabajo <span style="margin-left:4px">→</span></a>
+          <a href="https://wa.me/817022124910" class="tlink" target="_blank" rel="noopener">Escríbenos por WhatsApp<span class="arr"> →</span></a>
         </div>
       </div>
 
-      <!-- Right: tall image placeholder -->
-      <div class="hero-right anim d3">
-        <div class="hero-img-frame">
-          <img src="assets/img/hero-home.webp" alt="Nozoe Studio — Proyecto hero" width="800" height="1126" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+      <!-- Right: muro de dispositivos (dinámico). Teléfonos = reels TML Cipango. -->
+      <div class="hero-wall anim d3" aria-hidden="true">
+
+        <!-- Columna 1 (sube) -->
+        <div class="hw-col hw-col--up">
+          <div class="hw-set">
+            <figure class="hw-dev hw-dev-phone"><div class="hw-screen"><img src="assets/casos/tml/redes/tml1.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/editorial/editorial-afiche-progress-gold.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-land"><div class="hw-screen"><img src="assets/casos/trabajo/identidad/identidad-logo-francisco.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/tml/tml-flyer.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/ads/ads-sale-guarana.webp" alt="" loading="lazy"></div></figure>
+          </div>
+          <div class="hw-set" aria-hidden="true">
+            <figure class="hw-dev hw-dev-phone"><div class="hw-screen"><img src="assets/casos/tml/redes/tml1.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/editorial/editorial-afiche-progress-gold.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-land"><div class="hw-screen"><img src="assets/casos/trabajo/identidad/identidad-logo-francisco.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/tml/tml-flyer.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/ads/ads-sale-guarana.webp" alt="" loading="lazy"></div></figure>
+          </div>
         </div>
-        <span class="hero-img-cap">TML Cipango · Tokio · 2024</span>
+
+        <!-- Columna 2 (baja) -->
+        <div class="hw-col hw-col--down">
+          <div class="hw-set">
+            <figure class="hw-dev hw-dev-browser"><div class="hw-bar"><span class="hw-dots"><i></i><i></i><i></i></span><span class="hw-url">cipango.jp</span></div><div class="hw-screen"><img src="assets/casos/tml/caso-tml-hero.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-phone"><div class="hw-screen"><img src="assets/casos/tml/redes/tml2.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/ads/ads-banners-papa-francisco.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/packaging/packaging-caja-progressgold.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/tml/tml-portada-itinerario.webp" alt="" loading="lazy"></div></figure>
+          </div>
+          <div class="hw-set" aria-hidden="true">
+            <figure class="hw-dev hw-dev-browser"><div class="hw-bar"><span class="hw-dots"><i></i><i></i><i></i></span><span class="hw-url">cipango.jp</span></div><div class="hw-screen"><img src="assets/casos/tml/caso-tml-hero.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-phone"><div class="hw-screen"><img src="assets/casos/tml/redes/tml2.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/ads/ads-banners-papa-francisco.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/packaging/packaging-caja-progressgold.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/tml/tml-portada-itinerario.webp" alt="" loading="lazy"></div></figure>
+          </div>
+        </div>
+
+        <!-- Columna 3 (sube, lenta) -->
+        <div class="hw-col hw-col--up hw-col--slow">
+          <div class="hw-set">
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/flyer/flyer-cassaforma-1.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-phone"><div class="hw-screen"><img src="assets/casos/tml/redes/tml3.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-land"><div class="hw-screen"><img src="assets/casos/trabajo/editorial/editorial-brochure-dubom.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/tml/tml-ancla.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-phone"><div class="hw-screen"><img src="assets/casos/tml/redes/tml4.webp" alt="" loading="lazy"></div></figure>
+          </div>
+          <div class="hw-set" aria-hidden="true">
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/trabajo/flyer/flyer-cassaforma-1.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-phone"><div class="hw-screen"><img src="assets/casos/tml/redes/tml3.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-land"><div class="hw-screen"><img src="assets/casos/trabajo/editorial/editorial-brochure-dubom.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-poster"><div class="hw-screen"><img src="assets/casos/tml/tml-ancla.webp" alt="" loading="lazy"></div></figure>
+            <figure class="hw-dev hw-dev-phone"><div class="hw-screen"><img src="assets/casos/tml/redes/tml4.webp" alt="" loading="lazy"></div></figure>
+          </div>
+        </div>
+
       </div>
 
     </div>
