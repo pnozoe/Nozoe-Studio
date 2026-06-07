@@ -11,14 +11,16 @@
 
 **Proyecto:** Rediseño completo de nozoestudio.com (estudio de diseño propio).
 
-**Audiencia objetivo:** Emprendedores latinos y brasileños residentes en Japón. NO el mercado japonés local. Acepta clientes puntuales de Perú y otras regiones de habla hispana.
+**Posicionamiento:** Diseño de marca estratégico — ayuda a negocios a crecer con una imagen profesional y coherente. La doble cultura Japón–Latinoamérica es una ventaja, no el titular.
+
+**Audiencia objetivo:** Emprendedores y negocios de habla hispana que quieren una marca profesional y lista para crecer. Muchos en Japón o con vínculo Japón–Latam, pero el filtro es querer crecer con buen diseño, no la biculturalidad.
 
 **Tecnología:**
 - Stack: HTML5 + CSS3 + JavaScript vanilla (estático puro)
 - Sin frameworks, sin build tools, sin dependencias de runtime
 - Servidor local de desarrollo: server.py (Python http.server)
-- Versionado: Git local (GitHub privado a futuro)
-- Deploy: estático (a definir host: Netlify, Cloudflare Pages u otro)
+- Versionado: Git + GitHub (repo pnozoe/Nozoe-Studio)
+- Deploy: Cloudflare Pages (auto-deploy en push a main). Sitio en producción: nozoestudio.com
 
 ---
 
@@ -59,19 +61,20 @@ No duplicar la documentación de tokens en este archivo. Para cualquier cambio o
 ## Narrativa y copy — consistencia
 
 ### Posicionamiento
-*"Marcas que hablan dos culturas sin elegir una."*
+*Diseño de marca estratégico que ayuda a negocios a crecer con una imagen profesional y coherente.* (La conexión Japón–Latam es una ventaja, no el titular.)
 
 ### Eyebrow de home
-*"Desde Tokio · para los tuyos"*
+*"Diseño estratégico desde Tokio"*
 
 ### Sello de footer
 `© 2026 NOZOE STUDIO · 東京・リマ`
 (los caracteres 東京・リマ significan "Tokio · Lima" en kanji y katakana)
 
-### Trayectoria oficial a comunicar
-- +40 proyectos recientes
-- 25 años de oficio
-- 3 países activos: Perú · Japón · Brasil
+### Trayectoria oficial a comunicar (cifras canónicas)
+- +40 proyectos
+- 25+ años de oficio
+- 100% remoto
+(Nota: "3 países" se retiró del sitio; el equipo es Pedro + red de colaboradores por proyecto.)
 
 ### Idiomas de trabajo
 - Español — NATIVO

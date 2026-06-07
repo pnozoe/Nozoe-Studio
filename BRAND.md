@@ -5,21 +5,33 @@ decisiones de copy, tono, dirección visual o curaduría de imágenes.
 
 ---
 
-## Identidad bicultural
+## Posicionamiento
 
-Nozoe Studio NO es un estudio "japonés que diseña para latinos" 
-ni "latino que vive en Japón". Es un **estudio bicultural**: 
-ambas culturas conviven en cada decisión de diseño, copy y 
-arquitectura visual.
+Nozoe Studio es **diseño de marca estratégico**: ayuda a negocios y 
+emprendedores a proyectar profesionalismo, diferenciarse y crecer con 
+una identidad coherente.
 
-Esta no es una postura de marketing — es la realidad operativa 
-del estudio. Pedro diseña pensando en dos sensibilidades 
-simultáneamente, y la marca debe reflejar esa convivencia 
-sin caricaturizar a ninguna de las dos partes.
+No vendemos "estilo" ni "biculturalidad" — vendemos **decisiones de 
+diseño que funcionan en el mercado real**. Cada elección visual 
+responde a una tarea de negocio: comunicar mejor, generar confianza, 
+sostener la marca en el tiempo.
+
+Frase guía: *"El diseño no decora. Cumple una función."*
 
 ---
 
-## Cómo se manifiesta la biculturalidad
+## La ventaja bicultural (diferencial, no titular)
+
+La doble cultura Japón–Latinoamérica es una **ventaja competitiva 
+real**: Pedro entiende dos mercados desde adentro, no de manual. Eso 
+entra en cada proyecto — pero como **método y criterio**, no como 
+mensaje principal ni como estética.
+
+- Es una ventaja que se **demuestra en el trabajo**, no se proclama 
+  en titulares.
+- Nunca caricaturizar ninguna de las dos culturas.
+
+**Cómo se manifiesta (en los detalles):**
 
 **En el copy:**
 - Sobrio, no exotizante en ninguna dirección
@@ -32,13 +44,14 @@ sin caricaturizar a ninguna de las dos partes.
 **En la tipografía:**
 - Nunito como puente neutro: humanista, legible, sin acento 
   cultural marcado en ninguna dirección
-- Noto Sans JP cuando aparece japonés (coexistencia, no decoración)
+- Caracteres japoneses (kanji/katakana) con la **fuente CJK del 
+  sistema operativo** — coexistencia sobria, nunca decoración
 
 **En la paleta:**
 - Nozoe Ink (tinta sobria) — base universal
 - Tokyo Slate — referencia urbana japonesa contemporánea
 - Ivory Editorial — calidez editorial latina
-- Naranja brasa — acento sagrado, usado con mesura
+- Naranja brasa — acento, usado con mesura (≤5% de la superficie)
 
 **En las imágenes:**
 - Evitar clichés visuales de "Japón tradicional" (cerezos, 
@@ -56,7 +69,8 @@ sin caricaturizar a ninguna de las dos partes.
 - Editorial
 - Sobria
 - Cálida
-- Bilingüe en espíritu, principalmente en español
+- Estratégica — habla de resultados de negocio, no solo de estética
+- Principalmente en español
 
 **Tono** (varía según contexto):
 - En portafolio: confiado, descriptivo, sin venderse
@@ -68,27 +82,40 @@ sin caricaturizar a ninguna de las dos partes.
 
 ## Audiencia
 
-**Primaria:** latinos que viven en Japón, clientes hispanohablantes 
-a distancia, emprendedores locales con interés en estética bicultural.
+**Primaria:** emprendedores y negocios de habla hispana que quieren 
+una marca profesional y lista para crecer. Muchos en Japón o con 
+vínculo Japón–Latinoamérica, pero el filtro es *querer crecer con buen 
+diseño*, no la biculturalidad.
 
 **Secundaria:** profesionales del diseño que valoran el rigor 
-editorial, clientes japoneses con sensibilidad internacional.
+editorial; clientes con sensibilidad internacional.
+
+---
+
+## El estudio (realidad operativa)
+
+- **Pedro Nozoe** — diseñador y fundador. Peruano-nikkei (sansei), 
+  25+ años de oficio, base en Tokio.
+- **Red de colaboradores** — especialistas en web, foto o motion que 
+  se suman por proyecto, coordinados por Pedro. No hay un equipo fijo 
+  grande: el cliente siempre habla con quien diseña.
+- 100% remoto · digital.
 
 ---
 
 ## Reglas de oro
 
 1. **Cuando haya duda en una decisión visual o textual, preguntar 
-   al usuario antes de improvisar.** Pedro tiene la palabra final 
-   en todo lo relacionado con identidad.
+   a Pedro antes de improvisar.** Tiene la palabra final en todo lo 
+   relacionado con identidad.
 
-2. **Lo bicultural se construye en los detalles**, no en grandes 
-   declaraciones. Es preferible un detalle sutil bien ejecutado 
-   que una afirmación explícita de "biculturalidad".
+2. **El diseño estratégico lidera; lo bicultural se construye en los 
+   detalles**, no en grandes declaraciones. Un detalle sutil bien 
+   ejecutado vale más que una afirmación explícita de "biculturalidad".
 
 3. **El silencio editorial es una herramienta.** No todo necesita 
    ser explicado. La marca confía en su audiencia.
 
 ---
 
-*Última actualización: mayo 2026 — fase de cierre.*
+*Última actualización: junio 2026 — reenfoque estratégico (sitio en producción).*

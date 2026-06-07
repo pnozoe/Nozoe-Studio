@@ -7,19 +7,23 @@ Léeme antes de modificar cualquier archivo.
 
 ## 1. Contexto del proyecto
 
-**Nozoe Studio** es un estudio de diseño gráfico bicultural Japón-Latam, 
-con sede en (Ibaraki, Japón). Atiende clientes locales de Perú, Brasil y Argentina.
-Además, audiencia hispanohablante a través de redes sociales y web.
+**Nozoe Studio** es un estudio de **diseño de marca estratégico**, 
+con base en Tokio (Japón) y raíz latina. Ayuda a negocios y 
+emprendedores a proyectar profesionalismo y crecer con una identidad 
+coherente. La doble cultura Japón–Latinoamérica es una **ventaja** 
+(dos mercados entendidos desde adentro), no el titular.
 
-Este repositorio contiene el **rediseño 2026 de la web del estudio**. 
-La web es la pieza central de la marca: portafolio, voz editorial, 
-servicios y captación de clientes.
+Este repositorio contiene el **rediseño 2026 de la web del estudio** 
+(en producción). La web es la pieza central de la marca: portafolio, 
+voz editorial, servicios y captación de clientes.
 
-**Audiencia primaria:** latinos que viven en Japón, clientes 
-hispanohablantes a distancia, emprendedores locales con interés en estética bicultural.
+**Audiencia primaria:** emprendedores y negocios de habla hispana que 
+quieren una marca profesional y lista para crecer — muchos en Japón o 
+con vínculo Japón–Latam, pero el filtro es *querer crecer con buen 
+diseño*, no la biculturalidad.
 
-**Voz de marca:** editorial, sobria, cálida. Cruce entre rigor suizo 
-y calidez latina. Bilingüe en espíritu, principalmente en español.
+**Voz de marca:** editorial, sobria, cálida y estratégica. Cruce entre 
+rigor suizo y calidez latina, principalmente en español.
 
 Para identidad de marca, voz, tono y dirección visual, ver `BRAND.md`.
 
