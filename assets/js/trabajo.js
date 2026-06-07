@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
     cards.forEach(card => {
       card.addEventListener('click', e => {
         e.preventDefault();
+        // Tiles con caso de estudio propio → navegar al caso en vez del modal
+        if (card.dataset.caso) { window.location.href = card.dataset.caso; return; }
         const thumbImg = card.querySelector('.proj-thumb img');
         if (!thumbImg) return;
 

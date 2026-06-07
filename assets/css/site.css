@@ -3598,6 +3598,11 @@ body.drawer-open { overflow: hidden; }
 .gal-itinerario .gal-item-img { aspect-ratio: 2000/2830; }
 .gal-flyer      .gal-item-img { aspect-ratio: 1/1;        }
 .gal-poster     .gal-item-img { aspect-ratio: 1080/2100; }
+.gal-wide       .gal-item-img { aspect-ratio: 16/9;       }
+/* gal-contain: la imagen se muestra completa (logos), no recortada.
+   Fondo blanco para que el logo se integre sin barras grises. */
+.gal-contain    .gal-item-img     { background: var(--ns-surface-raised); }
+.gal-contain    .gal-item-img img { object-fit: contain; padding: 6%; }
 
 /* Captions */
 .gal-caption {
