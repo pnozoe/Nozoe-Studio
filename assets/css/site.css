@@ -4011,3 +4011,174 @@ body.lightbox-open { overflow: hidden; }
 @media (pointer: fine) {
   .btn-ember, .btn-ink { transition: transform .25s cubic-bezier(0.16,1,0.3,1), background 120ms var(--ns-ease-out); will-change: transform; }
 }
+
+/* ══════════════════════════════════════════════════════════════════
+   CTA · TARJETA DE CHAT (reemplaza los datos de contacto sueltos)
+   Componente autocontenido: entra en .cta-right o .cta-contact por
+   igual. Animación de "escribiendo…" → mensaje, en bucle, 100% CSS.
+   ══════════════════════════════════════════════════════════════════ */
+.cta-chat {
+  width: 100%;
+  max-width: 440px;
+  background: var(--ns-surface-base);
+  border: 1px solid rgba(255,255,255,0.12); /* borde claro fino: separa la tarjeta del fondo oscuro */
+  border-radius: var(--ns-radius-lg, 16px);
+  overflow: hidden;
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,0.45);
+}
+
+/* — Cabecera — */
+.cta-chat-head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--ns-space-3);
+  padding: var(--ns-space-4) var(--ns-space-5);
+  background: var(--ns-text-primary);
+  border-bottom: 1px solid rgba(139,157,183,0.18);
+}
+.cta-chat-avatar {
+  flex: 0 0 auto;
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  background: var(--ns-accent);
+  border-radius: 50%;
+}
+.cta-chat-avatar img {
+  height: 28px; width: auto; /* isotipo más grande, conservando proporción */
+  filter: brightness(0) invert(1); /* en blanco sobre naranja */
+}
+.cta-chat-id { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 1 1 auto; }
+.cta-chat-name {
+  font: 800 15px/1 var(--ns-font-sans);
+  color: var(--ns-surface-base);
+  white-space: nowrap;
+}
+.cta-chat-status {
+  display: flex; align-items: center; gap: 6px;
+  font: 400 11px/1 var(--ns-font-sans);
+  color: var(--ns-text-tertiary);
+}
+.cta-chat-online {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #25D366; /* verde WhatsApp (literal de marca de terceros) */
+}
+.cta-chat-wa { margin-left: auto; flex: 0 0 auto; color: #25D366; }
+
+/* — Cuerpo / burbujas — */
+.cta-chat-body {
+  display: flex; flex-direction: column;
+  gap: var(--ns-space-3);
+  padding: var(--ns-space-5);
+}
+.cta-chat-msg {
+  max-width: 82%;
+  padding: 10px 14px;
+  font: 400 14px/1.45 var(--ns-font-sans);
+  border-radius: 16px;
+  margin: 0;
+}
+.cta-chat-msg.in {
+  align-self: flex-start;
+  background: #fff;
+  color: var(--ns-text-primary);
+  border-bottom-left-radius: 5px;
+}
+.cta-chat-msg.out {
+  align-self: flex-end;
+  background: var(--ns-text-primary);
+  color: var(--ns-surface-base);
+  border-bottom-right-radius: 5px;
+}
+
+/* — Slot en bucle: "escribiendo…" y el mensaje comparten celda — */
+.cta-chat-loop {
+  display: grid;
+  align-self: flex-start;
+  min-height: 42px;
+}
+.cta-chat-loop > * { grid-area: 1 / 1; align-self: end; }
+
+.cta-chat-typing {
+  display: inline-flex; align-items: center; gap: 5px;
+  width: max-content;
+  padding: 13px 16px;
+  background: #fff;
+  border-radius: 16px; border-bottom-left-radius: 5px;
+  animation: ctaTyping 5s infinite;
+}
+.cta-chat-typing i {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--ns-text-tertiary);
+  animation: ctaDot 1.2s infinite ease-in-out;
+}
+.cta-chat-typing i:nth-child(2) { animation-delay: 0.18s; }
+.cta-chat-typing i:nth-child(3) { animation-delay: 0.36s; }
+
+.cta-chat-reveal {
+  opacity: 0;
+  animation: ctaReveal 5s infinite;
+}
+
+@keyframes ctaDot {
+  0%, 60%, 100% { opacity: .35; transform: translateY(0); }
+  30%           { opacity: 1;   transform: translateY(-3px); }
+}
+@keyframes ctaTyping {
+  0%, 42%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes ctaReveal {
+  0%, 48%   { opacity: 0; transform: translateY(5px); }
+  56%, 92%  { opacity: 1; transform: translateY(0); }
+  100%      { opacity: 0; transform: translateY(0); }
+}
+
+/* — Barra de input (decorativa) — */
+.cta-chat-input {
+  display: flex; align-items: center; gap: var(--ns-space-3);
+  padding: var(--ns-space-3) var(--ns-space-4) var(--ns-space-4);
+}
+.cta-chat-field {
+  flex: 1 1 auto;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 9999px;
+  font: 400 13px/1 var(--ns-font-sans);
+  color: var(--ns-text-tertiary);
+}
+.cta-chat-send {
+  flex: 0 0 auto;
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  background: var(--ns-accent);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 17px; line-height: 1;
+}
+
+/* — Pie: email bajo la tarjeta — */
+.cta-chat-foot {
+  display: flex; align-items: center; gap: 10px;
+  padding: 15px 18px;
+  border: 1px solid rgba(139,157,183,0.22);
+  border-radius: var(--ns-radius-md, 12px);
+  font: 400 14px/1 var(--ns-font-sans);
+  color: rgba(198,213,234,0.85); /* más claro: legible sobre el fondo oscuro */
+  text-decoration: none;
+  transition: border-color 150ms var(--ns-ease-out), color 150ms var(--ns-ease-out);
+}
+.cta-chat-foot:hover { border-color: rgba(139,157,183,0.45); color: var(--ns-surface-base); }
+.cta-chat-foot svg { flex: 0 0 auto; width: 17px; height: 17px; opacity: 0.9; }
+.cta-chat-foot .cta-chat-foot-h { margin-left: auto; opacity: 0.8; }
+
+@media (max-width: 760px) {
+  .cta-chat { max-width: none; }
+}
+
+/* Respeta prefers-reduced-motion: muestra el mensaje final fijo */
+@media (prefers-reduced-motion: reduce) {
+  .cta-chat-typing { display: none; }
+  .cta-chat-typing i { animation: none; }
+  .cta-chat-reveal { animation: none; opacity: 1; transform: none; }
+}
