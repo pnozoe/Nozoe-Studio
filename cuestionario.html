@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuestionario de Descubrimiento · Nozoe Studio</title>
+<meta name="description" content="Cuéntanos de tu negocio en 30–40 minutos y lo convertimos en tu web profesional. Cuestionario de descubrimiento de Nozoe Studio.">
+<meta property="og:title" content="Cuestionario de Descubrimiento · Nozoe Studio">
+<meta property="og:description" content="Cuéntanos de tu negocio en 30–40 minutos y lo convertimos en tu web profesional.">
+<meta property="og:image" content="https://nozoestudio.com/assets/og-image.png">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://nozoestudio.com/cuestionario">
+<meta property="og:url" content="https://nozoestudio.com/cuestionario">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Nozoe Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cuestionario de Descubrimiento · Nozoe Studio">
+<meta name="twitter:description" content="Cuéntanos de tu negocio en 30–40 minutos y lo convertimos en tu web profesional.">
+<meta name="twitter:image" content="https://nozoestudio.com/assets/og-image.png">
+<link rel="icon" href="assets/favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7VG5XMC7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KT7VG5XMC7');
+</script>
+<style>
+/* ============================================================
+   Nozoe Studio · Cuestionario de descubrimiento
+   Hereda header/footer y componentes compartidos del sitio
+   (.btn, .btn-ember, .btn-ghost). Todo lo propio de esta página
+   vive bajo #cq-page para no chocar con site.css.
+   ============================================================ */
+#cq-page, #cq-page *{box-sizing:border-box}
+#cq-page *{margin:0;padding:0}
+#cq-page{
+  font-family:var(--ns-font-sans);
+  background:var(--ns-surface-base);
+  color:var(--ns-text-primary);
+  line-height:1.6;font-size:16px;
+  /* Capa puente: alias locales -> tokens reales del sistema */
+  --ns-surface-card:  var(--ns-surface-raised);
+  --ns-surface-ink:   var(--ns-ink-900);
+  --ns-text-soft:     var(--ns-text-secondary);
+  --ns-line:          var(--ns-border-default);
+  --ns-accent-strong: var(--ns-accent-active);
+  --ns-accent-soft:   var(--ns-accent-subtle);
+  --ns-radius-lg:     var(--ns-radius-md);
+}
+#cq-page h1, #cq-page h2, #cq-page h3{line-height:1.15;letter-spacing:-.02em;font-weight:800}
+#cq-page p{color:var(--ns-text-soft)}
+#cq-page .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+
+/* barra de progreso (no sticky: el header real ya lo es) */
+#cq-page .topbar{position:sticky;top:65px;z-index:90;border-bottom:1px solid var(--ns-line);background:var(--ns-surface-card)}
+#cq-page .topbar-in{display:flex;justify-content:center;align-items:center;height:50px}
+#cq-page .prog-wrap{width:100%;max-width:420px}
+#cq-page .prog-label{font-size:11.5px;color:var(--ns-text-soft);margin-bottom:4px;display:flex;justify-content:space-between}
+#cq-page .prog-bar{height:6px;background:var(--ns-line);border-radius:99px;overflow:hidden}
+#cq-page .prog-fill{height:100%;width:0%;background:var(--ns-accent);border-radius:99px;transition:width .3s ease}
+
+/* intro */
+#cq-page .intro{padding:56px 0 40px}
+#cq-page .eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ns-accent);margin-bottom:12px}
+#cq-page .intro h1{font-size:clamp(28px,4.4vw,40px);margin-bottom:16px}
+#cq-page .intro p{font-size:17px;max-width:56ch;margin-bottom:12px}
+#cq-page .intro-tips{margin-top:22px;background:var(--ns-accent-soft);border:1px solid var(--ns-orange-200);border-radius:var(--ns-radius-lg);padding:18px 20px;font-size:14.5px}
+#cq-page .intro-tips b{display:block;margin-bottom:6px;font-size:13.5px}
+#cq-page .intro-tips ul{margin:6px 0 0 18px;color:var(--ns-text-soft)}
+#cq-page .intro-tips li{margin-bottom:4px}
+
+/* bloques */
+#cq-page .bloque{padding:36px 0 8px}
+#cq-page .bloque-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+#cq-page .bloque-num{font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--ns-accent);background:var(--ns-accent-soft);border-radius:8px;padding:4px 10px;white-space:nowrap}
+#cq-page .bloque h2{font-size:22px}
+#cq-page .bloque > .wrap > p.desc{font-size:14.5px;margin:6px 0 22px;max-width:60ch}
+
+#cq-page .q{background:var(--ns-surface-card);border:1px solid var(--ns-line);border-radius:var(--ns-radius-lg);padding:20px 22px;margin-bottom:14px}
+#cq-page .q label{display:block;font-weight:600;font-size:15.5px;margin-bottom:4px}
+#cq-page .q .hint{font-size:13px;color:var(--ns-text-soft);margin-bottom:12px;display:block}
+#cq-page .q .hint em{font-style:normal;color:var(--ns-text-primary)}
+#cq-page .req{color:var(--ns-accent);font-weight:600}
+#cq-page textarea,#cq-page input[type=text]{width:100%;font-family:inherit;font-size:15px;color:var(--ns-text-primary);background:var(--ns-surface-base);border:1px solid var(--ns-line);border-radius:var(--ns-radius-md);padding:12px 14px;resize:vertical;transition:border-color .15s}
+#cq-page textarea{min-height:88px}
+#cq-page textarea:focus,#cq-page input:focus{outline:none;border-color:var(--ns-accent)}
+#cq-page textarea.filled,#cq-page input.filled{border-color:var(--ns-border-strong)}
+
+/* opciones tipo pill */
+#cq-page .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+#cq-page .pill{border:1px solid var(--ns-line);border-radius:99px;padding:8px 16px;font-size:14px;cursor:pointer;background:var(--ns-surface-card);color:var(--ns-text-soft);transition:all .12s;user-select:none}
+#cq-page .pill:hover{border-color:var(--ns-accent)}
+#cq-page .pill.on{background:var(--ns-accent);border-color:var(--ns-accent);color:var(--ns-text-on-accent);font-weight:600}
+#cq-page .pills-note{font-size:12px;color:var(--ns-text-soft);margin-top:8px}
+
+/* cierre / exportar */
+#cq-page .exportar{margin:48px 0 70px;background:var(--ns-surface-ink);color:var(--ns-text-inverse);border-radius:var(--ns-radius-lg);padding:34px 30px}
+#cq-page .exportar h2{font-size:22px;margin-bottom:10px}
+#cq-page .exportar p{color:var(--ns-sky-300);font-size:15px;max-width:56ch;margin-bottom:20px}
+#cq-page .exportar .warn{color:var(--ns-warning-default);font-size:13.5px;margin-top:16px}
+#cq-page .btns{display:flex;gap:12px;flex-wrap:wrap}
+#cq-page .btn{font-size:13px;gap:9px;padding:0 26px}
+/* subida de archivos */
+#cq-page .up-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 6px}
+#cq-page .up-card{border:1.5px dashed var(--ns-ink-600);border-radius:var(--ns-radius-lg);padding:20px;cursor:pointer;transition:border-color .15s;position:relative}
+#cq-page .up-card:hover{border-color:var(--ns-accent)}
+#cq-page .up-card input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+#cq-page .up-card h3{font-size:14.5px;font-weight:600;color:var(--ns-text-inverse);margin-bottom:4px}
+#cq-page .up-card p{font-size:12.5px;color:var(--ns-sky-400);margin:0}
+#cq-page .up-card .up-cta{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:600;color:var(--ns-accent);border:1px solid var(--ns-ink-700);border-radius:99px;padding:5px 14px}
+#cq-page .file-list{margin-top:6px}
+#cq-page .file-item{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--ns-sky-200);padding:6px 0;border-bottom:1px solid var(--ns-ink-800)}
+#cq-page .file-item:last-child{border-bottom:none}
+#cq-page .file-item .fs{color:var(--ns-sky-400);margin-left:auto;white-space:nowrap}
+#cq-page .file-item .fx{color:var(--ns-sky-400);cursor:pointer;padding:0 4px;font-weight:600}
+#cq-page .file-item .fx:hover{color:var(--ns-text-inverse)}
+#cq-page .up-total{font-size:12.5px;color:var(--ns-sky-400);margin-top:10px}
+#cq-page .up-total b{color:var(--ns-text-inverse)}
+#cq-page .up-total.over b{color:var(--ns-danger-default)}
+#cq-page .btn[disabled]{opacity:.55;cursor:not-allowed;transform:none!important}
+#cq-page .enviando .btn-ember{pointer-events:none}
+#cq-page .mail-row{margin:0 0 18px}
+#cq-page .mail-row label{display:block;font-size:13.5px;font-weight:600;color:var(--ns-text-inverse);margin-bottom:6px}
+#cq-page .mail-row input{width:100%;font-family:inherit;font-size:15px;background:var(--ns-ink-800);border:1px solid var(--ns-ink-700);border-radius:var(--ns-radius-md);color:var(--ns-text-inverse);padding:12px 14px}
+#cq-page .mail-row input:focus{outline:none;border-color:var(--ns-accent)}
+#cq-page .mail-row .mini{font-size:12px;color:var(--ns-sky-400);margin-top:6px}
+#cq-page .ok-box{display:none;background:var(--ns-ink-800);border:1px solid var(--ns-success-default);border-radius:var(--ns-radius-lg);padding:22px;margin-top:20px}
+#cq-page .ok-box.show{display:block}
+#cq-page .ok-box h3{color:var(--ns-text-inverse);font-size:16px;margin-bottom:6px}
+#cq-page .ok-box p{color:var(--ns-sky-300);font-size:14px;margin:0}
+#cq-page .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ns-surface-ink);color:var(--ns-text-inverse);font-size:14px;font-weight:600;padding:12px 22px;border-radius:99px;opacity:0;transition:all .3s ease;z-index:99;pointer-events:none}
+#cq-page .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+@media(max-width:640px){
+  #cq-page .bloque-head{flex-direction:column;gap:8px;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){#cq-page *{transition:none!important}}
+#cq-page :focus-visible{outline:2px solid var(--ns-accent);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="assets/nozoe-studio-logo-color.svg" alt="Nozoe Studio" width="193" height="37" fetchpriority="high" style="width: 193px; height: auto">
+      </a>
+      <div class="nav-links">
+        <a href="estudio"   class="nav-link">Estudio</a>
+        <a href="trabajo"   class="nav-link">Trabajo</a>
+        <a href="servicios" class="nav-link">Servicios</a>
+        <a href="contacto"  class="nav-link">Contacto</a>
+      </div>
+      <button class="nav-ham" id="nav-ham" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="contacto" class="nav-cta">
+        <span class="wa-dot"></span>
+        WhatsApp
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div id="cq-page">
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <div class="prog-wrap">
+      <div class="prog-label"><span>Tu avance</span><span id="prog-txt">0%</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="intro">
+  <div class="wrap">
+    <div class="eyebrow">Cuestionario de descubrimiento</div>
+    <h1>Cuéntanos de tu negocio. Nosotros lo convertimos en tu web.</h1>
+    <p>Este cuestionario toma entre 30 y 40 minutos y es la materia prima de todo tu proyecto: tus textos, tu diseño y tu estrategia salen de aquí. Mientras mejor respondas, mejor será tu web.</p>
+    <div class="intro-tips">
+      <b>Antes de empezar, tres consejos</b>
+      <ul>
+        <li>Responde como le hablarías a un cliente en persona: natural, sin lenguaje corporativo. Nosotros pulimos los textos.</li>
+        <li>No hay respuestas incorrectas. Si no sabes algo, escribe "no sé" y lo resolvemos juntos.</li>
+        <li>Al final podrás adjuntar tu logo y hasta 10 fotos, y enviarnos todo con un solo botón. <strong>No cierres la página antes de enviar</strong>: las respuestas no se guardan solas.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BLOQUE 1 ============ -->
+<div class="bloque">
+  <div class="wrap">
+    <div class="bloque-head"><span class="bloque-num">Bloque 1 · 5 min</span><h2>Lo básico</h2></div>
+    <p class="desc">Los datos que aparecerán en tu web y que necesitamos para arrancar.</p>
+
+    <div class="q">
+      <label>¿Cómo se llama tu negocio o cómo quieres aparecer? <span class="req">*</span></label>
+      <span class="hint">Puede ser tu nombre profesional ("Dra. Ana Torres") o el de tu estudio ("Torres & Asociados").</span>
+      <input type="text" data-q="Nombre del negocio / marca">
+    </div>
+    <div class="q">
+      <label>¿A qué te dedicas, en una frase? <span class="req">*</span></label>
+      <span class="hint">Ejemplo: "Soy abogada laboralista, ayudo a trabajadores a hacer valer sus derechos" — simple y directo.</span>
+      <input type="text" data-q="A qué se dedica (una frase)">
+    </div>
+    <div class="q">
+      <label>¿Dónde atiendes? <span class="req">*</span></label>
+      <span class="hint">Ciudad, distrito, si atiendes presencial, virtual o ambos.</span>
+      <input type="text" data-q="Ubicación y modalidad de atención">
+    </div>
+    <div class="q">
+      <label>¿Cuántos años llevas en esto y qué credenciales tienes?</label>
+      <span class="hint">Años de experiencia, colegiatura, títulos, especializaciones, instituciones donde trabajaste. Todo lo que dé confianza.</span>
+      <textarea data-q="Años de experiencia y credenciales"></textarea>
+    </div>
+    <div class="q">
+      <label>Datos de contacto para la web <span class="req">*</span></label>
+      <span class="hint">WhatsApp (el número que atenderá consultas), correo, dirección si aplica, redes sociales activas y horario de atención.</span>
+      <textarea data-q="Datos de contacto (WhatsApp, correo, dirección, redes, horario)"></textarea>
+    </div>
+    <div class="q">
+      <label>¿Ya tienes un dominio (dirección web) o un nombre en mente?</label>
+      <span class="hint">Ejemplo: "tunegocio.pe" o "todavía no, ayúdenme a elegir".</span>
+      <input type="text" data-q="Dominio existente o deseado">
+    </div>
+  </div>
+</div>
+
+<!-- ============ BLOQUE 2 ============ -->
+<div class="bloque">
+  <div class="wrap">
+    <div class="bloque-head"><span class="bloque-num">Bloque 2 · 5 min</span><h2>Tu identidad visual actual</h2></div>
+    <p class="desc">Un inventario rápido de lo que ya tienes. Con esto sabemos desde dónde partimos para construir tu sistema de diseño.</p>
+
+    <div class="q">
+      <label>¿Qué tienes hoy de identidad visual? <span class="req">*</span></label>
+      <span class="hint">Marca todo lo que ya exista, aunque no te guste como está.</span>
+      <div class="pills" data-q="Inventario de identidad visual" data-multi="1">
+        <span class="pill">Logo</span>
+        <span class="pill">Colores definidos</span>
+        <span class="pill">Tipografía definida</span>
+        <span class="pill">Fotos profesionales propias</span>
+        <span class="pill">Tarjetas / material impreso</span>
+        <span class="pill">Manual de marca</span>
+        <span class="pill">Nada todavía</span>
+      </div>
+      <p class="pills-note">Si tienes logo o manual de marca, podrás adjuntarlos al final del cuestionario.</p>
+    </div>
+    <div class="q">
+      <label>Si tu marca fuera una persona, ¿cómo sería? Elige hasta 4.</label>
+      <div class="pills" data-q="Personalidad de marca (adjetivos)" data-multi="1" data-max="4">
+        <span class="pill">Seria y formal</span>
+        <span class="pill">Cercana y cálida</span>
+        <span class="pill">Moderna</span>
+        <span class="pill">Clásica y tradicional</span>
+        <span class="pill">Elegante</span>
+        <span class="pill">Directa y práctica</span>
+        <span class="pill">Innovadora</span>
+        <span class="pill">Protectora / que da seguridad</span>
+      </div>
+    </div>
+    <div class="q">
+      <label>¿Hay webs, marcas o estilos que te gusten? ¿Y algo que definitivamente NO quieres?</label>
+      <span class="hint">Pega enlaces si tienes. Lo que NO quieres es tan valioso como lo que sí: "nada recargado", "no quiero verme como banco", etc.</span>
+      <textarea data-q="Referencias que le gustan y lo que NO quiere"></textarea>
+    </div>
+    <div class="q">
+      <label>¿Prefieres una web en tonos claros, oscuros, o nos dejas proponerte?</label>
+      <div class="pills" data-q="Preferencia de tema claro/oscuro">
+        <span class="pill">Clara</span>
+        <span class="pill">Oscura</span>
+        <span class="pill">Propónganme ustedes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BLOQUE 3 ============ -->
+<div class="bloque">
+  <div class="wrap">
+    <div class="bloque-head"><span class="bloque-num">Bloque 3 · 8 min</span><h2>Tu cliente ideal</h2></div>
+    <p class="desc">Tu web no le habla a todo el mundo: le habla a la persona que quieres que te escriba. Descríbela.</p>
+
+    <div class="q">
+      <label>¿Quién es tu cliente típico? <span class="req">*</span></label>
+      <span class="hint">Edad aproximada, ocupación, situación. Ejemplo: "trabajadores dependientes de 30–50 años con problemas de despido" o "dueños de pymes que necesitan orden contable".</span>
+      <textarea data-q="Cliente ideal (quién es)"></textarea>
+    </div>
+    <div class="q">
+      <label>¿Qué problema o necesidad tiene cuando te busca? <span class="req">*</span></label>
+      <span class="hint">Escríbelo con las palabras que ellos usan, no con términos técnicos. ¿Qué te dicen en el primer mensaje o llamada?</span>
+      <textarea data-q="Problema del cliente (en sus palabras)"></textarea>
+    </div>
+    <div class="q">
+      <label>¿Qué miedos o dudas tiene antes de contratar a alguien como tú?</label>
+      <span class="hint">Ejemplo: "que le cobren de más", "que el trámite demore años", "no saber si su caso tiene solución".</span>
+      <textarea data-q="Miedos y dudas del cliente antes de contratar"></textarea>
+    </div>
+    <div class="q">
+      <label>Hoy, ¿cómo te encuentran tus clientes? <span class="req">*</span></label>
+      <div class="pills" data-q="Cómo lo encuentran hoy" data-multi="1">
+        <span class="pill">Recomendación / boca a boca</span>
+        <span class="pill">Instagram / Facebook</span>
+        <span class="pill">TikTok</span>
+        <span class="pill">Google</span>
+        <span class="pill">LinkedIn</span>
+        <span class="pill">Directorios / colegios profesionales</span>
+        <span class="pill">Otro</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BLOQUE 4 ============ -->
+<div class="bloque">
+  <div class="wrap">
+    <div class="bloque-head"><span class="bloque-num">Bloque 4 · 8 min</span><h2>Tus servicios</h2></div>
+    <p class="desc">La sección más importante de tu web. Entre 3 y 6 servicios, explicados como se los explicarías a un cliente.</p>
+
+    <div class="q">
+      <label>Lista tus servicios principales (3 a 6) <span class="req">*</span></label>
+      <span class="hint">Para cada uno: <em>nombre + qué problema resuelve + para quién es</em>. Una o dos líneas por servicio basta. Si manejas precios o rangos que quieras mostrar, inclúyelos.</span>
+      <textarea style="min-height:150px" data-q="Servicios principales (nombre, qué resuelve, para quién, precio si aplica)"></textarea>
+    </div>
+    <div class="q">
+      <label>De todos, ¿cuál es TU servicio estrella? <span class="req">*</span></label>
+      <span class="hint">El que más vendes, el más rentable, o el que quieres impulsar. Será el protagonista de la web.</span>
+      <input type="text" data-q="Servicio estrella">
+    </div>
+    <div class="q">
+      <label>¿Cómo es tu proceso de trabajo, paso a paso?</label>
+      <span class="hint">Desde que el cliente te escribe hasta que terminas. Ejemplo: "1) Consulta inicial gratuita, 2) Evaluación del caso, 3) Propuesta y honorarios, 4) Ejecución con reportes". Esto reduce la desconfianza del visitante.</span>
+      <textarea data-q="Proceso de trabajo paso a paso"></textarea>
+    </div>
+    <div class="q">
+      <label>¿La primera consulta es gratuita, tiene costo, o depende?</label>
+      <span class="hint">Es una de las cosas que más pregunta la gente. Definirlo bien en la web filtra curiosos y atrae clientes serios.</span>
+      <input type="text" data-q="Política de primera consulta">
+    </div>
+  </div>
+</div>
+
+<!-- ============ BLOQUE 5 ============ -->
+<div class="bloque">
+  <div class="wrap">
+    <div class="bloque-head"><span class="bloque-num">Bloque 5 · 6 min</span><h2>Por qué tú y no otro</h2></div>
+    <p class="desc">Aquí se construye la confianza. Sé concreto: los datos convencen más que los adjetivos.</p>
+
+    <div class="q">
+      <label>¿Qué te diferencia de otros profesionales de tu rubro? <span class="req">*</span></label>
+      <span class="hint">Piensa en lo que tus clientes te dicen que valoran: rapidez, trato, especialización, resultados, precios claros, disponibilidad. Evita "calidad y compromiso" — eso lo dicen todos.</span>
+      <textarea data-q="Diferenciación real"></textarea>
+    </div>
+    <div class="q">
+      <label>¿Tienes números o logros que se puedan contar?</label>
+      <span class="hint">Ejemplo: "+200 casos resueltos", "15 años de experiencia", "clientes en 3 países", "95% de casos ganados". Si no los tienes exactos, aproxima con honestidad.</span>
+      <textarea data-q="Números y logros contables"></textarea>
+    </div>
+    <div class="q">
+      <label>¿Tienes testimonios de clientes o podrías conseguir 2–3?</label>
+      <span class="hint">Si ya los tienes, pégalos aquí con nombre y ocupación de la persona (o iniciales si prefieren privacidad). Si no, te enviaremos un mensaje modelo para pedirlos — funciona casi siempre.</span>
+      <textarea data-q="Testimonios existentes o por conseguir"></textarea>
+    </div>
+    <div class="q">
+      <label>¿Tienes casos o resultados que puedas contar sin nombres?</label>
+      <span class="hint">Ejemplo: "Recuperamos S/ 45,000 de beneficios para un trabajador despedido" o "Ordenamos la contabilidad de una pyme que debía 3 años de declaraciones". Anonimizado, real y concreto.</span>
+      <textarea data-q="Casos o resultados anonimizados"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BLOQUE 6 ============ -->
+<div class="bloque">
+  <div class="wrap">
+    <div class="bloque-head"><span class="bloque-num">Bloque 6 · 5 min</span><h2>Preguntas y objeciones</h2></div>
+    <p class="desc">Con esto armamos la sección de preguntas frecuentes — la que convierte visitantes dudosos en consultas.</p>
+
+    <div class="q">
+      <label>¿Cuáles son las 4–6 preguntas que TODOS te hacen antes de contratar? <span class="req">*</span></label>
+      <span class="hint">Las de siempre: precios, tiempos, cómo se trabaja, qué necesitan traer, si atiendes virtual. Escribe la pregunta y tu respuesta corta.</span>
+      <textarea style="min-height:150px" data-q="Preguntas frecuentes con respuestas"></textarea>
+    </div>
+    <div class="q">
+      <label>¿Cuál es la principal razón por la que alguien NO te contrata?</label>
+      <span class="hint">Precio, desconfianza, "lo voy a pensar", comparan con informales... Saberlo nos permite responderlo en la web antes de que sea un problema.</span>
+      <textarea data-q="Principal objeción / razón de no contratación"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BLOQUE 7 ============ -->
+<div class="bloque">
+  <div class="wrap">
+    <div class="bloque-head"><span class="bloque-num">Bloque 7 · 3 min</span><h2>Para cerrar</h2></div>
+
+    <div class="q">
+      <label>Cuando alguien visite tu web, ¿qué es LO ÚNICO que quieres que haga? <span class="req">*</span></label>
+      <div class="pills" data-q="Acción principal deseada del visitante">
+        <span class="pill">Escribirme por WhatsApp</span>
+        <span class="pill">Llamarme</span>
+        <span class="pill">Agendar una cita</span>
+        <span class="pill">Dejar sus datos en un formulario</span>
+      </div>
+    </div>
+    <div class="q">
+      <label>¿Hay algo más que debamos saber?</label>
+      <span class="hint">Competidores que admiras u odias, planes futuros, algo sensible de tu rubro, lo que sea. Este espacio es tuyo.</span>
+      <textarea data-q="Notas adicionales / contexto libre"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ENVIAR ============ -->
+<div class="wrap">
+  <div class="exportar" id="envio">
+    <h2>Último paso: adjunta tu material y envía todo</h2>
+    <p>Tus respuestas, tu logo y tus fotos nos llegan directo con un solo botón. Con eso, tu proyecto arranca oficialmente y el plazo de 7–10 días empieza a correr.</p>
+
+    <form id="form-envio" action="https://formsubmit.co/pedro@nozoestudio.com" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" id="f-subject" value="Cuestionario de descubrimiento · Nuevo cliente">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <textarea name="Respuestas del cuestionario" id="f-respuestas" style="display:none"></textarea>
+
+      <div class="mail-row">
+        <label for="f-email">Tu correo electrónico</label>
+        <input type="email" name="Correo del cliente" id="f-email" placeholder="tucorreo@ejemplo.com" required>
+        <p class="mini">Para confirmarte la recepción y coordinar los siguientes pasos.</p>
+      </div>
+
+      <div class="up-grid">
+        <div class="up-card">
+          <input type="file" id="f-logo" name="Logo" accept="image/*,.svg,.pdf,.ai,.eps">
+          <h3>Tu logo</h3>
+          <p>Si lo tienes. Ideal en la mejor calidad disponible (PNG, SVG, PDF o AI).</p>
+          <span class="up-cta">Elegir archivo</span>
+          <div class="file-list" id="list-logo"></div>
+        </div>
+        <div class="up-card">
+          <input type="file" id="f-fotos" accept="image/*" multiple>
+          <h3>Tus fotos (hasta 10)</h3>
+          <p>De ti, tu equipo, tu local o tu trabajo. Las optimizamos automáticamente al adjuntarlas.</p>
+          <span class="up-cta">Elegir fotos</span>
+          <div class="file-list" id="list-fotos"></div>
+        </div>
+      </div>
+      <p class="up-total" id="up-total">Peso total del envío: <b>0 MB</b> de 9.5 MB disponibles</p>
+
+      <div class="btns" style="margin-top:22px">
+        <button type="submit" class="btn btn-ember" id="btn-enviar">Enviar mi cuestionario</button>
+        <button type="button" class="btn btn-ghost" onclick="descargar()">Descargar copia (.txt)</button>
+      </div>
+      <p class="warn" id="warn-envio">⚠ No cierres la página hasta ver la confirmación de envío. Si prefieres, también puedes descargar la copia y enviárnosla por WhatsApp.</p>
+    </form>
+
+    <div class="ok-box" id="ok-box">
+      <h3>✓ Recibido. Tu proyecto está en marcha.</h3>
+      <p>Te escribiremos por WhatsApp o correo dentro de las próximas 24 horas hábiles para confirmar el inicio. Gracias por el tiempo que le dedicaste: se nota en el resultado.</p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">Copiado ✓</div>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-logo">
+      <img src="assets/nozoe-studio-logo-color.svg" alt="Nozoe Studio" style="width: 144px">
+    </div>
+    <div class="footer-copy">
+      © 2026 Nozoe Studio · 東京・リマ<br>
+      Tus respuestas son confidenciales y se usan únicamente para tu proyecto.
+    </div>
+    <div class="footer-social">
+      <a href="https://www.behance.net/pedronozoe" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.linkedin.com/in/pedro-nozoe" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+
+<!-- FAB WhatsApp (solo móvil) -->
+<a href="https://wa.me/817022124910" class="wa-fab" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+// ---- pills (selección única o múltiple) ----
+document.querySelectorAll('.pills').forEach(group=>{
+  const multi = group.dataset.multi === '1';
+  const max = parseInt(group.dataset.max || '99', 10);
+  group.querySelectorAll('.pill').forEach(pill=>{
+    pill.setAttribute('tabindex','0');
+    pill.setAttribute('role','button');
+    const toggle = ()=>{
+      if (multi){
+        const onCount = group.querySelectorAll('.pill.on').length;
+        if (!pill.classList.contains('on') && onCount >= max) return;
+        pill.classList.toggle('on');
+      } else {
+        group.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));
+        pill.classList.add('on');
+      }
+      progreso();
+    };
+    pill.addEventListener('click', toggle);
+    pill.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+  });
+});
+
+// ---- progreso ----
+const campos = [...document.querySelectorAll('[data-q]')];
+function valorDe(el){
+  if (el.classList.contains('pills')){
+    return [...el.querySelectorAll('.pill.on')].map(p=>p.textContent.trim()).join(', ');
+  }
+  return el.value.trim();
+}
+function progreso(){
+  let llenos = 0;
+  campos.forEach(el=>{
+    const v = valorDe(el);
+    const tieneValor = v.length > 0;
+    if (tieneValor) llenos++;
+    if (!el.classList.contains('pills')) el.classList.toggle('filled', tieneValor);
+  });
+  const pct = Math.round(llenos / campos.length * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-txt').textContent = pct + '%';
+}
+document.querySelectorAll('textarea, input[type=text]').forEach(el=>{
+  el.addEventListener('input', progreso);
+});
+
+// ---- exportación ----
+function armarTexto(){
+  const fecha = new Date().toLocaleDateString('es-PE', {year:'numeric', month:'long', day:'numeric'});
+  let out = 'CUESTIONARIO DE DESCUBRIMIENTO · NOZOE STUDIO\n';
+  out += 'Fecha: ' + fecha + '\n';
+  out += '='.repeat(52) + '\n\n';
+  let bloqueActual = '';
+  campos.forEach(el=>{
+    const bloque = el.closest('.bloque').querySelector('h2').textContent;
+    if (bloque !== bloqueActual){
+      bloqueActual = bloque;
+      out += '\n––– ' + bloque.toUpperCase() + ' –––\n\n';
+    }
+    const v = valorDe(el);
+    out += '• ' + el.dataset.q + ':\n' + (v || '(sin responder)') + '\n\n';
+  });
+  return out;
+}
+function descargar(){
+  const nombre = campos[0] ? (valorDe(campos[0]) || 'cliente') : 'cliente';
+  const slug = nombre.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') || 'cliente';
+  const blob = new Blob([armarTexto()], {type:'text/plain;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'cuestionario-nozoe-' + slug + '.txt';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast('Copia descargada ✓');
+}
+
+// ---- adjuntos: compresión y gestión ----
+const LIMITE_TOTAL = 9.5 * 1024 * 1024; // margen bajo el tope de 10MB de FormSubmit
+const MAX_FOTOS = 10;
+let fotosComp = [];   // {blob, nombre, size}
+let logoFile = null;
+
+function mb(bytes){ return (bytes / 1048576).toFixed(1); }
+function totalBytes(){
+  return (logoFile ? logoFile.size : 0) + fotosComp.reduce((s,f)=>s+f.size, 0);
+}
+function pintarTotal(){
+  const t = totalBytes();
+  const el = document.getElementById('up-total');
+  el.innerHTML = 'Peso total del envío: <b>' + mb(t) + ' MB</b> de 9.5 MB disponibles';
+  const excede = t > LIMITE_TOTAL;
+  el.classList.toggle('over', excede);
+  document.getElementById('btn-enviar').disabled = excede;
+  if (excede) el.innerHTML += ' — quita alguna foto o envía las más pesadas por WhatsApp';
+}
+
+async function comprimirImagen(file){
+  if (!/^image\/(jpeg|png|webp)/.test(file.type)) return file; // svg, heic u otros: se envían tal cual
+  try{
+    const bmp = await createImageBitmap(file);
+    const MAXD = 2000;
+    const esc = Math.min(1, MAXD / Math.max(bmp.width, bmp.height));
+    const c = document.createElement('canvas');
+    c.width = Math.round(bmp.width * esc);
+    c.height = Math.round(bmp.height * esc);
+    c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+    const blob = await new Promise(r=>c.toBlob(r, 'image/jpeg', .82));
+    return (blob && blob.size < file.size) ? blob : file;
+  }catch(e){ return file; }
+}
+
+document.getElementById('f-logo').addEventListener('change', function(){
+  logoFile = this.files[0] || null;
+  const list = document.getElementById('list-logo');
+  list.innerHTML = '';
+  if (logoFile){
+    list.innerHTML = '<div class="file-item"><span>'+logoFile.name+'</span><span class="fs">'+mb(logoFile.size)+' MB</span></div>';
+  }
+  pintarTotal();
+});
+
+document.getElementById('f-fotos').addEventListener('change', async function(){
+  let nuevos = [...this.files];
+  this.value = ''; // permite volver a elegir los mismos archivos
+  const cupo = MAX_FOTOS - fotosComp.length;
+  if (nuevos.length > cupo){
+    nuevos = nuevos.slice(0, cupo);
+    toast('Máximo ' + MAX_FOTOS + ' fotos');
+  }
+  if (!nuevos.length) return;
+  toast('Optimizando fotos…');
+  for (const f of nuevos){
+    const blob = await comprimirImagen(f);
+    const nombre = f.name.replace(/\.[^.]+$/, '') + '.jpg';
+    fotosComp.push({ blob, nombre: blob === f ? f.name : nombre, size: blob.size });
+  }
+  pintarFotos();
+  toast('Fotos listas ✓');
+});
+
+function pintarFotos(){
+  const list = document.getElementById('list-fotos');
+  list.innerHTML = fotosComp.map((f,i)=>
+    '<div class="file-item"><span>'+f.nombre+'</span><span class="fs">'+mb(f.size)+' MB</span><span class="fx" role="button" tabindex="0" aria-label="Quitar foto" onclick="quitarFoto('+i+')">✕</span></div>'
+  ).join('');
+  pintarTotal();
+}
+function quitarFoto(i){ fotosComp.splice(i,1); pintarFotos(); }
+
+// ---- envío ----
+document.getElementById('form-envio').addEventListener('submit', async function(e){
+  e.preventDefault();
+  if (totalBytes() > LIMITE_TOTAL) return;
+
+  const nombre = campos[0] ? (valorDe(campos[0]) || 'Nuevo cliente') : 'Nuevo cliente';
+  document.getElementById('f-subject').value = 'Cuestionario de descubrimiento · ' + nombre;
+  document.getElementById('f-respuestas').value = armarTexto();
+
+  const btn = document.getElementById('btn-enviar');
+  btn.disabled = true;
+  btn.textContent = 'Enviando…';
+
+  const fd = new FormData(this); // incluye respuestas, correo, asunto y logo
+  fotosComp.forEach((f,i)=>{
+    fd.append('Foto ' + String(i+1).padStart(2,'0'), f.blob, f.nombre);
+  });
+
+  try{
+    const res = await fetch('https://formsubmit.co/ajax/pedro@nozoestudio.com', {
+      method:'POST', body: fd, headers:{ 'Accept':'application/json' }
+    });
+    const data = await res.json().catch(()=>({}));
+    if (res.ok && data.success !== 'false' && data.success !== false){
+      document.getElementById('ok-box').classList.add('show');
+      document.getElementById('warn-envio').style.display = 'none';
+      btn.textContent = 'Enviado ✓';
+      this.querySelectorAll('input,button[type=submit]').forEach(el=>el.disabled=true);
+      toast('¡Cuestionario enviado! ✓');
+    } else { throw new Error('Respuesta no válida'); }
+  }catch(err){
+    btn.disabled = false;
+    btn.textContent = 'Reintentar envío';
+    toast('No se pudo enviar. Verifica tu conexión o descarga la copia y envíala por WhatsApp.');
+  }
+});
+let toastTimer;
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2400);
+}
+progreso();
+</script>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Profesional Nozoe · Tu web lista y editable conversando · Nozoe Studio</title>
+<meta name="description" content="Tu web profesional diseñada con sistema propio, publicada en 7–10 días y con un editor inteligente: cambias tus textos conversando con tu web. Por Nozoe Studio.">
+<meta property="og:title" content="Web Profesional Nozoe · Tu web lista y editable conversando">
+<meta property="og:description" content="Diseño con sistema propio, publicada en 7–10 días, con editor conversacional incluido. Por Nozoe Studio.">
+<meta property="og:image" content="https://nozoestudio.com/assets/og-image.png">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://nozoestudio.com/web-profesional">
+<meta property="og:url" content="https://nozoestudio.com/web-profesional">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Nozoe Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Web Profesional Nozoe · Tu web lista y editable conversando">
+<meta name="twitter:description" content="Diseño con sistema propio, publicada en 7–10 días, con editor conversacional incluido. Por Nozoe Studio.">
+<meta name="twitter:image" content="https://nozoestudio.com/assets/og-image.png">
+<link rel="icon" href="assets/favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7VG5XMC7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KT7VG5XMC7');
+</script>
+<style>
+/* ============================================================
+   Nozoe Studio · Landing "Web Profesional Nozoe"
+   Hereda header/footer y componentes compartidos del sitio
+   (.btn, .btn-ember, .btn-ghost, .wrap, .wa-fab). Todo lo propio
+   de esta página vive bajo #wp-page para no chocar con site.css.
+   ============================================================ */
+#wp-page, #wp-page *{box-sizing:border-box}
+#wp-page *{margin:0;padding:0}
+#wp-page{
+  font-family:var(--ns-font-sans);
+  background:var(--ns-surface-base);
+  color:var(--ns-text-primary);
+  line-height:1.6;font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+  /* Capa puente: alias locales -> tokens reales del sistema */
+  --ns-surface-card:  var(--ns-surface-raised);
+  --ns-surface-ink:   var(--ns-ink-900);
+  --ns-text-soft:     var(--ns-text-secondary);
+  --ns-line:          var(--ns-border-default);
+  --ns-line-ink:      var(--ns-ink-700);
+  --ns-accent-strong: var(--ns-accent-active);
+  --ns-accent-soft:   var(--ns-accent-subtle);
+  --ns-radius-lg:     var(--ns-radius-md);
+}
+#wp-page h1, #wp-page h2, #wp-page h3{line-height:1.12;letter-spacing:-.022em;font-weight:800}
+#wp-page p{color:var(--ns-text-soft)}
+#wp-page a:not(.btn){color:inherit;text-decoration:none}
+#wp-page .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+#wp-page .eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ns-text-soft)}
+#wp-page .eyebrow b{color:var(--ns-accent);font-weight:600}
+#wp-page .wa-ico{width:17px;height:17px;flex-shrink:0}
+#wp-page .btn{font-size:13px;gap:9px;padding:0 26px}
+
+/* ---------- hero ---------- */
+#wp-page .wp-hero{padding:84px 0 76px}
+#wp-page .wp-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+#wp-page .wp-hero h1{font-size:clamp(34px,4.6vw,52px);margin:18px 0 20px}
+#wp-page .wp-hero h1 .u{box-shadow:inset 0 -0.28em 0 var(--ns-accent-soft)}
+#wp-page .wp-hero .lead{font-size:18.5px;max-width:46ch;margin-bottom:30px}
+#wp-page .wp-hero-ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+#wp-page .wp-hero-note{font-size:13px;color:var(--ns-text-soft);margin-top:14px}
+#wp-page .wp-hero-note b{color:var(--ns-text-primary);font-weight:600}
+
+/* chat demo — el elemento firma */
+#wp-page .demo{background:var(--ns-surface-ink);border-radius:var(--ns-radius-lg);padding:22px;color:var(--ns-text-inverse);box-shadow:var(--ns-elev-3)}
+#wp-page .demo-bar{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid var(--ns-line-ink);margin-bottom:16px}
+#wp-page .demo-dot{width:9px;height:9px;border-radius:50%;background:var(--ns-line-ink)}
+#wp-page .demo-title{font-size:12.5px;color:var(--ns-sky-400);margin-left:4px}
+#wp-page .demo-title b{color:var(--ns-text-inverse);font-weight:600}
+#wp-page .chat{display:flex;flex-direction:column;gap:10px;min-height:250px}
+#wp-page .msg{max-width:86%;padding:10px 14px;border-radius:var(--ns-radius-md);font-size:14.5px;line-height:1.45;opacity:0;transform:translateY(6px);transition:opacity .4s ease, transform .4s ease}
+#wp-page .msg.show{opacity:1;transform:none}
+#wp-page .msg.user{align-self:flex-end;background:var(--ns-ink-700);border-bottom-right-radius:var(--ns-radius-sm)}
+#wp-page .msg.site{align-self:flex-start;background:var(--ns-ink-800);border:1px solid var(--ns-line-ink);border-bottom-left-radius:var(--ns-radius-sm);color:var(--ns-sky-200)}
+#wp-page .msg.site .ok{color:var(--ns-accent);font-weight:600}
+#wp-page .demo-foot{margin-top:16px;padding-top:14px;border-top:1px solid var(--ns-line-ink);font-size:12px;color:var(--ns-sky-400);display:flex;justify-content:space-between;align-items:center}
+#wp-page .demo-foot .tag{border:1px solid var(--ns-line-ink);border-radius:99px;padding:3px 10px}
+
+/* franja problema */
+#wp-page .pain{border-top:1px solid var(--ns-line);border-bottom:1px solid var(--ns-line);background:var(--ns-surface-card)}
+#wp-page .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+#wp-page .pain-item{padding:34px 28px;border-left:1px solid var(--ns-line)}
+#wp-page .pain-item:first-child{border-left:none;padding-left:0}
+#wp-page .pain-item h3{font-size:16.5px;font-weight:600;margin-bottom:8px;letter-spacing:0}
+#wp-page .pain-item p{font-size:14.5px}
+
+/* secciones */
+#wp-page section{padding:84px 0}
+#wp-page .sec-head{max-width:620px;margin-bottom:44px}
+#wp-page .sec-head h2{font-size:clamp(26px,3.4vw,36px);margin:14px 0 14px}
+#wp-page .sec-head p{font-size:17px}
+
+/* entregables */
+#wp-page .deliver{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+#wp-page .d-card{background:var(--ns-surface-card);border:1px solid var(--ns-line);border-radius:var(--ns-radius-lg);overflow:hidden;display:flex;flex-direction:column}
+#wp-page .d-card-body{padding:26px 24px 28px;display:flex;flex-direction:column;flex:1}
+#wp-page .d-card h3{font-size:16px;font-weight:600;letter-spacing:0;margin-bottom:8px}
+#wp-page .d-card p{font-size:14.5px}
+#wp-page .d-media{aspect-ratio:3/2;width:100%;background:var(--ns-surface-sunken)}
+#wp-page .d-media img{width:100%;height:100%;object-fit:cover;display:block}
+#wp-page .d-card .mini{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ns-accent);margin-bottom:14px}
+
+/* proceso */
+#wp-page .wp-process{background:var(--ns-surface-ink);color:var(--ns-text-inverse)}
+#wp-page .wp-process .sec-head h2{color:var(--ns-text-inverse)}
+#wp-page .wp-process .sec-head p{color:var(--ns-sky-300)}
+#wp-page .wp-process .eyebrow{color:var(--ns-sky-400)}
+#wp-page .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;counter-reset:step}
+#wp-page .step{background:var(--ns-surface-raised);border:1px solid var(--ns-line-ink);border-radius:var(--ns-radius-md);overflow:hidden;display:flex;flex-direction:column}
+#wp-page .step-media{aspect-ratio:3/2;width:100%;background:var(--ns-surface-sunken)}
+#wp-page .step-media img{width:100%;height:100%;object-fit:cover;display:block}
+#wp-page .step-body{padding:28px 26px 30px;display:flex;flex-direction:column;flex:1;color:var(--ns-text-primary)}
+#wp-page .step-body::before{counter-increment:step;content:counter(step,decimal-leading-zero);font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--ns-accent);margin-bottom:18px}
+#wp-page .step h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin:0 0 10px;color:var(--ns-text-primary)}
+#wp-page .step p{font-size:14px;color:var(--ns-text-soft);margin-bottom:16px}
+#wp-page .step .dias{display:inline-block;align-self:flex-start;margin-top:auto;font-size:11.5px;font-weight:600;color:var(--ns-accent);border:1px solid var(--ns-line);border-radius:99px;padding:3px 10px}
+#wp-page .process-note{margin-top:26px;font-size:14px;color:var(--ns-sky-300);max-width:640px}
+#wp-page .process-note b{color:var(--ns-text-inverse);font-weight:600}
+
+/* precios */
+#wp-page .price-impl{background:var(--ns-surface-card);border:1px solid var(--ns-line);border-radius:var(--ns-radius-lg);padding:34px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;margin-bottom:44px}
+#wp-page .price-impl h3{font-size:20px;margin-bottom:10px}
+#wp-page .price-impl .amount{display:flex;align-items:center;flex-wrap:wrap;column-gap:14px;row-gap:6px}
+#wp-page .price-impl .amount .from{font-size:16px;font-weight:600;color:var(--ns-text-soft);align-self:flex-start;padding-top:10px}
+#wp-page .price-impl .amount .figure{font-size:44px;font-weight:800;letter-spacing:-.03em}
+#wp-page .price-impl .amount small{font-size:14px;font-weight:500;color:var(--ns-text-soft);letter-spacing:0;line-height:1.45;margin-left:auto;text-align:right}
+#wp-page .price-impl ul{list-style:none;margin-top:6px}
+#wp-page .price-impl li{font-size:14.5px;color:var(--ns-text-soft);padding:7px 0 7px 26px;position:relative;border-bottom:1px solid var(--ns-line)}
+#wp-page .price-impl li:last-child{border-bottom:none}
+#wp-page .price-impl li::before{content:'';position:absolute;left:2px;top:14px;width:12px;height:7px;border-left:2px solid var(--ns-accent);border-bottom:2px solid var(--ns-accent);transform:rotate(-45deg)}
+#wp-page .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+#wp-page .plan{background:var(--ns-surface-card);border:1px solid var(--ns-line);border-radius:var(--ns-radius-lg);padding:26px 24px}
+#wp-page .plan.rec{border-color:var(--ns-accent);position:relative}
+#wp-page .plan.rec .rec-tag{position:absolute;top:-11px;left:22px;background:var(--ns-accent);color:var(--ns-text-on-accent);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:99px}
+#wp-page .plan h3{font-size:16px;font-weight:600;letter-spacing:0}
+#wp-page .plan .p-price{font-size:32px;font-weight:800;letter-spacing:-.02em;margin:10px 0 2px}
+#wp-page .plan .p-price small{font-size:13.5px;font-weight:500;color:var(--ns-text-soft)}
+#wp-page .plan .p-for{font-size:13px;color:var(--ns-text-soft);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--ns-line)}
+#wp-page .plan ul{list-style:none}
+#wp-page .plan li{font-size:13.8px;color:var(--ns-text-soft);padding:6px 0 6px 22px;position:relative}
+#wp-page .plan li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:6px;border-left:2px solid var(--ns-accent);border-bottom:2px solid var(--ns-accent);transform:rotate(-45deg)}
+#wp-page .plan li b{color:var(--ns-text-primary);font-weight:600}
+#wp-page .plans-note{margin-top:22px;font-size:13.5px;color:var(--ns-text-soft);max-width:640px}
+
+/* honestidad */
+#wp-page .honest{background:var(--ns-surface-card);border-top:1px solid var(--ns-line);border-bottom:1px solid var(--ns-line)}
+#wp-page .honest-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+#wp-page .honest h2{font-size:clamp(24px,3vw,30px);margin:14px 0 16px}
+#wp-page .honest .hp{font-size:16px;margin-bottom:10px}
+#wp-page .no-list{list-style:none;margin-top:8px}
+#wp-page .no-list li{font-size:14.5px;color:var(--ns-text-soft);padding:10px 0 10px 26px;border-bottom:1px solid var(--ns-line);position:relative}
+#wp-page .no-list li:last-child{border-bottom:none}
+#wp-page .no-list li::before{content:'—';position:absolute;left:0;color:var(--ns-text-soft)}
+#wp-page .no-list li b{color:var(--ns-text-primary);font-weight:600}
+
+/* faq */
+#wp-page .faq details{background:var(--ns-surface-card);border:1px solid var(--ns-line);border-radius:var(--ns-radius-md);margin-bottom:10px;max-width:760px}
+#wp-page .faq summary{cursor:pointer;list-style:none;padding:17px 20px;font-weight:600;font-size:15.5px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+#wp-page .faq summary::-webkit-details-marker{display:none}
+#wp-page .faq summary::after{content:'+';font-weight:400;font-size:20px;color:var(--ns-text-soft);flex-shrink:0}
+#wp-page .faq details[open] summary::after{content:'–'}
+#wp-page .faq .a{padding:0 20px 18px;font-size:14.8px;color:var(--ns-text-soft);max-width:64ch}
+
+/* cierre */
+#wp-page .final{padding:96px 0;text-align:center}
+#wp-page .final h2{font-size:clamp(28px,4vw,42px);max-width:19ch;margin:16px auto 18px}
+#wp-page .final p{max-width:52ch;margin:0 auto 30px;font-size:17px}
+#wp-page .fastlane{max-width:640px;margin:44px auto 0;background:var(--ns-surface-card);border:1px solid var(--ns-line);border-radius:var(--ns-radius-lg);padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left}
+#wp-page .fastlane h3{font-size:16.5px;letter-spacing:0;margin-bottom:4px}
+#wp-page .fastlane p{font-size:14px;margin:0;max-width:none}
+#wp-page .fastlane .btn{white-space:nowrap;flex-shrink:0}
+@media(max-width:640px){#wp-page .fastlane{flex-direction:column;align-items:flex-start}}
+
+@media(max-width:900px){
+  #wp-page .wp-hero{padding:56px 0 60px}
+  #wp-page .wp-hero-grid{grid-template-columns:1fr;gap:40px}
+  #wp-page .pain-grid{grid-template-columns:1fr}
+  #wp-page .pain-item{border-left:none;border-top:1px solid var(--ns-line);padding:24px 0}
+  #wp-page .pain-item:first-child{border-top:none}
+  #wp-page .deliver,#wp-page .steps,#wp-page .plans{grid-template-columns:1fr}
+  #wp-page .price-impl{grid-template-columns:1fr;gap:20px}
+  #wp-page .honest-grid{grid-template-columns:1fr;gap:36px}
+  #wp-page section{padding:64px 0}
+}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  #wp-page *{transition:none!important}
+  #wp-page .msg{opacity:1;transform:none}
+}
+#wp-page :focus-visible{outline:2px solid var(--ns-accent);outline-offset:2px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="assets/nozoe-studio-logo-color.svg" alt="Nozoe Studio" width="193" height="37" fetchpriority="high" style="width: 193px; height: auto">
+      </a>
+      <div class="nav-links">
+        <a href="estudio"   class="nav-link">Estudio</a>
+        <a href="trabajo"   class="nav-link">Trabajo</a>
+        <a href="servicios" class="nav-link">Servicios</a>
+        <a href="contacto"  class="nav-link">Contacto</a>
+      </div>
+      <button class="nav-ham" id="nav-ham" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="contacto" class="nav-cta">
+        <span class="wa-dot"></span>
+        WhatsApp
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div id="wp-page">
+
+<!-- ============ HERO ============ -->
+<div class="wp-hero">
+  <div class="wrap wp-hero-grid">
+    <div>
+      <div class="eyebrow"><b>Web Profesional Nozoe</b> · Para profesionales y estudios en Perú</div>
+      <h1>Tu web lista en días. Y la actualizas <span class="u">conversando con ella</span>.</h1>
+      <p class="lead">No te vendemos una página: te entregamos un sistema que te hace ver profesional, convierte visitas en consultas por WhatsApp, y que tú mismo editas escribiéndole en lenguaje normal. Sin código. Sin depender de nadie.</p>
+      <div class="wp-hero-ctas">
+        <a class="btn btn-ember" href="#cierre">
+          <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Conversemos por WhatsApp
+        </a>
+        <a class="btn btn-ghost-warm" href="#proceso">Ver cómo funciona</a>
+      </div>
+      <p class="wp-hero-note">Publicada en <b>7–10 días hábiles</b> · Diseño con sistema propio, no plantilla genérica · Tú conservas tu contenido siempre</p>
+    </div>
+
+    <!-- Elemento firma: demo del editor conversacional -->
+    <div class="demo" aria-label="Demostración del editor conversacional">
+      <div class="demo-bar">
+        <span class="demo-dot"></span><span class="demo-dot"></span><span class="demo-dot"></span>
+        <span class="demo-title">Editor de <b>tu-web.pe</b> · en vivo</span>
+      </div>
+      <div class="chat" id="chat">
+        <div class="msg user">Cambia mi horario a lunes–sábado, 9am a 7pm</div>
+        <div class="msg site">Listo. Horario actualizado en la sección de contacto. <span class="ok">Publicado ✓</span></div>
+        <div class="msg user">Sube la consulta inicial a S/ 120 y agrégalo a la sección de servicios</div>
+        <div class="msg site">Hecho: precio actualizado y visible en "Servicios". Guardé una copia de la versión anterior por si quieres volver. <span class="ok">Publicado ✓</span></div>
+        <div class="msg user">¿Cómo va el SEO de mi página?</div>
+        <div class="msg site">Tu puntuación es 52/60. Puedo mejorar la meta descripción para atraer más clics, ¿lo hago?</div>
+      </div>
+      <div class="demo-foot">
+        <span>Así edita tu web un cliente Nozoe</span>
+        <span class="tag">sin tocar código</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROBLEMA ============ -->
+<div class="pain">
+  <div class="wrap pain-grid">
+    <div class="pain-item">
+      <h3>Vender solo por redes te hace ver improvisado</h3>
+      <p>Tu cliente te busca en Google antes de escribirte. Si solo encuentra un Instagram, la confianza baja y la negociación empieza cuesta arriba.</p>
+    </div>
+    <div class="pain-item">
+      <h3>Las webs normales te vuelven dependiente</h3>
+      <p>Cada cambio de texto, precio u horario significa buscar al "chico de la web", esperar días y pagar de nuevo. Tu web se congela en el tiempo.</p>
+    </div>
+    <div class="pain-item">
+      <h3>Los constructores "hazlo tú mismo" te roban horas</h3>
+      <p>Wix, plantillas y builders prometen facilidad, pero terminas peleando con márgenes y menús en vez de atender a tus clientes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ QUÉ INCLUYE ============ -->
+<section id="incluye">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Qué incluye</div>
+      <h2>Un sistema completo, no una plantilla</h2>
+      <p>Todo lo que necesitas para verte profesional y recibir consultas, entregado funcionando. Pago único de implementación.</p>
+    </div>
+    <div class="deliver">
+      <div class="d-card">
+        <div class="d-media"><img src="assets/web-profesional/incluye-01-diseno.png" alt="" loading="lazy"></div>
+        <div class="d-card-body">
+          <span class="mini">Diseño</span>
+          <h3>Sistema de diseño propio de tu marca</h3>
+          <p>No partimos de una plantilla genérica: construimos tu identidad como sistema (colores, tipografía, componentes) y te entregamos su documentación. Tu web no se parece a ninguna otra.</p>
+        </div>
+      </div>
+      <div class="d-card">
+        <div class="d-media"><img src="assets/web-profesional/incluye-02-estructura.png" alt="" loading="lazy"></div>
+        <div class="d-card-body">
+          <span class="mini">Estructura</span>
+          <h3>Landing profesional de 9 secciones</h3>
+          <p>Quién eres, qué ofreces, cómo trabajas, casos, testimonios y preguntas frecuentes — todo orientado a que el visitante te escriba por WhatsApp.</p>
+        </div>
+      </div>
+      <div class="d-card">
+        <div class="d-media"><img src="assets/web-profesional/incluye-03-contenido.png" alt="" loading="lazy"></div>
+        <div class="d-card-body">
+          <span class="mini">Contenido</span>
+          <h3>Textos redactados contigo</h3>
+          <p>Respondes un cuestionario simple y convertimos tus respuestas en textos claros y persuasivos. Incluye dos rondas de revisión y hasta 10 imágenes optimizadas.</p>
+        </div>
+      </div>
+      <div class="d-card">
+        <div class="d-media"><img src="assets/web-profesional/incluye-04-editor.png" alt="" loading="lazy"></div>
+        <div class="d-card-body">
+          <span class="mini">Editor</span>
+          <h3>Tu web entiende instrucciones</h3>
+          <p>Cambias precios, horarios, textos y fotos escribiéndole a tu web en español normal. Cada publicación guarda una copia: si algo sale mal, se revierte con un clic.</p>
+        </div>
+      </div>
+      <div class="d-card">
+        <div class="d-media"><img src="assets/web-profesional/incluye-05-ventas.png" alt="" loading="lazy"></div>
+        <div class="d-card-body">
+          <span class="mini">Ventas</span>
+          <h3>Bandeja de consultas + SEO guiado</h3>
+          <p>Los formularios llegan a tu propio panel, sin herramientas de terceros. Y un asistente te dice qué mejorar para aparecer mejor en Google, con puntuación en tiempo real.</p>
+        </div>
+      </div>
+      <div class="d-card">
+        <div class="d-media"><img src="assets/web-profesional/incluye-06-tecnica.png" alt="" loading="lazy"></div>
+        <div class="d-card-body">
+          <span class="mini">Técnica</span>
+          <h3>Publicada, segura y a tu nombre</h3>
+          <p>Tu dominio (.pe o .com), certificado de seguridad, hosting de alto rendimiento y entrega con capacitación de 30 minutos. Tú tienes el control del contenido desde el día uno.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="wp-process" id="proceso">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">El proceso</div>
+      <h2>De cero a publicada en 7–10 días hábiles</h2>
+      <p>Un camino claro, con fechas y responsables. Tu única tarea es responder el cuestionario y enviarnos tu material en las primeras 48 horas.</p>
+      <a class="btn btn-ember" href="cuestionario" style="margin-top:22px">Empezar el cuestionario →</a>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-media"><img src="assets/web-profesional/proceso-01-descubrimiento.png" alt="" loading="lazy"></div>
+        <div class="step-body">
+          <h3>Descubrimiento</h3>
+          <p>Llamada corta + cuestionario de marca y servicios. Definimos a quién le hablas, qué ofreces y qué te hace distinto.</p>
+          <span class="dias">Días 1–2</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-media"><img src="assets/web-profesional/proceso-02-sistema-diseno.png" alt="" loading="lazy"></div>
+        <div class="step-body">
+          <h3>Sistema de diseño</h3>
+          <p>Construimos tu identidad como sistema: paleta, tipografía y componentes. Lo apruebas antes de construir nada.</p>
+          <span class="dias">Días 3–4</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-media"><img src="assets/web-profesional/proceso-03-construccion.png" alt="" loading="lazy"></div>
+        <div class="step-body">
+          <h3>Construcción y textos</h3>
+          <p>Armamos tu web con tus textos reales y tus fotos. Recibes un enlace privado para revisar y pedir ajustes (2 rondas).</p>
+          <span class="dias">Días 5–8</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-media"><img src="assets/web-profesional/proceso-04-publicacion.png" alt="" loading="lazy"></div>
+        <div class="step-body">
+          <h3>Publicación y entrega</h3>
+          <p>Conectamos tu dominio, activamos el editor conversacional y te capacitamos en 30 minutos. Desde ahí, tu web es tuya.</p>
+          <span class="dias">Días 9–10</span>
+        </div>
+      </div>
+    </div>
+    <p class="process-note"><b>Compromiso de ambos lados:</b> el plazo corre cuando recibimos tu material. Si necesitas más tiempo para juntar fotos o información, el proyecto se pausa sin penalidad y retoma cuando estés listo.</p>
+  </div>
+</section>
+
+<!-- ============ PRECIOS ============ -->
+<section id="precios">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Inversión</div>
+      <h2>Un pago de implementación. Un plan mensual para que nunca se caiga ni se congele.</h2>
+      <p>La mensualidad mantiene tu web viva: hosting, seguridad, respaldos, el editor inteligente y soporte real. Sin plan mensual no entregamos el proyecto — porque una web abandonada termina costándote más.</p>
+    </div>
+
+    <div class="price-impl">
+      <div>
+        <h3>Implementación completa</h3>
+        <div class="amount"><span class="from">Desde</span><span class="figure">US$ 300</span><small>pago único<br>según el alcance de tu proyecto</small></div>
+        <p style="font-size:14.5px;margin-top:12px">50% para agendar tu proyecto, 50% antes de la entrega. Incluye todo lo de la sección anterior, sin costos ocultos. El dominio (~US$ 12–15/año) lo adquiere el cliente — te guiamos en 10 minutos.</p>
+      </div>
+      <ul>
+        <li>Sistema de diseño propio documentado</li>
+        <li>Landing de 9 secciones orientada a WhatsApp</li>
+        <li>Redacción asistida + 2 rondas de revisión</li>
+        <li>Editor conversacional + SEO guiado + bandeja de consultas</li>
+        <li>Dominio conectado, HTTPS y capacitación de 30 min</li>
+      </ul>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Esencial</h3>
+        <div class="p-price">US$ 35 <small>/ mes</small></div>
+        <p class="p-for">Para quien quiere su web segura y editarla por su cuenta.</p>
+        <ul>
+          <li>Hosting, seguridad y respaldos</li>
+          <li><b>50 ediciones IA</b> al mes</li>
+          <li>Historial de versiones con restauración</li>
+          <li>Soporte por correo (48 h)</li>
+        </ul>
+      </div>
+      <div class="plan rec">
+        <span class="rec-tag">Recomendado</span>
+        <h3>Crecimiento</h3>
+        <div class="p-price">US$ 60 <small>/ mes</small></div>
+        <p class="p-for">Para quien quiere delegar y mantener su web al día sin pensarlo.</p>
+        <ul>
+          <li>Todo lo de Esencial</li>
+          <li><b>150 ediciones IA</b> al mes</li>
+          <li><b>1 cambio al mes hecho por nosotros</b> (hasta 30 min)</li>
+          <li>Soporte por WhatsApp (24 h)</li>
+          <li>Reporte trimestral de visitas y consultas</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3>Socio</h3>
+        <div class="p-price">US$ 95 <small>/ mes</small></div>
+        <p class="p-for">Para negocios que usan su web como canal de ventas activo.</p>
+        <ul>
+          <li>Todo lo de Crecimiento</li>
+          <li>Ediciones IA sin tope razonable</li>
+          <li><b>3 cambios al mes</b> hechos por nosotros</li>
+          <li>Soporte prioritario por WhatsApp</li>
+          <li>Reporte mensual + 1 página nueva al año</li>
+        </ul>
+      </div>
+    </div>
+    <p class="plans-note">La mensualidad inicia el mes siguiente a la entrega. Si algún día decides irte, tu web queda en línea 30 días de cortesía y te entregamos todo tu contenido. Nunca secuestramos webs.</p>
+  </div>
+</section>
+
+<!-- ============ HONESTIDAD ============ -->
+<div class="honest">
+  <section style="padding:72px 0">
+    <div class="wrap honest-grid">
+      <div>
+        <div class="eyebrow">Transparencia</div>
+        <h2>Lo que este servicio no incluye</h2>
+        <p class="hp">Preferimos decírtelo antes que sorprenderte después. Todo esto existe, pero se cotiza aparte como proyecto adicional:</p>
+      </div>
+      <ul class="no-list">
+        <li><b>Páginas adicionales</b> (blog, página por servicio): desde US$ 80–150 c/u.</li>
+        <li><b>Tienda online, pagos o reservas:</b> proyecto independiente.</li>
+        <li><b>Logo e identidad desde cero:</b> add-on de branding express (US$ 150–250) si aún no tienes ni concepto ni colores.</li>
+        <li><b>Contenido recurrente</b> (artículos, posts), fotografía y video.</li>
+        <li><b>Publicidad, campañas y SEO avanzado.</b></li>
+        <li><b>Rediseños estructurales</b> después de la entrega: se cotizan como proyecto nuevo.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Lo que todos preguntan antes de empezar</h2>
+    </div>
+    <details>
+      <summary>¿De verdad puedo editar mi web sin saber nada de tecnología?</summary>
+      <p class="a">Sí. Le escribes a tu web como le escribirías a un asistente: "cambia mi horario", "sube este precio", "reemplaza esta foto". El sistema hace el cambio, te lo muestra y guarda una copia de la versión anterior. No puedes romper el diseño aunque quieras: la estructura está protegida.</p>
+    </details>
+    <details>
+      <summary>¿Qué pasa si cometo un error al editar?</summary>
+      <p class="a">Cada vez que publicas, se guarda una versión. Si algo no te gusta, vuelves a la versión anterior con un clic. Es como una máquina del tiempo de tu contenido.</p>
+    </details>
+    <details>
+      <summary>¿Por qué la mensualidad es obligatoria?</summary>
+      <p class="a">Porque tu web no es un archivo que se entrega y se abandona: es un sistema vivo que necesita hosting, seguridad, respaldos y el motor de edición funcionando. La mensualidad es lo que garantiza que tu web nunca se caiga, nunca se desactualice y siempre tengas a quién escribirle. Una web abandonada termina costando más que mantenerla.</p>
+    </details>
+    <details>
+      <summary>¿El dominio y el contenido son míos?</summary>
+      <p class="a">Totalmente. El dominio lo adquiere el cliente, a su nombre (te guiamos en el proceso, cuesta unos US$ 12–15 al año). Y si algún día decides irte, te entregamos todo tu contenido y tu web queda en línea 30 días de cortesía mientras haces la transición.</p>
+    </details>
+    <details>
+      <summary>¿En cuánto tiempo está lista?</summary>
+      <p class="a">Entre 7 y 10 días hábiles desde que recibimos tu material (respuestas del cuestionario y fotos). Si necesitas más tiempo para juntar tu información, el proyecto se pausa sin problema y retoma cuando estés listo.</p>
+    </details>
+    <details>
+      <summary>¿Sirve para mi rubro?</summary>
+      <p class="a">Está pensada para profesionales y estudios que venden servicios: abogados, contadores, psicólogos, arquitectos, consultores, clínicas y consultorios, entre otros. Si tu negocio vive de la confianza y las consultas, es para ti. Si necesitas tienda online o reservas, conversemos: eso es un proyecto distinto.</p>
+    </details>
+    <details>
+      <summary>¿Qué necesitas de mí para empezar?</summary>
+      <p class="a">Tres cosas: responder un cuestionario simple sobre tu negocio (30–40 minutos), tus fotos o la disposición a usar imágenes que preparemos, y el 50% de adelanto para agendar. Con eso, el reloj empieza a correr.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="final" id="cierre">
+  <div class="wrap">
+    <div class="eyebrow"><b>Empecemos</b></div>
+    <h2>Tu próximo cliente te está buscando en Google. ¿Qué va a encontrar?</h2>
+    <p>Escríbenos por WhatsApp contándonos a qué te dedicas. Te respondemos con una evaluación honesta de si este servicio es para ti — y si no lo es, también te lo diremos.</p>
+    <a class="btn btn-ember" href="https://wa.me/817022124910?text=Hola%20Nozoe%2C%20quiero%20mi%20web%20profesional.%20Me%20dedico%20a..." target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Quiero mi web profesional
+    </a>
+    <div class="fastlane">
+      <div>
+        <h3>¿Ya lo tienes decidido?</h3>
+        <p>Empieza hoy mismo: responde el cuestionario de descubrimiento (30–40 min) y tu proyecto entra directo a agenda. Nosotros te contactamos para confirmar el inicio.</p>
+      </div>
+      <a class="btn btn-ghost-warm" href="cuestionario">Empezar mi proyecto →</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-logo">
+      <img src="assets/nozoe-studio-logo-color.svg" alt="Nozoe Studio" style="width: 144px">
+    </div>
+    <div class="footer-copy">
+      © 2026 Nozoe Studio · 東京・リマ<br>
+      Swiss premium + warm · Diseño con dirección
+    </div>
+    <div class="footer-social">
+      <a href="https://www.behance.net/pedronozoe" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.linkedin.com/in/pedro-nozoe" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+
+<!-- FAB WhatsApp (solo móvil) -->
+<a href="https://wa.me/817022124910" class="wa-fab" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+// Demo del chat: aparición secuencial en bucle (respeta reduced-motion)
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const msgs = [...document.querySelectorAll('#chat .msg')];
+  if (reduce || msgs.length === 0) { msgs.forEach(m=>m.classList.add('show')); return; }
+  let i = 0;
+  function cycle(){
+    if (i < msgs.length){
+      msgs[i].classList.add('show');
+      i++;
+      setTimeout(cycle, i % 2 === 1 ? 1400 : 2000); // respuesta llega un poco después
+    } else {
+      setTimeout(()=>{ msgs.forEach(m=>m.classList.remove('show')); i=0; setTimeout(cycle, 700); }, 5200);
+    }
+  }
+  // arranca cuando el demo entra en pantalla
+  const demo = document.querySelector('.demo');
+  const obs = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ cycle(); obs.disconnect(); } });
+  },{threshold:.35});
+  obs.observe(demo);
+})();
+</script>
+</body>
+</html>
