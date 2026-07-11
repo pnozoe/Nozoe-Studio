@@ -62,21 +62,21 @@ document.addEventListener('DOMContentLoaded', function() {
   els.forEach(function(el){ io.observe(el); });
 })();
 
-/* Demo del editor conversacional (banda "Web Profesional" del home) */
+/* Demo del editor conversacional (tarjeta "Web Profesional" del home) */
 (function(){
-  var chat = document.getElementById('wp-promo-chat');
+  var chat = document.getElementById('wp-feature-chat');
   if (!chat) return;
   var msgs = [
-    { who: 'user', html: 'Cambia mi horario a lunes–sábado, 9am a 7pm' },
-    { who: 'bot',  html: 'Listo. Horario actualizado en la sección de contacto. <span class="wp-promo-ok">Publicado ✓</span>' },
-    { who: 'user', html: 'Sube la consulta inicial a S/ 120 y agrégalo a la sección de servicios' },
-    { who: 'bot',  html: 'Hecho: precio actualizado y visible en «Servicios». Guardé una copia de la versión anterior por si quieres volver. <span class="wp-promo-ok">Publicado ✓</span>' }
+    { who: 'user', html: 'Cambia mi horario a lun–sáb, 9am a 7pm' },
+    { who: 'bot',  html: 'Listo. Actualizado en Contacto. <span class="wp-feature-ok">Publicado ✓</span>' },
+    { who: 'user', html: 'Sube la consulta inicial a S/ 120' },
+    { who: 'bot',  html: 'Hecho, visible en «Servicios». <span class="wp-feature-ok">Publicado ✓</span>' }
   ];
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function bubble(m){
     var d = document.createElement('div');
-    d.className = 'wp-promo-msg wp-promo-msg--' + m.who;
+    d.className = 'wp-feature-msg wp-feature-msg--' + m.who;
     d.innerHTML = m.html;
     return d;
   }
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (reduce) { msgs.forEach(function(m){ chat.appendChild(bubble(m)); }); return; }
 
   var typing = document.createElement('div');
-  typing.className = 'wp-promo-typing';
+  typing.className = 'wp-feature-typing';
   typing.innerHTML = '<i></i><i></i><i></i>';
   chat.appendChild(typing);
 
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function step(){
     if (i >= msgs.length){
       setTimeout(function(){
-        chat.querySelectorAll('.wp-promo-msg').forEach(function(n){ n.remove(); });
+        chat.querySelectorAll('.wp-feature-msg').forEach(function(n){ n.remove(); });
         i = 0; setTimeout(step, 600);
       }, 4200);
       return;
