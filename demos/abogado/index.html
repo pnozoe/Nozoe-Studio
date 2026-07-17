@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniela Rojas — Demo de landing legal | Nozoe Studio</title>
+<meta name="description" content="Demo ficticia de landing web para estudio jurídico, creada por Nozoe Studio.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:locale" content="es_PE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daniela Rojas — Demo de landing legal">
+<meta property="og:description" content="Demo ficticia de landing web para estudio jurídico, creada por Nozoe Studio.">
+<meta property="og:image" content="assets/daniela-rojas-portrait.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF7F1;color:#1C1917;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+@keyframes heroUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+details summary::-webkit-details-marker{display:none}
+.demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
+.demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
+.demo-ribbon img{width:100%;height:auto;display:block}
+.demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(min-width:981px){.main-nav{padding-right:125px!important}}
+@media(max-width:980px){.demo-ribbon{top:77px;right:0;width:30%;transform:none;filter:drop-shadow(0 4px 7px rgba(0,0,0,.25))}.demo-ribbon:hover{transform:translateY(-2px)}}
+@media(max-width:700px){.demo-ribbon{top:137px}}
+body.menu-open{overflow:hidden}
+.mn-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid rgba(28,25,23,.25);border-radius:50%;background:transparent;cursor:pointer;flex:none}
+.mn-toggle svg{width:18px;height:18px}
+@media(max-width:820px){
+  .mn-toggle{display:inline-flex;position:relative;z-index:151}
+  .main-nav .mn-links{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:100vh!important;z-index:150!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:28px!important;padding:6rem 2.5rem 3rem!important;background:#FAF7F1!important;box-sizing:border-box!important;visibility:hidden;opacity:0;transform:translateY(-1rem);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+  .main-nav .mn-links.is-open{visibility:visible;opacity:1;transform:translateY(0)}
+  .main-nav .mn-links a{font-family:'Newsreader',serif;font-size:28px}
+  .main-nav .mn-links a.mn-cta{font-family:'Hanken Grotesk',sans-serif;font-size:16px;align-self:flex-start}
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:.85fr 1.15fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns:60px 1fr 1.4fr auto"],
+  [style*="grid-template-columns: repeat(4, 1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns: .85fr 1.15fr"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 60px 1fr 1.4fr auto"]{grid-template-columns:1fr!important}
+}
+</style>
+</helmet>
+
+<div style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;line-height:1.6">
+  <a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+    <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
+  </a>
+
+<!-- NAV -->
+<nav class="main-nav" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(250,247,241,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,25,23,.08)">
+  <a href="#inicio" style="font-family:'Newsreader',serif;font-size:21px;color:#1C1917;text-decoration:none">Daniela Rojas <span style="color:#96502E;font-style:italic">· abogada</span></a>
+  <button type="button" class="mn-toggle" aria-expanded="false" aria-controls="mn-links" aria-label="Abrir menú">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#1C1917" stroke-linecap="round" stroke-width="1.6"/></svg>
+  </button>
+  <div class="mn-links" id="mn-links" style="display:flex;align-items:center;gap:28px;font-size:14px">
+    <a href="#servicios" style="color:#1C1917;text-decoration:none">Servicios</a>
+    <a href="#sobre" style="color:#1C1917;text-decoration:none">Sobre mí</a>
+    <a href="#casos" style="color:#1C1917;text-decoration:none">Casos</a>
+    <a href="#faq" style="color:#1C1917;text-decoration:none">Preguntas</a>
+    <a href="{{ waLink }}" class="mn-cta" style="background:#1C1917;color:#FAF7F1;padding:10px 22px;border-radius:100px;text-decoration:none;font-weight:500">Agendar consulta</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="inicio" style="position:relative;min-height:100svh;box-sizing:border-box;display:flex;align-items:center;overflow:hidden;background:#22281F url('assets/hero-consulta-estudio.webp') center center/cover no-repeat">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,23,19,.82) 0%,rgba(24,23,19,.68) 35%,rgba(24,23,19,.25) 60%,rgba(24,23,19,.05) 100%)"></div>
+  <div style="position:relative;z-index:1;max-width:1240px;width:100%;margin:0 auto;padding:158px 48px 88px;box-sizing:border-box;animation:heroUp .9s cubic-bezier(.2,.7,.2,1) both">
+    <div style="max-width:650px;color:#FAF7F1">
+      <p style="margin:0 0 20px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#E8BC8F;font-weight:600">— Estudio legal · Lima, Perú</p>
+      <h1 style="margin:0 0 24px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(48px,6.1vw,82px);line-height:1.02;letter-spacing:-.02em">Tu problema legal, resuelto con <em style="font-style:italic;color:#E8BC8F">claridad</em> y sin letra pequeña.</h1>
+      <p style="margin:0 0 36px;max-width:52ch;font-size:17px;color:rgba(250,247,241,.82)">Asesoro a personas y pequeñas empresas en derecho laboral, civil, empresarial y de familia. Te explico tus opciones en lenguaje simple y te digo con honestidad si tu caso conviene o no.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="{{ waLink }}" style="display:inline-flex;align-items:center;gap:10px;background:#D9A05B;color:#22281F;padding:15px 30px;border-radius:100px;text-decoration:none;font-weight:600" style-hover="background:#E5B274">Consultar por WhatsApp →</a>
+        <a href="#contacto" style="display:inline-flex;align-items:center;padding:15px 30px;border-radius:100px;border:1px solid rgba(250,247,241,.52);color:#FAF7F1;text-decoration:none;font-weight:500" style-hover="border-color:#FAF7F1">Escribir mensaje</a>
+      </div>
+      <p style="margin:20px 0 0;font-size:13px;color:rgba(250,247,241,.66)">Primera orientación de 15 minutos · sin compromiso ni lenguaje enredado.</p>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section data-reveal style="border-top:1px solid rgba(28,25,23,.1);border-bottom:1px solid rgba(28,25,23,.1)">
+  <div style="max-width:1240px;margin:0 auto;padding:36px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+    <div><p style="margin:0;font-family:'Newsreader',serif;font-size:38px;font-weight:400">12 años</p><p style="margin:4px 0 0;font-size:13px;color:rgba(28,25,23,.55)">de ejercicio profesional</p></div>
+    <div><p style="margin:0;font-family:'Newsreader',serif;font-size:38px;font-weight:400">+350</p><p style="margin:4px 0 0;font-size:13px;color:rgba(28,25,23,.55)">casos y consultas atendidas</p></div>
+    <div><p style="margin:0;font-family:'Newsreader',serif;font-size:38px;font-weight:400">93%</p><p style="margin:4px 0 0;font-size:13px;color:rgba(28,25,23,.55)">de casos resueltos favorablemente</p></div>
+    <div><p style="margin:0;font-family:'Newsreader',serif;font-size:38px;font-weight:400">&lt; 24 h</p><p style="margin:4px 0 0;font-size:13px;color:rgba(28,25,23,.55)">de respuesta a tu consulta</p></div>
+  </div>
+</section>
+
+<!-- DOLORES -->
+<section style="background:#F3EDE1;padding:110px 48px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— ¿Te suena?</p>
+    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px);line-height:1.1;max-width:20ch">Los problemas legales no avisan. Y esperar los <em style="color:#96502E">encarece</em>.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div data-reveal style="background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06)">
+        <p style="margin:0 0 14px;font-family:'Newsreader',serif;font-style:italic;font-size:21px;line-height:1.3">«Me despidieron y no sé si fue legal»</p>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Tienes plazos cortos para reclamar. Revisamos tu carta de despido, tu liquidación y CTS, y te decimos si corresponde una indemnización o reposición.</p>
+      </div>
+      <div data-reveal style="background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06)">
+        <p style="margin:0 0 14px;font-family:'Newsreader',serif;font-style:italic;font-size:21px;line-height:1.3">«Mi negocio opera sin contratos claros»</p>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Acuerdos de palabra con socios, clientes o trabajadores terminan costando caro. Ordenamos la base legal de tu empresa antes de que sea un problema.</p>
+      </div>
+      <div data-reveal style="background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06)">
+        <p style="margin:0 0 14px;font-family:'Newsreader',serif;font-style:italic;font-size:21px;line-height:1.3">«Los abogados me hablan en otro idioma»</p>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Términos en latín y honorarios sorpresa. Aquí trabajas con alguien que te explica cada paso, con costos acordados por escrito desde el inicio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" style="padding:110px 48px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Servicios</p>
+    <h2 data-reveal style="margin:0 0 12px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px);line-height:1.1">Cinco frentes. Un mismo estándar: <em style="color:#96502E">claridad</em>.</h2>
+    <p data-reveal style="margin:0 0 48px;font-size:14px;color:rgba(28,25,23,.55)">Precios referenciales — el monto exacto se confirma en la consulta inicial, antes de empezar. Sin sorpresas.</p>
+    <div style="display:flex;flex-direction:column">
+      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
+        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">01</span>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Derecho laboral</h3>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Despidos arbitrarios, beneficios sociales impagos, hostilización laboral y liquidaciones. Para trabajadores que necesitan hacer valer sus derechos con estrategia, no con impulso.</p>
+        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 350</span></sc-if>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
+        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">02</span>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Empresarial y contratos</h3>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Constitución de empresas, contratos con clientes y proveedores, acuerdos de socios y protección de tu marca. La base legal de una pyme que quiere crecer tranquila.</p>
+        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 450</span></sc-if>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
+        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">03</span>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Derecho civil</h3>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Deudas, incumplimiento de contratos, indemnizaciones y saneamiento de propiedades. Evaluamos primero si litigar te conviene — a veces la mejor demanda es la que no se presenta.</p>
+        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 400</span></sc-if>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
+        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">04</span>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Familia</h3>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Divorcios, pensión de alimentos, tenencia y régimen de visitas. Procesos sensibles llevados con firmeza legal y trato humano, priorizando acuerdos cuando protegen mejor a los tuyos.</p>
+        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 380</span></sc-if>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12);border-bottom:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
+        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">05</span>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Asesoría mensual para pymes</h3>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Tu abogada de cabecera: revisión de contratos, consultas ilimitadas por WhatsApp y prevención de contingencias laborales. Como tener área legal, sin planilla.</p>
+        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 590/mes</span></sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" style="background:#22281F;color:#F4EFE5;padding:110px 48px">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center">
+    <div data-reveal data-parallax>
+      <div style="aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#2E362A;border:1px solid rgba(244,239,229,.12)">
+        <img src="assets/daniela-rojas-portrait.webp" alt="Daniela Rojas en un despacho jurídico" style="width:100%;height:100%;object-fit:cover;object-position:center" loading="lazy">
+      </div>
+    </div>
+    <div data-reveal>
+      <p style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#D9A05B;font-weight:600">— La abogada</p>
+      <h2 style="margin:0 0 24px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3.2vw,44px);line-height:1.15">Daniela Rojas. <em style="color:#D9A05B">Tu caso, explicado como a una amiga — defendido como en corte.</em></h2>
+      <p style="margin:0 0 28px;font-size:16px;color:rgba(244,239,229,.75);max-width:56ch">Después de más de una década litigando, aprendí que la mayoría de conflictos legales se pierden antes de llegar al juzgado: por decisiones tomadas sin información. Por eso mi primer trabajo contigo es que entiendas exactamente dónde estás parada y qué opciones reales tienes.</p>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;font-size:14.5px;color:rgba(244,239,229,.85)">
+        <li style="display:flex;gap:12px"><span style="color:#D9A05B">—</span>Abogada por la Pontificia Universidad Católica del Perú (PUCP)</li>
+        <li style="display:flex;gap:12px"><span style="color:#D9A05B">—</span>Maestría en Derecho del Trabajo · Colegiada CAL N.° 58 423</li>
+        <li style="display:flex;gap:12px"><span style="color:#D9A05B">—</span>Conciliadora extrajudicial acreditada por el MINJUS</li>
+        <li style="display:flex;gap:12px"><span style="color:#D9A05B">—</span>Ex asesora legal de gremio de pequeñas empresas (2018–2022)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section style="padding:110px 48px;background:#F3EDE1">
+  <div style="max-width:1240px;margin:0 auto">
+    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Cómo trabajamos</p>
+    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">Cuatro pasos. Cero <em style="color:#96502E">incertidumbre</em>.</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px">
+      <div data-reveal style="background:#FAF7F1;border-radius:16px;overflow:hidden;border:1px solid rgba(28,25,23,.06)">
+        <div style="aspect-ratio:4/3;background:#EDE4D4"><img src="assets/paso-01-mensaje.webp" alt="Mensaje inicial desde un teléfono" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+        <div style="padding:24px">
+          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#96502E;font-weight:600">Paso 01</p>
+          <h3 style="margin:0 0 8px;font-family:'Newsreader',serif;font-weight:400;font-size:20px">Cuéntame tu caso</h3>
+          <p style="margin:0;font-size:13.5px;color:rgba(28,25,23,.6)">Escríbeme por WhatsApp o el formulario. En menos de 24 horas te digo si puedo ayudarte y qué necesito revisar.</p>
+        </div>
+      </div>
+      <div data-reveal style="background:#FAF7F1;border-radius:16px;overflow:hidden;border:1px solid rgba(28,25,23,.06)">
+        <div style="aspect-ratio:4/3;background:#EDE4D4"><img src="assets/paso-02-consulta.webp" alt="Consulta jurídica en un despacho" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+        <div style="padding:24px">
+          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#96502E;font-weight:600">Paso 02</p>
+          <h3 style="margin:0 0 8px;font-family:'Newsreader',serif;font-weight:400;font-size:20px">Consulta inicial</h3>
+          <p style="margin:0;font-size:13.5px;color:rgba(28,25,23,.6)">45 minutos, presencial o virtual. Sales sabiendo tus opciones, plazos y riesgos — sin importar si decides continuar.</p>
+        </div>
+      </div>
+      <div data-reveal style="background:#FAF7F1;border-radius:16px;overflow:hidden;border:1px solid rgba(28,25,23,.06)">
+        <div style="aspect-ratio:4/3;background:#EDE4D4"><img src="assets/paso-03-propuesta.webp" alt="Firma de una propuesta profesional" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+        <div style="padding:24px">
+          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#96502E;font-weight:600">Paso 03</p>
+          <h3 style="margin:0 0 8px;font-family:'Newsreader',serif;font-weight:400;font-size:20px">Propuesta clara</h3>
+          <p style="margin:0;font-size:13.5px;color:rgba(28,25,23,.6)">Honorarios por escrito, alcances definidos y cronograma. Lo que acordamos es lo que pagas, de inicio a fin.</p>
+        </div>
+      </div>
+      <div data-reveal style="background:#FAF7F1;border-radius:16px;overflow:hidden;border:1px solid rgba(28,25,23,.06)">
+        <div style="aspect-ratio:4/3;background:#EDE4D4"><img src="assets/paso-04-caso-en-marcha.webp" alt="Expediente y laptop en un despacho" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
+        <div style="padding:24px">
+          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#96502E;font-weight:600">Paso 04</p>
+          <h3 style="margin:0 0 8px;font-family:'Newsreader',serif;font-weight:400;font-size:20px">Tu caso en marcha</h3>
+          <p style="margin:0;font-size:13.5px;color:rgba(28,25,23,.6)">Te informo de cada avance por WhatsApp, en lenguaje claro. Nunca te enteras de tu proceso por terceros.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASOS -->
+<section id="casos" style="padding:110px 48px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Resultados</p>
+    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">Casos reales, nombres <em style="color:#96502E">reservados</em>.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div data-reveal style="border:1px solid rgba(28,25,23,.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:14px">
+        <p style="margin:0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Laboral · 2025</p>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:22px">Despido arbitrario en retail</h3>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65);flex:1">Trabajadora con 9 años de servicio despedida sin causa. Negociamos en etapa de conciliación evitando dos años de juicio.</p>
+        <p style="margin:0;padding-top:14px;border-top:1px solid rgba(28,25,23,.1);font-size:14px;font-weight:600;color:#96502E">Indemnización completa + beneficios en 45 días</p>
+      </div>
+      <div data-reveal style="border:1px solid rgba(28,25,23,.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:14px">
+        <p style="margin:0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Empresarial · 2025</p>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:22px">Sociedad sin acuerdo escrito</h3>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65);flex:1">Dos socios de una cafetería en crecimiento, sin pacto social claro. Formalizamos la sociedad y los acuerdos antes de abrir el segundo local.</p>
+        <p style="margin:0;padding-top:14px;border-top:1px solid rgba(28,25,23,.1);font-size:14px;font-weight:600;color:#96502E">Empresa blindada — cero contingencia laboral</p>
+      </div>
+      <div data-reveal style="border:1px solid rgba(28,25,23,.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:14px">
+        <p style="margin:0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Civil · 2024</p>
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:22px">Deuda comercial impaga</h3>
+        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65);flex:1">Proveedor con S/ 48 000 impagados por un cliente corporativo. Carta notarial y negociación estructurada, sin llegar a proceso judicial.</p>
+        <p style="margin:0;padding-top:14px;border-top:1px solid rgba(28,25,23,.1);font-size:14px;font-weight:600;color:#96502E">Recuperado el 100% en 4 meses</p>
+      </div>
+    </div>
+    <p data-reveal style="margin:24px 0 0;font-size:12px;color:rgba(28,25,23,.45)">Resultados de casos anteriores. Cada caso es distinto y ningún resultado pasado garantiza uno futuro — eso también es hablarte con claridad.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section style="background:#F3EDE1;padding:110px 48px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Testimonios</p>
+    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">Lo que dicen quienes ya <em style="color:#96502E">pasaron por esto</em>.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <figure data-reveal style="margin:0;background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06);display:flex;flex-direction:column;gap:18px">
+        <blockquote style="margin:0;font-family:'Newsreader',serif;font-style:italic;font-size:18px;line-height:1.45;flex:1">«Llegué asustada después de mi despido y salí de la primera consulta entendiendo todo. Me dijo qué batalla valía la pena dar y cuál no. Eso no tiene precio.»</blockquote>
+        <figcaption style="font-size:13px;color:rgba(28,25,23,.55)"><strong style="color:#1C1917">Carla M.</strong> · Ejecutiva de ventas, San Borja</figcaption>
+      </figure>
+      <figure data-reveal style="margin:0;background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06);display:flex;flex-direction:column;gap:18px">
+        <blockquote style="margin:0;font-family:'Newsreader',serif;font-style:italic;font-size:18px;line-height:1.45;flex:1">«Otros abogados me cotizaban sin explicarme nada. La doctora me dio el presupuesto por escrito y me avisaba de cada avance por WhatsApp. Así da gusto.»</blockquote>
+        <figcaption style="font-size:13px;color:rgba(28,25,23,.55)"><strong style="color:#1C1917">Jorge V.</strong> · Fundador de distribuidora, Ate</figcaption>
+      </figure>
+      <figure data-reveal style="margin:0;background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06);display:flex;flex-direction:column;gap:18px">
+        <blockquote style="margin:0;font-family:'Newsreader',serif;font-style:italic;font-size:18px;line-height:1.45;flex:1">«Pensé que recuperar mi deuda era imposible. En cuatro meses estaba cobrada, sin juicio. Se nota cuándo un abogado pelea por ti y no por alargar el proceso.»</blockquote>
+        <figcaption style="font-size:13px;color:rgba(28,25,23,.55)"><strong style="color:#1C1917">Patricia L.</strong> · Proveedora de insumos, Surquillo</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding:110px 48px">
+  <div style="max-width:840px;margin:0 auto">
+    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Preguntas frecuentes</p>
+    <h2 data-reveal style="margin:0 0 48px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">Lo que todos preguntan <em style="color:#96502E">antes de escribir</em>.</h2>
+    <div data-reveal style="display:flex;flex-direction:column">
+      <details style="border-top:1px solid rgba(28,25,23,.12)">
+        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Cuánto cuesta la primera consulta y qué incluye?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
+        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">La orientación inicial de 15 minutos por WhatsApp es gratuita: sirve para saber si puedo ayudarte. La consulta formal de 45 minutos cuesta S/ 120 e incluye revisión de tus documentos y un plan de acción concreto — se descuenta del honorario si continuamos.</p>
+      </details>
+      <details style="border-top:1px solid rgba(28,25,23,.12)">
+        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Cómo cobras los honorarios?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
+        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Por escrito y antes de empezar. Según el caso: monto fijo, cuotas por etapas del proceso, o un componente de éxito. Nunca vas a recibir un cobro que no acordamos.</p>
+      </details>
+      <details style="border-top:1px solid rgba(28,25,23,.12)">
+        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Atiendes fuera de Lima?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
+        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Sí. Las consultas y la mayor parte del trabajo se hacen de forma virtual, y coordino con abogados de enlace para diligencias en provincias.</p>
+      </details>
+      <details style="border-top:1px solid rgba(28,25,23,.12)">
+        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Mi caso es muy pequeño para un abogado?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
+        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Ningún caso es pequeño si te quita el sueño. Y si legalmente no conviene moverlo, te lo digo en la primera conversación — gratis — en lugar de cobrarte por un proceso perdido.</p>
+      </details>
+      <details style="border-top:1px solid rgba(28,25,23,.12)">
+        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Cuánto demora un proceso?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
+        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Depende de la materia y de si se puede conciliar. En la consulta te doy rangos realistas para tu caso específico — y siempre exploramos primero la vía más rápida.</p>
+      </details>
+      <details style="border-top:1px solid rgba(28,25,23,.12);border-bottom:1px solid rgba(28,25,23,.12)">
+        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Qué necesito llevar a la consulta?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
+        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Todo documento relacionado: contratos, cartas, boletas, conversaciones de WhatsApp, resoluciones. Si no tienes nada, ven igual — parte de mi trabajo es ayudarte a reconstruir el expediente.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="background:#22281F;color:#F4EFE5;padding:120px 48px;text-align:center">
+  <div data-reveal style="max-width:760px;margin:0 auto">
+    <p style="margin:0 0 20px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#D9A05B;font-weight:600">— Empecemos</p>
+    <h2 style="margin:0 0 20px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(36px,4.4vw,58px);line-height:1.1">Tu problema legal no se va a resolver <em style="color:#D9A05B">solo</em>.</h2>
+    <p style="margin:0 0 40px;font-size:16px;color:rgba(244,239,229,.7)">Escríbeme hoy. En menos de 24 horas sabrás si puedo ayudarte y cuál es el siguiente paso.</p>
+    <a href="{{ waLink }}" style="display:inline-flex;align-items:center;gap:10px;background:#D9A05B;color:#22281F;padding:17px 36px;border-radius:100px;text-decoration:none;font-weight:600;font-size:16px" style-hover="background:#E5B274">Escribir por WhatsApp →</a>
+    <p style="margin:20px 0 0;font-size:13px;color:rgba(244,239,229,.5)">Primera orientación gratuita · Lun–Vie 9:00–19:00 · Sáb 9:00–13:00</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="padding:110px 48px">
+  <div style="max-width:1240px;margin:0 auto">
+    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Dónde estamos</p>
+    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">En el corazón de Miraflores. <em style="color:#96502E">O donde estés tú.</em></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+      <form data-reveal onSubmit="{{ onFormSubmit }}" style="background:#F3EDE1;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:16px;border:1px solid rgba(28,25,23,.06)">
+        <h3 style="margin:0 0 4px;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Cuéntame tu caso</h3>
+        <input required placeholder="Tu nombre" style="padding:14px 16px;border-radius:10px;border:1px solid rgba(28,25,23,.15);background:#FAF7F1;font-family:inherit;font-size:15px">
+        <input required placeholder="WhatsApp o teléfono" style="padding:14px 16px;border-radius:10px;border:1px solid rgba(28,25,23,.15);background:#FAF7F1;font-family:inherit;font-size:15px">
+        <select style="padding:14px 16px;border-radius:10px;border:1px solid rgba(28,25,23,.15);background:#FAF7F1;font-family:inherit;font-size:15px;color:#1C1917">
+          <option>¿Sobre qué tema es?</option><option>Laboral</option><option>Empresarial / contratos</option><option>Civil</option><option>Familia</option><option>Asesoría para mi empresa</option>
+        </select>
+        <textarea required placeholder="Cuéntame brevemente qué está pasando…" rows="4" style="padding:14px 16px;border-radius:10px;border:1px solid rgba(28,25,23,.15);background:#FAF7F1;font-family:inherit;font-size:15px;resize:vertical"></textarea>
+        <button type="submit" style="padding:15px;border:none;border-radius:100px;background:#1C1917;color:#FAF7F1;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer" style-hover="background:#96502E">{{ formButtonLabel }}</button>
+        <p style="margin:0;font-size:12px;color:rgba(28,25,23,.5)">Tu información es confidencial y está protegida por el secreto profesional.</p>
+      </form>
+      <div data-reveal style="display:flex;flex-direction:column;gap:28px">
+        <div style="aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#EDE4D4;border:1px solid rgba(28,25,23,.1)">
+          <img src="assets/miraflores-contacto.webp" alt="Vista urbana de Miraflores, Lima" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:14.5px">
+          <div><p style="margin:0 0 4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Dirección</p><p style="margin:0">Av. José Larco 742, Of. 502<br>Miraflores, Lima</p></div>
+          <div><p style="margin:0 0 4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">WhatsApp</p><p style="margin:0">+51 999 888 777</p></div>
+          <div><p style="margin:0 0 4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Email</p><p style="margin:0">contacto@danielarojas.pe</p></div>
+          <div><p style="margin:0 0 4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Horario</p><p style="margin:0">Lun–Vie 9:00–19:00<br>Sáb 9:00–13:00</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top:1px solid rgba(28,25,23,.1);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(28,25,23,.5)">
+  <span>© 2026 Daniela Rojas · Abogada — Miraflores, Lima</span>
+  <span>Colegiada CAL N.° 58 423 · Esta web es una demo de diseño ficticia por <a href="https://nozoestudio.com" style="color:inherit">Nozoe Studio</a></span>
+</footer>
+
+</div>
+</x-dc>
+<script>
+(function(){
+  // Delegated on document (not bound to specific nodes) so it keeps working
+  // even if the dc-runtime re-renders the nav after this script runs.
+  function closeMenu(){
+    var links = document.getElementById('mn-links');
+    var btn = document.querySelector('.mn-toggle');
+    if (!links || !btn) return;
+    links.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Abrir menú');
+    document.body.classList.remove('menu-open');
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.mn-toggle');
+    if (btn){
+      var links = document.getElementById('mn-links');
+      if (!links) return;
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+      links.classList.toggle('is-open', !open);
+      document.body.classList.toggle('menu-open', !open);
+      return;
+    }
+    if (e.target.closest('#mn-links a')) closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { closeMenu(); var b = document.querySelector('.mn-toggle'); if (b) b.focus(); }
+  });
+})();
+</script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;51999888777&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Servicios&quot;}}">
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    const num = (this.props.whatsappNumber ?? '51999888777').replace(/\D/g, '');
+    return {
+      waLink: '#contacto',
+      showPrices: this.props.showPrices ?? true,
+      formButtonLabel: this.state.sent ? '✓ Mensaje enviado — te escribo pronto' : 'Enviar mi consulta',
+      onFormSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+  componentDidMount() {
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach((el) => {
+      if (el.getBoundingClientRect().top < document.documentElement.clientHeight * 0.9) { el._shown = true; return; }
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(26px)';
+      el.style.transition = 'opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+    });
+    const par = document.querySelectorAll('[data-parallax] > div');
+    this._onScroll = () => {
+      els.forEach((el) => {
+        if (el._shown) return;
+        if (el.getBoundingClientRect().top < document.documentElement.clientHeight * 0.88) {
+          el._shown = true;
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
+      });
+      par.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        const c = (r.top + r.height / 2 - document.documentElement.clientHeight / 2) / document.documentElement.clientHeight;
+        el.style.willChange = 'transform';
+        el.style.transform = 'translateY(' + (c * -22).toFixed(1) + 'px)';
+      });
+    };
+    const tick = () => { this._onScroll(); this._raf = requestAnimationFrame(tick); };
+    tick();
+    this._safety = setTimeout(() => {
+      els.forEach((el) => { if (!el._shown) { el._shown = true; el.style.opacity = '1'; el.style.transform = 'translateY(0)'; } });
+    }, 3000);
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._safety);
+  }
+}
+</script>
+</body>
+</html>

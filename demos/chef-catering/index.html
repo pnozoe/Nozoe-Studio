@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brasa &amp; Sal | Chef privado y catering en Lima</title>
+  <meta name="description" content="Demo conceptual de chef privado y catering en Lima: cenas íntimas, celebraciones y eventos corporativos diseñados alrededor de cada mesa.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1f2420">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Brasa &amp; Sal | La cocina sucede en tu mesa">
+  <meta property="og:description" content="Chef privado y catering conceptual para cenas, celebraciones y encuentros corporativos en Lima.">
+  <meta property="og:image" content="assets/hero-mesa.webp">
+  <meta property="og:image:alt" content="Manos terminando un plato para una cena privada en Lima">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f2420'/%3E%3Cpath d='M18 42c8-1 13-8 14-20 5 6 9 13 14 20' fill='none' stroke='%23f1ede4' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='43' r='4' fill='%23b64a31'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    :root {
+      --ink: #1f2420;
+      --ink-soft: #333a34;
+      --bone: #f1ede4;
+      --paper: #faf7f0;
+      --clay: #b64a31;
+      --clay-dark: #8e3523;
+      --herb: #586348;
+      --sand: #d7cbb8;
+      --line: rgba(31, 36, 32, .16);
+      --white: #fffdf8;
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "Manrope", Arial, sans-serif;
+      --radius: 1.25rem;
+      --shadow: 0 1.5rem 4rem rgba(31, 36, 32, .12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+    body.menu-open { overflow: hidden; }
+    img { display: block; width: 100%; height: auto; }
+    button, input, select { font: inherit; }
+    a { color: inherit; }
+    section[id] { scroll-margin-top: 6rem; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 200;
+      top: .75rem;
+      left: .75rem;
+      transform: translateY(-180%);
+      background: var(--white);
+      color: var(--ink);
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      font-weight: 700;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    :focus-visible { outline: 3px solid #e56a4a; outline-offset: 4px; }
+
+    .shell { width: min(100% - 2rem, 76rem); margin-inline: auto; }
+    .section { padding: clamp(5rem, 9vw, 8.5rem) 0; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      margin: 0 0 1.1rem;
+      color: var(--clay-dark);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 2.25rem; height: 1px; background: currentColor; }
+    .display, h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h2 { font-size: clamp(2.5rem, 5.2vw, 5rem); line-height: .98; margin-bottom: 1.25rem; }
+    h3 { font-size: clamp(1.55rem, 2.4vw, 2.15rem); line-height: 1.05; }
+    .lede { max-width: 39rem; color: #525a53; font-size: clamp(1.02rem, 1.5vw, 1.18rem); }
+    .section-heading { display: grid; grid-template-columns: 1.25fr .75fr; gap: 3rem; align-items: end; margin-bottom: 4rem; }
+    .section-heading .lede { justify-self: end; margin-bottom: .4rem; }
+
+    .button {
+      display: inline-flex;
+      min-height: 3.35rem;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--clay);
+      color: var(--white);
+      padding: .8rem 1.4rem;
+      font-size: .86rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-decoration: none;
+      transition: background-color .2s ease, color .2s ease, transform .2s ease;
+    }
+    .button:hover { background: var(--clay-dark); transform: translateY(-2px); }
+    .button--light { background: var(--white); color: var(--ink); }
+    .button--light:hover { background: var(--bone); }
+    .button--line { border-color: currentColor; background: transparent; color: var(--ink); }
+    .button--line:hover { background: var(--ink); color: var(--white); }
+    .arrow { font-size: 1.15em; line-height: 1; }
+
+    .site-header {
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      width: 100%;
+      color: var(--white);
+    }
+    .nav { display: flex; min-height: 5.5rem; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { display: inline-flex; align-items: center; gap: .7rem; color: inherit; font-weight: 700; letter-spacing: -.02em; text-decoration: none; }
+    .brand-mark { width: 1.9rem; height: 1.9rem; flex: 0 0 auto; }
+    .brand em { color: #e57659; font-style: normal; }
+    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.6vw, 2.2rem); margin: 0; padding: 0; list-style: none; }
+    .nav-links a:not(.button) { position: relative; color: inherit; font-size: .82rem; font-weight: 600; text-decoration: none; }
+    .nav-links a:not(.button)::after { content: ""; position: absolute; right: 0; bottom: -.35rem; left: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .2s ease; }
+    .nav-links a:not(.button):hover::after { transform: scaleX(1); transform-origin: left; }
+    .menu-toggle { display: none; width: 3rem; height: 3rem; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, .4); border-radius: 50%; background: transparent; color: inherit; }
+    .menu-toggle svg { width: 1.25rem; }
+
+    .demo-ribbon {
+      position: fixed;
+      z-index: 160;
+      top: 2.7rem;
+      right: -5.75rem;
+      display: block;
+      width: 19.7rem;
+      transform: rotate(45deg);
+      filter: drop-shadow(0 .3rem .45rem rgba(0, 0, 0, .28));
+      transition: filter .2s ease, transform .2s ease;
+    }
+    .demo-ribbon:hover { transform: rotate(45deg) translateY(-2px); filter: drop-shadow(0 .45rem .65rem rgba(0, 0, 0, .38)); }
+    .demo-ribbon img { width: 100%; height: auto; }
+    .demo-ribbon:focus-visible { outline-color: var(--white); }
+
+    @media (min-width: 901px) {
+      .nav { padding-right: 7.5rem; }
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: min(59rem, 100svh);
+      align-items: end;
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--white);
+    }
+    .hero-media, .hero-media::after { position: absolute; inset: 0; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 64% center; }
+    .hero-media::after {
+      content: "";
+      background: linear-gradient(90deg, rgba(20, 24, 21, .92) 0%, rgba(20, 24, 21, .7) 38%, rgba(20, 24, 21, .16) 72%), linear-gradient(0deg, rgba(20, 24, 21, .56), transparent 44%);
+    }
+    .hero-content { position: relative; z-index: 2; padding-top: 9rem; padding-bottom: clamp(4rem, 8vw, 7rem); }
+    .hero .eyebrow { color: #f0a087; }
+    .hero h1 { max-width: 11.5ch; margin: 0 0 1.5rem; color: var(--white); font-size: clamp(4rem, 9.3vw, 8.5rem); line-height: .82; }
+    .hero h1 em { color: #e57659; font-style: italic; }
+    .hero-copy { max-width: 36rem; margin: 0 0 2rem; color: rgba(255, 253, 248, .78); font-size: clamp(1rem, 1.5vw, 1.18rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .85rem; }
+    .hero-note { position: absolute; right: max(1rem, calc((100vw - 76rem) / 2)); bottom: 2.2rem; z-index: 2; display: flex; align-items: center; gap: .7rem; color: rgba(255, 255, 255, .75); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+    .hero-note::before { content: ""; width: 2.6rem; height: 1px; background: currentColor; }
+
+    .occasion-strip { padding: 1.4rem 0; border-bottom: 1px solid var(--line); background: var(--bone); }
+    .occasion-strip .shell { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .occasion-link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem 1.5rem; border-right: 1px solid var(--line); text-decoration: none; }
+    .occasion-link:first-child { padding-left: 0; }
+    .occasion-link:last-child { border-right: 0; padding-right: 0; }
+    .occasion-link span:first-child { font-family: var(--serif); font-size: 1.35rem; letter-spacing: -.02em; }
+    .occasion-link .n { color: var(--clay-dark); font-size: .7rem; font-weight: 700; letter-spacing: .1em; }
+
+    .occasions { background: var(--paper); }
+    .occasion-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .occasion-card { min-height: 24rem; padding: 2rem 2rem 1.6rem 0; border-right: 1px solid var(--line); }
+    .occasion-card + .occasion-card { padding-left: 2rem; }
+    .occasion-card:last-child { border-right: 0; }
+    .occasion-card .index { display: block; margin-bottom: 6rem; color: var(--clay-dark); font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
+    .occasion-card h3 { margin-bottom: 1rem; }
+    .occasion-card p { color: #5b625c; font-size: .93rem; }
+    .tag { display: inline-block; margin-top: 1rem; padding: .38rem .7rem; border: 1px solid var(--line); border-radius: 999px; color: var(--herb); font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+
+    .manifesto { overflow: hidden; background: var(--ink); color: var(--white); }
+    .manifesto-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(2.5rem, 5vw, 5rem); align-items: center; }
+    .portrait-wrap { position: relative; }
+    .photo-frame { position: relative; z-index: 1; padding: 15px; background: #fff; box-shadow: 0 16px 32px rgba(9, 14, 10, .18); }
+    .photo-frame img { border-radius: 0; }
+    .portrait-wrap img { aspect-ratio: 4 / 5.35; object-fit: cover; }
+    .caption { margin: .8rem 0 0; color: rgba(255, 255, 255, .52); font-size: .68rem; }
+    .manifesto .eyebrow { color: #f0a087; }
+    .manifesto blockquote { margin: 0 0 2rem; font-family: var(--serif); font-size: clamp(2.6rem, 5.2vw, 5rem); font-weight: 400; letter-spacing: -.04em; line-height: .98; }
+    .manifesto blockquote em { color: #e57659; font-style: italic; }
+    .manifesto-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; border-top: 1px solid rgba(255,255,255,.18); padding-top: 1.5rem; color: rgba(255,255,255,.66); font-size: .9rem; }
+
+    .experience { background: var(--bone); }
+    .experience-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(19rem, .75fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+    .experience-image { position: relative; }
+    .experience-image img { aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .image-stamp { position: absolute; right: -1.2rem; bottom: -1.2rem; display: grid; width: 8rem; height: 8rem; place-items: center; border-radius: 50%; background: var(--clay); color: var(--white); font-size: .66rem; font-weight: 700; letter-spacing: .1em; line-height: 1.4; text-align: center; text-transform: uppercase; transform: rotate(-7deg); }
+    .experience-copy h2 { font-size: clamp(2.8rem, 5.5vw, 5.2rem); }
+    .decision-list { margin: 2.25rem 0 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+    .decision-list li { display: grid; grid-template-columns: 2rem 1fr; gap: .8rem; padding: .9rem 0; border-bottom: 1px solid var(--line); font-size: .88rem; }
+    .decision-list b { color: var(--clay-dark); font-size: .68rem; letter-spacing: .08em; }
+
+    .menu-story { background: var(--paper); }
+    .menu-layout { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(2.5rem, 5vw, 5rem); align-items: center; }
+    .menu-image { position: relative; }
+    .menu-image img { aspect-ratio: 4 / 5; object-fit: cover; }
+    .menu-image .vertical-word { position: absolute; top: 4rem; left: -2.1rem; color: var(--clay-dark); font-size: .64rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; writing-mode: vertical-rl; transform: rotate(180deg); }
+    .menu-copy h2 { max-width: 9ch; }
+    .menu-note { display: inline-flex; gap: .6rem; align-items: center; margin: 1rem 0 2rem; color: var(--clay-dark); font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .menu-note::before { content: "✦"; }
+    .courses { margin: 0; border-top: 1px solid var(--line); }
+    .course { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; padding: 1.35rem 0; border-bottom: 1px solid var(--line); }
+    .course dt { color: var(--herb); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .course dd { margin: 0; font-family: var(--serif); font-size: clamp(1.35rem, 2.2vw, 1.8rem); line-height: 1.15; }
+    .fine-print { margin-top: 1.2rem; color: #687068; font-size: .76rem; }
+
+    .service { background: var(--ink); color: var(--white); }
+    .service .section-heading { align-items: start; }
+    .service .eyebrow { color: #f0a087; }
+    .service .lede { color: rgba(255,255,255,.64); }
+    .service-image { margin: 1rem 0 3.5rem; }
+    .service-image img { max-height: 42rem; object-fit: cover; border-radius: var(--radius); }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.17); }
+    .service-item { padding: 1.8rem 1.5rem 1rem 0; border-right: 1px solid rgba(255,255,255,.17); }
+    .service-item + .service-item { padding-left: 1.5rem; }
+    .service-item:last-child { border-right: 0; }
+    .service-item span { color: #e57659; font-size: .7rem; font-weight: 700; letter-spacing: .1em; }
+    .service-item h3 { margin: 2.8rem 0 .7rem; color: var(--white); font-family: var(--sans); font-size: 1rem; font-weight: 700; letter-spacing: -.01em; }
+    .service-item p { color: rgba(255,255,255,.58); font-size: .84rem; }
+    .rigor-note { display: flex; align-items: flex-start; gap: 1rem; margin-top: 3.5rem; padding: 1.25rem 0; border-top: 1px solid rgba(255,255,255,.17); border-bottom: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.7); font-size: .78rem; }
+    .rigor-note strong { color: var(--white); }
+    .rigor-note a { color: #f0a087; }
+
+    .process { background: var(--bone); }
+    .process-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+    .process-intro { position: sticky; top: 7rem; }
+    .process-intro h2 { max-width: 8ch; }
+    .steps { margin-bottom: 4rem; }
+    .step { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.2rem; padding: 1.55rem 0; border-top: 1px solid var(--line); }
+    .step:last-child { border-bottom: 1px solid var(--line); }
+    .step .n { color: var(--clay-dark); font-size: .7rem; font-weight: 700; letter-spacing: .12em; }
+    .step h3 { margin: 0 0 .45rem; font-family: var(--sans); font-size: 1rem; font-weight: 700; letter-spacing: -.01em; }
+    .step p { margin-bottom: 0; color: #5a625a; font-size: .88rem; }
+    .faq-title { margin-bottom: 1rem; font-size: 2rem; }
+    details { border-top: 1px solid var(--line); }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 0; cursor: pointer; font-weight: 700; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--clay-dark); font-family: var(--serif); font-size: 1.7rem; font-weight: 400; }
+    details[open] summary::after { content: "−"; }
+    details p { max-width: 38rem; margin-bottom: 1.4rem; color: #5a625a; font-size: .88rem; }
+
+    .brief { overflow: hidden; background: var(--clay); color: var(--white); }
+    .brief-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+    .brief .eyebrow { color: #ffd2c4; }
+    .brief h2 { max-width: 8ch; }
+    .brief-copy { max-width: 29rem; color: rgba(255,255,255,.75); }
+    .brief-form { padding: clamp(1.5rem, 4vw, 3rem); border-radius: var(--radius); background: var(--white); color: var(--ink); box-shadow: 0 2rem 5rem rgba(91, 27, 15, .22); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .field { display: grid; gap: .45rem; }
+    .field--full { grid-column: 1 / -1; }
+    label { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    input, select { width: 100%; min-height: 3.2rem; border: 0; border-bottom: 1px solid #a9aaa4; border-radius: 0; background: transparent; color: var(--ink); padding: .55rem .1rem; }
+    input::placeholder { color: #858b84; }
+    .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1.8rem; }
+    .demo-note { max-width: 24rem; margin: 0; color: #696f69; font-size: .7rem; }
+    .message-preview { display: none; margin-top: 1.5rem; padding: 1.2rem; border-left: 3px solid var(--clay); background: var(--bone); }
+    .message-preview.is-visible { display: block; }
+    .message-preview strong { display: block; margin-bottom: .4rem; }
+    .message-preview p { margin-bottom: 1rem; white-space: pre-line; }
+    .copy-button { border: 0; background: transparent; color: var(--clay-dark); padding: 0; font-weight: 700; text-decoration: underline; cursor: pointer; }
+
+    .site-footer { padding: 2.5rem 0; background: #171b18; color: rgba(255,255,255,.62); }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; }
+    .site-footer .brand { color: var(--white); margin-bottom: .8rem; }
+    .site-footer p { max-width: 42rem; margin-bottom: 0; font-size: .72rem; }
+    .site-footer a { color: var(--white); }
+    .footer-meta { text-align: right; }
+
+    .reveal { opacity: 1; transform: none; }
+    .js .reveal { opacity: 0; transform: translateY(1.5rem); transition: opacity .7s ease, transform .7s ease; }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .demo-ribbon { top: 5.7rem; right: 0; width: 30%; transform: none; filter: drop-shadow(0 .25rem .45rem rgba(0, 0, 0, .25)); }
+      .demo-ribbon:hover { transform: translateY(-2px); }
+      .section-heading, .manifesto-grid, .experience-layout, .menu-layout, .process-layout, .brief-layout { grid-template-columns: 1fr; }
+      .section-heading { gap: 1rem; }
+      .section-heading .lede { justify-self: start; }
+      .js .menu-toggle { display: inline-flex; }
+      .js .nav-links {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: var(--ink);
+        padding: 6rem 2rem 3rem;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-1rem);
+        transition: opacity .2s ease, transform .2s ease, visibility .2s;
+      }
+      .js .nav-links.is-open { visibility: visible; opacity: 1; transform: translateY(0); }
+      .nav-links a:not(.button) { font-family: var(--serif); font-size: 2rem; font-weight: 400; }
+      .menu-toggle { position: relative; z-index: 2; }
+      .hero h1 { font-size: clamp(4rem, 15vw, 7rem); }
+      .hero-note { display: none; }
+      .occasion-grid { grid-template-columns: 1fr; }
+      .occasion-card, .occasion-card + .occasion-card { min-height: auto; padding: 2rem 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .occasion-card .index { margin-bottom: 3rem; }
+      .manifesto-grid { gap: 4rem; }
+      .portrait-wrap { max-width: 38rem; }
+      .experience-layout { gap: 4rem; }
+      .experience-copy { max-width: 40rem; }
+      .menu-image { max-width: 38rem; }
+      .menu-copy { max-width: 42rem; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service-item:nth-child(2) { border-right: 0; }
+      .service-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.17); }
+      .process-intro { position: static; }
+      .process-intro h2 { max-width: 12ch; }
+      .brief h2 { max-width: 12ch; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 1.4rem, 76rem); }
+      .section { padding: 4.5rem 0; }
+      h2 { font-size: clamp(2.55rem, 13vw, 4rem); }
+      .site-header .button { display: inline-flex; }
+      .hero { min-height: 50rem; }
+      .hero-media img { object-position: 68% center; }
+      .hero-media::after { background: linear-gradient(0deg, rgba(20,24,21,.93) 8%, rgba(20,24,21,.62) 55%, rgba(20,24,21,.25)); }
+      .hero-content { padding-bottom: 3rem; }
+      .hero h1 { max-width: 8.5ch; font-size: clamp(3.65rem, 17vw, 5.6rem); }
+      .hero-copy { max-width: 29rem; }
+      .hero-actions .button { width: 100%; }
+      .occasion-strip .shell { grid-template-columns: 1fr; }
+      .occasion-link, .occasion-link:first-child, .occasion-link:last-child { padding: .65rem 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .occasion-link:last-child { border-bottom: 0; }
+      .manifesto-copy { grid-template-columns: 1fr; }
+      .portrait-wrap { margin-right: 0; }
+      .image-stamp { right: -.3rem; width: 6.7rem; height: 6.7rem; }
+      .menu-image { margin-left: 1rem; }
+      .menu-image .vertical-word { left: -1.15rem; }
+      .course { grid-template-columns: 4.5rem 1fr; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-item, .service-item + .service-item { padding: 1.5rem 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.17); }
+      .service-item h3 { margin-top: 1.6rem; }
+      .rigor-note { flex-direction: column; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field--full { grid-column: auto; }
+      .brief-form { padding: 1.25rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-meta { text-align: left; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+    <img src="assets/cinta-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="429" height="46">
+  </a>
+
+  <header class="site-header">
+    <nav class="shell nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Brasa y Sal, volver al inicio">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+          <path d="M18 3c5.2 6.1 9.7 9.6 9.7 16A9.7 9.7 0 0 1 8.3 19C8.3 12.6 12.8 9.1 18 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M18.2 14.1c2.4 2.7 4 4.6 4 7.2a4.2 4.2 0 1 1-8.4 0c0-2.6 1.8-4.5 4.4-7.2Z" fill="#e57659"/>
+        </svg>
+        <span>Brasa <em>&amp;</em> Sal</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#experiencias">Experiencias</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#servicio">El servicio</a></li>
+        <li><a href="#proceso">Cómo funciona</a></li>
+        <li><a class="button button--light" href="#brief">Cuéntanos tu evento <span class="arrow">↗</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/hero-mesa.webp" alt="" width="1672" height="941" fetchpriority="high">
+      </div>
+      <div class="shell hero-content">
+        <p class="eyebrow">Chef privado &amp; catering · Lima</p>
+        <h1 id="hero-title">La cocina sucede <em>en tu mesa.</em></h1>
+        <p class="hero-copy">Diseñamos cenas íntimas y eventos alrededor de tu espacio, tu ritmo y tus invitados. Del primer pase al último plato, cada decisión llega pensada.</p>
+        <div class="hero-actions">
+          <a class="button" href="#brief">Cuéntanos tu evento <span class="arrow">↓</span></a>
+          <a class="button button--light" href="#experiencias">Explorar experiencias</a>
+        </div>
+      </div>
+      <p class="hero-note">Demo conceptual · Lima, Perú</p>
+    </section>
+
+    <div class="occasion-strip" aria-label="Tipos de experiencia">
+      <div class="shell">
+        <a class="occasion-link" href="#experiencias"><span>Cena privada</span><span class="n">01</span></a>
+        <a class="occasion-link" href="#experiencias"><span>Celebraciones</span><span class="n">02</span></a>
+        <a class="occasion-link" href="#experiencias"><span>Encuentros de equipo</span><span class="n">03</span></a>
+      </div>
+    </div>
+
+    <section class="section occasions" id="experiencias" aria-labelledby="occasions-title">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Tres maneras de reunirnos</p>
+            <h2 id="occasions-title">La ocasión cambia.<br>El cuidado no.</h2>
+          </div>
+          <p class="lede">El formato se construye después de entender la mesa: quiénes vienen, cuánto tiempo tienen y cómo quieres que se sienta el encuentro.</p>
+        </div>
+        <div class="occasion-grid">
+          <article class="occasion-card reveal">
+            <span class="index">01 · ÍNTIMO</span>
+            <h3>Cena privada</h3>
+            <p>Una secuencia servida en casa, con conversación, ritmo pausado y una cocina que entra y sale sin invadir el momento.</p>
+            <span class="tag">Mesa pequeña</span>
+          </article>
+          <article class="occasion-card reveal">
+            <span class="index">02 · CELEBRACIÓN</span>
+            <h3>Una noche para recordar</h3>
+            <p>Recepción, cena y cierre pensados como una sola experiencia. El menú acompaña el tono del evento, no compite con él.</p>
+            <span class="tag">Servicio a medida</span>
+          </article>
+          <article class="occasion-card reveal">
+            <span class="index">03 · EQUIPO</span>
+            <h3>Encuentros con intención</h3>
+            <p>Almuerzos, cenas o sesiones participativas que respetan la agenda y dejan espacio para lo importante: conversar.</p>
+            <span class="tag">Ritmo coordinado</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section manifesto" aria-labelledby="manifesto-title">
+      <div class="shell manifesto-grid">
+        <figure class="portrait-wrap reveal">
+          <div class="photo-frame">
+            <img src="assets/operacion-logistica-v2.webp" alt="Equipo culinario conceptual organizando el pase y la preparación de una cena privada" width="1003" height="1568" loading="lazy">
+          </div>
+          <figcaption class="caption">Escena conceptual generada para ilustrar la preparación del servicio.</figcaption>
+        </figure>
+        <div class="reveal">
+          <p class="eyebrow">Nuestra forma de trabajar</p>
+          <blockquote id="manifesto-title">La sorpresa está en el plato. <em>Nunca en la logística.</em></blockquote>
+          <div class="manifesto-copy">
+            <p>Antes de hablar de sabores, entendemos el lugar, el flujo del servicio, las restricciones y las expectativas de cada anfitrión.</p>
+            <p>Después aparece el menú: una propuesta posible de ejecutar, coherente con la estación y clara desde el primer acuerdo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" aria-labelledby="experience-title">
+      <div class="shell experience-layout">
+        <figure class="experience-image reveal">
+          <img src="assets/cena-privada.webp" alt="Mesa íntima preparada para seis personas en una residencia contemporánea" width="1500" height="1000" loading="lazy">
+          <figcaption class="image-stamp">Tu espacio<br>marca el<br>ritmo</figcaption>
+        </figure>
+        <div class="experience-copy reveal">
+          <p class="eyebrow">Una experiencia situada</p>
+          <h2 id="experience-title">Primero el lugar. Luego el menú.</h2>
+          <p class="lede">Una cocina abierta, una terraza o un salón corporativo piden respuestas distintas. Por eso cada propuesta nace de cuatro decisiones prácticas.</p>
+          <ul class="decision-list">
+            <li><b>01</b><span>Espacio disponible para preparación y pase</span></li>
+            <li><b>02</b><span>Número de invitados y tipo de servicio</span></li>
+            <li><b>03</b><span>Duración, horarios y momentos de la mesa</span></li>
+            <li><b>04</b><span>Preferencias, alergias y restricciones alimentarias</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-story" id="menu" aria-labelledby="menu-title">
+      <div class="shell menu-layout">
+        <figure class="menu-image reveal">
+          <span class="vertical-word">Temporada · territorio · mesa</span>
+          <div class="photo-frame">
+            <img src="assets/mercado-temporada-v2.webp" alt="Manos seleccionando ajíes, papas nativas, maíz morado, hierbas y granos en un mercado" width="972" height="1619" loading="lazy">
+          </div>
+        </figure>
+        <div class="menu-copy reveal">
+          <p class="eyebrow">Un menú que empieza en el mercado</p>
+          <h2 id="menu-title">La temporada pone las primeras palabras.</h2>
+          <p class="lede">Este recorrido ilustra el tono de una experiencia Brasa &amp; Sal. La propuesta real cambia según disponibilidad, formato y necesidades de la mesa.</p>
+          <p class="menu-note">Menú conceptual de muestra</p>
+          <dl class="courses">
+            <div class="course"><dt>Apertura</dt><dd>Pesca blanca, cítrico, ají y hierbas frescas</dd></div>
+            <div class="course"><dt>Centro</dt><dd>Cereal andino, hongos y fondo tostado</dd></div>
+            <div class="course"><dt>Cierre</dt><dd>Cacao, café y un punto de sal</dd></div>
+          </dl>
+          <p class="fine-print">Ejemplo puramente conceptual. No constituye una oferta, precio ni disponibilidad real.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section service" id="servicio" aria-labelledby="service-title">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Detrás de cada plato</p>
+            <h2 id="service-title">El servicio también se cocina.</h2>
+          </div>
+          <p class="lede">Un evento no se sostiene solo con una buena receta. Se sostiene con decisiones visibles antes, durante y después del servicio.</p>
+        </div>
+        <figure class="service-image reveal">
+          <img src="assets/operacion-catering.webp" alt="Equipo culinario coordinando el emplatado antes de un evento" width="1500" height="1000" loading="lazy">
+        </figure>
+        <div class="service-grid">
+          <article class="service-item reveal"><span>01</span><h3>Alcance definido</h3><p>Menú, personal, equipamiento y tiempos se aclaran antes de confirmar.</p></article>
+          <article class="service-item reveal"><span>02</span><h3>Producción pensada</h3><p>Cada plato se adapta a la distancia, el pase y las condiciones reales del lugar.</p></article>
+          <article class="service-item reveal"><span>03</span><h3>Servicio coordinado</h3><p>La mesa recibe una experiencia continua, no una suma de tareas aisladas.</p></article>
+          <article class="service-item reveal"><span>04</span><h3>Cierre completo</h3><p>Orden, retiro y devolución del espacio forman parte del último pase.</p></article>
+        </div>
+        <p class="rigor-note reveal">
+          <strong>Rigor sanitario.</strong>
+          <span>En un negocio real, la documentación y las buenas prácticas deben acreditarse según la actividad y la municipalidad correspondiente. Esta demo no afirma contar con certificados. Consulta la <a href="https://www.gob.pe/institucion/minsa/normas-legales/195873-822-2018-minsa" target="_blank" rel="noopener noreferrer">Norma Sanitaria para Restaurantes y Servicios Afines del MINSA</a>.</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section process" id="proceso" aria-labelledby="process-title">
+      <div class="shell process-layout">
+        <div class="process-intro reveal">
+          <p class="eyebrow">De la idea a la mesa</p>
+          <h2 id="process-title">Cuatro conversaciones. Una noche fluida.</h2>
+          <p class="lede">Sin paquetes rígidos ni promesas vagas: cada paso reduce incertidumbre y acerca la propuesta a lo que realmente necesitas.</p>
+        </div>
+        <div>
+          <div class="steps" aria-label="Proceso de trabajo">
+            <article class="step reveal"><span class="n">01</span><div><h3>Entendemos la ocasión</h3><p>Fecha, lugar, invitados, horarios, estilo de servicio y expectativas.</p></div></article>
+            <article class="step reveal"><span class="n">02</span><div><h3>Diseñamos la propuesta</h3><p>Menú conceptual, alcance operativo y variables que pueden mover el presupuesto.</p></div></article>
+            <article class="step reveal"><span class="n">03</span><div><h3>Cerramos los detalles</h3><p>Restricciones, acceso, equipamiento, secuencia y responsables quedan claros.</p></div></article>
+            <article class="step reveal"><span class="n">04</span><div><h3>Ejecutamos el servicio</h3><p>Producción, montaje, pase y cierre siguen el plan acordado.</p></div></article>
+          </div>
+          <div class="faq reveal">
+            <h3 class="faq-title">Lo que suele preguntarse</h3>
+            <details>
+              <summary>¿Con cuánto tiempo conviene consultar?</summary>
+              <p>Depende de la fecha, el formato y la cantidad de invitados. Una consulta temprana permite evaluar disponibilidad, lugar y alternativas sin asumir urgencias ni recargos.</p>
+            </details>
+            <details>
+              <summary>¿Se contemplan alergias o restricciones?</summary>
+              <p>Sí deben conversarse antes de diseñar el menú. La capacidad real de adaptación depende del tipo de restricción, el entorno de producción y el riesgo de contaminación cruzada.</p>
+            </details>
+            <details>
+              <summary>¿Cómo se define el presupuesto?</summary>
+              <p>Por el menú, el número de invitados, el personal requerido, el equipamiento, el lugar y la duración. Esta demo evita publicar precios sin una operación real que los respalde.</p>
+            </details>
+            <details>
+              <summary>¿La degustación está incluida?</summary>
+              <p>No se asume por defecto. En una propuesta real debe indicarse si aplica, qué incluye y si tiene un costo independiente.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section brief" id="brief" aria-labelledby="brief-title">
+      <div class="shell brief-layout">
+        <div class="reveal">
+          <p class="eyebrow">Empecemos por lo esencial</p>
+          <h2 id="brief-title">Cuéntanos qué se reúne alrededor de tu mesa.</h2>
+          <p class="brief-copy">Con cuatro datos podemos preparar una conversación útil: ocasión, fecha, invitados y lugar.</p>
+        </div>
+        <form class="brief-form reveal" id="brief-form" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="occasion">Tipo de ocasión</label>
+              <select id="occasion" name="occasion" required>
+                <option value="">Selecciona una opción</option>
+                <option>Cena privada</option>
+                <option>Celebración</option>
+                <option>Encuentro de equipo</option>
+                <option>Otro formato</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="date">Fecha aproximada</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+            <div class="field">
+              <label for="guests">Número de invitados</label>
+              <input id="guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="Ej. 18" required>
+            </div>
+            <div class="field">
+              <label for="district">Distrito o ubicación</label>
+              <input id="district" name="district" type="text" autocomplete="address-level2" placeholder="Ej. Miraflores" required>
+            </div>
+            <div class="field field--full">
+              <label for="detail">Algo importante que debamos saber <span aria-hidden="true">·</span> opcional</label>
+              <input id="detail" name="detail" type="text" placeholder="Restricciones, horario o tipo de servicio">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="button" type="submit">Preparar mensaje <span class="arrow">↗</span></button>
+            <p class="demo-note">Demo sin envío: prepara el texto localmente. El WhatsApp real requiere integrar el número del negocio.</p>
+          </div>
+          <div class="message-preview" id="message-preview" aria-live="polite" tabindex="-1">
+            <strong>Tu mensaje está listo</strong>
+            <p id="message-text"></p>
+            <button class="copy-button" id="copy-message" type="button">Copiar mensaje</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand" href="#inicio">
+          <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3c5.2 6.1 9.7 9.6 9.7 16A9.7 9.7 0 0 1 8.3 19C8.3 12.6 12.8 9.1 18 3Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M18.2 14.1c2.4 2.7 4 4.6 4 7.2a4.2 4.2 0 1 1-8.4 0c0-2.6 1.8-4.5 4.4-7.2Z" fill="#e57659"/></svg>
+          <span>Brasa <em>&amp;</em> Sal</span>
+        </a>
+        <p>Concepto de chef privado y catering en Lima. Marca, persona, menú e imágenes presentados como contenido conceptual para demostración.</p>
+      </div>
+      <div class="footer-meta">
+        <p>© 2026 · Demo por <a href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer">Nozoe Studio</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    function closeMenu() {
+      navLinks.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menú');
+      document.body.classList.remove('menu-open');
+    }
+
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!open));
+      menuButton.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+      navLinks.classList.toggle('is-open', !open);
+      document.body.classList.toggle('menu-open', !open);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeMenu();
+        menuButton.focus();
+      }
+    });
+
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('is-visible'));
+    }
+
+    const form = document.getElementById('brief-form');
+    const preview = document.getElementById('message-preview');
+    const messageText = document.getElementById('message-text');
+    const copyButton = document.getElementById('copy-message');
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const values = new FormData(form);
+      const date = new Date(`${values.get('date')}T12:00:00`).toLocaleDateString('es-PE', { day: 'numeric', month: 'long', year: 'numeric' });
+      const detail = values.get('detail') ? `\nDato adicional: ${values.get('detail')}.` : '';
+      messageText.textContent = `Hola, quiero consultar por ${values.get('occasion').toLowerCase()} para el ${date}. Seríamos ${values.get('guests')} invitados en ${values.get('district')}.${detail}`;
+      preview.classList.add('is-visible');
+      preview.focus();
+    });
+
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(messageText.textContent);
+        copyButton.textContent = 'Mensaje copiado';
+      } catch (error) {
+        copyButton.textContent = 'Selecciona y copia el texto';
+      }
+    });
+  </script>
+</body>
+</html>

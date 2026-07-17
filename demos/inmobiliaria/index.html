@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habita — Asesoría inmobiliaria en Lima Moderna</title>
+<meta name="description" content="Demo conceptual de asesoría inmobiliaria en Lima Moderna: compra, venta y alquiler de propiedades con verificación legal (SUNARP) y acompañamiento transparente.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:locale" content="es_PE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Habita — Asesoría inmobiliaria en Lima Moderna">
+<meta property="og:description" content="Compra, venta y alquiler de propiedades con verificación legal y acompañamiento transparente. Demo conceptual de Nozoe Studio.">
+<meta property="og:image" content="assets/hero-habita.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;background:#f4f1ea;color:#1a1815;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:var(--accent,#b4491f);text-underline-offset:.2em}
+a:hover{opacity:.72}
+::selection{background:#1a1815;color:#f4f1ea}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+@media (max-width:960px){
+  [data-hero]{grid-template-columns:1fr !important;gap:2.5rem !important}
+  [data-two]{grid-template-columns:1fr !important;gap:1.1rem !important;align-items:start !important}
+  [data-method]{grid-template-columns:1fr !important}
+  [data-sticky]{position:static !important}
+  [data-process]{grid-template-columns:1fr !important;gap:2.5rem !important}
+  [data-profile]{grid-template-columns:1fr !important;gap:2.5rem !important}
+  [data-contact]{grid-template-columns:1fr !important;gap:2.5rem !important}
+}
+@media (max-width:760px){
+  [data-nav]{display:none !important}
+  [data-burger]{display:inline-flex !important}
+  [data-hero-h1]{font-size:clamp(3rem,13vw,4.6rem) !important}
+  [data-decision-form]{grid-template-columns:1fr 1fr !important}
+  [data-foot]{display:none !important}
+}
+@media (max-width:520px){
+  [data-decision-form]{grid-template-columns:1fr !important}
+  [data-contact-fields]{grid-template-columns:1fr !important}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
+.demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
+.demo-ribbon img{display:block;width:100%;height:auto}
+.demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media (max-width:760px){.demo-ribbon{top:77px;right:0;width:30%;transform:none;filter:drop-shadow(0 4px 7px rgba(0,0,0,.25))}.demo-ribbon:hover{transform:translateY(-2px)}}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="--accent: {{ accent }}">
+
+<header style="position:fixed;z-index:120;top:0;right:0;left:0;background:{{ headerBg }};border-bottom:1px solid {{ headerLine }};backdrop-filter:{{ headerBlur }};transition:background .3s,border-color .3s">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;min-height:5rem;gap:1.5rem">
+    <a href="#inicio" style="display:inline-flex;align-items:center;gap:.65rem;text-decoration:none;color:#1a1815">
+      <span style="display:grid;place-items:center;width:2.1rem;height:2.1rem;border:1px solid currentColor;border-radius:50%;font-size:1rem;font-weight:600">H</span>
+      <span style="font-weight:600;letter-spacing:.01em;font-size:1.05rem">habita</span>
+      <span style="font:500 .58rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;opacity:.55;padding-left:.3rem">Demo</span>
+    </a>
+    <nav data-nav style="display:flex;align-items:center;gap:2rem">
+      <a href="#metodo" style="font:500 .73rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#1a1815;text-decoration:none" style-hover="color:var(--accent,#b4491f)">Método</a>
+      <a href="#servicios" style="font:500 .73rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#1a1815;text-decoration:none" style-hover="color:var(--accent,#b4491f)">Servicios</a>
+      <a href="#seleccion" style="font:500 .73rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#1a1815;text-decoration:none" style-hover="color:var(--accent,#b4491f)">Selección</a>
+      <a href="#proceso" style="font:500 .73rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#1a1815;text-decoration:none" style-hover="color:var(--accent,#b4491f)">Proceso</a>
+      <a href="#consulta" style="font:500 .73rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#1a1815;text-decoration:none;padding:.7rem 1rem;border:1px solid rgba(26,24,21,.28);transition:background .25s,color .25s,border-color .25s" style-hover="background:#1a1815;color:#f4f1ea;border-color:#1a1815">Solicitar valoración</a>
+    </nav>
+    <button data-burger type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menú" style="display:none;align-items:center;justify-content:center;flex-direction:column;gap:.32rem;width:2.9rem;height:2.9rem;border:1px solid rgba(26,24,21,.28);border-radius:50%;background:transparent;cursor:pointer">
+      <span style="display:block;width:1.15rem;height:1px;background:#1a1815"></span>
+      <span style="display:block;width:1.15rem;height:1px;background:#1a1815"></span>
+    </button>
+  </div>
+</header>
+
+<div style="position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;justify-content:center;gap:1.4rem;padding:2.5rem;background:#f4f1ea;opacity:{{ menuOpacity }};visibility:{{ menuVisibility }};pointer-events:{{ menuPointer }};transition:opacity .3s,visibility .3s">
+  <button type="button" onClick="{{ closeMenu }}" aria-label="Cerrar menú" style="position:absolute;top:1.6rem;right:1.6rem;width:2.9rem;height:2.9rem;border:1px solid rgba(26,24,21,.28);border-radius:50%;background:transparent;cursor:pointer;font-size:1.4rem;line-height:1">×</button>
+  <a href="#metodo" onClick="{{ closeMenu }}" style="font-size:clamp(2.2rem,9vw,3.6rem);font-weight:600;letter-spacing:-.03em;color:#1a1815;text-decoration:none">Método</a>
+  <a href="#servicios" onClick="{{ closeMenu }}" style="font-size:clamp(2.2rem,9vw,3.6rem);font-weight:600;letter-spacing:-.03em;color:#1a1815;text-decoration:none">Servicios</a>
+  <a href="#seleccion" onClick="{{ closeMenu }}" style="font-size:clamp(2.2rem,9vw,3.6rem);font-weight:600;letter-spacing:-.03em;color:#1a1815;text-decoration:none">Selección</a>
+  <a href="#proceso" onClick="{{ closeMenu }}" style="font-size:clamp(2.2rem,9vw,3.6rem);font-weight:600;letter-spacing:-.03em;color:#1a1815;text-decoration:none">Proceso</a>
+  <a href="#consulta" onClick="{{ closeMenu }}" style="font-size:clamp(2.2rem,9vw,3.6rem);font-weight:600;letter-spacing:-.03em;color:var(--accent,#b4491f);text-decoration:none">Solicitar valoración</a>
+</div>
+
+<sc-if value="{{ showDemoBadge }}" hint-placeholder-val="{{ true }}">
+<a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+  <img src="./assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
+</a>
+</sc-if>
+
+<main>
+<section id="inicio" style="position:relative;min-height:100svh;display:flex;align-items:center;padding:8.5rem 0 4.5rem;background:#f4f1ea">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto;width:min(100% - 48px,1280px)">
+    <div data-hero style="display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:center">
+      <div>
+        <p data-reveal style="display:flex;align-items:center;gap:.8rem;margin:0 0 1.8rem;font:500 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#b4491f)"><span style="width:2rem;height:1px;background:currentColor"></span>Asesoría inmobiliaria · Lima Moderna</p>
+        <h1 data-hero-h1 data-reveal data-delay="60" style="margin:0 0 1.6rem;font-size:clamp(3.4rem,7.2vw,7rem);font-weight:600;letter-spacing:-.045em;line-height:.9;max-width:12ch">Patrimonio, sin zonas grises.</h1>
+        <p data-reveal data-delay="120" style="margin:0 0 2.4rem;max-width:40ch;font-size:clamp(1.05rem,1.4vw,1.25rem);color:#4a453d;line-height:1.55">Una forma más clara de vender o encontrar vivienda: estrategia documentada, conversaciones directas y acompañamiento durante cada decisión.</p>
+        <div data-reveal data-delay="180" style="display:flex;flex-wrap:wrap;gap:.8rem">
+          <a href="#consulta" style="display:inline-flex;align-items:center;gap:.7rem;padding:1.05rem 1.6rem;background:#1a1815;color:#f4f1ea;font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid #1a1815;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:0 .8rem 1.8rem rgba(26,24,21,.22)">Solicitar una valoración <span style="font-size:1.05rem">→</span></a>
+          <a href="#orientacion" style="display:inline-flex;align-items:center;gap:.7rem;padding:1.05rem 1.6rem;background:transparent;color:#1a1815;font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(26,24,21,.3);transition:transform .25s,border-color .25s" style-hover="transform:translateY(-3px);border-color:#1a1815">Estoy buscando</a>
+        </div>
+      </div>
+      <div data-reveal data-delay="140" style="position:relative">
+        <div style="position:relative;aspect-ratio:4/3;background:#e7dccb;overflow:hidden">
+          <img src="./assets/hero-habita.webp" alt="Sala contemporánea con balcón y vegetación en Lima Moderna" width="1672" height="941" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:center">
+        </div>
+        <div aria-hidden="true" style="position:absolute;left:-1.4rem;bottom:-1.4rem;width:5.5rem;height:5.5rem;background:var(--accent,#b4491f)"></div>
+      </div>
+    </div>
+  </div>
+  <div data-foot aria-hidden="true" style="position:absolute;bottom:2rem;right:max(24px,calc((100vw - 1280px)/2));display:flex;gap:2rem;color:rgba(26,24,21,.5);font:500 .64rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">
+    <span style="display:flex;align-items:center;gap:.5rem"><span style="width:.35rem;height:.35rem;border:1px solid currentColor;border-radius:50%"></span>Estrategia documentada</span>
+    <span style="display:flex;align-items:center;gap:.5rem"><span style="width:.35rem;height:.35rem;border:1px solid currentColor;border-radius:50%"></span>Una sola interlocutora</span>
+  </div>
+</section>
+
+<section id="orientacion" style="position:relative;z-index:5;padding:0 0 clamp(5.5rem,10vw,9rem);background:#f4f1ea">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto">
+    <div data-reveal style="margin-top:-3.5rem;background:#faf8f3;border:1px solid rgba(26,24,21,.12);box-shadow:0 2rem 5rem rgba(26,24,21,.09)">
+      <div data-two style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2.2rem 2.4rem 1.6rem;border-bottom:1px solid rgba(26,24,21,.12);align-items:end">
+        <h2 style="margin:0;font-size:clamp(1.9rem,3.6vw,3rem);font-weight:600;letter-spacing:-.03em;line-height:1">Empecemos por tu decisión.</h2>
+        <p style="margin:0;max-width:34ch;color:#6b655c;font-size:.95rem">Cuéntanos el punto de partida. En esta demostración, el selector prepara una consulta orientativa sin enviar datos.</p>
+      </div>
+      <form onSubmit="{{ onDecision }}" novalidate="true">
+        <div data-decision-form style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:1px;background:rgba(26,24,21,.12)">
+          <div style="padding:1.2rem 1.4rem;background:#faf8f3">
+            <label for="decision" style="display:block;margin-bottom:.35rem;color:#6b655c;font:600 .62rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase">Quiero</label>
+            <select id="decision" name="decision" style="width:100%;border:0;border-bottom:1px solid transparent;background:transparent;padding:.2rem 0;outline:none">
+              <option value="vender">Vender una propiedad</option>
+              <option value="comprar">Comprar una vivienda</option>
+              <option value="alquilar">Alquilar o administrar</option>
+            </select>
+          </div>
+          <div style="padding:1.2rem 1.4rem;background:#faf8f3">
+            <label for="property-type" style="display:block;margin-bottom:.35rem;color:#6b655c;font:600 .62rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase">Tipo de inmueble</label>
+            <select id="property-type" name="property-type" style="width:100%;border:0;background:transparent;padding:.2rem 0;outline:none">
+              <option>Departamento</option><option>Casa</option><option>Oficina o local</option><option>Terreno</option>
+            </select>
+          </div>
+          <div style="padding:1.2rem 1.4rem;background:#faf8f3">
+            <label for="district" style="display:block;margin-bottom:.35rem;color:#6b655c;font:600 .62rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase">Zona</label>
+            <select id="district" name="district" style="width:100%;border:0;background:transparent;padding:.2rem 0;outline:none">
+              <option>Jesús María</option><option>Magdalena del Mar</option><option>Pueblo Libre</option><option>Lince</option><option>San Miguel</option><option>Otra zona</option>
+            </select>
+          </div>
+          <button type="submit" style="display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-width:13rem;padding:1.2rem 1.6rem;background:#1a1815;color:#f4f1ea;border:0;font:600 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .25s" style-hover="background:var(--accent,#b4491f)">Preparar consulta <span style="font-size:1.05rem">→</span></button>
+        </div>
+        <p style="margin:0;padding:.85rem 1.4rem;border-top:1px solid rgba(26,24,21,.12);color:#6b655c;font-size:.76rem">Demostración interactiva: este formulario no transmite información.</p>
+        <p role="status" aria-live="polite" style="margin:0;padding:{{ decisionPad }};border-top:{{ decisionBorder }};color:var(--accent,#b4491f);font-size:.85rem;font-weight:600">{{ decisionStatus }}</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="metodo" style="padding:clamp(6rem,11vw,10rem) 0;background:#faf8f3">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto">
+    <div data-two data-reveal style="display:grid;grid-template-columns:.4fr 1fr;gap:2.5rem;align-items:end;margin-bottom:clamp(3rem,6vw,5rem)">
+      <p style="margin:0;font:500 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#b4491f)">01 · Método Habita</p>
+      <div>
+        <h2 style="margin:0;font-size:clamp(2.4rem,5vw,4.6rem);font-weight:600;letter-spacing:-.035em;line-height:.98;max-width:17ch">Menos ruido. Más información útil.</h2>
+        <p style="margin:1rem 0 0;color:#6b655c;max-width:44ch;font-size:1.05rem">La asesoría ordena el proceso alrededor de tres preguntas: qué conviene hacer, qué debe verificarse y cuál es el siguiente paso.</p>
+      </div>
+    </div>
+    <div data-method style="display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2.5rem,6vw,5rem);align-items:start">
+      <figure data-sticky data-reveal style="position:sticky;top:7.5rem;margin:0">
+        <div style="aspect-ratio:3/2;background:#ded2bf;overflow:hidden">
+          <img src="./assets/metodo-documentos.webp" alt="Revisión de planos y documentos de una propiedad" width="1536" height="1024" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        </div>
+        <figcaption style="display:flex;justify-content:space-between;gap:1rem;margin-top:.7rem;color:#6b655c;font:600 .64rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase"><span>Revisión antes de decidir</span><span>Imagen conceptual</span></figcaption>
+      </figure>
+      <div style="border-top:1px solid rgba(26,24,21,.14)">
+        <article data-reveal style="display:grid;grid-template-columns:3.4rem 1fr;gap:1.25rem;padding:1.8rem 0;border-bottom:1px solid rgba(26,24,21,.14)">
+          <span style="display:grid;width:2.6rem;height:2.6rem;place-items:center;border:1px solid var(--accent,#b4491f);border-radius:50%;color:var(--accent,#b4491f);font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace">01</span>
+          <div><h3 style="margin:0 0 .6rem;font-size:clamp(1.35rem,2vw,1.85rem);font-weight:600;letter-spacing:-.025em;line-height:1.08">Una estrategia que se puede explicar</h3><p style="margin:0;color:#6b655c;font-size:.95rem">Objetivo, alcance, responsabilidades y criterios de decisión definidos antes de publicar, visitar o negociar.</p></div>
+        </article>
+        <article data-reveal data-delay="80" style="display:grid;grid-template-columns:3.4rem 1fr;gap:1.25rem;padding:1.8rem 0;border-bottom:1px solid rgba(26,24,21,.14)">
+          <span style="display:grid;width:2.6rem;height:2.6rem;place-items:center;border:1px solid var(--accent,#b4491f);border-radius:50%;color:var(--accent,#b4491f);font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace">02</span>
+          <div><h3 style="margin:0 0 .6rem;font-size:clamp(1.35rem,2vw,1.85rem);font-weight:600;letter-spacing:-.025em;line-height:1.08">Documentos antes que promesas</h3><p style="margin:0;color:#6b655c;font-size:.95rem">Coordinación de la información registral, municipal y contractual que corresponda a cada operación.</p></div>
+        </article>
+        <article data-reveal data-delay="160" style="display:grid;grid-template-columns:3.4rem 1fr;gap:1.25rem;padding:1.8rem 0;border-bottom:1px solid rgba(26,24,21,.14)">
+          <span style="display:grid;width:2.6rem;height:2.6rem;place-items:center;border:1px solid var(--accent,#b4491f);border-radius:50%;color:var(--accent,#b4491f);font:700 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace">03</span>
+          <div><h3 style="margin:0 0 .6rem;font-size:clamp(1.35rem,2vw,1.85rem);font-weight:600;letter-spacing:-.025em;line-height:1.08">Una conversación de principio a fin</h3><p style="margin:0;color:#6b655c;font-size:.95rem">Una sola persona organiza avances, pendientes y decisiones, con especialistas cuando el caso lo requiere.</p></div>
+        </article>
+        <aside data-reveal style="display:grid;grid-template-columns:.65fr 1fr;gap:2rem;margin-top:2.5rem;padding:1.6rem 0;border-top:1px solid rgba(26,24,21,.14);border-bottom:1px solid rgba(26,24,21,.14)">
+          <strong style="font-size:1.15rem;font-weight:600;letter-spacing:-.02em">Verificar también es parte de decidir.</strong>
+          <p style="margin:0;color:#6b655c;font-size:.9rem">Antes de una compraventa, SUNARP recomienda revisar la partida registral, la titularidad y, cuando corresponda, la vigencia del poder del vendedor. Consulta la orientación oficial de <a href="https://scr.sunarp.gob.pe/compraventa/" target="_blank" rel="noopener noreferrer">SUNARP sobre compraventa</a>.</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" style="padding:clamp(6rem,11vw,10rem) 0;background:#f4f1ea">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto">
+    <div data-two data-reveal style="display:grid;grid-template-columns:.4fr 1fr;gap:2.5rem;align-items:end;margin-bottom:clamp(3rem,6vw,5rem)">
+      <p style="margin:0;font:500 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#b4491f)">02 · Servicios</p>
+      <div>
+        <h2 style="margin:0;font-size:clamp(2.4rem,5vw,4.6rem);font-weight:600;letter-spacing:-.035em;line-height:.98;max-width:17ch">Cada operación pide una estrategia distinta.</h2>
+        <p style="margin:1rem 0 0;color:#6b655c;max-width:44ch;font-size:1.05rem">El servicio parte de la decisión del cliente, no de una lista genérica de tareas.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem;align-items:start">
+      <article data-reveal style="background:#faf8f3;border:1px solid rgba(26,24,21,.12);transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 1.4rem 3rem rgba(26,24,21,.12)">
+        <div style="position:relative;aspect-ratio:4/3;background:#e5dac9;overflow:hidden">
+          <img src="./assets/servicio-vender.webp" alt="Sala preparada para presentar una propiedad" width="1448" height="1086" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+          <span style="position:absolute;top:1rem;left:1rem;display:grid;width:2.5rem;height:2.5rem;place-items:center;border-radius:50%;background:#1a1815;color:#f4f1ea;font:700 .62rem/1 ui-monospace,Menlo,monospace">01</span>
+        </div>
+        <div style="padding:1.5rem">
+          <div style="display:flex;justify-content:space-between;gap:1rem;margin-bottom:1rem"><span style="color:var(--accent,#b4491f);font:700 .6rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Para propietarios</span><span style="color:#a19a8d;font:500 .6rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Conceptual</span></div>
+          <h3 style="margin:0 0 .75rem;font-size:clamp(1.5rem,2.2vw,2.1rem);font-weight:600;letter-spacing:-.04em;line-height:1">Vender con criterio</h3>
+          <p style="margin:0;color:#6b655c;font-size:.9rem">Lectura del mercado, presentación del inmueble, plan de difusión, orden de consultas y acompañamiento durante la negociación.</p>
+        </div>
+      </article>
+      <article data-reveal data-delay="90" style="background:#faf8f3;border:1px solid rgba(26,24,21,.12);transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 1.4rem 3rem rgba(26,24,21,.12)">
+        <div style="position:relative;aspect-ratio:4/3;background:#d9cdb9;overflow:hidden">
+          <img src="./assets/servicio-comprar.webp" alt="Persona observando un departamento durante una visita" width="1448" height="1086" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+          <span style="position:absolute;top:1rem;left:1rem;display:grid;width:2.5rem;height:2.5rem;place-items:center;border-radius:50%;background:#1a1815;color:#f4f1ea;font:700 .62rem/1 ui-monospace,Menlo,monospace">02</span>
+        </div>
+        <div style="padding:1.5rem">
+          <div style="display:flex;justify-content:space-between;gap:1rem;margin-bottom:1rem"><span style="color:var(--accent,#b4491f);font:700 .6rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Para compradores</span><span style="color:#a19a8d;font:500 .6rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Conceptual</span></div>
+          <h3 style="margin:0 0 .75rem;font-size:clamp(1.5rem,2.2vw,2.1rem);font-weight:600;letter-spacing:-.04em;line-height:1">Comprar con contexto</h3>
+          <p style="margin:0;color:#6b655c;font-size:.9rem">Definición de prioridades, selección comparable, coordinación de visitas y organización de la información necesaria para decidir.</p>
+        </div>
+      </article>
+      <article data-reveal data-delay="180" style="background:#faf8f3;border:1px solid rgba(26,24,21,.12);transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 1.4rem 3rem rgba(26,24,21,.12)">
+        <div style="position:relative;aspect-ratio:4/3;background:#cdc0a9;overflow:hidden">
+          <img src="./assets/servicio-alquilar.webp" alt="Llave y documentos en el recibidor de un departamento" width="1448" height="1086" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+          <span style="position:absolute;top:1rem;left:1rem;display:grid;width:2.5rem;height:2.5rem;place-items:center;border-radius:50%;background:#1a1815;color:#f4f1ea;font:700 .62rem/1 ui-monospace,Menlo,monospace">03</span>
+        </div>
+        <div style="padding:1.5rem">
+          <div style="display:flex;justify-content:space-between;gap:1rem;margin-bottom:1rem"><span style="color:var(--accent,#b4491f);font:700 .6rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Para ambas partes</span><span style="color:#a19a8d;font:500 .6rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Conceptual</span></div>
+          <h3 style="margin:0 0 .75rem;font-size:clamp(1.5rem,2.2vw,2.1rem);font-weight:600;letter-spacing:-.04em;line-height:1">Alquilar con acuerdos claros</h3>
+          <p style="margin:0;color:#6b655c;font-size:.9rem">Definición del perfil buscado, presentación, filtros acordados y coordinación documental con los profesionales correspondientes.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="seleccion" style="padding:clamp(6rem,11vw,10rem) 0;background:#faf8f3">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto">
+    <div data-two data-reveal style="display:grid;grid-template-columns:.4fr 1fr;gap:2.5rem;align-items:end;margin-bottom:clamp(3rem,6vw,5rem)">
+      <p style="margin:0;font:500 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#b4491f)">03 · Selección editorial</p>
+      <div>
+        <h2 style="margin:0;font-size:clamp(2.4rem,5vw,4.6rem);font-weight:600;letter-spacing:-.035em;line-height:.98;max-width:17ch">Tres maneras de habitar Lima.</h2>
+        <p style="margin:1rem 0 0;color:#6b655c;max-width:46ch;font-size:1.05rem">Una muestra conceptual de cómo la landing puede presentar cada propiedad con contexto, jerarquía y una imagen coherente.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem">
+      <article data-reveal style="cursor:default">
+        <div style="position:relative;aspect-ratio:4/3;background:#e5dac9;overflow:hidden;transition:transform .4s" style-hover="transform:translateY(-4px)">
+          <img src="./assets/propiedad-magdalena.webp" alt="Departamento compacto y luminoso en Magdalena del Mar" width="1448" height="1086" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+          <span style="position:absolute;top:1rem;left:1rem;padding:.45rem .6rem;background:rgba(250,248,243,.94);color:#1a1815;font:600 .56rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Propiedad conceptual · Demo</span>
+        </div>
+        <div style="padding:1.3rem 0 0">
+          <p style="margin:0 0 .35rem;color:var(--accent,#b4491f);font:600 .64rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Magdalena del Mar</p>
+          <h3 style="margin:0 0 .45rem;font-size:clamp(1.6rem,2.2vw,2.2rem);font-weight:600;letter-spacing:-.04em;line-height:1.05">Departamento compacto, luz abierta</h3>
+          <p style="margin:0;color:#6b655c;font-size:.88rem">Dos dormitorios · balcón urbano · vida integrada</p>
+        </div>
+      </article>
+      <article data-reveal data-delay="90" style="cursor:default">
+        <div style="position:relative;aspect-ratio:4/3;background:#d9cdb9;overflow:hidden;transition:transform .4s" style-hover="transform:translateY(-4px)">
+          <img src="./assets/propiedad-pueblo-libre.webp" alt="Patio de una casa urbana en Pueblo Libre" width="1448" height="1086" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+          <span style="position:absolute;top:1rem;left:1rem;padding:.45rem .6rem;background:rgba(250,248,243,.94);color:#1a1815;font:600 .56rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Propiedad conceptual · Demo</span>
+        </div>
+        <div style="padding:1.3rem 0 0">
+          <p style="margin:0 0 .35rem;color:var(--accent,#b4491f);font:600 .64rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Pueblo Libre</p>
+          <h3 style="margin:0 0 .45rem;font-size:clamp(1.6rem,2.2vw,2.2rem);font-weight:600;letter-spacing:-.04em;line-height:1.05">Casa patio, escala doméstica</h3>
+          <p style="margin:0;color:#6b655c;font-size:.88rem">Vida interior–exterior · materiales recuperados · jardín contenido</p>
+        </div>
+      </article>
+      <article data-reveal data-delay="180" style="cursor:default">
+        <div style="position:relative;aspect-ratio:4/3;background:#cdc0a9;overflow:hidden;transition:transform .4s" style-hover="transform:translateY(-4px)">
+          <img src="./assets/propiedad-jesus-maria.webp" alt="Edificio contemporáneo en una calle arbolada de Jesús María" width="1448" height="1086" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+          <span style="position:absolute;top:1rem;left:1rem;padding:.45rem .6rem;background:rgba(250,248,243,.94);color:#1a1815;font:600 .56rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Propiedad conceptual · Demo</span>
+        </div>
+        <div style="padding:1.3rem 0 0">
+          <p style="margin:0 0 .35rem;color:var(--accent,#b4491f);font:600 .64rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase">Jesús María</p>
+          <h3 style="margin:0 0 .45rem;font-size:clamp(1.6rem,2.2vw,2.2rem);font-weight:600;letter-spacing:-.04em;line-height:1.05">Edificio de barrio, mirada contemporánea</h3>
+          <p style="margin:0;color:#6b655c;font-size:.88rem">Vivienda urbana · calle arbolada · arquitectura sobria</p>
+        </div>
+      </article>
+    </div>
+    <p data-reveal style="max-width:46rem;margin:3rem 0 0 auto;padding-top:1rem;border-top:1px solid rgba(26,24,21,.14);color:#6b655c;font-size:.78rem">Las imágenes, ubicaciones descriptivas y tipologías de esta sección fueron creadas exclusivamente para demostrar una dirección de arte. No representan inmuebles disponibles ni ofertas comerciales.</p>
+  </div>
+</section>
+
+<section id="proceso" style="padding:clamp(6rem,11vw,10rem) 0;background:var(--accent,#b4491f);color:#f7ede8">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto">
+    <div data-two data-reveal style="display:grid;grid-template-columns:.4fr 1fr;gap:2.5rem;align-items:end;margin-bottom:clamp(3rem,6vw,5rem)">
+      <p style="margin:0;font:500 .72rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:#f6d3c6">04 · El recorrido</p>
+      <div>
+        <h2 style="margin:0;font-size:clamp(2.4rem,5vw,4.6rem);font-weight:600;letter-spacing:-.035em;line-height:.98;max-width:18ch">El siguiente paso siempre debe estar claro.</h2>
+        <p style="margin:1rem 0 0;color:#f2d6cd;max-width:48ch;font-size:1.05rem">Las etapas se ajustan al inmueble y a la operación. Esta secuencia explica el marco de trabajo, no promete plazos ni resultados.</p>
+      </div>
+    </div>
+    <div data-process style="display:grid;grid-template-columns:.6fr 1.4fr;gap:clamp(3rem,8vw,7rem);align-items:start">
+      <div data-sticky data-reveal style="position:sticky;top:8rem">
+        <span style="display:inline-flex;align-items:center;gap:.7rem;margin-bottom:1.4rem;font:700 .66rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase"><span style="width:2rem;height:1px;background:currentColor"></span>Ruta visible</span>
+        <p style="margin:0;max-width:12ch;font-size:clamp(2rem,3.5vw,3.8rem);font-weight:600;letter-spacing:-.04em;line-height:1">Cuatro momentos. Una sola conversación que avanza.</p>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.4)">
+        <article data-reveal style="display:grid;grid-template-columns:4rem 1fr;gap:1.5rem;align-items:start;padding:1.8rem 0;border-bottom:1px solid rgba(255,255,255,.4)">
+          <span style="display:grid;width:2.8rem;height:2.8rem;place-items:center;border:1px solid rgba(255,255,255,.65);border-radius:50%;font:700 .7rem/1 ui-monospace,Menlo,monospace">01</span>
+          <div><h3 style="margin:0 0 .3rem;font-size:clamp(1.5rem,2.4vw,2.3rem);font-weight:600;letter-spacing:-.04em;line-height:1">Entender</h3><p style="margin:0;color:#f2d6cd;font-size:.92rem;max-width:44ch">Objetivo, situación actual, documentación disponible y criterios no negociables.</p></div>
+        </article>
+        <article data-reveal data-delay="80" style="display:grid;grid-template-columns:4rem 1fr;gap:1.5rem;align-items:start;padding:1.8rem 0;border-bottom:1px solid rgba(255,255,255,.4)">
+          <span style="display:grid;width:2.8rem;height:2.8rem;place-items:center;border:1px solid rgba(255,255,255,.65);border-radius:50%;font:700 .7rem/1 ui-monospace,Menlo,monospace">02</span>
+          <div><h3 style="margin:0 0 .3rem;font-size:clamp(1.5rem,2.4vw,2.3rem);font-weight:600;letter-spacing:-.04em;line-height:1">Ordenar</h3><p style="margin:0;color:#f2d6cd;font-size:.92rem;max-width:44ch">Alcance, especialistas necesarios, presentación y ruta de decisiones.</p></div>
+        </article>
+        <article data-reveal data-delay="160" style="display:grid;grid-template-columns:4rem 1fr;gap:1.5rem;align-items:start;padding:1.8rem 0;border-bottom:1px solid rgba(255,255,255,.4)">
+          <span style="display:grid;width:2.8rem;height:2.8rem;place-items:center;border:1px solid rgba(255,255,255,.65);border-radius:50%;font:700 .7rem/1 ui-monospace,Menlo,monospace">03</span>
+          <div><h3 style="margin:0 0 .3rem;font-size:clamp(1.5rem,2.4vw,2.3rem);font-weight:600;letter-spacing:-.04em;line-height:1">Activar</h3><p style="margin:0;color:#f2d6cd;font-size:.92rem;max-width:44ch">Difusión o búsqueda, coordinación de visitas y registro de conversaciones.</p></div>
+        </article>
+        <article data-reveal data-delay="240" style="display:grid;grid-template-columns:4rem 1fr;gap:1.5rem;align-items:start;padding:1.8rem 0;border-bottom:1px solid rgba(255,255,255,.4)">
+          <span style="display:grid;width:2.8rem;height:2.8rem;place-items:center;border:1px solid rgba(255,255,255,.65);border-radius:50%;font:700 .7rem/1 ui-monospace,Menlo,monospace">04</span>
+          <div><h3 style="margin:0 0 .3rem;font-size:clamp(1.5rem,2.4vw,2.3rem);font-weight:600;letter-spacing:-.04em;line-height:1">Acompañar</h3><p style="margin:0;color:#f2d6cd;font-size:.92rem;max-width:44ch">Negociación, coordinación documental y seguimiento hasta la instancia acordada.</p></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(6rem,11vw,10rem) 0;background:#faf8f3">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto">
+    <div data-profile style="display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(3rem,6vw,5.5rem);align-items:end">
+      <div data-reveal style="position:relative">
+        <div style="aspect-ratio:3/2;background:#ddd1be;overflow:hidden">
+          <img src="./assets/asesora-conceptual.webp" alt="Retrato conceptual de una asesora inmobiliaria" width="1536" height="1024" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        </div>
+        <div aria-hidden="true" style="position:absolute;top:-1rem;right:-1rem;width:7rem;height:7rem;border-top:1px solid var(--accent,#b4491f);border-right:1px solid var(--accent,#b4491f)"></div>
+        <p style="margin-top:.7rem;color:#6b655c;font:500 .66rem/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase">Retrato conceptual · Perfil profesional</p>
+      </div>
+      <div data-reveal data-delay="100">
+        <p style="margin:0 0 1rem;font:500 .72rem/1 ui-monospace,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#b4491f)">05 · Una sola interlocutora</p>
+        <h2 style="margin:0 0 1.6rem;font-size:clamp(2.4rem,4.5vw,4.4rem);font-weight:600;letter-spacing:-.04em;line-height:.96;max-width:12ch">Claridad también es saber con quién hablas.</h2>
+        <p style="margin:0 0 1rem;max-width:34ch;font-size:clamp(1.15rem,1.6vw,1.45rem);font-weight:500;letter-spacing:-.02em;line-height:1.4">La landing propone una relación directa: una profesional que organiza el proceso y convoca a los especialistas adecuados cuando la operación lo exige.</p>
+        <p style="margin:0;max-width:38ch;color:#6b655c;font-size:.95rem">En una versión real, este espacio incluiría la experiencia verificable, especialización, número de registro y forma concreta de trabajo de la asesora.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:2rem;background:rgba(26,24,21,.14)">
+          <div style="padding:1.2rem;background:#faf8f3"><strong style="display:block;margin-bottom:.35rem;font:600 .66rem/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase">Perfil conceptual</strong><span style="color:#6b655c;font-size:.85rem">El retrato y la descripción no corresponden a una persona real.</span></div>
+          <div style="padding:1.2rem;background:#faf8f3"><strong style="display:block;margin-bottom:.35rem;font:600 .66rem/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase">Verificación pública</strong><span style="color:#6b655c;font-size:.85rem">Consulta agentes inscritos en el <a href="https://www.gob.pe/institucion/vivienda/pages/7634-consultar-el-registro-del-agente-inmobiliario" target="_blank" rel="noopener noreferrer">registro del MVCS</a>.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="consulta" style="padding:clamp(6rem,11vw,10rem) 0;background:#1a1815;color:#f4f1ea">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto">
+    <div data-contact style="display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(3rem,8vw,7rem)">
+      <div data-reveal>
+        <p style="margin:0 0 1rem;font:500 .72rem/1 ui-monospace,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;color:#ca826c">06 · Primera conversación</p>
+        <h2 style="margin:0 0 1.5rem;font-size:clamp(3rem,6vw,6rem);font-weight:600;letter-spacing:-.045em;line-height:.9;max-width:9ch">Tu decisión merece contexto.</h2>
+        <p style="margin:0;max-width:34ch;color:#bdb7ad">Una primera consulta debería servir para entender el escenario, no para forzar una respuesta. Esta interacción muestra cómo funcionaría el contacto en un sitio conectado.</p>
+        <div style="margin-top:3rem;border-top:1px solid rgba(255,255,255,.2)">
+          <details style="border-bottom:1px solid rgba(255,255,255,.2)"><summary style="padding:1.1rem 0;font-size:.92rem;cursor:pointer;list-style:none">¿Cómo se define la comisión?</summary><p style="margin:0;padding:0 0 1.1rem;color:#bdb7ad;font-size:.86rem">En un servicio real se acuerda por escrito según alcance, tipo de operación y responsabilidades. Esta demo no publica tarifas ficticias.</p></details>
+          <details style="border-bottom:1px solid rgba(255,255,255,.2)"><summary style="padding:1.1rem 0;font-size:.92rem;cursor:pointer;list-style:none">¿Qué documentos se revisan?</summary><p style="margin:0;padding:0 0 1.1rem;color:#bdb7ad;font-size:.86rem">Depende del inmueble y la operación. La asesora puede ordenar la información, pero la revisión legal debe corresponder a los profesionales competentes.</p></details>
+          <details style="border-bottom:1px solid rgba(255,255,255,.2)"><summary style="padding:1.1rem 0;font-size:.92rem;cursor:pointer;list-style:none">¿Cuánto puede tardar una venta?</summary><p style="margin:0;padding:0 0 1.1rem;color:#bdb7ad;font-size:.86rem">No existe un plazo universal: influyen el precio, la demanda, la documentación, el estado del inmueble y las condiciones de negociación.</p></details>
+        </div>
+      </div>
+      <form data-reveal data-delay="100" onSubmit="{{ onContact }}" style="padding:clamp(1.6rem,4vw,2.8rem);background:#f4f1ea;color:#1a1815">
+        <h3 style="margin:0 0 2rem;font-size:2rem;font-weight:600;letter-spacing:-.04em">Describe tu punto de partida</h3>
+        <div data-contact-fields style="display:grid;grid-template-columns:1fr 1fr;gap:1.3rem">
+          <div style="border-bottom:1px solid rgba(26,24,21,.14);padding-bottom:.6rem"><label for="name" style="display:block;margin-bottom:.3rem;color:#6b655c;font:600 .62rem/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase">Nombre</label><input id="name" name="name" type="text" autocomplete="name" required style="width:100%;border:0;background:transparent;outline:none;padding:.2rem 0"></div>
+          <div style="border-bottom:1px solid rgba(26,24,21,.14);padding-bottom:.6rem"><label for="email" style="display:block;margin-bottom:.3rem;color:#6b655c;font:600 .62rem/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase">Correo</label><input id="email" name="email" type="email" autocomplete="email" required style="width:100%;border:0;background:transparent;outline:none;padding:.2rem 0"></div>
+          <div style="grid-column:1/-1;border-bottom:1px solid rgba(26,24,21,.14);padding-bottom:.6rem"><label for="operation" style="display:block;margin-bottom:.3rem;color:#6b655c;font:600 .62rem/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase">Necesito orientación para</label><select id="operation" name="operation" style="width:100%;border:0;background:transparent;outline:none;padding:.2rem 0"><option>Vender una propiedad</option><option>Comprar una vivienda</option><option>Alquilar o administrar</option><option>Otro escenario</option></select></div>
+          <div style="grid-column:1/-1;border-bottom:1px solid rgba(26,24,21,.14);padding-bottom:.6rem"><label for="message" style="display:block;margin-bottom:.3rem;color:#6b655c;font:600 .62rem/1 ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase">Cuéntanos brevemente</label><textarea id="message" name="message" rows="4" required style="width:100%;border:0;background:transparent;outline:none;padding:.2rem 0;min-height:6rem;resize:vertical"></textarea></div>
+        </div>
+        <p style="margin:1rem 0;color:#6b655c;font-size:.76rem">Demo sin backend: los datos escritos aquí no se envían ni se almacenan.</p>
+        <button type="submit" style="display:inline-flex;align-items:center;gap:.7rem;padding:1.05rem 1.6rem;background:#1a1815;color:#f4f1ea;border:1px solid #1a1815;font:600 .72rem/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .25s" style-hover="background:var(--accent,#b4491f);border-color:var(--accent,#b4491f)">Simular envío <span style="font-size:1.05rem">→</span></button>
+        <p role="status" aria-live="polite" style="margin:1rem 0 0;color:var(--accent,#b4491f);font-size:.85rem;font-weight:600">{{ contactStatus }}</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer style="padding:2.4rem 0;border-top:1px solid rgba(26,24,21,.14);background:#f4f1ea">
+  <div style="width:min(100% - 48px,1280px);margin-inline:auto;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center;color:#6b655c;font-size:.74rem">
+    <p style="margin:0"><strong style="color:#1a1815;font-weight:600">Habita</strong> · Demo inmobiliaria conceptual · Lima</p>
+    <p style="margin:0">Sin propiedades, testimonios ni credenciales reales</p>
+    <p style="margin:0">Diseño por <a href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer">Nozoe Studio</a> · {{ year }}</p>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#b4491f&quot;,&quot;options&quot;:[&quot;#b4491f&quot;,&quot;#a8572e&quot;,&quot;#7d6a4e&quot;,&quot;#3f6152&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Estilo&quot;},&quot;showDemoBadge&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Estilo&quot;},&quot;reveals&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Movimiento&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen:false, scrolled:false, decisionStatus:'', contactStatus:'', year:new Date().getFullYear() };
+
+  rootRef = (el) => { this._root = el; };
+
+  componentDidMount(){
+    this._scroll = () => {
+      const s = window.scrollY > 24;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._scroll, { passive:true });
+    this._scroll();
+    this.setupReveal();
+  }
+  componentWillUnmount(){ window.removeEventListener('scroll', this._scroll); }
+
+  setupReveal(){
+    const on = this.props.reveals ?? true;
+    if (!this._root || !on) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    const items = this._root.querySelectorAll('[data-reveal]');
+    items.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting){
+          const el = en.target;
+          el.style.transitionDelay = (el.getAttribute('data-delay') || '0') + 'ms';
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold:.12, rootMargin:'0px 0px -6% 0px' });
+    items.forEach(el => obs.observe(el));
+  }
+
+  toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => this.setState({ menuOpen:false });
+
+  onDecision = (e) => {
+    e.preventDefault();
+    const f = e.currentTarget;
+    const sel = f.elements['decision'];
+    const action = sel.options[sel.selectedIndex].text;
+    const type = f.elements['property-type'].value.toLowerCase();
+    const district = f.elements['district'].value;
+    this.setState({ decisionStatus:`Consulta preparada: ${action}, ${type}, en ${district}. Es una simulación; no se envió ningún dato.` });
+  };
+
+  onContact = (e) => {
+    e.preventDefault();
+    if (!e.currentTarget.reportValidity()) return;
+    this.setState({ contactStatus:'Simulación completada. No se envió ni se almacenó información; un proyecto real necesitaría integrar un canal de contacto.' });
+  };
+
+  renderVals(){
+    const accent = this.props.accentColor ?? '#b4491f';
+    const showDemoBadge = this.props.showDemoBadge ?? true;
+    const s = this.state;
+    return {
+      accent,
+      showDemoBadge,
+      year: s.year,
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
+      onDecision: this.onDecision,
+      onContact: this.onContact,
+      rootRef: this.rootRef,
+      menuOpacity: s.menuOpen ? '1' : '0',
+      menuVisibility: s.menuOpen ? 'visible' : 'hidden',
+      menuPointer: s.menuOpen ? 'auto' : 'none',
+      headerBg: s.scrolled ? 'rgba(244,241,234,.85)' : 'transparent',
+      headerLine: s.scrolled ? 'rgba(26,24,21,.12)' : 'transparent',
+      headerBlur: s.scrolled ? 'blur(14px)' : 'none',
+      decisionStatus: s.decisionStatus,
+      contactStatus: s.contactStatus,
+      decisionPad: s.decisionStatus ? '.85rem 1.4rem' : '0 1.4rem',
+      decisionBorder: s.decisionStatus ? '1px solid rgba(26,24,21,.12)' : '0'
+    };
+  }
+}
+</script>
+</body>
+</html>

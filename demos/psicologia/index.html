@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umbral Psicología — Lima</title>
+<meta name="description" content="Demo conceptual de terapia psicológica con Daniela Rojas, psicóloga clínica colegiada: especialidades, modalidades, tarifas y agenda por WhatsApp en Miraflores, Lima.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:locale" content="es_PE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Umbral Psicología — Terapia psicológica en Lima">
+<meta property="og:description" content="Acompañamiento profesional y confidencial con la psicóloga Daniela Rojas: online, presencial y de pareja. Demo conceptual de Nozoe Studio.">
+<meta property="og:image" content="assets/umbral-hero.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#0E2E2A;
+  --lime:#C4F24C;
+  --cream:#EFEEE9;
+  --card:#FFFFFF;
+  --ink:#14201E;
+  --muted:#6B726E;
+  --line:rgba(14,46,42,.12);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55;letter-spacing:-.01em}
+html{scroll-behavior:smooth}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 48px}
+.kicker{display:flex;align-items:center;gap:9px;margin:0 0 18px}
+.kicker .dot{width:7px;height:7px;background:var(--lime);border-radius:50%;flex:none}
+.kicker span{font-size:12.5px;font-weight:500;color:#5A6B62;margin:0}
+.kicker.on-dark span{color:#9FB0A8}
+.fade{color:#A6ADA6}
+.fade-dark{color:#5E756C}
+
+.demo-ribbon{position:fixed;z-index:180;top:2.7rem;right:-5.75rem;display:block;width:19.7rem;transform:rotate(45deg);filter:drop-shadow(0 .3rem .45rem rgba(0,0,0,.28));transition:filter .2s,transform .2s}
+.demo-ribbon:hover{transform:rotate(45deg) translateY(-2px);filter:drop-shadow(0 .45rem .65rem rgba(0,0,0,.38))}
+.demo-ribbon img{width:100%;height:auto}
+.demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(max-width:760px){.demo-ribbon{top:5.65rem;right:0;width:30%;transform:none}.demo-ribbon:hover{transform:translateY(-2px)}}
+
+header{position:sticky;top:0;z-index:60;background:rgba(239,238,233,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:24px;color:var(--deep);text-decoration:none}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--ink);font-size:14px;font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:100px;text-decoration:none;font-weight:500;font-size:13.5px;white-space:nowrap;border:none;cursor:pointer;font-family:inherit;transition:filter .15s,background .15s,color .15s}
+.btn-white{background:#fff;color:var(--deep)}
+.btn-white:hover{filter:brightness(.96)}
+.btn-lime{background:var(--lime);color:var(--deep);font-weight:600;padding:14px 26px;font-size:14.5px}
+.btn-lime:hover{filter:brightness(1.06)}
+.btn-deep{background:var(--deep);color:#fff}
+.btn-deep:hover{background:var(--lime);color:var(--deep)}
+.btn-ghost{background:transparent;border:1.5px solid var(--deep);color:var(--deep)}
+.btn-ghost:hover{background:var(--deep);color:#fff}
+.btn-wa{background:#25D366;color:#0A2A18;font-weight:600;padding:15px 26px;font-size:15px;margin-bottom:34px}
+.btn-wa:hover{filter:brightness(1.06)}
+
+.hero{position:relative;min-height:640px;display:flex;align-items:flex-end;background:var(--deep);overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:65% 18%;opacity:.55;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,46,42,.55) 0%,rgba(14,46,42,.2) 35%,rgba(14,46,42,.88) 100%)}
+.hero-inner{position:relative;z-index:2;padding:64px 0 56px;color:#fff}
+.badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:13px;font-weight:600;padding:8px 16px;border-radius:100px;margin-bottom:22px}
+.hero h1{font-size:clamp(34px,5.2vw,60px);font-weight:600;letter-spacing:-.03em;line-height:1.05;margin:0 0 20px;max-width:16ch}
+.hero p{color:#CBD5CE;font-size:16.5px;max-width:52ch;margin:0 0 32px}
+
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;padding:30px 48px}
+.trust .stat{flex:1;min-width:150px}
+.trust strong{display:block;font-size:30px;font-weight:600;letter-spacing:-.03em;color:var(--deep)}
+.trust span{font-size:12.5px;color:var(--muted)}
+
+section{padding:100px 0}
+.title{font-size:clamp(28px,3.4vw,40px);line-height:1.08;letter-spacing:-.03em;margin:0 0 42px;max-width:22ch;font-weight:500;color:var(--deep)}
+
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.area{background:var(--cream);padding:36px 32px;transition:background .2s}
+.area:hover{background:#F6F5F1}
+.area .ico{width:44px;height:44px;border-radius:9px;background:var(--deep);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.area .ico span{width:9px;height:9px;border-radius:50%;background:var(--lime)}
+.area h3{font-size:19px;margin:0 0 10px;font-weight:600;color:var(--deep)}
+.area p{font-size:14.5px;color:var(--muted);margin:0}
+
+.about-sec .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
+.about-sec img{border-radius:10px;height:480px;width:100%;object-fit:cover}
+.about-sec p{color:var(--muted);margin:0 0 16px;font-size:16px}
+.quote{background:var(--deep);border-radius:12px;padding:26px 28px;color:#EDEFE7;font-size:17px;line-height:1.5;font-weight:500;margin:0 0 22px}
+.quote em{color:var(--lime);font-style:normal}
+.credentials{font-size:13.5px;color:var(--muted);margin:0}
+
+.proceso{background:var(--deep)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden}
+.step img{width:100%;height:170px;object-fit:cover}
+.step-body{padding:28px 30px 32px}
+.step-num{font-family:ui-monospace,Menlo,monospace;font-weight:500;color:var(--lime);font-size:14px;margin-bottom:16px}
+.step h3{font-size:19px;color:#fff;margin:0 0 10px;font-weight:600}
+.step p{font-size:14.5px;color:#9FB0A8;margin:0}
+
+.precios-lead{text-align:center;max-width:34ch;margin:0 auto 14px}
+.precios-lead h2{margin:0}
+.precios-sub{text-align:center;max-width:52ch;margin:0 auto 30px;color:var(--muted);font-size:15px}
+.precios-toggle{display:flex;justify-content:center;margin-bottom:40px}
+.precios-toggle-inner{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:5px}
+.precios-toggle span{font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;color:var(--muted)}
+.precios-toggle span.active{background:var(--deep);color:#fff}
+.plans{background:#fff;border:1px solid var(--line);border-radius:16px;display:grid;grid-template-columns:repeat(3,1fr)}
+.plan{padding:40px 34px;border-right:1px solid rgba(14,46,42,.1);display:flex;flex-direction:column;position:relative}
+.plan:last-child{border-right:none}
+.plan.featured{background:#F6F5F1}
+.plan-badge{position:absolute;top:20px;right:24px;background:var(--lime);color:var(--deep);font-size:11px;font-weight:600;padding:5px 11px;border-radius:100px}
+.plan h3{font-size:17px;color:var(--deep);margin:0 0 4px;font-weight:600}
+.plan .modo{font-size:13px;color:var(--muted);margin:0 0 24px}
+.plan .price{font-size:44px;font-weight:600;color:var(--deep);letter-spacing:-.04em;line-height:1}
+.plan .price small{font-size:15px;font-weight:500;color:var(--muted)}
+.plan .btn{margin:28px 0;justify-content:center}
+.plan ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;font-size:14px;color:#3C463F}
+.plan li{display:flex;gap:10px}
+.plan li span{color:var(--deep)}
+
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq-item{border-bottom:1px solid rgba(14,46,42,.14)}
+.faq-item summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:24px;cursor:pointer;padding:22px 2px;font-size:16.5px;font-weight:500;color:var(--deep)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:#5A6B62}
+.faq-item .sign{font-size:22px;font-weight:400;color:#5A6B62;flex:none;line-height:1}
+.faq-item .sign::before{content:"+"}
+.faq-item[open] .sign::before{content:"−"}
+.faq-item p{margin:0;padding:0 2px 24px;max-width:66ch;color:var(--muted);font-size:15px;line-height:1.65}
+
+.recursos-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:40px}
+.recursos-head h2{margin:0}
+.recursos-head a{color:var(--deep);font-weight:500;font-size:14px;text-decoration:none;border-bottom:2px solid var(--lime);padding-bottom:3px}
+.articles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.article{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.article img{height:200px;width:100%;object-fit:cover}
+.article-body{padding:24px 24px 28px}
+.article-tag{display:inline-block;background:var(--deep);color:var(--lime);font-size:11px;font-weight:500;letter-spacing:.03em;padding:5px 12px;border-radius:100px;margin-bottom:14px}
+.article h3{font-size:17.5px;color:var(--deep);margin:0 0 10px;font-weight:600;line-height:1.28}
+.article p{font-size:13px;color:var(--muted);margin:0}
+
+.contacto{background:var(--deep)}
+.contacto .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+.contacto h2{color:#fff;font-size:42px;line-height:1.06;letter-spacing:-.03em;margin:0 0 18px;font-weight:500;max-width:15ch}
+.contacto>.wrap>div:first-child>p{color:#9FB0A8;font-size:16px;margin:0 0 32px;max-width:44ch}
+.info-list{display:flex;flex-direction:column;gap:16px;border-top:1px solid rgba(255,255,255,.14);padding-top:28px}
+.info-list div{display:flex;gap:12px;color:#CBD5CE;font-size:14.5px}
+.info-list span{color:var(--lime);font-weight:500;min-width:88px;flex:none}
+
+form.contact-form{background:var(--cream);border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form label{display:flex;flex-direction:column;gap:7px;font-size:12.5px;font-weight:500;color:var(--deep)}
+.contact-form input,.contact-form select,.contact-form textarea{font-family:inherit;font-size:15px;font-weight:400;padding:13px 14px;border:1px solid rgba(14,46,42,.18);border-radius:9px;background:#fff;color:var(--ink)}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--deep);outline:none}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--muted);line-height:1.5;font-weight:400}
+.consent input{margin-top:2px;accent-color:var(--deep);width:auto;padding:0}
+
+footer{background:var(--deep);padding:64px 0 0;color:#9FB0A8;border-top:1px solid rgba(255,255,255,.1)}
+.footer-grid{max-width:1120px;margin:0 auto;padding:0 48px 56px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:24px;color:#fff;margin-bottom:16px}
+.footer-grid p{font-size:14px;max-width:34ch;margin:0 0 20px}
+.socials{display:flex;gap:10px}
+.socials a{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#CBD5CE;text-decoration:none;font-size:13px}
+.footer-col p.h{color:#fff;font-weight:500;font-size:14px;margin:0 0 16px}
+.footer-col .links{display:flex;flex-direction:column;gap:11px;font-size:14px}
+.footer-col .links a{color:#9FB0A8;text-decoration:none}
+.watermark{border-top:1px solid rgba(255,255,255,.1);overflow:hidden}
+.watermark div{font-size:118px;font-weight:700;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.14);white-space:nowrap;text-align:center;padding:24px 0 8px;line-height:1}
+.copyright{border-top:1px solid rgba(255,255,255,.1)}
+.copyright .wrap{padding:22px 48px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px}
+.copyright a{color:#fff;font-weight:500;text-decoration:none}
+
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:99;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+
+@media(max-width:900px){
+  .areas{grid-template-columns:1fr}
+  .about-sec .wrap{grid-template-columns:1fr}
+  .about-sec img{height:320px}
+  .steps{grid-template-columns:1fr}
+  .plans{grid-template-columns:1fr}
+  .plan{border-right:none;border-bottom:1px solid rgba(14,46,42,.1)}
+  .plan:last-child{border-bottom:none}
+  .faq-grid{grid-template-columns:1fr}
+  .articles{grid-template-columns:1fr}
+  .contacto .wrap{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .watermark div{font-size:52px}
+}
+body.menu-open{overflow:hidden}
+.mn-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;background:transparent;cursor:pointer;flex:none}
+.mn-toggle svg{width:18px;height:18px}
+.mn-links{display:none}
+@media(max-width:760px){
+  .wrap{padding:0 24px}
+  .nav ul{display:none}
+  .mn-toggle{display:inline-flex}
+  .mn-links{position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;z-index:150;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:6rem 2rem 3rem;background:var(--cream);box-sizing:border-box;visibility:hidden;opacity:0;transform:translateY(-1rem);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+  .mn-links.is-open{visibility:visible;opacity:1;transform:translateY(0)}
+  .mn-links a{font-size:26px;color:var(--deep);text-decoration:none;font-weight:600}
+  .mn-links a.mn-cta{align-self:flex-start;font-size:16px;padding:12px 24px}
+  section{padding:64px 0}
+  .hero{min-height:560px}
+}
+@media(prefers-reduced-motion:reduce){
+  .area,.btn,.wa-float,.demo-ribbon{transition:none}
+}
+</style>
+</head>
+<body>
+
+<a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+  <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
+</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo">
+      <svg width="32" height="32" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="13" stroke="#0E2E2A" stroke-width="2.4"/><path d="M15 8v14M15 8c-3 2-3 5 0 7 3 2 3 5 0 7" stroke="#0E2E2A" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Umbral
+    </a>
+    <ul>
+      <li><a href="#especialidades">Especialidades</a></li>
+      <li><a href="#sobre">Sobre mí</a></li>
+      <li><a href="#proceso">Cómo funciona</a></li>
+      <li><a href="#recursos">Recursos</a></li>
+    </ul>
+    <a class="btn btn-white" href="https://wa.me/51900333444?text=Hola%2C%20quisiera%20agendar%20una%20cita" target="_blank" rel="noopener">Agendar cita ↗</a>
+    <button type="button" class="mn-toggle" aria-expanded="false" aria-controls="mn-links" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#0E2E2A" stroke-linecap="round" stroke-width="1.6"/></svg>
+    </button>
+  </div>
+</header>
+<nav class="mn-links" id="mn-links">
+  <a href="#especialidades">Especialidades</a>
+  <a href="#sobre">Sobre mí</a>
+  <a href="#proceso">Cómo funciona</a>
+  <a href="#recursos">Recursos</a>
+  <a class="mn-cta btn btn-lime" href="https://wa.me/51900333444?text=Hola%2C%20quisiera%20agendar%20una%20cita" target="_blank" rel="noopener">Agendar cita ↗</a>
+</nav>
+
+<section class="hero" style="padding:0">
+  <img src="assets/umbral-hero.webp" alt="Psicóloga en un consultorio cálido de Lima" width="1672" height="941" fetchpriority="high" decoding="async">
+  <div class="wrap hero-inner">
+    <span class="badge">Presencial en Miraflores · Online a todo el Perú</span>
+    <h1>Pedir ayuda no es debilidad.</h1>
+    <p>Soy Daniela Rojas, psicóloga clínica colegiada. Te acompaño a entender lo que sientes y a construir herramientas reales para tu día a día — a tu ritmo y en total confidencialidad.</p>
+    <a class="btn btn-lime" href="https://wa.me/51900333444?text=Hola%20Daniela%2C%20quiero%20agendar%20una%20primera%20sesi%C3%B3n" target="_blank" rel="noopener">Agendar primera sesión ↗</a>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="stat"><strong>+600</strong><span>pacientes acompañados</span></div>
+    <div class="stat"><strong>9 años</strong><span>de experiencia clínica</span></div>
+    <div class="stat"><strong>100%</strong><span>confidencial · secreto profesional</span></div>
+    <div class="stat"><strong>C.Ps.P.</strong><span>34567 · psicóloga colegiada</span></div>
+  </div>
+</div>
+
+<section id="especialidades">
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span><span>Especialidades</span></div>
+    <h2 class="title">Sea lo que sea que estés atravesando, <span class="fade">no tienes que hacerlo en soledad.</span></h2>
+    <div class="areas">
+      <div class="area">
+        <div class="ico"><span></span></div>
+        <h3>Ansiedad y ataques de pánico</h3>
+        <p>Cuando la mente no se apaga: preocupación constante, insomnio, tensión en el cuerpo. Aprende a regularla paso a paso.</p>
+      </div>
+      <div class="area">
+        <div class="ico"><span></span></div>
+        <h3>Depresión y estados de ánimo</h3>
+        <p>Recuperar energía, sentido y motivación cuando todo pesa. Un plan claro para volver a sentirte tú.</p>
+      </div>
+      <div class="area">
+        <div class="ico"><span></span></div>
+        <h3>Autoestima y desarrollo personal</h3>
+        <p>Poner límites, dejar de exigirte perfección y construir una relación más amable contigo misma/o.</p>
+      </div>
+      <div class="area">
+        <div class="ico"><span></span></div>
+        <h3>Terapia de pareja</h3>
+        <p>Comunicación, confianza y acuerdos. Un espacio neutral para entenderse mejor y decidir con claridad.</p>
+      </div>
+      <div class="area">
+        <div class="ico"><span></span></div>
+        <h3>Duelo y pérdidas</h3>
+        <p>Atravesar la ausencia, los cambios de etapa y las despedidas a tu ritmo, sin quedarte en el camino.</p>
+      </div>
+      <div class="area">
+        <div class="ico"><span></span></div>
+        <h3>Estrés laboral y burnout</h3>
+        <p>Recuperar el equilibrio entre trabajo y vida, gestionar la exigencia y prevenir el agotamiento crónico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-sec" id="sobre">
+  <div class="wrap">
+    <img src="assets/umbral-daniela.webp" alt="Lic. Daniela Rojas, psicóloga clínica, retrato en su consultorio" width="1122" height="1402" loading="lazy" decoding="async">
+    <div>
+      <div class="kicker"><span class="dot"></span><span>Sobre mí</span></div>
+      <h2 class="title" style="margin-bottom:22px;max-width:18ch">Un espacio sin juicios, <span class="fade">con método.</span></h2>
+      <p>Sé que escribir a un psicólogo por primera vez cuesta. Por eso mi consulta empieza como una conversación, no como un interrogatorio.</p>
+      <p>Trabajo con terapia cognitivo-conductual y enfoque humanista: herramientas concretas, objetivos claros y avances que tú misma/o puedes medir sesión a sesión.</p>
+      <div class="quote">"La terapia no es para 'locos'. Es para personas que decidieron dejar de cargarlo todo <em>solas.</em>"</div>
+      <p class="credentials">Psicóloga clínica UNMSM · Colegiada C.Ps.P. 34567 · Maestría en Terapia Cognitivo-Conductual</p>
+    </div>
+  </div>
+</section>
+
+<section class="proceso" id="proceso">
+  <div class="wrap">
+    <div class="kicker on-dark"><span class="dot"></span><span>Cómo funciona</span></div>
+    <h2 class="title" style="color:#fff;max-width:20ch">Empezar es más simple <span class="fade-dark">de lo que crees.</span></h2>
+    <div class="steps">
+      <div class="step">
+        <img src="assets/umbral-proceso-contacto.webp" alt="Primer contacto por WhatsApp con la psicóloga" width="1536" height="1024" loading="lazy" decoding="async">
+        <div class="step-body">
+          <div class="step-num">01</div>
+          <h3>Escríbeme por WhatsApp</h3>
+          <p>Sin formularios eternos. Me cuentas brevemente qué te trae y resolvemos tus dudas sobre el proceso.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="assets/umbral-proceso-sesion.webp" alt="Primera sesión de evaluación psicológica" width="1536" height="1024" loading="lazy" decoding="async">
+        <div class="step-body">
+          <div class="step-num">02</div>
+          <h3>Primera sesión de evaluación</h3>
+          <p>Nos conocemos, definimos juntos tus objetivos y te propongo un plan de trabajo. Online o en Miraflores.</p>
+        </div>
+      </div>
+      <div class="step">
+        <img src="assets/umbral-proceso-avance.webp" alt="Seguimiento y avance del proceso terapéutico" width="1536" height="1024" loading="lazy" decoding="async">
+        <div class="step-body">
+          <div class="step-num">03</div>
+          <h3>Avanzamos a tu ritmo</h3>
+          <p>Sesiones semanales o quincenales de 50 min. Revisamos avances y ajustamos el plan cuando lo necesites.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="precios">
+  <div class="wrap">
+    <div class="precios-lead"><h2 class="title" style="margin:0">Elige cómo quieres <span class="fade">empezar tu proceso.</span></h2></div>
+    <p class="precios-sub">Primera sesión de evaluación con <strong style="color:#0E2E2A">20% de descuento</strong>. Yape, Plin, transferencia y tarjeta.</p>
+    <div class="precios-toggle"><div class="precios-toggle-inner"><span class="active">Por sesión</span><span>Paquete x4 · ahorra 15%</span></div></div>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Terapia Online</h3>
+        <p class="modo">Videollamada · todo el Perú</p>
+        <div class="price">S/110<small> /sesión</small></div>
+        <a class="btn btn-deep" href="https://wa.me/51900333444?text=Hola%20Daniela%2C%20quiero%20terapia%20online" target="_blank" rel="noopener">Empezar ahora ↗</a>
+        <ul>
+          <li><span>✓</span> Sesión de 50 minutos</li>
+          <li><span>✓</span> Plataforma segura y privada</li>
+          <li><span>✓</span> Material de apoyo entre sesiones</li>
+        </ul>
+      </div>
+      <div class="plan featured">
+        <span class="plan-badge">MÁS ELEGIDA</span>
+        <h3>Terapia Presencial</h3>
+        <p class="modo">Consultorio en Miraflores</p>
+        <div class="price">S/140<small> /sesión</small></div>
+        <a class="btn btn-deep" href="https://wa.me/51900333444?text=Hola%20Daniela%2C%20quiero%20terapia%20presencial" target="_blank" rel="noopener">Empezar ahora ↗</a>
+        <ul>
+          <li><span>✓</span> Sesión de 50 minutos</li>
+          <li><span>✓</span> Espacio cálido y confidencial</li>
+          <li><span>✓</span> Horarios de noche y sábados</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3>Terapia de Pareja</h3>
+        <p class="modo">Online o presencial</p>
+        <div class="price">S/180<small> /sesión</small></div>
+        <a class="btn btn-deep" href="https://wa.me/51900333444?text=Hola%20Daniela%2C%20quiero%20terapia%20de%20pareja" target="_blank" rel="noopener">Empezar ahora ↗</a>
+        <ul>
+          <li><span>✓</span> Sesión ampliada de 80 minutos</li>
+          <li><span>✓</span> Dinámicas para ambos</li>
+          <li><span>✓</span> Objetivos y acuerdos claros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq-grid">
+    <div>
+      <div class="kicker"><span class="dot"></span><span>Preguntas frecuentes</span></div>
+      <h2 class="title" style="font-size:34px;max-width:16ch;margin-bottom:22px">Lo que sueles querer saber antes de escribir.</h2>
+      <p style="color:#6B726E;font-size:15px;margin:0 0 26px;max-width:38ch">¿No encuentras tu duda? Escríbeme directamente y te respondo personalmente.</p>
+      <a class="btn btn-ghost" href="https://wa.me/51900333444" target="_blank" rel="noopener">Hacer una pregunta ↗</a>
+    </div>
+    <div>
+      <details class="faq-item" open>
+        <summary>¿Cuánto dura cada sesión?<span class="sign"></span></summary>
+        <p>Las sesiones individuales duran 50 minutos y las de pareja 80 minutos. Es el tiempo justo para trabajar a profundidad sin agotarte.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿La terapia online funciona igual que la presencial?<span class="sign"></span></summary>
+        <p>Sí. La evidencia muestra resultados equivalentes en la mayoría de casos. Uso una plataforma segura y privada, y solo necesitas un lugar tranquilo y buena conexión.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cada cuánto son las sesiones?<span class="sign"></span></summary>
+        <p>Normalmente semanales al inicio y luego quincenales, según tus objetivos y tu avance. Lo definimos juntos y lo ajustamos cuando haga falta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Todo lo que hablemos es confidencial?<span class="sign"></span></summary>
+        <p>Absolutamente. Estoy sujeta al secreto profesional del Colegio de Psicólogos del Perú. Nada de lo que compartas sale de la consulta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué métodos de pago aceptas?<span class="sign"></span></summary>
+        <p>Yape, Plin, transferencia bancaria y tarjeta. El pago se realiza antes de cada sesión para reservar tu horario.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo agendo mi primera cita?<span class="sign"></span></summary>
+        <p>Escríbeme por WhatsApp o llena el formulario de contacto. Te respondo personalmente en menos de 24 horas para coordinar día y modalidad.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="recursos">
+  <div class="wrap">
+    <div class="recursos-head">
+      <div>
+        <div class="kicker"><span class="dot"></span><span>Recursos</span></div>
+        <h2 class="title" style="font-size:36px;max-width:18ch;margin:0">Ideas para acompañarte <span class="fade">entre sesiones.</span></h2>
+      </div>
+      <a style="cursor:default">Ver todos los artículos ↗</a>
+    </div>
+    <div class="articles">
+      <article class="article">
+        <img src="assets/umbral-respirar.webp" alt="Persona respirando con calma junto a una ventana" width="1536" height="1024" loading="lazy" decoding="async">
+        <div class="article-body">
+          <span class="article-tag">ANSIEDAD</span>
+          <h3>5 señales de que tu ansiedad ya necesita apoyo profesional</h3>
+          <p>6 min de lectura</p>
+        </div>
+      </article>
+      <article class="article">
+        <img src="assets/umbral-conversacion.webp" alt="Manos en una conversación cercana durante una sesión" width="1536" height="1024" loading="lazy" decoding="async">
+        <div class="article-body">
+          <span class="article-tag">RELACIONES</span>
+          <h3>Cómo poner límites sin sentir culpa después</h3>
+          <p>4 min de lectura</p>
+        </div>
+      </article>
+      <article class="article">
+        <img src="assets/umbral-calma.webp" alt="Paisaje sereno que transmite calma" width="1536" height="1024" loading="lazy" decoding="async">
+        <div class="article-body">
+          <span class="article-tag">DUELO</span>
+          <h3>Duelo: no se trata de superarlo, sino de aprender a convivir</h3>
+          <p>7 min de lectura</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <div>
+      <div class="kicker on-dark"><span class="dot"></span><span>Contacto</span></div>
+      <h2>Hoy puede ser tu <span style="color:#C4F24C">primer paso.</span></h2>
+      <p>Escríbeme y agenda tu primera sesión. Respondo personalmente en menos de 24 horas. Tu consulta es 100% confidencial.</p>
+      <a class="btn btn-wa" href="https://wa.me/51900333444?text=Hola%20Daniela%2C%20me%20gustar%C3%ADa%20empezar%20terapia" target="_blank" rel="noopener">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="#0A2A18"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.3.1.9-.1 1.5z"/></svg>
+        Escribir por WhatsApp
+      </a>
+      <div class="info-list">
+        <div><span>Consultorio</span> Av. Larco 345, of. 802 — Miraflores, Lima</div>
+        <div><span>Horarios</span> Lun–Vie 9:00–21:00 · Sáb 9:00–14:00</div>
+        <div><span>Correo</span> hola@umbralpsicologia.pe</div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="return false">
+      <div class="form-row">
+        <label>Nombre<input type="text" placeholder="Tu nombre"></label>
+        <label>Teléfono<input type="tel" placeholder="+51 9XX XXX XXX"></label>
+      </div>
+      <label>Correo<input type="email" placeholder="tucorreo@ejemplo.com"></label>
+      <label>Motivo de consulta
+        <select>
+          <option>Ansiedad y estrés</option>
+          <option>Depresión / estado de ánimo</option>
+          <option>Autoestima</option>
+          <option>Terapia de pareja</option>
+          <option>Duelo</option>
+          <option>Otro</option>
+        </select>
+      </label>
+      <label>Cuéntame brevemente<textarea rows="3" placeholder="Lo que quieras compartir para empezar…"></textarea></label>
+      <label class="consent"><input type="checkbox">Acepto la política de privacidad y el tratamiento confidencial de mis datos.</label>
+      <button type="submit" class="btn btn-deep" style="justify-content:center;padding:15px;border-radius:100px;font-size:15px;margin-top:4px">Enviar y agendar mi cita ↗</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <svg width="26" height="26" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="13" stroke="#fff" stroke-width="2.4"/><path d="M15 8v14M15 8c-3 2-3 5 0 7 3 2 3 5 0 7" stroke="#C4F24C" stroke-width="2.4" stroke-linecap="round"/></svg>
+        Umbral
+      </div>
+      <p>Psicología clínica en Lima. Un espacio confidencial para entender lo que sientes y avanzar a tu ritmo.</p>
+      <div class="socials">
+        <a style="cursor:default">in</a>
+        <a style="cursor:default">ig</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <p class="h">Navegación</p>
+      <div class="links">
+        <a href="#especialidades">Especialidades</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#precios">Modalidades y tarifas</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <p class="h">Recursos</p>
+      <div class="links">
+        <a style="cursor:default">Artículos</a>
+        <a href="#faq">Preguntas frecuentes</a>
+        <a style="cursor:default">Política de privacidad</a>
+        <a href="https://wa.me/51900333444" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="watermark"><div>UMBRAL PSICOLOGÍA</div></div>
+  <div class="copyright">
+    <div class="wrap">
+      <div>© 2026 Umbral Psicología — Lima, Perú · Demo ficticia</div>
+      <div>Diseñado por <a href="https://nozoestudio.com" target="_blank" rel="noopener">Nozoe Studio</a></div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/51900333444?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20las%20sesiones" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.3.1.9-.1 1.5z"/></svg>
+</a>
+
+<script>
+(function(){
+  function closeMenu(){
+    var links = document.getElementById('mn-links');
+    var btn = document.querySelector('.mn-toggle');
+    if (!links || !btn) return;
+    links.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Abrir menú');
+    document.body.classList.remove('menu-open');
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.mn-toggle');
+    if (btn){
+      var links = document.getElementById('mn-links');
+      if (!links) return;
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+      links.classList.toggle('is-open', !open);
+      document.body.classList.toggle('menu-open', !open);
+      return;
+    }
+    if (e.target.closest('#mn-links a')) closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { closeMenu(); var b = document.querySelector('.mn-toggle'); if (b) b.focus(); }
+  });
+})();
+</script>
+
+</body>
+</html>

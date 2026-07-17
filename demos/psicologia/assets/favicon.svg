@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Nozoe Studio</title>
+  <rect width="64" height="64" rx="14" fill="#1D2A40"/>
+  <path d="M16 46V18h7l18 20V18h7v28h-7L23 26v20h-7Z" fill="#E94E1B"/>
+</svg>

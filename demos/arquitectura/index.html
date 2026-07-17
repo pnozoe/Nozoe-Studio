@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estudio de arquitectura en Lima especializado en viviendas, remodelaciones e interiores comerciales. Diseño contextual, expedientes y acompañamiento de obra.">
+  <meta name="theme-color" content="#141513">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vértice Estudio — Arquitectura que pertenece a su lugar">
+  <meta property="og:description" content="Arquitectura residencial y comercial en Lima: del concepto al detalle construido.">
+  <meta property="og:image" content="assets/hero-casa-pacifico.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Estudio de arquitectura en Lima | Vértice Estudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Nunito:wght@800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Vértice Estudio",
+    "description": "Estudio conceptual de arquitectura, interiores y remodelación en Lima, Perú.",
+    "areaServed": {"@type": "City", "name": "Lima"},
+    "knowsAbout": ["Arquitectura residencial", "Diseño de interiores", "Remodelación", "Expedientes técnicos", "Supervisión de obra"],
+    "address": {"@type": "PostalAddress", "addressLocality": "Lima", "addressCountry": "PE"}
+  }
+  </script>
+  <style>
+    :root{
+      --ink:#141513;
+      --ink-soft:#20211e;
+      --bone:#f0eee7;
+      --paper:#f8f7f2;
+      --stone:#d8d3c8;
+      --clay:#a86443;
+      --sage:#777d6d;
+      --muted:#77776f;
+      --line:rgba(20,21,19,.18);
+      --font:'Manrope',sans-serif;
+      --pad:clamp(22px,4vw,64px);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{font-family:var(--font);background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body.menu-open{overflow:hidden}
+    img{display:block;width:100%;height:auto}
+    a{color:inherit}
+    button{font:inherit}
+    ::selection{background:var(--clay);color:#fff}
+    .skip{position:fixed;left:16px;top:-60px;z-index:999;background:var(--paper);padding:12px 18px;text-decoration:none;transition:top .2s}
+    .skip:focus{top:16px}
+    .shell{width:min(100% - (var(--pad) * 2),1440px);margin-inline:auto}
+    .eyebrow{display:flex;align-items:center;gap:12px;text-transform:uppercase;letter-spacing:.16em;font-size:.67rem;font-weight:700}
+    .eyebrow::before{content:"";width:32px;height:1px;background:currentColor}
+    .section-head{display:grid;grid-template-columns:minmax(180px,.7fr) minmax(0,1.8fr);gap:40px;align-items:start;margin-bottom:clamp(48px,7vw,88px)}
+    .section-head h2,.display{font-size:clamp(2.35rem,5.8vw,6.6rem);font-weight:500;line-height:.93;letter-spacing:-.065em}
+    .section-head h2{font-size:clamp(2.5rem,5.2vw,5.5rem);max-width:13ch}
+    .link-arrow{display:inline-flex;align-items:center;gap:13px;text-decoration:none;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:7px}
+    .link-arrow span{transition:transform .2s}
+    .link-arrow:hover span{transform:translateX(5px)}
+
+    header{position:absolute;inset:0 0 auto;z-index:100;color:#fff;border-bottom:1px solid rgba(255,255,255,.22)}
+    header.is-scrolled{position:fixed;background:rgba(20,21,19,.94);backdrop-filter:blur(14px)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+    .brand{display:flex;align-items:center;gap:13px;text-decoration:none;font-size:.78rem;letter-spacing:.2em;font-weight:700}
+    .brand-mark{width:31px;height:31px;position:relative;border:1px solid currentColor}
+    .brand-mark::before,.brand-mark::after{content:"";position:absolute;background:currentColor}
+    .brand-mark::before{width:1px;height:40px;left:14px;top:-5px;transform:rotate(33deg)}
+    .brand-mark::after{width:16px;height:1px;left:7px;top:15px}
+    .nav-links{display:flex;align-items:center;gap:clamp(22px,3vw,48px);list-style:none}
+    .nav-links a{text-decoration:none;font-size:.73rem;text-transform:uppercase;letter-spacing:.12em;position:relative}
+    .nav-links a::after{content:"";position:absolute;left:0;bottom:-8px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .25s}
+    .nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+    .nav-cta{border:1px solid rgba(255,255,255,.55);padding:11px 17px!important}
+    .nav-cta::after{display:none}
+    .menu-toggle{display:none;background:none;border:0;color:#fff;width:42px;height:42px;cursor:pointer}
+    .menu-toggle span{display:block;width:24px;height:1px;background:currentColor;margin:7px auto;transition:.25s}
+
+    .demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
+    .demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
+    .demo-ribbon img{width:100%;height:auto}
+    .demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:4px}
+
+    @media(min-width:981px){.nav{padding-right:125px}}
+
+    .hero{min-height:100svh;background:var(--ink);color:#fff;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+    .hero-media{position:absolute;inset:0}
+    .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,14,12,.86) 0%,rgba(13,14,12,.36) 52%,rgba(13,14,12,.15)),linear-gradient(0deg,rgba(13,14,12,.68),transparent 48%)}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .hero-content{position:relative;z-index:2;padding-top:170px;padding-bottom:clamp(42px,6vw,88px)}
+    .hero .eyebrow{margin-bottom:clamp(28px,4vw,54px);color:#e1ddd3}
+    .hero h1{max-width:11.5ch;text-wrap:balance}
+    .hero h1 em{font-style:normal;color:#c8bbaa}
+    .hero-bottom{display:grid;grid-template-columns:1.3fr .8fr;gap:64px;align-items:end;margin-top:clamp(36px,5vw,64px)}
+    .hero-copy{max-width:54ch;color:#e1ddd3;font-size:clamp(.98rem,1.25vw,1.16rem)}
+    .hero-action{justify-self:end;color:#fff}
+    .hero-index{position:absolute;right:var(--pad);top:45%;z-index:2;writing-mode:vertical-rl;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+
+    .intro{padding:clamp(90px,13vw,190px) 0;background:var(--bone)}
+    .intro-grid{display:grid;grid-template-columns:.7fr 1.8fr;gap:40px}
+    .intro-copy h2{font-size:clamp(2rem,4.3vw,4.5rem);font-weight:500;line-height:1.07;letter-spacing:-.05em;max-width:19ch}
+    .intro-copy h2 span{color:var(--clay)}
+    .intro-media{grid-column:1/-1;margin-top:clamp(45px,7vw,95px);position:relative;overflow:hidden;aspect-ratio:2.15/1;background:var(--stone)}
+    .intro-media img{height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+    .intro-media:hover img{transform:scale(1.015)}
+    .intro-caption{position:absolute;left:0;bottom:0;background:var(--ink);color:var(--bone);padding:15px 20px;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase}
+    .intro-notes{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:70px;padding-top:24px;border-top:1px solid var(--line)}
+    .intro-notes p{max-width:44ch;color:#5f5f59;font-size:.95rem}
+    .intro-note strong{display:block;color:var(--ink);margin-bottom:9px;font-size:.73rem;text-transform:uppercase;letter-spacing:.1em}
+
+    .services{padding:clamp(90px,12vw,170px) 0;background:var(--paper)}
+    .service-list{border-top:1px solid var(--line)}
+    .service{display:grid;grid-template-columns:90px 1.1fr 1fr 44px;gap:30px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);transition:padding .25s,background .25s}
+    .service:hover{padding-inline:20px;background:var(--bone)}
+    .service-num{font-size:.68rem;letter-spacing:.15em;color:var(--clay)}
+    .service h3{font-weight:500;font-size:clamp(1.25rem,2vw,2rem);letter-spacing:-.035em}
+    .service p{color:var(--muted);font-size:.9rem;max-width:46ch}
+    .service-icon{font-size:1.4rem;text-align:right}
+
+    .projects{padding:clamp(90px,12vw,170px) 0;background:var(--ink);color:var(--bone)}
+    .projects .section-head{margin-bottom:60px}
+    .projects .eyebrow{color:#b6b2a8}
+    .project-grid{display:grid;grid-template-columns:1.16fr .84fr;gap:clamp(24px,4vw,64px)}
+    .project-card{text-decoration:none;display:block}
+    .project-card:nth-child(2){margin-top:clamp(80px,13vw,180px)}
+    .project-image{overflow:hidden;background:#292a27;aspect-ratio:1.3/1}
+    .project-card:nth-child(2) .project-image{aspect-ratio:1/1.08}
+    .project-image img{height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+    .project-card:hover img{transform:scale(1.025)}
+    .project-meta{display:grid;grid-template-columns:1fr auto;gap:20px;padding-top:19px;border-top:1px solid rgba(255,255,255,.2);margin-top:18px}
+    .project-meta h3{font-size:clamp(1.25rem,2vw,2rem);font-weight:500;letter-spacing:-.03em}
+    .project-meta p{color:#aaa79f;font-size:.73rem;text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
+    .project-meta span{font-size:1.5rem}
+    .demo-tag{display:inline-block;margin-top:12px;color:#8f8d86;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase}
+
+    .case{background:var(--stone);padding:clamp(90px,12vw,170px) 0}
+    .case-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:clamp(48px,8vw,130px);align-items:center}
+    .case-image{height:min(76vw,850px);overflow:hidden}
+    .case-image img{height:100%;object-fit:cover}
+    .case-copy .eyebrow{margin-bottom:34px}
+    .case-copy h2{font-size:clamp(2.5rem,5vw,5.4rem);font-weight:500;line-height:.94;letter-spacing:-.06em;margin-bottom:28px}
+    .case-copy>p{color:#50514b;max-width:55ch}
+    .case-data{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:44px 0;padding:24px 0;border-block:1px solid rgba(20,21,19,.24)}
+    .case-data strong{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}
+    .case-data span{color:#5d5e57;font-size:.84rem}
+    .case-points{list-style:none;margin-bottom:38px}
+    .case-points li{display:flex;gap:16px;padding:10px 0;border-bottom:1px solid rgba(20,21,19,.14);font-size:.9rem}
+    .case-points li::before{content:"↳";color:var(--clay)}
+
+    .process{padding:clamp(90px,12vw,170px) 0;background:var(--paper)}
+    .process-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+    .step{padding:30px 24px 38px 0;border-right:1px solid var(--line);min-height:290px;position:relative}
+    .step:not(:first-child){padding-left:24px}
+    .step:last-child{border-right:0}
+    .step-num{font-size:.68rem;letter-spacing:.14em;color:var(--clay)}
+    .step h3{font-size:1.12rem;font-weight:600;margin:70px 0 14px}
+    .step p{font-size:.82rem;color:var(--muted)}
+
+    .rigor{background:var(--ink-soft);color:var(--bone);padding:clamp(90px,12vw,170px) 0;position:relative;isolation:isolate;overflow:hidden}
+    .rigor-bg{position:absolute;inset:0;z-index:-2}
+    .rigor-bg img{height:100%;object-fit:cover;object-position:center}
+    .rigor::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(15,16,14,.96) 0%,rgba(15,16,14,.87) 48%,rgba(15,16,14,.78) 100%)}
+    .rigor-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(60px,10vw,160px)}
+    .rigor h2{font-size:clamp(2.5rem,5vw,5rem);font-weight:500;line-height:.96;letter-spacing:-.055em;margin-top:35px}
+    .rigor h2 span{color:#bca28f}
+    .rigor-items{border-top:1px solid rgba(255,255,255,.22)}
+    .rigor-item{padding:27px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+    .rigor-item h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+    .rigor-item p{color:#c8c6be;font-size:.87rem;max-width:58ch}
+    .rigor-source{display:block;margin-top:32px;color:#b8b6ae;font-size:.73rem;line-height:1.65}
+    .rigor-source a{color:var(--bone);text-underline-offset:4px}
+
+    .contact{background:var(--bone);padding:clamp(90px,12vw,170px) 0 0}
+    .faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(48px,9vw,140px);padding-bottom:clamp(90px,11vw,150px)}
+    .faq-intro h2{font-size:clamp(2.6rem,5vw,5rem);font-weight:500;line-height:.96;letter-spacing:-.055em;margin:30px 0}
+    .faq-intro p{max-width:36ch;color:var(--muted)}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-item:first-child{border-top:1px solid var(--line)}
+    .faq-question{width:100%;display:flex;justify-content:space-between;gap:30px;align-items:center;padding:24px 0;background:none;border:0;text-align:left;cursor:pointer;color:var(--ink);font-weight:600}
+    .faq-question span{font-size:1.3rem;font-weight:400;transition:transform .2s}
+    .faq-answer{display:grid;grid-template-rows:0fr;transition:grid-template-rows .25s}
+    .faq-answer>div{overflow:hidden}
+    .faq-answer p{color:var(--muted);font-size:.9rem;padding:0 44px 24px 0;max-width:65ch}
+    .faq-item.open .faq-answer{grid-template-rows:1fr}
+    .faq-item.open .faq-question span{transform:rotate(45deg)}
+    .cta-panel{background:var(--clay);color:#fff;padding:clamp(70px,9vw,130px) var(--pad)}
+    .cta-inner{width:min(100%,1440px);margin:auto;display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(60px,9vw,145px);align-items:start}
+    .cta-copy{position:sticky;top:120px}
+    .cta-panel h2{font-size:clamp(2.8rem,6vw,6.3rem);font-weight:500;line-height:.91;letter-spacing:-.065em;max-width:9ch}
+    .cta-copy p{font-size:.94rem;margin-top:32px;max-width:36ch;color:#f2ddd2}
+    .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}
+    .form-field{display:flex;flex-direction:column;gap:9px}
+    .form-field.full{grid-column:1/-1}
+    .form-field label{font-size:.65rem;text-transform:uppercase;letter-spacing:.13em;font-weight:700;color:#f6e5dc}
+    .form-field input,.form-field select,.form-field textarea{width:100%;border:0;border-bottom:1px solid rgba(255,255,255,.55);border-radius:0;background:transparent;color:#fff;padding:10px 0 13px;font:500 .95rem var(--font);outline:none;transition:border-color .2s}
+    .form-field input::placeholder,.form-field textarea::placeholder{color:rgba(255,255,255,.58)}
+    .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#fff}
+    .form-field select{appearance:auto;color-scheme:dark}
+    .form-field select option{background:var(--ink);color:#fff}
+    .form-field textarea{resize:vertical;min-height:105px}
+    .form-actions{grid-column:1/-1;display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:8px}
+    .submit-btn{border:1px solid #fff;background:#fff;color:var(--ink);padding:15px 24px;cursor:pointer;font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.11em;transition:.2s}
+    .submit-btn:hover{background:transparent;color:#fff}
+    .form-note{color:#f2ddd2;font-size:.7rem;max-width:40ch}
+    .form-status{grid-column:1/-1;min-height:1.5em;font-size:.82rem;color:#fff}
+
+    footer{background:var(--ink);color:#d2d0c8;padding:68px 0 34px}
+    .footer-grid{display:grid;grid-template-columns:1.1fr .65fr .65fr;gap:50px;padding-bottom:70px}
+    .footer-brand p{margin-top:22px;color:#8d8e87;font-size:.85rem;max-width:34ch}
+    .footer-col strong{display:block;color:#fff;text-transform:uppercase;letter-spacing:.12em;font-size:.65rem;margin-bottom:18px}
+    .footer-col a{display:block;color:#aaa9a2;text-decoration:none;font-size:.84rem;margin-bottom:10px}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:25px;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:#797a74;font-size:.7rem}
+    .footer-bottom a{color:#aaa9a2}
+
+    .wa{position:fixed;right:24px;bottom:24px;z-index:90;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--paper);color:var(--ink);box-shadow:0 10px 35px rgba(0,0,0,.2);text-decoration:none;border:1px solid var(--line);transition:transform .2s}
+    .wa:hover{transform:translateY(-4px)}
+    .wa svg{width:23px;height:23px}
+    .reveal-ready [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    [data-reveal].visible{opacity:1;transform:none}
+
+    @media(max-width:980px){
+      .demo-ribbon{top:77px;right:0;width:30%;transform:none;filter:drop-shadow(0 4px 7px rgba(0,0,0,.25))}
+      .demo-ribbon:hover{transform:translateY(-2px)}
+      .nav-links{position:fixed;inset:0;background:var(--ink);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:90px var(--pad);gap:26px;transform:translateX(100%);transition:transform .3s}
+      .nav-links a{font-size:clamp(1.6rem,6vw,3.6rem);letter-spacing:-.03em;text-transform:none}
+      .nav-links .nav-cta{font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+      .nav-links.open{transform:none}
+      .menu-toggle{display:block;position:relative;z-index:2}
+      .menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(4px) rotate(45deg)}
+      .menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-4px) rotate(-45deg)}
+      .intro-grid,.section-head{grid-template-columns:1fr}
+      .intro-notes{grid-column:auto}
+      .process-grid{grid-template-columns:repeat(2,1fr)}
+      .step{border-bottom:1px solid var(--line)}
+      .step:nth-child(2){border-right:0}
+      .case-grid,.rigor-grid,.faq-wrap{grid-template-columns:1fr}
+      .case-image{height:75svh;max-height:750px}
+    }
+    @media(max-width:700px){
+      .shell{width:min(100% - 40px,1440px)}
+      :root{--pad:20px}
+      .nav{height:72px}
+      .brand{font-size:.7rem}
+      .hero{min-height:92svh}
+      .hero-content{padding-top:135px}
+      .hero-bottom{grid-template-columns:1fr;gap:30px}
+      .hero-action{justify-self:start}
+      .hero-index{display:none}
+      .intro-notes{grid-template-columns:1fr;margin-top:45px}
+      .intro-media{aspect-ratio:1/1.05}
+      .service{grid-template-columns:45px 1fr 30px;gap:15px}
+      .service p{grid-column:2/4;padding-top:2px}
+      .project-grid{grid-template-columns:1fr}
+      .project-card:nth-child(2){margin-top:35px}
+      .project-card:nth-child(2) .project-image,.project-image{aspect-ratio:1/1.08}
+      .case-data{grid-template-columns:1fr;gap:20px}
+      .process-grid{grid-template-columns:1fr}
+      .step,.step:not(:first-child){padding:25px 0;min-height:auto;border-right:0}
+      .step h3{margin:32px 0 10px}
+      .cta-inner{grid-template-columns:1fr}
+      .cta-copy{position:static}
+      .contact-form{grid-template-columns:1fr}
+      .form-field.full,.form-actions,.form-status{grid-column:auto}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .footer-brand{grid-column:1/-1}
+      .wa{right:16px;bottom:16px;width:50px;height:50px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+      [data-reveal]{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+    <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
+  </a>
+  <header id="header">
+    <nav class="shell nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Vértice Estudio, inicio"><span class="brand-mark" aria-hidden="true"></span>VÉRTICE / ESTUDIO</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#contacto" class="nav-cta">Conversemos</a></li>
+      </ul>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- 01 — Hero -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-media"><img src="assets/hero-casa-pacifico.webp" alt="Residencia contemporánea de concreto y piedra frente al litoral peruano" width="2200" height="1100" fetchpriority="high"></div>
+      <div class="shell hero-content">
+        <p class="eyebrow">Arquitectura · Interiores · Lima</p>
+        <h1 class="display" id="hero-title">Espacios que <em>pertenecen</em> a su lugar.</h1>
+        <div class="hero-bottom">
+          <p class="hero-copy">Diseñamos viviendas y espacios comerciales desde una idea esencial: que la arquitectura responda al clima, a la vida y a la inversión de quienes la habitan.</p>
+          <a class="link-arrow hero-action" href="#proyectos">Explorar proyectos <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <span class="hero-index">Lima, Perú · 12° S</span>
+    </section>
+
+    <!-- 02 — Posicionamiento -->
+    <section class="intro" id="estudio" aria-labelledby="intro-title">
+      <div class="shell intro-grid">
+        <p class="eyebrow" data-reveal>El estudio</p>
+        <div class="intro-copy" data-reveal>
+          <h2 id="intro-title">No diseñamos objetos aislados. Diseñamos una relación entre <span>luz, materia y vida.</span></h2>
+        </div>
+        <figure class="intro-media" data-reveal>
+          <img src="assets/estudio-arquitectos.webp" alt="Equipo ficticio de arquitectos revisando una maqueta en el estudio Vértice" width="1536" height="1024" loading="lazy">
+          <figcaption class="intro-caption">Vértice Estudio · Imagen conceptual</figcaption>
+        </figure>
+        <div class="intro-notes" data-reveal>
+          <div class="intro-note"><strong>Contexto antes que estilo</strong><p>Cada proyecto parte del terreno, la orientación, el clima costero o andino y las rutinas reales del usuario.</p></div>
+          <div class="intro-note"><strong>Claridad antes que exceso</strong><p>Traducimos decisiones complejas en un proceso legible: alcance, entregables, inversión y responsabilidades desde el inicio.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — Servicios -->
+    <section class="services" id="servicios" aria-labelledby="services-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal>Servicios / 01—05</p>
+          <h2 id="services-title" data-reveal>Del primer trazo al espacio construido.</h2>
+        </div>
+        <div class="service-list" data-reveal>
+          <article class="service"><span class="service-num">01</span><h3>Arquitectura residencial</h3><p>Casas, viviendas de playa y edificios de escala íntima concebidos alrededor de cómo quieres vivir.</p><span class="service-icon" aria-hidden="true">↗</span></article>
+          <article class="service"><span class="service-num">02</span><h3>Remodelación integral</h3><p>Relectura de departamentos y casas existentes para ganar luz, continuidad, almacenamiento y valor.</p><span class="service-icon" aria-hidden="true">↗</span></article>
+          <article class="service"><span class="service-num">03</span><h3>Interiores comerciales</h3><p>Hospitalidad, retail y oficinas donde identidad, operación y experiencia funcionan como un solo sistema.</p><span class="service-icon" aria-hidden="true">↗</span></article>
+          <article class="service"><span class="service-num">04</span><h3>Expediente y licencias</h3><p>Desarrollo coordinado de arquitectura y especialidades, con documentación según el alcance normativo.</p><span class="service-icon" aria-hidden="true">↗</span></article>
+          <article class="service"><span class="service-num">05</span><h3>Dirección y acompañamiento</h3><p>Consultas en obra, revisión de muestras y seguimiento para proteger la intención del proyecto.</p><span class="service-icon" aria-hidden="true">↗</span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — Proyectos -->
+    <section class="projects" id="proyectos" aria-labelledby="projects-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal>Selección / 2026</p>
+          <h2 id="projects-title" data-reveal>Dos escalas.<br>Una misma precisión.</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card" data-reveal>
+            <div class="project-image"><img src="assets/proyecto-casa-patio.webp" alt="Interior de vivienda urbana organizada alrededor de un patio central" width="2200" height="1467" loading="lazy"></div>
+            <div class="project-meta"><div><h3>Casa Patio</h3><p>Vivienda urbana · Santiago de Surco</p><small class="demo-tag">Proyecto conceptual · Demo</small></div><span aria-hidden="true">↗</span></div>
+          </article>
+          <article class="project-card" data-reveal>
+            <div class="project-image"><img src="assets/proyecto-barranco.webp" alt="Rehabilitación de casona para cafetería y galería en Barranco" width="2200" height="1467" loading="lazy"></div>
+            <div class="project-meta"><div><h3>Umbral Barranco</h3><p>Hospitalidad y galería · Barranco</p><small class="demo-tag">Proyecto conceptual · Demo</small></div><span aria-hidden="true">↗</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — Caso -->
+    <section class="case" aria-labelledby="case-title">
+      <div class="shell case-grid">
+        <div class="case-image" data-reveal><img src="assets/caso-casa-litoral.webp" alt="Casa de concreto, piedra y celosías de madera frente al mar peruano" width="1467" height="2200" loading="lazy"></div>
+        <div class="case-copy" data-reveal>
+          <p class="eyebrow">Caso conceptual / Litoral</p>
+          <h2 id="case-title">Habitar la costa sin competir con ella.</h2>
+          <p>Una casa compacta al sur de Lima ensaya una respuesta a tres condiciones del litoral: radiación intensa en verano, viento salino y la necesidad de abrirse al paisaje sin perder intimidad.</p>
+          <div class="case-data"><div><strong>Tipología</strong><span>Vivienda temporal</span></div><div><strong>Alcance</strong><span>Concepto integral</span></div><div><strong>Estado</strong><span>Estudio de diseño</span></div></div>
+          <ul class="case-points"><li>Aleros profundos para controlar el asoleamiento.</li><li>Patio protegido que organiza la vida exterior.</li><li>Materiales honestos pensados para envejecer con dignidad.</li></ul>
+          <span class="demo-tag">Imagen y proyecto desarrollados para esta demostración</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — Proceso -->
+    <section class="process" id="proceso" aria-labelledby="process-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal>Método / 5 etapas</p>
+          <h2 id="process-title" data-reveal>Diseñar también es hacer visible el camino.</h2>
+        </div>
+        <div class="process-grid" data-reveal>
+          <article class="step"><span class="step-num">01 / ESCUCHA</span><h3>Diagnóstico</h3><p>Necesidades, lugar, expectativas, restricciones y rango de inversión.</p></article>
+          <article class="step"><span class="step-num">02 / IDEA</span><h3>Concepto</h3><p>Estrategia espacial, referencias, distribución y primeras decisiones.</p></article>
+          <article class="step"><span class="step-num">03 / PRECISIÓN</span><h3>Desarrollo</h3><p>Planos, materialidad, especialidades y visualización del proyecto.</p></article>
+          <article class="step"><span class="step-num">04 / GESTIÓN</span><h3>Expediente</h3><p>Documentación y coordinación requerida según el tipo de intervención.</p></article>
+          <article class="step"><span class="step-num">05 / MATERIA</span><h3>Obra</h3><p>Acompañamiento para resolver detalles y cuidar la intención diseñada.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 — Rigor local -->
+    <section class="rigor" id="peru" aria-labelledby="rigor-title">
+      <div class="rigor-bg" aria-hidden="true"><img src="assets/fondo-disenar-peru.webp" alt="" width="1774" height="887" loading="lazy"></div>
+      <div class="shell rigor-grid">
+        <div data-reveal><p class="eyebrow">Diseñar en Perú</p><h2 id="rigor-title">Belleza con <span>responsabilidad técnica.</span></h2></div>
+        <div data-reveal>
+          <div class="rigor-items">
+            <article class="rigor-item"><h3>Normativa desde el concepto</h3><p>El Reglamento Nacional de Edificaciones establece requisitos mínimos obligatorios para proyectar y ejecutar edificaciones en el país.</p></article>
+            <article class="rigor-item"><h3>Especialidades coordinadas</h3><p>Según el alcance, un expediente puede integrar arquitectura, estructuras, instalaciones sanitarias y eléctricas, además de sus memorias.</p></article>
+            <article class="rigor-item"><h3>Permisos según cada intervención</h3><p>Construir, ampliar, remodelar o demoler puede requerir licencia municipal y documentación específica. El diagnóstico evita diseñar sobre supuestos.</p></article>
+            <article class="rigor-item"><h3>Profesionales responsables</h3><p>Los entregables técnicos deben ser desarrollados y suscritos por los profesionales que correspondan a cada especialidad.</p></article>
+          </div>
+          <small class="rigor-source">Información de referencia basada en el <a href="https://www.gob.pe/institucion/vivienda/informes-publicaciones/2309793-reglamento-nacional-" target="_blank" rel="noopener">Reglamento Nacional de Edificaciones</a> y los <a href="https://www.gob.pe/institucion/vivienda/informes-publicaciones/2311897-formatos-y-formularios-relativos-a-los-procedimientos-de-licencias-de-habilitacion-urbana-y-licencias-de-edificacion" target="_blank" rel="noopener">formatos de licencias del Ministerio de Vivienda</a>. La exigencia aplicable debe revisarse para cada proyecto y municipalidad.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 — FAQ y contacto -->
+    <section class="contact" id="contacto" aria-labelledby="faq-title">
+      <div class="shell faq-wrap">
+        <div class="faq-intro" data-reveal><p class="eyebrow">Antes de empezar</p><h2 id="faq-title">Preguntas honestas. Respuestas claras.</h2><p>Cada encargo es distinto, pero estas son las dudas que conviene resolver en la primera conversación.</p></div>
+        <div class="faq-list" data-reveal>
+          <article class="faq-item"><button class="faq-question" aria-expanded="false">¿Cuánto cuesta contratar a un arquitecto?<span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>Depende del área, complejidad, alcance y nivel de acompañamiento. Después de una primera reunión entregamos una propuesta con fases, entregables y honorarios; no usamos una cifra genérica que luego cambia.</p></div></div></article>
+          <article class="faq-item"><button class="faq-question" aria-expanded="false">¿Pueden diseñar dentro de un presupuesto definido?<span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>Sí. El rango de inversión es una variable de diseño desde el diagnóstico. Ayuda a priorizar área, materialidad y etapas antes de desarrollar decisiones difíciles de sostener.</p></div></div></article>
+          <article class="faq-item"><button class="faq-question" aria-expanded="false">¿Toda remodelación necesita licencia?<span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>No todas tienen el mismo procedimiento. El tipo de intervención, la posible modificación estructural, el aumento de área y la situación legal del inmueble determinan qué corresponde. Se revisa caso por caso con la municipalidad competente.</p></div></div></article>
+          <article class="faq-item"><button class="faq-question" aria-expanded="false">¿Trabajan fuera de Lima?<span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>El diseño puede desarrollarse para proyectos en otras regiones, sujeto a coordinación de visitas, levantamientos y profesionales locales cuando el encargo lo requiera.</p></div></div></article>
+        </div>
+      </div>
+      <div class="cta-panel" id="consulta">
+        <div class="cta-inner">
+          <div class="cta-copy" data-reveal>
+            <p class="eyebrow">Nueva consulta</p>
+            <h2>Tu proyecto empieza con una conversación.</h2>
+            <p>Cuéntanos dónde está, qué quieres transformar y en qué etapa te encuentras. Responderemos con los siguientes pasos recomendados.</p>
+          </div>
+          <form class="contact-form" id="contact-form" action="#contacto" method="post" data-reveal>
+            <div class="form-field"><label for="nombre">Nombre y apellido *</label><input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" required></div>
+            <div class="form-field"><label for="email">Correo electrónico *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required></div>
+            <div class="form-field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+51 999 999 999"></div>
+            <div class="form-field"><label for="tipo">Tipo de proyecto *</label><select id="tipo" name="tipo" required><option value="" selected disabled>Selecciona una opción</option><option>Vivienda nueva</option><option>Remodelación</option><option>Interior comercial</option><option>Expediente y licencias</option><option>Otro</option></select></div>
+            <div class="form-field"><label for="ubicacion">Ubicación del proyecto</label><input id="ubicacion" name="ubicacion" type="text" autocomplete="address-level2" placeholder="Distrito, ciudad o región"></div>
+            <div class="form-field"><label for="etapa">Etapa actual</label><select id="etapa" name="etapa"><option value="" selected>Por definir</option><option>Explorando posibilidades</option><option>Ya cuento con un inmueble</option><option>Tengo planos o anteproyecto</option><option>Listo para iniciar</option></select></div>
+            <div class="form-field full"><label for="mensaje">Cuéntanos sobre el proyecto *</label><textarea id="mensaje" name="mensaje" placeholder="Área aproximada, necesidades, plazo o rango de inversión..." required></textarea></div>
+            <div class="form-actions"><button class="submit-btn" type="submit">Enviar consulta →</button><small class="form-note">Formulario demostrativo: no transmite ni almacena información.</small></div>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true"></span>VÉRTICE / ESTUDIO</a><p>Arquitectura residencial, remodelación e interiores comerciales con base en Lima.</p></div>
+        <div class="footer-col"><strong>Estudio</strong><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#proceso">Proceso</a></div>
+        <div class="footer-col"><strong>Contacto</strong><a href="https://wa.me/51900111222" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:hola@vertice-estudio.pe">hola@vertice-estudio.pe</a><a href="#inicio">Lima, Perú</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Vértice Estudio · Prototipo conceptual, datos de contacto ficticios.</span><span>Dirección creativa por <a href="https://nozoestudio.com" target="_blank" rel="noopener">Nozoe Studio</a></span></div>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/51900111222?text=Hola%20V%C3%A9rtice%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Conversar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.3.1.9-.1 1.5z"/></svg>
+  </a>
+
+  <script>
+    const header = document.querySelector('#header');
+    const menuButton = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-links');
+
+    const closeMenu = () => {
+      menu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menú');
+    };
+
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!open));
+      menuButton.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+      menu.classList.toggle('open');
+      document.body.classList.toggle('menu-open');
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 40), {passive:true});
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const opening = !item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        item.classList.toggle('open', opening);
+        button.setAttribute('aria-expanded', String(opening));
+      });
+    });
+
+    const contactForm = document.querySelector('#contact-form');
+    const formStatus = document.querySelector('#form-status');
+    contactForm.addEventListener('submit', event => {
+      event.preventDefault();
+      formStatus.textContent = 'Gracias. En el sitio final, esta consulta se enviará al estudio.';
+    });
+
+    document.documentElement.classList.add('reveal-ready');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      }), {threshold:.12});
+      document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>

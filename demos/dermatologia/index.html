@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dra. Valeria Nakamura — Dermatología clínica y estética en San Isidro, Lima</title>
+<meta name="description" content="Demo conceptual de dermatología clínica y estética en San Isidro, Lima: rejuvenecimiento facial, láser, toxina botulínica y tratamientos con enfoque en resultados naturales.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:locale" content="es_PE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dra. Valeria Nakamura — Dermatología de especialista en Lima">
+<meta property="og:description" content="Rejuvenecimiento facial, láser, toxina botulínica y dermatología clínica en San Isidro, Lima. Demo conceptual de Nozoe Studio.">
+<meta property="og:image" content="assets/hero-light.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F4F4F2;color:#141414;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#141414;text-decoration:none}
+a:hover{color:#6E6E6A}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
+.demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
+.demo-ribbon img{display:block;width:100%;height:auto}
+.demo-ribbon:focus-visible,.tratamiento-control:focus-visible{outline:2px solid #141414;outline-offset:5px}
+.tratamiento-item{border-top:1px solid rgba(20,20,20,.12);transition:background .25s ease}
+.tratamiento-item:hover{background:#ECEBE6}
+.tratamiento-control{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:baseline;justify-content:space-between;gap:20px;width:100%;padding:20px 0;color:#141414;transition:padding .25s ease,color .25s ease}
+.tratamiento-item:hover .tratamiento-control{padding-inline:18px}
+.tratamiento-icon{transition:transform .25s ease,color .25s ease}
+.tratamiento-item:hover .tratamiento-icon{transform:scale(1.12);color:#141414!important}
+.tratamiento-panel{max-height:0;opacity:0;overflow:hidden;transition:max-height .58s cubic-bezier(.2,.7,.2,1),opacity .25s ease}
+.tratamiento-panel.is-open{max-height:1400px;opacity:1}
+.tratamiento-panel-inner{transform:translateY(-10px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.tratamiento-panel.is-open .tratamiento-panel-inner{transform:none}
+@media(prefers-reduced-motion:reduce){.tratamiento-item,.tratamiento-control,.tratamiento-icon,.tratamiento-panel,.tratamiento-panel-inner{transition:none}}
+body.menu-open{overflow:hidden}
+.mn-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid rgba(20,20,20,.25);border-radius:50%;background:transparent;cursor:pointer;flex:none}
+.mn-toggle svg{width:18px;height:18px}
+@media(max-width:760px){
+  .demo-ribbon{top:70px;right:0;width:30%;transform:none}.demo-ribbon:hover{transform:translateY(-2px)}
+  .mn-toggle{display:inline-flex;position:relative;z-index:151}
+  .mn-links{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:100vh!important;z-index:150!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:26px!important;padding:6rem 2rem 3rem!important;background:#F4F4F2!important;box-sizing:border-box!important;visibility:hidden;opacity:0;transform:translateY(-1rem);transition:opacity .25s ease,transform .25s ease,visibility .25s;text-transform:none!important}
+  .mn-links.is-open{visibility:visible;opacity:1;transform:translateY(0)}
+  .mn-links a{font-size:24px!important;letter-spacing:0!important;color:#141414!important}
+  .mn-links a.mn-cta{align-self:flex-start;border-radius:999px;padding:12px 24px!important}
+}
+</style>
+</helmet>
+
+<a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+  <img src="./assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
+</a>
+
+<!-- ===== NAV ===== -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(244,244,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(20,20,20,.08)">
+  <div style="max-width:1200px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <span style="font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap">Dra. Nakamura</span>
+    <button type="button" class="mn-toggle" aria-expanded="false" aria-controls="mn-links" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#141414" stroke-linecap="round" stroke-width="1.6"/></svg>
+    </button>
+    <nav class="mn-links" id="mn-links" style="display:flex;gap:28px;align-items:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E6E6A">
+      <a href="#sobre" style="color:#6E6E6A" style-hover="color:#141414">Sobre</a>
+      <a href="#servicios" style="color:#6E6E6A" style-hover="color:#141414">Tratamientos</a>
+      <a href="#consultorio" style="color:#6E6E6A" style-hover="color:#141414">Consultorio</a>
+      <a href="{{ waLink }}" target="_blank" rel="noopener" class="mn-cta" style="color:#141414;border:1px solid #141414;padding:10px 18px;border-radius:999px;font-weight:500" style-hover="background:#141414;color:#F4F4F2">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== 1. HERO — variante B: foto completa clara ===== -->
+<sc-if value="{{ heroB }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="Hero" style="position:relative;min-height:calc(100svh - 69px);display:flex;flex-direction:column;justify-content:flex-end;background:#DEDCD6;overflow:hidden">
+  <img src="./assets/hero-light.webp" alt="" aria-hidden="true" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right">
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(244,244,242,.92) 0%,rgba(244,244,242,.35) 38%,rgba(244,244,242,0) 65%)"></div>
+  <div style="position:relative;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box;padding:clamp(40px,6vw,72px) 28px;animation:fadeUp .7s ease both">
+    <p style="margin:0 0 14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6E6E6A">Dermatología clínica y estética — San Isidro, Lima</p>
+    <h1 style="margin:0 0 28px;font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.16;letter-spacing:.06em;text-transform:uppercase;max-width:20ch;text-wrap:balance">Piel sana y belleza natural con dermatología de especialista</h1>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+      <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#141414;color:#F4F4F2;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:16px 30px;border-radius:999px" style-hover="background:#2B2B29;color:#F4F4F2">Agendar por WhatsApp →</a>
+      <span style="font-size:12px;letter-spacing:.06em;color:#6E6E6A">CMP 067214 · RNE 034118</span>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- ===== 1. HERO — variante C: foto completa oscura ===== -->
+<sc-if value="{{ heroC }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="Hero" style="position:relative;min-height:calc(100svh - 69px);display:flex;flex-direction:column;justify-content:flex-end;background:#1C1C1A;overflow:hidden">
+  <img src="./assets/hero-dark.webp" alt="" aria-hidden="true" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;filter:grayscale(1)">
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(20,20,20,.85) 0%,rgba(20,20,20,.3) 42%,rgba(20,20,20,0) 70%)"></div>
+  <div style="position:relative;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box;padding:clamp(40px,6vw,72px) 28px;color:#F4F4F2;animation:fadeUp .7s ease both">
+    <p style="margin:0 0 14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,244,242,.65)">Dermatología clínica y estética — San Isidro, Lima</p>
+    <h2 style="margin:0 0 28px;font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.16;letter-spacing:.06em;text-transform:uppercase;max-width:20ch;color:#F4F4F2;text-wrap:balance">Piel sana y belleza natural con dermatología de especialista</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+      <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#F4F4F2;color:#141414;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:16px 30px;border-radius:999px" style-hover="background:#DEDCD6;color:#141414">Agendar por WhatsApp →</a>
+      <span style="font-size:12px;letter-spacing:.06em;color:rgba(244,244,242,.55)">CMP 067214 · RNE 034118</span>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- ===== 1. HERO — variante A: editorial (actual) ===== -->
+<sc-if value="{{ heroA }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="Hero" style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,88px) 28px clamp(48px,7vw,80px);animation:fadeUp .7s ease both">
+  <h2 style="margin:0 0 clamp(32px,5vw,56px);font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.18;letter-spacing:.06em;text-transform:uppercase;max-width:21ch;text-wrap:balance">Piel sana <span aria-hidden="true" style="display:inline-block;width:1.6em;height:1em;border-radius:999px;background:url('./assets/perfil-piel.webp') 80% 32%/cover;vertical-align:-.15em"></span> y belleza natural con dermatología <span aria-hidden="true" style="display:inline-block;width:1.6em;height:1em;border-radius:999px;background:url('./assets/procedimiento-laser.webp') 55% 65%/cover;vertical-align:-.15em"></span> de especialista</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end">
+    <a href="{{ waLink }}" target="_blank" rel="noopener" style="flex:none;display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border-bottom:1px solid #141414;padding-bottom:6px" style-hover="color:#6E6E6A;border-bottom:1px solid #6E6E6A">Agendar por WhatsApp <span style="font-size:14px">↓</span></a>
+    <div style="flex:1 1 640px;min-width:min(100%,320px)">
+      <div style="aspect-ratio:21/9;overflow:hidden">
+        <img src="./assets/hero-light.webp" alt="Retrato editorial de una paciente con piel natural" fetchpriority="high" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center right;filter:grayscale(.45)">
+      </div>
+    </div>
+  </div>
+  <p style="margin:20px 0 0;font-size:12px;letter-spacing:.08em;color:#8A8A86">Dermatología clínica y estética — San Isidro, Lima</p>
+</section>
+</sc-if>
+
+<!-- ===== 2. BARRA DE CONFIANZA ===== -->
+<section data-screen-label="Confianza" style="border-top:1px solid rgba(20,20,20,.1);border-bottom:1px solid rgba(20,20,20,.1)">
+  <div style="max-width:1200px;margin:0 auto;padding:22px 28px;display:flex;flex-wrap:wrap;gap:12px 44px;align-items:center;justify-content:space-between">
+    <sc-for list="{{ credenciales }}" as="c" hint-placeholder-count="5">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6E6E6A;white-space:nowrap"><span style="color:#141414;font-weight:600">{{ c.dato }}</span> · {{ c.detalle }}</div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ===== 3. SOBRE ===== -->
+<section id="sobre" data-screen-label="Sobre" style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px;display:flex;flex-wrap:wrap;gap:clamp(36px,5vw,80px)">
+  <div style="flex:1 1 380px;min-width:min(100%,320px)">
+    <h2 style="margin:0 0 28px;font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase;max-width:20ch;text-wrap:balance">Estás en manos de una especialista</h2>
+    <p style="margin:0 0 16px;font-size:14.5px;line-height:1.8;color:#4A4A46;max-width:52ch;text-wrap:pretty">Soy dermatóloga egresada de la Universidad Peruana Cayetano Heredia, con especialidad en dermatología estética y láser. Tras más de 12 años en clínicas de Lima, abrí mi consultorio en San Isidro con una idea simple: consultas donde nadie mira el reloj.</p>
+    <p style="margin:0 0 28px;font-size:14.5px;line-height:1.8;color:#4A4A46;max-width:52ch;text-wrap:pretty">No creo en tratamientos de moda ni en resultados exagerados. Creo en evaluar bien, explicar con honestidad qué funciona para tu piel — y qué no — y acompañarte en el proceso.</p>
+    <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border-bottom:1px solid #141414;padding-bottom:6px" style-hover="color:#6E6E6A;border-bottom:1px solid #6E6E6A">Conversemos por WhatsApp →</a>
+  </div>
+  <div style="flex:1 1 420px;min-width:min(100%,320px);display:grid;grid-template-columns:1fr 1.4fr;gap:16px;align-items:start">
+    <div style="aspect-ratio:3/4;margin-top:56px;overflow:hidden">
+      <img src="./assets/procedimiento-laser.webp" alt="Atención dermatológica con tecnología láser" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
+    </div>
+    <div style="aspect-ratio:3/4;overflow:hidden">
+      <img src="./assets/retrato-doctora.webp" alt="Retrato editorial de una dermatóloga en su consultorio" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. SERVICIOS ===== -->
+<section id="servicios" data-screen-label="Servicios" style="border-top:1px solid rgba(20,20,20,.1)">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px;display:flex;flex-wrap:wrap;gap:clamp(36px,5vw,80px)">
+    <div style="flex:1 1 480px;min-width:min(100%,320px)">
+      <h2 style="margin:0 0 12px;font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase;text-wrap:balance">Tratamientos que cumplen lo que prometen</h2>
+      <p style="margin:0 0 clamp(28px,4vw,44px);font-size:13px;color:#8A8A86;letter-spacing:.04em">Toda propuesta parte de una evaluación dermatológica completa.</p>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ servicios }}" as="s" hint-placeholder-count="6">
+          <div class="tratamiento-item">
+            <button class="tratamiento-control" type="button" onClick="{{ s.toggle }}" aria-expanded="{{ s.open }}">
+              <span style="min-width:0">
+                <span style="display:block;font-size:16px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px">{{ s.titulo }}</span>
+                <span style="display:block;font-size:13.5px;line-height:1.6;color:#6E6E6A;max-width:56ch;text-wrap:pretty">{{ s.desc }}</span>
+              </span>
+              <span class="tratamiento-icon" aria-hidden="true" style="flex:none;font-size:24px;font-weight:300;line-height:1;color:#6E6E6A">{{ s.simbolo }}</span>
+            </button>
+            <div class="tratamiento-panel {{ s.panelClass }}" aria-hidden="{{ s.closed }}">
+              <div class="tratamiento-panel-inner">
+                <figure style="margin:8px 0 28px;width:100%;max-width:100%;aspect-ratio:1;overflow:hidden;background:#DEDCD6">
+                  <img src="{{ s.imagen }}" alt="{{ s.alt }}" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
+                </figure>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+        <div style="border-top:1px solid rgba(20,20,20,.12)"></div>
+      </div>
+    </div>
+    <div style="flex:1 1 320px;min-width:min(100%,280px);max-width:440px">
+      <div style="aspect-ratio:3/4;overflow:hidden;position:sticky;top:96px">
+        <img src="./assets/perfil-piel.webp" alt="Perfil y hombro con textura de piel natural" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. CÓMO ES LA CONSULTA ===== -->
+<section data-screen-label="Consulta" style="border-top:1px solid rgba(20,20,20,.1)">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px">
+    <h2 style="margin:0 0 clamp(36px,5vw,56px);font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase">Cómo es la consulta</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0">
+      <sc-for list="{{ pasos }}" as="p" hint-placeholder-count="4">
+        <div style="padding:28px 24px 28px 0;margin-right:24px;border-top:1px solid rgba(20,20,20,.12);display:flex;flex-direction:column;gap:14px">
+          <span style="font-size:11px;letter-spacing:.16em;color:#8A8A86">{{ p.num }}</span>
+          <h3 style="margin:0;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">{{ p.titulo }}</h3>
+          <p style="margin:0;font-size:13.5px;line-height:1.7;color:#6E6E6A;text-wrap:pretty">{{ p.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BANDA FULL-BLEED ===== -->
+<section data-screen-label="Banda" style="position:relative;background:#1E1E1C url('./assets/textura-piel.webp') center/cover no-repeat;min-height:clamp(260px,38vw,420px);display:flex;align-items:center">
+  <h2 style="max-width:1200px;margin:0 auto;padding:48px 28px;font-weight:300;font-size:clamp(28px,4.4vw,54px);line-height:1.2;letter-spacing:.08em;text-transform:uppercase;color:#F4F4F2;width:100%;box-sizing:border-box;text-wrap:balance">Resultados naturales<br><span style="padding-left:clamp(24px,8vw,120px)">para una piel sana</span></h2>
+</section>
+
+<!-- ===== 6. TESTIMONIOS ===== -->
+<section data-screen-label="Testimonios" style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px">
+  <h2 style="margin:0 0 clamp(36px,5vw,56px);font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase">Historias de pacientes</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0">
+    <sc-for list="{{ testimonios }}" as="t" hint-placeholder-count="4">
+      <figure style="margin:0;padding:28px 28px 28px 0;margin-right:28px;border-top:1px solid rgba(20,20,20,.12);display:flex;flex-direction:column;gap:16px">
+        <blockquote style="margin:0;font-size:14.5px;line-height:1.75;color:#4A4A46;text-wrap:pretty">"{{ t.texto }}"</blockquote>
+        <figcaption style="margin-top:auto">
+          <div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">{{ t.nombre }}</div>
+          <div style="font-size:12px;color:#8A8A86;margin-top:2px">{{ t.detalle }}</div>
+        </figcaption>
+      </figure>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ===== 7. FAQ ===== -->
+<section data-screen-label="FAQ" style="border-top:1px solid rgba(20,20,20,.1)">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,80px)">
+    <div style="flex:1 1 280px;min-width:min(100%,260px)">
+      <h2 style="margin:0;font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase;max-width:14ch">Preguntas frecuentes</h2>
+    </div>
+    <div style="flex:2 1 480px;min-width:min(100%,320px);display:flex;flex-direction:column">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <div style="border-top:1px solid rgba(20,20,20,.12)">
+          <button onClick="{{ f.toggle }}" style="all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:20px 0;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;letter-spacing:.04em;color:#141414;min-height:44px" style-hover="color:#6E6E6A">
+            <span>{{ f.q }}</span>
+            <span style="flex:none;font-size:18px;font-weight:300;color:#8A8A86">{{ f.simbolo }}</span>
+          </button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;padding:0 0 22px;font-size:13.5px;line-height:1.75;color:#6E6E6A;max-width:60ch;text-wrap:pretty">{{ f.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+      <div style="border-top:1px solid rgba(20,20,20,.12)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. CONSULTORIO ===== -->
+<section id="consultorio" data-screen-label="Ubicacion" style="border-top:1px solid rgba(20,20,20,.1)">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px">
+    <h2 style="margin:0 0 clamp(36px,5vw,56px);font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase">El consultorio</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px)">
+      <div style="flex:1.4 1 420px;min-width:min(100%,320px);display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="aspect-ratio:4/5;overflow:hidden">
+          <img src="./assets/sala-espera.webp" alt="Sala de espera del consultorio con luz natural" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
+        </div>
+        <div style="aspect-ratio:4/5;overflow:hidden;background:#D6D4CE">
+          <iframe title="Mapa de Av. Conquistadores 456, San Isidro, Lima" src="https://www.google.com/maps?q=Av.+Conquistadores+456,+San+Isidro,+Lima&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="display:block;width:100%;height:100%;border:0"></iframe>
+        </div>
+      </div>
+      <div style="flex:1 1 300px;min-width:min(100%,280px);display:flex;flex-direction:column;gap:24px;justify-content:center">
+        <div style="border-top:1px solid rgba(20,20,20,.12);padding-top:16px">
+          <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A86;margin-bottom:6px">Dirección</div>
+          <div style="font-size:14.5px;line-height:1.6;color:#4A4A46">Av. Conquistadores 456, Of. 302<br>San Isidro, Lima — a pasos del Olivar</div>
+        </div>
+        <div style="border-top:1px solid rgba(20,20,20,.12);padding-top:16px">
+          <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A86;margin-bottom:6px">Horarios</div>
+          <div style="font-size:14.5px;line-height:1.6;color:#4A4A46">Lun – Vie: 9:00 a. m. – 7:00 p. m.<br>Sábados: 9:00 a. m. – 1:00 p. m.</div>
+        </div>
+        <div style="border-top:1px solid rgba(20,20,20,.12);padding-top:16px">
+          <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A86;margin-bottom:6px">Reservas</div>
+          <div style="font-size:14.5px;line-height:1.6;color:#4A4A46">Solo por WhatsApp: {{ telefonoDisplay }}<br>Atención particular y por seguros<br>Cochera para pacientes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. CIERRE ===== -->
+<section data-screen-label="Cierre" style="background:#1E1E1C;color:#F4F4F2">
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,130px) 28px;text-align:center">
+    <h2 style="margin:0 0 20px;font-weight:300;font-size:clamp(28px,4.4vw,54px);line-height:1.2;letter-spacing:.08em;text-transform:uppercase;text-wrap:balance">Tu piel merece una evaluación de especialista</h2>
+    <p style="margin:0 auto 40px;font-size:14.5px;line-height:1.7;color:rgba(244,244,242,.6);max-width:46ch;text-wrap:pretty">Escríbenos por WhatsApp y coordina tu cita en menos de cinco minutos. Sin formularios, sin llamadas en espera.</p>
+    <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;border:1px solid #F4F4F2;color:#F4F4F2;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:18px 36px;border-radius:999px" style-hover="background:#F4F4F2;color:#1E1E1C">Agendar por WhatsApp →</a>
+    <p style="margin:24px 0 0;font-size:12px;letter-spacing:.06em;color:rgba(244,244,242,.45)">{{ telefonoDisplay }} · Respuesta en horario de atención</p>
+  </div>
+  <div style="border-top:1px solid rgba(244,244,242,.14)">
+    <div style="max-width:1200px;margin:0 auto;padding:24px 28px;display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,244,242,.5)">
+      <span style="color:rgba(244,244,242,.85);font-weight:600">Dra. Valeria Nakamura</span>
+      <span>CMP 067214 · RNE 034118</span>
+      <span>San Isidro — Lima, Perú</span>
+      <strong>Diseñado por <a href="https://nozoestudio.com" target="_blank" rel="noopener" style="color:#F4F4F2;text-decoration:underline;text-underline-offset:3px">Nozoe Studio</a></strong>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOTÓN FLOTANTE WHATSAPP ===== -->
+<a href="{{ waLink }}" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp" style="position:fixed;right:20px;bottom:20px;z-index:100;display:inline-flex;align-items:center;gap:10px;background:#1E1E1C;color:#F4F4F2;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:15px 22px;border-radius:999px;box-shadow:0 12px 30px rgba(20,20,20,.3)" style-hover="background:#141414;color:#F4F4F2;transform:translateY(-2px)">
+  <span style="width:8px;height:8px;border-radius:50%;background:#F4F4F2"></span>
+  WhatsApp
+</a>
+</x-dc>
+<script>
+(function(){
+  function closeMenu(){
+    var links = document.getElementById('mn-links');
+    var btn = document.querySelector('.mn-toggle');
+    if (!links || !btn) return;
+    links.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Abrir menú');
+    document.body.classList.remove('menu-open');
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.mn-toggle');
+    if (btn){
+      var links = document.getElementById('mn-links');
+      if (!links) return;
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+      links.classList.toggle('is-open', !open);
+      document.body.classList.toggle('menu-open', !open);
+      return;
+    }
+    if (e.target.closest('#mn-links a')) closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { closeMenu(); var b = document.querySelector('.mn-toggle'); if (b) b.focus(); }
+  });
+})();
+</script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroVariant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Editorial (actual)&quot;,&quot;Foto completa clara&quot;,&quot;Foto completa oscura&quot;],&quot;default&quot;:&quot;Foto completa oscura&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;whatsappNumero&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+51 999 999 999&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;}}">
+class Component extends DCLogic {
+  state = { openFaq: 0, openServicio: -1 };
+
+  credenciales = [
+    { dato: "CMP 067214", detalle: "Colegiada" },
+    { dato: "RNE 034118", detalle: "Especialista" },
+    { dato: "+12 años", detalle: "de experiencia" },
+    { dato: "UPCH", detalle: "Cayetano Heredia" },
+    { dato: "Seguros", detalle: "Rímac · Pacífico · Mapfre" },
+  ];
+
+  servicios = [
+    { titulo: "Rejuvenecimiento facial", desc: "Plan personalizado que combina tecnología y medicina para recuperar luminosidad y firmeza sin cambiar tu expresión.", imagen: "./assets/tratamiento-rejuvenecimiento.webp", alt: "Retrato editorial de piel con luminosidad natural" },
+    { titulo: "Láser y luz pulsada", desc: "Manchas, rojeces, cicatrices de acné y depilación médica con equipos certificados y protocolos para piel latina.", imagen: "./assets/tratamiento-laser.webp", alt: "Atención dermatológica con tecnología láser" },
+    { titulo: "Toxina botulínica", desc: "Aplicación conservadora en líneas de expresión. El objetivo: verte descansada, nunca 'operada'.", imagen: "./assets/tratamiento-toxina.webp", alt: "Evaluación de líneas de expresión antes de un tratamiento" },
+    { titulo: "Rellenos con ácido hialurónico", desc: "Restauración sutil de volumen en labios, ojeras y surcos, con producto original y trazable.", imagen: "./assets/tratamiento-rellenos.webp", alt: "Evaluación facial para restauración sutil de volumen" },
+    { titulo: "Peelings médicos", desc: "Renovación de la piel en profundidades controladas para manchas, poros y textura irregular.", imagen: "./assets/tratamiento-peeling.webp", alt: "Aplicación dermatológica controlada con pincel" },
+    { titulo: "Dermatología clínica", desc: "Acné, rosácea, caída de cabello y control de lunares con dermatoscopía. La base de todo tratamiento estético.", imagen: "./assets/tratamiento-clinica.webp", alt: "Evaluación de piel con dermatoscopio" },
+  ];
+
+  pasos = [
+    { num: "01", titulo: "Agenda por WhatsApp", desc: "Escríbenos y coordinamos día y hora según tu disponibilidad. Te confirmamos en el día." },
+    { num: "02", titulo: "Evaluación completa", desc: "45 minutos de consulta: historia clínica, análisis de tu piel con dermatoscopio y tus objetivos." },
+    { num: "03", titulo: "Plan a tu medida", desc: "Recibes un plan claro con opciones, tiempos y costos transparentes. Tú decides sin presión." },
+    { num: "04", titulo: "Seguimiento real", desc: "Controles incluidos y línea directa con el consultorio para cualquier duda entre citas." },
+  ];
+
+  testimonios = [
+    { nombre: "María Claudia R.", detalle: "Láser · Miraflores", texto: "Llegué con manchas de sol que arrastraba hace años. En tres sesiones de láser la diferencia es notoria. Me explicó desde el inicio cuántas sesiones iba a necesitar, sin venderme de más." },
+    { nombre: "Jorge T.", detalle: "Dermatología clínica · San Borja", texto: "Fui por un lunar que me preocupaba y terminé haciéndome el chequeo completo de piel. La doctora se toma su tiempo, cosa rara hoy en día. Pasé todo por mi seguro Pacífico sin problema." },
+    { nombre: "Andrea F.", detalle: "Toxina botulínica · San Isidro", texto: "Me daba miedo quedar con cara rara. El resultado es tan natural que mis amigas solo me dicen que me veo descansada. Exactamente lo que pedí." },
+    { nombre: "Lucía V.", detalle: "Rejuvenecimiento · La Molina", texto: "Agendar fue lo más fácil del mundo: un WhatsApp un martes y el sábado ya estaba en consulta. Puntuales, y el plan que me armó se ajustó a mi presupuesto." },
+  ];
+
+  faqs = [
+    { q: "¿Atienden con mi seguro?", a: "Trabajamos con Rímac, Pacífico y Mapfre para consultas y procedimientos de dermatología clínica. Los tratamientos estéticos son de atención particular. Escríbenos con el nombre de tu plan y te confirmamos la cobertura antes de tu cita." },
+    { q: "¿Cuánto dura la primera consulta?", a: "Aproximadamente 45 minutos. Incluye historia clínica, evaluación completa de tu piel con dermatoscopio y una propuesta de plan de tratamiento con costos claros." },
+    { q: "¿Atienden los sábados?", a: "Sí, de 9:00 a. m. a 1:00 p. m. Son los horarios más solicitados, así que te recomendamos agendar con al menos una semana de anticipación." },
+    { q: "¿Cómo agendo una cita?", a: "Solo por WhatsApp. Nos escribes, te proponemos horarios disponibles y confirmas. Todo el proceso toma menos de cinco minutos, sin formularios ni llamadas." },
+    { q: "¿La primera cita incluye evaluación completa?", a: "Sí. Nunca aplicamos un procedimiento estético sin antes evaluar tu piel. Si vienes por estética, la evaluación dermatológica está incluida en esa primera consulta." },
+    { q: "¿Los procedimientos los realiza la doctora?", a: "Sí, todos los procedimientos médicos y estéticos los realiza personalmente la Dra. Nakamura. El personal de apoyo solo asiste en la preparación." },
+  ];
+
+  renderVals() {
+    const numero = (this.props.whatsappNumero ?? "+51 999 999 999");
+    const digits = numero.replace(/\D/g, "");
+    const msg = encodeURIComponent("Hola, quisiera agendar una consulta con la Dra. Nakamura");
+    const variante = this.props.heroVariant ?? "Editorial (actual)";
+    return {
+      heroA: variante === "Editorial (actual)",
+      heroB: variante === "Foto completa clara",
+      heroC: variante === "Foto completa oscura",
+      waLink: `https://wa.me/${digits}?text=${msg}`,
+      telefonoDisplay: numero,
+      credenciales: this.credenciales,
+      servicios: this.servicios.map((s, i) => ({
+        ...s,
+        open: this.state.openServicio === i,
+        closed: this.state.openServicio !== i,
+        panelClass: this.state.openServicio === i ? "is-open" : "",
+        simbolo: this.state.openServicio === i ? "–" : "+",
+        toggle: () => this.setState(state => ({ openServicio: state.openServicio === i ? -1 : i })),
+      })),
+      pasos: this.pasos,
+      testimonios: this.testimonios,
+      faqs: this.faqs.map((f, i) => ({
+        ...f,
+        open: this.state.openFaq === i,
+        simbolo: this.state.openFaq === i ? "–" : "+",
+        toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

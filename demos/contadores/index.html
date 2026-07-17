@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPC Daniel Salazar — Contabilidad y trámites SUNAT en Lima</title>
+<meta name="description" content="Demo conceptual de estudio contable en Lima: contabilidad al día, gestión de multas SUNAT y cambio de contador sin contratiempos.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:locale" content="es_PE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CPC Daniel Salazar — Estudio Contable en Lima">
+<meta property="og:description" content="Contabilidad al día, gestión de multas SUNAT y cambio de contador sin contratiempos. Demo conceptual de Nozoe Studio.">
+<meta property="og:image" content="assets/daniel-salazar-retrato.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F8FA;color:#2B3440;font-family:'Quicksand',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#2F6F5E}a:hover{color:#255848}
+@keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(47,111,94,.35)}70%{box-shadow:0 0 0 14px rgba(47,111,94,0)}100%{box-shadow:0 0 0 0 rgba(47,111,94,0)}}
+.demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}.demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}.demo-ribbon img{display:block;width:100%;height:auto}.demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:4px}@media(max-width:980px){.demo-ribbon{top:77px;right:0;width:30%;transform:none;filter:drop-shadow(0 4px 7px rgba(0,0,0,.25))}.demo-ribbon:hover{transform:translateY(-2px)}}
+body.menu-open{overflow:hidden}
+.mn-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid rgba(31,44,67,.25);border-radius:50%;background:transparent;cursor:pointer;flex:none}
+.mn-toggle svg{width:18px;height:18px}
+@media(max-width:760px){
+  .mn-toggle{display:inline-flex;position:relative;z-index:151}
+  .mn-links{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:100vh!important;z-index:150!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:26px!important;padding:6rem 2rem 3rem!important;background:#F7F8FA!important;box-sizing:border-box!important;visibility:hidden;opacity:0;transform:translateY(-1rem);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+  .mn-links.is-open{visibility:visible;opacity:1;transform:translateY(0)}
+  .mn-links a{font-size:24px!important}
+  .mn-links a.mn-cta{align-self:flex-start}
+}
+</style>
+</helmet>
+
+<a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+  <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
+</a>
+
+<!-- ============ NAV ============ -->
+<header data-screen-label="Nav" style="position:sticky;top:0;z-index:50;background:rgba(247,248,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid #E4E8ED">
+  <div style="max-width:1140px;margin:0 auto;padding:14px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="width:38px;height:38px;border-radius:9px;background:#1F2C43;color:#F7F8FA;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;letter-spacing:.5px">DS</div>
+      <div style="display:flex;flex-direction:column;line-height:1.15">
+        <span style="font-weight:700;font-size:15px;color:#1F2C43">CPC Daniel Salazar</span>
+        <span style="font-weight:500;font-size:11.5px;color:#7A8494;letter-spacing:.4px">ESTUDIO CONTABLE · LIMA</span>
+      </div>
+    </div>
+    <button type="button" class="mn-toggle" aria-expanded="false" aria-controls="mn-links" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#1F2C43" stroke-linecap="round" stroke-width="1.6"/></svg>
+    </button>
+    <nav class="mn-links" id="mn-links" style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;font-weight:500;font-size:14px">
+      <a href="#servicios" style="color:#2B3440;text-decoration:none" style-hover="color:#2F6F5E">Servicios</a>
+      <a href="#proceso" style="color:#2B3440;text-decoration:none" style-hover="color:#2F6F5E">Cómo trabajamos</a>
+      <a href="#faq" style="color:#2B3440;text-decoration:none" style-hover="color:#2F6F5E">Preguntas</a>
+      <a href="{{ waLink }}" class="mn-cta" style="background:#2F6F5E;color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 20px;border-radius:8px;display:inline-flex;align-items:center;gap:8px" style-hover="background:#255848;color:#fff">Escríbenos por WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ 1. HERO A — split, tranquilidad ============ -->
+<sc-if value="{{ isHeroA }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="Hero A" style="background:#F7F8FA;border-bottom:1px solid #E4E8ED">
+  <div style="max-width:1140px;margin:0 auto;padding:84px 24px 88px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:56px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <span style="align-self:flex-start;font-weight:600;font-size:12.5px;letter-spacing:1.2px;color:#2F6F5E;border:1px solid #C9DAD4;background:#EFF5F3;padding:6px 14px;border-radius:999px">ATENCIÓN 100% REMOTA · LIMA, PERÚ</span>
+      <h1 style="margin:0;font-size:52px;line-height:1.12;font-weight:700;color:#1F2C43;text-wrap:pretty">Tu contabilidad al día, sin sustos con SUNAT.</h1>
+      <p style="margin:0;font-size:18px;line-height:1.65;font-weight:500;color:#5A6572;max-width:52ch;text-wrap:pretty">Declaraciones mensuales presentadas a tiempo, libros electrónicos en orden y un reporte claro cada mes. Tú te dedicas a tu negocio; de SUNAT me encargo yo.</p>
+      <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px">
+        <a href="{{ waLink }}" style="background:#2F6F5E;color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 28px;border-radius:10px;display:inline-flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(47,111,94,.25)" style-hover="background:#255848;color:#fff">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="9" r="7.5" stroke="#fff" stroke-width="1.6"></circle><path d="M5.5 17.5L7 14.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"></path></svg>
+          Conversemos por WhatsApp
+        </a>
+        <span style="font-size:13.5px;font-weight:500;color:#7A8494">Respuesta en menos de 2 horas hábiles</span>
+      </div>
+    </div>
+    <div style="border-radius:14px;overflow:hidden;border:1px solid #E4E8ED;aspect-ratio:4/4.6;background:#E8EBEF">
+      <img src="assets/daniel-salazar-retrato.webp" alt="Retrato editorial de Daniel Salazar revisando documentos en su oficina" width="1044" height="1507" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center" fetchpriority="high">
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- ============ 1. HERO B — centrado, evitar multas ============ -->
+<sc-if value="{{ isHeroB }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="Hero B" style="background:#1F2C43">
+  <div style="max-width:880px;margin:0 auto;padding:96px 24px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
+    <span style="font-weight:600;font-size:12.5px;letter-spacing:1.2px;color:#9DBFB4;border:1px solid #3A4A66;padding:6px 14px;border-radius:999px">CPC COLEGIADO · CCPL · ATENCIÓN REMOTA</span>
+    <h2 style="margin:0;font-size:50px;line-height:1.14;font-weight:700;color:#F7F8FA;text-wrap:pretty">Cada multa de SUNAT es dinero que tu negocio pudo ahorrar.</h2>
+    <p style="margin:0;font-size:18px;line-height:1.65;font-weight:500;color:#AAB4C4;max-width:56ch;text-wrap:pretty">Una declaración fuera de plazo puede costarte desde media UIT. Con un calendario tributario ordenado y seguimiento mensual, ese riesgo desaparece.</p>
+    <a href="{{ waLink }}" style="background:#2F6F5E;color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 30px;border-radius:10px;margin-top:6px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#3B8471;color:#fff">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="9" r="7.5" stroke="#fff" stroke-width="1.6"></circle><path d="M5.5 17.5L7 14.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      Solicita tu diagnóstico gratuito
+    </a>
+  </div>
+  <div style="max-width:1000px;margin:0 auto;padding:0 24px 0">
+    <div style="border-radius:14px 14px 0 0;overflow:hidden;border:1px solid #3A4A66;border-bottom:none;background:#28364F;height:260px">
+      <img src="assets/escritorio-contable.webp" alt="Escritorio contable ordenado con laptop, reportes y café" width="1774" height="887" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center 54%" loading="eager">
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- ============ 2. BARRA DE CONFIANZA ============ -->
+<section data-screen-label="Barra de confianza" style="background:#1F2C43;border-top:1px solid #3A4A66">
+  <div style="max-width:1140px;margin:0 auto;padding:34px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px">
+    <sc-for list="{{ credenciales }}" as="c" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:4px;border-left:1px solid #3A4A66;padding-left:20px">
+        <span style="font-weight:700;font-size:22px;color:#F7F8FA">{{ c.dato }}</span>
+        <span style="font-weight:500;font-size:13px;color:#AAB4C4;line-height:1.45">{{ c.detalle }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ============ 3. SERVICIOS ============ -->
+<section id="servicios" data-screen-label="Servicios" style="background:#FFFFFF;border-bottom:1px solid #E4E8ED">
+  <div style="max-width:1140px;margin:0 auto;padding:92px 24px">
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:620px;margin-bottom:52px">
+      <span style="font-weight:600;font-size:12.5px;letter-spacing:1.4px;color:#2F6F5E">SERVICIOS</span>
+      <h2 style="margin:0;font-size:36px;font-weight:700;color:#1F2C43;line-height:1.2;text-wrap:pretty">Todo lo que tu negocio necesita ante SUNAT, en un solo lugar.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      <sc-for list="{{ servicios }}" as="s" hint-placeholder-count="6">
+        <div style="background:#F7F8FA;border:1px solid #E4E8ED;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px" style-hover="border-color:#C9DAD4">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-weight:600;font-size:13px;color:#2F6F5E">{{ s.num }}</span>
+          <h3 style="margin:0;font-size:19px;font-weight:700;color:#1F2C43">{{ s.titulo }}</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;font-weight:500;color:#5A6572;text-wrap:pretty">{{ s.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PARA QUIÉN ============ -->
+<section data-screen-label="Para quién" style="background:#F7F8FA;border-bottom:1px solid #E4E8ED">
+  <div style="max-width:1140px;margin:0 auto;padding:92px 24px">
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:620px;margin-bottom:52px">
+      <span style="font-weight:600;font-size:12.5px;letter-spacing:1.4px;color:#2F6F5E">PARA QUIÉN</span>
+      <h2 style="margin:0;font-size:36px;font-weight:700;color:#1F2C43;line-height:1.2;text-wrap:pretty">Trabajo con negocios reales, como el tuyo.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+      <div style="grid-column:1/-1;background:#1F2C43;border-radius:12px;padding:32px;display:flex;flex-wrap:wrap;align-items:center;gap:28px;justify-content:space-between">
+        <div style="display:flex;flex-direction:column;gap:8px;max-width:560px">
+          <span style="font-weight:600;font-size:12px;letter-spacing:1.2px;color:#9DBFB4">ESPECIALIDAD DEL ESTUDIO</span>
+          <h3 style="margin:0;font-size:23px;font-weight:700;color:#F7F8FA;text-wrap:pretty">Profesionales independientes — 4ta categoría</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;font-weight:500;color:#AAB4C4;text-wrap:pretty">Emites recibos por honorarios y no sabes si te corresponde suspensión de retenciones, ni cuánto te tocará pagar en la declaración anual. Ordenamos tus ingresos, tramitamos tu suspensión y proyectamos tu renta para que nada te sorprenda en marzo.</p>
+        </div>
+        <a href="{{ waLink }}" style="background:#2F6F5E;color:#fff;text-decoration:none;font-weight:600;font-size:14.5px;padding:13px 24px;border-radius:9px;white-space:nowrap" style-hover="background:#3B8471;color:#fff">Consulta tu caso</a>
+      </div>
+      <sc-for list="{{ perfiles }}" as="p" hint-placeholder-count="4">
+        <div style="background:#FFFFFF;border:1px solid #E4E8ED;border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:8px">
+          <h3 style="margin:0;font-size:17px;font-weight:700;color:#1F2C43">{{ p.titulo }}</h3>
+          <p style="margin:0;font-size:14px;line-height:1.6;font-weight:500;color:#5A6572;text-wrap:pretty">{{ p.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. POR QUÉ ELEGIRME ============ -->
+<section data-screen-label="Por qué elegirme" style="background:#FFFFFF;border-bottom:1px solid #E4E8ED">
+  <div style="max-width:1140px;margin:0 auto;padding:92px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:56px;align-items:center">
+    <div style="border-radius:14px;overflow:hidden;border:1px solid #E4E8ED;aspect-ratio:4/4.8;background:#E8EBEF">
+      <img src="assets/asesoria-remota-daniel.webp" alt="Daniel Salazar tomando notas durante una asesoría remota" width="1044" height="1507" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center" loading="lazy">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:36px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <span style="font-weight:600;font-size:12.5px;letter-spacing:1.4px;color:#2F6F5E">POR QUÉ ELEGIRME</span>
+        <h2 style="margin:0;font-size:36px;font-weight:700;color:#1F2C43;line-height:1.2;text-wrap:pretty">Un contador que responde, explica y cumple plazos.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <sc-for list="{{ diferenciadores }}" as="d" hint-placeholder-count="4">
+          <div style="display:flex;gap:18px;align-items:flex-start">
+            <div style="width:10px;height:10px;border-radius:50%;background:#2F6F5E;margin-top:7px;flex:none"></div>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <h3 style="margin:0;font-size:17px;font-weight:700;color:#1F2C43">{{ d.titulo }}</h3>
+              <p style="margin:0;font-size:14.5px;line-height:1.6;font-weight:500;color:#5A6572;text-wrap:pretty">{{ d.desc }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. CÓMO TRABAJAMOS ============ -->
+<section id="proceso" data-screen-label="Cómo trabajamos" style="background:#F7F8FA;border-bottom:1px solid #E4E8ED">
+  <div style="max-width:1140px;margin:0 auto;padding:92px 24px">
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:640px;margin-bottom:56px">
+      <span style="font-weight:600;font-size:12.5px;letter-spacing:1.4px;color:#2F6F5E">CÓMO TRABAJAMOS</span>
+      <h2 style="margin:0;font-size:36px;font-weight:700;color:#1F2C43;line-height:1.2;text-wrap:pretty">Cambiar de contador es más simple de lo que crees.</h2>
+      <p style="margin:0;font-size:16px;line-height:1.65;font-weight:500;color:#5A6572;text-wrap:pretty">Nosotros nos encargamos de recoger tu información y ponerla en orden. Tú no pierdes ni un día de operación.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px">
+      <sc-for list="{{ pasos }}" as="paso" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:14px;background:#FFFFFF;border:1px solid #E4E8ED;border-radius:12px;padding:26px">
+          <div style="width:40px;height:40px;border-radius:10px;background:#1F2C43;color:#F7F8FA;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px">{{ paso.num }}</div>
+          <h3 style="margin:0;font-size:17px;font-weight:700;color:#1F2C43">{{ paso.titulo }}</h3>
+          <p style="margin:0;font-size:14px;line-height:1.6;font-weight:500;color:#5A6572;text-wrap:pretty">{{ paso.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. TESTIMONIOS ============ -->
+<section data-screen-label="Testimonios" style="background:#FFFFFF;border-bottom:1px solid #E4E8ED">
+  <div style="max-width:1140px;margin:0 auto;padding:92px 24px">
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:620px;margin-bottom:52px">
+      <span style="font-weight:600;font-size:12.5px;letter-spacing:1.4px;color:#2F6F5E">TESTIMONIOS</span>
+      <h2 style="margin:0;font-size:36px;font-weight:700;color:#1F2C43;line-height:1.2;text-wrap:pretty">Dueños de negocio que ya duermen tranquilos.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      <sc-for list="{{ testimonios }}" as="t" hint-placeholder-count="3">
+        <figure style="margin:0;background:#F7F8FA;border:1px solid #E4E8ED;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:20px;justify-content:space-between">
+          <blockquote style="margin:0;font-size:15px;line-height:1.65;font-weight:500;color:#2B3440;text-wrap:pretty">“{{ t.cita }}”</blockquote>
+          <figcaption style="display:flex;align-items:center;gap:14px">
+            <div style="width:44px;height:44px;border-radius:50%;flex:none;background:repeating-linear-gradient(45deg,#E8EBEF,#E8EBEF 6px,#DDE2E8 6px,#DDE2E8 12px);border:1px solid #E4E8ED;display:flex;align-items:center;justify-content:center;font-family:ui-monospace,Menlo,monospace;font-size:9px;color:#7A8494">foto</div>
+            <div style="display:flex;flex-direction:column;line-height:1.3">
+              <span style="font-weight:700;font-size:14px;color:#1F2C43">{{ t.nombre }}</span>
+              <span style="font-weight:500;font-size:12.5px;color:#7A8494">{{ t.rol }}</span>
+            </div>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. FAQ ============ -->
+<section id="faq" data-screen-label="Preguntas frecuentes" style="background:#F7F8FA;border-bottom:1px solid #E4E8ED">
+  <div style="max-width:820px;margin:0 auto;padding:92px 24px">
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:44px">
+      <span style="font-weight:600;font-size:12.5px;letter-spacing:1.4px;color:#2F6F5E">PREGUNTAS FRECUENTES</span>
+      <h2 style="margin:0;font-size:36px;font-weight:700;color:#1F2C43;line-height:1.2;text-wrap:pretty">Las dudas que todos me preguntan primero.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid #E4E8ED">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <div style="border-bottom:1px solid #E4E8ED">
+          <button onClick="{{ f.toggle }}" style="width:100%;background:none;border:none;cursor:pointer;padding:22px 4px;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;font-family:'Quicksand',sans-serif">
+            <span style="font-weight:700;font-size:16.5px;color:#1F2C43;line-height:1.4">{{ f.pregunta }}</span>
+            <span style="font-weight:500;font-size:22px;color:#2F6F5E;flex:none;line-height:1">{{ f.simbolo }}</span>
+          </button>
+          <div style="display:{{ f.mostrar }};padding:0 4px 24px">
+            <p style="margin:0;font-size:15px;line-height:1.7;font-weight:500;color:#5A6572;max-width:64ch;text-wrap:pretty">{{ f.respuesta }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. CIERRE + CONTACTO ============ -->
+<section data-screen-label="Cierre y contacto" style="background:#1F2C43">
+  <div style="max-width:880px;margin:0 auto;padding:96px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px">
+    <h2 style="margin:0;font-size:42px;font-weight:700;color:#F7F8FA;line-height:1.18;text-wrap:pretty">Deja de perseguir a tu contador. Empieza a recibir respuestas.</h2>
+    <p style="margin:0;font-size:17px;line-height:1.65;font-weight:500;color:#AAB4C4;max-width:54ch;text-wrap:pretty">Escríbeme hoy y en la primera conversación revisamos gratis tu situación ante SUNAT: régimen, declaraciones pendientes y posibles multas.</p>
+    <a href="{{ waLink }}" style="background:#2F6F5E;color:#fff;text-decoration:none;font-weight:600;font-size:17px;padding:17px 34px;border-radius:10px;margin-top:8px;display:inline-flex;align-items:center;gap:10px" style-hover="background:#3B8471;color:#fff">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="9" r="7.5" stroke="#fff" stroke-width="1.6"></circle><path d="M5.5 17.5L7 14.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      Escríbeme por WhatsApp
+    </a>
+    <span style="font-size:13.5px;font-weight:500;color:#7A8494">+51 9XX XXX XXX · lunes a sábado, 9:00 a 19:00</span>
+  </div>
+  <footer style="border-top:1px solid #3A4A66">
+    <div style="max-width:1140px;margin:0 auto;padding:26px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+      <span style="font-weight:500;font-size:13px;color:#7A8494">© 2026 CPC Daniel Salazar — Estudio Contable · Lima, Perú</span>
+      <span style="font-weight:500;font-size:13px;color:#7A8494">Colegiado CCPL · Matrícula N.° 45872</span>
+      <span style="font-weight:500;font-size:13px;color:#7A8494">Diseñado por <a href="https://nozoestudio.com" target="_blank" rel="noopener" style="color:#C9DAD4;text-decoration:none"><strong>Nozoe Studio</strong></a></span>
+    </div>
+  </footer>
+</section>
+
+<!-- ============ BOTÓN FLOTANTE WHATSAPP ============ -->
+<a href="{{ waLink }}" aria-label="Escríbenos por WhatsApp" style="position:fixed;bottom:26px;right:26px;z-index:100;width:58px;height:58px;border-radius:50%;background:#2F6F5E;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(31,44,67,.3);animation:waPulse 2.6s ease-out infinite" style-hover="background:#255848">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 4a8 8 0 0 1 8 8 8 8 0 0 1-8 8 7.9 7.9 0 0 1-3.8-.96L4 20l1-4.1A8 8 0 0 1 12 4Z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.8 10.2c.3 2.2 2.7 4.6 4.9 4.9l1.3-1.3-1.9-1-.8.7c-.7-.4-1.5-1.2-1.9-1.9l.7-.8-1-1.9-1.3 1.3Z" fill="#fff"></path></svg>
+</a>
+</x-dc>
+<script>
+(function(){
+  function closeMenu(){
+    var links = document.getElementById('mn-links');
+    var btn = document.querySelector('.mn-toggle');
+    if (!links || !btn) return;
+    links.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Abrir menú');
+    document.body.classList.remove('menu-open');
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.mn-toggle');
+    if (btn){
+      var links = document.getElementById('mn-links');
+      if (!links) return;
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+      links.classList.toggle('is-open', !open);
+      document.body.classList.toggle('menu-open', !open);
+      return;
+    }
+    if (e.target.closest('#mn-links a')) closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { closeMenu(); var b = document.querySelector('.mn-toggle'); if (b) b.focus(); }
+  });
+})();
+</script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1440}, &quot;heroVariante&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;A&quot;, &quot;B&quot;], &quot;default&quot;: &quot;A&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Hero&quot;}, &quot;whatsappNumero&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;51999999999&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contacto&quot;}}">
+class Component extends DCLogic {
+  state = { openFaq: 0 };
+
+  renderVals() {
+    const numero = (this.props.whatsappNumero ?? "51999999999").replace(/\D/g, "");
+    const msg = encodeURIComponent("Hola, quisiera una asesoría contable para mi negocio");
+    const waLink = "https://wa.me/" + numero + "?text=" + msg;
+    const variante = this.props.heroVariante ?? "A";
+
+    const faqsData = [
+      { pregunta: "¿Atienden empresas en NRUS, RER, RMT o Régimen General?", respuesta: "Sí, trabajo con los cuatro regímenes. En el diagnóstico inicial revisamos si el régimen en el que estás es realmente el que más te conviene; es común encontrar negocios pagando de más por estar mal categorizados." },
+      { pregunta: "¿Hacen mi declaración jurada anual?", respuesta: "Sí. La renta anual (3ra categoría para empresas o la regularización de 4ta para independientes) está incluida en el servicio de contabilidad mensual, sin costo adicional. Si solo necesitas la anual, también la trabajo como servicio puntual." },
+      { pregunta: "¿Me ayudan a formalizar mi negocio?", respuesta: "Sí. Te acompaño en todo el proceso: reserva de nombre en SUNARP, minuta y escritura pública, RUC, clave SOL y elección del régimen tributario. En 10 a 15 días hábiles tu empresa está lista para facturar." },
+      { pregunta: "¿Trabajan con recibos por honorarios (4ta categoría)?", respuesta: "Es una de mis especialidades. Reviso tus retenciones, tramito tu suspensión ante SUNAT si corresponde y proyecto tu renta anual para que sepas desde ya cuánto pagarás — o cuánto te devolverán." },
+      { pregunta: "¿Es todo remoto? ¿No necesito ir a una oficina?", respuesta: "Todo es 100% remoto: los documentos se comparten por WhatsApp o Drive, las reuniones son por videollamada y las declaraciones se presentan por SOL. Atiendo clientes en Lima y en todo el Perú." },
+      { pregunta: "¿Qué pasa si vengo con multas o declaraciones atrasadas?", respuesta: "Es más frecuente de lo que crees y tiene solución. Regularizamos las declaraciones omitidas, evaluamos el régimen de gradualidad para reducir las multas (los descuentos pueden llegar al 95% si se subsana voluntariamente) y, si hace falta, gestionamos un fraccionamiento." },
+    ];
+
+    const faqs = faqsData.map((f, i) => ({
+      ...f,
+      mostrar: this.state.openFaq === i ? "block" : "none",
+      simbolo: this.state.openFaq === i ? "−" : "+",
+      toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })),
+    }));
+
+    return {
+      waLink,
+      isHeroA: variante !== "B",
+      isHeroB: variante === "B",
+      credenciales: [
+        { dato: "CPC Colegiado", detalle: "Colegio de Contadores Públicos de Lima · Matrícula N.° 45872" },
+        { dato: "12 años", detalle: "de experiencia en tributación de pequeñas y medianas empresas" },
+        { dato: "+80 empresas", detalle: "atendidas entre RER, RMT y Régimen General" },
+        { dato: "6 rubros", detalle: "comercio, restaurantes, servicios, e-commerce, salud e independientes" },
+      ],
+      servicios: [
+        { num: "01", titulo: "Contabilidad mensual integral", desc: "Registro de compras y ventas, conciliaciones bancarias y estados financieros listos cada mes. Tu contabilidad ordenada, siempre al día." },
+        { num: "02", titulo: "Declaraciones SUNAT", desc: "IGV-Renta mensual presentada antes del vencimiento según tu último dígito de RUC. Nunca más una declaración fuera de plazo." },
+        { num: "03", titulo: "Planilla y PLAME", desc: "Alta de trabajadores en T-Registro, cálculo de planilla, CTS, gratificaciones y presentación mensual del PLAME." },
+        { num: "04", titulo: "Constitución de empresa", desc: "De la reserva de nombre en SUNARP hasta tu RUC y clave SOL. Tu empresa formal y lista para facturar en 10–15 días hábiles." },
+        { num: "05", titulo: "Asesoría tributaria", desc: "Elección de régimen, planeamiento del IGV y renta, respuesta a esquelas y cartas inductivas de SUNAT." },
+        { num: "06", titulo: "Libros electrónicos", desc: "Registro de ventas e ingresos y de compras vía SIRE/PLE, siempre consistentes con tus declaraciones." },
+      ],
+      perfiles: [
+        { titulo: "Emprendedores que recién formalizan", desc: "Pasaste de vender por tu cuenta a necesitar RUC, facturas y un régimen tributario. Te acompaño desde el día uno para que empieces bien." },
+        { titulo: "PYMEs en crecimiento", desc: "Ya facturas todos los meses y necesitas estados financieros confiables para bancos, proveedores o socios." },
+        { titulo: "Bodegas y restaurantes", desc: "Ventas diarias, boletas electrónicas y personal en planilla. Manejo la operación tributaria completa del negocio de barrio y del local con mesas." },
+        { titulo: "E-commerce y ventas por redes", desc: "Vendes por Shopify, Mercado Libre o Instagram y no sabes cómo declarar esos ingresos. Lo ordenamos y lo declaramos correctamente." },
+      ],
+      diferenciadores: [
+        { titulo: "Cero vencimientos perdidos", desc: "Calendario tributario de cada cliente monitoreado a diario. Tu declaración se presenta siempre antes de la fecha de tu cronograma." },
+        { titulo: "Te ahorro multas, no solo las evito", desc: "Si llegas con deuda u omisiones, aplico gradualidad y subsanación voluntaria para reducir las sanciones al mínimo legal." },
+        { titulo: "Respuesta en horas, no en semanas", desc: "WhatsApp directo conmigo, no con un asistente. Las consultas del día se responden el mismo día." },
+        { titulo: "Reportes que sí entiendes", desc: "Cada mes recibes un resumen en lenguaje claro: cuánto vendiste, cuánto pagarás de impuestos y qué vence el próximo mes." },
+      ],
+      pasos: [
+        { num: "1", titulo: "Diagnóstico gratuito", desc: "Revisamos tu ficha RUC, régimen, declaraciones y posibles deudas. Te digo exactamente cómo estás ante SUNAT." },
+        { num: "2", titulo: "Migración ordenada", desc: "Recojo la información de tu contador anterior o de tus archivos. Tú no tienes que pelear con nadie." },
+        { num: "3", titulo: "Contabilidad al día", desc: "Regularizamos lo pendiente y dejamos libros, declaraciones y planilla funcionando en piloto automático." },
+        { num: "4", titulo: "Reporte mensual claro", desc: "Cada mes: impuestos calculados, declaración presentada y un resumen simple de la salud de tu negocio." },
+      ],
+      testimonios: [
+        { cita: "Vine con tres declaraciones atrasadas y una notificación de SUNAT que no entendía. Daniel regularizó todo en dos semanas y la multa terminó siendo una fracción de lo que temía.", nombre: "Rosa Mendoza", rol: "Dueña de restaurante · Surquillo" },
+        { cita: "Mi contador anterior desaparecía cada fin de mes. Ahora recibo mi reporte antes de que yo lo pida y sé cuánto voy a pagar de IGV con días de anticipación.", nombre: "Jorge Castañeda", rol: "Tienda online de repuestos · Los Olivos" },
+        { cita: "Como arquitecto independiente nunca supe si me convenía la suspensión de 4ta. Él la tramitó, y este año la declaración anual me salió a favor.", nombre: "Alonso Rivas", rol: "Arquitecto independiente · Miraflores" },
+      ],
+      faqs,
+    };
+  }
+}
+</script>
+</body>
+</html>

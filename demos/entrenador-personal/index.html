@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FZA Training — Entrenamiento personal en Surco y San Borja</title>
+  <meta name="description" content="Demo conceptual de entrenamiento personal presencial, online e híbrido en Surco y San Borja, con evaluación, técnica y seguimiento estructurado.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f2efe7">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FZA Training — Entrenamiento con método">
+  <meta property="og:description" content="Evaluación, planificación y seguimiento para entrenar con intención. Demo conceptual de Nozoe Studio.">
+  <meta property="og:image" content="assets/hero-entrenamiento-v2.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f2efe7;
+      --paper-2: #e7e3d9;
+      --ink: #171915;
+      --muted: #62665e;
+      --line: rgba(23, 25, 21, .18);
+      --blue: #3157f6;
+      --blue-dark: #1736bd;
+      --white: #fff;
+      --orange: #e94e1b;
+      --display: "Barlow Condensed", sans-serif;
+      --body: "Manrope", sans-serif;
+      --shell: min(1220px, calc(100% - 48px));
+      --section: clamp(5rem, 10vw, 9rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.65; }
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    ::selection { background: var(--blue); color: var(--white); }
+
+    .skip-link { position: fixed; z-index: 300; top: .75rem; left: .75rem; padding: .75rem 1rem; background: var(--ink); color: var(--white); transform: translateY(-180%); }
+    .skip-link:focus { transform: none; }
+    .shell { width: var(--shell); margin-inline: auto; }
+    .eyebrow { margin: 0 0 1.2rem; color: var(--blue); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .section-title { max-width: 14ch; margin: 0; font-family: var(--display); font-size: clamp(3rem, 6vw, 6.1rem); font-weight: 700; letter-spacing: -.035em; line-height: .88; text-transform: uppercase; }
+    .lede { max-width: 42rem; margin: 0; color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.2rem); }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(18rem, .7fr); gap: clamp(2rem, 7vw, 7rem); align-items: end; margin-bottom: clamp(3rem, 7vw, 6rem); }
+    .button { display: inline-flex; min-height: 3.5rem; align-items: center; justify-content: center; gap: .8rem; border: 1px solid var(--ink); padding: .9rem 1.25rem; background: var(--ink); color: var(--white); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; cursor: pointer; transition: transform .2s, background .2s, color .2s; }
+    .button:hover { transform: translateY(-2px); background: var(--blue); border-color: var(--blue); }
+    .button svg { width: 1.1rem; transition: transform .2s; }
+    .button:hover svg { transform: translateX(3px); }
+    .button--line { background: transparent; color: var(--ink); }
+    .button--line:hover { color: var(--white); }
+
+    .demo-ribbon { position: fixed; z-index: 180; top: 2.7rem; right: -5.75rem; display: block; width: 19.7rem; transform: rotate(45deg); filter: drop-shadow(0 .3rem .45rem rgba(0, 0, 0, .28)); transition: filter .2s, transform .2s; }
+    .demo-ribbon:hover { transform: rotate(45deg) translateY(-2px); filter: drop-shadow(0 .45rem .65rem rgba(0, 0, 0, .38)); }
+    .demo-ribbon img { width: 100%; height: auto; }
+    .demo-ribbon:focus-visible { outline-color: var(--white); }
+
+    .site-header { position: sticky; z-index: 100; top: 0; border-bottom: 1px solid var(--line); background: rgba(242, 239, 231, .91); backdrop-filter: blur(14px); }
+    .nav { display: flex; min-height: 5rem; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { display: inline-flex; align-items: baseline; gap: .5rem; font-family: var(--display); font-size: 1.7rem; font-weight: 800; letter-spacing: -.04em; text-decoration: none; text-transform: uppercase; }
+    .brand span { color: var(--blue); font-family: var(--body); font-size: .62rem; font-weight: 700; letter-spacing: .15em; }
+    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2.2rem); margin: 0; padding: 0; list-style: none; }
+    .nav-links a:not(.button) { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+    .nav-links a:not(.button):hover { color: var(--blue); }
+    .nav-links .button { min-height: 2.85rem; padding: .65rem 1rem; }
+    .menu-toggle { display: none; width: 3rem; height: 3rem; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+    .menu-toggle span { display: block; width: 1.4rem; height: 1px; margin: .35rem auto; background: currentColor; transition: transform .2s; }
+
+    .hero { min-height: calc(100svh - 5rem); border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; min-height: calc(100svh - 5rem); grid-template-columns: minmax(0, .92fr) minmax(28rem, 1.08fr); }
+    .hero-copy { position: relative; z-index: 2; display: flex; align-items: center; padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 5vw, 5rem) clamp(4rem, 8vw, 7rem) max(24px, calc((100vw - 1220px) / 2)); }
+    .hero-copy::after { position: absolute; right: 2rem; bottom: 2rem; color: rgba(23, 25, 21, .38); content: "01 / INICIO"; font-size: .65rem; font-weight: 700; letter-spacing: .16em; }
+    .hero h1 { max-width: 8.7ch; margin: 0 0 1.75rem; font-family: var(--display); font-size: clamp(4.1rem, 7.4vw, 8.2rem); font-weight: 700; letter-spacing: -.045em; line-height: .79; text-transform: uppercase; }
+    .hero h1 span { color: var(--blue); }
+    .hero-text { max-width: 35rem; margin: 0 0 2rem; color: var(--muted); font-size: clamp(1rem, 1.3vw, 1.16rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; margin-top: 2.2rem; color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .hero-meta span { display: inline-flex; align-items: center; gap: .5rem; }
+    .hero-meta span::before { width: .42rem; height: .42rem; border-radius: 50%; background: var(--blue); content: ""; }
+    .hero-media { position: relative; min-height: 42rem; overflow: hidden; background: #c8c6bf; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 56% center; }
+    .hero-media::after { position: absolute; inset: auto 0 0; height: 35%; background: linear-gradient(transparent, rgba(0, 0, 0, .42)); content: ""; }
+    .image-note { position: absolute; z-index: 2; right: 1.5rem; bottom: 1.5rem; max-width: 20rem; margin: 0; color: rgba(255, 255, 255, .88); font-size: .65rem; letter-spacing: .08em; text-align: right; text-transform: uppercase; }
+
+    .fit { padding: var(--section) 0; }
+    .fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); }
+    .fit-card { min-height: 19rem; padding: 1.5rem 1.5rem 2.5rem; border-right: 1px solid var(--line); }
+    .fit-card:last-child { border-right: 0; }
+    .fit-card .number { display: block; margin-bottom: 5rem; color: var(--blue); font-family: var(--display); font-size: 1.35rem; font-weight: 700; }
+    .fit-card h3 { max-width: 12ch; margin: 0 0 1rem; font-family: var(--display); font-size: 2rem; line-height: .98; text-transform: uppercase; }
+    .fit-card p { max-width: 30rem; margin: 0; color: var(--muted); font-size: .92rem; }
+
+    .method { padding: var(--section) 0; background: var(--ink); color: var(--white); }
+    .method .eyebrow { color: #8298ff; }
+    .method-grid { display: grid; grid-template-columns: minmax(20rem, .9fr) minmax(0, 1.1fr); gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+    .method-media { position: sticky; top: 7rem; }
+    .method-media img { width: 100%; max-height: 48rem; object-fit: cover; }
+    .method-media p { margin: 1rem 0 0; color: rgba(255, 255, 255, .6); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+    .method-list { margin: 3.5rem 0 0; padding: 0; list-style: none; }
+    .method-step { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; padding: 1.8rem 0; border-top: 1px solid rgba(255, 255, 255, .2); }
+    .method-step:last-child { border-bottom: 1px solid rgba(255, 255, 255, .2); }
+    .method-step > span { color: #8298ff; font-family: var(--display); font-size: 1.25rem; }
+    .method-step h3 { margin: 0 0 .5rem; font-family: var(--display); font-size: 2rem; line-height: 1; text-transform: uppercase; }
+    .method-step p { max-width: 35rem; margin: 0; color: rgba(255, 255, 255, .64); font-size: .92rem; }
+
+    .formats { padding: var(--section) 0; }
+    .formats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .format { position: relative; display: flex; min-height: 32rem; flex-direction: column; overflow: hidden; border: 1px solid var(--line); background: var(--paper-2); }
+    .format-media { position: relative; overflow: hidden; aspect-ratio: 3 / 2; background: #c8c6bf; }
+    .format-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .format:hover .format-media img { transform: scale(1.035); }
+    .format-image-note { position: absolute; right: .75rem; bottom: .75rem; padding: .35rem .5rem; background: rgba(23, 25, 21, .78); color: var(--white); font-size: .56rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .format-content { display: flex; flex: 1; flex-direction: column; padding: 1.7rem; }
+    .format .tag { color: var(--blue); font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .format h3 { max-width: 9ch; margin: 2.7rem 0 1rem; font-family: var(--display); font-size: clamp(2.2rem, 4vw, 3.7rem); line-height: .9; text-transform: uppercase; }
+    .format p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .format .best-for { display: block; margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: .75rem; font-weight: 700; letter-spacing: .04em; }
+
+    .tracking { position: relative; z-index: 0; display: flex; min-height: clamp(43rem, 72vw, 58rem); align-items: center; overflow: hidden; padding: var(--section) 0; background: var(--ink) url('assets/bitacora-progreso-v2.webp') center/cover no-repeat; color: var(--white); }
+    .tracking::before { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(10, 12, 12, .95) 0%, rgba(10, 12, 12, .86) 45%, rgba(10, 12, 12, .58) 72%, rgba(10, 12, 12, .45) 100%); content: ""; }
+    .tracking-grid { display: block; }
+    .tracking-copy { max-width: 52rem; }
+    .tracking .eyebrow { color: rgba(255, 255, 255, .72); }
+    .tracking .section-title { max-width: 10ch; text-wrap: balance; }
+    .tracking-copy > p:not(.eyebrow) { max-width: 34rem; color: rgba(255, 255, 255, .78); }
+    .tracking-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 2.5rem 0 0; padding: 0; border-top: 1px solid rgba(255, 255, 255, .35); list-style: none; }
+    .tracking-list li { padding: 1.2rem 1rem 1.2rem 0; border-bottom: 1px solid rgba(255, 255, 255, .35); font-size: .78rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+    .tracking-note { margin: 1.4rem 0 0; color: rgba(255, 255, 255, .54); font-size: .62rem; letter-spacing: .09em; text-transform: uppercase; }
+
+    .coach { padding: var(--section) 0; }
+    .coach-grid { display: grid; grid-template-columns: minmax(20rem, .78fr) minmax(0, 1.22fr); gap: clamp(3rem, 9vw, 9rem); align-items: center; }
+    .coach-media { position: relative; }
+    .coach-media img { width: 100%; max-height: 48rem; object-fit: cover; }
+    .concept-label { position: absolute; right: 1rem; bottom: 1rem; max-width: 13rem; padding: .8rem; background: rgba(23, 25, 21, .88); color: var(--white); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; }
+    .coach-copy h2 { max-width: 10ch; margin: 0 0 1.5rem; font-family: var(--display); font-size: clamp(3.2rem, 6.4vw, 6.7rem); line-height: .86; text-transform: uppercase; }
+    .coach-copy .quote { max-width: 36rem; margin: 0 0 2rem; font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1.45; }
+    .coach-copy .fine { max-width: 38rem; margin: 0; color: var(--muted); font-size: .86rem; }
+    .credential-slot { display: grid; grid-template-columns: auto 1fr; gap: 1rem; margin-top: 2.2rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+    .credential-slot strong { color: var(--blue); font-family: var(--display); font-size: 1.2rem; text-transform: uppercase; }
+    .credential-slot span { color: var(--muted); font-size: .78rem; }
+
+    .faq { padding: var(--section) 0; background: var(--paper-2); }
+    .faq-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
+    .faq-intro { position: sticky; top: 7rem; }
+    .faq-intro .section-title { max-width: 7ch; }
+    details { border-top: 1px solid var(--ink); }
+    details:last-child { border-bottom: 1px solid var(--ink); }
+    summary { position: relative; padding: 1.4rem 3rem 1.4rem 0; font-family: var(--display); font-size: 1.55rem; font-weight: 700; line-height: 1.1; list-style: none; text-transform: uppercase; cursor: pointer; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { position: absolute; top: 1.2rem; right: .2rem; color: var(--blue); content: "+"; font-family: var(--body); font-size: 1.5rem; font-weight: 400; transition: transform .2s; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { max-width: 42rem; margin: 0; padding: 0 3rem 1.5rem 0; color: var(--muted); font-size: .9rem; }
+
+    .evaluation { padding: var(--section) 0; background: var(--ink); color: var(--white); }
+    .evaluation-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(3rem, 9vw, 9rem); }
+    .evaluation .eyebrow { color: #8298ff; }
+    .evaluation .section-title { max-width: 8ch; }
+    .evaluation-copy > p:not(.eyebrow) { max-width: 32rem; color: rgba(255, 255, 255, .64); }
+    .demo-note { margin-top: 2.5rem; padding: 1rem; border: 1px solid rgba(255, 255, 255, .24); color: rgba(255, 255, 255, .72); font-size: .75rem; }
+    .demo-note strong { color: var(--white); }
+    .demo-form { display: grid; gap: 1.2rem; }
+    .field { display: grid; gap: .5rem; }
+    .field label { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .field input, .field select, .field textarea { width: 100%; border: 0; border-bottom: 1px solid rgba(255, 255, 255, .4); border-radius: 0; padding: .8rem 0; background: transparent; color: var(--white); }
+    .field textarea { min-height: 7rem; resize: vertical; }
+    .field select { color-scheme: dark; }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(255, 255, 255, .38); }
+    .demo-form .button { justify-self: start; border-color: var(--white); background: var(--white); color: var(--ink); }
+    .demo-form .button:hover { border-color: var(--blue); background: var(--blue); color: var(--white); }
+    .form-status { min-height: 1.5rem; margin: 0; color: #aebaff; font-size: .82rem; }
+
+    .site-footer { padding: 2rem 0; border-top: 1px solid rgba(255, 255, 255, .16); background: var(--ink); color: rgba(255, 255, 255, .62); font-size: .72rem; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 1.5rem; }
+    .site-footer p { max-width: 46rem; margin: 0; }
+    .site-footer a { color: var(--white); font-weight: 700; }
+
+    .reveal { opacity: 1; transform: none; }
+    .js .reveal { opacity: 0; transform: translateY(1.5rem); transition: opacity .7s ease, transform .7s ease; }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+
+    @media (min-width: 961px) { .nav { padding-right: 7.5rem; } }
+
+    @media (max-width: 960px) {
+      :root { --shell: min(100% - 36px, 760px); }
+      .demo-ribbon { top: 5.65rem; right: 0; width: 30%; transform: none; }
+      .demo-ribbon:hover { transform: translateY(-2px); }
+      .menu-open .site-header { position: fixed; inset: 0; height: 100svh; background: var(--paper); }
+      .menu-open .brand { position: relative; z-index: 2; }
+      .js .menu-toggle { display: block; position: relative; z-index: 2; }
+      .js .nav-links { position: absolute; inset: 0; display: flex; visibility: hidden; min-height: 100svh; flex-direction: column; align-items: flex-start; justify-content: center; gap: 1.5rem; padding: 6rem 2rem 3rem; background: var(--paper); opacity: 0; pointer-events: none; transition: opacity .25s, visibility .25s; }
+      .js .nav-links.is-open { visibility: visible; opacity: 1; pointer-events: auto; }
+      .js .nav-links a:not(.button) { font-family: var(--display); font-size: clamp(2rem, 8vw, 4rem); letter-spacing: -.02em; }
+      .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(.18rem) rotate(45deg); }
+      .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-.18rem) rotate(-45deg); }
+      .section-head, .method-grid, .tracking-grid, .coach-grid, .faq-layout, .evaluation-grid { grid-template-columns: 1fr; }
+      .hero-grid { min-height: auto; grid-template-columns: 1fr; }
+      .hero-copy { min-height: 39rem; padding: 8rem 18px 4rem; }
+      .hero-copy::after { right: 18px; }
+      .hero-media { min-height: 34rem; }
+      .fit-grid, .formats-grid { grid-template-columns: 1fr; }
+      .fit-card { min-height: auto; padding: 1.5rem 0 2rem; border-right: 0; border-bottom: 1px solid var(--line); }
+      .fit-card .number { margin-bottom: 2.5rem; }
+      .method-media, .faq-intro { position: static; }
+      .method-media img { max-height: 42rem; object-position: center 62%; }
+      .formats-grid { gap: .75rem; }
+      .format { min-height: 21rem; }
+      .tracking { min-height: 48rem; background-position: 62% center; }
+      .tracking::before { background: linear-gradient(90deg, rgba(10, 12, 12, .95), rgba(10, 12, 12, .73)); }
+      .coach-media { max-width: 36rem; }
+    }
+
+    @media (max-width: 560px) {
+      :root { --shell: calc(100% - 32px); --section: 4.5rem; }
+      .nav { min-height: 4.75rem; }
+      .brand { font-size: 1.45rem; }
+      .brand span { display: none; }
+      .demo-ribbon { top: 5.2rem; }
+      .hero-copy { min-height: 36rem; padding-top: 7.5rem; }
+      .hero h1 { font-size: clamp(3.8rem, 19vw, 5.5rem); }
+      .hero-actions .button { width: 100%; }
+      .hero-media { min-height: 27rem; }
+      .hero-media img { object-position: 60% center; }
+      .section-title { font-size: clamp(3rem, 16vw, 4.5rem); }
+      .section-head { gap: 1.5rem; }
+      .method-step { grid-template-columns: 2.5rem 1fr; }
+      .tracking-list { grid-template-columns: 1fr; }
+      .tracking { min-height: 45rem; background-position: 68% center; }
+      .tracking::before { background: rgba(10, 12, 12, .78); }
+      .coach-copy h2 { font-size: clamp(3rem, 16vw, 4.7rem); }
+      .footer-grid { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+    <img src="assets/cinta-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="429" height="46">
+  </a>
+
+  <header class="site-header">
+    <nav class="shell nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="FZA Training, volver al inicio">FZA / TRAINING <span>Demo conceptual</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#metodo">Método</a></li>
+        <li><a href="#modalidades">Modalidades</a></li>
+        <li><a href="#coach">Coach</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a class="button" href="#evaluacion">Solicitar evaluación</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="reveal">
+            <p class="eyebrow">Entrenamiento personal · Lima</p>
+            <h1 id="hero-title">Entrena con <span>intención.</span></h1>
+            <p class="hero-text">Un plan que empieza donde estás: evaluación, técnica y seguimiento para avanzar con criterio, incluso cuando tu agenda no coopera.</p>
+            <div class="hero-actions">
+              <a class="button" href="#evaluacion">Solicitar evaluación
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+              <a class="button button--line" href="#metodo">Conocer el método</a>
+            </div>
+            <div class="hero-meta" aria-label="Modalidades y zona">
+              <span>Surco + San Borja</span><span>Online</span><span>Nivel inicial a intermedio</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="assets/hero-entrenamiento-v2.webp" alt="Entrenador guiando a una mujer limeña durante una sentadilla con mancuerna" width="1672" height="941" fetchpriority="high">
+          <p class="image-note">Imagen conceptual generada para esta demostración</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="fit" id="para-quien" aria-labelledby="fit-title">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Punto de partida</p>
+            <h2 class="section-title" id="fit-title">No necesitas más motivación. Necesitas estructura.</h2>
+          </div>
+          <p class="lede">El entrenamiento personal tiene sentido cuando reduce decisiones, adapta la carga a tu realidad y convierte cada sesión en información para la siguiente.</p>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card reveal"><span class="number">01</span><h3>Vuelves después de una pausa</h3><p>Retoma fuerza y capacidad sin intentar recuperar meses de inactividad en una sola semana.</p></article>
+          <article class="fit-card reveal"><span class="number">02</span><h3>Entrenas, pero no ves rumbo</h3><p>Ordena ejercicios, cargas y frecuencia alrededor de una meta concreta y un calendario realista.</p></article>
+          <article class="fit-card reveal"><span class="number">03</span><h3>Tu agenda cambia cada semana</h3><p>Combina sesiones presenciales y online para sostener el proceso cuando cambia tu rutina.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="method" id="metodo" aria-labelledby="method-title">
+      <div class="shell method-grid">
+        <figure class="method-media reveal">
+          <img src="assets/metodo-tecnica.webp" alt="Entrenadora corrigiendo la bisagra de cadera de una clienta con kettlebell" width="896" height="1400" loading="lazy">
+          <p>La técnica se observa y se adapta; no se da por hecha.</p>
+        </figure>
+        <div>
+          <p class="eyebrow">El método</p>
+          <h2 class="section-title" id="method-title">Un ciclo simple. Bien ejecutado.</h2>
+          <ol class="method-list">
+            <li class="method-step reveal"><span>01</span><div><h3>Evaluar</h3><p>Conversación inicial, experiencia previa, disponibilidad y movimientos básicos. Si existe una condición de salud, se solicita la orientación profesional correspondiente.</p></div></li>
+            <li class="method-step reveal"><span>02</span><div><h3>Planificar</h3><p>Se define una frecuencia sostenible, prioridades y progresiones. El programa se ajusta a tu contexto, no al revés.</p></div></li>
+            <li class="method-step reveal"><span>03</span><div><h3>Entrenar</h3><p>Cada sesión busca calidad de movimiento, esfuerzo apropiado y una dosis que puedas recuperar.</p></div></li>
+            <li class="method-step reveal"><span>04</span><div><h3>Revisar</h3><p>Se observan asistencia, cargas, percepción de esfuerzo y ejecución. El plan cambia cuando la información lo pide.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="formats" id="modalidades" aria-labelledby="formats-title">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Modalidades</p><h2 class="section-title" id="formats-title">La misma lógica. Tres maneras de sostenerla.</h2></div>
+          <p class="lede">La disponibilidad, frecuencia y precio se confirmarían con el profesional real. Esta demo no publica tarifas inventadas.</p>
+        </div>
+        <div class="formats-grid">
+          <article class="format reveal">
+            <div class="format-media"><img src="assets/modalidad-presencial.webp" alt="Entrenador supervisando a una clienta durante una sesión presencial" width="1200" height="800" loading="lazy"><span class="format-image-note">Imagen conceptual</span></div>
+            <div class="format-content"><span class="tag">Presencial · 1 a 1</span><h3>Técnica en tiempo real</h3><p>Sesiones acompañadas para practicar movimientos, regular esfuerzo y progresar con supervisión directa.</p><span class="best-for">Ideal si: estás empezando o quieres corregir tu ejecución.</span></div>
+          </article>
+          <article class="format reveal">
+            <div class="format-media"><img src="assets/modalidad-online.webp" alt="Mujer entrenando con mancuernas en casa frente a una sesión online" width="1200" height="800" loading="lazy"><span class="format-image-note">Imagen conceptual</span></div>
+            <div class="format-content"><span class="tag">Online · Seguimiento</span><h3>Autonomía con dirección</h3><p>Programación clara, referencias de ejecución y revisiones periódicas para entrenar donde estés.</p><span class="best-for">Ideal si: ya conoces los básicos y necesitas estructura.</span></div>
+          </article>
+          <article class="format reveal">
+            <div class="format-media"><img src="assets/modalidad-hibrida.webp" alt="Entrenador y clienta revisando en el teléfono las próximas sesiones" width="1200" height="800" loading="lazy"><span class="format-image-note">Imagen conceptual</span></div>
+            <div class="format-content"><span class="tag">Híbrido · Flexible</span><h3>Presencia cuando importa</h3><p>Combina sesiones técnicas presenciales con trabajo online para mantener continuidad durante la semana.</p><span class="best-for">Ideal si: tu agenda cambia y no quieres perder el hilo.</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracking" id="seguimiento" aria-labelledby="tracking-title">
+      <div class="shell tracking-grid">
+        <div class="tracking-copy reveal">
+          <p class="eyebrow">Bitácora de progreso</p>
+          <h2 class="section-title" id="tracking-title">Lo que no se registra se confunde.</h2>
+          <p>El seguimiento no es una colección de promesas. Es una forma de entender qué hiciste, cómo respondió tu cuerpo y qué conviene ajustar.</p>
+          <ul class="tracking-list"><li>Asistencia y frecuencia</li><li>Cargas y repeticiones</li><li>Esfuerzo percibido</li><li>Calidad de ejecución</li></ul>
+          <p class="tracking-note">Imagen conceptual generada para esta demostración</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="coach" id="coach" aria-labelledby="coach-title">
+      <div class="shell coach-grid">
+        <figure class="coach-media reveal">
+          <img src="assets/coach-conceptual.webp" alt="Retrato conceptual de un entrenador en un estudio de fuerza" width="896" height="1400" loading="lazy">
+          <figcaption class="concept-label">Retrato y perfil creados únicamente para esta demo.</figcaption>
+        </figure>
+        <div class="coach-copy reveal">
+          <p class="eyebrow">El entrenador</p>
+          <h2 id="coach-title">Criterio antes que espectáculo.</h2>
+          <p class="quote">“Mi trabajo no sería agotarte por una hora. Sería enseñarte a entrenar mejor y construir un proceso que puedas sostener.”</p>
+          <p class="fine">Este texto representa el posicionamiento propuesto para un profesional real. Nombre, trayectoria, certificaciones, colegiaturas y experiencia deberán reemplazarse únicamente con documentación proporcionada por el cliente.</p>
+          <div class="credential-slot"><strong>Credenciales</strong><span>Espacio reservado para formación y certificaciones verificables. No se atribuye ninguna credencial a la persona conceptual de la imagen.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="preguntas" aria-labelledby="faq-title">
+      <div class="shell faq-layout">
+        <div class="faq-intro"><p class="eyebrow">Antes de empezar</p><h2 class="section-title" id="faq-title">Preguntas sin rodeos.</h2></div>
+        <div class="faq-list">
+          <details><summary>¿Necesito experiencia previa?</summary><p>No. La evaluación inicial sirve para adaptar el punto de partida. Quien ya entrena también puede usarla para ordenar su programación o revisar técnica.</p></details>
+          <details><summary>¿Qué pasa si tengo una lesión o condición médica?</summary><p>Un entrenador no sustituye a un profesional sanitario. Antes de entrenar puede ser necesaria una autorización o indicación específica; el alcance dependerá de cada caso y de las credenciales verificadas del entrenador.</p></details>
+          <details><summary>¿Incluye un plan de alimentación?</summary><p>La demo no promete prescripción nutricional. Un plan alimentario individual debe quedar a cargo de un profesional habilitado para ello. El servicio real podrá coordinar recomendaciones generales o derivación, según corresponda.</p></details>
+          <details><summary>¿Cuántas sesiones necesito?</summary><p>La frecuencia se definiría según objetivo, experiencia, recuperación y disponibilidad. El punto de partida más útil es el que puedes sostener, no el más ambicioso sobre el papel.</p></details>
+          <details><summary>¿Dónde se realizan las sesiones?</summary><p>Surco y San Borja son las zonas propuestas para esta demostración. El espacio exacto, horarios y condiciones deben confirmarse con los datos reales del negocio.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="evaluation" id="evaluacion" aria-labelledby="evaluation-title">
+      <div class="shell evaluation-grid">
+        <div class="evaluation-copy reveal">
+          <p class="eyebrow">Siguiente paso</p>
+          <h2 class="section-title" id="evaluation-title">Empieza por entender dónde estás.</h2>
+          <p>Una evaluación inicial debería aclarar tu objetivo, experiencia, disponibilidad y cualquier limitación relevante antes de proponer un programa.</p>
+          <p class="demo-note"><strong>Formulario de demostración:</strong> no envía ni almacena información. La entrega real requiere integrar un canal de contacto o sistema de reservas.</p>
+        </div>
+        <form class="demo-form reveal" id="demo-form">
+          <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required></div>
+          <div class="field"><label for="modalidad">Modalidad que te interesa</label><select id="modalidad" name="modalidad" required><option value="">Selecciona una opción</option><option>Presencial</option><option>Online</option><option>Híbrida</option><option>No estoy seguro/a</option></select></div>
+          <div class="field"><label for="objetivo">¿Qué te gustaría trabajar?</label><textarea id="objetivo" name="objetivo" placeholder="Cuéntanos brevemente tu punto de partida"></textarea></div>
+          <button class="button" type="submit">Simular solicitud
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <p>© 2026 FZA Training · Demo conceptual. Marca, profesional, imágenes, ubicaciones y contenido comercial son ficticios; no representan un negocio operativo.</p>
+      <p>Dirección creativa por <a href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer">Nozoe Studio</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('#nav-links');
+
+    function closeMenu() {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menú');
+      navLinks.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+    }
+
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!open));
+      menuButton.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
+      navLinks.classList.toggle('is-open', !open);
+      document.body.classList.toggle('menu-open', !open);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(item => observer.observe(item));
+
+    const form = document.querySelector('#demo-form');
+    const status = document.querySelector('#form-status');
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      status.textContent = 'Simulación completada: ningún dato fue enviado ni almacenado.';
+    });
+  </script>
+</body>
+</html>
