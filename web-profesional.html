@@ -20,7 +20,7 @@
 <link rel="icon" href="assets/favicon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css">
 <link rel="stylesheet" href="assets/css/site.css">
 <!-- Google tag (gtag.js) -->
@@ -61,6 +61,7 @@
 #wp-page a:not(.btn){color:inherit;text-decoration:none}
 #wp-page .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 #wp-page .eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ns-text-soft)}
+#wp-page .eyebrow:has(.eyebrow-line){display:inline-flex;align-items:center;gap:12px}
 #wp-page .eyebrow b{color:var(--ns-accent);font-weight:600}
 #wp-page .wa-ico{width:17px;height:17px;flex-shrink:0}
 #wp-page .btn{font-size:13px;gap:9px;padding:0 26px}
@@ -203,6 +204,83 @@ html{scroll-behavior:smooth}
   #wp-page .msg{opacity:1;transform:none}
 }
 #wp-page :focus-visible{outline:2px solid var(--ns-accent);outline-offset:2px;border-radius:4px}
+
+/* ============ DEMOS EN VIVO (sección 02, variante 1b) ============ */
+/* Prefijadas con #wp-page: el reset "#wp-page *{margin:0;padding:0}" (línea 42)
+   tiene más especificidad que una clase sola y anulaba el espaciado. */
+#wp-page .dv-section{position:relative;background:#1D2A40;background-image:radial-gradient(rgba(244,241,236,0.05) 1px,transparent 1px);background-size:24px 24px;padding:88px 0 80px;font-family:'Nunito',system-ui,sans-serif;overflow:hidden}
+#wp-page .dv-wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+#wp-page .dv-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:24px 48px;justify-content:space-between}
+#wp-page .dv-intro{max-width:640px}
+#wp-page .dv-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+#wp-page .dv-eyebrow-line{display:block;width:40px;height:2px;background:var(--ns-accent);flex:none}
+#wp-page .dv-eyebrow span{font:600 12px 'Nunito',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8B9DB7}
+#wp-page .dv-title{margin:0 0 16px;font:800 clamp(32px,3.4vw,46px)/1.1 'Nunito',sans-serif;letter-spacing:-.02em;color:#F4F1EC}
+#wp-page .dv-desc{margin:0;font:300 18px/1.6 'Nunito',sans-serif;color:#8B9DB7;max-width:56ch}
+#wp-page .dv-controls{display:flex;align-items:center;gap:16px;padding-bottom:6px;flex:none}
+#wp-page .dv-counter{font:300 16px 'Nunito',sans-serif;color:#8B9DB7;letter-spacing:.1em;min-width:64px}
+#wp-page .dv-arrow{width:40px;height:40px;border:1px solid #475773;background:transparent;border-radius:4px;color:#F4F1EC;font-size:16px;cursor:pointer;transition:background 150ms,transform 150ms;font-family:inherit;flex:none}
+#wp-page .dv-arrow:hover{background:#475773;transform:translateY(-1px)}
+#wp-page .dv-arrow:focus-visible{outline:2px solid var(--ns-accent);outline-offset:2px}
+
+#wp-page .dv-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:48px calc((100% - min(440px,82%))/2) 12px;cursor:grab;scrollbar-width:none;margin-top:8px}
+#wp-page .dv-track::-webkit-scrollbar{display:none}
+#wp-page .dv-track:active{cursor:grabbing}
+
+#wp-page .dv-card-wrap{flex:none;width:min(440px,82%);scroll-snap-align:center;transform:scale(.88);opacity:.45;transition:transform 450ms cubic-bezier(.16,1,.3,1),opacity 450ms cubic-bezier(.16,1,.3,1)}
+#wp-page .dv-card-wrap:first-child{transform:scale(1);opacity:1}
+
+#wp-page .dv-card{display:flex;flex-direction:column;height:100%;background:#FFFFFF;border:1px solid #E0D9CD;border-radius:4px;overflow:hidden;box-shadow:0 1px 2px rgba(29,42,64,.06);transition:transform 250ms cubic-bezier(.16,1,.3,1),box-shadow 250ms cubic-bezier(.16,1,.3,1)}
+#wp-page .dv-card:hover,#wp-page .dv-card:focus-within{transform:translateY(-2px);box-shadow:0 16px 40px rgba(29,42,64,.14)}
+
+#wp-page .dv-frame{position:relative;background:#EDE8DF;padding:20px 20px 0}
+#wp-page .dv-browser{background:#FFFFFF;border:1px solid #E0D9CD;border-bottom:none;border-radius:6px 6px 0 0;overflow:hidden}
+#wp-page .dv-browser-bar{display:flex;align-items:center;gap:10px;height:30px;padding:0 12px;background:#F4F1EC;border-bottom:1px solid #E0D9CD}
+#wp-page .dv-dots{display:flex;gap:5px;flex:none}
+#wp-page .dv-dots span{width:7px;height:7px;border-radius:9999px;background:#DCD4C6;display:block}
+#wp-page .dv-url{flex:1;display:flex;align-items:center;justify-content:center;height:18px;background:#FFFFFF;border:1px solid #EAE4D9;border-radius:9999px;font:600 9px 'Nunito',sans-serif;color:#8B9DB7;letter-spacing:.04em;white-space:nowrap;overflow:hidden;padding:0 8px}
+#wp-page .dv-shot-window{height:290px;overflow:hidden;position:relative;background:#F4F1EC}
+#wp-page .dv-shot{display:block;width:100%;height:auto;transform:translateY(0);transition:transform 3.4s cubic-bezier(.16,1,.3,1)}
+#wp-page .dv-card:hover .dv-shot,#wp-page .dv-card:focus-within .dv-shot{transform:translateY(calc(290px - 100%))}
+
+#wp-page .dv-mobile-mock{position:absolute;right:16px;bottom:14px;width:86px;background:#1D2A40;border-radius:12px;padding:5px;box-shadow:0 12px 28px rgba(29,42,64,.28);z-index:2}
+#wp-page .dv-mobile-inner{background:#FFFFFF;border-radius:8px;overflow:hidden;height:110px}
+#wp-page .dv-mobile-inner img{display:block;width:100%;height:auto}
+
+#wp-page .dv-body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+#wp-page .dv-meta-row{display:flex;align-items:center;justify-content:space-between}
+#wp-page .dv-num{font:300 13px 'Nunito',sans-serif;color:#8B9DB7;letter-spacing:.08em}
+#wp-page .dv-tag{display:flex;align-items:center;gap:6px;font:600 10px 'Nunito',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#475773;background:#EDE8DF;padding:4px 10px 4px 8px;border-radius:9999px}
+#wp-page .dv-tag-dot{width:6px;height:6px;border-radius:50%;flex:none}
+#wp-page .dv-name{font:800 21px/1.2 'Nunito',sans-serif;letter-spacing:-.01em;color:#1D2A40}
+#wp-page .dv-card-desc{font:400 14px/1.55 'Nunito',sans-serif;color:#475773;flex:1;margin:0}
+#wp-page .dv-link{margin-top:8px;display:inline-flex;align-items:center;gap:8px;font:600 14px 'Nunito',sans-serif;color:#E94E1B;text-decoration:none;align-self:flex-start;transition:gap 150ms,color 150ms}
+#wp-page .dv-link:hover{color:#C13A10;gap:12px}
+#wp-page .dv-link:focus-visible{outline:2px solid var(--ns-accent);outline-offset:3px}
+
+#wp-page .dv-progress{max-width:1200px;margin:36px auto 0;padding:0 48px;display:flex;gap:6px}
+#wp-page .dv-seg{height:2px;flex:1;background:rgba(244,241,236,.22);transition:background 300ms;border-radius:2px}
+#wp-page .dv-seg.is-active{background:var(--ns-accent)}
+
+#wp-page .dv-hint{max-width:1200px;margin:16px auto 0;padding:0 48px;font:300 13px 'Nunito',sans-serif;color:#8B9DB7}
+
+#wp-page .dv-fallback-grid{display:none}
+#wp-page .dv-fallback-grid .dv-card-wrap{width:auto;transform:none;opacity:1;transition:none}
+
+@media(max-width:900px){
+  #wp-page .dv-wrap,#wp-page .dv-progress,#wp-page .dv-hint{padding-left:24px;padding-right:24px}
+  #wp-page .dv-track{padding-left:24px;padding-right:24px}
+  #wp-page .dv-section{padding:64px 0 56px}
+}
+@media(max-width:600px){
+  #wp-page .dv-fallback-grid.dv-force-grid{display:grid !important;grid-template-columns:1fr;gap:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  #wp-page .dv-card-wrap,#wp-page .dv-arrow,#wp-page .dv-card,#wp-page .dv-shot,#wp-page .dv-seg{transition:none}
+}
+
+/* ============ EYEBROW: línea de acento + numeración (secciones 03+) ============ */
+#wp-page .eyebrow-line{display:inline-block;width:40px;height:2px;background:var(--ns-accent);flex:none;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -290,11 +368,380 @@ html{scroll-behavior:smooth}
   </div>
 </div>
 
+<!-- ============ DEMOS EN VIVO (sección 02, variante 1b) ============ -->
+<section class="dv-section" id="demos-en-vivo" aria-label="Demos en vivo">
+  <div class="dv-wrap dv-head">
+    <div class="dv-intro">
+      <div class="dv-eyebrow"><span class="dv-eyebrow-line"></span><span>02 · Demos en vivo</span></div>
+      <h2 class="dv-title">Doce rubros.<br>Un mismo sistema.</h2>
+      <p class="dv-desc">Cada demo es una web real: la misma base profesional, una identidad distinta. Ábrela y compruébalo.</p>
+    </div>
+    <div class="dv-controls">
+      <span class="dv-counter" id="dvCounter" aria-live="polite">01 / 12</span>
+      <button type="button" class="dv-arrow" id="dvPrev" aria-label="Demo anterior">←</button>
+      <button type="button" class="dv-arrow" id="dvNext" aria-label="Demo siguiente">→</button>
+    </div>
+  </div>
+
+  <div class="dv-track" id="dvTrack" role="region" aria-roledescription="carrusel" aria-label="Carrusel de demos">
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/abogado</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/abogado-desktop.webp" alt="Captura de escritorio del demo Abogado" loading="lazy" width="880" height="5477"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/abogado-mobile.webp" alt="Vista móvil del demo Abogado" loading="lazy" width="374" height="12459"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">01</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#1D2A40"></span>Legal</span></div>
+          <div class="dv-name">Abogado</div>
+          <p class="dv-card-desc">Autoridad y claridad que generan confianza.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/abogado" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/arquitectura</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/arquitectura-desktop.webp" alt="Captura de escritorio del demo Arquitectura" loading="lazy" width="880" height="6163"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/arquitectura-mobile.webp" alt="Vista móvil del demo Arquitectura" loading="lazy" width="343" height="10644"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">02</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#C6D5EA"></span>Estudio</span></div>
+          <div class="dv-name">Arquitectura</div>
+          <p class="dv-card-desc">Portafolio sobrio que vende proyectos, no planos.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/arquitectura" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/chef-catering</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/chef-catering-desktop.webp" alt="Captura de escritorio del demo Chef y catering" loading="lazy" width="844" height="5001"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/chef-catering-mobile.webp" alt="Vista móvil del demo Chef y catering" loading="lazy" width="312" height="8471"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">03</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#E7DFD2"></span>Gastronomía</span></div>
+          <div class="dv-name">Chef y catering</div>
+          <p class="dv-card-desc">Menús y eventos con reserva directa por WhatsApp.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/chef-catering" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/contadores</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/contadores-desktop.webp" alt="Captura de escritorio del demo Contadores" loading="lazy" width="880" height="3829"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/contadores-mobile.webp" alt="Vista móvil del demo Contadores" loading="lazy" width="327" height="9253"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">04</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#DCE5F1"></span>Finanzas</span></div>
+          <div class="dv-name">Contadores</div>
+          <p class="dv-card-desc">Números claros, clientes tranquilos.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/contadores" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/dermatologia</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/dermatologia-desktop.webp" alt="Captura de escritorio del demo Dermatología" loading="lazy" width="880" height="3924"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/dermatologia-mobile.webp" alt="Vista móvil del demo Dermatología" loading="lazy" width="390" height="7856"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">05</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#1D2A40"></span>Salud</span></div>
+          <div class="dv-name">Dermatología</div>
+          <p class="dv-card-desc">Tratamientos y citas con reserva en línea.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/dermatologia" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/diseno-interiores</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/diseno-interiores-desktop.webp" alt="Captura de escritorio del demo Diseño de interiores" loading="lazy" width="880" height="3087"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/diseno-interiores-mobile.webp" alt="Vista móvil del demo Diseño de interiores" loading="lazy" width="374" height="8361"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">06</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#E7DFD2"></span>Estudio</span></div>
+          <div class="dv-name">Diseño de interiores</div>
+          <p class="dv-card-desc">Espacios que se venden antes de construirse.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/diseno-interiores" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/entrenador-personal</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/entrenador-personal-desktop.webp" alt="Captura de escritorio del demo Entrenador personal" loading="lazy" width="880" height="4983"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/entrenador-personal-mobile.webp" alt="Vista móvil del demo Entrenador personal" loading="lazy" width="312" height="9242"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">07</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#C6D5EA"></span>Fitness</span></div>
+          <div class="dv-name">Entrenador personal</div>
+          <p class="dv-card-desc">Planes claros, resultados visibles, contacto en un tap.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/entrenador-personal" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/fotografia</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/fotografia-desktop.webp" alt="Captura de escritorio del demo Fotografía" loading="lazy" width="880" height="5695"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/fotografia-mobile.webp" alt="Vista móvil del demo Fotografía" loading="lazy" width="327" height="10498"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">08</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#1D2A40"></span>Creativo</span></div>
+          <div class="dv-name">Fotografía</div>
+          <p class="dv-card-desc">Una galería a pantalla completa que habla sola.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/fotografia" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/inmobiliaria</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/inmobiliaria-desktop.webp" alt="Captura de escritorio del demo Inmobiliaria" loading="lazy" width="880" height="5065"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/inmobiliaria-mobile.webp" alt="Vista móvil del demo Inmobiliaria" loading="lazy" width="292" height="8132"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">09</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#DCE5F1"></span>Bienes raíces</span></div>
+          <div class="dv-name">Inmobiliaria</div>
+          <p class="dv-card-desc">Propiedades destacadas con contacto inmediato.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/inmobiliaria" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/nutricion</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/nutricion-desktop.webp" alt="Captura de escritorio del demo Nutrición" loading="lazy" width="739" height="4265"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/nutricion-mobile.webp" alt="Vista móvil del demo Nutrición" loading="lazy" width="343" height="9195"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">10</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#E7DFD2"></span>Salud</span></div>
+          <div class="dv-name">Nutrición</div>
+          <p class="dv-card-desc">Consulta online con agenda en dos clics.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/nutricion" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/psicologia</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/psicologia-desktop.webp" alt="Captura de escritorio del demo Psicología" loading="lazy" width="880" height="4190"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/psicologia-mobile.webp" alt="Vista móvil del demo Psicología" loading="lazy" width="358" height="10813"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">11</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#C6D5EA"></span>Salud</span></div>
+          <div class="dv-name">Psicología</div>
+          <p class="dv-card-desc">Cercanía y confianza desde el primer scroll.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/psicologia" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dv-card-wrap">
+      <div class="dv-card">
+        <div class="dv-frame">
+          <div class="dv-browser">
+            <div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/veterinaria</span></div>
+            <div class="dv-shot-window"><img class="dv-shot" src="assets/demos-en-vivo/veterinaria-desktop.webp" alt="Captura de escritorio del demo Veterinaria" loading="lazy" width="880" height="4716"></div>
+          </div>
+          <div class="dv-mobile-mock"><div class="dv-mobile-inner"><img src="assets/demos-en-vivo/veterinaria-mobile.webp" alt="Vista móvil del demo Veterinaria" loading="lazy" width="273" height="9219"></div></div>
+        </div>
+        <div class="dv-body">
+          <div class="dv-meta-row"><span class="dv-num">12</span><span class="dv-tag"><span class="dv-tag-dot" style="background:#DCE5F1"></span>Mascotas</span></div>
+          <div class="dv-name">Veterinaria</div>
+          <p class="dv-card-desc">Citas y urgencias sin llamadas perdidas.</p>
+          <a class="dv-link" href="https://nozoestudio.com/demos/veterinaria" target="_blank" rel="noopener">Ver demo <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dv-progress" id="dvSegments" aria-hidden="true">
+    <span class="dv-seg is-active"></span><span class="dv-seg"></span><span class="dv-seg"></span><span class="dv-seg"></span>
+    <span class="dv-seg"></span><span class="dv-seg"></span><span class="dv-seg"></span><span class="dv-seg"></span>
+    <span class="dv-seg"></span><span class="dv-seg"></span><span class="dv-seg"></span><span class="dv-seg"></span>
+  </div>
+
+  <p class="dv-hint">Arrastra para explorar · pasa el cursor sobre una tarjeta para recorrer la web · cada demo se abre en una pestaña nueva</p>
+</section>
+
+<noscript>
+  <style>#demos-en-vivo .dv-track,#demos-en-vivo .dv-progress,#demos-en-vivo .dv-controls{display:none}</style>
+  <div class="dv-wrap">
+    <div class="dv-fallback-grid dv-force-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:24px">
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/abogado</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/abogado-desktop.webp" alt="Captura de escritorio del demo Abogado" width="880" height="5477"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">01</span><span class="dv-tag">Legal</span></div><div class="dv-name">Abogado</div><p class="dv-card-desc">Autoridad y claridad que generan confianza.</p><a class="dv-link" href="https://nozoestudio.com/demos/abogado" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/arquitectura</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/arquitectura-desktop.webp" alt="Captura de escritorio del demo Arquitectura" width="880" height="6163"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">02</span><span class="dv-tag">Estudio</span></div><div class="dv-name">Arquitectura</div><p class="dv-card-desc">Portafolio sobrio que vende proyectos, no planos.</p><a class="dv-link" href="https://nozoestudio.com/demos/arquitectura" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/chef-catering</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/chef-catering-desktop.webp" alt="Captura de escritorio del demo Chef y catering" width="844" height="5001"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">03</span><span class="dv-tag">Gastronomía</span></div><div class="dv-name">Chef y catering</div><p class="dv-card-desc">Menús y eventos con reserva directa por WhatsApp.</p><a class="dv-link" href="https://nozoestudio.com/demos/chef-catering" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/contadores</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/contadores-desktop.webp" alt="Captura de escritorio del demo Contadores" width="880" height="3829"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">04</span><span class="dv-tag">Finanzas</span></div><div class="dv-name">Contadores</div><p class="dv-card-desc">Números claros, clientes tranquilos.</p><a class="dv-link" href="https://nozoestudio.com/demos/contadores" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/dermatologia</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/dermatologia-desktop.webp" alt="Captura de escritorio del demo Dermatología" width="880" height="3924"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">05</span><span class="dv-tag">Salud</span></div><div class="dv-name">Dermatología</div><p class="dv-card-desc">Tratamientos y citas con reserva en línea.</p><a class="dv-link" href="https://nozoestudio.com/demos/dermatologia" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/diseno-interiores</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/diseno-interiores-desktop.webp" alt="Captura de escritorio del demo Diseño de interiores" width="880" height="3087"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">06</span><span class="dv-tag">Estudio</span></div><div class="dv-name">Diseño de interiores</div><p class="dv-card-desc">Espacios que se venden antes de construirse.</p><a class="dv-link" href="https://nozoestudio.com/demos/diseno-interiores" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/entrenador-personal</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/entrenador-personal-desktop.webp" alt="Captura de escritorio del demo Entrenador personal" width="880" height="4983"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">07</span><span class="dv-tag">Fitness</span></div><div class="dv-name">Entrenador personal</div><p class="dv-card-desc">Planes claros, resultados visibles, contacto en un tap.</p><a class="dv-link" href="https://nozoestudio.com/demos/entrenador-personal" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/fotografia</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/fotografia-desktop.webp" alt="Captura de escritorio del demo Fotografía" width="880" height="5695"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">08</span><span class="dv-tag">Creativo</span></div><div class="dv-name">Fotografía</div><p class="dv-card-desc">Una galería a pantalla completa que habla sola.</p><a class="dv-link" href="https://nozoestudio.com/demos/fotografia" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/inmobiliaria</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/inmobiliaria-desktop.webp" alt="Captura de escritorio del demo Inmobiliaria" width="880" height="5065"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">09</span><span class="dv-tag">Bienes raíces</span></div><div class="dv-name">Inmobiliaria</div><p class="dv-card-desc">Propiedades destacadas con contacto inmediato.</p><a class="dv-link" href="https://nozoestudio.com/demos/inmobiliaria" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/nutricion</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/nutricion-desktop.webp" alt="Captura de escritorio del demo Nutrición" width="739" height="4265"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">10</span><span class="dv-tag">Salud</span></div><div class="dv-name">Nutrición</div><p class="dv-card-desc">Consulta online con agenda en dos clics.</p><a class="dv-link" href="https://nozoestudio.com/demos/nutricion" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/psicologia</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/psicologia-desktop.webp" alt="Captura de escritorio del demo Psicología" width="880" height="4190"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">11</span><span class="dv-tag">Salud</span></div><div class="dv-name">Psicología</div><p class="dv-card-desc">Cercanía y confianza desde el primer scroll.</p><a class="dv-link" href="https://nozoestudio.com/demos/psicologia" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+      <div class="dv-card-wrap"><div class="dv-card"><div class="dv-frame"><div class="dv-browser"><div class="dv-browser-bar"><span class="dv-dots"><span></span><span></span><span></span></span><span class="dv-url">nozoestudio.com/demos/veterinaria</span></div><div class="dv-shot-window" style="height:220px"><img class="dv-shot" src="assets/demos-en-vivo/veterinaria-desktop.webp" alt="Captura de escritorio del demo Veterinaria" width="880" height="4716"></div></div></div><div class="dv-body"><div class="dv-meta-row"><span class="dv-num">12</span><span class="dv-tag">Mascotas</span></div><div class="dv-name">Veterinaria</div><p class="dv-card-desc">Citas y urgencias sin llamadas perdidas.</p><a class="dv-link" href="https://nozoestudio.com/demos/veterinaria" target="_blank" rel="noopener">Ver demo →</a></div></div></div>
+    </div>
+  </div>
+</noscript>
+
+<script>
+(function(){
+  var section = document.getElementById('demos-en-vivo');
+  var track = document.getElementById('dvTrack');
+  if (!section || !track) return;
+
+  var cards = Array.prototype.slice.call(track.children);
+  var segs = Array.prototype.slice.call(document.getElementById('dvSegments').children);
+  var counterEl = document.getElementById('dvCounter');
+  var prevBtn = document.getElementById('dvPrev');
+  var nextBtn = document.getElementById('dvNext');
+
+  var active = 0;
+  var paused = false, down = false, moved = false, startX = 0, startLeft = 0, raf = 0, timer = 0;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function fmt(i){ return String(i + 1).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0'); }
+
+  function render(){
+    cards.forEach(function(c, i){
+      var on = i === active;
+      c.style.transform = 'scale(' + (on ? 1 : 0.88) + ')';
+      c.style.opacity = on ? 1 : 0.45;
+    });
+    segs.forEach(function(s, i){ s.classList.toggle('is-active', i === active); });
+    if (counterEl) counterEl.textContent = fmt(active);
+  }
+
+  function targetLeft(idx){
+    var t = cards[idx];
+    if (!t) return 0;
+    var cur = t.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+    return cur - (track.clientWidth - t.clientWidth) / 2;
+  }
+
+  function nearest(){
+    var tr = track.getBoundingClientRect();
+    var anchor = tr.left + track.clientWidth / 2;
+    var best = 0, bd = Infinity;
+    cards.forEach(function(k, i){
+      var kr = k.getBoundingClientRect();
+      var p = kr.left + kr.width / 2;
+      var d = Math.abs(p - anchor);
+      if (d < bd) { bd = d; best = i; }
+    });
+    return best;
+  }
+
+  function goTo(idx, smooth){
+    var n = cards.length;
+    if (!n) return;
+    idx = ((idx % n) + n) % n;
+    track.scrollTo({ left: targetLeft(idx), behavior: smooth === false ? 'auto' : 'smooth' });
+  }
+
+  track.addEventListener('scroll', function(){
+    if (raf) return;
+    raf = requestAnimationFrame(function(){
+      raf = 0;
+      var best = nearest();
+      if (best !== active) { active = best; render(); }
+    });
+  }, { passive: true });
+
+  function dn(e){
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+    track.style.scrollSnapType = 'none'; track.style.cursor = 'grabbing';
+  }
+  function mv(e){
+    if (!down) return;
+    var dx = e.clientX - startX;
+    if (Math.abs(dx) > 5) moved = true;
+    if (moved) { track.scrollLeft = startLeft - dx; e.preventDefault(); }
+  }
+  function up(){
+    if (!down) return;
+    down = false; track.style.cursor = ''; track.style.scrollSnapType = '';
+    if (moved) goTo(nearest());
+  }
+  track.addEventListener('pointerdown', dn);
+  window.addEventListener('pointermove', mv);
+  window.addEventListener('pointerup', up);
+  track.addEventListener('click', function(e){ if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+  track.addEventListener('pointerenter', function(){ paused = true; });
+  track.addEventListener('pointerleave', function(){ paused = false; });
+  track.addEventListener('focusin', function(){ paused = true; });
+  track.addEventListener('focusout', function(){ paused = false; });
+
+  if (prevBtn) prevBtn.addEventListener('click', function(){ goTo(active - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', function(){ goTo(active + 1); });
+
+  if (!reduceMotion) {
+    (function tick(){
+      timer = setTimeout(function(){
+        if (!paused && !down && !document.hidden) goTo(active + 1);
+        tick();
+      }, 4500);
+    })();
+  }
+
+  render();
+})();
+</script>
+
 <!-- ============ QUÉ INCLUYE ============ -->
 <section id="incluye">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Qué incluye</div>
+      <div class="eyebrow"><span class="eyebrow-line"></span><span>03 · Qué incluye</span></div>
       <h2>Un sistema completo, no una plantilla</h2>
       <p>Todo lo que necesitas para verte profesional y recibir consultas, entregado funcionando. Pago único de implementación.</p>
     </div>
@@ -355,7 +802,7 @@ html{scroll-behavior:smooth}
 <section class="wp-process" id="proceso">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">El proceso</div>
+      <div class="eyebrow"><span class="eyebrow-line"></span><span>04 · El proceso</span></div>
       <h2>De cero a publicada en 7–10 días hábiles</h2>
       <p>Un camino claro, con fechas y responsables. Tu única tarea es responder el cuestionario y enviarnos tu material en las primeras 48 horas.</p>
       <a class="btn btn-ember" href="cuestionario" style="margin-top:22px">Empezar el cuestionario →</a>
@@ -402,7 +849,7 @@ html{scroll-behavior:smooth}
 <section id="precios">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Inversión</div>
+      <div class="eyebrow"><span class="eyebrow-line"></span><span>05 · Inversión</span></div>
       <h2>Un solo pago para construirla. Una cuota baja al año para mantenerla viva.</h2>
       <p>La construimos una vez y es tuya. Mantenerla viva —dominio vigente, sitio seguro, todo funcionando— cuesta una cuota baja al año, y el primer año va incluido. Cuando necesites cambiar algo, tienes tres caminos, del más simple al más grande. Sin suscripciones ni permanencia.</p>
     </div>
@@ -456,7 +903,7 @@ html{scroll-behavior:smooth}
   <section style="padding:72px 0">
     <div class="wrap honest-grid">
       <div>
-        <div class="eyebrow">Transparencia</div>
+        <div class="eyebrow"><span class="eyebrow-line"></span><span>06 · Transparencia</span></div>
         <h2>Lo que este servicio no incluye</h2>
         <p class="hp">Preferimos decírtelo antes que sorprenderte después. Todo esto existe, pero se cotiza aparte como proyecto adicional:</p>
       </div>
@@ -476,7 +923,7 @@ html{scroll-behavior:smooth}
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Preguntas frecuentes</div>
+      <div class="eyebrow"><span class="eyebrow-line"></span><span>07 · Preguntas frecuentes</span></div>
       <h2>Lo que todos preguntan antes de empezar</h2>
     </div>
     <details>
@@ -521,7 +968,7 @@ html{scroll-behavior:smooth}
 <!-- ============ CIERRE ============ -->
 <section class="final" id="cierre">
   <div class="wrap">
-    <div class="eyebrow"><b>Empecemos</b></div>
+    <div class="eyebrow"><span class="eyebrow-line"></span><span>08 · <b>Empecemos</b></span></div>
     <h2>Tu próximo cliente te está buscando en Google. ¿Qué va a encontrar?</h2>
     <p>Escríbenos por WhatsApp contándonos a qué te dedicas. Te respondemos con una evaluación honesta de si este servicio es para ti — y si no lo es, también te lo diremos.</p>
     <a class="btn btn-ember" href="https://wa.me/817022124910?text=Hola%20Nozoe%2C%20quiero%20mi%20web%20profesional.%20Me%20dedico%20a..." target="_blank" rel="noopener">
