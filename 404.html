@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>Página no encontrada · Nozoe Studio</title>
+<meta name="description" content="La página que buscas no existe o cambió de dirección.">
+<link rel="icon" href="/assets/favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nozoe-design-system/nozoe-tokens.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+  .error-page {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--ns-space-32) var(--ns-space-24);
+    gap: var(--ns-space-16);
+  }
+  .error-page .error-code {
+    font-size: var(--ns-fs-4xl);
+    font-weight: 800;
+    color: var(--ns-orange-500);
+    line-height: 1;
+  }
+  .error-page h1 {
+    font-size: var(--ns-fs-xl);
+    color: var(--ns-text-primary);
+    margin: 0;
+  }
+  .error-page p {
+    font-size: var(--ns-fs-md);
+    color: var(--ns-text-secondary);
+    max-width: 42ch;
+    margin: 0;
+  }
+  .error-page .error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ns-space-12);
+    justify-content: center;
+    margin-top: var(--ns-space-8);
+  }
+</style>
+</head>
+<body>
+
+<main class="error-page">
+  <p class="error-code">404</p>
+  <h1>Esta página no existe</h1>
+  <p>La dirección que buscas no está aquí — puede que haya cambiado o que el enlace esté mal escrito.</p>
+  <div class="error-actions">
+    <a href="/" class="btn btn-ember">Volver al inicio</a>
+    <a href="/trabajo.html" class="btn btn-ghost">Ver el portafolio</a>
+  </div>
+</main>
+
+</body>
+</html>
