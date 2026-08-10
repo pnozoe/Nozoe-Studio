@@ -134,3 +134,157 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('mouseleave', function(){ btn.style.transform = ''; });
   });
 })();
+
+/* Hero home: muro vivo — pared de proyectos en loop vertical */
+(function(){
+  var wall = document.getElementById('muroWall');
+  if (!wall) return;
+  var BASE = 'assets/casos/trabajo/';
+  var P = [
+    { n: 'Cassaforma', t: 'Identidad', f: 'identidad-brand-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
+    { n: 'Cassaforma', t: 'Identidad', f: 'identidad-logo-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
+    { n: 'TML Cipango', t: 'Identidad', f: 'identidad-logo-tml.webp', x: '14 meses de colaboración continua' },
+    { n: 'Cassaforma', t: 'Identidad', f: 'identidad-tipografia-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
+    { n: 'Wilkamikuy', t: 'Identidad', f: 'identidad-logo-wilkamikuy.webp' },
+    { n: 'Papa Francisco', t: 'Identidad', f: 'identidad-logo-francisco.webp' },
+    { n: 'Papa Francisco', t: 'Identidad', f: 'identidad-brand-francisco.webp' },
+    { n: 'Cassaforma', t: 'Identidad', f: 'flyer-cassaforma-1.webp', x: '100% rediseño integral: identidad, impresos y web' },
+    { n: 'Cassaforma', t: 'Identidad', f: 'flyer-cassaforma-2.webp', x: '100% rediseño integral: identidad, impresos y web' },
+    { n: 'Pfizer', t: 'Publicidad', f: 'ads-pfizer.webp' },
+    { n: 'Sabor Latino', t: 'Publicidad', f: 'ads-sabor-latino-pollo.webp' },
+    { n: 'DuBom', t: 'Publicidad', f: 'ads-aviso-dubom.webp' },
+    { n: 'QuickPhone', t: 'Publicidad', f: 'ads-quickphone-lima.webp' },
+    { n: 'QuickPhone', t: 'Publicidad', f: 'ads-quickphone.webp' },
+    { n: 'QuickPhone', t: 'Publicidad', f: 'ads-metro-quickphone.webp' },
+    { n: 'QuickPhone', t: 'Publicidad', f: 'ads-poster-quickphone.webp' },
+    { n: 'Progress Gold', t: 'Publicidad', f: 'ads-promocion-progressgold.webp' },
+    { n: 'Guaraná', t: 'Publicidad', f: 'ads-sale-guarana.webp' },
+    { n: 'Western Union', t: 'Publicidad', f: 'ads-cartel-westernunion.webp' },
+    { n: 'Papa Francisco', t: 'Publicidad', f: 'ads-banners-papa-francisco.webp' },
+    { n: 'Progress Gold', t: 'Publicidad', f: 'editorial-afiche-progress-gold.webp' },
+    { n: 'Vive Salsa', t: 'Publicidad', f: 'editorial-afiche-vivesalsa.webp' },
+    { n: 'Papa Francisco', t: 'Publicidad', f: 'editorial-calendario-francisco-a.webp' },
+    { n: 'Papa Francisco', t: 'Publicidad', f: 'editorial-calendario-francisco-b.webp' },
+    { n: 'DuBom', t: 'Publicidad', f: 'editorial-brochure-dubom.webp' },
+    { n: 'Progress Gold', t: 'Empaque', f: 'packaging-caja-progressgold.webp' },
+    { n: 'Progress Gold', t: 'Empaque', f: 'packaging-bidonera-pg.webp' },
+    { n: 'Cassaforma', t: 'Web', f: 'web-cassaforma-home.webp' }
+  ];
+  function folderFor(f){ return f.split('-')[0]; }
+  var shapes = ['', 'tall', 'wide', ''];
+  var cols = 6, html = '';
+  for (var c = 0; c < cols; c++){
+    var inner = '';
+    for (var rep = 0; rep < 2; rep++){
+      for (var i = 0; i < 5; i++){
+        var p = P[(c * 5 + i) % P.length];
+        var src = BASE + folderFor(p.f) + '/' + p.f;
+        inner += '<div class="muro-tile ' + shapes[(i + c) % 4] + '">'
+          + '<img src="' + src + '" alt="' + p.n + ' — ' + p.t + '" loading="lazy">'
+          + '<span class="mt-name">' + p.n + '</span>'
+          + '<span class="mt-reveal"><b>' + p.n + '</b><span>' + (p.x || p.t) + '</span></span></div>';
+      }
+    }
+    html += '<div class="muro-col"><div class="muro-col-inner">' + inner + '</div></div>';
+  }
+  wall.innerHTML = html;
+})();
+
+/* Comparador antes/después — arrastrar divisor + chips de rubro */
+(function(){
+  var cmp = document.getElementById('cmp');
+  if (!cmp) return;
+  var after = document.getElementById('cmp-after'),
+      handle = document.getElementById('cmp-handle'),
+      knob = document.getElementById('cmp-knob');
+  var touched = false;
+
+  function set(p){
+    p = Math.max(6, Math.min(94, p));
+    after.style.clipPath = 'inset(0 0 0 ' + p + '%)';
+    handle.style.left = p + '%';
+  }
+  function fromEvent(e){
+    var r = cmp.getBoundingClientRect();
+    var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+    set(x / r.width * 100);
+  }
+  var dragging = false;
+  function start(e){ dragging = true; touched = true; knob.classList.remove('cmp-knob-nudge'); fromEvent(e); }
+  function move(e){ if (dragging){ fromEvent(e); if (e.cancelable) e.preventDefault(); } }
+  function end(){ dragging = false; }
+  cmp.addEventListener('mousedown', start);
+  window.addEventListener('mousemove', move);
+  window.addEventListener('mouseup', end);
+  cmp.addEventListener('touchstart', start, { passive: true });
+  window.addEventListener('touchmove', move, { passive: false });
+  window.addEventListener('touchend', end);
+  cmp.addEventListener('mousemove', function(e){
+    if (!dragging && window.innerWidth > 900){ fromEvent(e); touched = true; knob.classList.remove('cmp-knob-nudge'); }
+  });
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce){
+    var t0 = null;
+    function sweep(ts){
+      if (touched) return;
+      if (!t0) t0 = ts;
+      var k = (ts - t0) / 1400;
+      if (k >= 1){ set(34); return; }
+      set(34 + 12 * Math.sin(k * Math.PI));
+      requestAnimationFrame(sweep);
+    }
+    setTimeout(function(){ requestAnimationFrame(sweep); }, 700);
+  }
+
+  var CASES = [
+    { theme: 'cmp-theme-resto',
+      badLogo: 'EL SABOR NORTEÑO', badTit: '¡¡GRAN<br>PROMOCIÓN!!',
+      badSub: 'LOS MEJORES PLATOS DE LA ZONA ★ ATENCIÓN DE LUNES A DOMINGO ★ DELIVERY ★ PEDIDOS AL WHATSAPP',
+      badBadge: '50%<br>DCTO',
+      badFoot: 'SÍGUENOS EN NUESTRAS REDES SOCIALES · TELF 999-999-999 · AV. SIEMPRE VIVA 123 · PROMOCIÓN VÁLIDA HASTA AGOTAR STOCK',
+      logo: 'Norteño', cat: 'Cocina peruana · Lima', mark: 'Temporada 01',
+      tit: 'Lo de siempre,<br>hecho <span class="hl-em">como siempre.</span>',
+      sub: 'Carta de estación, cocina a la vista y una barra que abre a las seis.',
+      cta: 'Reservar mesa' },
+    { theme: 'cmp-theme-dental',
+      badLogo: 'CLÍNICA DENTAL SONRISAS', badTit: '¡SONRISA<br>PERFECTA!',
+      badSub: 'BLANQUEAMIENTO ★ ORTODONCIA ★ IMPLANTES ★ FINANCIAMIENTO SIN INTERESES ★ CONSULTA GRATIS',
+      badBadge: '0%<br>INTERÉS',
+      badFoot: 'ATENDEMOS TODAS LAS TARJETAS · PREVIA CITA · TELF 999-999-999 · SIGUENOS EN FACEBOOK E INSTAGRAM',
+      logo: 'Aroma', cat: 'Odontología · San Isidro', mark: 'Consulta 01',
+      tit: 'Un lugar donde<br>nadie <span class="hl-em">llega nervioso.</span>',
+      sub: 'Diagnóstico explicado, plan por escrito y precios cerrados antes de empezar.',
+      cta: 'Agendar consulta' },
+    { theme: 'cmp-theme-legal',
+      badLogo: 'ESTUDIO JURÍDICO & ASOCIADOS', badTit: '¡DEFENDEMOS<br>TUS DERECHOS!',
+      badSub: 'CIVIL ★ PENAL ★ LABORAL ★ FAMILIA ★ MÁS DE 20 AÑOS DE EXPERIENCIA ★ PRIMERA CONSULTA GRATIS',
+      badBadge: '1ERA<br>GRATIS',
+      badFoot: 'ASESORÍA INMEDIATA · TELF 999-999-999 · AV. AREQUIPA 1234 OF. 502 · WHATSAPP 24/7',
+      logo: 'Vera', cat: 'Derecho laboral · Lima', mark: 'Caso 01',
+      tit: 'Le decimos<br>lo que <span class="hl-em">sí se puede.</span>',
+      sub: 'Derecho laboral para empresas. Respuestas en lenguaje claro y plazos por escrito.',
+      cta: 'Consultar caso' }
+  ];
+  var ids = {
+    badLogo: 'cmp-bad-logo', badTit: 'cmp-bad-tit', badSub: 'cmp-bad-sub', badBadge: 'cmp-bad-badge', badFoot: 'cmp-bad-foot',
+    logo: 'cmp-good-logo', cat: 'cmp-good-cat', mark: 'cmp-good-mark', tit: 'cmp-good-tit', sub: 'cmp-good-sub', cta: 'cmp-good-cta'
+  };
+  var THEMES = ['cmp-theme-resto', 'cmp-theme-dental', 'cmp-theme-legal'];
+  var badEl = document.getElementById('cmp-bad'), goodEl = document.getElementById('cmp-good');
+  var chips = document.getElementById('cmp-chips');
+  if (chips){
+    chips.addEventListener('click', function(e){
+      var b = e.target.closest('.cmp-chip');
+      if (!b) return;
+      [].forEach.call(this.children, function(c){ c.classList.remove('on'); });
+      b.classList.add('on');
+      var d = CASES[+b.dataset.i];
+      for (var k in ids){ var el = document.getElementById(ids[k]); if (el) el.innerHTML = d[k]; }
+      if (badEl){ badEl.classList.remove.apply(badEl.classList, THEMES); badEl.classList.add(d.theme); }
+      if (goodEl){ goodEl.classList.remove.apply(goodEl.classList, THEMES); goodEl.classList.add(d.theme); }
+      set(34);
+      cmp.classList.remove('cmp-fade'); void cmp.offsetWidth; cmp.classList.add('cmp-fade');
+    });
+  }
+})();
