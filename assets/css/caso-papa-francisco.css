@@ -1,0 +1,271 @@
+/* ================================================================
+   NOZOE STUDIO · Caso de estudio «Papa Francisco Perú 2018»
+   Estilos del cuerpo narrativo de la página. v2.1 — integrado al sitio.
+
+   Depende de nozoe-tokens.css y se carga después de site.css.
+   El chrome de la página (nav, breadcrumb, case-hero, cta-final,
+   footer) usa las clases del sitio; este archivo solo viste el
+   `<article class="cs">` que va entre medias.
+
+   Todas las reglas están dentro de `.cs` y todas las clases llevan
+   prefijo `cs-`, así que no puede haber colisiones con site.css en
+   ninguna dirección. Única excepción: `.caso-page .cs-hero-art`,
+   que vive dentro del hero del sitio y está marcada como tal.
+
+   Modo oscuro: se hereda automáticamente de los tokens semánticos.
+   No hay ningún media query de color aquí.
+   ================================================================ */
+
+.cs{
+  --cs-measure: 34rem;
+  --cs-gap: clamp(1.25rem, 3vw, 2rem);
+  --cs-band: clamp(4rem, 10vw, 9rem);
+
+  font-family: var(--ns-font-sans);
+  color: var(--ns-text-primary);
+  /* Sin fondo propio: deja ver la textura de puntos de body::before,
+     igual que el resto de secciones del sitio. El z-index la coloca
+     por encima de esa capa (misma convención que site.css). */
+  position: relative;
+  z-index: 1;
+}
+
+.cs img{ max-width:100%; height:auto; display:block }
+.cs p{ margin:0 0 1.1em }
+.cs h2, .cs h3{ margin:0 }
+
+/* ---------- layout ---------- */
+/* Misma métrica que .wrap de site.css, para que el cuerpo del caso
+   alinee con el hero, el CTA y el footer. Los breakpoints replican
+   los de site.css. */
+.cs-wrap{ max-width:1200px; margin-inline:auto; padding-inline:80px }
+@media (max-width:1024px){ .cs-wrap{ padding-inline:48px } }
+@media (max-width:768px){ .cs-wrap{ padding-inline:32px } }
+@media (max-width:480px){ .cs-wrap{ padding-inline:20px } }
+.cs-narrow{ max-width:var(--cs-measure) }
+.cs-rule{ height:1px; background:var(--ns-border-subtle); border:0; margin:0 }
+
+/* ---------- tipografía ---------- */
+.cs-eyebrow{
+  font-size:var(--ns-fs-xs); font-weight:var(--ns-fw-semibold);
+  letter-spacing:var(--ns-ls-widest); text-transform:uppercase;
+  color:var(--ns-text-secondary); margin:0;
+}
+.cs h2{
+  font-size:clamp(1.75rem, 4vw, 2.75rem); font-weight:var(--ns-fw-extrabold);
+  letter-spacing:-.025em; line-height:1.06;
+}
+.cs h3{
+  font-size:clamp(1.125rem, 2vw, 1.375rem); font-weight:var(--ns-fw-semibold);
+  letter-spacing:var(--ns-ls-tight); line-height:1.25;
+}
+.cs-lead{
+  font-size:clamp(1.0625rem, 1.6vw, 1.25rem); line-height:1.6;
+  color:var(--ns-text-secondary); font-weight:var(--ns-fw-light);
+}
+.cs-body p{ color:var(--ns-text-primary); line-height:1.72 }
+.cs-body strong{ color:var(--ns-text-primary); font-weight:var(--ns-fw-semibold) }
+
+/* ---------- recuadro del logotipo (dentro del hero del sitio) ----------
+   Única regla fuera de `.cs`: el logotipo vive en el hero oscuro que
+   pinta site.css, así que se ancla a .caso-page.
+
+   El fondo es blanco fijo, no var(--ns-surface-raised), también en modo
+   oscuro: el manual de identidad del proyecto exige que el logotipo se
+   reproduzca siempre sobre fondo blanco (o en su versión monocromática).
+   Es una regla de la marca que documentamos, así que la respetamos aquí. */
+.caso-page .cs-hero-art{
+  margin-top:clamp(2.5rem,7vw,4rem); background:#fff;
+  border:var(--ns-bw-1) solid var(--ns-border-subtle);
+  border-radius:8px;
+  padding:clamp(1.5rem,6vw,4rem); display:grid; place-items:center;
+}
+.caso-page .cs-hero-art img{ width:min(100%, 44rem); height:auto; display:block }
+
+/* ---------- ficha ---------- */
+.cs-ficha{
+  display:grid; grid-template-columns:1fr; gap:0;
+  padding-block:clamp(2rem,5vw,3.5rem);
+}
+/* Separadores: verticales entre columnas, horizontales al apilarse.
+   Los :nth-child cubren cada recuento de columnas, así que ningún
+   elemento a principio de fila arrastra una línea suelta. */
+.cs-ficha > div{
+  padding:1.25rem 0 0;
+  border-top:var(--ns-bw-1) solid var(--ns-border-subtle);
+}
+.cs-ficha > div:first-child{ padding-top:0; border-top:0 }
+@media (min-width:40rem){
+  .cs-ficha{ grid-template-columns:repeat(2,1fr); column-gap:var(--cs-gap); row-gap:2rem }
+  .cs-ficha > div{
+    padding:0 0 0 var(--cs-gap);
+    border-top:0; border-left:var(--ns-bw-1) solid var(--ns-border-subtle);
+  }
+  .cs-ficha > div:nth-child(2n+1){ padding-left:0; border-left:0 }
+}
+@media (min-width:64rem){
+  .cs-ficha{ grid-template-columns:repeat(4,1fr) }
+  .cs-ficha > div:nth-child(2n+1){ padding-left:var(--cs-gap); border-left:var(--ns-bw-1) solid var(--ns-border-subtle) }
+  .cs-ficha > div:nth-child(4n+1){ padding-left:0; border-left:0 }
+}
+.cs-ficha dt{
+  font-size:var(--ns-fs-xs); font-weight:var(--ns-fw-semibold);
+  letter-spacing:var(--ns-ls-widest); text-transform:uppercase;
+  color:var(--ns-text-secondary); margin-bottom:.65rem;
+}
+.cs-ficha dd{
+  margin:0; font-size:var(--ns-fs-sm); line-height:1.5;
+  color:var(--ns-text-primary); font-weight:var(--ns-fw-semibold);
+  /* Reparte las líneas en bloques parejos en lugar de dejar una
+     palabra suelta al final (ej. «Plazo»). */
+  text-wrap:balance;
+}
+
+/* ---------- secciones ---------- */
+.cs-sec{ padding-block:var(--cs-band) }
+.cs-sec--sunken{ background:var(--ns-surface-sunken) }
+.cs-sec__head{
+  display:grid; grid-template-columns:auto 1fr;
+  gap:0 clamp(1rem,3vw,2.5rem); align-items:start;
+  margin-bottom:clamp(1.75rem,4vw,3rem);
+}
+.cs-sec__num{
+  font-size:var(--ns-fs-xs); font-weight:var(--ns-fw-semibold); letter-spacing:.14em;
+  color:var(--ns-text-accent-strong); padding-top:.55em; font-variant-numeric:tabular-nums;
+}
+.cs-sec__title{ max-width:20ch }
+.cs-sec__intro{ margin-top:1.25rem }
+
+/* ---------- figuras ---------- */
+.cs figure{ margin:0 }
+/* Especificidad a la altura de `.cs figure` (0,1,1): si no, esa regla
+   pisaba el margin-top y las figuras quedaban pegadas al texto. */
+.cs .cs-fig{ margin-top:clamp(2rem,5vw,3.5rem) }
+/* Una figura que sigue a un bloque de texto necesita más aire que una
+   que sigue a la cabecera de sección, que ya trae su propio margen. */
+.cs .cs-cifras + .cs-fig,
+.cs .cs-tipo + .cs-fig,
+.cs .cs-paleta + .cs-fig{ margin-top:clamp(3.5rem,8vw,6rem) }
+.cs-fig img{ background:var(--ns-surface-raised); border:var(--ns-bw-1) solid var(--ns-border-subtle) }
+.cs-fig--plain img{ border:0; background:transparent }
+.cs figcaption{
+  margin-top:.85rem; font-size:var(--ns-fs-sm); line-height:1.55;
+  color:var(--ns-text-secondary); max-width:52ch;
+}
+.cs figcaption b{ font-weight:var(--ns-fw-semibold); color:var(--ns-text-primary) }
+
+/* ---------- rejillas ---------- */
+.cs-grid{ display:grid; gap:var(--cs-gap) }
+.cs-g2, .cs-g3, .cs-g4{ grid-template-columns:1fr }
+@media (min-width:40rem){
+  .cs-g2, .cs-g3, .cs-g4{ grid-template-columns:repeat(2,1fr) }
+}
+@media (min-width:64rem){
+  .cs-g3{ grid-template-columns:repeat(3,1fr) }
+  .cs-g4{ grid-template-columns:repeat(4,1fr) }
+}
+
+/* ---------- referentes ---------- */
+.cs-ref{
+  background:var(--ns-surface-raised); border:var(--ns-bw-1) solid var(--ns-border-subtle);
+  padding:1.25rem; display:flex; flex-direction:column; gap:.9rem;
+}
+.cs-ref img{ margin:auto; max-height:8.5rem; width:auto; background:#fff; padding:.5rem }
+.cs-ref span{
+  font-size:var(--ns-fs-xs); letter-spacing:var(--ns-ls-wide); text-transform:uppercase;
+  color:var(--ns-text-secondary); text-align:center;
+}
+
+/* ---------- rutas ---------- */
+.cs-ruta{ border-top:var(--ns-bw-2) solid var(--ns-text-primary); padding-top:1.25rem }
+.cs-ruta h3{ margin-bottom:.6rem }
+.cs-ruta p{ font-size:var(--ns-fs-sm); line-height:1.6; color:var(--ns-text-secondary); margin:0 }
+.cs-ruta__tag{
+  display:inline-block; font-size:var(--ns-fs-xs); font-weight:var(--ns-fw-semibold);
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ns-text-secondary);
+  margin-bottom:.7rem;
+}
+.cs-ruta--out{ border-top-color:var(--ns-border-subtle); opacity:.72 }
+.cs-ruta--in{ border-top-color:var(--ns-accent) }
+
+/* ---------- nota destacada ---------- */
+.cs-nota{
+  border-left:var(--ns-bw-2) solid var(--ns-accent);
+  padding:.15rem 0 .15rem 1.5rem; margin:2.5rem 0; max-width:var(--cs-measure);
+}
+.cs-nota p{
+  margin:0; font-size:1.0625rem; line-height:1.65;
+  color:var(--ns-text-primary); font-weight:var(--ns-fw-light);
+}
+
+/* ---------- cifras ---------- */
+.cs-cifras{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(9rem,1fr));
+  gap:1.5rem var(--cs-gap); margin-top:clamp(2rem,5vw,3rem);
+  border-top:var(--ns-bw-1) solid var(--ns-border-subtle); padding-top:2rem;
+}
+.cs-cifra b{
+  display:block; font-size:clamp(1.75rem,4vw,2.5rem); font-weight:var(--ns-fw-extrabold);
+  letter-spacing:-.03em; line-height:1; margin-bottom:.5rem;
+}
+.cs-cifra span{
+  font-size:var(--ns-fs-sm); line-height:1.45; color:var(--ns-text-secondary);
+  display:block; max-width:22ch;
+}
+
+/* ---------- paleta ---------- */
+.cs-paleta{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(8.5rem,1fr));
+  gap:var(--cs-gap); margin-top:2.5rem;
+}
+.cs-sw{ border:var(--ns-bw-1) solid var(--ns-border-subtle); background:var(--ns-surface-raised) }
+.cs-sw i{ display:block; height:5.5rem }
+.cs-sw div{ padding:.85rem .95rem }
+.cs-sw b{
+  display:block; font-size:var(--ns-fs-sm); font-weight:var(--ns-fw-semibold);
+  letter-spacing:var(--ns-ls-wide); text-transform:uppercase; margin-bottom:.35rem;
+}
+.cs-sw code{
+  font-size:var(--ns-fs-xs); line-height:1.5; color:var(--ns-text-secondary);
+  font-family:var(--ns-font-mono); display:block;
+}
+
+/* ---------- tipografía del proyecto ---------- */
+.cs-tipo{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(15rem,1fr));
+  gap:var(--cs-gap); margin-top:2.5rem;
+}
+.cs-tipo > div{ border-top:var(--ns-bw-1) solid var(--ns-border-subtle); padding-top:1.25rem }
+.cs-tipo b{
+  font-size:var(--ns-fs-xs); font-weight:var(--ns-fw-semibold);
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ns-text-secondary);
+  display:block; margin-bottom:.75rem;
+}
+.cs-tipo p{ font-size:var(--ns-fs-sm); color:var(--ns-text-secondary); margin:0; line-height:1.6 }
+
+/* ---------- cierre ----------
+   Antes era un bloque oscuro con su propio CTA. Ahora el único bloque
+   oscuro de la página es el .cta-final del sitio, que viene justo
+   después — misma secuencia que en los otros casos de estudio.
+
+   Sin fondo propio: la sección 08 que lo precede es --sunken, así que
+   pintarlo también de sunken fundía las dos en una sola banda con el
+   doble de padding. Transparente mantiene la alternancia base/sunken
+   que llevan las ocho secciones anteriores. */
+/* Padding superior más corto que el de banda: al no tener fondo propio,
+   el cierre encadena con la sección 08 sin corte de color que absorba
+   el hueco, y la banda completa se leía como un vacío. */
+.cs-cierre{ padding-block:clamp(3rem,7vw,6rem) var(--cs-band) }
+
+/* ---------- pie ---------- */
+/* Mismo tono que las secciones --sunken (la 08 entre ellas): separa la
+   nota legal del cierre editorial en lugar de dejarla flotando sobre el
+   fondo base. El fondo va en el <footer> y el ancho lo pone el .cs-wrap
+   interior, para que la banda ocupe todo el viewport. */
+.cs-footer{
+  background:var(--ns-surface-sunken);
+  padding-block:clamp(2.5rem,6vw,4rem);
+  font-size:var(--ns-fs-sm); color:var(--ns-text-secondary);
+}
+.cs-footer p{ margin:0 0 .75em; max-width:60ch; line-height:1.6 }
+.cs-footer p:last-child{ margin-bottom:0 }
