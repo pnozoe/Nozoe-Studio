@@ -71,22 +71,79 @@
 
 <main id="contenido" class="trabajo-page">
 
-<!-- ══ HERO ══ -->
-<section class="page-hero" id="intro">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="sm">
-          <span class="sm-dot"></span>
-          <span class="sm-lbl">Trabajo</span>
-        </div>
-        <h1 class="hero-headline">
-          Cada proyecto,<br>una decisión<br>de negocio<span class="hl-em">.</span>
-        </h1>
-        <p class="hero-lede">
-          Seleccionamos los casos donde el diseño cambió algo real: cómo vendía un cliente, cómo lo veían sus pares, cómo crecía su marca.
-        </p>
+<!-- ══ HERO ROTATIVO ══ -->
+<section class="page-hero page-hero--rotating" id="intro">
+  <!-- El orden del DOM (intro → visual → caso → cifras) es el de móvil.
+       En desktop, grid-template-areas coloca el visual en la columna derecha. -->
+  <div class="hero-split">
+
+    <div class="hero-intro">
+      <div class="sm">
+        <span class="sm-dot"></span>
+        <span class="sm-lbl">Trabajo</span>
       </div>
+      <h1 class="hero-headline">
+        Mira el trabajo.<br>Después<br><span class="hl-em">hablamos.</span>
+      </h1>
+      <p class="hero-lede">
+        Cuatro casos en rotación, 40+ en el archivo. Cada uno resolvió algo concreto para un proyecto real.
+      </p>
+    </div>
+
+    <div class="hero-showcase-visual">
+      <div class="hsv-index">
+        <span class="hsv-caso-lbl">Caso</span>
+        <span class="hsv-num">01</span>
+        <span class="hsv-counter">— de <b>04</b> en rotación</span>
+      </div>
+      <div class="hsv-stack">
+        <a href="caso-tml" class="hsv-slide is-active" data-case="tml">
+          <img src="assets/casos/tml/tml-showcase.webp" alt="TML Cipango — identidad y plataforma web" width="1600" height="1714" loading="eager" fetchpriority="high" decoding="async">
+        </a>
+        <a href="caso-cassaforma" class="hsv-slide" data-case="cassaforma">
+          <img src="assets/casos/cassaforma/cassaforma-showcase.webp" alt="Cassaforma — identidad y web de construcción" width="1600" height="1714" loading="lazy" decoding="async">
+        </a>
+        <div class="hsv-slide" data-case="dubom">
+          <img src="assets/casos/dubom/dubom-showcase.webp" alt="DuBom — campaña gráfica de campaña navideña" width="1600" height="1714" loading="lazy" decoding="async">
+        </div>
+        <div class="hsv-slide" data-case="progress-gold">
+          <img src="assets/casos/progress-gold/progress-gold-showcase.webp" alt="Progress Gold — empaque de línea primaria" width="1600" height="1714" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-case">
+      <div class="hero-showcase-info" aria-live="polite">
+        <div class="hsi-label">Ahora viendo</div>
+        <div class="hsi-case is-active" data-case="tml">
+          <a href="caso-tml" class="hsi-title-link"><h2 class="hsi-title">TML Cipango</h2></a>
+          <p class="hsi-meta">Identidad + Web · Japón · Desde 2024</p>
+        </div>
+        <div class="hsi-case" data-case="cassaforma">
+          <a href="caso-cassaforma" class="hsi-title-link"><h2 class="hsi-title">Cassaforma</h2></a>
+          <p class="hsi-meta">Identidad + Web · Perú · Construcción</p>
+        </div>
+        <div class="hsi-case" data-case="dubom">
+          <h2 class="hsi-title">DuBom</h2>
+          <p class="hsi-meta">Publicidad · Japón · Campaña navideña</p>
+        </div>
+        <div class="hsi-case" data-case="progress-gold">
+          <h2 class="hsi-title">Progress Gold</h2>
+          <p class="hsi-meta">Empaque · Perú · Línea primaria</p>
+        </div>
+
+        <div class="hsv-progress" aria-hidden="true"><div class="hsv-progress-bar"></div></div>
+      </div>
+
+      <ul class="hero-cat-pills">
+        <li><button type="button" class="cat-pill is-active" data-cat="tml" aria-pressed="true">Identidad</button></li>
+        <li><button type="button" class="cat-pill" data-cat="cassaforma" aria-pressed="false">Web</button></li>
+        <li><button type="button" class="cat-pill" data-cat="dubom" aria-pressed="false">Publicidad</button></li>
+        <li><button type="button" class="cat-pill" data-cat="progress-gold" aria-pressed="false">Empaque</button></li>
+      </ul>
+    </div>
+
+    <div class="hero-metrics">
       <div class="hero-stats">
         <div class="hero-stat-item">
           <div class="hero-stat-num">40<span class="em">+</span></div>
@@ -98,47 +155,12 @@
         </div>
         <div class="hero-stat-item">
           <div class="hero-stat-num">25<span class="em">+</span></div>
-          <div class="hero-stat-lbl">Años de oficio</div>
+          <div class="hero-stat-lbl">Años de profesión</div>
         </div>
       </div>
+      <a href="#proyectos" class="hero-archive-link">Ver todo el archivo <span class="arr">→</span></a>
     </div>
-  </div>
-</section>
 
-<!-- ══ PROYECTO ANCLA ══ -->
-<section class="ancla-section" id="ancla">
-  <div class="wrap">
-    <div class="ancla-badge">
-      <span>Proyecto ancla</span>
-    </div>
-    <div class="ancla-grid">
-      <div class="ancla-body">
-        <div class="ancla-kicker">TML Cipango · Identidad + Web</div>
-        <h2 class="ancla-title">TML<br>Cipango<span class="em">.</span></h2>
-        <p class="ancla-desc">Un año construyendo el sistema visual de una marca que ya no se parece a ninguna otra del sector. Identidad bicultural, arquitectura de marca y plataforma web.</p>
-        <div class="ancla-meta">
-          <div class="meta-item">
-            <div class="meta-label">Desde</div>
-            <div class="meta-value">2024</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">Origen</div>
-            <div class="meta-value">Japón · Perú</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">Modo</div>
-            <div class="meta-value">Permanente</div>
-          </div>
-        </div>
-        <a href="caso-tml" class="ancla-link">Ver caso completo <span class="arr">→</span></a>
-      </div>
-      <div class="ancla-visual">
-        <img src="assets/casos/tml/tml-flyer.webp"
-             alt="TML Cipango — Flyer promocional: Explora Tokyo en español, servicio turístico con chóferes y guías"
-             loading="lazy"
-             style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
   </div>
 </section>
 
