@@ -99,7 +99,8 @@
         "disabled":  { "$value": "{color.sky.300}", "$type": "color" },
         "inverse":   { "$value": "{color.warm.200}", "$type": "color" },
         "onAccent":  { "$value": "#FFFFFF", "$type": "color" },
-        "accent":    { "$value": "{color.orange.500}", "$type": "color" }
+        "accent":    { "$value": "{color.orange.500}", "$type": "color" },
+        "accentStrong": { "$value": "{color.orange.700}", "$type": "color", "$description": "Accent con contraste AA para texto pequeño sobre surface-base y sunken" }
       },
       "border": {
         "subtle":  { "$value": "{color.warm.400}", "$type": "color" },
@@ -130,7 +131,8 @@
         "disabled":  { "$value": "{color.ink.500}", "$type": "color" },
         "inverse":   { "$value": "{color.ink.800}", "$type": "color" },
         "onAccent":  { "$value": "#FFFFFF", "$type": "color" },
-        "accent":    { "$value": "#FF6B3D", "$type": "color" }
+        "accent":    { "$value": "#FF6B3D", "$type": "color" },
+        "accentStrong": { "$value": "#FF6B3D", "$type": "color", "$description": "En oscuro coincide con accent: ya supera AA sobre los fondos oscuros" }
       },
       "border": {
         "subtle":  { "$value": "{color.ink.800}", "$type": "color" },

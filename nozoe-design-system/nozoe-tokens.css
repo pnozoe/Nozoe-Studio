@@ -248,6 +248,9 @@
   --ns-text-inverse:    var(--ns-warm-200);
   --ns-text-on-accent:  #FFFFFF;
   --ns-text-accent:     var(--ns-orange-500);
+  /* Variante de accent con contraste AA para texto pequeño sobre
+     surface-base y surface-sunken (orange-500 solo alcanza AA large). */
+  --ns-text-accent-strong: var(--ns-orange-700);
 
   /* Border */
   --ns-border-subtle:   var(--ns-warm-400);
@@ -279,6 +282,7 @@
   --ns-text-inverse:    var(--ns-ink-800);
   --ns-text-on-accent:  #FFFFFF;
   --ns-text-accent:     #FF6B3D;
+  --ns-text-accent-strong: #FF6B3D;
 
   --ns-border-subtle:   var(--ns-ink-800);
   --ns-border-default:  var(--ns-ink-700);
@@ -311,6 +315,7 @@
     --ns-text-disabled:   var(--ns-ink-500);
     --ns-text-inverse:    var(--ns-ink-800);
     --ns-text-accent:     #FF6B3D;
+    --ns-text-accent-strong: #FF6B3D;
     --ns-border-subtle:   var(--ns-ink-800);
     --ns-border-default:  var(--ns-ink-700);
     --ns-border-strong:   var(--ns-ink-500);
