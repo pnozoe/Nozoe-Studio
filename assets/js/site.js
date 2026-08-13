@@ -331,7 +331,12 @@ document.addEventListener('DOMContentLoaded', function() {
           const img = document.createElement('img');
           img.src = src;
           img.alt = alt;
-          // estilos en CSS (.modal-inner img); aquí solo se setean src/alt
+          // Nunca ampliar por encima de la resolución nativa: si el original
+          // es menor que el hueco disponible, se muestra más pequeño pero nítido.
+          img.addEventListener('load', function() {
+            if (img.naturalWidth) img.style.maxWidth = img.naturalWidth + 'px';
+          });
+          // el resto de estilos vive en CSS (.modal-inner img)
           modalSlot.appendChild(img);
         }
         if (modalLabel) modalLabel.textContent = name ? name.textContent : '';
