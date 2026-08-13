@@ -625,9 +625,9 @@ body::before {
   flex: 1; margin: 12px 0; position: relative; overflow: hidden; background-size: cover; background-position: center;
   background-color: var(--ns-ink-700);
 }
-.cmp-theme-resto .cmp-g-art  { background-image: url(../comparador/restaurante.png); background-position: center 45%; }
-.cmp-theme-dental .cmp-g-art { background-image: url(../comparador/dental-clinic.png); background-position: center 55%; }
-.cmp-theme-legal .cmp-g-art  { background-image: url(../comparador/estudio-juridico.png); background-position: center 55%; }
+.cmp-theme-resto .cmp-g-art  { background-image: url(../comparador/restaurante.webp); background-position: center 45%; }
+.cmp-theme-dental .cmp-g-art { background-image: url(../comparador/dental-clinic.webp); background-position: center 55%; }
+.cmp-theme-legal .cmp-g-art  { background-image: url(../comparador/estudio-juridico.webp); background-position: center 55%; }
 .cmp-g-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,17,25,.65), transparent 55%); }
 .cmp-g-mark {
   position: absolute; left: 16px; bottom: 14px; z-index: 3; color: var(--ns-warm-200);

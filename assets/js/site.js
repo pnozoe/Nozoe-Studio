@@ -139,7 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
 (function(){
   var wall = document.getElementById('muroWall');
   if (!wall) return;
-  var BASE = 'assets/casos/trabajo/';
+  // Juego derivado del muro: mismas piezas redimensionadas al tamaño del tile.
+  // Los originales de assets/casos/trabajo/ los siguen usando trabajo.html y
+  // las páginas de caso, donde sí se ven grandes.
+  var BASE = 'assets/casos/muro/';
   var P = [
     { n: 'Cassaforma', t: 'Identidad', f: 'identidad-brand-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
     { n: 'Cassaforma', t: 'Identidad', f: 'identidad-logo-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
@@ -170,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
     { n: 'Progress Gold', t: 'Empaque', f: 'packaging-bidonera-pg.webp' },
     { n: 'Cassaforma', t: 'Web', f: 'web-cassaforma-home.webp' }
   ];
-  function folderFor(f){ return f.split('-')[0]; }
   var shapes = ['', 'tall', 'wide', ''];
   var cols = 6, html = '';
   for (var c = 0; c < cols; c++){
@@ -178,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var rep = 0; rep < 2; rep++){
       for (var i = 0; i < 5; i++){
         var p = P[(c * 5 + i) % P.length];
-        var src = BASE + folderFor(p.f) + '/' + p.f;
+        var src = BASE + p.f;
         inner += '<div class="muro-tile ' + shapes[(i + c) % 4] + '">'
           + '<img src="' + src + '" alt="' + p.n + ' — ' + p.t + '" loading="lazy">'
           + '<span class="mt-name">' + p.n + '</span>'
