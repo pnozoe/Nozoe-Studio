@@ -926,7 +926,7 @@ body::before {
 
 /* ── Placa del caso destacado ── */
 .casos-plate-slot {
-  grid-column: 6 / 12;
+  grid-column: 6 / 13;
   padding-top: 6px;
 }
 .caso-plate {
@@ -962,7 +962,8 @@ body::before {
 /* ── Lomos: casos secundarios asomando por el borde derecho ── */
 .casos-spines {
   position: absolute;
-  right: calc(50% - 716px); top: 163px;
+  /* 520px hasta el borde del contenido + 24px de calle + 196px de la pila */
+  right: calc(50% - 740px); top: 163px;
   z-index: 2;
   display: flex;
   gap: var(--ns-space-3);
@@ -3005,12 +3006,14 @@ body::before {
   align-items: start;
   margin-bottom: 64px;
 }
-.section-headline {
+/* Titular propio de servicios.html — antes se llamaba .section-headline
+   y, al ir después en el archivo, pisaba al del home (que pide 3.5rem). */
+.svc-page-headline {
   font: 800 clamp(2rem,3vw,2.8rem)/1.05 var(--ns-font-sans);
   letter-spacing: -0.025em;
   color: var(--ns-text-primary);
 }
-.section-headline .em { color: var(--ns-accent); }
+.svc-page-headline .em { color: var(--ns-accent); }
 .section-lede {
   font: 300 16px/1.7 var(--ns-font-sans);
   color: var(--ns-text-secondary);
