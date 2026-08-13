@@ -935,7 +935,7 @@ body::before {
   align-items: center;
   justify-content: center;
   aspect-ratio: 3/2;
-  padding: var(--ns-space-16) var(--ns-space-16);
+  padding: var(--ns-space-10) var(--ns-space-10);
   background: var(--ns-surface-raised);
   border: 1px solid rgba(139,157,183,0.28);
   border-radius: var(--ns-radius-md);
@@ -962,7 +962,7 @@ body::before {
 /* ── Lomos: casos secundarios asomando por el borde derecho ── */
 .casos-spines {
   position: absolute;
-  right: 0; top: 163px;
+  right: calc(50% - 716px); top: 163px;
   z-index: 2;
   display: flex;
   gap: var(--ns-space-3);
@@ -974,8 +974,7 @@ body::before {
   overflow: hidden;
   background: var(--ns-surface-raised);
   border: 1px solid rgba(139,157,183,0.28);
-  border-right: none;
-  border-radius: var(--ns-radius-md) 0 0 var(--ns-radius-md);
+  border-radius: var(--ns-radius-md);
   transition: transform 250ms var(--ns-ease-out);
 }
 .caso-spine:hover { transform: translateX(-14px); }
