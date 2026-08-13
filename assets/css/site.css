@@ -827,33 +827,185 @@ body::before {
 }
 
 /* ══════════════════════════════════════
-   TRABAJO RECIENTE
+   CASOS DE ESTUDIO — banda destacada
 ══════════════════════════════════════ */
 .trabajo {
   position: relative; z-index: 1;
-  padding: 96px 0;
+  padding: 0 0 var(--ns-space-24);
   border-top: 1px solid rgba(139,157,183,0.28);
 }
 
-.trabajo-intro { padding-bottom: 56px; align-items: end; }
-.tj-intro-left  { grid-column: 1 / 8; }
-.tj-intro-right { grid-column: 10 / 13; display: flex; justify-content: flex-end; align-items: flex-end; }
-
-/* Featured project */
-.tj-featured {
-  align-items: center;
-  padding: 64px 0;
-  border-top: 1px solid rgba(139,157,183,0.28);
+/* Banda full-bleed: contiene los lomos anclados al borde del viewport.
+   El fondo lo pone el body (surface-base), igual que la textura de puntos. */
+.casos-band {
+  position: relative;
+  padding: var(--ns-space-24) 0;
+  overflow: hidden;
 }
-.tj-feat-img   { grid-column: 1 / 8; }
-.tj-feat-body  {
-  grid-column: 8 / 13;
+
+.casos-grid { align-items: start; }
+
+/* ── Columna editorial ── */
+.casos-body {
+  grid-column: 1 / 6;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding-left: 24px;
+  align-items: flex-start;
+  gap: var(--ns-space-5);
+  padding-top: var(--ns-space-1);
+}
+.casos-headline { margin-bottom: 0; }
+
+.caso-kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--ns-space-3);
+  margin-top: var(--ns-space-2);
+  font: 600 9.5px/1 var(--ns-font-sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  /* accent-strong: el accent puro solo alcanza AA-large a este tamaño */
+  color: var(--ns-text-accent-strong);
+}
+.caso-kicker-rule {
+  width: 32px; height: 2px;
+  background: var(--ns-accent);
+  flex-shrink: 0;
 }
 
+.caso-title {
+  font: 800 clamp(1.9rem, 2.7vw, 2.375rem)/1.06 var(--ns-font-sans);
+  letter-spacing: -0.03em;
+  color: var(--ns-text-primary);
+  text-wrap: balance;
+}
+.caso-title-dot { color: var(--ns-accent); }
+
+.caso-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ns-space-2);
+  font: 300 12.5px/1 var(--ns-font-sans);
+  color: var(--ns-text-secondary);
+}
+
+.caso-desc {
+  font: 400 14px/1.7 var(--ns-font-sans);
+  color: var(--ns-text-secondary);
+  max-width: 36ch;
+  text-wrap: pretty;
+}
+
+.caso-cta { margin-top: var(--ns-space-1); }
+.btn .arr {
+  display: inline-block;
+  margin-left: var(--ns-space-1);
+  transition: transform 200ms var(--ns-ease-out);
+}
+.btn:hover .arr { transform: translateX(3px); }
+
+.casos-count {
+  grid-column: 1 / 6;
+  display: flex;
+  align-items: baseline;
+  gap: var(--ns-space-3);
+  margin-top: var(--ns-space-12);
+  padding-top: var(--ns-space-5);
+  border-top: 1px solid rgba(139,157,183,0.28);
+}
+.casos-count-num {
+  font: 800 30px/1 var(--ns-font-sans);
+  letter-spacing: -0.02em;
+  color: var(--ns-text-primary);
+}
+.casos-count-lbl {
+  font: 300 13px/1 var(--ns-font-sans);
+  color: var(--ns-text-tertiary);
+}
+
+/* ── Placa del caso destacado ── */
+.casos-plate-slot {
+  grid-column: 6 / 12;
+  padding-top: 6px;
+}
+.caso-plate {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3/2;
+  padding: var(--ns-space-16) var(--ns-space-16);
+  background: var(--ns-surface-raised);
+  border: 1px solid rgba(139,157,183,0.28);
+  border-radius: var(--ns-radius-md);
+  box-shadow: 0 1px 2px rgba(29,42,64,0.06);
+  transition: transform 400ms var(--ns-ease-out), box-shadow 400ms var(--ns-ease-out);
+}
+.caso-plate:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(29,42,64,0.20);
+}
+.caso-plate img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+.caso-plate-cap {
+  position: absolute;
+  right: var(--ns-space-6); bottom: var(--ns-space-4);
+  font: 300 9.5px/1 var(--ns-font-sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ns-text-tertiary);
+}
+
+/* ── Lomos: casos secundarios asomando por el borde derecho ── */
+.casos-spines {
+  position: absolute;
+  right: 0; top: 163px;
+  z-index: 2;
+  display: flex;
+  gap: var(--ns-space-3);
+}
+.caso-spine {
+  position: relative;
+  display: block;
+  width: 92px; height: 296px;
+  overflow: hidden;
+  background: var(--ns-surface-raised);
+  border: 1px solid rgba(139,157,183,0.28);
+  border-right: none;
+  border-radius: var(--ns-radius-md) 0 0 var(--ns-radius-md);
+  transition: transform 250ms var(--ns-ease-out);
+}
+.caso-spine:hover { transform: translateX(-14px); }
+.caso-spine img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.caso-spine-veil {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to top, rgba(10,17,25,0.82) 30%, rgba(10,17,25,0.05) 72%),
+    linear-gradient(to bottom, rgba(10,17,25,0.50), rgba(10,17,25,0) 32%);
+}
+.caso-spine-name {
+  position: absolute;
+  left: var(--ns-space-4); bottom: 18px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font: 800 17px/1 var(--ns-font-sans);
+  letter-spacing: -0.01em;
+  color: var(--ns-text-inverse);
+}
+.caso-spine-num {
+  position: absolute;
+  right: var(--ns-space-3); top: 14px;
+  font: 300 10px/1 var(--ns-font-sans);
+  letter-spacing: 0.16em;
+  color: rgba(244,241,236,0.75);
+}
 .project-img {
   width: 100%;
   aspect-ratio: 4/3;
@@ -891,29 +1043,11 @@ body::before {
 .project-img.mid .pimg-lbl   { color: rgba(198,213,234,0.6); }
 .project-img.ember .pimg-lbl { color: rgba(29,42,64,0.55); }
 
-.feat-tag {
-  font: 300 9px/1 var(--ns-font-sans);
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ns-accent);
-}
-.feat-title {
-  font: 800 clamp(2rem,3vw,2.8rem)/1.05 var(--ns-font-sans);
-  letter-spacing: -0.025em;
-  color: var(--ns-text-primary);
-}
-.feat-meta {
-  font: 300 12px/1 var(--ns-font-sans);
-  color: var(--ns-text-secondary);
+
+.tj-grid-foot {
   display: flex;
-  gap: 8px;
-  align-items: center;
-}
-.meta-sep { color: var(--ns-text-tertiary); }
-.feat-desc {
-  font: 400 14px/1.7 var(--ns-font-sans);
-  color: var(--ns-text-secondary);
-  max-width: 40ch;
+  justify-content: flex-end;
+  padding-top: var(--ns-space-8);
 }
 
 /* 2×2 grid */
@@ -1236,6 +1370,31 @@ body::before {
 /* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */
+/* Por debajo de 1280px los lomos ya no caben junto a la placa
+   (a 1180px llegaban a taparle el pie de foto): pasan a flujo normal. */
+@media (max-width: 1280px) {
+  .casos-spines {
+    position: static;
+    margin: var(--ns-space-12) auto 0;
+    max-width: 1200px;
+    padding: 0 80px;
+    gap: var(--ns-space-4);
+  }
+  .caso-spine {
+    flex: 1 1 0;
+    width: auto; height: 180px;
+    border-right: 1px solid rgba(139,157,183,0.28);
+    border-radius: var(--ns-radius-md);
+  }
+  .caso-spine:hover { transform: translateY(-4px); }
+  .caso-spine-name {
+    writing-mode: horizontal-tb;
+    transform: none;
+    left: var(--ns-space-4); bottom: var(--ns-space-4);
+  }
+  .caso-spine-num { right: var(--ns-space-4); top: var(--ns-space-4); }
+}
+
 @media (max-width: 1024px) {
   .wrap { padding: 0 48px; }
   .nav-inner { padding: 0 48px; }
@@ -1243,6 +1402,8 @@ body::before {
   .trust-inner { padding: 0 48px; }
   .footer-inner { padding: 0 48px; }
   .cta-right { grid-column: 8 / 13; }
+
+  .casos-spines { padding: 0 48px; }
 }
 
 @media (max-width: 900px) {
@@ -1269,10 +1430,11 @@ body::before {
   .svc-card { min-height: auto; }
   .svc-card-body { padding: 24px 32px 28px; }
 
-  .tj-intro-left, .tj-intro-right { grid-column: 1 / -1; }
-  .tj-intro-right { justify-content: flex-start; }
-  .tj-feat-img, .tj-feat-body { grid-column: 1 / -1; }
-  .tj-feat-body { padding-left: 0; padding-top: 24px; }
+  .casos-body, .casos-plate-slot, .casos-count { grid-column: 1 / -1; }
+  .casos-plate-slot { padding-top: var(--ns-space-8); }
+  .caso-plate { padding: var(--ns-space-10) var(--ns-space-10); }
+  .casos-band { padding: var(--ns-space-20) 0; }
+  .casos-spines { padding: 0 32px; }
 
   .proc-intro-left, .proc-intro-right { grid-column: 1 / -1; }
   .proc-step { grid-template-columns: auto 1fr; row-gap: 8px; }
@@ -1341,6 +1503,14 @@ body::before {
   .nav-link { height: 44px; font-size: 13px; }
   .nav-ham { display: flex; }
   .proj-grid { grid-template-columns: 1fr; }
+
+  /* Móvil: los lomos se apilan y la placa gana aire */
+  .casos-spines { flex-direction: column; padding: 0 20px; gap: var(--ns-space-3); }
+  /* flex-basis:0 en columna colapsaría la altura: se fija explícitamente */
+  .caso-spine { flex: 0 0 auto; height: 140px; }
+  .caso-plate { padding: var(--ns-space-8) var(--ns-space-8); }
+  .casos-count { flex-wrap: wrap; }
+
   .pkg-grid { max-width: none; }
   .svc-cards { grid-template-columns: 1fr; }
   .footer-inner { padding: 0 20px; }
