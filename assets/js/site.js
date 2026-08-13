@@ -292,7 +292,8 @@ document.addEventListener('DOMContentLoaded', function() {
 /* ── Caja de luz de piezas ──
    Compartida por el home y trabajo.html: se engancha a cualquier .proj-card
    que tenga un .proj-thumb con imagen. Las tarjetas con data-caso navegan a
-   su caso de estudio en vez de abrir el modal. */
+   su caso de estudio en vez de abrir el modal, y las que declaran data-full
+   amplían esa versión en vez de la miniatura. */
 document.addEventListener('DOMContentLoaded', function() {
   const cards = document.querySelectorAll('.proj-card');
 
@@ -317,7 +318,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const thumbImg = card.querySelector('.proj-thumb img');
         if (!thumbImg) return;
 
-        const src = thumbImg.getAttribute('src');
+        // data-full apunta a la versión grande; si no hay, sirve la miniatura
+        const src = card.dataset.full || thumbImg.getAttribute('src');
         const alt = thumbImg.getAttribute('alt') || '';
         const name = card.querySelector('.proj-name');
         const tags = card.querySelector('.proj-tags');
