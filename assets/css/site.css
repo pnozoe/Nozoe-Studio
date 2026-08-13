@@ -1013,48 +1013,12 @@ body::before {
   letter-spacing: 0.16em;
   color: rgba(244,241,236,0.75);
 }
-.project-img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background: var(--ns-surface-sunken);
-  border: 1px solid rgba(139,157,183,0.3);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.project-img.dark { background: var(--ns-text-primary); }
-.project-img.mid  { background: var(--ns-text-secondary); }
-.project-img.sky  { background: var(--ns-border-default); }
-.project-img.ember { background: var(--ns-accent); }
-
-.project-img::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(circle at 65% 35%, rgba(233,78,27,0.35) 0%, transparent 60%);
-}
-.project-img.sky::before { background: radial-gradient(circle at 30% 65%, rgba(29,42,64,0.1) 0%, transparent 60%); }
-.project-img.ember::before { background: radial-gradient(circle at 70% 30%, rgba(29,42,64,0.2) 0%, transparent 60%); }
-.project-img.mid::before { background: radial-gradient(circle at 50% 50%, rgba(198,213,234,0.15) 0%, transparent 55%); }
-
-.pimg-lbl {
-  font: 300 10px/1 var(--ns-font-sans);
-  letter-spacing: 0.12em;
-  color: var(--ns-text-tertiary);
-  position: relative;
-  z-index: 1;
-}
-.project-img.dark .pimg-lbl  { color: rgba(198,213,234,0.6); }
-.project-img.mid .pimg-lbl   { color: rgba(198,213,234,0.6); }
-.project-img.ember .pimg-lbl { color: rgba(29,42,64,0.55); }
 
 
 .tj-grid-foot {
   display: flex;
-  justify-content: flex-end;
-  padding-top: var(--ns-space-8);
+  justify-content: center;
+  padding-top: var(--ns-space-12);
 }
 
 /* 2×2 grid */
@@ -1075,31 +1039,49 @@ body::before {
   gap: 32px 32px;
 }
 
-.proj-cell {
+/* Tarjetas de la galería — acotadas a .trabajo para no alcanzar a
+   trabajo.html, que tiene su propio .trabajo-page .proj-card */
+.trabajo .proj-card {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  text-decoration: none;
-  color: inherit;
-}
-.proj-cell-img {
-  border: 1px solid rgba(139,157,183,0.3);
-  border-radius: 4px;
-  overflow: hidden;
-}
-.proj-cell-img .project-img {
+  width: 100%;
+  padding: 0;
+  background: none;
   border: none;
-  border-radius: 0;
-  transition: transform 240ms var(--ns-ease-out);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
-.proj-cell:hover .project-img { transform: scale(1.01); }
+.trabajo .proj-thumb {
+  display: block;
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border: 1px solid rgba(139,157,183,0.3);
+  border-radius: var(--ns-radius-md);
+}
+.trabajo .proj-thumb img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 400ms var(--ns-ease-out);
+}
+.trabajo .proj-card:hover .proj-thumb img,
+.trabajo .proj-card:focus-visible .proj-thumb img { transform: scale(1.03); }
+.trabajo .proj-card:focus-visible .proj-thumb {
+  outline: 2px solid var(--ns-accent);
+  outline-offset: 3px;
+}
+
 .proj-cell-meta {
   display: flex;
   flex-direction: column;
   gap: 5px;
   transition: transform 200ms var(--ns-ease-out);
 }
-.proj-cell:hover .proj-cell-meta { transform: translateY(-1px); }
+.trabajo .proj-card:hover .proj-cell-meta { transform: translateY(-1px); }
 .proj-name {
   font: 800 20px/1.2 var(--ns-font-sans);
   letter-spacing: -0.015em;
@@ -1112,6 +1094,7 @@ body::before {
   gap: 7px;
   align-items: center;
 }
+
 
 /* ══════════════════════════════════════
    PROCESO — dark surface
