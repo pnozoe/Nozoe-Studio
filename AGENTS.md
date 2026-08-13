@@ -64,14 +64,28 @@ sugerencia de cambio de stack debe rechazarse.
 ├── servicios.html               ← oferta de servicios
 ├── trabajo.html                 ← portafolio
 ├── contacto.html                ← contacto
-├── caso-tml.html                ← caso de estudio TML Cipango
+├── web-profesional.html         ← producto Web Profesional
+├── cuestionario.html            ← cuestionario de marca
+├── caso-tml.html                ← caso TML Cipango
+├── caso-cassaforma.html         ← caso Cassaforma Proyectos
+├── caso-papa-francisco.html     ← caso Papa Francisco Perú 2018
 │
 ├── assets/
 │   ├── favicon.webp
 │   ├── nozoe-studio-logo.svg
 │   ├── nozoe-studio-isotipo.svg
+│   ├── css/site.css             ← CSS común de todo el sitio
+│   ├── js/site.js               ← JS común (incluye la caja de luz)
+│   ├── js/trabajo.js            ← JS propio de trabajo.html
 │   ├── img/                     ← imágenes generales del sitio
+│   ├── comparador/              ← fondos del comparador antes/después
 │   └── casos/                   ← imágenes por caso de estudio
+│       ├── <caso>/              ← imágenes de cada caso
+│       ├── trabajo/             ← piezas del portafolio, a resolución alta
+│       └── muro/                ← juego DERIVADO del muro del hero:
+│                                  las mismas piezas al tamaño del tile.
+│                                  No editar a mano, se regenera desde
+│                                  assets/casos/trabajo/
 │
 └── nozoe-design-system/         ← sistema de diseño (paquete propio)
     ├── AGENTS.md                ← contexto del DS
@@ -129,6 +143,13 @@ sistema, leer `nozoe-design-system/README.md`.
   no genérico).
 - `loading="lazy"` en imágenes que no estén above-the-fold.
 - Indentación: 2 espacios.
+- **Versionado de assets:** los `<link>` y `<script>` de CSS y JS
+  compartidos llevan `?v=AAAAMMDD`. **Al modificar `site.css`,
+  `site.js`, `trabajo.js` o `nozoe-tokens.css` hay que subir esa
+  versión en todas las páginas que los carguen.** Si no, Cloudflare
+  y el navegador siguen sirviendo la copia anterior y los visitantes
+  no ven el cambio. Se comprueba con:
+  `grep -c '?v=' *.html`
 
 **CSS:**
 - Variables CSS del sistema (`var(--ns-…)`) por defecto. Hex 
@@ -160,8 +181,9 @@ al actualizar este documento).
 **Trabajo en rama:** `cierre-final` (creada desde `main`).
 **Baseline seguro:** `main` (commit inicial `997ce0f`).
 
-**Páginas existentes (6):** index, estudio, servicios, trabajo, 
-contacto, caso-tml.
+**Páginas existentes (10):** index, estudio, servicios, trabajo,
+contacto, web-profesional, cuestionario, caso-tml, caso-cassaforma,
+caso-papa-francisco.
 
 ### Roadmap de cierre — sub-fases
 
@@ -176,10 +198,27 @@ contacto, caso-tml.
 Aplicar el patrón documentado en Fase 1 a: estudio, servicios, 
 trabajo, contacto, caso-tml. Unificar header/footer divergentes.
 
-**Fase 3 — Optimización técnica de assets existentes**
-- Reemplazar JPGs por WebPs ya disponibles (~8.9 MB de ahorro)
-- Agregar `loading="lazy"` donde corresponda
-- Decidir destino de SVGs no usados
+**✅ Fase 3 — Optimización técnica de assets (commits 0b0b708 → 0cc5646)**
+Las imágenes del home pasaron de 7,85 MB a 3,00 MB dimensionando cada
+una a su uso real:
+- Comparador: 3 PNG de 5,12 MB → WebP a 1200px, 190 KB
+- Muro del hero: servía originales de portafolio para tiles de 227px;
+  ahora usa el juego derivado de `assets/casos/muro/`, 6,25 MB → 1,7 MB
+- Piezas sueltas redimensionadas a su uso máximo real
+
+PageSpeed pasó de 61 a 78 en móvil y de 56 a 93 en escritorio; el LCP
+móvil, de 29,2 s a 4,5 s.
+
+Los originales sin comprimir del comparador viven fuera del repo, en
+`~/Desktop/Nozoe Studio/Originales Web 2026 - sin comprimir/`.
+
+**Criterio para futuras imágenes:** medir el tamaño al que se muestra
+(ancho en CSS × densidad de pantalla) antes de elegir resolución. Ojo
+con `object-fit: cover`: una imagen apaisada dentro de una caja vertical
+necesita MÁS ancho que la caja, no menos. Y si una pieza se abre en la
+caja de luz, medir también ahí — pide bastante más que la miniatura.
+
+**Pendiente de Fase 3:** decidir destino de los SVGs no usados.
 
 **Fase 3.5 — Actualización de contenido visual**
 Integrar las 52 imágenes WebP nuevas organizadas por Pedro en 
