@@ -25,6 +25,13 @@ class CleanURLHandler(http.server.SimpleHTTPRequestHandler):
         if os.path.isfile(self.translate_path(candidate)):
             self.path = candidate + (('?' + parts.query) if parts.query else '')
 
+    def end_headers(self):
+        # Sin esto el navegador cachea assets/js y assets/css con heurística
+        # propia (SimpleHTTPRequestHandler solo manda Last-Modified) y se queda
+        # con versiones viejas mientras editas. En producción manda Cloudflare.
+        self.send_header('Cache-Control', 'no-store, must-revalidate')
+        return super().end_headers()
+
     def do_GET(self):
         self._resolve_clean_url()
         return super().do_GET()

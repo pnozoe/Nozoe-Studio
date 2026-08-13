@@ -139,7 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
 (function(){
   var wall = document.getElementById('muroWall');
   if (!wall) return;
-  var BASE = 'assets/casos/trabajo/';
+  // Juego derivado del muro: mismas piezas redimensionadas al tamaño del tile.
+  // Los originales de assets/casos/trabajo/ los siguen usando trabajo.html y
+  // las páginas de caso, donde sí se ven grandes.
+  var BASE = 'assets/casos/muro/';
   var P = [
     { n: 'Cassaforma', t: 'Identidad', f: 'identidad-brand-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
     { n: 'Cassaforma', t: 'Identidad', f: 'identidad-logo-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
@@ -170,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
     { n: 'Progress Gold', t: 'Empaque', f: 'packaging-bidonera-pg.webp' },
     { n: 'Cassaforma', t: 'Web', f: 'web-cassaforma-home.webp' }
   ];
-  function folderFor(f){ return f.split('-')[0]; }
   var shapes = ['', 'tall', 'wide', ''];
   var cols = 6, html = '';
   for (var c = 0; c < cols; c++){
@@ -178,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var rep = 0; rep < 2; rep++){
       for (var i = 0; i < 5; i++){
         var p = P[(c * 5 + i) % P.length];
-        var src = BASE + folderFor(p.f) + '/' + p.f;
+        var src = BASE + p.f;
         inner += '<div class="muro-tile ' + shapes[(i + c) % 4] + '">'
           + '<img src="' + src + '" alt="' + p.n + ' — ' + p.t + '" loading="lazy">'
           + '<span class="mt-name">' + p.n + '</span>'
@@ -288,3 +290,66 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 })();
+
+/* ── Caja de luz de piezas ──
+   Compartida por el home y trabajo.html: se engancha a cualquier .proj-card
+   que tenga un .proj-thumb con imagen. Las tarjetas con data-caso navegan a
+   su caso de estudio en vez de abrir el modal, y las que declaran data-full
+   amplían esa versión en vez de la miniatura. */
+document.addEventListener('DOMContentLoaded', function() {
+  const cards = document.querySelectorAll('.proj-card');
+
+  const modal      = document.getElementById('proj-modal');
+  const modalClose = document.getElementById('modal-close');
+  const modalSlot  = document.getElementById('modal-thumb-slot');
+  const modalLabel = document.getElementById('modal-label');
+  const modalYear  = document.getElementById('modal-year');
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (modal) {
+    cards.forEach(card => {
+      card.addEventListener('click', e => {
+        e.preventDefault();
+        // Tiles con caso de estudio propio → navegar al caso en vez del modal
+        if (card.dataset.caso) { window.location.href = card.dataset.caso; return; }
+        const thumbImg = card.querySelector('.proj-thumb img');
+        if (!thumbImg) return;
+
+        // data-full apunta a la versión grande; si no hay, sirve la miniatura
+        const src = card.dataset.full || thumbImg.getAttribute('src');
+        const alt = thumbImg.getAttribute('alt') || '';
+        const name = card.querySelector('.proj-name');
+        const tags = card.querySelector('.proj-tags');
+
+        if (modalSlot && src) {
+          modalSlot.innerHTML = '';
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = alt;
+          // Nunca ampliar por encima de la resolución nativa: si el original
+          // es menor que el hueco disponible, se muestra más pequeño pero nítido.
+          img.addEventListener('load', function() {
+            if (img.naturalWidth) img.style.maxWidth = img.naturalWidth + 'px';
+          });
+          // el resto de estilos vive en CSS (.modal-inner img)
+          modalSlot.appendChild(img);
+        }
+        if (modalLabel) modalLabel.textContent = name ? name.textContent : '';
+        if (modalYear)  modalYear.textContent  = tags ? tags.textContent : '';
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  }
+
+});
