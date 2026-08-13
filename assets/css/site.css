@@ -22,6 +22,44 @@
 /* Migrado de index.html en Fase 1.2 — cero cambios de valores */
 /* Fase 1.3.B: tokens del DS aplicados directamente (sin aliases locales). */
 
+/* ═══════════════════════════════════════════════════════
+   Nunito autoalojada. Antes venía de fonts.googleapis.com, que
+   añadía dos saltos a terceros al camino crítico del render.
+   Subconjunto: latín + los símbolos que el sitio pinta (– — … → ★ ✓ …).
+   El japonés y los emoji nunca estuvieron en Nunito: siguen cayendo
+   en la fuente del sistema, igual que antes.
+   Se sirven los MISMOS cuatro pesos que pedía Google (300/600/700/800)
+   para no alterar el render: el 400 del CSS sigue resolviéndose a 300.
+   ═══════════════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/nunito-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/nunito-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/nunito-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../fonts/nunito-800.woff2') format('woff2');
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
