@@ -3306,6 +3306,269 @@ body::before {
   .footer-inner { padding: 0 20px; }
 }
 
+/* ═══════════════════════════════════════════════════════
+   HERO SERVICIOS — opción 1b · v2
+   Fondo a sangre + índice rotativo + header transparente.
+
+   Añadir al final del bloque de servicios.html de
+   assets/css/site.css.
+
+   ⚠️  NO borrar las reglas .page-hero / .hero-* que ya hay
+   en ese bloque: pese a estar ahí, .page-hero (línea ~2700)
+   es la última definición del archivo y gana también en
+   contacto.html y estudio.html. Quedan sin uso en servicios,
+   pero borrarlas cambia esas dos páginas.
+   ═══════════════════════════════════════════════════════ */
+
+.svc-hero {
+  /* El easing del mock aprobado. No es el de --ns-ease-in-out
+     (0.65,0,0.35,1), que arranca y frena más seco. */
+  --svc-ease: cubic-bezier(0.33, 0, 0.2, 1);
+  --svc-hdr: 64px;              /* alto de .nav-inner */
+
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--ns-ink-900);
+}
+
+/* ─── Header transparente sobre el hero ───
+   El header pasa a fixed solo en esta página, para que el hero
+   arranque en y=0 y la barra flote encima. El estado por defecto
+   es el sólido de siempre: si el JS no corre, se ve el header
+   normal, nunca uno ilegible. */
+body.pg-servicios .site-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  transition: background 260ms var(--ns-ease-out),
+              border-color 260ms var(--ns-ease-out),
+              backdrop-filter 260ms var(--ns-ease-out);
+}
+body.pg-servicios.hdr-over-hero .site-header {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom-color: transparent;
+}
+/* Logo: dos archivos, uno por estado. El SVG va en <img>, así que no
+   se puede recolorear por CSS sin perder el naranja de marca.
+
+   Se cruzan por opacidad, no por display. Dos motivos: con display,
+   la regla que ya hay en site.css —.nav-logo img { display: block },
+   especificidad (0,1,1)— gana a .nav-logo-claro (0,1,0) y se pintan
+   los dos apilados; y además el corte seco cantaba a mitad de los
+   260 ms que tarda el header en virar. El claro va en absolute para
+   que no ocupe sitio en la barra. */
+body.pg-servicios .nav-logo { position: relative; }
+body.pg-servicios .nav-logo img { transition: opacity 260ms var(--ns-ease-out); }
+body.pg-servicios .nav-logo img.nav-logo-claro { position: absolute; top: 0; left: 0; opacity: 0; }
+body.pg-servicios.hdr-over-hero .nav-logo img.nav-logo-claro { opacity: 1; }
+body.pg-servicios.hdr-over-hero .nav-logo img.nav-logo-color { opacity: 0; }
+
+body.hdr-over-hero .nav-link { color: var(--ns-sky-200); }
+body.hdr-over-hero .nav-link:hover,
+body.hdr-over-hero .nav-link.active { color: var(--ns-warm-200); }
+body.hdr-over-hero .nav-link:hover { background: rgba(255,255,255,0.08); }
+body.hdr-over-hero .nav-cta {
+  background: var(--ns-warm-200);
+  color: var(--ns-ink-800);
+}
+body.hdr-over-hero .nav-ham span { background: var(--ns-warm-200); }
+body.hdr-over-hero .nav-ham:hover { background: rgba(255,255,255,0.1); }
+
+/* El centinela marca el punto de viraje: el borde inferior del
+   hero menos el alto del header. */
+.svc-hero-sentinel {
+  position: absolute;
+  left: 0;
+  bottom: var(--svc-hdr);
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+/* ─── Capa de imágenes a sangre (una por servicio) ─── */
+/* isolation crea un contexto de apilado propio: los z-index de las
+   cuatro imágenes se resuelven aquí dentro y la capa entera sigue por
+   debajo del velo, la trama y la rejilla. Sin esto, la imagen activa
+   (z-index 2) pintaría por encima del texto. */
+.svc-hero-media { position: absolute; inset: 0; isolation: isolate; }
+.svc-hero-media img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 0;
+  /* Sin transición en la regla base a propósito: todo lo que baja a 0
+     lo hace de golpe, tapado por la capa .is-prev. Y sin will-change,
+     que con cuatro imágenes de hasta 3200 px serían cuatro capas
+     promovidas de forma permanente. */
+}
+
+/* Fundido sin bajón de luz.
+   Antes las dos imágenes se desvanecían a la vez y a mitad de camino
+   asomaba un 15,6% del ink-900 de debajo: la foto pulsaba a oscuro
+   cada 4,2 s. Ahora la saliente aguanta opaca por debajo y solo entra
+   la nueva por encima, así que la cobertura nunca baja del 100%. */
+.svc-hero-media img.is-prev   { opacity: 1; z-index: 1; }
+.svc-hero-media img.is-active {
+  opacity: 1;
+  z-index: 2;
+  transition: opacity 1960ms var(--svc-ease);
+}
+
+.svc-hero-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg,
+    rgba(19,28,44,0.97) 30%,
+    rgba(19,28,44,0.82) 58%,
+    rgba(19,28,44,0.62));
+}
+.svc-hero-dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(244,241,236,0.05) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* ─── Rejilla ─── */
+.svc-hero-grid {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 0 72px;
+  align-content: center;
+  padding: 76px 80px 96px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ─── Columna izquierda ─── */
+.svc-hero .sm-lbl { color: var(--ns-text-tertiary); }
+.svc-hero-headline {
+  font: 800 clamp(2.8rem, 5vw, 4.5rem)/0.98 var(--ns-font-sans);
+  letter-spacing: -0.038em;
+  color: var(--ns-warm-200);
+  margin-bottom: 24px;
+  text-wrap: pretty;
+}
+.svc-hero-headline .hl-em { color: var(--ns-orange-500); }
+.svc-hero-lede {
+  font: 300 17px/1.7 var(--ns-font-sans);
+  color: var(--ns-sky-200);
+  max-width: 48ch;
+  margin-bottom: 36px;
+  text-wrap: pretty;
+}
+.svc-hero-cta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.svc-hero-cta .tlink { color: var(--ns-warm-200); }
+.svc-hero-cta .tlink::after { background: rgba(198,213,234,0.35); }
+.svc-hero-cta .tlink:hover::after { background: var(--ns-warm-200); }
+.svc-hero-cta .tlink--muted { color: var(--ns-sky-200); }
+.svc-hero-cta .tlink--muted::after { background: rgba(198,213,234,0.2); }
+
+/* ─── Índice de servicios ─── */
+.svc-hero-index {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid rgba(198,213,234,0.18);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.svc-hero-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: baseline;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(198,213,234,0.18);
+  border-radius: 4px;
+  background: rgba(255,255,255,0.02);
+  text-decoration: none;
+  transition: background 1260ms var(--svc-ease);
+}
+.svc-hero-item-name,
+.svc-hero-item-desc  { display: block; }
+.svc-hero-item-num   { font: 300 12px/1 var(--ns-font-sans); color: var(--ns-sky-400); transition: color 1260ms var(--svc-ease); }
+.svc-hero-item-name  { font: 700 24px/1.15 var(--ns-font-sans); letter-spacing: -0.025em; color: var(--ns-sky-100); transition: color 1260ms var(--svc-ease); }
+/* sky-200, no sky-400: medido sobre las cuatro fotos nuevas, el
+   subtítulo en sky-400 se quedaba entre 3,65:1 y 4,77:1 — por debajo
+   de AA. En sky-200 el peor caso sube a 6,77:1 sin tocar el velo ni
+   apagar la foto. El nombre en sky-100 ya iba sobrado (8,7–11,4:1).
+   Para volver al valor original: cambiar sky-200 por sky-400 aquí. */
+.svc-hero-item-desc  { font: 300 13px/1.5 var(--ns-font-sans); color: var(--ns-sky-200); margin-top: 4px; transition: color 1260ms var(--svc-ease); }
+
+.svc-hero-item.is-active { background: rgba(255,255,255,0.88); }
+.svc-hero-item.is-active .svc-hero-item-num  { color: var(--ns-ink-500); }
+.svc-hero-item.is-active .svc-hero-item-name { color: var(--ns-ink-800); }
+.svc-hero-item.is-active .svc-hero-item-desc { color: var(--ns-ink-500); }
+
+/* Con el cursor dentro del índice la respuesta es inmediata; los
+   1260 ms son el ritmo de la rotación automática, no del hover. */
+.svc-hero-index:hover .svc-hero-item,
+.svc-hero-index:hover .svc-hero-item-num,
+.svc-hero-index:hover .svc-hero-item-name,
+.svc-hero-index:hover .svc-hero-item-desc,
+.svc-hero-item:focus-visible { transition-duration: 140ms; }
+
+.svc-hero-item:focus-visible {
+  outline: 2px solid var(--ns-orange-500);
+  outline-offset: 2px;
+}
+
+/* ─── Sello inferior ─── */
+.svc-hero-stamp {
+  position: absolute;
+  left: 80px; right: 80px; bottom: 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(198,213,234,0.18);
+  padding-top: 22px;
+}
+.svc-hero-stamp span {
+  font: 600 10px/1 var(--ns-font-sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ns-sky-400);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .svc-hero-grid { grid-template-columns: 1fr; gap: 40px; padding: 96px 48px 112px; align-content: center; }
+  .svc-hero-lede { max-width: 56ch; }
+  .svc-hero-stamp { left: 48px; right: 48px; }
+}
+@media (max-width: 720px) {
+  /* Objetivo: que los cuatro servicios entren en una pantalla de
+     812 px con el header encima. */
+  .svc-hero-grid { padding: 84px 20px 84px; gap: 28px; }
+  .svc-hero .sm { margin-bottom: 18px; }
+  .svc-hero-headline { font-size: clamp(2.1rem, 9vw, 2.6rem); margin-bottom: 16px; }
+  .svc-hero-lede { font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+  .svc-hero-cta { gap: 16px 20px; }
+  .svc-hero-item { padding: 11px 14px; gap: 14px; }
+  .svc-hero-item-name { font-size: 18px; }
+  .svc-hero-item-desc { font-size: 12px; margin-top: 2px; }
+  .svc-hero-veil { background: linear-gradient(180deg, rgba(19,28,44,0.96) 55%, rgba(19,28,44,0.78)); }
+  .svc-hero-stamp { left: 20px; right: 20px; bottom: 18px; padding-top: 14px; gap: 4px; flex-direction: column; align-items: flex-start; }
+  .svc-hero-stamp span { font-size: 9px; letter-spacing: 0.16em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-hero-media img,
+  .svc-hero-item,
+  .svc-hero-item-num,
+  .svc-hero-item-name,
+  .svc-hero-item-desc,
+  body.pg-servicios .site-header { transition-duration: 0.01ms !important; }
+}
+
 /* ─── Drawer lateral de servicios ─── */
 .drawer { position: fixed; inset: 0; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity .35s cubic-bezier(0.16,1,0.3,1); }
 .drawer.active { opacity: 1; pointer-events: all; }

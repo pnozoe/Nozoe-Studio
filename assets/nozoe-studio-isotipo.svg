@@ -2,7 +2,11 @@
 <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 274.39 247.55">
   
   <defs>
-    
+    <style>
+      .st0 {
+        fill: #e94e1b;
+      }
+    </style>
   </defs>
   <rect class="st0" x="117" y="116.51" width="18.66" height="18.66" transform="translate(126.67 304.14) rotate(-135)"></rect>
   <rect class="st0" x="143.38" y="116.51" width="18.66" height="18.66" transform="translate(171.72 322.8) rotate(-135)"></rect>
