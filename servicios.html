@@ -40,8 +40,14 @@
 <link rel="icon" href="assets/favicon.webp">
 <link rel="preload" href="assets/fonts/nunito-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/nunito-300.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css?v=20260813b">
-<link rel="stylesheet" href="assets/css/site.css?v=20260813b">
+<link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css?v=20260816a">
+<link rel="preload" as="image"
+      href="assets/servicios/identidad-marca.webp?v=20260816a"
+      imagesrcset="assets/servicios/identidad-marca.webp?v=20260816a 1600w,
+                   assets/servicios/identidad-marca-2400.webp?v=20260816a 2400w,
+                   assets/servicios/identidad-marca-3200.webp?v=20260816a 3200w"
+      imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/site.css?v=20260816a">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7VG5XMC7"></script>
 <script>
@@ -51,14 +57,15 @@
   gtag('config', 'G-KT7VG5XMC7');
 </script>
 </head>
-<body>
+<body class="pg-servicios">
 
 <!-- ══ NAV ══ -->
 <header class="site-header">
   <nav class="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="assets/nozoe-studio-logo-color.svg" alt="Nozoe Studio" width="193" height="37" fetchpriority="high" style="width: 193px; height: auto">
+        <img class="nav-logo-color" src="assets/nozoe-studio-logo-color.svg?v=20260816a" alt="Nozoe Studio" width="193" height="37" fetchpriority="high" style="width: 193px; height: auto">
+        <img class="nav-logo-claro" src="assets/nozoe-studio-logo-claro.svg?v=20260816a" alt="" aria-hidden="true" width="193" height="37" style="width: 193px; height: auto">
       </a>
       <div class="nav-links">
         <a href="estudio" class="nav-link">Estudio</a>
@@ -80,37 +87,101 @@
 <main id="contenido">
 
 <!-- ══ HERO ══ -->
-<section class="page-hero" id="intro">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="sm">
-          <span class="sm-dot"></span>
-          <span class="sm-lbl">Servicios</span>
-        </div>
-        <h1 class="hero-headline">
-          Diseño con precio,<br>plazo y alcance<br>claros<span class="hl-em">.</span>
-        </h1>
-        <p class="hero-lede">
-          Empezamos con una conversación para entender tu marca o negocio. A partir de ahí, todo es concreto: entregables definidos, plazos reales y un precio que acordamos antes de arrancar. Estos números son el punto de partida — el alcance exacto lo definimos juntos.
-        </p>
+<section class="svc-hero" id="intro">
+
+  <div class="svc-hero-media" aria-hidden="true">
+    <img class="is-active"
+         src="assets/servicios/identidad-marca.webp?v=20260816a"
+         srcset="assets/servicios/identidad-marca.webp?v=20260816a 1600w,
+                 assets/servicios/identidad-marca-2400.webp?v=20260816a 2400w,
+                 assets/servicios/identidad-marca-3200.webp?v=20260816a 3200w"
+         sizes="100vw" alt="" width="1600" height="900" fetchpriority="high" decoding="async">
+    <img src="assets/servicios/web.webp?v=20260816a"
+         srcset="assets/servicios/web.webp?v=20260816a 1600w,
+                 assets/servicios/web-2400.webp?v=20260816a 2400w,
+                 assets/servicios/web-3200.webp?v=20260816a 3200w"
+         sizes="100vw" alt="" width="1600" height="893" loading="lazy" decoding="async">
+    <img src="assets/servicios/contenido-grafico.webp?v=20260816a"
+         srcset="assets/servicios/contenido-grafico.webp?v=20260816a 1600w,
+                 assets/servicios/contenido-grafico-2400.webp?v=20260816a 2400w,
+                 assets/servicios/contenido-grafico-3200.webp?v=20260816a 3200w"
+         sizes="100vw" alt="" width="1600" height="893" loading="lazy" decoding="async">
+    <!-- El master de retainer llega a 2752 px, así que su escalón alto es 2400. -->
+    <img src="assets/servicios/retainer.webp?v=20260816a"
+         srcset="assets/servicios/retainer.webp?v=20260816a 1600w,
+                 assets/servicios/retainer-2400.webp?v=20260816a 2400w"
+         sizes="100vw" alt="" width="1600" height="893" loading="lazy" decoding="async">
+  </div>
+  <div class="svc-hero-veil" aria-hidden="true"></div>
+  <div class="svc-hero-dots" aria-hidden="true"></div>
+  <div class="svc-hero-sentinel" aria-hidden="true"></div>
+
+  <div class="svc-hero-grid">
+
+    <div class="svc-hero-intro">
+      <div class="sm">
+        <span class="sm-dot"></span>
+        <span class="sm-lbl">Servicios</span>
       </div>
-      <div class="hero-right">
-        <div class="hero-capsule">
-          <div class="hero-capsule-num">4</div>
-          <div class="hero-capsule-lbl">Áreas de servicio</div>
-        </div>
-        <div class="hero-capsule">
-          <div class="hero-capsule-num">24<span class="em">h</span></div>
-          <div class="hero-capsule-lbl">Tiempo de respuesta</div>
-        </div>
-        <div class="hero-capsule">
-          <div class="hero-capsule-num">30<span class="em">′</span></div>
-          <div class="hero-capsule-lbl">Llamada gratis de descubrimiento</div>
-        </div>
+      <h1 class="svc-hero-headline">
+        Cuatro servicios.<br>Un solo<br>estándar<span class="hl-em">.</span>
+      </h1>
+      <p class="svc-hero-lede">
+        Identidad, web, contenido y retainer. Cada uno con entregables definidos, plazos reales y un precio acordado antes de arrancar.
+      </p>
+      <div class="svc-hero-cta">
+        <a href="#servicios" class="btn btn-ember">Ver paquetes <span class="arr">→</span></a>
+        <a href="#servicios" class="tlink">Los 4 servicios <span class="arr">↓</span></a>
+        <a href="mailto:pedro@nozoestudio.com?subject=Consulta%20de%20servicios" class="tlink tlink--muted">Email</a>
       </div>
     </div>
+
+    <ul class="svc-hero-index">
+      <li>
+        <a class="svc-hero-item is-active" href="#servicios" data-drawer-target="identidad">
+          <span class="svc-hero-item-num">01</span>
+          <span>
+            <span class="svc-hero-item-name">Identidad de marca</span>
+            <span class="svc-hero-item-desc">Logo, sistema tipográfico, paleta y manual</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="svc-hero-item" href="#servicios" data-drawer-target="web">
+          <span class="svc-hero-item-num">02</span>
+          <span>
+            <span class="svc-hero-item-name">Diseño web</span>
+            <span class="svc-hero-item-desc">Landing, sitio institucional o e-commerce</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="svc-hero-item" href="#servicios" data-drawer-target="publicitario">
+          <span class="svc-hero-item-num">03</span>
+          <span>
+            <span class="svc-hero-item-name">Contenido gráfico</span>
+            <span class="svc-hero-item-desc">Campañas, decks y brand kits</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="svc-hero-item" href="#servicios" data-drawer-target="retainer">
+          <span class="svc-hero-item-num">04</span>
+          <span>
+            <span class="svc-hero-item-name">Retainer de diseño</span>
+            <span class="svc-hero-item-desc">Capacidad dedicada cada mes</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+
   </div>
+
+  <div class="svc-hero-stamp">
+    <span>東京・リマ</span>
+    <span>25+ años de profesión · +40 proyectos</span>
+  </div>
+
 </section>
 
 <!-- ══ SERVICIOS SCROLL ══ -->
@@ -144,7 +215,7 @@
 
       <!-- CARD 1 · IDENTIDAD -->
       <div class="svc-card">
-        <div class="svc-card-img" style="background-image: url('assets/servicios/identidad-marca.webp'); background-size: cover; background-position: center;" role="img" aria-label="Identidad de marca · imagen ilustrativa"></div>
+        <div class="svc-card-img" style="background-image: url('assets/servicios/identidad-marca.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Identidad de marca · imagen ilustrativa"></div>
         <div class="svc-card-gradient"></div>
         <span class="svc-card-num">01</span>
         <div class="svc-card-body">
@@ -163,7 +234,7 @@
 
       <!-- CARD 2 · WEB -->
       <div class="svc-card">
-        <div class="svc-card-img" style="background-image: url('assets/servicios/web.webp'); background-size: cover; background-position: center;" role="img" aria-label="Diseño web · imagen ilustrativa"></div>
+        <div class="svc-card-img" style="background-image: url('assets/servicios/web.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Diseño web · imagen ilustrativa"></div>
         <div class="svc-card-gradient"></div>
         <span class="svc-card-num">02</span>
         <div class="svc-card-body">
@@ -182,7 +253,7 @@
 
       <!-- CARD 3 · CONTENIDO -->
       <div class="svc-card">
-        <div class="svc-card-img" style="background-image: url('assets/servicios/contenido-grafico.webp'); background-size: cover; background-position: center;" role="img" aria-label="Contenido gráfico · imagen ilustrativa"></div>
+        <div class="svc-card-img" style="background-image: url('assets/servicios/contenido-grafico.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Contenido gráfico · imagen ilustrativa"></div>
         <div class="svc-card-gradient"></div>
         <span class="svc-card-num">03</span>
         <div class="svc-card-body">
@@ -201,7 +272,7 @@
 
       <!-- CARD 4 · RETAINER -->
       <div class="svc-card">
-        <div class="svc-card-img" style="background-image: url('assets/servicios/retainer.webp'); background-size: cover; background-position: center;" role="img" aria-label="Retainer de diseño · imagen ilustrativa"></div>
+        <div class="svc-card-img" style="background-image: url('assets/servicios/retainer.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Retainer de diseño · imagen ilustrativa"></div>
         <div class="svc-card-gradient"></div>
         <span class="svc-card-num">04</span>
         <div class="svc-card-body">
@@ -647,8 +718,8 @@
   </div>
 </aside>
 
-<script src="assets/js/site.js?v=20260813b" defer></script>
-<script src="assets/js/servicios.js" defer></script>
+<script src="assets/js/site.js?v=20260816a" defer></script>
+<script src="assets/js/servicios.js?v=20260816a" defer></script>
 
 
 <!-- FAB WhatsApp (solo móvil) -->
