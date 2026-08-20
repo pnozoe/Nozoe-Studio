@@ -1,0 +1,6 @@
+# Documentación interna del proyecto: no debe servirse.
+# Cloudflare Pages publica la raíz del repo entera, así que los .md de
+# docs/ respondían 200 en producción. Las reglas de este archivo se
+# aplican aunque exista el archivo estático, así que lo cierran.
+/docs/*  /  301
+/docs    /  301
