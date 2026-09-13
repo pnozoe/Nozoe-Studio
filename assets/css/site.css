@@ -5735,6 +5735,180 @@ body.pg-servicio.hdr-over-hero .nav-logo img.nav-logo-color { opacity: 0; }
   .sp-table-hint { display: none; }
 }
 
+/* ─── diseno-grafico.html: una pieza, todos los formatos ───
+   La hoja cambia de proporción entre formatos reales y las marcas de
+   corte y la sangría la siguen, porque viven dentro de ella. El pie
+   (.sp-plate-cap) y la lista (.sp-layers) son los de identidad. */
+.sp-press { margin: 0; }
+.sp-press-stage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+.sp-sheet {
+  --sp-gap: var(--ns-space-2);
+  --sp-len: var(--ns-space-4);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46.7%;
+  height: 88%;
+  transform: translate(-50%, -50%);
+}
+/* Medidas sobre el escenario 4:3 (100 × 75 unidades), con la proporción
+   de cada pieza: afiche 1:1,41 · post 1:1 · story 1:1,94 · cartel 2:1 */
+.sp-sheet[data-format="post"]   { width: 60%; height: 80%; }
+.sp-sheet[data-format="story"]  { width: 34%; height: 88%; }
+.sp-sheet[data-format="cartel"] { width: 84%; height: 56.3%; }
+
+.sp-sheet-paper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--ns-ink-800);
+  box-shadow: var(--ns-elev-3);
+}
+.sp-sheet-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+.sp-sheet-img.is-active { opacity: 1; }
+
+/* Sangría: línea discontinua por fuera del corte */
+.sp-bleed {
+  position: absolute;
+  inset: calc(var(--sp-gap) / -2);
+  border: var(--ns-bw-1) dashed color-mix(in srgb, var(--ns-sky-400) 45%, transparent);
+  pointer-events: none;
+}
+/* Marcas de corte: un punto de tamaño cero en cada esquina, del que
+   salen una línea horizontal y una vertical hacia fuera */
+.sp-crop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.sp-crop--tr { left: 100%; }
+.sp-crop--bl { top: 100%; }
+.sp-crop--br { top: 100%; left: 100%; }
+.sp-crop::before,
+.sp-crop::after {
+  content: '';
+  position: absolute;
+  background: var(--ns-sky-400);
+}
+.sp-crop::before { top: 0; width: var(--sp-len); height: var(--ns-bw-1); }
+.sp-crop::after  { left: 0; width: var(--ns-bw-1); height: var(--sp-len); }
+.sp-crop--tl::before, .sp-crop--bl::before { right: var(--sp-gap); }
+.sp-crop--tr::before, .sp-crop--br::before { left: var(--sp-gap); }
+.sp-crop--tl::after,  .sp-crop--tr::after  { bottom: var(--sp-gap); }
+.sp-crop--bl::after,  .sp-crop--br::after  { top: var(--sp-gap); }
+
+/* Formatos: solo el activo se enciende; su barra marca el tiempo */
+.sp-formats .sp-layer {
+  color: var(--ns-sky-400);
+  transition: color var(--ns-dur-base) var(--ns-ease-out);
+}
+.sp-formats .sp-layer.is-active { color: var(--ns-warm-200); }
+.sp-formats .sp-layer-bar::after { transform: scaleX(0); }
+.sp-formats .sp-layer.is-active .sp-layer-bar::after { transform: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sp-sheet {
+    transition: width calc(var(--ns-dur-slower) * 1.5) var(--ns-ease-out),
+                height calc(var(--ns-dur-slower) * 1.5) var(--ns-ease-out);
+  }
+  .sp-sheet-img,
+  .sp-bleed,
+  .sp-crop { transition: opacity var(--ns-dur-slow) var(--ns-ease-out); }
+  .sp-sheet.is-shifting .sp-bleed,
+  .sp-sheet.is-shifting .sp-crop { opacity: 0; transition-duration: var(--ns-dur-fast); }
+  .sp-hero.is-rotating .sp-formats .sp-layer.is-active .sp-layer-bar::after {
+    animation: sp-fill var(--sp-ciclo) linear both;
+  }
+}
+
+/* Piezas: mismo marcado y caja de luz que las piezas destacadas del
+   home (.proj-card), con proporción vertical y colores sobre tinta */
+.sp-pieces {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ns-space-8) var(--ns-space-4);
+  margin-bottom: var(--ns-space-16);
+}
+.sp-pieces .proj-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-space-3);
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.sp-pieces .proj-thumb {
+  display: block;
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--ns-radius-md);
+  background: var(--ns-ink-800);
+}
+.sp-pieces .proj-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ns-dur-slow) var(--ns-ease-out);
+}
+.sp-pieces .proj-card:hover .proj-thumb img,
+.sp-pieces .proj-card:focus-visible .proj-thumb img { transform: scale(1.03); }
+.sp-pieces .proj-card:focus-visible { outline: none; }
+.sp-pieces .proj-card:focus-visible .proj-thumb {
+  outline: var(--ns-bw-2) solid var(--ns-accent);
+  outline-offset: var(--ns-space-1);
+}
+.sp-pieces .proj-cell-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-space-1);
+}
+.sp-pieces .proj-name {
+  font-family: var(--ns-font-sans);
+  font-weight: var(--ns-fw-extrabold);
+  font-size: var(--ns-fs-md);
+  line-height: var(--ns-lh-snug);
+  letter-spacing: var(--ns-ls-tight);
+  color: var(--ns-warm-200);
+}
+.sp-pieces .proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--ns-space-2);
+  font-family: var(--ns-font-sans);
+  font-weight: var(--ns-fw-regular);
+  font-size: var(--ns-fs-xs);
+  line-height: var(--ns-lh-normal);
+  color: var(--ns-sky-200);
+}
+@media (min-width: 64em) {
+  .sp-pieces {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--ns-space-10) var(--ns-space-6);
+    margin-bottom: var(--ns-space-20);
+  }
+}
+
 /* ─── servicios.html: tarjeta enlazada a la página propia del servicio ───
    La tarjeta pasa de <div> a <a>. Hereda todo el aspecto de
    .svc-section .svc-card; aquí solo se anula el estilo de enlace y se
