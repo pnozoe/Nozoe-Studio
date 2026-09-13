@@ -94,7 +94,7 @@ sugerencia de cambio de stack debe rechazarse.
 │                                  assets/casos/trabajo/
 │
 └── nozoe-design-system/         ← sistema de diseño (paquete propio)
-    ├── AGENTS.md                ← contexto del DS
+    ├── CLAUDE.md                ← contexto del DS
     ├── README.md                ← documentación canónica del DS
     ├── nozoe-tokens.css         ← variables CSS (fuente única)
     ├── nozoe-tokens.json        ← tokens W3C DTCG
