@@ -5740,25 +5740,32 @@ body.pg-servicio.hdr-over-hero .nav-logo img.nav-logo-color { opacity: 0; }
    corte y la sangría la siguen, porque viven dentro de ella. El pie
    (.sp-plate-cap) y la lista (.sp-layers) son los de identidad. */
 .sp-press { margin: 0; }
+/* El escenario es un contenedor: la hoja se mide en cqw/cqh y ocupa el
+   máximo que permite su proporción, sea cual sea el tamaño del hueco.
+   El tope de alto evita que en pantallas bajas empuje el hero. */
 .sp-press-stage {
   position: relative;
-  aspect-ratio: 4 / 3;
+  container-type: size;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 64vh;
+  max-height: 64svh;
 }
 .sp-sheet {
   --sp-gap: var(--ns-space-2);
   --sp-len: var(--ns-space-4);
+  --sp-r: 1.414; /* alto ÷ ancho de la pieza */
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 46.7%;
-  height: 88%;
+  width: min(88cqw, calc(88cqh / var(--sp-r)));
+  height: calc(min(88cqw, calc(88cqh / var(--sp-r))) * var(--sp-r));
   transform: translate(-50%, -50%);
 }
-/* Medidas sobre el escenario 4:3 (100 × 75 unidades), con la proporción
-   de cada pieza: afiche 1:1,41 · post 1:1 · story 1:1,94 · cartel 2:1 */
-.sp-sheet[data-format="post"]   { width: 60%; height: 80%; }
-.sp-sheet[data-format="story"]  { width: 34%; height: 88%; }
-.sp-sheet[data-format="cartel"] { width: 84%; height: 56.3%; }
+/* Proporción de cada pieza: afiche 1:1,41 · post 1:1 · story 1:1,94 · cartel 2:1 */
+.sp-sheet[data-format="post"]   { --sp-r: 1; }
+.sp-sheet[data-format="story"]  { --sp-r: 1.944; }
+.sp-sheet[data-format="cartel"] { --sp-r: 0.502; }
 
 .sp-sheet-paper {
   position: absolute;
