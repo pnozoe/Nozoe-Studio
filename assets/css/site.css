@@ -5916,6 +5916,155 @@ body.pg-servicio.hdr-over-hero .nav-logo img.nav-logo-color { opacity: 0; }
   }
 }
 
+/* ─── retainer-diseno.html: un mes de trabajo ───
+   Cuatro semanas: lunes a viernes se encienden las solicitudes y el
+   bloque de fin de semana recibe las piezas. El pie (.sp-plate-cap) y
+   la lista de paquetes (.sp-formats) son los de las otras páginas. */
+.sp-month {
+  --sp-cols: var(--ns-space-6) repeat(5, minmax(0, 1fr)) minmax(0, 9fr);
+  --sp-gap: var(--ns-space-1);
+  margin: 0;
+}
+.sp-month-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--ns-space-1) var(--ns-space-3);
+  padding-bottom: var(--ns-space-3);
+  margin-bottom: var(--ns-space-3);
+  border-bottom: var(--ns-bw-1) solid color-mix(in srgb, var(--ns-sky-200) 18%, transparent);
+  font-family: var(--ns-font-sans);
+  font-weight: var(--ns-fw-semibold);
+  font-size: var(--ns-fs-xs);
+  letter-spacing: var(--ns-ls-wider);
+  text-transform: uppercase;
+  color: var(--ns-sky-400);
+}
+.sp-month-count {
+  font-family: var(--ns-font-mono);
+  letter-spacing: var(--ns-ls-normal);
+  text-transform: none;
+  color: var(--ns-sky-200);
+}
+.sp-month-n { font-weight: var(--ns-fw-extrabold); color: var(--ns-warm-200); }
+
+.sp-month-days,
+.sp-week {
+  display: grid;
+  grid-template-columns: var(--sp-cols);
+  gap: var(--sp-gap);
+}
+.sp-month-days {
+  margin-bottom: var(--sp-gap);
+  font-family: var(--ns-font-mono);
+  font-size: var(--ns-fs-xs);
+  line-height: var(--ns-lh-snug);
+  text-align: center;
+  color: var(--ns-sky-400);
+}
+.sp-month-days .is-weekend {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--ns-warm-200);
+}
+.sp-month-weeks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-gap);
+}
+.sp-week-n {
+  align-self: center;
+  font-family: var(--ns-font-mono);
+  font-size: var(--ns-fs-xs);
+  color: var(--ns-sky-400);
+}
+/* Día laborable: se enciende con un punto cuando llega una solicitud */
+.sp-week-day {
+  position: relative;
+  border-radius: var(--ns-radius-sm);
+  background: color-mix(in srgb, var(--ns-sky-400) 8%, transparent);
+}
+.sp-week-day::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--ns-space-2);
+  height: var(--ns-space-2);
+  border-radius: var(--ns-radius-pill);
+  background: var(--ns-sky-200);
+  transform: translate(-50%, -50%) scale(0);
+}
+.sp-week-day.is-on { background: color-mix(in srgb, var(--ns-sky-400) 18%, transparent); }
+.sp-week-day.is-on::after { transform: translate(-50%, -50%) scale(1); }
+/* Bloque de fin de semana: proporción fija para que la fila no salte
+   mientras se vacía y se llena; caben cuatro stories 9:16 */
+.sp-week-block {
+  display: flex;
+  gap: var(--sp-gap);
+  aspect-ratio: 5 / 2;
+  padding: var(--sp-gap);
+  border-radius: var(--ns-radius-sm);
+  background: color-mix(in srgb, var(--ns-accent) 10%, transparent);
+  border: var(--ns-bw-1) solid color-mix(in srgb, var(--ns-accent) 35%, transparent);
+}
+.sp-week-piece {
+  display: block;
+  flex: none;
+  height: 100%;
+  width: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: var(--ns-radius-xs);
+}
+.sp-month .sp-plate-cap { margin-top: var(--ns-space-5); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sp-week-day,
+  .sp-week-day::after {
+    transition: background var(--ns-dur-base) var(--ns-ease-out),
+                transform var(--ns-dur-base) var(--ns-ease-out);
+  }
+  .sp-week-piece { animation: sp-pop var(--ns-dur-slow) var(--ns-ease-out) both; }
+}
+@keyframes sp-pop {
+  from { opacity: 0; transform: translateY(var(--ns-space-2)) scale(0.92); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (min-width: 48em) {
+  .sp-month { --sp-cols: var(--ns-space-8) repeat(5, minmax(0, 1fr)) minmax(0, 9fr); --sp-gap: var(--ns-space-2); }
+}
+
+/* Precio mensual en la tabla */
+.sp-table-unit {
+  font-weight: var(--ns-fw-regular);
+  font-size: var(--ns-fs-sm);
+  color: var(--ns-text-secondary);
+}
+
+/* Caso: tarjeta grande junto a sus piezas en formato story */
+.sp-case {
+  display: grid;
+  gap: var(--ns-space-10);
+  align-items: start;
+}
+.sp-pieces--story { margin-bottom: 0; }
+.sp-pieces--story .proj-thumb { aspect-ratio: 9 / 16; }
+@media (min-width: 64em) {
+  .sp-case { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--ns-space-8); }
+  .sp-pieces--story {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--ns-space-6) var(--ns-space-4);
+    margin-bottom: 0;
+  }
+}
+
 /* ─── servicios.html: tarjeta enlazada a la página propia del servicio ───
    La tarjeta pasa de <div> a <a>. Hereda todo el aspecto de
    .svc-section .svc-card; aquí solo se anula el estilo de enlace y se
