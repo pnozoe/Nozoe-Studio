@@ -6065,6 +6065,126 @@ body.pg-servicio.hdr-over-hero .nav-logo img.nav-logo-color { opacity: 0; }
   }
 }
 
+/* ─── diseno-web.html: sitios reales en escritorio y en móvil ───
+   Un navegador con un móvil encima. Cada captura larga se recorre
+   animando object-position de arriba abajo, sin medir nada en JS.
+   El pie (.sp-plate-cap) y la lista (.sp-formats) son los comunes. */
+.sp-site { margin: 0; }
+.sp-site-stage {
+  position: relative;
+  padding-right: 7%;
+  padding-bottom: 9%;
+}
+.sp-browser {
+  overflow: hidden;
+  border-radius: var(--ns-radius-md);
+  background: var(--ns-ink-800);
+  box-shadow: var(--ns-elev-3);
+}
+.sp-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--ns-space-3);
+  padding: var(--ns-space-2) var(--ns-space-3);
+}
+.sp-browser-dots { display: flex; gap: var(--ns-space-1); }
+.sp-browser-dots i {
+  width: var(--ns-space-2);
+  height: var(--ns-space-2);
+  border-radius: var(--ns-radius-pill);
+  background: color-mix(in srgb, var(--ns-sky-400) 45%, transparent);
+}
+.sp-browser-url {
+  flex: 1;
+  min-width: 0;
+  padding: var(--ns-space-1) var(--ns-space-3);
+  border-radius: var(--ns-radius-pill);
+  background: color-mix(in srgb, var(--ns-sky-400) 14%, transparent);
+  font-family: var(--ns-font-mono);
+  font-size: var(--ns-fs-xs);
+  line-height: var(--ns-lh-snug);
+  color: var(--ns-sky-200);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sp-browser-window {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--ns-surface-base);
+}
+.sp-phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 24%;
+  aspect-ratio: 9 / 19;
+  padding: var(--ns-space-1);
+  border: var(--ns-bw-1) solid color-mix(in srgb, var(--ns-sky-400) 35%, transparent);
+  /* Esquinas de teléfono: el token más grande (4 px) multiplicado */
+  border-radius: calc(var(--ns-radius-md) * 5);
+  background: var(--ns-ink-900);
+  box-shadow: var(--ns-elev-3);
+}
+.sp-phone-window {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: calc(var(--ns-radius-md) * 4);
+  background: var(--ns-surface-base);
+}
+.sp-shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  opacity: 0;
+}
+/* La entrante hace el fundido encima; la saliente queda debajo, opaca */
+.sp-shot.is-active { opacity: 1; z-index: 2; }
+.sp-shot.is-prev   { opacity: 1; z-index: 1; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sp-shot.is-active { transition: opacity var(--ns-dur-slower) var(--ns-ease-out); }
+  .sp-site.is-scrolling .sp-shot.is-active,
+  .sp-site.is-scrolling .sp-shot.is-prev {
+    animation: sp-scroll var(--sp-ciclo) var(--ns-ease-in-out) both;
+  }
+  .sp-site.is-paused .sp-shot { animation-play-state: paused; }
+}
+@keyframes sp-scroll {
+  0%, 12%   { object-position: 50% 0%; }
+  88%, 100% { object-position: 50% 100%; }
+}
+
+/* Comparación Web a medida / Web Profesional */
+.sp-table--compare tbody th {
+  font-size: var(--ns-fs-base);
+  white-space: nowrap;
+}
+.sp-table--compare thead th:not(:first-child) {
+  font-size: var(--ns-fs-sm);
+  letter-spacing: var(--ns-ls-wide);
+  color: var(--ns-text-primary);
+}
+.sp-compare-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ns-space-4) var(--ns-space-6);
+  margin-top: var(--ns-space-8);
+}
+
+/* Demos: portada 4:3 que abre la web real */
+.sp-pieces--site { margin-bottom: 0; }
+.sp-pieces--site .proj-card { text-decoration: none; }
+.sp-pieces--site .proj-thumb { aspect-ratio: 4 / 3; }
+.sp-pieces--site .proj-thumb img { object-position: 50% 0%; }
+
 /* ─── servicios.html: tarjeta enlazada a la página propia del servicio ───
    La tarjeta pasa de <div> a <a>. Hereda todo el aspecto de
    .svc-section .svc-card; aquí solo se anula el estilo de enlace y se
