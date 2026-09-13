@@ -5187,26 +5187,26 @@ body.lightbox-open { overflow: hidden; }
    ═══════════════════════════════════════════════════════ */
 
 /* ─── Header transparente sobre el hero ───
-   Mismo patrón que body.pg-servicios, acotado a esta página.
+   Mismo patrón que body.pg-servicios, compartido por las páginas de servicio.
    Sin JS no se añade .hdr-over-hero y queda el header sólido. */
-body.pg-identidad .site-header {
+body.pg-servicio .site-header {
   position: fixed;
   left: 0;
   right: 0;
   transition: background var(--ns-dur-base) var(--ns-ease-out),
               border-color var(--ns-dur-base) var(--ns-ease-out);
 }
-body.pg-identidad.hdr-over-hero .site-header {
+body.pg-servicio.hdr-over-hero .site-header {
   background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-bottom-color: transparent;
 }
-body.pg-identidad .nav-logo { position: relative; }
-body.pg-identidad .nav-logo img { transition: opacity var(--ns-dur-base) var(--ns-ease-out); }
-body.pg-identidad .nav-logo img.nav-logo-claro { position: absolute; top: 0; left: 0; opacity: 0; }
-body.pg-identidad.hdr-over-hero .nav-logo img.nav-logo-claro { opacity: 1; }
-body.pg-identidad.hdr-over-hero .nav-logo img.nav-logo-color { opacity: 0; }
+body.pg-servicio .nav-logo { position: relative; }
+body.pg-servicio .nav-logo img { transition: opacity var(--ns-dur-base) var(--ns-ease-out); }
+body.pg-servicio .nav-logo img.nav-logo-claro { position: absolute; top: 0; left: 0; opacity: 0; }
+body.pg-servicio.hdr-over-hero .nav-logo img.nav-logo-claro { opacity: 1; }
+body.pg-servicio.hdr-over-hero .nav-logo img.nav-logo-color { opacity: 0; }
 /* Los colores del menú móvil abierto viven junto a las reglas comunes
    de body.hdr-over-hero, en el bloque de servicios.html. */
 
