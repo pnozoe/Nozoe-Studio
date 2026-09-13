@@ -8,7 +8,7 @@
   // Redirección temporal de enlaces antiguos ?paquete=… compartidos por WhatsApp.
   // Se amplía con cada servicio que estrena página. Retirar a partir de marzo de 2027.
   (function () {
-    var destinos = { identidad: 'identidad-de-marca', publicitario: 'diseno-grafico' };
+    var destinos = { identidad: 'identidad-de-marca', publicitario: 'diseno-grafico', retainer: 'retainer-diseno' };
     var p = new URLSearchParams(location.search).get('paquete');
     if (p && destinos[p]) location.replace('/' + destinos[p]);
   })();
@@ -174,7 +174,7 @@
         </a>
       </li>
       <li>
-        <a class="svc-hero-item" href="#servicios" data-drawer-target="retainer">
+        <a class="svc-hero-item" href="retainer-diseno">
           <span class="svc-hero-item-num">04</span>
           <span>
             <span class="svc-hero-item-name">Retainer de diseño</span>
@@ -280,24 +280,24 @@
         </div>
       </a>
 
-      <!-- CARD 4 · RETAINER -->
-      <div class="svc-card">
+      <!-- CARD 4 · RETAINER — la tarjeta entera enlaza a su página propia -->
+      <a class="svc-card" href="retainer-diseno" draggable="false">
         <div class="svc-card-img" style="background-image: url('assets/servicios/retainer.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Retainer de diseño · imagen ilustrativa"></div>
         <div class="svc-card-gradient"></div>
         <span class="svc-card-num">04</span>
         <div class="svc-card-body">
           <span class="svc-card-tag popular">Recomendado</span>
           <div class="svc-card-name">Retainer de diseño</div>
-          <p class="svc-card-desc">Capacidad dedicada cada mes. Canal Slack directo, prioridad garantizada y sin sorpresas en la factura.</p>
+          <p class="svc-card-desc">Capacidad dedicada cada mes. Pedidos por WhatsApp, prioridad garantizada y sin sorpresas en la factura.</p>
           <div class="svc-card-footer">
             <div class="svc-card-price">desde US$200 <span>/mes · mín. 3 meses</span></div>
-            <a href="?paquete=retainer" data-drawer-target="retainer" class="svc-card-btn">
-              Ver paquetes
+            <span class="svc-card-btn">
+              Ver servicio
               <svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4"/></svg>
-            </a>
+            </span>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -556,62 +556,6 @@
       </div>
 
       <blockquote class="drawer-quote">"Sin plantillas. Cada sitio se diseña desde cero."</blockquote>
-
-      <div class="drawer-cta">
-        <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
-        <a href="https://wa.me/817022124910" class="drawer-cta-btn" target="_blank" rel="noopener">WhatsApp →</a>
-      </div>
-    </div>
-  </div>
-</aside>
-
-<aside class="drawer" id="drawer-retainer" role="dialog" aria-modal="true" aria-labelledby="drawer-retainer-title">
-  <div class="drawer-overlay" data-drawer-close></div>
-  <div class="drawer-panel">
-    <div class="drawer-header">
-      <div class="drawer-eyebrow">
-        <span class="drawer-eyebrow-dot"></span>
-        <span class="drawer-eyebrow-lbl" style="color:var(--ns-accent);">04 · Recomendado</span>
-      </div>
-      <button class="drawer-close" data-drawer-close aria-label="Cerrar">
-        <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5"/></svg>
-      </button>
-    </div>
-    <div class="drawer-content">
-      <div class="drawer-tag popular">Retainer de contenido visual</div>
-      <h2 class="drawer-headline" id="drawer-retainer-title">Tu diseñador de contenido,<br><em>activo cada mes.</em></h2>
-
-      <div class="drawer-section">
-        <div class="drawer-section-title">Paquetes</div>
-
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Esencial</div><div class="drawer-pkg-price">US$200/mes</div></div>
-          <div class="drawer-pkg-meta">8 piezas/mes</div>
-          <p class="drawer-pkg-desc">8 piezas digitales (posts o stories para redes). Ideal para mantener presencia mínima y coherente.</p>
-        </div>
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Profesional</div><div class="drawer-pkg-price">US$300/mes</div></div>
-          <div class="drawer-pkg-meta">12 piezas/mes</div>
-          <p class="drawer-pkg-desc">12 piezas digitales (mix de posts, stories y thumbnails). Para creadores de contenido o marcas con publicación frecuente.</p>
-        </div>
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Integral</div><div class="drawer-pkg-price">US$400/mes</div></div>
-          <div class="drawer-pkg-meta">16 piezas/mes</div>
-          <p class="drawer-pkg-desc">16 piezas: posts + stories + 1 pieza impresa mensual + 1 banner web. Para negocios con campañas activas en múltiples canales.</p>
-        </div>
-      </div>
-
-      <div class="drawer-section">
-        <div class="drawer-section-title">Condiciones aplicables</div>
-        <ul class="drawer-list">
-          <li>Mínimo 3 meses. Las piezas no usadas en el mes no se acumulan.</li>
-          <li>Plazo de entrega: 48–72 h por pieza desde la aprobación del brief.</li>
-          <li>Hasta 2 rondas de ajustes incluidas por pieza.</li>
-          <li>Solicitudes durante la semana, producción concentrada en bloques de fin de semana.</li>
-        </ul>
-      </div>
-
-      <blockquote class="drawer-quote">"No pagas horas. Pagas resultados: un número concreto de piezas listas para publicar."</blockquote>
 
       <div class="drawer-cta">
         <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
