@@ -6,7 +6,7 @@
 <title>Servicios de diseño: identidad, web y contenido | Nozoe Studio</title>
 <script>
   // Redirección temporal de enlaces antiguos ?paquete=… compartidos por WhatsApp.
-  // Se amplía con cada servicio que estrena página. Retirar a partir de marzo de 2027.
+  // Va en el <head> para redirigir antes de pintar nada. Retirar a partir de marzo de 2027.
   (function () {
     var destinos = { identidad: 'identidad-de-marca', web: 'diseno-web', publicitario: 'diseno-grafico', retainer: 'retainer-diseno' };
     var p = new URLSearchParams(location.search).get('paquete');
