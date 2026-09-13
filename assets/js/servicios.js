@@ -94,49 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  /* ── Drawers de paquetes de servicios ── */
-  (function() {
-    const SLUG_TO_ID = { identidad: 'drawer-identidad', web: 'drawer-web', publicitario: 'drawer-publicitario', retainer: 'drawer-retainer' };
-    const ID_TO_SLUG = Object.fromEntries(Object.entries(SLUG_TO_ID).map(([k,v]) => [v,k]));
-    const drawers = document.querySelectorAll('.drawer');
-
-    function openDrawer(id, updateUrl) {
-      const d = document.getElementById(id);
-      if (!d) return;
-      drawers.forEach(x => x.classList.remove('active'));
-      d.classList.add('active');
-      document.body.classList.add('drawer-open');
-      if (updateUrl && ID_TO_SLUG[id]) {
-        history.replaceState(null, '', '?paquete=' + ID_TO_SLUG[id]);
-      }
-    }
-    function closeDrawer() {
-      drawers.forEach(d => d.classList.remove('active'));
-      document.body.classList.remove('drawer-open');
-      history.replaceState(null, '', window.location.pathname);
-    }
-
-    document.querySelectorAll('[data-drawer-target]').forEach(t => {
-      t.addEventListener('click', e => {
-        e.preventDefault();
-        const slug = t.dataset.drawerTarget;
-        if (SLUG_TO_ID[slug]) openDrawer(SLUG_TO_ID[slug], true);
-      });
-    });
-    document.querySelectorAll('[data-drawer-close]').forEach(b => {
-      b.addEventListener('click', closeDrawer);
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeDrawer();
-    });
-
-    const params = new URLSearchParams(window.location.search);
-    const fromQuery = params.get('paquete');
-    const fromHash = window.location.hash.replace('#', '');
-    const slug = (fromQuery && SLUG_TO_ID[fromQuery]) ? fromQuery : (SLUG_TO_ID[fromHash] ? fromHash : null);
-    if (slug) setTimeout(() => openDrawer(SLUG_TO_ID[slug], false), 250);
-  })();
-
 });
 
 /* ═══════════════════════════════════════════════════════

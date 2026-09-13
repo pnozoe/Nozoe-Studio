@@ -3579,49 +3579,6 @@ body.hdr-over-hero .nav-links.open .nav-link:hover {
   body.pg-servicios .site-header { transition-duration: 0.01ms !important; }
 }
 
-/* ─── Drawer lateral de servicios ─── */
-.drawer { position: fixed; inset: 0; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity .35s cubic-bezier(0.16,1,0.3,1); }
-.drawer.active { opacity: 1; pointer-events: all; }
-.drawer-overlay { position: absolute; inset: 0; background: rgba(10,17,25,0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); cursor: pointer; }
-.drawer-panel { position: absolute; top: 0; right: 0; height: 100vh; width: 100%; max-width: 720px; background: var(--ns-surface-base); transform: translateX(100%); transition: transform .5s cubic-bezier(0.16,1,0.3,1); display: flex; flex-direction: column; box-shadow: -24px 0 80px rgba(10,17,25,0.18); }
-.drawer.active .drawer-panel { transform: translateX(0); }
-.drawer-header { display: flex; justify-content: space-between; align-items: center; padding: 28px 48px 24px; border-bottom: 1px solid var(--ns-surface-sunken); flex-shrink: 0; }
-.drawer-eyebrow { display: flex; align-items: center; gap: 12px; }
-.drawer-eyebrow-dot { width: 6px; height: 6px; background: var(--ns-accent); border-radius: 50%; }
-.drawer-eyebrow-lbl { font: 600 11px/1 var(--ns-font-sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ns-text-secondary); }
-.drawer-close { background: transparent; border: 1px solid var(--ns-warm-400); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .2s; color: var(--ns-text-primary); flex-shrink: 0; }
-.drawer-close:hover { background: var(--ns-text-primary); color: var(--ns-surface-base); border-color: var(--ns-text-primary); }
-.drawer-content { padding: 40px 48px 56px; overflow-y: auto; flex: 1; }
-.drawer-tag { font: 600 11px/1 var(--ns-font-sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ns-text-tertiary); margin-bottom: 16px; }
-.drawer-tag.popular { color: var(--ns-accent); }
-.drawer-headline { font: 300 38px/1.15 var(--ns-font-sans); color: var(--ns-text-primary); margin-bottom: 8px; letter-spacing: -0.02em; }
-.drawer-headline em { font-style: italic; color: var(--ns-accent); font-weight: 300; }
-.drawer-section { margin-top: 44px; }
-.drawer-section-title { font: 700 12px/1 var(--ns-font-sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ns-text-primary); margin-bottom: 8px; }
-.drawer-pkg { padding: 24px 0; border-top: 1px solid var(--ns-surface-sunken); }
-.drawer-pkg:last-child { border-bottom: 1px solid var(--ns-surface-sunken); }
-.drawer-pkg-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; gap: 16px; }
-.drawer-pkg-name { font: 700 18px/1.2 var(--ns-font-sans); color: var(--ns-text-primary); }
-.drawer-pkg-price { font: 700 16px/1.2 var(--ns-font-sans); color: var(--ns-accent); white-space: nowrap; }
-.drawer-pkg-meta { font: 400 11px/1 var(--ns-font-sans); color: var(--ns-text-tertiary); margin-bottom: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
-.drawer-pkg-desc { font: 400 14px/1.65 var(--ns-font-sans); color: var(--ns-text-secondary); }
-.drawer-list { list-style: none; padding: 0; margin: 0; font: 400 14px/1.8 var(--ns-font-sans); color: var(--ns-text-secondary); }
-.drawer-list li { padding-left: 20px; position: relative; }
-.drawer-list li::before { content: '→'; position: absolute; left: 0; color: var(--ns-accent); }
-.drawer-quote { font: italic 300 17px/1.5 var(--ns-font-sans); color: var(--ns-text-primary); padding: 20px 24px; border-left: 2px solid var(--ns-accent); background: var(--ns-surface-sunken); margin-top: 32px; }
-.drawer-cta { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--ns-surface-sunken); }
-.drawer-cta p { font: 400 14px/1.6 var(--ns-font-sans); color: var(--ns-text-secondary); margin-bottom: 16px; }
-.drawer-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: var(--ns-accent); color: var(--ns-surface-base); border-radius: 999px; font: 700 13px/1 var(--ns-font-sans); text-decoration: none; transition: background .2s; letter-spacing: 0.04em; }
-.drawer-cta-btn:hover { background: var(--ns-accent-hover); }
-body.drawer-open { overflow: hidden; }
-@media (max-width: 720px) {
-  .drawer-panel { max-width: 100%; }
-  .drawer-header { padding: 20px 24px; }
-  .drawer-content { padding: 32px 24px 48px; }
-  .drawer-headline { font-size: 28px; }
-}
-
-
 /* ─── trabajo.html ─── */
 
 /* ── Grid masonry con CSS Columns ── */
