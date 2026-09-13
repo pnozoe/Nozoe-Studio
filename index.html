@@ -22,19 +22,63 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness"],
-  "name": "Nozoe Studio",
-  "url": "https://nozoestudio.com",
-  "logo": "https://nozoestudio.com/assets/nozoe-studio-logo-color.svg",
-  "description": "Estudio de diseño de marca estratégico. Identidad, web y contenido para emprendedores de habla hispana que quieren crecer con una imagen profesional.",
-  "founder": { "@type": "Person", "name": "Pedro Nozoe" },
-  "address": { "@type": "PostalAddress", "addressCountry": "JP", "addressRegion": "Tokio" },
-  "areaServed": ["JP", "PE", "BR", "AR"],
-  "serviceType": ["Identidad de marca", "Diseño web", "Contenido gráfico", "Retainer de diseño"],
-  "inLanguage": ["es", "ja"],
-  "sameAs": [
-    "https://www.behance.net/pedronozoe",
-    "https://www.linkedin.com/in/pedro-nozoe"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nozoestudio.com/#organization",
+      "name": "Nozoe Studio",
+      "url": "https://nozoestudio.com/",
+      "logo": "https://nozoestudio.com/assets/nozoe-studio-logo-color.svg",
+      "image": "https://nozoestudio.com/assets/og-image.jpg",
+      "description": "Estudio de diseño de marca estratégico con base en Tokio. Identidad, diseño web y contenido gráfico para empresas y emprendedores del Perú y Latinoamérica.",
+      "founder": { "@id": "https://nozoestudio.com/#pedro-nozoe" },
+      "location": {
+        "@type": "Place",
+        "name": "Tokio, Japón",
+        "address": { "@type": "PostalAddress", "addressCountry": "JP" }
+      },
+      "areaServed": ["PE", "JP"],
+      "knowsLanguage": ["es", "pt", "ja"],
+      "email": "pedro@nozoestudio.com",
+      "telephone": "+81-70-2212-4910",
+      "sameAs": [
+        "https://www.linkedin.com/in/pedro-nozoe",
+        "https://www.behance.net/pedronozoe",
+        "https://www.instagram.com/pedronozoe"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de diseño",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Identidad de marca", "url": "https://nozoestudio.com/servicios" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web", "url": "https://nozoestudio.com/servicios" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño gráfico y publicitario", "url": "https://nozoestudio.com/servicios" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retainer de diseño", "url": "https://nozoestudio.com/servicios" } }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://nozoestudio.com/#pedro-nozoe",
+      "name": "Pedro Nozoe",
+      "jobTitle": "Diseñador gráfico y fundador",
+      "url": "https://nozoestudio.com/estudio",
+      "worksFor": { "@id": "https://nozoestudio.com/#organization" },
+      "knowsLanguage": ["es", "pt", "ja"],
+      "sameAs": [
+        "https://www.linkedin.com/in/pedro-nozoe",
+        "https://www.behance.net/pedronozoe",
+        "https://www.instagram.com/pedronozoe"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nozoestudio.com/#website",
+      "url": "https://nozoestudio.com/",
+      "name": "Nozoe Studio",
+      "inLanguage": "es",
+      "publisher": { "@id": "https://nozoestudio.com/#organization" }
+    }
   ]
 }
 </script>
