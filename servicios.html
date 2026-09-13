@@ -8,7 +8,7 @@
   // Redirección temporal de enlaces antiguos ?paquete=… compartidos por WhatsApp.
   // Se amplía con cada servicio que estrena página. Retirar a partir de marzo de 2027.
   (function () {
-    var destinos = { identidad: 'identidad-de-marca' };
+    var destinos = { identidad: 'identidad-de-marca', publicitario: 'diseno-grafico' };
     var p = new URLSearchParams(location.search).get('paquete');
     if (p && destinos[p]) location.replace('/' + destinos[p]);
   })();
@@ -165,7 +165,7 @@
         </a>
       </li>
       <li>
-        <a class="svc-hero-item" href="#servicios" data-drawer-target="publicitario">
+        <a class="svc-hero-item" href="diseno-grafico">
           <span class="svc-hero-item-num">03</span>
           <span>
             <span class="svc-hero-item-name">Diseño gráfico y publicitario</span>
@@ -261,9 +261,9 @@
         </div>
       </div>
 
-      <!-- CARD 3 · CONTENIDO -->
-      <div class="svc-card">
-        <div class="svc-card-img" style="background-image: url('assets/servicios/contenido-grafico.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Contenido gráfico · imagen ilustrativa"></div>
+      <!-- CARD 3 · DISEÑO GRÁFICO — la tarjeta entera enlaza a su página propia -->
+      <a class="svc-card" href="diseno-grafico" draggable="false">
+        <div class="svc-card-img" style="background-image: url('assets/servicios/contenido-grafico.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Diseño gráfico y publicitario · imagen ilustrativa"></div>
         <div class="svc-card-gradient"></div>
         <span class="svc-card-num">03</span>
         <div class="svc-card-body">
@@ -272,13 +272,13 @@
           <p class="svc-card-desc">Campañas, decks y brand kits. Piezas que extienden tu identidad de forma coherente, sin improvisar estilos.</p>
           <div class="svc-card-footer">
             <div class="svc-card-price">desde US$80 <span>· 3–5 días</span></div>
-            <a href="?paquete=publicitario" data-drawer-target="publicitario" class="svc-card-btn">
-              Ver paquetes
+            <span class="svc-card-btn">
+              Ver servicio
               <svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4"/></svg>
-            </a>
+            </span>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- CARD 4 · RETAINER -->
       <div class="svc-card">
@@ -556,60 +556,6 @@
       </div>
 
       <blockquote class="drawer-quote">"Sin plantillas. Cada sitio se diseña desde cero."</blockquote>
-
-      <div class="drawer-cta">
-        <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
-        <a href="https://wa.me/817022124910" class="drawer-cta-btn" target="_blank" rel="noopener">WhatsApp →</a>
-      </div>
-    </div>
-  </div>
-</aside>
-
-<aside class="drawer" id="drawer-publicitario" role="dialog" aria-modal="true" aria-labelledby="drawer-publicitario-title">
-  <div class="drawer-overlay" data-drawer-close></div>
-  <div class="drawer-panel">
-    <div class="drawer-header">
-      <div class="drawer-eyebrow">
-        <span class="drawer-eyebrow-dot"></span>
-        <span class="drawer-eyebrow-lbl">03 · Impreso · Digital</span>
-      </div>
-      <button class="drawer-close" data-drawer-close aria-label="Cerrar">
-        <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5"/></svg>
-      </button>
-    </div>
-    <div class="drawer-content">
-      <div class="drawer-tag">Diseño gráfico y publicitario</div>
-      <h2 class="drawer-headline" id="drawer-publicitario-title">Piezas que paran el ojo.<br>En papel <em>o en pantalla.</em></h2>
-
-      <div class="drawer-section">
-        <div class="drawer-section-title">Paquetes</div>
-
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Pieza única</div><div class="drawer-pkg-price">desde US$80</div></div>
-          <div class="drawer-pkg-meta">3–5 días</div>
-          <p class="drawer-pkg-desc">1 formato (flyer, póster, anuncio digital o valla) en 2 propuestas y 1 ronda de ajustes. Entrega en todos los formatos técnicos.</p>
-        </div>
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Campaña</div><div class="drawer-pkg-price">desde US$350</div></div>
-          <div class="drawer-pkg-meta">1–2 semanas</div>
-          <p class="drawer-pkg-desc">Concepto gráfico unificado y hasta 5 formatos distintos (print y digital). Adaptaciones para redes, prensa y punto de venta.</p>
-        </div>
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Sistema publicitario</div><div class="drawer-pkg-price">desde US$450</div></div>
-          <div class="drawer-pkg-meta">2–4 semanas</div>
-          <p class="drawer-pkg-desc">Identidad de campaña completa. Hasta 10 piezas: vallas, flyers, posts, banners web, stories, anuncios impresos. Manual de uso de campaña.</p>
-        </div>
-      </div>
-
-      <div class="drawer-section">
-        <div class="drawer-section-title">Entregables incluidos</div>
-        <ul class="drawer-list">
-          <li>PDF de impresión (300dpi + sangría)</li>
-          <li>PNG pantalla (72dpi)</li>
-        </ul>
-      </div>
-
-      <blockquote class="drawer-quote">"No adaptamos plantillas de Canva. Cada pieza se construye desde el concepto de tu marca."</blockquote>
 
       <div class="drawer-cta">
         <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
