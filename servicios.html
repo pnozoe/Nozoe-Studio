@@ -31,17 +31,20 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "provider": { "@type": "Organization", "name": "Nozoe Studio", "url": "https://nozoestudio.com" },
-  "serviceType": "Diseño gráfico",
-  "areaServed": ["JP", "PE", "BR", "AR"],
+  "@id": "https://nozoestudio.com/servicios#service",
+  "name": "Servicios de diseño de Nozoe Studio",
+  "serviceType": "Diseño de marca",
+  "url": "https://nozoestudio.com/servicios",
+  "provider": { "@id": "https://nozoestudio.com/#organization" },
+  "areaServed": ["PE", "JP"],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Servicios de diseño",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Identidad de marca" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño gráfico y publicitario" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retainer de diseño" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://nozoestudio.com/identidad-de-marca#service", "name": "Identidad de marca", "url": "https://nozoestudio.com/identidad-de-marca" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://nozoestudio.com/diseno-web#service", "name": "Diseño web", "url": "https://nozoestudio.com/diseno-web" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://nozoestudio.com/diseno-grafico#service", "name": "Diseño gráfico y publicitario", "url": "https://nozoestudio.com/diseno-grafico" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "@id": "https://nozoestudio.com/retainer-diseno#service", "name": "Retainer de diseño", "url": "https://nozoestudio.com/retainer-diseno" } }
     ]
   }
 }
