@@ -5728,17 +5728,21 @@ body.pg-identidad.hdr-over-hero .nav-links.open .nav-link:hover { color: var(--n
   .sp-table-hint { display: none; }
 }
 
-/* ─── servicios.html: enlace a la página propia del servicio ─── */
-.svc-section .svc-card-more {
-  align-self: flex-start;
-  font-family: var(--ns-font-sans);
-  font-weight: var(--ns-fw-semibold);
-  font-size: var(--ns-fs-xs);
-  letter-spacing: var(--ns-ls-wide);
-  color: var(--ns-warm-200);
+/* ─── servicios.html: tarjeta enlazada a la página propia del servicio ───
+   La tarjeta pasa de <div> a <a>. Hereda todo el aspecto de
+   .svc-section .svc-card; aquí solo se anula el estilo de enlace y se
+   da foco visible. El botón interior es un <span> (no se anidan enlaces)
+   y reacciona al hover de toda la tarjeta. */
+.svc-section a.svc-card {
+  color: inherit;
   text-decoration: none;
-  padding-bottom: var(--ns-space-0_5);
-  border-bottom: var(--ns-bw-1) solid color-mix(in srgb, var(--ns-warm-200) 40%, transparent);
-  transition: border-color var(--ns-dur-fast) var(--ns-ease-out);
+  cursor: pointer;
 }
-.svc-section .svc-card-more:hover { border-bottom-color: var(--ns-warm-200); }
+.svc-section a.svc-card:focus-visible {
+  outline: var(--ns-bw-2) solid var(--ns-accent);
+  outline-offset: var(--ns-space-1);
+}
+.svc-section a.svc-card:hover .svc-card-btn {
+  background: color-mix(in srgb, var(--ns-warm-200) 22%, transparent);
+  border-color: color-mix(in srgb, var(--ns-warm-200) 40%, transparent);
+}

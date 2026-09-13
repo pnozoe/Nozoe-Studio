@@ -47,7 +47,7 @@
                    assets/servicios/identidad-marca-2400.webp?v=20260816a 2400w,
                    assets/servicios/identidad-marca-3200.webp?v=20260816a 3200w"
       imagesizes="100vw" fetchpriority="high">
-<link rel="stylesheet" href="assets/css/site.css?v=20260913a">
+<link rel="stylesheet" href="assets/css/site.css?v=20260913b">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7VG5XMC7"></script>
 <script>
@@ -138,7 +138,7 @@
 
     <ul class="svc-hero-index">
       <li>
-        <a class="svc-hero-item is-active" href="#servicios" data-drawer-target="identidad">
+        <a class="svc-hero-item is-active" href="identidad-de-marca">
           <span class="svc-hero-item-num">01</span>
           <span>
             <span class="svc-hero-item-name">Identidad de marca</span>
@@ -213,8 +213,9 @@
   <div class="svc-track-wrap" id="svc-track-wrap">
     <div class="svc-track" id="svc-track">
 
-      <!-- CARD 1 · IDENTIDAD -->
-      <div class="svc-card">
+      <!-- CARD 1 · IDENTIDAD — la tarjeta entera enlaza a su página propia.
+           Las demás siguen abriendo su cajón hasta que tengan página. -->
+      <a class="svc-card" href="identidad-de-marca" draggable="false">
         <div class="svc-card-img" style="background-image: url('assets/servicios/identidad-marca.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Identidad de marca · imagen ilustrativa"></div>
         <div class="svc-card-gradient"></div>
         <span class="svc-card-num">01</span>
@@ -224,14 +225,13 @@
           <p class="svc-card-desc">Logo, sistema tipográfico, paleta y manual. Desde el primer boceto hasta los archivos finales listos para usar.</p>
           <div class="svc-card-footer">
             <div class="svc-card-price">desde US$350 <span>· 1–2 semanas</span></div>
-            <a href="?paquete=identidad" data-drawer-target="identidad" class="svc-card-btn">
-              Ver paquetes
+            <span class="svc-card-btn">
+              Ver servicio
               <svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4"/></svg>
-            </a>
+            </span>
           </div>
-          <a href="identidad-de-marca" class="svc-card-more">Ver todos los detalles →</a>
         </div>
-      </div>
+      </a>
 
       <!-- CARD 2 · WEB -->
       <div class="svc-card">
@@ -505,60 +505,6 @@
 </footer>
 
 <!-- ══ DRAWERS DE SERVICIOS ══ -->
-<aside class="drawer" id="drawer-identidad" role="dialog" aria-modal="true" aria-labelledby="drawer-identidad-title">
-  <div class="drawer-overlay" data-drawer-close></div>
-  <div class="drawer-panel">
-    <div class="drawer-header">
-      <div class="drawer-eyebrow">
-        <span class="drawer-eyebrow-dot"></span>
-        <span class="drawer-eyebrow-lbl">01 · Marca · Sistemas</span>
-      </div>
-      <button class="drawer-close" data-drawer-close aria-label="Cerrar">
-        <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5"/></svg>
-      </button>
-    </div>
-    <div class="drawer-content">
-      <div class="drawer-tag">Identidad de marca</div>
-      <h2 class="drawer-headline" id="drawer-identidad-title">Tu marca, construida<br>para durar <em>cinco años.</em></h2>
-
-      <div class="drawer-section">
-        <div class="drawer-section-title">Paquetes</div>
-
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Esencial</div><div class="drawer-pkg-price">desde US$350</div></div>
-          <div class="drawer-pkg-meta">1–2 semanas</div>
-          <p class="drawer-pkg-desc">Logo + paleta + tipografía. Para arrancar con un sistema visual sólido y aplicaciones básicas listas para usar.</p>
-        </div>
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Sistema completo</div><div class="drawer-pkg-price">desde US$500</div></div>
-          <div class="drawer-pkg-meta">3–4 semanas</div>
-          <p class="drawer-pkg-desc">Identidad completa, manual de marca, papelería y plantillas. El equipo aplica el sistema sin improvisar estilos.</p>
-        </div>
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Rediseño</div><div class="drawer-pkg-price">desde US$600</div></div>
-          <div class="drawer-pkg-meta">5–8 semanas</div>
-          <p class="drawer-pkg-desc">Auditoría visual + evolución de la identidad existente. Mantenemos el reconocimiento, ajustamos lo que ya no funciona.</p>
-        </div>
-      </div>
-
-      <div class="drawer-section">
-        <div class="drawer-section-title">Entregables incluidos</div>
-        <ul class="drawer-list">
-          <li>Archivos en AI, EPS, SVG y PDF</li>
-          <li>Manual de uso en PDF</li>
-          <li>Brandbook digital</li>
-          <li>Guía de aplicaciones</li>
-        </ul>
-      </div>
-
-      <div class="drawer-cta">
-        <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
-        <a href="https://wa.me/817022124910" class="drawer-cta-btn" target="_blank" rel="noopener">WhatsApp →</a>
-      </div>
-    </div>
-  </div>
-</aside>
-
 <aside class="drawer" id="drawer-web" role="dialog" aria-modal="true" aria-labelledby="drawer-web-title">
   <div class="drawer-overlay" data-drawer-close></div>
   <div class="drawer-panel">
@@ -721,7 +667,7 @@
 </aside>
 
 <script src="assets/js/site.js?v=20260816a" defer></script>
-<script src="assets/js/servicios.js?v=20260816a" defer></script>
+<script src="assets/js/servicios.js?v=20260913a" defer></script>
 
 
 <!-- FAB WhatsApp (solo móvil) -->

@@ -52,9 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
-    let isDragging = false, startX, startScrollLeft;
+    let isDragging = false, dragMoved = false, startX, startScrollLeft;
     trackWrap.addEventListener('mousedown', e => {
       isDragging = true;
+      dragMoved = false;
       startX = e.pageX - trackWrap.offsetLeft;
       startScrollLeft = trackWrap.scrollLeft;
       trackWrap.style.userSelect = 'none';
@@ -67,9 +68,20 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!isDragging) return;
       e.preventDefault();
       const x    = e.pageX - trackWrap.offsetLeft;
+      if (Math.abs(x - startX) > 5) dragMoved = true;
       const walk = (x - startX) * 1.4;
       trackWrap.scrollLeft = startScrollLeft - walk;
     });
+
+    /* Tras un arrastre, el clic que dispara el navegador al soltar no debe
+       abrir la tarjeta enlazada ni un cajón. Va en fase de captura para
+       frenarlo antes de que llegue al enlace o al botón. */
+    trackWrap.addEventListener('click', e => {
+      if (!dragMoved) return;
+      e.preventDefault();
+      e.stopPropagation();
+      dragMoved = false;
+    }, true);
   }
 
   /* ── FAQ accordion ── */
