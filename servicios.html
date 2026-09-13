@@ -8,7 +8,7 @@
   // Redirección temporal de enlaces antiguos ?paquete=… compartidos por WhatsApp.
   // Se amplía con cada servicio que estrena página. Retirar a partir de marzo de 2027.
   (function () {
-    var destinos = { identidad: 'identidad-de-marca', publicitario: 'diseno-grafico', retainer: 'retainer-diseno' };
+    var destinos = { identidad: 'identidad-de-marca', web: 'diseno-web', publicitario: 'diseno-grafico', retainer: 'retainer-diseno' };
     var p = new URLSearchParams(location.search).get('paquete');
     if (p && destinos[p]) location.replace('/' + destinos[p]);
   })();
@@ -156,7 +156,7 @@
         </a>
       </li>
       <li>
-        <a class="svc-hero-item" href="#servicios" data-drawer-target="web">
+        <a class="svc-hero-item" href="diseno-web">
           <span class="svc-hero-item-num">02</span>
           <span>
             <span class="svc-hero-item-name">Diseño web</span>
@@ -222,8 +222,7 @@
   <div class="svc-track-wrap" id="svc-track-wrap">
     <div class="svc-track" id="svc-track">
 
-      <!-- CARD 1 · IDENTIDAD — la tarjeta entera enlaza a su página propia.
-           Las demás siguen abriendo su cajón hasta que tengan página. -->
+      <!-- CARD 1 · IDENTIDAD — cada tarjeta enlaza entera a la página propia de su servicio -->
       <a class="svc-card" href="identidad-de-marca" draggable="false">
         <div class="svc-card-img" style="background-image: url('assets/servicios/identidad-marca.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Identidad de marca · imagen ilustrativa"></div>
         <div class="svc-card-gradient"></div>
@@ -243,7 +242,7 @@
       </a>
 
       <!-- CARD 2 · WEB -->
-      <div class="svc-card">
+      <a class="svc-card" href="diseno-web" draggable="false">
         <div class="svc-card-img" style="background-image: url('assets/servicios/web.webp?v=20260816a'); background-size: cover; background-position: center;" role="img" aria-label="Diseño web · imagen ilustrativa"></div>
         <div class="svc-card-gradient"></div>
         <span class="svc-card-num">02</span>
@@ -253,13 +252,13 @@
           <p class="svc-card-desc">Landing pages, sitios institucionales y e-commerce. Sitios diseñados desde cero, sin plantillas.</p>
           <div class="svc-card-footer">
             <div class="svc-card-price">desde US$350 <span>· 2–3 semanas</span></div>
-            <a href="?paquete=web" data-drawer-target="web" class="svc-card-btn">
-              Ver paquetes
+            <span class="svc-card-btn">
+              Ver servicio
               <svg viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H4M8 2v4"/></svg>
-            </a>
+            </span>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- CARD 3 · DISEÑO GRÁFICO — la tarjeta entera enlaza a su página propia -->
       <a class="svc-card" href="diseno-grafico" draggable="false">
@@ -512,58 +511,6 @@
     </div>
   </div>
 </footer>
-
-<!-- ══ DRAWERS DE SERVICIOS ══ -->
-<aside class="drawer" id="drawer-web" role="dialog" aria-modal="true" aria-labelledby="drawer-web-title">
-  <div class="drawer-overlay" data-drawer-close></div>
-  <div class="drawer-panel">
-    <div class="drawer-header">
-      <div class="drawer-eyebrow">
-        <span class="drawer-eyebrow-dot"></span>
-        <span class="drawer-eyebrow-lbl">02 · Digital · Web</span>
-      </div>
-      <button class="drawer-close" data-drawer-close aria-label="Cerrar">
-        <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5"/></svg>
-      </button>
-    </div>
-    <div class="drawer-content">
-      <div class="drawer-tag">Diseño web</div>
-      <h2 class="drawer-headline" id="drawer-web-title">Un sitio que vende <em>mientras duermes.</em></h2>
-
-      <div class="drawer-section">
-        <div class="drawer-section-title">Paquetes</div>
-
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Landing</div><div class="drawer-pkg-price">desde US$350</div></div>
-          <div class="drawer-pkg-meta">2–3 semanas</div>
-          <p class="drawer-pkg-desc">1 página, diseño HTML + CSS + dominio conectado y formulario operativo.</p>
-        </div>
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Sitio institucional</div><div class="drawer-pkg-price">desde US$750</div></div>
-          <div class="drawer-pkg-meta">4–6 semanas</div>
-          <p class="drawer-pkg-desc">Hasta 6 páginas, CMS configurable, optimización SEO base y analytics conectados.</p>
-        </div>
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Ecommerce</div><div class="drawer-pkg-price">desde US$1,000</div></div>
-          <div class="drawer-pkg-meta">6–8 semanas</div>
-          <p class="drawer-pkg-desc">Tienda en Webflow o Shopify, hasta 20 productos, pasarela de pago integrada y guía de carga del catálogo.</p>
-        </div>
-        <div class="drawer-pkg">
-          <div class="drawer-pkg-head"><div class="drawer-pkg-name">Web Profesional Nozoe</div><div class="drawer-pkg-price">desde US$350</div></div>
-          <div class="drawer-pkg-meta">7–10 días · para profesionales y estudios en Perú</div>
-          <p class="drawer-pkg-desc">Landing con sistema de diseño propio, editor conversacional y cuota anual de vigencia. <a href="web-profesional" class="tlink">Ver todos los detalles <span class="arr">→</span></a></p>
-        </div>
-      </div>
-
-      <blockquote class="drawer-quote">"Sin plantillas. Cada sitio se diseña desde cero."</blockquote>
-
-      <div class="drawer-cta">
-        <p>¿Tu proyecto necesita algo distinto? Escríbenos por WhatsApp y armamos un plan a tu medida.</p>
-        <a href="https://wa.me/817022124910" class="drawer-cta-btn" target="_blank" rel="noopener">WhatsApp →</a>
-      </div>
-    </div>
-  </div>
-</aside>
 
 <script src="assets/js/site.js?v=20260816a" defer></script>
 <script src="assets/js/servicios.js?v=20260913a" defer></script>
