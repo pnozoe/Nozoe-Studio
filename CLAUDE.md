@@ -17,10 +17,16 @@ Este repositorio contiene el **rediseño 2026 de la web del estudio**
 (en producción). La web es la pieza central de la marca: portafolio, 
 voz editorial, servicios y captación de clientes.
 
-**Audiencia primaria:** emprendedores y negocios de habla hispana que 
-quieren una marca profesional y lista para crecer — muchos en Japón o 
-con vínculo Japón–Latam, pero el filtro es *querer crecer con buen 
-diseño*, no la biculturalidad.
+**Audiencia primaria:** empresas y emprendedores del **Perú** que 
+quieren una marca profesional y lista para crecer. Secundariamente, 
+hispanohablantes en Japón y el resto de Latinoamérica. El filtro es 
+*querer crecer con buen diseño*, no la biculturalidad — pero el 
+mercado que nombramos en el copy es Perú.
+
+**Nombres canónicos de los servicios** (no inventar variantes): 
+Identidad de marca · Diseño web · Diseño gráfico y publicitario · 
+Retainer de diseño. El producto `Web Profesional Nozoe` vive aparte, 
+dentro de Diseño web.
 
 **Voz de marca:** editorial, sobria, cálida y estratégica. Cruce entre 
 rigor suizo y calidez latina, principalmente en español.
