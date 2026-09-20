@@ -109,7 +109,13 @@ a{color:var(--acc)}
   filter:drop-shadow(0 5px 9px rgba(0,0,0,.5));transition:filter .2s,transform .2s}
 .ribbon:hover{filter:drop-shadow(0 7px 12px rgba(0,0,0,.6));transform:rotate(45deg) translateY(-2px)}
 .ribbon img{width:100%;height:auto}
-@media(max-width:980px){.ribbon{top:64px;right:-74px;width:250px}}
+/* Horizontal siempre que haya burger (<1140px): en diagonal la cinta se
+   come el clic del boton, porque va a z-index 160 sobre la esquina. */
+@media(max-width:1139px){.ribbon{top:74px;right:0;width:min(42%,300px);transform:none}
+  .ribbon:hover{transform:translateY(-2px)}}
+/* Entre 1140 y 1379 el ancho util toca los bordes y el CTA del nav cae bajo la
+   diagonal. Se aparta de la esquina en ese tramo; por encima, el wrap ya centra. */
+@media(min-width:1140px) and (max-width:1379px){.nav-in{padding-right:calc(var(--gut) + 36px)}}
 
 .prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:200;pointer-events:none}
 .prog i{display:block;height:100%;width:0;background:var(--acc)}
@@ -174,10 +180,6 @@ a{color:var(--acc)}
   .nav-in{gap:12px}
   .nav-in .btn{display:none}   /* solo el de la barra; el del drawer se queda */
   .brand-tx b{white-space:nowrap}
-  /* La cinta demo cruza en diagonal la esquina superior derecha (x 280-315 a esta
-     altura) e interceptaba el clic del conmutador. Se va al extremo izquierdo. */
-  .tema{order:-1;margin-left:0}
-  .nav-fin{margin-left:auto}
 }
 
 /* ---------- revelado ---------- */
