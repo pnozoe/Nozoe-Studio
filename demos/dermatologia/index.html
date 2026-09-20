@@ -10,313 +10,653 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dra. Valeria Nakamura — Dermatología de especialista en Lima">
 <meta property="og:description" content="Rejuvenecimiento facial, láser, toxina botulínica y dermatología clínica en San Isidro, Lima. Demo conceptual de Nozoe Studio.">
-<meta property="og:image" content="assets/hero-light.webp">
+<meta property="og:image" content="assets/hero-dark.webp">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{
+  --bg:#F4F4F2; --ink:#141414; --muted:#6E6E6A; --faint:#8A8A86; --body:#4A4A46;
+  --dark:#1E1E1C; --darker:#1C1C1A; --panel:#DEDCD6; --hover:#ECEBE6;
+  --line:rgba(20,20,20,.12); --line-soft:rgba(20,20,20,.1); --line-faint:rgba(20,20,20,.08);
+  --onDark:#F4F4F2; --nav-h:69px;
+}
+*,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#F4F4F2;color:#141414;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:#141414;text-decoration:none}
-a:hover{color:#6E6E6A}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--muted)}
+[hidden]{display:none!important}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ---------- primitivas ---------- */
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px;width:100%}
+.sec{padding:clamp(64px,9vw,120px) 0}
+.sec--line{border-top:1px solid var(--line-soft)}
+.eyebrow{margin:0 0 14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.h-hero{margin:0 0 28px;font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.16;letter-spacing:.06em;text-transform:uppercase;max-width:20ch;text-wrap:balance}
+.h-sec{margin:0;font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase;text-wrap:balance}
+.p{margin:0 0 16px;font-size:14.5px;line-height:1.8;color:var(--body);max-width:52ch;text-wrap:pretty}
+.meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:16px 30px;border-radius:999px;border:0;font-family:inherit;cursor:pointer;transition:background .2s ease,color .2s ease}
+.btn:hover{background:#2B2B29;color:var(--bg)}
+.btn--light{background:var(--onDark);color:var(--ink)}
+.btn--light:hover{background:var(--panel);color:var(--ink)}
+.btn--ghost{background:transparent;border:1px solid var(--onDark);color:var(--onDark);padding:18px 36px;letter-spacing:.16em}
+.btn--ghost:hover{background:var(--onDark);color:var(--dark)}
+.link-u{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:6px;transition:color .2s ease,border-color .2s ease}
+.link-u:hover{color:var(--muted);border-bottom-color:var(--muted)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+.on-dark :focus-visible,.hero :focus-visible{outline-color:var(--onDark)}
+
+/* ---------- cinta demo ---------- */
 .demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
 .demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
-.demo-ribbon img{display:block;width:100%;height:auto}
-.demo-ribbon:focus-visible,.tratamiento-control:focus-visible{outline:2px solid #141414;outline-offset:5px}
-.tratamiento-item{border-top:1px solid rgba(20,20,20,.12);transition:background .25s ease}
-.tratamiento-item:hover{background:#ECEBE6}
-.tratamiento-control{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:baseline;justify-content:space-between;gap:20px;width:100%;padding:20px 0;color:#141414;transition:padding .25s ease,color .25s ease}
-.tratamiento-item:hover .tratamiento-control{padding-inline:18px}
-.tratamiento-icon{transition:transform .25s ease,color .25s ease}
-.tratamiento-item:hover .tratamiento-icon{transform:scale(1.12);color:#141414!important}
-.tratamiento-panel{max-height:0;opacity:0;overflow:hidden;transition:max-height .58s cubic-bezier(.2,.7,.2,1),opacity .25s ease}
-.tratamiento-panel.is-open{max-height:1400px;opacity:1}
-.tratamiento-panel-inner{transform:translateY(-10px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.tratamiento-panel.is-open .tratamiento-panel-inner{transform:none}
-@media(prefers-reduced-motion:reduce){.tratamiento-item,.tratamiento-control,.tratamiento-icon,.tratamiento-panel,.tratamiento-panel-inner{transition:none}}
-body.menu-open{overflow:hidden}
+.demo-ribbon img{width:100%;height:auto}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(244,244,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-faint)}
+.nav-in{max-width:1200px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.mn-links{display:flex;gap:28px;align-items:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mn-links a{color:var(--muted)}
+.mn-links a:hover{color:var(--ink)}
+.mn-cta{color:var(--ink);border:1px solid var(--ink);padding:10px 18px;border-radius:999px;font-weight:500;transition:background .2s ease,color .2s ease}
+.mn-cta:hover{background:var(--ink);color:var(--bg)}
 .mn-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid rgba(20,20,20,.25);border-radius:50%;background:transparent;cursor:pointer;flex:none}
 .mn-toggle svg{width:18px;height:18px}
-@media(max-width:760px){
-  .demo-ribbon{top:70px;right:0;width:30%;transform:none}.demo-ribbon:hover{transform:translateY(-2px)}
-  .mn-toggle{display:inline-flex;position:relative;z-index:151}
-  .mn-links{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:100vh!important;z-index:150!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:26px!important;padding:6rem 2rem 3rem!important;background:#F4F4F2!important;box-sizing:border-box!important;visibility:hidden;opacity:0;transform:translateY(-1rem);transition:opacity .25s ease,transform .25s ease,visibility .25s;text-transform:none!important}
-  .mn-links.is-open{visibility:visible;opacity:1;transform:translateY(0)}
-  .mn-links a{font-size:24px!important;letter-spacing:0!important;color:#141414!important}
-  .mn-links a.mn-cta{align-self:flex-start;border-radius:999px;padding:12px 24px!important}
+body.menu-open{overflow:hidden}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:calc(100svh - var(--nav-h));display:flex;flex-direction:column;justify-content:flex-end;background:var(--darker);overflow:hidden}
+.hero-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;filter:grayscale(1);opacity:0;transition:opacity 1.1s ease}
+.hero-frame.is-on{opacity:1}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,20,20,.85) 0%,rgba(20,20,20,.3) 42%,rgba(20,20,20,0) 70%)}
+.hero-in{position:relative;padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(40px,6vw,72px);color:var(--onDark);animation:fadeUp .7s ease both}
+.hero-in .eyebrow{color:rgba(244,244,242,.65)}
+.hero-in .h-hero{color:var(--onDark)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.hero-cred{font-size:12px;letter-spacing:.06em;color:rgba(244,244,242,.55)}
+.hero-scenes{display:flex;gap:10px;align-items:center;margin-top:34px}
+.hero-dot{all:unset;box-sizing:border-box;cursor:pointer;width:38px;height:24px;display:inline-flex;align-items:center}
+.hero-dot::before{content:"";display:block;width:100%;height:1px;background:rgba(244,244,242,.32);transition:background .3s ease,height .3s ease}
+.hero-dot[aria-selected="true"]::before{background:var(--onDark);height:2px}
+.hero-scene-label{margin-left:8px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,244,242,.55)}
+
+/* ---------- confianza ---------- */
+.trust{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.trust-in{display:flex;flex-wrap:wrap;gap:12px 44px;align-items:center;justify-content:space-between;padding:22px 28px}
+.trust-item{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.trust-item b{color:var(--ink);font-weight:600}
+
+/* ---------- sobre ---------- */
+.split{display:flex;flex-wrap:wrap;gap:clamp(36px,5vw,80px)}
+.sobre-media{flex:1 1 420px;min-width:min(100%,320px);display:grid;grid-template-columns:1fr 1.4fr;gap:16px;align-items:start}
+.ph{overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph--34{aspect-ratio:3/4}
+.ph--45{aspect-ratio:4/5}
+
+/* ---------- servicios ---------- */
+.tratamiento-item{border-top:1px solid var(--line);transition:background .25s ease}
+.tratamiento-item:hover{background:var(--hover)}
+.tratamiento-control{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:baseline;justify-content:space-between;gap:20px;width:100%;padding:20px 0;color:var(--ink);transition:padding .25s ease,color .25s ease}
+.tratamiento-item:hover .tratamiento-control{padding-inline:18px}
+.tratamiento-title{display:block;font-size:16px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.tratamiento-desc{display:block;font-size:13.5px;line-height:1.6;color:var(--muted);max-width:56ch;text-wrap:pretty}
+.tratamiento-icon{flex:none;font-size:24px;font-weight:300;line-height:1;color:var(--muted);transition:transform .25s ease,color .25s ease}
+.tratamiento-item:hover .tratamiento-icon{transform:scale(1.12);color:var(--ink)}
+.tratamiento-icon,.faq-icon{display:none}
+.js .tratamiento-icon,.js .faq-icon{display:block}
+.js .tratamiento-panel{max-height:0;opacity:0;overflow:hidden;transition:max-height .58s cubic-bezier(.2,.7,.2,1),opacity .25s ease}
+.js .tratamiento-panel.is-open{max-height:1400px;opacity:1}
+.tratamiento-panel-inner{transform:translateY(-10px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.tratamiento-panel.is-open .tratamiento-panel-inner{transform:none}
+.tratamiento-fig{margin:8px 0 28px;width:100%;aspect-ratio:1;overflow:hidden;background:var(--panel)}
+.tratamiento-fig img{width:100%;height:100%;object-fit:cover}
+.sticky-ph{position:sticky;top:96px;aspect-ratio:3/4;overflow:hidden}
+
+/* ---------- antes / después ---------- */
+.casos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);margin-top:clamp(36px,5vw,56px)}
+.caso{margin:0}
+.ba{--p:50%;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--panel);touch-action:pan-y}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;background:transparent;z-index:3}
+.ba-range::-webkit-slider-thumb{-webkit-appearance:none;width:44px;height:100%}
+.ba-range::-moz-range-thumb{width:44px;height:100%;border:0;background:transparent}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--p);width:1px;margin-left:-.5px;background:var(--onDark);box-shadow:0 0 0 1px rgba(20,20,20,.18);z-index:2;pointer-events:none}
+.ba-grip{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--onDark);background:rgba(20,20,20,.3);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(2px)}
+.ba-grip svg{width:20px;height:20px}
+.ba:has(.ba-range:focus-visible){outline:2px solid var(--ink);outline-offset:5px}
+.ba-tag{position:absolute;top:14px;z-index:2;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--onDark);background:rgba(20,20,20,.45);padding:6px 10px;pointer-events:none}
+.ba-tag--a{left:14px}
+.ba-tag--b{right:14px}
+.caso-cap{margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line)}
+.caso-title{margin:0 0 6px;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.caso-meta{margin:0;font-size:13px;line-height:1.7;color:var(--muted)}
+.sec-note{margin:14px 0 0;font-size:13px;line-height:1.7;color:var(--faint);max-width:62ch;text-wrap:pretty}
+
+/* ---------- pasos / testimonios ---------- */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0}
+.paso{padding:28px 24px 28px 0;margin-right:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.paso-num{font-size:11px;letter-spacing:.16em;color:var(--faint)}
+.paso h3{margin:0;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.paso p{margin:0;font-size:13.5px;line-height:1.7;color:var(--muted);text-wrap:pretty}
+.cols--t{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.testi{margin:0;padding:28px 28px 28px 0;margin-right:28px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+.testi blockquote{margin:0;font-size:14.5px;line-height:1.75;color:var(--body);text-wrap:pretty}
+.testi figcaption{margin-top:auto}
+.testi-name{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.testi-detail{font-size:12px;color:var(--faint);margin-top:2px}
+
+/* ---------- banda ---------- */
+/* La altura mínima sale de la foto: su contenido (cabeza, brazo y torso) ocupa
+   el 70% del alto del archivo, así que con 40vw se ve la composición entera y no
+   una franja recortada. */
+.banda{position:relative;background:var(--dark);min-height:clamp(420px,40vw,720px);display:flex;align-items:center;overflow:hidden}
+.banda-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%;filter:grayscale(1)}
+.banda-veil{position:absolute;inset:0;background:linear-gradient(to right,rgba(20,20,20,.9) 0%,rgba(20,20,20,.8) 30%,rgba(20,20,20,.5) 58%,rgba(20,20,20,.12) 80%,rgba(20,20,20,0) 100%)}
+/* Bandera izquierda: la sangría de la segunda línea hacía que el bloque se leyera
+   alineado a la derecha, y el tracking largo empujaba el final del texto sobre el
+   rostro. Sin `balance`, que además reparte las líneas por su cuenta. */
+.banda h2{position:relative;max-width:1200px;margin:0 auto;padding:48px 28px;font-weight:300;font-size:clamp(28px,4.4vw,54px);line-height:1.2;letter-spacing:.05em;text-transform:uppercase;color:var(--onDark);width:100%;text-align:left;text-wrap:pretty}
+
+/* ---------- faq ---------- */
+.faq-item{border-top:1px solid var(--line)}
+.faq-q{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:20px 0;font-size:14px;font-weight:500;letter-spacing:.04em;color:var(--ink);min-height:44px;transition:color .2s ease}
+.faq-q:hover{color:var(--muted)}
+.faq-icon{flex:none;font-size:18px;font-weight:300;color:var(--faint)}
+.faq-a{margin:0;padding:0 0 22px;font-size:13.5px;line-height:1.75;color:var(--muted);max-width:60ch;text-wrap:pretty}
+.js .faq-a{display:none}
+.js .faq-item.is-open .faq-a{display:block}
+/* sin JS los botones no pliegan nada: no deben parecer interactivos */
+html:not(.js) .tratamiento-control,html:not(.js) .faq-q{cursor:default}
+
+/* ---------- consultorio ---------- */
+.dato{border-top:1px solid var(--line);padding-top:16px}
+.dato-k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.dato-v{font-size:14.5px;line-height:1.6;color:var(--body)}
+
+/* ---------- pre-consulta ---------- */
+.form{display:flex;flex-direction:column;gap:20px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.field input,.field select,.field textarea{font-family:inherit;font-size:14.5px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 0;min-height:44px;transition:border-color .2s ease}
+.field textarea{resize:vertical;min-height:88px;line-height:1.7}
+.field input::placeholder,.field textarea::placeholder{color:var(--faint)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-bottom-color:var(--ink)}
+.field select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238A8A86' stroke-width='1.4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;background-size:12px 8px;padding-right:24px}
+.form .btn{align-self:flex-start}
+.form-note{margin:20px 0 0;font-size:12.5px;line-height:1.7;color:var(--faint);max-width:52ch;text-wrap:pretty}
+.form-status{margin:0;font-size:13px;line-height:1.7;color:var(--body);min-height:1.2em}
+
+/* ---------- cierre ---------- */
+.cierre{background:var(--dark);color:var(--onDark)}
+.cierre-in{padding:clamp(72px,10vw,130px) 28px;text-align:center}
+.cierre h2{margin:0 0 20px;font-weight:300;font-size:clamp(28px,4.4vw,54px);line-height:1.2;letter-spacing:.08em;text-transform:uppercase;text-wrap:balance}
+.cierre p{margin:0 auto 40px;font-size:14.5px;line-height:1.7;color:rgba(244,244,242,.6);max-width:46ch;text-wrap:pretty}
+.cierre-tel{margin:24px 0 0!important;font-size:12px;letter-spacing:.06em;color:rgba(244,244,242,.45)}
+.foot{border-top:1px solid rgba(244,244,242,.14)}
+.foot-in{max-width:1200px;margin:0 auto;padding:24px 28px;display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,244,242,.5)}
+.foot-in b{color:rgba(244,244,242,.85);font-weight:600}
+.foot-in a{color:var(--onDark);text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- wa flotante ---------- */
+.wa{position:fixed;right:20px;bottom:20px;z-index:100;display:inline-flex;align-items:center;gap:10px;background:var(--dark);color:var(--onDark);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:15px 22px;border-radius:999px;box-shadow:0 12px 30px rgba(20,20,20,.3);transition:background .2s ease,transform .2s ease}
+.wa:hover{background:var(--ink);color:var(--onDark);transform:translateY(-2px)}
+.wa span{width:8px;height:8px;border-radius:50%;background:var(--onDark)}
+
+/* ---------- responsive ---------- */
+@media(max-width:1300px){
+  .demo-ribbon{top:calc(var(--nav-h) + 4px);right:0;width:min(32%,300px);transform:none}
+  .demo-ribbon:hover{transform:translateY(-2px)}
 }
+/* En pantallas angostas la caja del hero es mucho más alta que ancha y `right`
+   dejaba a la vista solo el pelo: se centra el recorte sobre el rostro, que en
+   los tres fotogramas cae en la misma posición. */
+@media(max-width:900px){
+  .hero-frame{object-position:75% center}
+}
+@media(max-width:760px){
+  .demo-ribbon{top:70px;width:30%}
+  .mn-toggle{display:inline-flex;position:relative;z-index:151}
+  .mn-links{position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100svh;z-index:150;flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:6rem 2rem 3rem;background:var(--bg);visibility:hidden;opacity:0;transform:translateY(-1rem);transition:opacity .25s ease,transform .25s ease,visibility .25s;text-transform:none}
+  .mn-links.is-open{visibility:visible;opacity:1;transform:translateY(0)}
+  .mn-links a{font-size:24px;letter-spacing:0;color:var(--ink)}
+  .mn-links a.mn-cta{align-self:flex-start;border-radius:999px;padding:12px 24px}
+  .paso,.testi{margin-right:0;padding-right:0}
+  /* el botón flotante de WhatsApp se come la esquina inferior derecha:
+     el indicador de escenas se aparta de ahí en lugar de quedar debajo */
+  .hero-in{padding-bottom:calc(clamp(40px,6vw,72px) + 58px)}
+  .hero-scenes{flex-wrap:wrap;row-gap:6px}
+  /* En vertical el velo lateral no alcanza al rostro: se oscurece de arriba abajo */
+  .banda{min-height:clamp(380px,96vw,520px)}
+  .banda-img{object-position:64% center}
+  .banda-veil{background:linear-gradient(to bottom,rgba(20,20,20,.86) 0%,rgba(20,20,20,.66) 52%,rgba(20,20,20,.5) 100%)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+}
+@media print{.demo-ribbon,.wa,.mn-toggle{display:none!important}}
 </style>
-</helmet>
+</head>
+<body>
 
 <a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="./assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
+  <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
 </a>
 
 <!-- ===== NAV ===== -->
-<header style="position:sticky;top:0;z-index:50;background:rgba(244,244,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(20,20,20,.08)">
-  <div style="max-width:1200px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-    <span style="font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap">Dra. Nakamura</span>
+<header class="nav">
+  <div class="nav-in">
+    <span class="brand">Dra. Nakamura</span>
     <button type="button" class="mn-toggle" aria-expanded="false" aria-controls="mn-links" aria-label="Abrir menú">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#141414" stroke-linecap="round" stroke-width="1.6"/></svg>
     </button>
-    <nav class="mn-links" id="mn-links" style="display:flex;gap:28px;align-items:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6E6E6A">
-      <a href="#sobre" style="color:#6E6E6A" style-hover="color:#141414">Sobre</a>
-      <a href="#servicios" style="color:#6E6E6A" style-hover="color:#141414">Tratamientos</a>
-      <a href="#consultorio" style="color:#6E6E6A" style-hover="color:#141414">Consultorio</a>
-      <a href="{{ waLink }}" target="_blank" rel="noopener" class="mn-cta" style="color:#141414;border:1px solid #141414;padding:10px 18px;border-radius:999px;font-weight:500" style-hover="background:#141414;color:#F4F4F2">WhatsApp</a>
+    <nav class="mn-links" id="mn-links" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicios">Tratamientos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#consultorio">Consultorio</a>
+      <a class="mn-cta" href="https://wa.me/51999999999?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Nakamura" target="_blank" rel="noopener">WhatsApp</a>
     </nav>
   </div>
 </header>
 
-<!-- ===== 1. HERO — variante B: foto completa clara ===== -->
-<sc-if value="{{ heroB }}" hint-placeholder-val="{{ false }}">
-<section data-screen-label="Hero" style="position:relative;min-height:calc(100svh - 69px);display:flex;flex-direction:column;justify-content:flex-end;background:#DEDCD6;overflow:hidden">
-  <img src="./assets/hero-light.webp" alt="" aria-hidden="true" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right">
-  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(244,244,242,.92) 0%,rgba(244,244,242,.35) 38%,rgba(244,244,242,0) 65%)"></div>
-  <div style="position:relative;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box;padding:clamp(40px,6vw,72px) 28px;animation:fadeUp .7s ease both">
-    <p style="margin:0 0 14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6E6E6A">Dermatología clínica y estética — San Isidro, Lima</p>
-    <h1 style="margin:0 0 28px;font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.16;letter-spacing:.06em;text-transform:uppercase;max-width:20ch;text-wrap:balance">Piel sana y belleza natural con dermatología de especialista</h1>
-    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-      <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#141414;color:#F4F4F2;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:16px 30px;border-radius:999px" style-hover="background:#2B2B29;color:#F4F4F2">Agendar por WhatsApp →</a>
-      <span style="font-size:12px;letter-spacing:.06em;color:#6E6E6A">CMP 067214 · RNE 034118</span>
+<main>
+<!-- ===== 1. HERO ===== -->
+<section class="hero" data-hero>
+  <img class="hero-frame is-on" data-frame="0" src="assets/hero-dark.webp" alt="" aria-hidden="true" fetchpriority="high" width="1672" height="941">
+  <img class="hero-frame" data-frame="1" src="assets/hero-procedimiento.webp" alt="" aria-hidden="true" decoding="async" width="1672" height="941">
+  <img class="hero-frame" data-frame="2" src="assets/hero-resultado.webp" alt="" aria-hidden="true" decoding="async" width="1672" height="941">
+  <div class="hero-veil"></div>
+  <div class="wrap hero-in">
+    <p class="eyebrow">Dermatología clínica y estética — San Isidro, Lima</p>
+    <h1 class="h-hero">Piel sana y belleza natural con dermatología de especialista</h1>
+    <div class="hero-cta">
+      <a class="btn btn--light" href="https://wa.me/51999999999?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Nakamura" target="_blank" rel="noopener">Agendar por WhatsApp →</a>
+      <span class="hero-cred">CMP 067214 · RNE 034118</span>
+    </div>
+    <div class="hero-scenes" role="tablist" aria-label="Escenas del consultorio">
+      <button class="hero-dot" type="button" role="tab" aria-selected="true" data-scene="0" aria-label="Escena 1: consulta"></button>
+      <button class="hero-dot" type="button" role="tab" aria-selected="false" data-scene="1" aria-label="Escena 2: procedimiento"></button>
+      <button class="hero-dot" type="button" role="tab" aria-selected="false" data-scene="2" aria-label="Escena 3: resultado"></button>
+      <span class="hero-scene-label" data-scene-label>Consulta</span>
     </div>
   </div>
 </section>
-</sc-if>
-
-<!-- ===== 1. HERO — variante C: foto completa oscura ===== -->
-<sc-if value="{{ heroC }}" hint-placeholder-val="{{ false }}">
-<section data-screen-label="Hero" style="position:relative;min-height:calc(100svh - 69px);display:flex;flex-direction:column;justify-content:flex-end;background:#1C1C1A;overflow:hidden">
-  <img src="./assets/hero-dark.webp" alt="" aria-hidden="true" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;filter:grayscale(1)">
-  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(20,20,20,.85) 0%,rgba(20,20,20,.3) 42%,rgba(20,20,20,0) 70%)"></div>
-  <div style="position:relative;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box;padding:clamp(40px,6vw,72px) 28px;color:#F4F4F2;animation:fadeUp .7s ease both">
-    <p style="margin:0 0 14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,244,242,.65)">Dermatología clínica y estética — San Isidro, Lima</p>
-    <h2 style="margin:0 0 28px;font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.16;letter-spacing:.06em;text-transform:uppercase;max-width:20ch;color:#F4F4F2;text-wrap:balance">Piel sana y belleza natural con dermatología de especialista</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-      <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#F4F4F2;color:#141414;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:16px 30px;border-radius:999px" style-hover="background:#DEDCD6;color:#141414">Agendar por WhatsApp →</a>
-      <span style="font-size:12px;letter-spacing:.06em;color:rgba(244,244,242,.55)">CMP 067214 · RNE 034118</span>
-    </div>
-  </div>
-</section>
-</sc-if>
-
-<!-- ===== 1. HERO — variante A: editorial (actual) ===== -->
-<sc-if value="{{ heroA }}" hint-placeholder-val="{{ true }}">
-<section data-screen-label="Hero" style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,88px) 28px clamp(48px,7vw,80px);animation:fadeUp .7s ease both">
-  <h2 style="margin:0 0 clamp(32px,5vw,56px);font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.18;letter-spacing:.06em;text-transform:uppercase;max-width:21ch;text-wrap:balance">Piel sana <span aria-hidden="true" style="display:inline-block;width:1.6em;height:1em;border-radius:999px;background:url('./assets/perfil-piel.webp') 80% 32%/cover;vertical-align:-.15em"></span> y belleza natural con dermatología <span aria-hidden="true" style="display:inline-block;width:1.6em;height:1em;border-radius:999px;background:url('./assets/procedimiento-laser.webp') 55% 65%/cover;vertical-align:-.15em"></span> de especialista</h2>
-  <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end">
-    <a href="{{ waLink }}" target="_blank" rel="noopener" style="flex:none;display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border-bottom:1px solid #141414;padding-bottom:6px" style-hover="color:#6E6E6A;border-bottom:1px solid #6E6E6A">Agendar por WhatsApp <span style="font-size:14px">↓</span></a>
-    <div style="flex:1 1 640px;min-width:min(100%,320px)">
-      <div style="aspect-ratio:21/9;overflow:hidden">
-        <img src="./assets/hero-light.webp" alt="Retrato editorial de una paciente con piel natural" fetchpriority="high" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center right;filter:grayscale(.45)">
-      </div>
-    </div>
-  </div>
-  <p style="margin:20px 0 0;font-size:12px;letter-spacing:.08em;color:#8A8A86">Dermatología clínica y estética — San Isidro, Lima</p>
-</section>
-</sc-if>
 
 <!-- ===== 2. BARRA DE CONFIANZA ===== -->
-<section data-screen-label="Confianza" style="border-top:1px solid rgba(20,20,20,.1);border-bottom:1px solid rgba(20,20,20,.1)">
-  <div style="max-width:1200px;margin:0 auto;padding:22px 28px;display:flex;flex-wrap:wrap;gap:12px 44px;align-items:center;justify-content:space-between">
-    <sc-for list="{{ credenciales }}" as="c" hint-placeholder-count="5">
-      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6E6E6A;white-space:nowrap"><span style="color:#141414;font-weight:600">{{ c.dato }}</span> · {{ c.detalle }}</div>
-    </sc-for>
+<section class="trust" aria-label="Credenciales">
+  <div class="wrap trust-in">
+    <div class="trust-item"><b>CMP 067214</b> · Colegiada</div>
+    <div class="trust-item"><b>RNE 034118</b> · Especialista</div>
+    <div class="trust-item"><b>+12 años</b> · de experiencia</div>
+    <div class="trust-item"><b>UPCH</b> · Cayetano Heredia</div>
+    <div class="trust-item"><b>Seguros</b> · Rímac · Pacífico · Mapfre</div>
   </div>
 </section>
 
 <!-- ===== 3. SOBRE ===== -->
-<section id="sobre" data-screen-label="Sobre" style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px;display:flex;flex-wrap:wrap;gap:clamp(36px,5vw,80px)">
-  <div style="flex:1 1 380px;min-width:min(100%,320px)">
-    <h2 style="margin:0 0 28px;font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase;max-width:20ch;text-wrap:balance">Estás en manos de una especialista</h2>
-    <p style="margin:0 0 16px;font-size:14.5px;line-height:1.8;color:#4A4A46;max-width:52ch;text-wrap:pretty">Soy dermatóloga egresada de la Universidad Peruana Cayetano Heredia, con especialidad en dermatología estética y láser. Tras más de 12 años en clínicas de Lima, abrí mi consultorio en San Isidro con una idea simple: consultas donde nadie mira el reloj.</p>
-    <p style="margin:0 0 28px;font-size:14.5px;line-height:1.8;color:#4A4A46;max-width:52ch;text-wrap:pretty">No creo en tratamientos de moda ni en resultados exagerados. Creo en evaluar bien, explicar con honestidad qué funciona para tu piel — y qué no — y acompañarte en el proceso.</p>
-    <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border-bottom:1px solid #141414;padding-bottom:6px" style-hover="color:#6E6E6A;border-bottom:1px solid #6E6E6A">Conversemos por WhatsApp →</a>
-  </div>
-  <div style="flex:1 1 420px;min-width:min(100%,320px);display:grid;grid-template-columns:1fr 1.4fr;gap:16px;align-items:start">
-    <div style="aspect-ratio:3/4;margin-top:56px;overflow:hidden">
-      <img src="./assets/procedimiento-laser.webp" alt="Atención dermatológica con tecnología láser" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
+<section class="sec" id="sobre">
+  <div class="wrap split">
+    <div style="flex:1 1 380px;min-width:min(100%,320px)">
+      <h2 class="h-sec" style="margin-bottom:28px;max-width:20ch">Estás en manos de una especialista</h2>
+      <p class="p">Soy dermatóloga egresada de la Universidad Peruana Cayetano Heredia, con especialidad en dermatología estética y láser. Tras más de 12 años en clínicas de Lima, abrí mi consultorio en San Isidro con una idea simple: consultas donde nadie mira el reloj.</p>
+      <p class="p" style="margin-bottom:28px">No creo en tratamientos de moda ni en resultados exagerados. Creo en evaluar bien, explicar con honestidad qué funciona para tu piel — y qué no — y acompañarte en el proceso.</p>
+      <a class="link-u" href="https://wa.me/51999999999?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Nakamura" target="_blank" rel="noopener">Conversemos por WhatsApp →</a>
     </div>
-    <div style="aspect-ratio:3/4;overflow:hidden">
-      <img src="./assets/retrato-doctora.webp" alt="Retrato editorial de una dermatóloga en su consultorio" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
+    <div class="sobre-media">
+      <div class="ph ph--34" style="margin-top:56px"><img src="assets/procedimiento-laser.webp" alt="Atención dermatológica con tecnología láser" loading="lazy" width="1086" height="1448"></div>
+      <div class="ph ph--34"><img src="assets/retrato-doctora.webp" alt="Retrato editorial de una dermatóloga en su consultorio" loading="lazy" width="1086" height="1448"></div>
     </div>
   </div>
 </section>
 
 <!-- ===== 4. SERVICIOS ===== -->
-<section id="servicios" data-screen-label="Servicios" style="border-top:1px solid rgba(20,20,20,.1)">
-  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px;display:flex;flex-wrap:wrap;gap:clamp(36px,5vw,80px)">
+<section class="sec sec--line" id="servicios">
+  <div class="wrap split">
     <div style="flex:1 1 480px;min-width:min(100%,320px)">
-      <h2 style="margin:0 0 12px;font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase;text-wrap:balance">Tratamientos que cumplen lo que prometen</h2>
-      <p style="margin:0 0 clamp(28px,4vw,44px);font-size:13px;color:#8A8A86;letter-spacing:.04em">Toda propuesta parte de una evaluación dermatológica completa.</p>
-      <div style="display:flex;flex-direction:column">
-        <sc-for list="{{ servicios }}" as="s" hint-placeholder-count="6">
-          <div class="tratamiento-item">
-            <button class="tratamiento-control" type="button" onClick="{{ s.toggle }}" aria-expanded="{{ s.open }}">
-              <span style="min-width:0">
-                <span style="display:block;font-size:16px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px">{{ s.titulo }}</span>
-                <span style="display:block;font-size:13.5px;line-height:1.6;color:#6E6E6A;max-width:56ch;text-wrap:pretty">{{ s.desc }}</span>
-              </span>
-              <span class="tratamiento-icon" aria-hidden="true" style="flex:none;font-size:24px;font-weight:300;line-height:1;color:#6E6E6A">{{ s.simbolo }}</span>
-            </button>
-            <div class="tratamiento-panel {{ s.panelClass }}" aria-hidden="{{ s.closed }}">
-              <div class="tratamiento-panel-inner">
-                <figure style="margin:8px 0 28px;width:100%;max-width:100%;aspect-ratio:1;overflow:hidden;background:#DEDCD6">
-                  <img src="{{ s.imagen }}" alt="{{ s.alt }}" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
-                </figure>
-              </div>
+      <h2 class="h-sec" style="margin-bottom:12px">Tratamientos que cumplen lo que prometen</h2>
+      <p style="margin:0 0 clamp(28px,4vw,44px);font-size:13px;color:var(--faint);letter-spacing:.04em">Toda propuesta parte de una evaluación dermatológica completa.</p>
+      <div class="tratamientos">
+        <div class="tratamiento-item">
+          <button class="tratamiento-control" type="button" aria-expanded="false" aria-controls="trat-0">
+            <span style="min-width:0">
+              <span class="tratamiento-title">Rejuvenecimiento facial</span>
+              <span class="tratamiento-desc">Plan personalizado que combina tecnología y medicina para recuperar luminosidad y firmeza sin cambiar tu expresión.</span>
+            </span>
+            <span class="tratamiento-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="tratamiento-panel" id="trat-0" role="region" aria-label="Rejuvenecimiento facial">
+            <div class="tratamiento-panel-inner">
+              <figure class="tratamiento-fig"><img src="assets/tratamiento-rejuvenecimiento.webp" alt="Retrato editorial de piel con luminosidad natural" loading="lazy" width="1254" height="1254"></figure>
             </div>
           </div>
-        </sc-for>
-        <div style="border-top:1px solid rgba(20,20,20,.12)"></div>
+        </div>
+        <div class="tratamiento-item">
+          <button class="tratamiento-control" type="button" aria-expanded="false" aria-controls="trat-1">
+            <span style="min-width:0">
+              <span class="tratamiento-title">Láser y luz pulsada</span>
+              <span class="tratamiento-desc">Manchas, rojeces, cicatrices de acné y depilación médica con equipos certificados y protocolos para piel latina.</span>
+            </span>
+            <span class="tratamiento-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="tratamiento-panel" id="trat-1" role="region" aria-label="Láser y luz pulsada">
+            <div class="tratamiento-panel-inner">
+              <figure class="tratamiento-fig"><img src="assets/tratamiento-laser.webp" alt="Atención dermatológica con tecnología láser" loading="lazy" width="1254" height="1254"></figure>
+            </div>
+          </div>
+        </div>
+        <div class="tratamiento-item">
+          <button class="tratamiento-control" type="button" aria-expanded="false" aria-controls="trat-2">
+            <span style="min-width:0">
+              <span class="tratamiento-title">Toxina botulínica</span>
+              <span class="tratamiento-desc">Aplicación conservadora en líneas de expresión. El objetivo: verte descansada, nunca &#x27;operada&#x27;.</span>
+            </span>
+            <span class="tratamiento-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="tratamiento-panel" id="trat-2" role="region" aria-label="Toxina botulínica">
+            <div class="tratamiento-panel-inner">
+              <figure class="tratamiento-fig"><img src="assets/tratamiento-toxina.webp" alt="Evaluación de líneas de expresión antes de un tratamiento" loading="lazy" width="1254" height="1254"></figure>
+            </div>
+          </div>
+        </div>
+        <div class="tratamiento-item">
+          <button class="tratamiento-control" type="button" aria-expanded="false" aria-controls="trat-3">
+            <span style="min-width:0">
+              <span class="tratamiento-title">Rellenos con ácido hialurónico</span>
+              <span class="tratamiento-desc">Restauración sutil de volumen en labios, ojeras y surcos, con producto original y trazable.</span>
+            </span>
+            <span class="tratamiento-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="tratamiento-panel" id="trat-3" role="region" aria-label="Rellenos con ácido hialurónico">
+            <div class="tratamiento-panel-inner">
+              <figure class="tratamiento-fig"><img src="assets/tratamiento-rellenos.webp" alt="Evaluación facial para restauración sutil de volumen" loading="lazy" width="1254" height="1254"></figure>
+            </div>
+          </div>
+        </div>
+        <div class="tratamiento-item">
+          <button class="tratamiento-control" type="button" aria-expanded="false" aria-controls="trat-4">
+            <span style="min-width:0">
+              <span class="tratamiento-title">Peelings médicos</span>
+              <span class="tratamiento-desc">Renovación de la piel en profundidades controladas para manchas, poros y textura irregular.</span>
+            </span>
+            <span class="tratamiento-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="tratamiento-panel" id="trat-4" role="region" aria-label="Peelings médicos">
+            <div class="tratamiento-panel-inner">
+              <figure class="tratamiento-fig"><img src="assets/tratamiento-peeling.webp" alt="Aplicación dermatológica controlada con pincel" loading="lazy" width="1254" height="1254"></figure>
+            </div>
+          </div>
+        </div>
+        <div class="tratamiento-item">
+          <button class="tratamiento-control" type="button" aria-expanded="false" aria-controls="trat-5">
+            <span style="min-width:0">
+              <span class="tratamiento-title">Dermatología clínica</span>
+              <span class="tratamiento-desc">Acné, rosácea, caída de cabello y control de lunares con dermatoscopía. La base de todo tratamiento estético.</span>
+            </span>
+            <span class="tratamiento-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="tratamiento-panel" id="trat-5" role="region" aria-label="Dermatología clínica">
+            <div class="tratamiento-panel-inner">
+              <figure class="tratamiento-fig"><img src="assets/tratamiento-clinica.webp" alt="Evaluación de piel con dermatoscopio" loading="lazy" width="1254" height="1254"></figure>
+            </div>
+          </div>
+        </div>
       </div>
+      <div style="border-top:1px solid var(--line)"></div>
     </div>
     <div style="flex:1 1 320px;min-width:min(100%,280px);max-width:440px">
-      <div style="aspect-ratio:3/4;overflow:hidden;position:sticky;top:96px">
-        <img src="./assets/perfil-piel.webp" alt="Perfil y hombro con textura de piel natural" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
-      </div>
+      <div class="ph sticky-ph"><img src="assets/perfil-piel.webp" alt="Perfil y hombro con textura de piel natural" loading="lazy" width="1086" height="1448"></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 5. CÓMO ES LA CONSULTA ===== -->
-<section data-screen-label="Consulta" style="border-top:1px solid rgba(20,20,20,.1)">
-  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px">
-    <h2 style="margin:0 0 clamp(36px,5vw,56px);font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase">Cómo es la consulta</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0">
-      <sc-for list="{{ pasos }}" as="p" hint-placeholder-count="4">
-        <div style="padding:28px 24px 28px 0;margin-right:24px;border-top:1px solid rgba(20,20,20,.12);display:flex;flex-direction:column;gap:14px">
-          <span style="font-size:11px;letter-spacing:.16em;color:#8A8A86">{{ p.num }}</span>
-          <h3 style="margin:0;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase">{{ p.titulo }}</h3>
-          <p style="margin:0;font-size:13.5px;line-height:1.7;color:#6E6E6A;text-wrap:pretty">{{ p.desc }}</p>
+<!-- ===== 5. ANTES Y DESPUÉS ===== -->
+<section class="sec sec--line" id="resultados">
+  <div class="wrap">
+    <h2 class="h-sec">Antes y después</h2>
+    <p class="sec-note">Arrastra la línea para comparar. Casos ilustrativos creados para esta demo: no corresponden a pacientes reales. En un consultorio, cada resultado depende del tipo de piel, del diagnóstico y de la constancia del tratamiento.</p>
+    <div class="casos">
+
+      <figure class="caso">
+        <div class="ba" data-ba>
+          <img src="assets/caso-manchas-despues.webp" alt="Rostro con el tono de la piel uniforme tras el tratamiento" loading="lazy" width="896" height="1120">
+          <div class="ba-before"><img src="assets/caso-manchas-antes.webp" alt="Rostro con manchas solares difusas en los pómulos antes del tratamiento" loading="lazy" width="896" height="1120"></div>
+          <span class="ba-tag ba-tag--a">Antes</span>
+          <span class="ba-tag ba-tag--b">Después</span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" step="1" aria-label="Comparar antes y después: manchas solares">
+          <span class="ba-handle" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7l-5 5 5 5M14 7l5 5-5 5" fill="none" stroke="#F4F4F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
         </div>
-      </sc-for>
+        <figcaption class="caso-cap">
+          <h3 class="caso-title">Manchas solares en pómulos</h3>
+          <p class="caso-meta">Láser y luz pulsada · 3 sesiones · 4 meses de seguimiento · fotoprotección diaria.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="caso">
+        <div class="ba" data-ba>
+          <img src="assets/caso-lineas-despues.webp" alt="Rostro con las líneas de expresión suavizadas y la piel más luminosa" loading="lazy" width="896" height="1120">
+          <div class="ba-before"><img src="assets/caso-lineas-antes.webp" alt="Rostro con líneas de expresión marcadas en frente y entrecejo antes del tratamiento" loading="lazy" width="896" height="1120"></div>
+          <span class="ba-tag ba-tag--a">Antes</span>
+          <span class="ba-tag ba-tag--b">Después</span>
+          <input class="ba-range" type="range" min="0" max="100" value="50" step="1" aria-label="Comparar antes y después: líneas de expresión">
+          <span class="ba-handle" aria-hidden="true"><span class="ba-grip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7l-5 5 5 5M14 7l5 5-5 5" fill="none" stroke="#F4F4F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </div>
+        <figcaption class="caso-cap">
+          <h3 class="caso-title">Líneas de expresión y piel apagada</h3>
+          <p class="caso-meta">Toxina botulínica conservadora y peeling médico · 2 sesiones · 3 meses de seguimiento.</p>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. CÓMO ES LA CONSULTA ===== -->
+<section class="sec sec--line">
+  <div class="wrap">
+    <h2 class="h-sec" style="margin-bottom:clamp(36px,5vw,56px)">Cómo es la consulta</h2>
+    <div class="cols">
+      <div class="paso"><span class="paso-num">01</span><h3>Agenda por WhatsApp</h3><p>Escríbenos y coordinamos día y hora según tu disponibilidad. Te confirmamos en el día.</p></div>
+      <div class="paso"><span class="paso-num">02</span><h3>Evaluación completa</h3><p>45 minutos de consulta: historia clínica, análisis de tu piel con dermatoscopio y tus objetivos.</p></div>
+      <div class="paso"><span class="paso-num">03</span><h3>Plan a tu medida</h3><p>Recibes un plan claro con opciones, tiempos y costos transparentes. Tú decides sin presión.</p></div>
+      <div class="paso"><span class="paso-num">04</span><h3>Seguimiento real</h3><p>Controles incluidos y línea directa con el consultorio para cualquier duda entre citas.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ===== BANDA FULL-BLEED ===== -->
-<section data-screen-label="Banda" style="position:relative;background:#1E1E1C url('./assets/textura-piel.webp') center/cover no-repeat;min-height:clamp(260px,38vw,420px);display:flex;align-items:center">
-  <h2 style="max-width:1200px;margin:0 auto;padding:48px 28px;font-weight:300;font-size:clamp(28px,4.4vw,54px);line-height:1.2;letter-spacing:.08em;text-transform:uppercase;color:#F4F4F2;width:100%;box-sizing:border-box;text-wrap:balance">Resultados naturales<br><span style="padding-left:clamp(24px,8vw,120px)">para una piel sana</span></h2>
+<section class="banda">
+  <img class="banda-img" src="assets/banda-reposo.webp" alt="" aria-hidden="true" loading="lazy" width="2048" height="1146">
+  <div class="banda-veil"></div>
+  <h2>Resultados naturales<br><span>para una piel sana</span></h2>
 </section>
 
-<!-- ===== 6. TESTIMONIOS ===== -->
-<section data-screen-label="Testimonios" style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px">
-  <h2 style="margin:0 0 clamp(36px,5vw,56px);font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase">Historias de pacientes</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0">
-    <sc-for list="{{ testimonios }}" as="t" hint-placeholder-count="4">
-      <figure style="margin:0;padding:28px 28px 28px 0;margin-right:28px;border-top:1px solid rgba(20,20,20,.12);display:flex;flex-direction:column;gap:16px">
-        <blockquote style="margin:0;font-size:14.5px;line-height:1.75;color:#4A4A46;text-wrap:pretty">"{{ t.texto }}"</blockquote>
-        <figcaption style="margin-top:auto">
-          <div style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase">{{ t.nombre }}</div>
-          <div style="font-size:12px;color:#8A8A86;margin-top:2px">{{ t.detalle }}</div>
-        </figcaption>
-      </figure>
-    </sc-for>
+<!-- ===== 7. TESTIMONIOS ===== -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="h-sec" style="margin-bottom:clamp(36px,5vw,56px)">Historias de pacientes</h2>
+    <div class="cols cols--t">
+      <figure class="testi"><blockquote>"Llegué con manchas de sol que arrastraba hace años. En tres sesiones de láser la diferencia es notoria. Me explicó desde el inicio cuántas sesiones iba a necesitar, sin venderme de más."</blockquote><figcaption><div class="testi-name">María Claudia R.</div><div class="testi-detail">Láser · Miraflores</div></figcaption></figure>
+      <figure class="testi"><blockquote>"Fui por un lunar que me preocupaba y terminé haciéndome el chequeo completo de piel. La doctora se toma su tiempo, cosa rara hoy en día. Pasé todo por mi seguro Pacífico sin problema."</blockquote><figcaption><div class="testi-name">Jorge T.</div><div class="testi-detail">Dermatología clínica · San Borja</div></figcaption></figure>
+      <figure class="testi"><blockquote>"Me daba miedo quedar con cara rara. El resultado es tan natural que mis amigas solo me dicen que me veo descansada. Exactamente lo que pedí."</blockquote><figcaption><div class="testi-name">Andrea F.</div><div class="testi-detail">Toxina botulínica · San Isidro</div></figcaption></figure>
+      <figure class="testi"><blockquote>"Agendar fue lo más fácil del mundo: un WhatsApp un martes y el sábado ya estaba en consulta. Puntuales, y el plan que me armó se ajustó a mi presupuesto."</blockquote><figcaption><div class="testi-name">Lucía V.</div><div class="testi-detail">Rejuvenecimiento · La Molina</div></figcaption></figure>
+    </div>
   </div>
 </section>
 
-<!-- ===== 7. FAQ ===== -->
-<section data-screen-label="FAQ" style="border-top:1px solid rgba(20,20,20,.1)">
-  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,80px)">
+<!-- ===== 8. FAQ ===== -->
+<section class="sec sec--line">
+  <div class="wrap split" style="gap:clamp(32px,5vw,80px)">
     <div style="flex:1 1 280px;min-width:min(100%,260px)">
-      <h2 style="margin:0;font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase;max-width:14ch">Preguntas frecuentes</h2>
+      <h2 class="h-sec" style="max-width:14ch">Preguntas frecuentes</h2>
     </div>
-    <div style="flex:2 1 480px;min-width:min(100%,320px);display:flex;flex-direction:column">
-      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
-        <div style="border-top:1px solid rgba(20,20,20,.12)">
-          <button onClick="{{ f.toggle }}" style="all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:20px 0;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;letter-spacing:.04em;color:#141414;min-height:44px" style-hover="color:#6E6E6A">
-            <span>{{ f.q }}</span>
-            <span style="flex:none;font-size:18px;font-weight:300;color:#8A8A86">{{ f.simbolo }}</span>
-          </button>
-          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
-            <p style="margin:0;padding:0 0 22px;font-size:13.5px;line-height:1.75;color:#6E6E6A;max-width:60ch;text-wrap:pretty">{{ f.a }}</p>
-          </sc-if>
-        </div>
-      </sc-for>
-      <div style="border-top:1px solid rgba(20,20,20,.12)"></div>
+    <div class="faqs" style="flex:2 1 480px;min-width:min(100%,320px);display:flex;flex-direction:column">
+      <div class="faq-item is-open">
+        <button class="faq-q" type="button" aria-expanded="true" aria-controls="faq-0">
+          <span>¿Atienden con mi seguro?</span><span class="faq-icon" aria-hidden="true">–</span>
+        </button>
+        <p class="faq-a" id="faq-0">Trabajamos con Rímac, Pacífico y Mapfre para consultas y procedimientos de dermatología clínica. Los tratamientos estéticos son de atención particular. Escríbenos con el nombre de tu plan y te confirmamos la cobertura antes de tu cita.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-1">
+          <span>¿Cuánto dura la primera consulta?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <p class="faq-a" id="faq-1">Aproximadamente 45 minutos. Incluye historia clínica, evaluación completa de tu piel con dermatoscopio y una propuesta de plan de tratamiento con costos claros.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-2">
+          <span>¿Atienden los sábados?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <p class="faq-a" id="faq-2">Sí, de 9:00 a. m. a 1:00 p. m. Son los horarios más solicitados, así que te recomendamos agendar con al menos una semana de anticipación.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-3">
+          <span>¿Cómo agendo una cita?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <p class="faq-a" id="faq-3">Solo por WhatsApp. Nos escribes, te proponemos horarios disponibles y confirmas. Todo el proceso toma menos de cinco minutos, sin formularios ni llamadas.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-4">
+          <span>¿La primera cita incluye evaluación completa?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <p class="faq-a" id="faq-4">Sí. Nunca aplicamos un procedimiento estético sin antes evaluar tu piel. Si vienes por estética, la evaluación dermatológica está incluida en esa primera consulta.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-5">
+          <span>¿Los procedimientos los realiza la doctora?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <p class="faq-a" id="faq-5">Sí, todos los procedimientos médicos y estéticos los realiza personalmente la Dra. Nakamura. El personal de apoyo solo asiste en la preparación.</p>
+      </div>
+      <div style="border-top:1px solid var(--line)"></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 8. CONSULTORIO ===== -->
-<section id="consultorio" data-screen-label="Ubicacion" style="border-top:1px solid rgba(20,20,20,.1)">
-  <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,120px) 28px">
-    <h2 style="margin:0 0 clamp(36px,5vw,56px);font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.25;letter-spacing:.06em;text-transform:uppercase">El consultorio</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px)">
+<!-- ===== 9. CONSULTORIO ===== -->
+<section class="sec sec--line" id="consultorio">
+  <div class="wrap">
+    <h2 class="h-sec" style="margin-bottom:clamp(36px,5vw,56px)">El consultorio</h2>
+    <div class="split" style="gap:clamp(28px,4vw,56px)">
       <div style="flex:1.4 1 420px;min-width:min(100%,320px);display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div style="aspect-ratio:4/5;overflow:hidden">
-          <img src="./assets/sala-espera.webp" alt="Sala de espera del consultorio con luz natural" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">
-        </div>
-        <div style="aspect-ratio:4/5;overflow:hidden;background:#D6D4CE">
+        <div class="ph ph--45"><img src="assets/sala-espera.webp" alt="Sala de espera del consultorio con luz natural" loading="lazy" width="1122" height="1402"></div>
+        <div class="ph ph--45" style="background:#D6D4CE">
           <iframe title="Mapa de Av. Conquistadores 456, San Isidro, Lima" src="https://www.google.com/maps?q=Av.+Conquistadores+456,+San+Isidro,+Lima&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="display:block;width:100%;height:100%;border:0"></iframe>
         </div>
       </div>
       <div style="flex:1 1 300px;min-width:min(100%,280px);display:flex;flex-direction:column;gap:24px;justify-content:center">
-        <div style="border-top:1px solid rgba(20,20,20,.12);padding-top:16px">
-          <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A86;margin-bottom:6px">Dirección</div>
-          <div style="font-size:14.5px;line-height:1.6;color:#4A4A46">Av. Conquistadores 456, Of. 302<br>San Isidro, Lima — a pasos del Olivar</div>
-        </div>
-        <div style="border-top:1px solid rgba(20,20,20,.12);padding-top:16px">
-          <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A86;margin-bottom:6px">Horarios</div>
-          <div style="font-size:14.5px;line-height:1.6;color:#4A4A46">Lun – Vie: 9:00 a. m. – 7:00 p. m.<br>Sábados: 9:00 a. m. – 1:00 p. m.</div>
-        </div>
-        <div style="border-top:1px solid rgba(20,20,20,.12);padding-top:16px">
-          <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A86;margin-bottom:6px">Reservas</div>
-          <div style="font-size:14.5px;line-height:1.6;color:#4A4A46">Solo por WhatsApp: {{ telefonoDisplay }}<br>Atención particular y por seguros<br>Cochera para pacientes</div>
-        </div>
+        <div class="dato"><div class="dato-k">Dirección</div><div class="dato-v">Av. Conquistadores 456, Of. 302<br>San Isidro, Lima — a pasos del Olivar</div></div>
+        <div class="dato"><div class="dato-k">Horarios</div><div class="dato-v">Lun – Vie: 9:00 a. m. – 7:00 p. m.<br>Sábados: 9:00 a. m. – 1:00 p. m.</div></div>
+        <div class="dato"><div class="dato-k">Reservas</div><div class="dato-v">Solo por WhatsApp: +51 999 999 999<br>Atención particular y por seguros<br>Cochera para pacientes</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 9. CIERRE ===== -->
-<section data-screen-label="Cierre" style="background:#1E1E1C;color:#F4F4F2">
-  <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,130px) 28px;text-align:center">
-    <h2 style="margin:0 0 20px;font-weight:300;font-size:clamp(28px,4.4vw,54px);line-height:1.2;letter-spacing:.08em;text-transform:uppercase;text-wrap:balance">Tu piel merece una evaluación de especialista</h2>
-    <p style="margin:0 auto 40px;font-size:14.5px;line-height:1.7;color:rgba(244,244,242,.6);max-width:46ch;text-wrap:pretty">Escríbenos por WhatsApp y coordina tu cita en menos de cinco minutos. Sin formularios, sin llamadas en espera.</p>
-    <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;border:1px solid #F4F4F2;color:#F4F4F2;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:18px 36px;border-radius:999px" style-hover="background:#F4F4F2;color:#1E1E1C">Agendar por WhatsApp →</a>
-    <p style="margin:24px 0 0;font-size:12px;letter-spacing:.06em;color:rgba(244,244,242,.45)">{{ telefonoDisplay }} · Respuesta en horario de atención</p>
+<!-- ===== 10. PREPARA TU CONSULTA ===== -->
+<section class="sec sec--line" id="pre-consulta">
+  <div class="wrap split">
+    <div style="flex:1 1 380px;min-width:min(100%,320px)">
+      <h2 class="h-sec" style="margin-bottom:28px;max-width:18ch">Prepara tu consulta</h2>
+      <p class="p">Sigues agendando por WhatsApp, como siempre. Esto solo arma el mensaje por ti para que llegues a la primera cita con lo que la doctora necesita saber.</p>
+      <p class="form-note">Nada se envía ni se guarda en esta página. Al pulsar el botón se abre WhatsApp con el texto ya escrito: tú lo lees y decides si lo mandas.</p>
+      <noscript><p class="form-note">Con JavaScript desactivado el botón no puede armar el mensaje. Escríbenos directamente a <a href="https://wa.me/51999999999" target="_blank" rel="noopener">wa.me/51999999999</a>.</p></noscript>
+    </div>
+    <form class="form" id="pre-consulta-form" style="flex:1 1 420px;min-width:min(100%,320px)">
+      <div class="field">
+        <label for="pc-nombre">Tu nombre</label>
+        <input id="pc-nombre" name="nombre" type="text" autocomplete="name" placeholder="Nombre y apellido" required>
+      </div>
+      <div class="field">
+        <label for="pc-motivo">¿Qué te trae a consulta?</label>
+        <select id="pc-motivo" name="motivo" required>
+          <option value="">Elige una opción</option>
+          <option>Manchas o melasma</option>
+          <option>Acné y cicatrices</option>
+          <option>Líneas de expresión</option>
+          <option>Rellenos y volumen</option>
+          <option>Caída de cabello</option>
+          <option>Control de lunares</option>
+          <option>Aún no lo tengo claro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="pc-previos">¿Te has hecho algún tratamiento antes?</label>
+        <select id="pc-previos" name="previos" required>
+          <option value="">Elige una opción</option>
+          <option>No, sería la primera vez</option>
+          <option>Sí, hace menos de un año</option>
+          <option>Sí, hace más de un año</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="pc-horario">¿Cuándo te acomoda?</label>
+        <select id="pc-horario" name="horario" required>
+          <option value="">Elige una opción</option>
+          <option>Mañanas entre semana</option>
+          <option>Tardes entre semana</option>
+          <option>Sábado por la mañana</option>
+          <option>Me acomodo a lo que haya</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="pc-nota">¿Algo más que deba saber? (opcional)</label>
+        <textarea id="pc-nota" name="nota" placeholder="Alergias, medicación, embarazo o lactancia, tratamientos en curso"></textarea>
+      </div>
+      <button class="btn" type="submit">Abrir WhatsApp con mi mensaje →</button>
+      <p class="form-status" id="pc-status" role="status" aria-live="polite"></p>
+    </form>
   </div>
-  <div style="border-top:1px solid rgba(244,244,242,.14)">
-    <div style="max-width:1200px;margin:0 auto;padding:24px 28px;display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,244,242,.5)">
-      <span style="color:rgba(244,244,242,.85);font-weight:600">Dra. Valeria Nakamura</span>
+</section>
+</main>
+
+<!-- ===== 11. CIERRE ===== -->
+<section class="cierre on-dark">
+  <div class="wrap cierre-in">
+    <h2>Tu piel merece una evaluación de especialista</h2>
+    <p>Escríbenos por WhatsApp y coordina tu cita en menos de cinco minutos. Sin formularios, sin llamadas en espera.</p>
+    <a class="btn btn--ghost" href="https://wa.me/51999999999?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Nakamura" target="_blank" rel="noopener">Agendar por WhatsApp →</a>
+    <p class="cierre-tel">+51 999 999 999 · Respuesta en horario de atención</p>
+  </div>
+  <div class="foot">
+    <div class="foot-in">
+      <b>Dra. Valeria Nakamura</b>
       <span>CMP 067214 · RNE 034118</span>
       <span>San Isidro — Lima, Perú</span>
-      <strong>Diseñado por <a href="https://nozoestudio.com" target="_blank" rel="noopener" style="color:#F4F4F2;text-decoration:underline;text-underline-offset:3px">Nozoe Studio</a></strong>
+      <strong>Diseñado por <a href="https://nozoestudio.com" target="_blank" rel="noopener">Nozoe Studio</a></strong>
     </div>
   </div>
 </section>
 
-<!-- ===== BOTÓN FLOTANTE WHATSAPP ===== -->
-<a href="{{ waLink }}" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp" style="position:fixed;right:20px;bottom:20px;z-index:100;display:inline-flex;align-items:center;gap:10px;background:#1E1E1C;color:#F4F4F2;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:15px 22px;border-radius:999px;box-shadow:0 12px 30px rgba(20,20,20,.3)" style-hover="background:#141414;color:#F4F4F2;transform:translateY(-2px)">
-  <span style="width:8px;height:8px;border-radius:50%;background:#F4F4F2"></span>
-  WhatsApp
+<a class="wa" href="https://wa.me/51999999999?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Nakamura" target="_blank" rel="noopener" aria-label="Agendar por WhatsApp">
+  <span></span>WhatsApp
 </a>
-</x-dc>
+
 <script>
 (function(){
+  'use strict';
+  var WA = 'https://wa.me/51999999999?text=';
+
+  /* ---------- menú móvil ---------- */
+  var links = document.getElementById('mn-links');
+  var toggle = document.querySelector('.mn-toggle');
   function closeMenu(){
-    var links = document.getElementById('mn-links');
-    var btn = document.querySelector('.mn-toggle');
-    if (!links || !btn) return;
+    if(!links || !toggle) return;
     links.classList.remove('is-open');
-    btn.setAttribute('aria-expanded','false');
-    btn.setAttribute('aria-label','Abrir menú');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Abrir menú');
     document.body.classList.remove('menu-open');
   }
   document.addEventListener('click', function(e){
     var btn = e.target.closest('.mn-toggle');
-    if (btn){
-      var links = document.getElementById('mn-links');
-      if (!links) return;
+    if(btn){
       var open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
       btn.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
@@ -324,88 +664,115 @@ body.menu-open{overflow:hidden}
       document.body.classList.toggle('menu-open', !open);
       return;
     }
-    if (e.target.closest('#mn-links a')) closeMenu();
+    if(e.target.closest('#mn-links a')) closeMenu();
   });
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') { closeMenu(); var b = document.querySelector('.mn-toggle'); if (b) b.focus(); }
+    if(e.key === 'Escape'){ closeMenu(); if(toggle) toggle.focus(); }
   });
-})();
-</script>
-<script type="text/x-dc" data-dc-script data-props="{&quot;heroVariant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Editorial (actual)&quot;,&quot;Foto completa clara&quot;,&quot;Foto completa oscura&quot;],&quot;default&quot;:&quot;Foto completa oscura&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;whatsappNumero&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;+51 999 999 999&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;}}">
-class Component extends DCLogic {
-  state = { openFaq: 0, openServicio: -1 };
 
-  credenciales = [
-    { dato: "CMP 067214", detalle: "Colegiada" },
-    { dato: "RNE 034118", detalle: "Especialista" },
-    { dato: "+12 años", detalle: "de experiencia" },
-    { dato: "UPCH", detalle: "Cayetano Heredia" },
-    { dato: "Seguros", detalle: "Rímac · Pacífico · Mapfre" },
-  ];
-
-  servicios = [
-    { titulo: "Rejuvenecimiento facial", desc: "Plan personalizado que combina tecnología y medicina para recuperar luminosidad y firmeza sin cambiar tu expresión.", imagen: "./assets/tratamiento-rejuvenecimiento.webp", alt: "Retrato editorial de piel con luminosidad natural" },
-    { titulo: "Láser y luz pulsada", desc: "Manchas, rojeces, cicatrices de acné y depilación médica con equipos certificados y protocolos para piel latina.", imagen: "./assets/tratamiento-laser.webp", alt: "Atención dermatológica con tecnología láser" },
-    { titulo: "Toxina botulínica", desc: "Aplicación conservadora en líneas de expresión. El objetivo: verte descansada, nunca 'operada'.", imagen: "./assets/tratamiento-toxina.webp", alt: "Evaluación de líneas de expresión antes de un tratamiento" },
-    { titulo: "Rellenos con ácido hialurónico", desc: "Restauración sutil de volumen en labios, ojeras y surcos, con producto original y trazable.", imagen: "./assets/tratamiento-rellenos.webp", alt: "Evaluación facial para restauración sutil de volumen" },
-    { titulo: "Peelings médicos", desc: "Renovación de la piel en profundidades controladas para manchas, poros y textura irregular.", imagen: "./assets/tratamiento-peeling.webp", alt: "Aplicación dermatológica controlada con pincel" },
-    { titulo: "Dermatología clínica", desc: "Acné, rosácea, caída de cabello y control de lunares con dermatoscopía. La base de todo tratamiento estético.", imagen: "./assets/tratamiento-clinica.webp", alt: "Evaluación de piel con dermatoscopio" },
-  ];
-
-  pasos = [
-    { num: "01", titulo: "Agenda por WhatsApp", desc: "Escríbenos y coordinamos día y hora según tu disponibilidad. Te confirmamos en el día." },
-    { num: "02", titulo: "Evaluación completa", desc: "45 minutos de consulta: historia clínica, análisis de tu piel con dermatoscopio y tus objetivos." },
-    { num: "03", titulo: "Plan a tu medida", desc: "Recibes un plan claro con opciones, tiempos y costos transparentes. Tú decides sin presión." },
-    { num: "04", titulo: "Seguimiento real", desc: "Controles incluidos y línea directa con el consultorio para cualquier duda entre citas." },
-  ];
-
-  testimonios = [
-    { nombre: "María Claudia R.", detalle: "Láser · Miraflores", texto: "Llegué con manchas de sol que arrastraba hace años. En tres sesiones de láser la diferencia es notoria. Me explicó desde el inicio cuántas sesiones iba a necesitar, sin venderme de más." },
-    { nombre: "Jorge T.", detalle: "Dermatología clínica · San Borja", texto: "Fui por un lunar que me preocupaba y terminé haciéndome el chequeo completo de piel. La doctora se toma su tiempo, cosa rara hoy en día. Pasé todo por mi seguro Pacífico sin problema." },
-    { nombre: "Andrea F.", detalle: "Toxina botulínica · San Isidro", texto: "Me daba miedo quedar con cara rara. El resultado es tan natural que mis amigas solo me dicen que me veo descansada. Exactamente lo que pedí." },
-    { nombre: "Lucía V.", detalle: "Rejuvenecimiento · La Molina", texto: "Agendar fue lo más fácil del mundo: un WhatsApp un martes y el sábado ya estaba en consulta. Puntuales, y el plan que me armó se ajustó a mi presupuesto." },
-  ];
-
-  faqs = [
-    { q: "¿Atienden con mi seguro?", a: "Trabajamos con Rímac, Pacífico y Mapfre para consultas y procedimientos de dermatología clínica. Los tratamientos estéticos son de atención particular. Escríbenos con el nombre de tu plan y te confirmamos la cobertura antes de tu cita." },
-    { q: "¿Cuánto dura la primera consulta?", a: "Aproximadamente 45 minutos. Incluye historia clínica, evaluación completa de tu piel con dermatoscopio y una propuesta de plan de tratamiento con costos claros." },
-    { q: "¿Atienden los sábados?", a: "Sí, de 9:00 a. m. a 1:00 p. m. Son los horarios más solicitados, así que te recomendamos agendar con al menos una semana de anticipación." },
-    { q: "¿Cómo agendo una cita?", a: "Solo por WhatsApp. Nos escribes, te proponemos horarios disponibles y confirmas. Todo el proceso toma menos de cinco minutos, sin formularios ni llamadas." },
-    { q: "¿La primera cita incluye evaluación completa?", a: "Sí. Nunca aplicamos un procedimiento estético sin antes evaluar tu piel. Si vienes por estética, la evaluación dermatológica está incluida en esa primera consulta." },
-    { q: "¿Los procedimientos los realiza la doctora?", a: "Sí, todos los procedimientos médicos y estéticos los realiza personalmente la Dra. Nakamura. El personal de apoyo solo asiste en la preparación." },
-  ];
-
-  renderVals() {
-    const numero = (this.props.whatsappNumero ?? "+51 999 999 999");
-    const digits = numero.replace(/\D/g, "");
-    const msg = encodeURIComponent("Hola, quisiera agendar una consulta con la Dra. Nakamura");
-    const variante = this.props.heroVariant ?? "Editorial (actual)";
-    return {
-      heroA: variante === "Editorial (actual)",
-      heroB: variante === "Foto completa clara",
-      heroC: variante === "Foto completa oscura",
-      waLink: `https://wa.me/${digits}?text=${msg}`,
-      telefonoDisplay: numero,
-      credenciales: this.credenciales,
-      servicios: this.servicios.map((s, i) => ({
-        ...s,
-        open: this.state.openServicio === i,
-        closed: this.state.openServicio !== i,
-        panelClass: this.state.openServicio === i ? "is-open" : "",
-        simbolo: this.state.openServicio === i ? "–" : "+",
-        toggle: () => this.setState(state => ({ openServicio: state.openServicio === i ? -1 : i })),
-      })),
-      pasos: this.pasos,
-      testimonios: this.testimonios,
-      faqs: this.faqs.map((f, i) => ({
-        ...f,
-        open: this.state.openFaq === i,
-        simbolo: this.state.openFaq === i ? "–" : "+",
-        toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })),
-      })),
-    };
+  /* ---------- tratamientos (el marcado ya está en el HTML) ---------- */
+  var host = document.querySelector('.tratamientos');
+  if(host){
+    host.addEventListener('click', function(e){
+      var btn = e.target.closest('.tratamiento-control');
+      if(!btn) return;
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      host.querySelectorAll('.tratamiento-control').forEach(function(b){
+        b.setAttribute('aria-expanded','false');
+        b.querySelector('.tratamiento-icon').textContent = '+';
+      });
+      host.querySelectorAll('.tratamiento-panel').forEach(function(p){ p.classList.remove('is-open'); });
+      if(!open){
+        btn.setAttribute('aria-expanded','true');
+        btn.querySelector('.tratamiento-icon').textContent = '\u2013';
+        panel.classList.add('is-open');
+      }
+    });
   }
-}
+
+  /* ---------- faq (el marcado ya está en el HTML) ---------- */
+  var faqHost = document.querySelector('.faqs');
+  if(faqHost){
+    faqHost.addEventListener('click', function(e){
+      var btn = e.target.closest('.faq-q');
+      if(!btn) return;
+      var item = btn.closest('.faq-item');
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.querySelector('.faq-icon').textContent = open ? '+' : '\u2013';
+      item.classList.toggle('is-open', !open);
+    });
+  }
+
+  /* ---------- hero: tres escenas ---------- */
+  var hero = document.querySelector('[data-hero]');
+  if(hero){
+    var frames = hero.querySelectorAll('.hero-frame');
+    var dots = hero.querySelectorAll('.hero-dot');
+    var label = hero.querySelector('[data-scene-label]');
+    var NAMES = ['Consulta','Procedimiento','Resultado'];
+    var i = 0, timer = null, paused = false;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function show(n){
+      i = (n + frames.length) % frames.length;
+      frames.forEach(function(f, k){ f.classList.toggle('is-on', k === i); });
+      dots.forEach(function(d, k){ d.setAttribute('aria-selected', String(k === i)); });
+      if(label) label.textContent = NAMES[i];
+    }
+    function tick(){ if(!paused && !document.hidden) show(i + 1); }
+    function start(){ if(reduce.matches || timer) return; timer = setInterval(tick, 5000); }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+
+    dots.forEach(function(d){
+      d.addEventListener('click', function(){ show(Number(d.dataset.scene)); });
+    });
+    hero.addEventListener('pointerenter', function(){ paused = true; });
+    hero.addEventListener('pointerleave', function(){ paused = false; });
+    hero.addEventListener('focusin', function(){ paused = true; });
+    hero.addEventListener('focusout', function(){ paused = false; });
+    document.addEventListener('visibilitychange', function(){ if(document.hidden) stop(); else start(); });
+    reduce.addEventListener('change', function(){ reduce.matches ? stop() : start(); });
+    start();
+  }
+
+  /* ---------- antes / después ---------- */
+  document.querySelectorAll('[data-ba]').forEach(function(ba){
+    var range = ba.querySelector('.ba-range');
+    if(!range) return;
+    function sync(){ ba.style.setProperty('--p', range.value + '%'); }
+    range.addEventListener('input', sync);
+    sync();
+  });
+
+  /* ---------- prepara tu consulta ---------- */
+  var form = document.getElementById('pre-consulta-form');
+  if(form){
+    var status = document.getElementById('pc-status');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!form.reportValidity()) return;
+      var d = new FormData(form);
+      var lineas = [
+        'Hola, quisiera agendar una consulta con la Dra. Nakamura.',
+        '',
+        'Nombre: ' + (d.get('nombre') || '').trim(),
+        'Motivo: ' + d.get('motivo'),
+        'Tratamientos previos: ' + d.get('previos'),
+        'Disponibilidad: ' + d.get('horario')
+      ];
+      var nota = (d.get('nota') || '').trim();
+      if(nota) lineas.push('Nota: ' + nota);
+      var win = window.open(WA + encodeURIComponent(lineas.join('\n')), '_blank', 'noopener');
+      if(status){
+        status.textContent = win
+          ? 'Listo: abrimos WhatsApp en otra pestaña con tu mensaje ya escrito. Revísalo antes de enviarlo.'
+          : 'Tu navegador bloqueó la ventana emergente. Permítela o escríbenos a wa.me/51999999999.';
+      }
+    });
+  }
+})();
 </script>
 </body>
 </html>
