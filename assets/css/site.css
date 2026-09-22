@@ -6184,3 +6184,29 @@ body.pg-servicio.hdr-over-hero .nav-logo img.nav-logo-color { opacity: 0; }
   background: color-mix(in srgb, var(--ns-warm-200) 22%, transparent);
   border-color: color-mix(in srgb, var(--ns-warm-200) 40%, transparent);
 }
+
+/* ═══════════════════════════════════════════════════════
+   NAV · Menú hamburguesa hasta 900 px
+   Entre 601 y ~880 px el menú horizontal, el logo y el botón de WhatsApp
+   no caben en una línea: el botón se salía de la pantalla y el sitio entero
+   scrolleaba en horizontal (a 768 px la página medía 881 px).
+   El corte del hamburguesa sube de 600 a 900 px. Va al final del archivo,
+   después de los bloques de cada página, para ganarles por orden.
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--ns-surface-base);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid rgba(139,157,183,0.22);
+    z-index: 99;
+    gap: 4px;
+    box-shadow: 0 8px 24px rgba(29,42,64,0.1);
+  }
+  .nav-link { height: 44px; font-size: 13px; }
+  .nav-ham { display: flex; }
+}
