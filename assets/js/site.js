@@ -295,7 +295,8 @@ document.addEventListener('DOMContentLoaded', function() {
    Compartida por el home y trabajo.html: se engancha a cualquier .proj-card
    que tenga un .proj-thumb con imagen. Las tarjetas con data-caso navegan a
    su caso de estudio en vez de abrir el modal, y las que declaran data-full
-   amplían esa versión en vez de la miniatura. */
+   amplían esa versión en vez de la miniatura. Con data-modal-link la pieza sí
+   abre el modal y además muestra un enlace a su caso en la descripción. */
 document.addEventListener('DOMContentLoaded', function() {
   const cards = document.querySelectorAll('.proj-card');
 
@@ -304,6 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const modalSlot  = document.getElementById('modal-thumb-slot');
   const modalLabel = document.getElementById('modal-label');
   const modalYear  = document.getElementById('modal-year');
+  const modalLink  = document.getElementById('modal-link');
 
   function closeModal() {
     if (!modal) return;
@@ -333,14 +335,29 @@ document.addEventListener('DOMContentLoaded', function() {
           img.alt = alt;
           // Nunca ampliar por encima de la resolución nativa: si el original
           // es menor que el hueco disponible, se muestra más pequeño pero nítido.
+          // El tope de 100% se repite aquí porque el estilo en línea gana al de
+          // la hoja: sin él, una pieza vertical en móvil se sale del modal.
           img.addEventListener('load', function() {
-            if (img.naturalWidth) img.style.maxWidth = img.naturalWidth + 'px';
+            if (img.naturalWidth) img.style.maxWidth = 'min(100%, ' + img.naturalWidth + 'px)';
           });
           // el resto de estilos vive en CSS (.modal-inner img)
           modalSlot.appendChild(img);
         }
         if (modalLabel) modalLabel.textContent = name ? name.textContent : '';
         if (modalYear)  modalYear.textContent  = tags ? tags.textContent : '';
+
+        // Enlace opcional al caso de estudio de la pieza ampliada
+        if (modalLink) {
+          const href = card.dataset.modalLink;
+          if (href) {
+            modalLink.href = href;
+            modalLink.textContent = card.dataset.modalLinkText || 'Ver el caso';
+            modalLink.hidden = false;
+          } else {
+            modalLink.hidden = true;
+            modalLink.removeAttribute('href');
+          }
+        }
 
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';

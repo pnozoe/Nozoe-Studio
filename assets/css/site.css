@@ -4003,7 +4003,9 @@ body.hdr-over-hero .nav-links.open .nav-link:hover {
 .proj-modal.active .modal-inner { transform: translateY(0); }
 .modal-inner img {
   display: block;
-  max-width: 92vw;
+  /* 100% del hueco real: el overlay ya descuenta sus 40px de padding, así que
+     un tope en vw se pasaba de ancho y recortaba las piezas verticales. */
+  max-width: 100%;
   /* descuenta la altura aproximada del .modal-meta (≈42px) */
   max-height: calc(92vh - 50px);
   width: auto;
@@ -4015,6 +4017,9 @@ body.hdr-over-hero .nav-links.open .nav-link:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* Con el enlace al caso la barra no cabe en una línea en móvil */
+  flex-wrap: wrap;
+  gap: var(--ns-space-2) var(--ns-space-4);
   padding: 14px 20px;
   background: rgba(29,42,64,0.95);
   font: 600 10px/1 var(--ns-font-sans);
@@ -4024,6 +4029,25 @@ body.hdr-over-hero .nav-links.open .nav-link:hover {
   flex-shrink: 0;
 }
 .modal-meta-year { color: rgba(139,157,183,0.55); }
+.modal-meta-right {
+  display: flex;
+  align-items: center;
+  gap: var(--ns-space-3);
+}
+/* Enlace al caso de estudio de la pieza ampliada.
+   El .modal-meta tiene fondo navy fijo en ambos temas, así que aquí no sirve
+   un token semántico de texto: se usa el primitivo que sí contrasta (AA) sobre
+   ese fondo. */
+.modal-meta-link {
+  color: var(--ns-surface-base);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ns-orange-400);
+  padding-bottom: 2px;
+  letter-spacing: 0.1em;
+  transition: color 150ms var(--ns-ease-out), border-color 150ms var(--ns-ease-out);
+}
+.modal-meta-link:hover { color: var(--ns-orange-300); border-color: var(--ns-orange-300); }
+.modal-meta-link[hidden] { display: none; }
 
 /* Load more */
 /* ══ STATS ══ */
