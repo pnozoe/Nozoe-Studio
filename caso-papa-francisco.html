@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logotipo oficial Papa Francisco Perú 2018 | Nozoe Studio</title>
-<meta name="description" content="Logotipo oficial y manual de identidad para la visita del Papa Francisco al Perú en 2018. Dos semanas, un diseñador: proceso y decisiones.">
-<meta property="og:title" content="Logotipo oficial Papa Francisco Perú 2018 | Nozoe Studio">
-<meta property="og:description" content="El logotipo oficial de la visita papal al Perú y el manual que tuvo que sostenerlo. Dos semanas de la primera propuesta al manual cerrado.">
+<title>Identidad oficial Papa Francisco Perú 2018 | Nozoe Studio</title>
+<meta name="description" content="Logotipo oficial, manual de identidad y despliegue gráfico de la visita del Papa Francisco al Perú en 2018: de la sede de prensa a la medalla del BCRP.">
+<meta property="og:title" content="Identidad oficial Papa Francisco Perú 2018 | Nozoe Studio">
+<meta property="og:description" content="El logotipo oficial de la visita papal al Perú, el manual que lo sostuvo y el despliegue que lo llevó de 20 cm a 8 metros y a una medalla de 37 mm.">
 <meta property="og:image" content="https://nozoestudio.com/assets/casos/papa-francisco/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -17,15 +17,16 @@
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Nozoe Studio">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Logotipo oficial Papa Francisco Perú 2018">
-<meta name="twitter:description" content="El logotipo oficial de la visita papal al Perú y el manual que tuvo que sostenerlo.">
+<meta name="twitter:title" content="Identidad oficial Papa Francisco Perú 2018">
+<meta name="twitter:description" content="El logotipo oficial de la visita papal al Perú, el manual que lo sostuvo y su despliegue: de la sede de prensa a la medalla.">
 <meta name="twitter:image" content="https://nozoestudio.com/assets/casos/papa-francisco/og.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Papa Francisco Perú 2018 · Identidad oficial",
-  "description": "Diseño del logotipo oficial y el manual de identidad para la visita del Papa Francisco al Perú, enero de 2018.",
+  "headline": "Papa Francisco Perú 2018 · Identidad oficial, manual y despliegue",
+  "description": "Diseño del logotipo oficial, el manual de identidad y el despliegue gráfico de la visita del Papa Francisco al Perú, enero de 2018: Centro Internacional de Prensa, señalética, piezas impresas y medalla conmemorativa.",
+  "dateModified": "2026-10-08",
   "inLanguage": "es",
   "author": { "@id": "https://nozoestudio.com/#pedro-nozoe" },
   "publisher": { "@id": "https://nozoestudio.com/#organization" },
@@ -34,8 +35,10 @@
     "name": "Identidad visual — Visita del Papa Francisco al Perú 2018",
     "creator": { "@id": "https://nozoestudio.com/#pedro-nozoe" },
     "dateCreated": "2017",
-    "genre": "Diseño de identidad visual"
+    "genre": "Diseño de identidad visual",
+    "sourceOrganization": { "@type": "Organization", "name": "Conferencia Episcopal Peruana" }
   },
+  "keywords": ["logotipo oficial", "visita papal", "Papa Francisco", "Perú 2018", "manual de identidad", "señalética", "Centro Internacional de Prensa", "identidad de eventos"],
   "image": "https://nozoestudio.com/assets/casos/papa-francisco/og.jpg",
   "mainEntityOfPage": "https://nozoestudio.com/caso-papa-francisco"
 }
@@ -45,7 +48,7 @@
 <link rel="preload" href="assets/fonts/nunito-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css?v=20260816a">
 <link rel="stylesheet" href="assets/css/site.css?v=20261007a">
-<link rel="stylesheet" href="assets/css/caso-papa-francisco.css">
+<link rel="stylesheet" href="assets/css/caso-papa-francisco.css?v=20261008a">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7VG5XMC7"></script>
 <script>
@@ -82,7 +85,7 @@
   </nav>
 </header>
 
-<main id="contenido" class="caso-page">
+<main id="contenido" class="caso-page caso-pf">
 
 <!-- Breadcrumb -->
 <div class="breadcrumb">
@@ -96,347 +99,879 @@
 </div>
 
 <!-- ══ HERO ══ -->
-<section class="case-hero" id="intro">
-  <div class="wrap">
-    <div class="anim d1">
-      <div class="hero-badge">
-        <span>†</span>
-        <span>Unidos por la esperanza</span>
+<section class="case-hero pf-hero" id="intro">
+  <!-- Fondo: bucle de 19 s hecho con fotos del montaje (plaza → tótems →
+       vestíbulo → prensa → mural → medalla), sin sonido. El póster se ve
+       mientras carga y con "reducir movimiento" activado. -->
+  <div class="pf-hero-media" aria-hidden="true">
+    <video class="pf-hero-video" autoplay muted loop playsinline preload="auto"
+           poster="assets/casos/papa-francisco/hero/caso-pf-hero-poster.webp">
+      <source src="assets/casos/papa-francisco/hero/caso-pf-hero-720.mp4" type="video/mp4" media="(max-width: 767px)">
+      <source src="assets/casos/papa-francisco/hero/caso-pf-hero-1080.webm" type="video/webm">
+      <source src="assets/casos/papa-francisco/hero/caso-pf-hero-1080.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="pf-hero-shade" aria-hidden="true"></div>
+
+  <div class="wrap pf-hero-inner">
+    <div class="pf-hero-copy">
+      <div class="anim d1">
+        <div class="hero-badge">
+          <span>†</span>
+          <span>Unidos por la esperanza</span>
+        </div>
       </div>
+      <h1 class="case-title anim d2">Papa Francisco<br>Perú 2018<span class="hl-em">.</span></h1>
+      <p class="case-subtitle anim d2">Identidad · Manual · Despliegue · 2017–2018 · Perú</p>
+      <p class="case-desc anim d3">
+        El logotipo oficial de la visita del Papa Francisco al Perú, y el manual
+        que tuvo que sostenerlo cuando dejó de estar en nuestras manos.
+      </p>
     </div>
-    <h1 class="case-title anim d2">Papa Francisco<br>Perú 2018<span class="hl-em">.</span></h1>
-    <p class="case-subtitle anim d2">Identidad + Manual · 2017–2018 · Perú</p>
-    <p class="case-desc anim d3">
-      El logotipo oficial de la visita del Papa Francisco al Perú, y el manual
-      que tuvo que sostenerlo cuando dejó de estar en nuestras manos.
-    </p>
     <div class="case-meta anim d4">
-      <div class="case-meta-item">
-        <div class="case-meta-label">Tipo</div>
-        <div class="case-meta-val">Identidad + Manual</div>
-      </div>
       <div class="case-meta-item">
         <div class="case-meta-label">Cliente</div>
         <div class="case-meta-val">Conferencia Episcopal Peruana</div>
       </div>
       <div class="case-meta-item">
-        <div class="case-meta-label">Lugar</div>
-        <div class="case-meta-val">Perú</div>
+        <div class="case-meta-label">Sedes</div>
+        <div class="case-meta-val">Lima · Trujillo · Puerto Maldonado</div>
       </div>
       <div class="case-meta-item">
-        <div class="case-meta-label">Año</div>
-        <div class="case-meta-val">2017–2018</div>
+        <div class="case-meta-label">Producción</div>
+        <div class="case-meta-val">Agosto 2017 – enero 2018</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-label">Autoría</div>
+        <div class="case-meta-val">Pedro Nozoe</div>
       </div>
     </div>
-    <!-- El logotipo va sobre fondo blanco fijo por exigencia del manual de
-         identidad del propio proyecto. Ver nota en caso-papa-francisco.css. -->
-    <figure class="cs-hero-art anim d4">
-      <img src="assets/casos/papa-francisco/logo-final.webp" alt="Logotipo oficial de la visita del Papa Francisco al Perú 2018: el mapa del Perú con la imagen del Papa saludando, junto al texto Papa Francisco Perú 2018, el lema Unidos por la esperanza y dos manos en forma de alas, roja y amarilla." width="1400" height="933" fetchpriority="high" decoding="async">
-    </figure>
   </div>
 </section>
 
-<article class="cs">
+<!-- ══ CIFRAS: del techo del logotipo a la medalla ══ -->
+<section class="pf-band" aria-label="El proyecto en cifras">
+  <div class="pf-greca pf-greca--h" aria-hidden="true"></div>
+  <div class="wrap">
+    <dl class="pf-band-list">
+      <div><dt>Techo del logotipo sin autorización</dt><dd><span data-count-to="20">20</span><small>cm</small></dd></div>
+      <div><dt>El banner mayor</dt><dd><span data-count-to="8">8</span><small>m</small></dd></div>
+      <div><dt>La medalla</dt><dd><span data-count-to="37">37</span><small>mm</small></dd></div>
+      <div><dt>Piezas acuñadas</dt><dd>5.000</dd></div>
+      <div><dt>Ciudades</dt><dd data-count-to="3">3</dd></div>
+    </dl>
+  </div>
+</section>
 
-<div class="cs-wrap">
-  <hr class="cs-rule">
-  <dl class="cs-ficha">
-    <div><dt>Autoría</dt><dd>Diseño integral del branding<br>Pedro Nozoe</dd></div>
-    <div><dt>Plazo</dt><dd>Dos semanas, de la primera propuesta al manual cerrado</dd></div>
-    <div><dt>Evento</dt><dd>Visita apostólica<br>18–21 de enero de 2018</dd></div>
-    <div><dt>Sedes</dt><dd>Lima · Trujillo · Puerto Maldonado</dd></div>
-  </dl>
-  <hr class="cs-rule">
-</div>
-
-<!-- ============ 01 EL ENCARGO ============ -->
-<section class="cs-sec">
-  <div class="cs-wrap">
-    <div class="cs-sec__head">
-      <span class="cs-sec__num">01</span>
+<!-- ══ ÍNDICE DE CAPÍTULOS ══ -->
+<section class="pf-sec pf-index" aria-labelledby="pf-index-h">
+  <div class="wrap">
+    <div class="pf-head anim d1">
       <div>
-        <h2 class="cs-sec__title">Dos semanas</h2>
-        <div class="cs-narrow cs-sec__intro cs-body">
-          <p class="cs-lead">Era la tercera vez que un Papa visitaba el Perú. Juan Pablo II había estado en 1985 y volvió en 1988 para el Congreso Eucarístico Mariano Bolivariano. Treinta años después le tocaba a Francisco — y el anuncio ya se había hecho público.</p>
-          <p>Ese era el problema. La visita estaba anunciada, los medios pedían información, la logística de un evento nacional no podía seguir esperando, y la Conferencia Episcopal Peruana necesitaba una imagen con la que hablar. La presión llegó a un punto en el que <strong>se estuvo a punto de presentar un logotipo que no estaba listo</strong>. No ocurrió.</p>
-          <p>Ahí entré yo, y el plazo era el que era: dos semanas. No dos semanas para el símbolo y ya veremos después el manual. Dos semanas para todo — investigación, propuestas, refinamiento, artes finales y las treinta y cinco páginas del manual de identidad. Un solo diseñador de principio a fin.</p>
-          <p>Trabajar así obliga a decidir muy pronto qué es lo importante. Y lo importante no era el símbolo.</p>
-        </div>
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">Un caso, dos actos</span></div>
+        <h2 class="pf-h2" id="pf-index-h">Del símbolo<br>a la calle.</h2>
+      </div>
+      <p class="pf-lede">Dos semanas para el logotipo y su manual. Cinco meses para llevarlo a una sede de prensa entera, tres ciudades y una medalla de plata.</p>
+    </div>
+    <div class="pf-steps">
+      <a class="pf-step pf-step--solid anim d1" href="#simbolo">
+        <div class="pf-step-bg pf-step-bg--paper"><img src="assets/casos/papa-francisco/logo-final.webp" alt="" loading="lazy" decoding="async" width="1400" height="933"></div>
+        <div class="pf-step-body"><span class="pf-step-num">Acto I · 01–06</span><h3 class="pf-step-title">El símbolo</h3><p>Dos semanas, tres rutas y una fotografía dentro de un mapa.</p><span class="pf-step-go">Ver capítulo ↓</span></div>
+      </a>
+      <a class="pf-step pf-step--solid anim d2" href="#manual">
+        <div class="pf-step-bg pf-step-bg--paper"><img src="assets/casos/papa-francisco/manual/pag-07.webp" alt="" loading="lazy" decoding="async" width="860" height="608"></div>
+        <div class="pf-step-body"><span class="pf-step-num">Acto I · 07</span><h3 class="pf-step-title">El manual</h3><p>Treinta y cinco páginas para que la marca sobreviva a su autor.</p><span class="pf-step-go">Ver capítulo ↓</span></div>
+      </a>
+      <a class="pf-step anim d1" href="#sede">
+        <div class="pf-step-bg"><img src="assets/casos/papa-francisco/despliegue/banderolas-vestibulo.webp" alt="" loading="lazy" decoding="async" width="1200" height="900"></div>
+        <div class="pf-step-body"><span class="pf-step-num">Acto II · 08–12</span><h3 class="pf-step-title">La sede de prensa</h3><p>Una greca de Chan Chan, dos colores y un edificio de hormigón.</p><span class="pf-step-go">Ver capítulo ↓</span></div>
+      </a>
+      <a class="pf-step pf-step--solid anim d2" href="#medalla">
+        <div class="pf-step-bg pf-step-bg--coin"><img src="assets/casos/papa-francisco/despliegue/medalla-anverso.webp" alt="" loading="lazy" decoding="async" width="900" height="900"></div>
+        <div class="pf-step-body"><span class="pf-step-num">Acto II · 13–16</span><h3 class="pf-step-title">La medalla</h3><p>La marca sin color y sin fotografía, en 37 milímetros de plata.</p><span class="pf-step-go">Ver capítulo ↓</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     ACTO I · EL SÍMBOLO
+     ════════════════════════════════════════════ -->
+<header class="pf-act" id="acto-1">
+  <div class="wrap pf-act-inner">
+    <p class="pf-act-num">Acto I</p>
+    <h2 class="pf-act-title">El símbolo</h2>
+    <p class="pf-act-when">Agosto de 2017 · dos semanas</p>
+  </div>
+</header>
+
+<!-- 01 · DOS SEMANAS -->
+<section class="pf-sec" id="encargo">
+  <div class="wrap">
+    <div class="pf-ficha anim d1">
+      <dl>
+        <div><dt>Autoría</dt><dd>Diseño integral del branding<br>Pedro Nozoe</dd></div>
+        <div><dt>Plazo</dt><dd>Dos semanas, de la primera propuesta al manual cerrado</dd></div>
+        <div><dt>Evento</dt><dd>Visita apostólica<br>18–21 de enero de 2018</dd></div>
+        <div><dt>Sedes</dt><dd>Lima · Trujillo · Puerto Maldonado</dd></div>
+      </dl>
+    </div>
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">01 · El encargo</span></div>
+        <h2 class="pf-h2 pf-h2--xl">Dos semanas<span class="hl-em">.</span></h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p class="pf-lead">Era la tercera vez que un Papa visitaba el Perú. Juan Pablo II había estado en 1985 y volvió en 1988 para el Congreso Eucarístico Mariano Bolivariano. Treinta años después le tocaba a Francisco — y el anuncio ya se había hecho público.</p>
+        <p>Ese era el problema. La visita estaba anunciada, los medios pedían información, la logística de un evento nacional no podía seguir esperando, y la Conferencia Episcopal Peruana necesitaba una imagen con la que hablar. La presión llegó a un punto en el que <strong>se estuvo a punto de presentar un logotipo que no estaba listo</strong>. No ocurrió.</p>
+        <p>Ahí entré yo, y el plazo era el que era: dos semanas. No dos semanas para el símbolo y ya veremos después el manual. Dos semanas para todo — investigación, propuestas, refinamiento, artes finales y las treinta y cinco páginas del manual de identidad. Un solo diseñador de principio a fin.</p>
+        <p>Trabajar así obliga a decidir muy pronto qué es lo importante. Y lo importante no era el símbolo.</p>
       </div>
     </div>
 
-    <div class="cs-nota">
+    <blockquote class="pf-nota anim d1">
       <p>Una identidad de evento nacional no la aplica su autor. La aplican parroquias de provincia, imprentas locales, proveedores de merchandising, medios, voluntarios con una plantilla y prisa. El logotipo tenía que aguantar todo eso <strong>sin nadie encima vigilando</strong>. Por eso no diseñé un logotipo y después escribí un manual: diseñé pensando en el manual.</p>
-    </div>
+    </blockquote>
 
-    <div class="cs-cifras">
-      <div class="cs-cifra"><b>14</b><span>Días de la primera propuesta al manual cerrado</span></div>
-      <div class="cs-cifra"><b>9</b><span>Visitas papales analizadas como referente</span></div>
-      <div class="cs-cifra"><b>6</b><span>Propuestas presentadas en la primera ronda</span></div>
-      <div class="cs-cifra"><b>35</b><span>Páginas del manual de identidad</span></div>
-      <div class="cs-cifra"><b>1</b><span>Diseñador, de principio a fin</span></div>
-    </div>
+    <dl class="pf-cifras anim d2">
+      <div><dt>Días de la primera propuesta al manual cerrado</dt><dd data-count-to="14">14</dd></div>
+      <div><dt>Visitas papales analizadas como referente</dt><dd data-count-to="9">9</dd></div>
+      <div><dt>Propuestas presentadas en la primera ronda</dt><dd data-count-to="6">6</dd></div>
+      <div><dt>Páginas del manual de identidad</dt><dd data-count-to="35">35</dd></div>
+      <div><dt>Diseñador, de principio a fin</dt><dd>1</dd></div>
+    </dl>
   </div>
 </section>
 
-<!-- ============ 02 REFERENTES ============ -->
-<section class="cs-sec cs-sec--sunken">
-  <div class="cs-wrap">
-    <div class="cs-sec__head">
-      <span class="cs-sec__num">02</span>
-      <div>
-        <h2 class="cs-sec__title">El género ya tenía reglas</h2>
-        <div class="cs-narrow cs-sec__intro cs-body">
-          <p>Con dos semanas por delante, la tentación es abrir Illustrator el primer día. No lo hice. Antes de dibujar nada reuní los logotipos oficiales de las visitas papales anteriores. Río 2013, Ecuador, Bolivia y Paraguay en 2015, México 2016, Egipto, Fátima y Colombia en 2017, y Chile, que ocurría la misma semana que Perú.</p>
-          <p>No fue un ejercicio de inspiración. Fue un ejercicio de <strong>reconocer convenciones</strong>. Puestos uno al lado del otro, el patrón salta a la vista: casi todos usan la silueta del país, los colores de la bandera nacional, una cruz y la figura del Papa. El lema, siempre presente, casi siempre en dos líneas.</p>
-          <p>Saber eso servía para dos cosas opuestas y ambas necesarias. Una: entender qué esperaba ver la institución, porque un logotipo papal que ignora el género se lee como un error, no como una audacia. Dos: identificar dónde quedaba margen real para diferenciarse.</p>
-        </div>
+<!-- 02 · REFERENTES -->
+<section class="pf-sec pf-sunken" id="referentes">
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">02 · Referentes</span></div>
+        <h2 class="pf-h2">El género ya tenía reglas.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>Con dos semanas por delante, la tentación es abrir Illustrator el primer día. No lo hice. Antes de dibujar nada reuní los logotipos oficiales de las visitas papales anteriores. Río 2013, Ecuador, Bolivia y Paraguay en 2015, México 2016, Egipto, Fátima y Colombia en 2017, y Chile, que ocurría la misma semana que Perú.</p>
+        <p>No fue un ejercicio de inspiración. Fue un ejercicio de <strong>reconocer convenciones</strong>. Puestos uno al lado del otro, el patrón salta a la vista: casi todos usan la silueta del país, los colores de la bandera nacional, una cruz y la figura del Papa. El lema, siempre presente, casi siempre en dos líneas.</p>
+        <p>Saber eso servía para dos cosas opuestas y ambas necesarias. Una: entender qué esperaba ver la institución, porque un logotipo papal que ignora el género se lee como un error, no como una audacia. Dos: identificar dónde quedaba margen real para diferenciarse.</p>
       </div>
     </div>
 
-    <div class="cs-grid cs-g3 cs-fig">
-      <figure class="cs-ref"><img src="assets/casos/papa-francisco/ref-rio.webp" alt="Logotipo JMJ Río 2013" width="600" height="314" loading="lazy" decoding="async"><span>Río 2013</span></figure>
-      <figure class="cs-ref"><img src="assets/casos/papa-francisco/ref-ecuador.webp" alt="Logotipo visita papal Ecuador 2015" width="700" height="497" loading="lazy" decoding="async"><span>Ecuador 2015</span></figure>
-      <figure class="cs-ref"><img src="assets/casos/papa-francisco/ref-bolivia.webp" alt="Logotipo visita papal Bolivia 2015" width="700" height="700" loading="lazy" decoding="async"><span>Bolivia 2015</span></figure>
-      <figure class="cs-ref"><img src="assets/casos/papa-francisco/ref-paraguay.webp" alt="Logotipo visita papal Paraguay 2015" width="691" height="700" loading="lazy" decoding="async"><span>Paraguay 2015</span></figure>
-      <figure class="cs-ref"><img src="assets/casos/papa-francisco/ref-mexico.webp" alt="Logotipo visita papal México 2016" width="700" height="384" loading="lazy" decoding="async"><span>México 2016</span></figure>
-      <figure class="cs-ref"><img src="assets/casos/papa-francisco/ref-egipto.webp" alt="Logotipo visita papal Egipto 2017" width="700" height="527" loading="lazy" decoding="async"><span>Egipto 2017</span></figure>
-      <figure class="cs-ref"><img src="assets/casos/papa-francisco/ref-fatima.webp" alt="Logotipo visita papal Fátima 2017" width="700" height="700" loading="lazy" decoding="async"><span>Fátima 2017</span></figure>
-      <figure class="cs-ref"><img src="assets/casos/papa-francisco/ref-colombia.webp" alt="Logotipo visita papal Colombia 2017" width="700" height="700" loading="lazy" decoding="async"><span>Colombia 2017</span></figure>
-      <figure class="cs-ref"><img src="assets/casos/papa-francisco/ref-chile.webp" alt="Logotipo visita papal Chile 2018" width="700" height="393" loading="lazy" decoding="async"><span>Chile 2018</span></figure>
-    </div>
-    <figcaption style="margin-top:1.25rem"><b>Referentes analizados.</b> Logotipos oficiales de visitas papales anteriores, reunidos como material de estudio durante la fase de investigación. Son obra de sus respectivos autores y se reproducen aquí únicamente para documentar el análisis.</figcaption>
+    <ul class="pf-refs" aria-label="Logotipos de visitas papales anteriores">
+      <li><img src="assets/casos/papa-francisco/ref-rio.webp" alt="Logotipo JMJ Río 2013" width="600" height="314" loading="lazy" decoding="async"><span>Río 2013</span></li>
+      <li><img src="assets/casos/papa-francisco/ref-ecuador.webp" alt="Logotipo visita papal Ecuador 2015" width="700" height="497" loading="lazy" decoding="async"><span>Ecuador 2015</span></li>
+      <li><img src="assets/casos/papa-francisco/ref-bolivia.webp" alt="Logotipo visita papal Bolivia 2015" width="700" height="700" loading="lazy" decoding="async"><span>Bolivia 2015</span></li>
+      <li><img src="assets/casos/papa-francisco/ref-paraguay.webp" alt="Logotipo visita papal Paraguay 2015" width="691" height="700" loading="lazy" decoding="async"><span>Paraguay 2015</span></li>
+      <li><img src="assets/casos/papa-francisco/ref-mexico.webp" alt="Logotipo visita papal México 2016" width="700" height="384" loading="lazy" decoding="async"><span>México 2016</span></li>
+      <li><img src="assets/casos/papa-francisco/ref-egipto.webp" alt="Logotipo visita papal Egipto 2017" width="700" height="527" loading="lazy" decoding="async"><span>Egipto 2017</span></li>
+      <li><img src="assets/casos/papa-francisco/ref-fatima.webp" alt="Logotipo visita papal Fátima 2017" width="700" height="700" loading="lazy" decoding="async"><span>Fátima 2017</span></li>
+      <li><img src="assets/casos/papa-francisco/ref-colombia.webp" alt="Logotipo visita papal Colombia 2017" width="700" height="700" loading="lazy" decoding="async"><span>Colombia 2017</span></li>
+      <li><img src="assets/casos/papa-francisco/ref-chile.webp" alt="Logotipo visita papal Chile 2018" width="700" height="393" loading="lazy" decoding="async"><span>Chile 2018</span></li>
+    </ul>
+    <p class="pf-cap"><b>Referentes analizados.</b> Logotipos oficiales de visitas papales anteriores, reunidos como material de estudio durante la fase de investigación. Son obra de sus respectivos autores y se reproducen aquí únicamente para documentar el análisis.</p>
 
-    <div class="cs-nota">
+    <blockquote class="pf-nota anim d1">
       <p>Nueve referentes, un mismo esqueleto: mapa, bandera, cruz, Papa. La pregunta útil no era cómo romperlo, sino <strong>qué elemento podía cambiar de naturaleza</strong> sin que el conjunto dejara de leerse.</p>
-    </div>
+    </blockquote>
   </div>
 </section>
 
-<!-- ============ 03 TRES RUTAS ============ -->
-<section class="cs-sec">
-  <div class="cs-wrap">
-    <div class="cs-sec__head">
-      <span class="cs-sec__num">03</span>
-      <div>
-        <h2 class="cs-sec__title">Tres rutas, seis propuestas</h2>
-        <div class="cs-narrow cs-sec__intro cs-body">
-          <p>Con el plazo encima, lo cómodo habría sido llevar una sola propuesta y defenderla. Hice lo contrario: tres rutas de verdad distintas, cada una con dos ejecuciones, y cada una defendible por sí sola.</p>
-          <p>No fue generosidad. Con dos semanas no hay margen para una segunda ronda desde cero: si la única propuesta no convence, se acabó el proyecto. Presentar tres direcciones era la forma de <strong>garantizar que de esa reunión saliera una decisión</strong>, no un «déjame pensarlo».</p>
-          <p>El elemento que decidí cambiar de naturaleza fue la figura del Papa: en lugar de una ilustración, <strong>una fotografía recortada e integrada dentro del mapa</strong>. Las tres rutas compartían esa apuesta y se separaban en todo lo demás — tipografía, temperatura, grado de formalidad institucional.</p>
-        </div>
+<!-- 03 · TRES RUTAS -->
+<section class="pf-sec" id="rutas" data-lightbox-group>
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">03 · Propuestas</span></div>
+        <h2 class="pf-h2">Tres rutas,<br>seis propuestas.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>Con el plazo encima, lo cómodo habría sido llevar una sola propuesta y defenderla. Hice lo contrario: tres rutas de verdad distintas, cada una con dos ejecuciones, y cada una defendible por sí sola.</p>
+        <p>No fue generosidad. Con dos semanas no hay margen para una segunda ronda desde cero: si la única propuesta no convence, se acabó el proyecto. Presentar tres direcciones era la forma de <strong>garantizar que de esa reunión saliera una decisión</strong>, no un «déjame pensarlo».</p>
+        <p>El elemento que decidí cambiar de naturaleza fue la figura del Papa: en lugar de una ilustración, <strong>una fotografía recortada e integrada dentro del mapa</strong>. Las tres rutas compartían esa apuesta y se separaban en todo lo demás — tipografía, temperatura, grado de formalidad institucional.</p>
       </div>
     </div>
 
-    <figure class="cs-fig cs-fig--plain">
-      <img src="assets/casos/papa-francisco/bocetos-rutas.webp" alt="Tres propuestas de logotipo comparadas lado a lado: la ruta 1 con tipografía de palo seco y manos en rojo y amarillo, la ruta 2A monocroma con paloma, y la ruta 2B con tipografía serif." width="1800" height="544" loading="lazy" decoding="async">
+    <figure class="pf-fig pf-paper">
+      <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/bocetos-rutas.webp" data-lightbox-alt="Tres propuestas de logotipo comparadas lado a lado">
+        <img src="assets/casos/papa-francisco/bocetos-rutas.webp" alt="Tres propuestas de logotipo comparadas lado a lado: la ruta 1 con tipografía de palo seco y manos en rojo y amarillo, la ruta 2A monocroma con paloma, y la ruta 2B con tipografía serif." width="1800" height="544" loading="lazy" decoding="async">
+      </button>
       <figcaption><b>Comparativa de trabajo.</b> Las tres direcciones puestas al mismo tamaño para evaluarlas por contraste, antes de maquetar las tablas de presentación.</figcaption>
     </figure>
 
-    <div class="cs-grid cs-g3" style="margin-top:clamp(2.5rem,6vw,4rem)">
-      <div class="cs-ruta cs-ruta--in">
-        <span class="cs-ruta__tag">Ruta 1 · elegida</span>
+    <div class="pf-rutas">
+      <div class="pf-ruta pf-ruta--in">
+        <span class="pf-ruta-tag">Ruta 1 · elegida</span>
         <h3>Palo seco y manos a color</h3>
         <p>Gotham en caja alta, bloque de texto alineado a un eje vertical, y dos manos en forma de alas —una roja, una amarilla— como remate inferior. La más contemporánea y la más legible en tamaños pequeños.</p>
       </div>
-      <div class="cs-ruta cs-ruta--out">
-        <span class="cs-ruta__tag">Ruta 2 · descartada</span>
+      <div class="pf-ruta">
+        <span class="pf-ruta-tag">Ruta 2 · descartada</span>
         <h3>Serif institucional y paloma</h3>
         <p>Tipografía con serifas, paleta reducida a beige y rojo, y una paloma sustituyendo a las manos. Más solemne, más cercana al lenguaje eclesiástico tradicional. Perdía frescura y ganaba distancia.</p>
       </div>
-      <div class="cs-ruta cs-ruta--out">
-        <span class="cs-ruta__tag">Ruta 3 · descartada</span>
+      <div class="pf-ruta">
+        <span class="pf-ruta-tag">Ruta 3 · descartada</span>
         <h3>Composición en escudo</h3>
         <p>Todo el conjunto contenido dentro de una forma tipo escudo, con degradado y paloma superior. Resolvía bien el formato cuadrado de redes, pero encerraba el símbolo y complicaba cualquier aplicación horizontal.</p>
       </div>
     </div>
 
-    <div class="cs-grid cs-g3 cs-fig">
-      <figure><img src="assets/casos/papa-francisco/ronda1-1.webp" alt="Tabla de presentación del logotipo 1A" width="1200" height="849" loading="lazy" decoding="async"><figcaption>1A</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/ronda1-2.webp" alt="Tabla de presentación del logotipo 1B" width="1200" height="849" loading="lazy" decoding="async"><figcaption>1B</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/ronda1-3.webp" alt="Tabla de presentación del logotipo 2A" width="1200" height="849" loading="lazy" decoding="async"><figcaption>2A</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/ronda1-4.webp" alt="Tabla de presentación del logotipo 2B" width="1200" height="849" loading="lazy" decoding="async"><figcaption>2B</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/ronda1-5.webp" alt="Tabla de presentación del logotipo 3A" width="1200" height="849" loading="lazy" decoding="async"><figcaption>3A</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/ronda1-6.webp" alt="Tabla de presentación del logotipo 3B" width="1200" height="849" loading="lazy" decoding="async"><figcaption>3B</figcaption></figure>
+    <div class="pf-tablas">
+      <button type="button" class="pf-tabla" data-lightbox-src="assets/casos/papa-francisco/ronda1-1.webp" data-lightbox-alt="Tabla de presentación del logotipo 1A"><img src="assets/casos/papa-francisco/ronda1-1.webp" alt="Tabla de presentación del logotipo 1A" width="1200" height="849" loading="lazy" decoding="async"><span>1A</span></button>
+      <button type="button" class="pf-tabla" data-lightbox-src="assets/casos/papa-francisco/ronda1-2.webp" data-lightbox-alt="Tabla de presentación del logotipo 1B"><img src="assets/casos/papa-francisco/ronda1-2.webp" alt="Tabla de presentación del logotipo 1B" width="1200" height="849" loading="lazy" decoding="async"><span>1B</span></button>
+      <button type="button" class="pf-tabla" data-lightbox-src="assets/casos/papa-francisco/ronda1-3.webp" data-lightbox-alt="Tabla de presentación del logotipo 2A"><img src="assets/casos/papa-francisco/ronda1-3.webp" alt="Tabla de presentación del logotipo 2A" width="1200" height="849" loading="lazy" decoding="async"><span>2A</span></button>
+      <button type="button" class="pf-tabla" data-lightbox-src="assets/casos/papa-francisco/ronda1-4.webp" data-lightbox-alt="Tabla de presentación del logotipo 2B"><img src="assets/casos/papa-francisco/ronda1-4.webp" alt="Tabla de presentación del logotipo 2B" width="1200" height="849" loading="lazy" decoding="async"><span>2B</span></button>
+      <button type="button" class="pf-tabla" data-lightbox-src="assets/casos/papa-francisco/ronda1-5.webp" data-lightbox-alt="Tabla de presentación del logotipo 3A"><img src="assets/casos/papa-francisco/ronda1-5.webp" alt="Tabla de presentación del logotipo 3A" width="1200" height="849" loading="lazy" decoding="async"><span>3A</span></button>
+      <button type="button" class="pf-tabla" data-lightbox-src="assets/casos/papa-francisco/ronda1-6.webp" data-lightbox-alt="Tabla de presentación del logotipo 3B"><img src="assets/casos/papa-francisco/ronda1-6.webp" alt="Tabla de presentación del logotipo 3B" width="1200" height="849" loading="lazy" decoding="async"><span>3B</span></button>
     </div>
-    <figcaption style="margin-top:1.25rem"><b>Tablas de presentación, ronda 1.</b> Cada propuesta se presentó aislada y a gran tamaño, sin mockups ni escenografía. Cuando el cliente es una institución, el logotipo debe convencer desnudo.</figcaption>
+    <p class="pf-cap"><b>Tablas de presentación, ronda 1.</b> Cada propuesta se presentó aislada y a gran tamaño, sin mockups ni escenografía. Cuando el cliente es una institución, el logotipo debe convencer desnudo.</p>
   </div>
 </section>
 
-<!-- ============ 04 REFINAMIENTO ============ -->
-<section class="cs-sec cs-sec--sunken">
-  <div class="cs-wrap">
-    <div class="cs-sec__head">
-      <span class="cs-sec__num">04</span>
-      <div>
-        <h2 class="cs-sec__title">La ronda que no se ve</h2>
-        <div class="cs-narrow cs-sec__intro cs-body">
-          <p>Elegida la ruta 1, empezó el trabajo que nunca aparece en un portafolio: cuatro variantes que a primera vista parecen la misma.</p>
-          <p>Se movió la orientación del mapa, se probó el contorno en amarillo y en azul, se cambió el texto de derecha a izquierda, se ajustó dónde caía la mano del Papa respecto al borde del territorio. Ninguna de esas decisiones es espectacular. Todas afectan a cómo se comporta el logotipo cuando alguien lo mete en una plantilla de PowerPoint a 200 píxeles.</p>
-        </div>
+<!-- 04 · LA RONDA QUE NO SE VE: las cuatro variantes en un mismo marco -->
+<section class="pf-sec pf-sunken" id="ronda">
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">04 · Refinamiento</span></div>
+        <h2 class="pf-h2">La ronda que no se ve.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>Elegida la ruta 1, empezó el trabajo que nunca aparece en un portafolio: cuatro variantes que a primera vista parecen la misma.</p>
+        <p>Se movió la orientación del mapa, se probó el contorno en amarillo y en azul, se cambió el texto de derecha a izquierda, se ajustó dónde caía la mano del Papa respecto al borde del territorio. Ninguna de esas decisiones es espectacular. Todas afectan a cómo se comporta el logotipo cuando alguien lo mete en una plantilla de PowerPoint a 200 píxeles.</p>
       </div>
     </div>
 
-    <div class="cs-grid cs-g4 cs-fig">
-      <figure><img src="assets/casos/papa-francisco/ronda3-1.webp" alt="Variante de refinamiento 1A" width="1200" height="849" loading="lazy" decoding="async"><figcaption>Mapa a la derecha, contorno amarillo</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/ronda3-2.webp" alt="Variante de refinamiento 1B" width="1200" height="849" loading="lazy" decoding="async"><figcaption>Mapa espejado, contorno azul</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/ronda3-3.webp" alt="Variante de refinamiento 1C" width="1200" height="849" loading="lazy" decoding="async"><figcaption>Mapa a la izquierda, contorno amarillo</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/ronda3-4.webp" alt="Variante de refinamiento 1D" width="1200" height="849" loading="lazy" decoding="async"><figcaption>Ajuste de proporción del bloque de texto</figcaption></figure>
+    <div class="pf-ronda" id="pf-ronda">
+      <div class="pf-ronda-stage pf-paper">
+        <img class="is-on" src="assets/casos/papa-francisco/ronda3-1.webp" alt="Variante de refinamiento 1A: mapa a la derecha, contorno amarillo" width="1200" height="849" loading="lazy" decoding="async">
+        <img src="assets/casos/papa-francisco/ronda3-2.webp" alt="Variante de refinamiento 1B: mapa espejado, contorno azul" width="1200" height="849" loading="lazy" decoding="async">
+        <img src="assets/casos/papa-francisco/ronda3-3.webp" alt="Variante de refinamiento 1C: mapa a la izquierda, contorno amarillo" width="1200" height="849" loading="lazy" decoding="async">
+        <img src="assets/casos/papa-francisco/ronda3-4.webp" alt="Variante de refinamiento 1D: ajuste de proporción del bloque de texto" width="1200" height="849" loading="lazy" decoding="async">
+      </div>
+      <div class="pf-ronda-tabs" role="group" aria-label="Variantes de refinamiento">
+        <button type="button" aria-pressed="true"><b>1A</b>Mapa a la derecha, contorno amarillo</button>
+        <button type="button" aria-pressed="false"><b>1B</b>Mapa espejado, contorno azul</button>
+        <button type="button" aria-pressed="false" class="is-winner"><b>1C</b>Mapa a la izquierda, contorno amarillo<i>La elegida</i></button>
+        <button type="button" aria-pressed="false"><b>1D</b>Ajuste de proporción del bloque de texto</button>
+      </div>
     </div>
 
-    <div class="cs-nota">
+    <blockquote class="pf-nota anim d1">
       <p>Ganó la versión con el mapa a la izquierda y el contorno amarillo: el amarillo enlaza con la bandera vaticana, y con el mapa a la izquierda el gesto del brazo del Papa apunta hacia el texto en lugar de salirse de la composición.</p>
-    </div>
+    </blockquote>
   </div>
 </section>
 
-<!-- ============ 05 EL SÍMBOLO ============ -->
-<section class="cs-sec">
-  <div class="cs-wrap">
-    <div class="cs-sec__head">
-      <span class="cs-sec__num">05</span>
-      <div>
-        <h2 class="cs-sec__title">Qué significa cada parte</h2>
-        <div class="cs-narrow cs-sec__intro cs-body">
-          <p>Un logotipo institucional necesita poder explicarse en voz alta, en una reunión, ante gente que no es del oficio. Este se explica en cuatro piezas.</p>
-          <p><strong>Las manos.</strong> Rojo y amarillo: los colores de la bandera peruana y los de la vaticana, juntos. Están dibujadas en forma de alas, en señal de oración, alabanza y alegría por la llegada.</p>
-          <p><strong>El mapa.</strong> El territorio del Perú, con la imagen del Papa unida a él —no superpuesta— como muestra de la integración de las regiones para recibirlo.</p>
-          <p><strong>El texto.</strong> Tres datos y nada más: quién viene, a qué país, en qué año.</p>
-          <p><strong>El lema.</strong> «Unidos por la esperanza», acompañado de una cruz. Francisco había pedido a la Iglesia peruana «un nuevo despertar misionero»; el lema traduce esa petición a algo que una persona puede repetir.</p>
-        </div>
+<!-- 05 · QUÉ SIGNIFICA CADA PARTE: anatomía interactiva del logotipo -->
+<section class="pf-sec" id="simbolo" data-lightbox-group>
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">05 · El símbolo</span></div>
+        <h2 class="pf-h2">Qué significa<br>cada parte.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>Un logotipo institucional necesita poder explicarse en voz alta, en una reunión, ante gente que no es del oficio. Este se explica en cuatro piezas.</p>
       </div>
     </div>
 
-    <figure class="cs-fig">
-      <img src="assets/casos/papa-francisco/manual-composicion.webp" alt="Página del manual que descompone el logotipo: mapa y gráfica del Papa, texto del logotipo, y manos, cada uno con su explicación." width="2000" height="1397" loading="lazy" decoding="async">
+    <div class="pf-anat" id="pf-anat" data-part="">
+      <!-- El logotipo va sobre blanco por exigencia de su propio manual -->
+      <div class="pf-anat-stage pf-paper">
+        <div class="pf-anat-logo">
+          <img src="assets/casos/papa-francisco/logo-final.webp" alt="Logotipo oficial de la visita del Papa Francisco al Perú 2018: el mapa del Perú con la imagen del Papa saludando, junto al texto Papa Francisco Perú 2018, el lema Unidos por la esperanza y dos manos en forma de alas, roja y amarilla." width="1400" height="933" loading="lazy" decoding="async">
+          <span class="pf-anat-zone" data-zone="mapa"  style="--x:0%;  --y:0%;  --w:48.5%; --h:100%;"></span>
+          <span class="pf-anat-zone" data-zone="texto" style="--x:50%; --y:26%; --w:47.5%; --h:34%;"></span>
+          <span class="pf-anat-zone" data-zone="lema"  style="--x:50%; --y:61%; --w:40%;   --h:15.5%;"></span>
+          <span class="pf-anat-zone" data-zone="manos" style="--x:50%; --y:76.5%; --w:41%; --h:23.5%;"></span>
+        </div>
+      </div>
+      <ol class="pf-anat-list">
+        <li><button type="button" data-part="manos"><span class="pf-anat-n">01</span><span><strong>Las manos.</strong> Rojo y amarillo: los colores de la bandera peruana y los de la vaticana, juntos. Están dibujadas en forma de alas, en señal de oración, alabanza y alegría por la llegada.</span></button></li>
+        <li><button type="button" data-part="mapa"><span class="pf-anat-n">02</span><span><strong>El mapa.</strong> El territorio del Perú, con la imagen del Papa unida a él —no superpuesta— como muestra de la integración de las regiones para recibirlo.</span></button></li>
+        <li><button type="button" data-part="texto"><span class="pf-anat-n">03</span><span><strong>El texto.</strong> Tres datos y nada más: quién viene, a qué país, en qué año.</span></button></li>
+        <li><button type="button" data-part="lema"><span class="pf-anat-n">04</span><span><strong>El lema.</strong> «Unidos por la esperanza», acompañado de una cruz. Francisco había pedido a la Iglesia peruana «un nuevo despertar misionero»; el lema traduce esa petición a algo que una persona puede repetir.</span></button></li>
+      </ol>
+    </div>
+
+    <figure class="pf-fig pf-fig--narrow pf-paper">
+      <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-07.webp" data-lightbox-alt="Manual de identidad, página 7: composición del logotipo">
+        <img src="assets/casos/papa-francisco/manual-composicion.webp" alt="Página del manual que descompone el logotipo: mapa y gráfica del Papa, texto del logotipo, y manos, cada uno con su explicación." width="2000" height="1397" loading="lazy" decoding="async">
+      </button>
       <figcaption><b>Manual de identidad, página 7.</b> La composición desglosada. Que el significado esté escrito en el manual y no solo en la cabeza del diseñador es lo que permite que la marca sobreviva a su autor.</figcaption>
     </figure>
   </div>
 </section>
 
-<!-- ============ 06 LA RESTRICCIÓN ============ -->
-<section class="cs-sec cs-sec--sunken">
-  <div class="cs-wrap">
-    <div class="cs-sec__head">
-      <span class="cs-sec__num">06</span>
-      <div>
-        <h2 class="cs-sec__title">La decisión que costó algo</h2>
-        <div class="cs-narrow cs-sec__intro cs-body">
-          <p>Usar una fotografía del Papa en lugar de una ilustración fue lo que le dio calidez al logotipo. También fue lo que le puso un techo.</p>
-          <p>Un logotipo vectorial se amplía sin límite. Este no: lleva píxeles dentro. Eso significaba que había un tamaño de impresión a partir del cual la cara del Papa se rompía — y en un evento con gigantografías de siete metros, ese no es un detalle menor.</p>
-          <p>Había dos salidas. Cambiar la foto por un dibujo y perder lo que hacía distinta a la propuesta, o <strong>asumir la restricción y documentarla</strong>. Elegí lo segundo, y el manual lo dice sin adornos: hasta 20 cm de ancho, cualquiera puede imprimir; por encima de eso hay que pedir el archivo al área de comunicaciones de la Conferencia Episcopal.</p>
-          <p>No es una limitación disimulada. Es un procedimiento. Convierte un riesgo técnico en un canal de control, y de paso obliga a que las piezas grandes pasen por alguien que sabe lo que hace.</p>
-        </div>
+<!-- 06 · LA DECISIÓN QUE COSTÓ ALGO: la regla de 20 cm -->
+<section class="pf-sec pf-dark" id="limite">
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">06 · La restricción</span></div>
+        <h2 class="pf-h2">La decisión<br>que costó algo.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>Usar una fotografía del Papa en lugar de una ilustración fue lo que le dio calidez al logotipo. También fue lo que le puso un techo.</p>
+        <p>Un logotipo vectorial se amplía sin límite. Este no: lleva píxeles dentro. Eso significaba que había un tamaño de impresión a partir del cual la cara del Papa se rompía — y en un evento con gigantografías de siete metros, ese no es un detalle menor.</p>
+        <p>Había dos salidas. Cambiar la foto por un dibujo y perder lo que hacía distinta a la propuesta, o <strong>asumir la restricción y documentarla</strong>. Elegí lo segundo, y el manual lo dice sin adornos: hasta 20 cm de ancho, cualquiera puede imprimir; por encima de eso hay que pedir el archivo al área de comunicaciones de la Conferencia Episcopal.</p>
+        <p>No es una limitación disimulada. Es un procedimiento. Convierte un riesgo técnico en un canal de control, y de paso obliga a que las piezas grandes pasen por alguien que sabe lo que hace.</p>
       </div>
     </div>
 
-    <div class="cs-cifras cs-narrow">
-      <div class="cs-cifra"><b>20 cm</b><span>Ancho máximo de impresión sin autorización</span></div>
-      <div class="cs-cifra"><b>3,2 cm</b><span>Mínimo impreso, versión horizontal</span></div>
-      <div class="cs-cifra"><b>200 px</b><span>Mínimo digital, versión horizontal</span></div>
+    <!-- Regla: el control deslizante amplía el logotipo; al pasar de 20 cm,
+         la versión de píxeles toma el relevo. Sin JavaScript queda en 20 cm. -->
+    <div class="pf-ruler" id="pf-ruler" style="--cm:20;">
+      <div class="pf-ruler-stage">
+        <div class="pf-ruler-logo">
+          <img class="pf-ruler-sharp" src="assets/casos/papa-francisco/logo-final.webp" alt="" width="1400" height="933" loading="lazy" decoding="async">
+          <img class="pf-ruler-pixel" src="assets/casos/papa-francisco/logo-pixel.png" alt="" width="60" height="40" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="pf-ruler-scale" aria-hidden="true">
+        <span style="--at:0">0</span><span style="--at:5">5</span><span style="--at:10">10</span><span style="--at:15">15</span><span class="is-limit" style="--at:20">20 cm</span><span style="--at:25">25</span><span style="--at:30">30</span>
+      </div>
+      <div class="pf-ruler-ctrl">
+        <label for="pf-ruler-input">Ancho de impresión</label>
+        <input id="pf-ruler-input" type="range" min="3.2" max="30" step="0.1" value="20">
+        <output id="pf-ruler-out" for="pf-ruler-input"><b>20,0 cm</b><span>Límite de impresión libre</span></output>
+      </div>
     </div>
 
-    <figure class="cs-fig">
-      <img src="assets/casos/papa-francisco/manual-tamanos.webp" alt="Página del manual con los tamaños mínimos y máximos del logotipo y el aviso sobre gigantografías." width="2000" height="1397" loading="lazy" decoding="async">
+    <dl class="pf-cifras pf-cifras--3 anim d1">
+      <div><dt>Ancho máximo de impresión sin autorización</dt><dd>20 cm</dd></div>
+      <div><dt>Mínimo impreso, versión horizontal</dt><dd>3,2 cm</dd></div>
+      <div><dt>Mínimo digital, versión horizontal</dt><dd>200 px</dd></div>
+    </dl>
+
+    <figure class="pf-fig pf-fig--narrow pf-paper" data-lightbox-group>
+      <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-11.webp" data-lightbox-alt="Manual de identidad, página 11: tamaños del logotipo">
+        <img src="assets/casos/papa-francisco/manual-tamanos.webp" alt="Página del manual con los tamaños mínimos y máximos del logotipo y el aviso sobre gigantografías." width="2000" height="1397" loading="lazy" decoding="async">
+      </button>
       <figcaption><b>Manual de identidad, página 11.</b> Los límites, escritos. Incluido el aviso destacado en amarillo con el procedimiento para impresiones mayores.</figcaption>
     </figure>
   </div>
 </section>
 
-<!-- ============ 07 EL SISTEMA ============ -->
-<section class="cs-sec">
-  <div class="cs-wrap">
-    <div class="cs-sec__head">
-      <span class="cs-sec__num">07</span>
-      <div>
-        <h2 class="cs-sec__title">El sistema alrededor</h2>
-        <div class="cs-narrow cs-sec__intro cs-body">
-          <p>El manual dedica siete secciones a lo que rodea al símbolo: presentación, historia, logotipo, aplicaciones de uso, color, tipografía y recursos gráficos. Treinta y cinco páginas pensadas para ser consultadas por alguien con una duda concreta y poco tiempo.</p>
+<!-- 07 · EL SISTEMA ALREDEDOR: el manual completo, en un carril anclado -->
+<section class="pf-dark pf-man" id="manual" aria-labelledby="manual-h" data-lightbox-group>
+  <div class="wrap pf-man-intro">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">07 · El manual</span></div>
+        <h2 class="pf-h2" id="manual-h">El sistema alrededor.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>El manual dedica siete secciones a lo que rodea al símbolo: presentación, historia, logotipo, aplicaciones de uso, color, tipografía y recursos gráficos. Treinta y cinco páginas pensadas para ser consultadas por alguien con una duda concreta y poco tiempo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pf-man-pin" id="pf-man-pin">
+    <div class="pf-man-stage">
+      <div class="wrap pf-chapters" id="pf-chapters" aria-hidden="true">
+        <span>Presentación</span><span>Logotipo</span><span>Aplicaciones de uso</span><span>Color</span><span>Tipografía</span><span>Recursos gráficos</span>
+      </div>
+      <div class="pf-man-track" id="pf-man-track">
+        <button class="pf-mp" type="button" data-ch="0" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-01.webp" data-lightbox-alt="Manual de identidad, página 1: Portada"><img src="assets/casos/papa-francisco/manual/pag-01.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 1: Portada" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="0" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-02.webp" data-lightbox-alt="Manual de identidad, página 2: Contenido"><img src="assets/casos/papa-francisco/manual/pag-02.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 2: Contenido" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="0" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-03.webp" data-lightbox-alt="Manual de identidad, página 3: Presentación"><img src="assets/casos/papa-francisco/manual/pag-03.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 3: Presentación" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="0" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-04.webp" data-lightbox-alt="Manual de identidad, página 4: Historia"><img src="assets/casos/papa-francisco/manual/pag-04.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 4: Historia" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="1" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-05.webp" data-lightbox-alt="Manual de identidad, página 5: Logotipo"><img src="assets/casos/papa-francisco/manual/pag-05.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 5: separador de Logotipo" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="1" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-06.webp" data-lightbox-alt="Manual de identidad, página 6: Logotipo"><img src="assets/casos/papa-francisco/manual/pag-06.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 6: Logotipo" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="1" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-07.webp" data-lightbox-alt="Manual de identidad, página 7: Composición"><img src="assets/casos/papa-francisco/manual/pag-07.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 7: Composición" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="1" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-08.webp" data-lightbox-alt="Manual de identidad, página 8: Área de protección y proporciones"><img src="assets/casos/papa-francisco/manual/pag-08.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 8: Área de protección y proporciones" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="1" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-09.webp" data-lightbox-alt="Manual de identidad, página 9: Variantes de composición"><img src="assets/casos/papa-francisco/manual/pag-09.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 9: Variantes de composición" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="1" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-10.webp" data-lightbox-alt="Manual de identidad, página 10: Excepciones de composición"><img src="assets/casos/papa-francisco/manual/pag-10.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 10: Excepciones de composición" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="1" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-11.webp" data-lightbox-alt="Manual de identidad, página 11: Tamaños del logotipo"><img src="assets/casos/papa-francisco/manual/pag-11.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 11: Tamaños del logotipo" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-12.webp" data-lightbox-alt="Manual de identidad, página 12: Aplicaciones de uso"><img src="assets/casos/papa-francisco/manual/pag-12.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 12: separador de Aplicaciones de uso" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-13.webp" data-lightbox-alt="Manual de identidad, página 13: Papelería"><img src="assets/casos/papa-francisco/manual/pag-13.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 13: Papelería" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-14.webp" data-lightbox-alt="Manual de identidad, página 14: Posts para redes sociales"><img src="assets/casos/papa-francisco/manual/pag-14.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 14: Posts para redes sociales" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-15.webp" data-lightbox-alt="Manual de identidad, página 15: Banderolas verticales"><img src="assets/casos/papa-francisco/manual/pag-15.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 15: Banderolas verticales" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-16.webp" data-lightbox-alt="Manual de identidad, página 16: Banderolas horizontales"><img src="assets/casos/papa-francisco/manual/pag-16.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 16: Banderolas horizontales" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-17.webp" data-lightbox-alt="Manual de identidad, página 17: Banner web"><img src="assets/casos/papa-francisco/manual/pag-17.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 17: Banner web" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-18.webp" data-lightbox-alt="Manual de identidad, página 18: Merchandising, polos"><img src="assets/casos/papa-francisco/manual/pag-18.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 18: Merchandising, polos" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-19.webp" data-lightbox-alt="Manual de identidad, página 19: Merchandising, gorra y pin"><img src="assets/casos/papa-francisco/manual/pag-19.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 19: Merchandising, gorra y pin" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-20.webp" data-lightbox-alt="Manual de identidad, página 20: Publicidad exterior, vallas"><img src="assets/casos/papa-francisco/manual/pag-20.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 20: Publicidad exterior, vallas" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-21.webp" data-lightbox-alt="Manual de identidad, página 21: Publicidad exterior, paneles"><img src="assets/casos/papa-francisco/manual/pag-21.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 21: Publicidad exterior, paneles" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-22.webp" data-lightbox-alt="Manual de identidad, página 22: Videos"><img src="assets/casos/papa-francisco/manual/pag-22.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 22: Cierres de video" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="2" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-23.webp" data-lightbox-alt="Manual de identidad, página 23: Usos incorrectos"><img src="assets/casos/papa-francisco/manual/pag-23.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 23: Usos incorrectos" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="3" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-24.webp" data-lightbox-alt="Manual de identidad, página 24: Color"><img src="assets/casos/papa-francisco/manual/pag-24.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 24: separador de Color" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="3" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-25.webp" data-lightbox-alt="Manual de identidad, página 25: Color"><img src="assets/casos/papa-francisco/manual/pag-25.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 25: Paleta de color" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="3" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-26.webp" data-lightbox-alt="Manual de identidad, página 26: Color para impresión"><img src="assets/casos/papa-francisco/manual/pag-26.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 26: Color para impresión" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="4" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-27.webp" data-lightbox-alt="Manual de identidad, página 27: Tipografía"><img src="assets/casos/papa-francisco/manual/pag-27.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 27: separador de Tipografía" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="4" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-28.webp" data-lightbox-alt="Manual de identidad, página 28: Tipografía"><img src="assets/casos/papa-francisco/manual/pag-28.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 28: Familias tipográficas" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="4" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-29.webp" data-lightbox-alt="Manual de identidad, página 29: Usos de la tipografía"><img src="assets/casos/papa-francisco/manual/pag-29.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 29: Usos de la tipografía" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="5" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-30.webp" data-lightbox-alt="Manual de identidad, página 30: Recursos gráficos"><img src="assets/casos/papa-francisco/manual/pag-30.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 30: separador de Recursos gráficos" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="5" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-31.webp" data-lightbox-alt="Manual de identidad, página 31: Fondo y elementos lineales"><img src="assets/casos/papa-francisco/manual/pag-31.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 31: Fondo y elementos lineales" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="5" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-32.webp" data-lightbox-alt="Manual de identidad, página 32: Aplicación de gráficos"><img src="assets/casos/papa-francisco/manual/pag-32.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 32: Aplicación de gráficos" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="5" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-33.webp" data-lightbox-alt="Manual de identidad, página 33: Imágenes"><img src="assets/casos/papa-francisco/manual/pag-33.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 33: Imágenes" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="5" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-34.webp" data-lightbox-alt="Manual de identidad, página 34: Aplicación de las imágenes"><img src="assets/casos/papa-francisco/manual/pag-34.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 34: Aplicación de las imágenes" loading="lazy" decoding="async" width="860" height="608"></button>
+        <button class="pf-mp" type="button" data-ch="5" data-lightbox-src="assets/casos/papa-francisco/manual/zoom/pag-35.webp" data-lightbox-alt="Manual de identidad, página 35: Contraportada"><img src="assets/casos/papa-francisco/manual/pag-35.webp" alt="Manual de identidad Papa Francisco Perú 2018, página 35: Contraportada" loading="lazy" decoding="async" width="860" height="608"></button>
+      </div>
+      <div class="wrap"><div class="pf-man-bar" aria-hidden="true"><span id="pf-man-bar"></span></div></div>
+    </div>
+  </div>
+
+  <div class="wrap pf-man-foot">
+    <div class="pf-sys">
+      <div class="pf-sys-block">
+        <h3 class="pf-h3">Color</h3>
+        <div class="pf-paleta">
+          <div class="pf-sw"><i style="background:#A1978D"></i><div><b>Marrón</b><code>Pantone 402 C</code><code>C36 M33 Y38 K14</code><code>R161 G151 B141</code></div></div>
+          <div class="pf-sw"><i style="background:#C51315"></i><div><b>Rojo</b><code>C10 M100 Y100 K10</code><code>R197 G19 B21</code></div></div>
+          <div class="pf-sw"><i style="background:#FFD000"></i><div><b>Amarillo</b><code>C0 M18 Y100 K0</code><code>R255 G208 B0</code></div></div>
+          <div class="pf-sw"><i style="background:linear-gradient(135deg,#FFFFF7,#E8DECC)"></i><div><b>Degradado beige</b><code>R255 G255 B247</code><code>→ R232 G222 B204</code></div></div>
+        </div>
+        <p class="pf-cap">El marrón, no el rojo, es el color principal: sostiene toda la tipografía institucional. El rojo y el amarillo quedan reservados para el símbolo de las manos, que es donde tienen que gritar.</p>
+      </div>
+      <div class="pf-sys-block">
+        <h3 class="pf-h3">Tipografía</h3>
+        <div class="pf-tipo">
+          <div><b>Primaria · Gotham</b><p>Thin, Light, Medium y Black. Encabezados, títulos, subtítulos y cuerpo de texto. Predomina en todo el material, impreso y digital.</p></div>
+          <div><b>Secundaria · DIN</b><p>Light y Bold. Complemento para destacar subtítulos. Su rol está acotado a propósito: cuantas menos decisiones tipográficas queden abiertas, menos maneras hay de equivocarse.</p></div>
         </div>
       </div>
     </div>
 
-    <h3 style="margin-top:clamp(1.5rem,4vw,2.5rem)">Color</h3>
-    <div class="cs-paleta">
-      <div class="cs-sw"><i style="background:#A1978D"></i><div><b>Marrón</b><code>Pantone 402 C</code><code>C36 M33 Y38 K14</code><code>R161 G151 B141</code></div></div>
-      <div class="cs-sw"><i style="background:#C51315"></i><div><b>Rojo</b><code>C10 M100 Y100 K10</code><code>R197 G19 B21</code></div></div>
-      <div class="cs-sw"><i style="background:#FFD000"></i><div><b>Amarillo</b><code>C0 M18 Y100 K0</code><code>R255 G208 B0</code></div></div>
-      <div class="cs-sw"><i style="background:linear-gradient(135deg,#FFFFF7,#E8DECC)"></i><div><b>Degradado beige</b><code>R255 G255 B247</code><code>→ R232 G222 B204</code></div></div>
-    </div>
-    <figcaption style="margin-top:1rem">El marrón, no el rojo, es el color principal: sostiene toda la tipografía institucional. El rojo y el amarillo quedan reservados para el símbolo de las manos, que es donde tienen que gritar.</figcaption>
-
-    <h3 style="margin-top:clamp(2.5rem,6vw,4rem)">Tipografía</h3>
-    <div class="cs-tipo">
-      <div>
-        <b>Primaria · Gotham</b>
-        <p style="margin-top:0">Thin, Light, Medium y Black. Encabezados, títulos, subtítulos y cuerpo de texto. Predomina en todo el material, impreso y digital.</p>
+    <div class="pf-split pf-split--foot">
+      <div class="anim d1">
+        <h3 class="pf-h2 pf-h2--sm">Del pin a la valla.</h3>
       </div>
-      <div>
-        <b>Secundaria · DIN</b>
-        <p style="margin-top:0">Light y Bold. Complemento para destacar subtítulos. Su rol está acotado a propósito: cuantas menos decisiones tipográficas queden abiertas, menos maneras hay de equivocarse.</p>
+      <div class="pf-body anim d2">
+        <p>El manual no se queda en las reglas: resuelve por adelantado las piezas que sabía que iban a pedirse. Papelería, posts de redes con sus medidas exactas, banderolas verticales y horizontales en versión institucional e informativa, banners web, polos de hombre y mujer, gorra, pin, vallas publicitarias, paneles y cierres de vídeo.</p>
+        <p>Cada aplicación resuelta de antemano es una improvisación que no va a ocurrir. Y en un evento donde decenas de proveedores producen en paralelo contra reloj, eso es exactamente el punto.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <figure class="cs-fig">
-      <img src="assets/casos/papa-francisco/manual-tipografia.webp" alt="Página del manual con las dos familias tipográficas: Gotham en cuatro pesos y DIN en dos." width="2000" height="1397" loading="lazy" decoding="async">
-      <figcaption><b>Manual de identidad, página 28.</b> Seis pesos en total entre las dos familias. Todo lo demás queda fuera del sistema.</figcaption>
+<!-- CIERRE DEL ACTO I: el manual como entregable… hasta aquí -->
+<section class="pf-sec pf-hinge" id="entregable">
+  <div class="wrap">
+    <div class="pf-hinge-inner anim d1">
+      <p class="pf-eyebrow">Qué queda</p>
+      <h2 class="pf-h2 pf-h2--xl">El manual era el entregable.</h2>
+      <p class="pf-hinge-lead">Durante cuatro días de enero de 2018, en Lima, Trujillo y Puerto Maldonado, ese logotipo apareció en sitios donde yo no estuve, aplicado por gente a la que nunca conocí, sobre materiales que no elegí.</p>
+      <p>Funcionó porque el trabajo no terminó en el símbolo. Terminó en un documento que anticipaba las preguntas: cuánto espacio dejar alrededor, qué hacer si solo cabe en vertical, hasta qué tamaño se puede imprimir, a quién escribir cuando no alcanza. Diseñar la identidad de un evento así es, sobre todo, escribir bien las instrucciones.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     ACTO II · EL DESPLIEGUE
+     ════════════════════════════════════════════ -->
+<header class="pf-act pf-act--2" id="despliegue">
+  <div class="pf-greca pf-greca--h pf-greca--top" aria-hidden="true"></div>
+  <div class="wrap pf-act-inner">
+    <p class="pf-act-num">Acto II</p>
+    <h2 class="pf-act-title">El despliegue</h2>
+    <p class="pf-act-when">Septiembre de 2017 – enero de 2018 · cinco meses</p>
+  </div>
+</header>
+
+<section class="pf-sec pf-open" aria-labelledby="pf-open-h">
+  <div class="wrap">
+    <div class="pf-open-grid">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">Cuando la marca no puede crecer</span></div>
+        <h2 class="pf-h2 pf-h2--xl" id="pf-open-h">De 20 cm<br>a 8 metros<span class="hl-em">.</span></h2>
+        <p class="pf-lead">El logotipo de la visita papal llevaba una fotografía dentro. Eso le ponía un techo de 20 cm de ancho. Entre agosto de 2017 y enero de 2018 hubo que vestir con él una sede de prensa entera, tres ciudades y una medalla de 37 milímetros.</p>
+        <dl class="pf-ficha pf-ficha--inline">
+          <div><dt>Sede de prensa</dt><dd>Ministerio de Cultura, Av. Javier Prado Este, San Borja</dd></div>
+          <div><dt>Producción</dt><dd>Agosto 2017 – enero 2018</dd></div>
+          <div><dt>Meses de producción</dt><dd>5</dd></div>
+        </dl>
+      </div>
+      <figure class="pf-photo pf-photo--tall anim d2" data-par="-0.05" data-lightbox-group>
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/hero-ministerio-fachada.webp" data-lightbox-alt="Fachada del Ministerio de Cultura de Lima con dos banderolas verticales de la visita papal">
+          <img src="assets/casos/papa-francisco/despliegue/hero-ministerio-fachada.webp" alt="Fachada del Ministerio de Cultura de Lima con dos banderolas verticales de la visita papal colgadas entre los volúmenes de hormigón" width="1200" height="900" loading="lazy" decoding="async">
+        </button>
+        <figcaption>Ministerio de Cultura, Lima. Sede del Centro Internacional de Prensa, enero de 2018.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 08 · EL MANUAL TERMINABA DONDE EMPEZABA EL PROBLEMA -->
+<section class="pf-sec pf-sunken" id="problema" data-lightbox-group>
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">08 · El problema</span></div>
+        <h2 class="pf-h2">El manual terminaba donde empezaba el problema.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>El manual de identidad se cerró el 1 de septiembre de 2017. Documentaba el logotipo, sus reservas, su mínimo y su máximo —20 cm de ancho sin autorización, porque dentro hay un mapa de píxeles— y sus aplicaciones: papelería, banderolas, vallas, polos, gorra, pin.</p>
+        <p>Como único apoyo visual establecía «un fondo monocromático con elementos lineales»: un degradado cálido recorrido por curvas finísimas. Funciona en una hoja A4 y en un banner web. En una fachada de hormigón de siete metros desaparece.</p>
+      </div>
+    </div>
+    <div class="pf-pair">
+      <figure class="pf-fig pf-paper">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/manual-fondo-lineal.webp" data-lightbox-alt="Página del manual: fondo y elementos lineales"><img src="assets/casos/papa-francisco/despliegue/manual-fondo-lineal.webp" alt="Página del manual titulada «Fondo y elementos lineales», con un rectángulo de degradado gris cálido cruzado por curvas muy finas" width="1200" height="849" loading="lazy" decoding="async"></button>
+        <figcaption>El único recurso gráfico que dejaba el manual.</figcaption>
+      </figure>
+      <figure class="pf-fig pf-paper">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/manual-paneles.webp" data-lightbox-alt="Página del manual: paneles publicitarios exteriores"><img src="assets/casos/papa-francisco/despliegue/manual-paneles.webp" alt="Página del manual con dos maquetas de paneles publicitarios exteriores usando el fondo degradado" width="1200" height="849" loading="lazy" decoding="async"></button>
+        <figcaption>Las aplicaciones exteriores previstas: paneles y vallas.</figcaption>
+      </figure>
+    </div>
+    <p class="pf-key anim d1">La marca no podía crecer. Así que lo que creció fue todo lo demás.</p>
+  </div>
+</section>
+
+<!-- 09 · LA GRECA QUE NO ESTÁ EN EL MANUAL -->
+<section class="pf-sec pf-greca-sec" id="greca" data-lightbox-group>
+  <div class="pf-greca pf-greca--v pf-greca--side" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">09 · La greca</span></div>
+        <h2 class="pf-h2">La greca que no está en el manual.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>El primer archivo del Centro Internacional de Prensa es del 5 de diciembre de 2017, tres meses después de cerrar el manual. Ahí aparece por primera vez un sistema que no está documentado en ninguna de las 35 páginas: una greca construida a partir de los frisos de Chan Chan, la ciudad de barro de la cultura Chimú.</p>
+        <p>Tiene tres estados, y ninguno necesita el logotipo para funcionar:</p>
+      </div>
+    </div>
+
+    <ol class="pf-states">
+      <li>
+        <figure class="pf-state">
+          <button type="button" class="pf-zoom pf-state-img" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/greca-cenefa-detalle.webp" data-lightbox-alt="Detalle de la cenefa de la greca"><img src="assets/casos/papa-francisco/despliegue/greca-cenefa-detalle.webp" alt="Detalle al 100 % de una cenefa vertical amarilla formada por una figura estilizada repetida, junto a un campo de líneas verticales finas" width="375" height="700" loading="lazy" decoding="async"></button>
+          <figcaption><b>Cenefa.</b> La figura repetida en banda, como en el friso original.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="pf-state">
+          <button type="button" class="pf-zoom pf-state-img" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/greca-zigzag-detalle.webp" data-lightbox-alt="Detalle del zigzag de la greca"><img src="assets/casos/papa-francisco/despliegue/greca-zigzag-detalle.webp" alt="Detalle en rojo de la misma figura compuesta formando un zigzag escalonado que baja por el centro de un banner" width="700" height="700" loading="lazy" decoding="async"></button>
+          <figcaption><b>Zigzag.</b> La misma pieza compone un recorrido escalonado.</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure class="pf-state">
+          <button type="button" class="pf-zoom pf-state-img" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/greca-escalonado-detalle.webp" data-lightbox-alt="Detalle del corte escalonado"><img src="assets/casos/papa-francisco/despliegue/greca-escalonado-detalle.webp" alt="Detalle del borde escalonado en rojo macizo que corta a sangre el lateral de un cartel" width="640" height="640" loading="lazy" decoding="async"></button>
+          <figcaption><b>Corte.</b> El escalonado macizo separa color de papel.</figcaption>
+        </figure>
+      </li>
+    </ol>
+
+    <div class="pf-split pf-split--tight">
+      <div></div>
+      <div class="pf-body anim d1">
+        <p>El campo de líneas verticales es la única herencia literal del manual: las curvas suaves del fondo, enderezadas. Rectas imprimen limpias a cualquier tamaño; las curvas finas, no.</p>
+      </div>
+    </div>
+
+    <div class="pf-sheets">
+      <figure class="pf-fig pf-paper pf-sheets-main">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/banner-2-8x7m.webp" data-lightbox-alt="Hoja técnica de las banderolas de 2,80 × 7 m"><img src="assets/casos/papa-francisco/despliegue/banner-2-8x7m.webp" alt="Hoja técnica con cuatro versiones del banner de 2,80 por 7 metros: dos con marco de greca roja y amarilla, dos con corte escalonado a sangre" width="1200" height="714" loading="lazy" decoding="async"></button>
+        <figcaption>Banderolas de 2,80 × 7 m. Cuatro tratamientos de la misma greca.</figcaption>
+      </figure>
+      <figure class="pf-fig pf-paper">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/totem-1.webp" data-lightbox-alt="Hoja técnica del tótem informativo"><img src="assets/casos/papa-francisco/despliegue/totem-1.webp" alt="Hoja técnica del tótem informativo de 0,50 por 1,40 metros, con la greca amarilla enmarcando el listado de espacios" width="856" height="1200" loading="lazy" decoding="async"></button>
+        <figcaption>Tótem informativo, 0,50 × 1,40 m.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · EL COLOR HACE EL TRABAJO PESADO -->
+<section class="pf-sec pf-color" id="color" data-lightbox-group>
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">10 · Color</span></div>
+        <h2 class="pf-h2">El color hace el trabajo pesado.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>El logotipo es beige, gris y dos manos de color. A cuarenta metros, en un vestíbulo de hormigón visto, no se lee. La señalética resuelve la distancia por color antes que por marca: rojo para lo institucional, amarillo para lo informativo, beige de papel para el fondo.</p>
+      </div>
+    </div>
+    <div class="pf-color-key" aria-hidden="true">
+      <span class="pf-ck pf-ck--red">Institucional</span><span class="pf-ck pf-ck--yellow">Informativo</span><span class="pf-ck pf-ck--paper">Fondo</span>
+    </div>
+    <div class="pf-bento">
+      <figure class="pf-photo pf-b-wide">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/totems-exteriores.webp" data-lightbox-alt="Dos tótems triangulares instalados en el exterior, uno amarillo y otro rojo"><img src="assets/casos/papa-francisco/despliegue/totems-exteriores.webp" alt="Dos tótems triangulares instalados en el exterior, uno amarillo y otro rojo, con la greca impresa y el lema «Perú, unidos por la esperanza»" width="1200" height="720" loading="lazy" decoding="async"></button>
+        <figcaption>Un tótem rojo y uno amarillo, uno a cada lado del acceso.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-b-tall">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/banderolas-vestibulo.webp" data-lightbox-alt="Dos banderolas de gran altura colgadas en el vestíbulo de hormigón"><img src="assets/casos/papa-francisco/despliegue/banderolas-vestibulo.webp" alt="Dos banderolas de gran altura colgadas en el vestíbulo de hormigón, una con greca roja y otra amarilla, con la palabra BIENVENIDOS en vertical" width="1200" height="900" loading="lazy" decoding="async"></button>
+        <figcaption>Vestíbulo del Ministerio. La palabra ya es el gráfico.</figcaption>
+      </figure>
+      <figure class="pf-fig pf-paper pf-b-sheet">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/totem-3.webp" data-lightbox-alt="Hoja técnica del tótem en versión amarilla"><img src="assets/casos/papa-francisco/despliegue/totem-3.webp" alt="Hoja técnica del tótem en versión amarilla, con la greca ocupando el lateral completo" width="856" height="1200" loading="lazy" decoding="async"></button>
+        <figcaption>Versión amarilla del tótem.</figcaption>
+      </figure>
+      <figure class="pf-fig pf-paper pf-b-sheet">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/totem-4.webp" data-lightbox-alt="Hoja técnica del tótem en versión roja"><img src="assets/casos/papa-francisco/despliegue/totem-4.webp" alt="Hoja técnica del tótem en versión roja, con la greca ocupando el lateral completo" width="856" height="1200" loading="lazy" decoding="async"></button>
+        <figcaption>Versión roja. Mismo maestro, distinta lectura a distancia.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · UNA SEDE DE PRENSA DESDE CERO -->
+<section class="pf-sec pf-dark" id="sede" data-lightbox-group>
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">11 · Centro Internacional de Prensa</span></div>
+        <h2 class="pf-h2">Una sede de prensa desde cero.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>El Centro Internacional de Prensa se montó en el Ministerio de Cultura de Lima: un edificio brutalista, de hormigón oscuro y dobles alturas, que no perdona la gráfica pequeña. El inventario que hubo que producir, con sus medidas reales:</p>
+      </div>
+    </div>
+
+    <ul class="pf-inv anim d1">
+      <li><span>Banner institucional</span><b>8 × 1 m</b></li>
+      <li><span>Cartel de sala de prensa</span><b>4 × 1 m</b></li>
+      <li><span>Banderolas</span><b>2,80 × 7 m</b></li>
+      <li><span>Vinilos informativos</span><b>0,60 × 1 m</b></li>
+      <li><span>Tótems</span><b>0,50 × 1,40 m y 0,50 × 0,70 m</b></li>
+      <li><span>Backing de fotografías</span><b>1,85 × 2,12 m</b></li>
+      <li><span>Frente de mesa de registro, rótulos de acceso y señalética de escaleras y servicios</span><b>—</b></li>
+    </ul>
+
+    <figure class="pf-fig pf-paper pf-fig--strip">
+      <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/banner-institucional-8x1m.webp" data-lightbox-alt="Arte del vinilo institucional de 8 × 1 m"><img src="assets/casos/papa-francisco/despliegue/banner-institucional-8x1m.webp" alt="Arte del vinilo institucional de 8 por 1 metro: banda de greca roja arriba y una tira de fotografías de peregrinos y del Papa" width="1200" height="305" loading="lazy" decoding="async"></button>
+      <figcaption>Vinilo institucional, 8 × 1 m.</figcaption>
     </figure>
 
-    <div class="cs-grid cs-g2 cs-fig">
-      <figure><img src="assets/casos/papa-francisco/manual-proteccion.webp" alt="Página del manual con el área de protección y las proporciones del logotipo." width="1400" height="990" loading="lazy" decoding="async"><figcaption><b>Área de protección.</b> Definida por la medida X, siempre ampliable.</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/manual-variantes.webp" alt="Página del manual con las variantes horizontal y vertical del logotipo." width="1400" height="990" loading="lazy" decoding="async"><figcaption><b>Dos variantes.</b> Horizontal y vertical, según el espacio disponible.</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/manual-color.webp" alt="Página del manual con la paleta cromática principal y complementaria." width="1400" height="990" loading="lazy" decoding="async"><figcaption><b>Color.</b> Principales, complementarios y equivalencias CMYK y RGB.</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/manual-incorrectos.webp" alt="Página del manual con seis ejemplos de usos incorrectos del logotipo tachados en rojo." width="1400" height="990" loading="lazy" decoding="async"><figcaption><b>Usos incorrectos.</b> Seis errores previstos, tachados antes de que ocurrieran.</figcaption></figure>
+    <div class="pf-sede">
+      <figure class="pf-fig pf-paper pf-s-cartel">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/cartel-sala-de-prensa.webp" data-lightbox-alt="Arte del cartel de sala de prensa"><img src="assets/casos/papa-francisco/despliegue/cartel-sala-de-prensa.webp" alt="Arte del cartel «Salón Perú · Sala de prensa y área de trabajo», con marco amarillo y greca a los lados" width="1200" height="475" loading="lazy" decoding="async"></button>
+        <figcaption>Cartel de sala de prensa, 4,64 × 1,59 m.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-s-rotulo">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/rotulo-centro-internacional-prensa.webp" data-lightbox-alt="Rótulo iluminado Centro Internacional de Prensa"><img src="assets/casos/papa-francisco/despliegue/rotulo-centro-internacional-prensa.webp" alt="Rótulo iluminado «Centro Internacional de Prensa» montado sobre el marco de hormigón de un acceso" width="850" height="638" loading="lazy" decoding="async"></button>
+        <figcaption>Rótulo de acceso.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-s-agencias">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/senal-agencias-de-prensa.webp" data-lightbox-alt="Cartel colgante Agencias de prensa"><img src="assets/casos/papa-francisco/despliegue/senal-agencias-de-prensa.webp" alt="Cartel colgante «Agencias de prensa» sobre la entrada acristalada de una sala" width="850" height="638" loading="lazy" decoding="async"></button>
+        <figcaption>Señalética colgante.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-s-escalera">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/senal-escalera.webp" data-lightbox-alt="Directorio junto a una escalera"><img src="assets/casos/papa-francisco/despliegue/senal-escalera.webp" alt="Cartel vertical junto a una escalera indicando piso 1, sala de prensa, oficinas, agencias de prensa e interpretación" width="1081" height="1400" loading="lazy" decoding="async"></button>
+        <figcaption>Directorio de escalera.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-s-mesa">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/mesa-de-registro.webp" data-lightbox-alt="Frente de la mesa de registro"><img src="assets/casos/papa-francisco/despliegue/mesa-de-registro.webp" alt="Frente de la mesa de registro forrado con el logotipo y la greca amarilla, con casilleros detrás" width="574" height="383" loading="lazy" decoding="async"></button>
+        <figcaption>Mesa de registro.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-s-info">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/senal-informacion.webp" data-lightbox-alt="Cartel de información sobre un mostrador"><img src="assets/casos/papa-francisco/despliegue/senal-informacion.webp" alt="Cartel de información sobre un mostrador junto a un ventanal" width="850" height="638" loading="lazy" decoding="async"></button>
+        <figcaption>Objetos perdidos e información.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-s-servicios">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/senal-servicios.webp" data-lightbox-alt="Señal roja de servicios higiénicos"><img src="assets/casos/papa-francisco/despliegue/senal-servicios.webp" alt="Señal roja de servicios higiénicos con pictogramas amarillos, colgada en un pasillo" width="567" height="378" loading="lazy" decoding="async"></button>
+        <figcaption>Servicios. El sistema baja hasta aquí.</figcaption>
+      </figure>
+      <figure class="pf-fig pf-paper pf-s-backing">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/backing-selfie.webp" data-lightbox-alt="Previo técnico del backing de fotografías"><img src="assets/casos/papa-francisco/despliegue/backing-selfie.webp" alt="Previo técnico del backing de fotografías: fondo rojo con la greca, la figura del Papa saludando y dos siluetas de personas acotadas a 1,70 y 1,60 metros" width="1031" height="1100" loading="lazy" decoding="async"></button>
+        <figcaption>Backing de fotografías, 1,85 × 2,12 m, cotado contra dos siluetas humanas.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-s-mural">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/mural-sala-prensa.webp" data-lightbox-alt="Mural con el logotipo y la greca roja en una sala del museo"><img src="assets/casos/papa-francisco/despliegue/mural-sala-prensa.webp" alt="Mural horizontal con el logotipo y la greca roja instalado en una sala del museo, junto a obra expuesta" width="1200" height="714" loading="lazy" decoding="async"></button>
+        <figcaption>La gráfica conviviendo con la colección del museo.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ============ 08 APLICACIONES ============ -->
-<section class="cs-sec cs-sec--sunken">
-  <div class="cs-wrap">
-    <div class="cs-sec__head">
-      <span class="cs-sec__num">08</span>
-      <div>
-        <h2 class="cs-sec__title">Del pin a la valla</h2>
-        <div class="cs-narrow cs-sec__intro cs-body">
-          <p>El manual no se queda en las reglas: resuelve por adelantado las piezas que sabía que iban a pedirse. Papelería, posts de redes con sus medidas exactas, banderolas verticales y horizontales en versión institucional e informativa, banners web, polos de hombre y mujer, gorra, pin, vallas publicitarias, paneles y cierres de vídeo.</p>
-          <p>Cada aplicación resuelta de antemano es una improvisación que no va a ocurrir. Y en un evento donde decenas de proveedores producen en paralelo contra reloj, eso es exactamente el punto.</p>
+<!-- 12 · SEIS PROPUESTAS PARA DECIR DOS PALABRAS -->
+<section class="pf-sec" id="propuestas" data-lightbox-group>
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">12 · Método</span></div>
+        <h2 class="pf-h2">Seis propuestas para decir dos palabras.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>Un cartel que dice «Sala de prensa» se presentó en seis versiones. El vinilo de entrada que dice «Bienvenido», en otras seis. No es indecisión: es el método del primer encargo —llevar varias rutas cerradas para forzar una decisión en una sola reunión— aplicado a la producción, cuando ya no quedaba plazo para presentar una opción y esperar comentarios.</p>
+      </div>
+    </div>
+    <div class="pf-stack">
+      <figure class="pf-fig pf-paper">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/propuestas-cartel-sala-prensa.webp" data-lightbox-alt="Seis versiones del cartel Sala de prensa"><img src="assets/casos/papa-francisco/despliegue/propuestas-cartel-sala-prensa.webp" alt="Hoja con seis versiones del cartel «Sala de prensa»: combinaciones de rojo, amarillo y beige con la greca en distintas posiciones" width="1200" height="580" loading="lazy" decoding="async"></button>
+        <figcaption>Seis composiciones del cartel de 4 × 1 m.</figcaption>
+      </figure>
+      <figure class="pf-fig pf-paper">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/propuestas-vinilo-bienvenido.webp" data-lightbox-alt="Seis versiones del vinilo de entrada Bienvenido"><img src="assets/casos/papa-francisco/despliegue/propuestas-vinilo-bienvenido.webp" alt="Hoja con seis versiones del vinilo informativo de entrada, todas con la palabra «Bienvenido» y el listado de espacios" width="1200" height="384" loading="lazy" decoding="async"></button>
+        <figcaption>Seis versiones del vinilo de entrada, 0,60 × 1 m.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · LA MARCA SIN COLOR Y SIN FOTOGRAFÍA: la medalla gira -->
+<section class="pf-sec pf-dark pf-medal" id="medalla" data-lightbox-group>
+  <div class="wrap">
+    <div class="pf-medal-grid">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">13 · La medalla</span></div>
+        <h2 class="pf-h2">La marca sin color y sin fotografía.</h2>
+        <div class="pf-body">
+          <p>El Banco Central de Reserva del Perú acuñó una medalla conmemorativa de la visita. Plata 0,925, una onza troy, 37 mm de diámetro, calidad proof, canto estriado, emisión máxima de 5.000 piezas.</p>
+          <p>Es la prueba de traducción más dura del proyecto. El logotipo depende de una fotografía y de dos colores; en metal no tiene ninguno de los dos. Hubo que rediseñarlo como relieve: el mapa del Perú pasa a plano hundido, la figura del Papa a volumen, el lema a bajorrelieve. Nada de la marca original sobrevive salvo su estructura.</p>
         </div>
+        <dl class="pf-medal-spec">
+          <div><dt>Metal</dt><dd>Plata 0,925</dd></div>
+          <div><dt>Peso</dt><dd>1 onza troy</dd></div>
+          <div><dt>Diámetro</dt><dd>37 mm</dd></div>
+          <div><dt>Emisión</dt><dd>5.000 piezas</dd></div>
+        </dl>
+      </div>
+      <!-- La medalla gira con el scroll (anverso → reverso); también con un clic -->
+      <div class="pf-coin-wrap">
+        <button type="button" class="pf-coin" id="pf-coin" aria-label="Girar la medalla: anverso y reverso">
+          <span class="pf-coin-inner">
+            <img class="pf-coin-face pf-coin-front" src="assets/casos/papa-francisco/despliegue/medalla-anverso.webp" alt="Anverso de la medalla de plata: la figura del Papa Francisco en relieve dentro del mapa del Perú, con el lema Unidos por la esperanza y las manos" width="900" height="900" loading="lazy" decoding="async">
+            <img class="pf-coin-face pf-coin-back" src="assets/casos/papa-francisco/despliegue/medalla-reverso.webp" alt="Reverso de la medalla: escudo papal y una cita del Papa Francisco" width="900" height="900" loading="lazy" decoding="async">
+          </span>
+        </button>
+        <p class="pf-coin-hint">Anverso y reverso · clic para girar</p>
       </div>
     </div>
 
-    <div class="cs-grid cs-g3 cs-fig">
-      <figure><img src="assets/casos/papa-francisco/apl-papeleria.webp" alt="Página del manual con la tarjeta de presentación y la hoja A4 membretada." width="1400" height="990" loading="lazy" decoding="async"><figcaption>Papelería institucional</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/apl-banderolas.webp" alt="Página del manual con banderolas verticales institucional e informativa." width="1400" height="990" loading="lazy" decoding="async"><figcaption>Banderolas, con zona reservada para contenido variable</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/apl-banner-web.webp" alt="Página del manual con banners web institucional e informativo." width="1400" height="990" loading="lazy" decoding="async"><figcaption>Banners web, incluida la versión por sede</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/apl-exterior.webp" alt="Página del manual con vallas publicitarias en tres versiones." width="1400" height="990" loading="lazy" decoding="async"><figcaption>Publicidad exterior</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/apl-polos.webp" alt="Página del manual con polos de hombre y mujer." width="1400" height="990" loading="lazy" decoding="async"><figcaption>Merchandising textil</figcaption></figure>
-      <figure><img src="assets/casos/papa-francisco/apl-gorra-pin.webp" alt="Página del manual con gorra y pin." width="1400" height="990" loading="lazy" decoding="async"><figcaption>Gorra y pin — el extremo pequeño del sistema</figcaption></figure>
+    <div class="pf-medal-row">
+      <figure class="pf-fig pf-paper pf-medal-bocetos">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/moneda-bocetos.webp" data-lightbox-alt="Cuatro bocetos de troquel de la medalla"><img src="assets/casos/papa-francisco/despliegue/moneda-bocetos.webp" alt="Cuatro bocetos de troquel de la medalla en blanco y negro, con distintas disposiciones del mapa, la figura y el texto circular" width="1200" height="475" loading="lazy" decoding="async"></button>
+        <figcaption>Cuatro bocetos de troquel presentados al Banco Central de Reserva.</figcaption>
+      </figure>
+      <figure class="pf-photo">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/moneda-certificado.webp" data-lightbox-alt="La medalla de plata junto a su certificado"><img src="assets/casos/papa-francisco/despliegue/moneda-certificado.webp" alt="La medalla de plata junto a su certificado del Banco Central de Reserva del Perú y la ficha de características técnicas" width="1200" height="840" loading="lazy" decoding="async"></button>
+        <figcaption>La pieza acuñada con su certificado.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ============ CIERRE ============ -->
-<section class="cs-cierre">
-  <div class="cs-wrap">
-    <p class="cs-eyebrow">Qué queda</p>
-    <h2 style="max-width:22ch;margin:1rem 0 1.5rem">El manual era el entregable</h2>
-    <div class="cs-narrow">
-      <p style="font-size:clamp(1.0625rem,1.8vw,1.25rem);line-height:1.65;font-weight:300">Durante cuatro días de enero de 2018, en Lima, Trujillo y Puerto Maldonado, ese logotipo apareció en sitios donde yo no estuve, aplicado por gente a la que nunca conocí, sobre materiales que no elegí.</p>
-      <p style="line-height:1.7">Funcionó porque el trabajo no terminó en el símbolo. Terminó en un documento que anticipaba las preguntas: cuánto espacio dejar alrededor, qué hacer si solo cabe en vertical, hasta qué tamaño se puede imprimir, a quién escribir cuando no alcanza. Diseñar la identidad de un evento así es, sobre todo, escribir bien las instrucciones.</p>
-      <p style="line-height:1.7">Dos semanas de trabajo para cuatro días de historia. Sigue siendo, con diferencia, el proyecto del que más he aprendido.</p>
+<!-- 14 · EL PAPEL VIAJA SOLO -->
+<section class="pf-sec" id="papel" data-lightbox-group>
+  <div class="wrap">
+    <div class="pf-split">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">14 · Impresos</span></div>
+        <h2 class="pf-h2">El papel viaja solo.</h2>
+      </div>
+      <div class="pf-body anim d2">
+        <p>Postales para Serpost en dos formatos, calendario de escritorio de trece hojas, folder institucional, invitación oficial a la inauguración y credenciales diferenciadas por color según el tipo de acceso. Piezas que circulan sin que nadie esté al lado explicando el sistema: tienen que llevar las reglas puestas.</p>
+      </div>
+    </div>
+    <div class="pf-papel">
+      <figure class="pf-fig pf-paper pf-p-postales">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/postales-serpost.webp" data-lightbox-alt="Postales Serpost, horizontal y vertical"><img src="assets/casos/papa-francisco/despliegue/postales-serpost.webp" alt="Pliego de artes finales de las postales de Serpost en formato horizontal y vertical, con anverso ilustrado y reverso para franqueo" width="1200" height="1263" loading="lazy" decoding="async"></button>
+        <figcaption>Postales Serpost, horizontal y vertical.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-p-cal">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/calendario-2018.webp" data-lightbox-alt="Calendario de escritorio de 2018"><img src="assets/casos/papa-francisco/despliegue/calendario-2018.webp" alt="Calendario de escritorio de 2018 montado sobre una mesa, con la portada mostrando al Papa y la greca amarilla en el canto superior" width="1200" height="904" loading="lazy" decoding="async"></button>
+        <figcaption>Calendario de escritorio, trece hojas.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-p-cred">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/credenciales.webp" data-lightbox-alt="Credenciales por tipo de acceso"><img src="assets/casos/papa-francisco/despliegue/credenciales.webp" alt="Cinco credenciales colgadas de cordones de colores distintos, cada una con una franja de color y la etiqueta del tipo de acceso" width="1200" height="714" loading="lazy" decoding="async"></button>
+        <figcaption>Credenciales por tipo de acceso.</figcaption>
+      </figure>
+      <figure class="pf-fig pf-paper pf-p-inv">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/invitacion-inauguracion.webp" data-lightbox-alt="Invitación a la inauguración"><img src="assets/casos/papa-francisco/despliegue/invitacion-inauguracion.webp" alt="Invitación oficial a la inauguración del Centro Internacional de Prensa, con greca amarilla en la cabecera y los datos del acto" width="962" height="1000" loading="lazy" decoding="async"></button>
+        <figcaption>Invitación a la inauguración.</figcaption>
+      </figure>
+      <figure class="pf-fig pf-paper pf-p-folder">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/folder-institucional.webp" data-lightbox-alt="Folder institucional abierto"><img src="assets/casos/papa-francisco/despliegue/folder-institucional.webp" alt="Arte del folder institucional abierto, con el logotipo sobre fondo blanco en la tapa" width="1200" height="890" loading="lazy" decoding="async"></button>
+        <figcaption>Folder institucional.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<footer class="cs-footer">
-  <div class="cs-wrap">
+<!-- 15 · EL PAPAMÓVIL -->
+<section class="pf-sec pf-sunken" id="papamovil" data-lightbox-group>
+  <div class="wrap">
+    <div class="pf-papa">
+      <div class="anim d1">
+        <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">15 · Presentación a la prensa</span></div>
+        <h2 class="pf-h2">El papamóvil.</h2>
+        <div class="pf-body">
+          <p>La presentación del vehículo a los medios tuvo su propio fondo: una retícula de logotipos alternados a paso regular, el formato clásico de rueda de prensa, resuelto para que la marca sea legible en cualquier encuadre de cámara y a cualquier altura de recorte.</p>
+        </div>
+        <figure class="pf-photo pf-papa-photo">
+          <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/papamovil-prensa.webp" data-lightbox-alt="El papamóvil presentado a los medios"><img src="assets/casos/papa-francisco/despliegue/papamovil-prensa.webp" alt="Fotograma de agencia mostrando el papamóvil blanco descubierto durante su presentación a la prensa" width="1200" height="674" loading="lazy" decoding="async"></button>
+          <figcaption>El vehículo presentado a los medios. Fotograma: Agencia Andina.</figcaption>
+        </figure>
+      </div>
+      <figure class="pf-fig pf-paper pf-papa-backing">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/papamovil-backing.webp" data-lightbox-alt="Backing de presentación del papamóvil"><img src="assets/casos/papa-francisco/despliegue/papamovil-backing.webp" alt="Arte del backing de presentación: retícula de logotipos de la visita alternados con los del fabricante del vehículo" width="1046" height="1400" loading="lazy" decoding="async"></button>
+        <figcaption>Backing de presentación.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 16 · LO QUE QUEDÓ EN PIE -->
+<section class="pf-sec pf-dark pf-legado" id="legado" data-lightbox-group>
+  <div class="wrap">
+    <div class="anim d1">
+      <div class="sm"><span class="sm-dot"></span><span class="sm-lbl">16 · Inauguración</span></div>
+      <h2 class="pf-h2 pf-h2--xl">Lo que quedó en pie.</h2>
+    </div>
+    <div class="pf-legado-grid">
+      <figure class="pf-photo pf-l-a" data-par="-0.04">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/inauguracion-presidente.webp" data-lightbox-alt="Inauguración del Centro Internacional de Prensa"><img src="assets/casos/papa-francisco/despliegue/inauguracion-presidente.webp" alt="Autoridades civiles y eclesiásticas en la inauguración del Centro Internacional de Prensa, bajo el cartel «Sala de prensa y área de trabajo»" width="1200" height="822" loading="lazy" decoding="async"></button>
+        <figcaption>Inauguración del Centro Internacional de Prensa.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-l-b" data-par="0.03">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/prensa-trabajando.webp" data-lightbox-alt="Corresponsales y cámaras trabajando en el vestíbulo"><img src="assets/casos/papa-francisco/despliegue/prensa-trabajando.webp" alt="Corresponsales y cámaras trabajando en el vestíbulo, entre las banderolas rojas y amarillas" width="1200" height="799" loading="lazy" decoding="async"></button>
+        <figcaption>La gráfica en uso, con la prensa dentro.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-l-c" data-par="-0.03">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/rueda-de-prensa-cep.webp" data-lightbox-alt="Rueda de prensa de la Conferencia Episcopal Peruana"><img src="assets/casos/papa-francisco/despliegue/rueda-de-prensa-cep.webp" alt="Rueda de prensa de la Conferencia Episcopal Peruana ante el mural con el afiche de la visita y las tres ciudades" width="1200" height="800" loading="lazy" decoding="async"></button>
+        <figcaption>El afiche de las tres ciudades como fondo institucional.</figcaption>
+      </figure>
+      <figure class="pf-photo pf-l-d" data-par="0.04">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/equipo-completo.webp" data-lightbox-alt="El equipo del operativo el día de la apertura"><img src="assets/casos/papa-francisco/despliegue/equipo-completo.webp" alt="Fotografía de grupo del equipo de la visita papal en el vestíbulo, delante de las banderolas" width="1200" height="799" loading="lazy" decoding="async"></button>
+        <figcaption>El equipo del operativo, el día de la apertura.</figcaption>
+      </figure>
+    </div>
+
+    <div class="pf-fachada">
+      <figure class="pf-fig pf-paper">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/gigantografia-fachada-cep.webp" data-lightbox-alt="Arte de la gigantografía para la fachada"><img src="assets/casos/papa-francisco/despliegue/gigantografia-fachada-cep.webp" alt="Arte de la gigantografía para la fachada: el logotipo, la franja de fechas y el reclamo «Bienvenido Papa Francisco» sobre la figura del Papa saludando" width="588" height="900" loading="lazy" decoding="async"></button>
+        <figcaption>Arte de la gigantografía de fachada, septiembre de 2017.</figcaption>
+      </figure>
+      <span class="pf-fachada-arrow" aria-hidden="true">→</span>
+      <figure class="pf-photo">
+        <button type="button" class="pf-zoom" data-lightbox-src="assets/casos/papa-francisco/despliegue/zoom/fachada-cep-instalada.webp" data-lightbox-alt="La gigantografía instalada en la sede de la Conferencia Episcopal Peruana"><img src="assets/casos/papa-francisco/despliegue/fachada-cep-instalada.webp" alt="Fachada de la sede de la Conferencia Episcopal Peruana con la gigantografía ya instalada sobre el muro amarillo del edificio" width="800" height="1200" loading="lazy" decoding="async"></button>
+        <figcaption>Instalada en la sede de la Conferencia Episcopal Peruana, octubre de 2017.</figcaption>
+      </figure>
+    </div>
+
+    <div class="pf-cierre anim d1">
+      <p>El manual pesa 35 páginas y describe una marca que no puede pasar de 20 centímetros. El despliegue pesa toneladas y cabe en 37 milímetros. Entre esos dos extremos hay un solo sistema, y la mitad se escribió después de cerrar el manual —en producción, contra el calendario, resolviendo cada pieza con lo que la anterior había dejado probado.</p>
+      <p class="pf-cierre-kicker">Un manual no termina un proyecto. Solo termina un documento.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="pf-credits">
+  <div class="wrap">
     <p>Proyecto realizado para la Conferencia Episcopal Peruana con motivo de la visita apostólica del Papa Francisco al Perú, enero de 2018.</p>
-    <p>Los logotipos de visitas papales de otros países que aparecen en la sección 02 son obra de sus respectivos autores y se reproducen únicamente con fines documentales, para ilustrar la fase de investigación de este proyecto.</p>
+    <p>Los logotipos de visitas papales de otros países que aparecen en el capítulo 02 son obra de sus respectivos autores y se reproducen únicamente con fines documentales, para ilustrar la fase de investigación de este proyecto. El fotograma del papamóvil es de Agencia Andina.</p>
   </div>
 </footer>
 
-</article>
+<!-- Caja de luz: recorre las piezas del mismo grupo con flechas, teclado o deslizando -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar vista ampliada">×</button>
+  <button class="pf-lb-nav pf-lb-prev" id="lightbox-prev" type="button" aria-label="Imagen anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  <button class="pf-lb-nav pf-lb-next" id="lightbox-next" type="button" aria-label="Imagen siguiente"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  <p class="pf-lb-count" id="lightbox-count" aria-live="polite"></p>
+</div>
 
 <!-- ══ NAVEGACIÓN ENTRE CASOS ══ -->
 <nav class="caso-nav" aria-label="Otros casos de estudio">
@@ -545,5 +1080,6 @@
 </footer>
 
 <script src="assets/js/site.js?v=20261007a" defer></script>
+<script src="assets/js/caso-papa-francisco.js?v=20261008a" defer></script>
 </body>
 </html>
