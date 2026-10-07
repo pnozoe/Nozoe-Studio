@@ -370,3 +370,43 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
+
+/* ── Caso destacado del home: reel de fondo ──
+   · El home cuida mucho su peso: el póster se pide cuando la sección
+     se acerca, y el video (preload="none") solo al reproducirse.
+   · Se reproduce en pantalla y se pausa al salir, sin sonido.
+   · Con "reducir movimiento" o ahorro de datos queda el póster. */
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.querySelector('.caso-feature-video');
+  if (!video) return;
+
+  const poster = window.matchMedia('(max-width: 767px)').matches
+    ? video.dataset.posterSm : video.dataset.poster;
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    || (navigator.connection && navigator.connection.saveData);
+
+  if (!('IntersectionObserver' in window)) {
+    video.poster = poster;
+    return;
+  }
+
+  const near = new IntersectionObserver((entries) => {
+    if (entries.some((e) => e.isIntersecting)) {
+      video.poster = poster;
+      near.disconnect();
+    }
+  }, { rootMargin: '300px 0px' });
+  near.observe(video);
+
+  if (still) return;
+  new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const p = video.play();
+        if (p && p.catch) p.catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.15 }).observe(video);
+});

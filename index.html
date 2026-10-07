@@ -86,7 +86,7 @@
 <link rel="preload" href="assets/fonts/nunito-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/nunito-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css?v=20260816a">
-<link rel="stylesheet" href="assets/css/site.css?v=20260922d">
+<link rel="stylesheet" href="assets/css/site.css?v=20261007a">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7VG5XMC7"></script>
 <script>
@@ -177,13 +177,77 @@
   </div>
 </section>
 
+<!-- ══ CASO DESTACADO — TML Cipango ══
+     El reel del caso en una ventana que se abre a sangre al hacer scroll.
+     Póster y video los pide site.js en diferido (preload="none"). -->
+<section class="caso-feature" id="caso-destacado" aria-labelledby="caso-feature-title">
+  <div class="wrap caso-feature-head">
+    <div>
+      <div class="sm">
+        <span class="sm-num">01</span>
+        <span class="sm-rule"></span>
+        <span class="sm-lbl">Caso destacado</span>
+      </div>
+      <h2 class="caso-feature-title" id="caso-feature-title">TML Cipango<span class="hl-em">.</span></h2>
+    </div>
+    <div>
+      <p class="caso-feature-claim">Una marca que no traduce Japón. Lo <span class="hl-em">cuenta</span>.</p>
+      <p class="caso-feature-desc">Identidad, manual, reels y brochure para una agencia de turismo en Japón hecha por y para hispanohablantes.</p>
+    </div>
+  </div>
+
+  <div class="caso-feature-screen">
+    <video class="caso-feature-video" muted loop playsinline preload="none" aria-hidden="true"
+           data-poster="assets/casos/tml/hero/caso-tml-hero-poster.webp"
+           data-poster-sm="assets/casos/tml/hero/caso-tml-hero-poster-720.webp">
+      <source src="assets/casos/tml/hero/caso-tml-hero-720.mp4" type="video/mp4" media="(max-width: 767px)">
+      <source src="assets/casos/tml/hero/caso-tml-hero-1080.webm" type="video/webm">
+      <source src="assets/casos/tml/hero/caso-tml-hero-1080.mp4" type="video/mp4">
+    </video>
+    <span class="caso-feature-shade" aria-hidden="true"></span>
+    <p class="caso-feature-badge"><span aria-hidden="true">★</span> Proyecto ancla · 2024 – hoy</p>
+    <dl class="caso-feature-stats">
+      <div><dt>Seguidores en TikTok gracias a los reels</dt><dd>+<span data-count-to="50">50</span> mil</dd></div>
+      <div><dt>Seguidores en Instagram</dt><dd>+<span data-count-to="6">6</span> mil</dd></div>
+      <div><dt>Testimonios de viajeros hispanos</dt><dd><span data-count-to="100">100</span>+</dd></div>
+      <div><dt>Piezas, un solo manual</dt><dd data-count-to="4">4</dd></div>
+    </dl>
+    <a class="caso-feature-link" href="caso-tml" aria-label="Ver caso: TML Cipango">
+      <span class="caso-feature-go"><span class="caso-feature-go-txt">Ver caso</span> <span class="arr" aria-hidden="true">→</span></span>
+    </a>
+  </div>
+
+  <div class="wrap caso-feature-foot">
+    <!-- Miniaturas decorativas: el nombre de cada capítulo ya vive en el texto visible -->
+    <ol class="caso-feature-chapters">
+      <li><a href="caso-tml#identidad">
+        <span class="caso-feature-ch-img caso-feature-ch-img--logo"><img src="assets/casos/tml/identidad/logo-claro.svg" alt="" loading="lazy" width="625" height="190"></span>
+        <span><span class="caso-feature-ch-num">01</span><span class="caso-feature-ch-t">Identidad</span></span>
+      </a></li>
+      <li><a href="caso-tml#manual">
+        <span class="caso-feature-ch-img"><img src="assets/casos/tml/manual/pag-01.webp" alt="" loading="lazy" width="580" height="820"></span>
+        <span><span class="caso-feature-ch-num">02</span><span class="caso-feature-ch-t">Manual · 31 pp</span></span>
+      </a></li>
+      <li><a href="caso-tml#reels">
+        <span class="caso-feature-ch-img"><img src="assets/casos/tml/reels/reel-01-poster.webp" alt="" loading="lazy" width="720" height="1280"></span>
+        <span><span class="caso-feature-ch-num">03</span><span class="caso-feature-ch-t">Reels</span></span>
+      </a></li>
+      <li><a href="caso-tml#brochure">
+        <span class="caso-feature-ch-img"><img src="assets/casos/tml/brochure/pag-01.webp" alt="" loading="lazy" width="848" height="1200"></span>
+        <span><span class="caso-feature-ch-num">04</span><span class="caso-feature-ch-t">Brochure · 12 pp</span></span>
+      </a></li>
+    </ol>
+    <a href="caso-tml" class="btn btn-ember caso-feature-cta">Ver caso de estudio <span class="arr">→</span></a>
+  </div>
+</section>
+
 <!-- ══ WEB PROFESIONAL (tarjeta destacada) ══ -->
 <section class="wp-feature" aria-labelledby="wp-feature-title">
   <div class="wrap">
 
     <div class="wp-feature-head">
       <div>
-        <p class="wp-feature-eyebrow"><span class="sm-num">01</span><span class="wp-feature-rule"></span>Nuevo · Web Profesional para Perú</p>
+        <p class="wp-feature-eyebrow"><span class="sm-num">02</span><span class="wp-feature-rule"></span>Nuevo · Web Profesional para Perú</p>
         <h2 id="wp-feature-title" class="wp-feature-headline">Tu web lista en días.<br>Y siempre <span class="accent">al día</span>.</h2>
       </div>
       <p class="wp-feature-lede">Un sistema que te hace ver profesional y convierte visitas en consultas por WhatsApp — que actualizas conversando, o mantenemos por ti.</p>
@@ -230,7 +294,7 @@
     <div class="cmp-grid">
 
       <div class="cmp-copy">
-        <p class="cmp-kicker"><span class="sm-num">02</span><span class="sm-rule"></span>La prueba, no la promesa</p>
+        <p class="cmp-kicker"><span class="sm-num">03</span><span class="sm-rule"></span>La prueba, no la promesa</p>
         <h2 class="cmp-headline">Tu competencia<br>no es mejor.<br><span class="cmp-soft">Solo</span> <span class="hl-em">se ve mejor.</span></h2>
         <p class="cmp-sub">
           El mismo negocio, contado de dos maneras distintas. Arrastra y compara — la diferencia no es el presupuesto, es el criterio.
@@ -292,7 +356,7 @@
     <div class="g12 svc-intro">
       <div class="svc-intro-left">
         <div class="sm">
-          <span class="sm-num">03</span>
+          <span class="sm-num">04</span>
           <span class="sm-rule"></span>
           <span class="sm-lbl">Servicios</span>
         </div>
@@ -376,7 +440,7 @@
     <div class="wrap">
 
       <div class="sm">
-        <span class="sm-num">04</span>
+        <span class="sm-num">05</span>
         <span class="sm-rule"></span>
         <span class="sm-lbl">Trabajo destacado</span>
       </div>
@@ -530,7 +594,7 @@
     <div class="g12 proceso-intro">
       <div class="proc-intro-left">
         <div class="sm">
-          <span class="sm-num">05</span>
+          <span class="sm-num">06</span>
           <span class="sm-rule"></span>
           <span class="sm-lbl">Proceso</span>
         </div>
@@ -587,7 +651,7 @@
     <div class="g12 pkg-intro">
       <div class="pkg-intro-left">
         <div class="sm">
-          <span class="sm-num">06</span>
+          <span class="sm-num">07</span>
           <span class="sm-rule"></span>
           <span class="sm-lbl">Paquetes</span>
         </div>
@@ -647,7 +711,7 @@
 
       <div class="cta-left">
         <div class="sm">
-          <span class="sm-num">07</span>
+          <span class="sm-num">08</span>
           <span class="sm-rule"></span>
           <span class="sm-lbl">Empecemos</span>
         </div>
@@ -730,7 +794,7 @@
   </div>
 </div>
 
-<script src="assets/js/site.js?v=20260922c" defer></script>
+<script src="assets/js/site.js?v=20261007a" defer></script>
 
 <!-- FAB WhatsApp (solo móvil) -->
 <a href="https://wa.me/817022124910" class="wa-fab" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener">

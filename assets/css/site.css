@@ -392,6 +392,278 @@ body::before {
 .trust-stat .accent { color: var(--ns-accent); }
 
 /* ══════════════════════════════════════
+   CASO DESTACADO — TML Cipango (home, justo debajo del hero)
+   El reel del caso en una ventana del ancho del contenido que,
+   al hacer scroll, se abre a sangre completa. Sin soporte de
+   scroll-timeline o con "reducir movimiento", queda la ventana fija.
+   El póster y el video los pide site.js en diferido.
+══════════════════════════════════════ */
+.caso-feature {
+  /* Margen lateral del contenido: replica el padding de .wrap en cada breakpoint */
+  --caso-feature-gutter: max(80px, calc((100vw - 1040px) / 2));
+  position: relative;
+  z-index: 1;
+  padding: var(--ns-space-24) 0 var(--ns-space-20);
+}
+
+.caso-feature-head {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--ns-space-12);
+  align-items: end;
+  margin-bottom: var(--ns-space-12);
+}
+.caso-feature-head .sm { margin-bottom: var(--ns-space-6); }
+.caso-feature-title {
+  /* Mismo interlineado que el título del caso (.case-title) */
+  font: 800 clamp(3.25rem, 8.4vw, var(--ns-fs-5xl))/0.95 var(--ns-font-sans);
+  letter-spacing: var(--ns-ls-tightest);
+  color: var(--ns-text-primary);
+}
+.caso-feature-claim {
+  font: 800 var(--ns-fs-xl)/var(--ns-lh-snug) var(--ns-font-sans);
+  letter-spacing: var(--ns-ls-tighter);
+  color: var(--ns-text-primary);
+  text-wrap: balance;
+  margin-bottom: var(--ns-space-4);
+}
+.caso-feature-desc {
+  font: 300 var(--ns-fs-base)/var(--ns-lh-relaxed) var(--ns-font-sans);
+  color: var(--ns-text-secondary);
+  max-width: 44ch;
+  text-wrap: pretty;
+}
+
+/* ── La pantalla ── */
+.caso-feature-screen {
+  position: relative;
+  height: min(86vh, 56vw);
+  min-height: 440px;
+  overflow: hidden;
+  background: var(--ns-ink-950);
+  /* Reposo: ventana del ancho del contenido */
+  clip-path: inset(0 var(--caso-feature-gutter) round var(--ns-radius-md));
+}
+.caso-feature-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.caso-feature-shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to top, rgba(10,17,25,0.88) 0%, rgba(10,17,25,0.42) 30%, rgba(10,17,25,0) 58%),
+    linear-gradient(to bottom, rgba(10,17,25,0.45) 0%, rgba(10,17,25,0) 22%);
+}
+
+.caso-feature-badge,
+.caso-feature-go {
+  position: absolute;
+  top: var(--ns-space-8);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ns-space-2);
+  padding: var(--ns-space-2) var(--ns-space-4);
+  border-radius: var(--ns-radius-md);
+  font: 800 9.5px/1 var(--ns-font-sans);
+  letter-spacing: var(--ns-ls-widest);
+  text-transform: uppercase;
+}
+.caso-feature-badge {
+  left: calc(var(--caso-feature-gutter) + var(--ns-space-8));
+  background: var(--ns-accent);
+  color: var(--ns-text-on-accent);
+}
+
+/* El enlace cubre toda la pantalla; la píldora «Ver caso» es su parte visible */
+.caso-feature-link {
+  position: absolute; inset: 0;
+  z-index: 2;
+  text-decoration: none;
+}
+.caso-feature-link:focus-visible { outline: none; }
+.caso-feature-go {
+  right: calc(var(--caso-feature-gutter) + var(--ns-space-8));
+  border: var(--ns-bw-1) solid rgba(244,241,236,0.35);
+  background: rgba(10,17,25,0.35);
+  color: var(--ns-warm-200);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: background var(--ns-dur-fast) var(--ns-ease-out), border-color var(--ns-dur-fast) var(--ns-ease-out);
+}
+.caso-feature-go .arr { display: inline-block; transition: transform var(--ns-dur-base) var(--ns-ease-out); }
+.caso-feature-link:hover .caso-feature-go,
+.caso-feature-link:focus-visible .caso-feature-go { background: var(--ns-accent); border-color: var(--ns-accent); }
+.caso-feature-link:focus-visible .caso-feature-go { box-shadow: var(--ns-elev-focus); }
+.caso-feature-link:hover .caso-feature-go .arr { transform: translateX(3px); }
+
+.caso-feature-stats {
+  position: absolute;
+  left: calc(var(--caso-feature-gutter) + var(--ns-space-8));
+  right: calc(var(--caso-feature-gutter) + var(--ns-space-8));
+  bottom: var(--ns-space-8);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--ns-space-6);
+  padding-top: var(--ns-space-5);
+  border-top: var(--ns-bw-1) solid rgba(244,241,236,0.22);
+}
+/* column-reverse: la cifra va arriba; flex-end la ancla al borde superior
+   aunque las etiquetas ocupen distinto número de líneas */
+.caso-feature-stats div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: var(--ns-space-2);
+}
+.caso-feature-stats dd {
+  font: 800 clamp(var(--ns-fs-xl), 3.4vw, var(--ns-fs-2xl))/1 var(--ns-font-sans);
+  letter-spacing: -0.03em;
+  color: var(--ns-warm-200);
+  font-variant-numeric: tabular-nums;
+}
+.caso-feature-stats dt {
+  font: 600 10px/1.45 var(--ns-font-sans);
+  letter-spacing: var(--ns-ls-widest);
+  text-transform: uppercase;
+  color: var(--ns-sky-200);
+  max-width: 22ch;
+}
+
+/* ── Pie: capítulos del caso + CTA ── */
+.caso-feature-foot {
+  display: flex;
+  align-items: center;
+  gap: var(--ns-space-8);
+  padding-top: var(--ns-space-10);
+}
+.caso-feature-chapters {
+  list-style: none;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--ns-space-3);
+}
+.caso-feature-chapters a {
+  display: flex;
+  align-items: center;
+  gap: var(--ns-space-3);
+  padding: var(--ns-space-2) var(--ns-space-3) var(--ns-space-2) var(--ns-space-2);
+  background: var(--ns-surface-raised);
+  border: var(--ns-bw-1) solid rgba(139,157,183,0.28);
+  border-radius: var(--ns-radius-md);
+  color: inherit;
+  text-decoration: none;
+  transition: transform var(--ns-dur-base) var(--ns-ease-out),
+              border-color var(--ns-dur-fast) var(--ns-ease-out),
+              box-shadow var(--ns-dur-base) var(--ns-ease-out);
+}
+.caso-feature-chapters a:hover {
+  transform: translateY(-3px);
+  border-color: var(--ns-border-strong);
+  box-shadow: var(--ns-elev-2);
+}
+.caso-feature-ch-img {
+  flex: none;
+  width: 42px; height: 56px;
+  overflow: hidden;
+  border-radius: var(--ns-radius-xs);
+  background: var(--ns-ink-900);
+}
+.caso-feature-ch-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.caso-feature-ch-img--logo {
+  display: flex;
+  align-items: center;
+  padding: var(--ns-space-1);
+  background: var(--ns-surface-raised);
+  border: var(--ns-bw-1) solid var(--ns-border-subtle);
+}
+.caso-feature-ch-img--logo img { height: auto; object-fit: contain; }
+.caso-feature-ch-num {
+  display: block;
+  margin-bottom: 6px;
+  font: 300 10px/1 var(--ns-font-sans);
+  letter-spacing: var(--ns-ls-widest);
+  color: var(--ns-text-tertiary);
+}
+.caso-feature-ch-t {
+  display: block;
+  font: 800 var(--ns-fs-sm)/1.2 var(--ns-font-sans);
+  color: var(--ns-text-primary);
+}
+.caso-feature-cta { flex: none; }
+
+/* ── Movimiento ligado al scroll ── */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .caso-feature-screen {
+      animation: casoFeatureOpen linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 50%;
+    }
+    .caso-feature-video {
+      animation: casoFeatureSettle linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 60%;
+    }
+    @keyframes casoFeatureOpen {
+      from { clip-path: inset(7% var(--caso-feature-gutter) round var(--ns-radius-md)); }
+      to   { clip-path: inset(0 0 round 0); }
+    }
+    @keyframes casoFeatureSettle {
+      from { transform: scale(1.12); }
+      to   { transform: scale(1); }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .caso-feature { --caso-feature-gutter: 48px; }
+}
+@media (max-width: 900px) {
+  .caso-feature { --caso-feature-gutter: 32px; padding: var(--ns-space-20) 0 var(--ns-space-16); }
+  .caso-feature-head { grid-template-columns: 1fr; gap: var(--ns-space-6); align-items: start; margin-bottom: var(--ns-space-8); }
+  .caso-feature-foot { flex-direction: column; align-items: stretch; }
+  .caso-feature-chapters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .caso-feature-cta { justify-content: center; }
+}
+@media (max-width: 600px) {
+  .caso-feature { --caso-feature-gutter: 20px; padding: var(--ns-space-16) 0 var(--ns-space-12); }
+  .caso-feature-claim { font-size: var(--ns-fs-lg); }
+  .caso-feature-screen { height: auto; min-height: 0; aspect-ratio: 4 / 5.4; }
+  .caso-feature-video { object-position: 62% 50%; }
+  .caso-feature-badge,
+  .caso-feature-go { top: var(--ns-space-5); }
+  .caso-feature-badge { left: calc(var(--caso-feature-gutter) + var(--ns-space-5)); }
+  /* La píldora se reduce a la flecha para no chocar con la etiqueta;
+     el texto sigue ahí para lectores de pantalla */
+  .caso-feature-go {
+    right: calc(var(--caso-feature-gutter) + var(--ns-space-5));
+    width: 30px; height: 30px;
+    padding: 0;
+    justify-content: center;
+  }
+  .caso-feature-go-txt {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .caso-feature-stats {
+    left: calc(var(--caso-feature-gutter) + var(--ns-space-5));
+    right: calc(var(--caso-feature-gutter) + var(--ns-space-5));
+    bottom: var(--ns-space-5);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--ns-space-5) var(--ns-space-4);
+  }
+  .caso-feature-stats dd { font-size: var(--ns-fs-xl); }
+  .caso-feature-stats dt { font-size: 9px; }
+  .caso-feature-chapters { gap: var(--ns-space-2); }
+  .caso-feature-ch-t { font-size: var(--ns-fs-xs); }
+}
+
+/* ══════════════════════════════════════
    WEB PROFESIONAL — tarjeta destacada (fondo claro + tarjeta oscura de contraste)
 ══════════════════════════════════════ */
 .wp-feature { padding: 96px 0; }
