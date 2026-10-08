@@ -1152,32 +1152,26 @@ body::before {
   border-top: 1px solid rgba(139,157,183,0.28);
 }
 
-/* Banda full-bleed: contiene los lomos anclados al borde del viewport.
-   El fondo lo pone el body (surface-base), igual que la textura de puntos. */
 .casos-band {
   position: relative;
   padding: var(--ns-space-24) 0;
-  overflow: hidden;
 }
 
-.casos-grid { align-items: start; }
-
-/* ── Columna editorial ── */
+/* ── Cabecera: titular de sección + ficha del caso ── */
+.casos-head { align-items: end; margin-bottom: var(--ns-space-12); }
+.casos-headline { grid-column: 1 / 7; margin-bottom: 0; }
 .casos-body {
-  grid-column: 1 / 6;
+  grid-column: 8 / 13;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--ns-space-5);
-  padding-top: var(--ns-space-1);
+  gap: var(--ns-space-4);
 }
-.casos-headline { margin-bottom: 0; }
 
 .caso-kicker {
   display: flex;
   align-items: center;
   gap: var(--ns-space-3);
-  margin-top: var(--ns-space-2);
   font: 600 9.5px/1 var(--ns-font-sans);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -1210,11 +1204,10 @@ body::before {
 .caso-desc {
   font: 400 14px/1.7 var(--ns-font-sans);
   color: var(--ns-text-secondary);
-  max-width: 36ch;
+  max-width: 40ch;
   text-wrap: pretty;
 }
 
-.caso-cta { margin-top: var(--ns-space-1); }
 .btn .arr {
   display: inline-block;
   margin-left: var(--ns-space-1);
@@ -1222,107 +1215,151 @@ body::before {
 }
 .btn:hover .arr { transform: translateX(3px); }
 
-.casos-count {
-  grid-column: 1 / 6;
+/* ── Díptico: Acto I (el símbolo, 20 cm) frente a Acto II (el despliegue, 7 m)
+   Los colores --pf-* son los de la marca del cliente (manual del caso),
+   no del sistema: van como literales, igual que en caso-papa-francisco.css. ── */
+.caso-dip {
+  --pf-red: #C51315;
+  --pf-yellow: #FFD000;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid rgba(139,157,183,0.28);
+  border-radius: var(--ns-radius-md);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 400ms var(--ns-ease-out), box-shadow 400ms var(--ns-ease-out);
+}
+.caso-dip:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(29,42,64,0.20); }
+.caso-dip:focus-visible { outline: 2px solid var(--ns-accent); outline-offset: 4px; }
+.caso-dip-panel {
+  position: relative;
   display: flex;
-  align-items: baseline;
-  gap: var(--ns-space-3);
-  margin-top: var(--ns-space-12);
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--ns-space-6);
+  aspect-ratio: 13 / 14;
+  padding: var(--ns-space-8) var(--ns-space-8) calc(var(--ns-space-8) + 22px);
+}
+.caso-dip-panel--paper { background: var(--ns-surface-raised); }
+.caso-dip-panel--photo { background: var(--ns-ink-900); color: var(--ns-text-inverse); }
+.caso-dip-logo {
+  align-self: center;
+  width: min(100%, 400px);
+  height: auto;
+}
+.caso-dip-photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ns-ease-out);
+}
+.caso-dip:hover .caso-dip-photo { transform: scale(1.03); }
+.caso-dip-shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to top, rgba(10,17,25,0.85) 0%, rgba(10,17,25,0.15) 45%),
+    linear-gradient(to bottom, rgba(10,17,25,0.55), rgba(10,17,25,0) 28%);
+}
+.caso-dip-act,
+.caso-dip-scale { position: relative; z-index: 1; }
+.caso-dip-act {
+  font: 600 10px/1 var(--ns-font-sans);
+  letter-spacing: var(--ns-ls-widest);
+  text-transform: uppercase;
+  color: var(--ns-text-tertiary);
+}
+.caso-dip-panel--photo .caso-dip-act { color: var(--ns-warm-200); }
+.caso-dip-scale { display: flex; flex-direction: column; gap: var(--ns-space-2); }
+.caso-dip-num {
+  font: 800 clamp(3rem, 6vw, 4.5rem)/0.9 var(--ns-font-sans);
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ns-text-primary);
+}
+.caso-dip-num small { margin-left: 0.12em; font-size: 0.42em; letter-spacing: -0.01em; }
+.caso-dip-panel--photo .caso-dip-num { color: var(--ns-surface-base); }
+.caso-dip-lbl {
+  font: 300 12.5px/1.4 var(--ns-font-sans);
+  color: var(--ns-text-secondary);
+}
+.caso-dip-panel--photo .caso-dip-lbl { color: var(--ns-sky-200); }
+/* Bisagra entre los dos actos */
+.caso-dip-seam {
+  position: absolute;
+  left: 50%; top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 48px; height: 48px;
+  margin: -24px 0 0 -24px;
+  border-radius: 50%;
+  background: var(--ns-accent);
+  color: var(--ns-text-inverse);
+  font: 800 18px/1 var(--ns-font-sans);
+  box-shadow: var(--ns-elev-2);
+  transition: transform 400ms var(--ns-ease-out);
+}
+.caso-dip:hover .caso-dip-seam { transform: translateX(4px); }
+/* La greca de Chan Chan como canto inferior: une los dos paneles */
+.caso-dip-greca {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  height: 22px;
+  background-color: var(--pf-red);
+  -webkit-mask: url("../casos/papa-francisco/greca/figura-h.png") repeat-x 0 50% / auto 22px;
+  mask: url("../casos/papa-francisco/greca/figura-h.png") repeat-x 0 50% / auto 22px;
+}
+
+/* ── Cifras del caso ── */
+.caso-dip-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--ns-space-6);
+  margin-top: var(--ns-space-8);
   padding-top: var(--ns-space-5);
   border-top: 1px solid rgba(139,157,183,0.28);
 }
-.casos-count-num {
-  font: 800 30px/1 var(--ns-font-sans);
-  letter-spacing: -0.02em;
-  color: var(--ns-text-primary);
-}
-.casos-count-lbl {
-  font: 300 13px/1 var(--ns-font-sans);
-  color: var(--ns-text-tertiary);
-}
-
-/* ── Placa del caso destacado ── */
-.casos-plate-slot {
-  grid-column: 6 / 13;
-  padding-top: 6px;
-}
-.caso-plate {
-  position: relative;
+.caso-dip-stats div {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 3/2;
-  padding: var(--ns-space-10) var(--ns-space-10);
-  background: var(--ns-surface-raised);
-  border: 1px solid rgba(139,157,183,0.28);
-  border-radius: var(--ns-radius-md);
-  box-shadow: 0 1px 2px rgba(29,42,64,0.06);
-  transition: transform 400ms var(--ns-ease-out), box-shadow 400ms var(--ns-ease-out);
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: var(--ns-space-2);
 }
-.caso-plate:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 32px rgba(29,42,64,0.20);
+.caso-dip-stats dd {
+  font: 800 clamp(var(--ns-fs-xl), 3vw, var(--ns-fs-2xl))/1 var(--ns-font-sans);
+  letter-spacing: -0.03em;
+  color: var(--ns-text-primary);
+  font-variant-numeric: tabular-nums;
 }
-.caso-plate img {
-  width: 100%; height: 100%;
-  object-fit: contain;
-}
-.caso-plate-cap {
-  position: absolute;
-  right: var(--ns-space-6); bottom: var(--ns-space-4);
-  font: 300 9.5px/1 var(--ns-font-sans);
-  letter-spacing: 0.14em;
+.caso-dip-stats dt {
+  font: 600 10px/1.45 var(--ns-font-sans);
+  letter-spacing: var(--ns-ls-widest);
   text-transform: uppercase;
   color: var(--ns-text-tertiary);
 }
 
-/* ── Lomos: casos secundarios asomando por el borde derecho ── */
-.casos-spines {
-  position: absolute;
-  /* 520px hasta el borde del contenido + 24px de calle + 196px de la pila */
-  right: calc(50% - 740px); top: 163px;
-  z-index: 2;
+/* ── Otros casos ── */
+.casos-otros {
   display: flex;
-  gap: var(--ns-space-3);
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ns-space-2);
+  margin-top: var(--ns-space-8);
+  font: 300 13px/1.4 var(--ns-font-sans);
+  color: var(--ns-text-tertiary);
 }
-.caso-spine {
-  position: relative;
-  display: block;
-  width: 92px; height: 296px;
-  overflow: hidden;
-  background: var(--ns-surface-raised);
-  border: 1px solid rgba(139,157,183,0.28);
-  border-radius: var(--ns-radius-md);
-  transition: transform 250ms var(--ns-ease-out);
+.casos-otros a {
+  font-weight: 600;
+  color: var(--ns-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--ns-border-strong);
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--ns-dur-fast) var(--ns-ease-out);
 }
-.caso-spine:hover { transform: translateX(-14px); }
-.caso-spine img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-.caso-spine-veil {
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(to top, rgba(10,17,25,0.82) 30%, rgba(10,17,25,0.05) 72%),
-    linear-gradient(to bottom, rgba(10,17,25,0.50), rgba(10,17,25,0) 32%);
-}
-.caso-spine-name {
-  position: absolute;
-  left: var(--ns-space-4); bottom: 18px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font: 800 17px/1 var(--ns-font-sans);
-  letter-spacing: -0.01em;
-  color: var(--ns-text-inverse);
-}
-.caso-spine-num {
-  position: absolute;
-  right: var(--ns-space-3); top: 14px;
-  font: 300 10px/1 var(--ns-font-sans);
-  letter-spacing: 0.16em;
-  color: rgba(244,241,236,0.75);
-}
+.casos-otros a:hover { text-decoration-color: var(--ns-accent); }
 
 
 .tj-grid-foot {
@@ -1670,31 +1707,6 @@ body::before {
 /* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */
-/* Por debajo de 1280px los lomos ya no caben junto a la placa
-   (a 1180px llegaban a taparle el pie de foto): pasan a flujo normal. */
-@media (max-width: 1280px) {
-  .casos-spines {
-    position: static;
-    margin: var(--ns-space-12) auto 0;
-    max-width: 1200px;
-    padding: 0 80px;
-    gap: var(--ns-space-4);
-  }
-  .caso-spine {
-    flex: 1 1 0;
-    width: auto; height: 180px;
-    border-right: 1px solid rgba(139,157,183,0.28);
-    border-radius: var(--ns-radius-md);
-  }
-  .caso-spine:hover { transform: translateY(-4px); }
-  .caso-spine-name {
-    writing-mode: horizontal-tb;
-    transform: none;
-    left: var(--ns-space-4); bottom: var(--ns-space-4);
-  }
-  .caso-spine-num { right: var(--ns-space-4); top: var(--ns-space-4); }
-}
-
 @media (max-width: 1024px) {
   .wrap { padding: 0 48px; }
   .nav-inner { padding: 0 48px; }
@@ -1702,8 +1714,6 @@ body::before {
   .trust-inner { padding: 0 48px; }
   .footer-inner { padding: 0 48px; }
   .cta-right { grid-column: 8 / 13; }
-
-  .casos-spines { padding: 0 48px; }
 }
 
 @media (max-width: 900px) {
@@ -1730,11 +1740,10 @@ body::before {
   .svc-card { min-height: auto; }
   .svc-card-body { padding: 24px 32px 28px; }
 
-  .casos-body, .casos-plate-slot, .casos-count { grid-column: 1 / -1; }
-  .casos-plate-slot { padding-top: var(--ns-space-8); }
-  .caso-plate { padding: var(--ns-space-10) var(--ns-space-10); }
+  .casos-headline, .casos-body { grid-column: 1 / -1; }
+  .casos-head { gap: var(--ns-space-8); margin-bottom: var(--ns-space-10); }
   .casos-band { padding: var(--ns-space-20) 0; }
-  .casos-spines { padding: 0 32px; }
+  .caso-dip-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--ns-space-5); }
 
   .proc-intro-left, .proc-intro-right { grid-column: 1 / -1; }
   .proc-step { grid-template-columns: auto 1fr; row-gap: 8px; }
@@ -1804,12 +1813,15 @@ body::before {
   .nav-ham { display: flex; }
   .proj-grid { grid-template-columns: 1fr; }
 
-  /* Móvil: los lomos se apilan y la placa gana aire */
-  .casos-spines { flex-direction: column; padding: 0 20px; gap: var(--ns-space-3); }
-  /* flex-basis:0 en columna colapsaría la altura: se fija explícitamente */
-  .caso-spine { flex: 0 0 auto; height: 140px; }
-  .caso-plate { padding: var(--ns-space-8) var(--ns-space-8); }
-  .casos-count { flex-wrap: wrap; }
+  /* Móvil: los dos actos se apilan; la bisagra gira hacia abajo */
+  .caso-dip { grid-template-columns: minmax(0, 1fr); }
+  /* Misma altura en los dos paneles: la bisagra cae justo en la unión */
+  .caso-dip-panel { aspect-ratio: auto; height: 340px; padding: var(--ns-space-6) var(--ns-space-6) calc(var(--ns-space-6) + 22px); }
+  /* 28px: media bisagra (24px) más aire, para no tapar la etiqueta */
+  .caso-dip-panel--paper { padding-bottom: calc(var(--ns-space-6) + 28px); }
+  .caso-dip-logo { width: min(80%, 280px); }
+  .caso-dip-seam { transform: rotate(90deg); }
+  .caso-dip:hover .caso-dip-seam { transform: rotate(90deg) translateX(4px); }
 
   .pkg-grid { max-width: none; }
   .svc-cards { grid-template-columns: 1fr; }

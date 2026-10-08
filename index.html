@@ -86,7 +86,7 @@
 <link rel="preload" href="assets/fonts/nunito-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/nunito-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css?v=20260816a">
-<link rel="stylesheet" href="assets/css/site.css?v=20261007a">
+<link rel="stylesheet" href="assets/css/site.css?v=20261008a">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7VG5XMC7"></script>
 <script>
@@ -434,9 +434,8 @@
 
 <!-- ══ CASOS DE ESTUDIO + PIEZAS DESTACADAS ══ -->
 <section class="trabajo" id="trabajo">
-  <!-- ── Banda de casos de estudio (full-bleed) ── -->
+  <!-- ── Caso destacado: Papa Francisco, en dos actos ── -->
   <div class="casos-band">
-
     <div class="wrap">
 
       <div class="sm">
@@ -445,66 +444,89 @@
         <span class="sm-lbl">Trabajo destacado</span>
       </div>
 
-      <div class="g12 casos-grid">
+      <div class="g12 casos-head">
+        <h2 class="section-headline casos-headline reveal-scroll">Casos,<br>no decoración.</h2>
 
         <div class="casos-body reveal-scroll">
-          <h2 class="section-headline casos-headline">Casos,<br>no decoración.</h2>
-
           <p class="caso-kicker">
             <span class="caso-kicker-rule" aria-hidden="true"></span>Caso destacado
           </p>
-
           <h3 class="caso-title">Papa Francisco<br>Perú 2018<span class="caso-title-dot">.</span></h3>
-
           <p class="caso-meta">
-            <span>Identidad + Manual</span>
+            <span>Identidad + Manual + Despliegue</span>
             <span class="meta-sep">·</span>
             <span>2017–2018</span>
             <span class="meta-sep">·</span>
             <span>Perú</span>
           </p>
-
           <p class="caso-desc">
             El logotipo oficial de la visita del Papa Francisco al Perú,
             y el manual que tuvo que sostenerlo cuando dejó de estar
             en nuestras manos.
           </p>
-
-          <a href="caso-papa-francisco" class="btn btn-ember caso-cta">Ver caso de estudio<span class="arr">→</span></a>
         </div>
-
-        <div class="casos-plate-slot reveal-scroll">
-          <a href="caso-papa-francisco" class="caso-plate">
-            <img src="assets/casos/papa-francisco/logo-final.webp"
-                 alt="Logotipo oficial de la visita del Papa Francisco al Perú 2018"
-                 loading="lazy">
-            <span class="caso-plate-cap">Logotipo oficial · Conferencia Episcopal Peruana</span>
-          </a>
-        </div>
-
-        <p class="casos-count">
-          <span class="casos-count-num">01</span>
-          <span class="casos-count-lbl">de 03 casos de estudio</span>
-        </p>
-
       </div>
-    </div>
 
-    <!-- Casos secundarios: lomos anclados al borde derecho del viewport -->
-    <div class="casos-spines">
-      <a href="caso-tml" class="caso-spine">
-        <!-- Imagen decorativa: el nombre del caso ya vive en el texto visible -->
-        <img src="assets/casos/tml/tml-flyer.webp" alt="" loading="lazy">
-        <span class="caso-spine-veil"></span>
-        <span class="caso-spine-name">TML Cipango</span>
-        <span class="caso-spine-num" aria-hidden="true">02</span>
+      <!-- Díptico: del techo del logotipo (20 cm) a la banderola mayor (7 m) -->
+      <a href="caso-papa-francisco" class="caso-dip reveal-scroll" aria-label="Ver caso: Papa Francisco Perú 2018">
+        <span class="caso-dip-panel caso-dip-panel--paper">
+          <span class="caso-dip-act">Acto I · El símbolo</span>
+          <img class="caso-dip-logo" src="assets/casos/papa-francisco/home/diptico-simbolo.webp" alt="Logotipo oficial de la visita del Papa Francisco al Perú 2018" width="880" height="586" loading="lazy" decoding="async">
+          <span class="caso-dip-scale">
+            <span class="caso-dip-num"><span data-count-to="20">20</span><small>cm</small></span>
+            <span class="caso-dip-lbl">Techo del logotipo sin autorización</span>
+          </span>
+        </span>
+        <span class="caso-dip-panel caso-dip-panel--photo">
+          <img class="caso-dip-photo" src="assets/casos/papa-francisco/home/diptico-despliegue.webp" alt="Vestíbulo del Centro Internacional de Prensa con dos banderolas que dicen BIENVENIDOS, vistas desde el piso superior" width="1040" height="1120" loading="lazy" decoding="async">
+          <span class="caso-dip-shade" aria-hidden="true"></span>
+          <span class="caso-dip-act">Acto II · El despliegue</span>
+          <span class="caso-dip-scale">
+            <span class="caso-dip-num"><span data-count-to="7">7</span><small>m</small></span>
+            <span class="caso-dip-lbl">El banner mayor</span>
+          </span>
+        </span>
+        <span class="caso-dip-seam" aria-hidden="true">→</span>
+        <span class="caso-dip-greca" aria-hidden="true"></span>
       </a>
-      <a href="caso-cassaforma" class="caso-spine">
-        <img src="assets/casos/cassaforma/identidad-brand-cassaforma.webp" alt="" loading="lazy">
-        <span class="caso-spine-veil"></span>
-        <span class="caso-spine-name">Cassaforma</span>
-        <span class="caso-spine-num" aria-hidden="true">03</span>
-      </a>
+
+      <dl class="caso-dip-stats reveal-scroll">
+        <div><dt>La medalla</dt><dd><span data-count-to="37">37</span> mm</dd></div>
+        <div><dt>Piezas acuñadas</dt><dd>5.000</dd></div>
+        <div><dt>Ciudades</dt><dd data-count-to="3">3</dd></div>
+        <div><dt>Meses de producción</dt><dd data-count-to="5">5</dd></div>
+      </dl>
+
+      <div class="caso-feature-foot">
+        <!-- Miniaturas decorativas: el nombre de cada capítulo ya vive en el texto visible -->
+        <ol class="caso-feature-chapters">
+          <li><a href="caso-papa-francisco#simbolo">
+            <span class="caso-feature-ch-img caso-feature-ch-img--logo"><img src="assets/casos/papa-francisco/home/ch-simbolo.webp" alt="" loading="lazy" width="160" height="107"></span>
+            <span><span class="caso-feature-ch-num">01–06</span><span class="caso-feature-ch-t">El símbolo</span></span>
+          </a></li>
+          <li><a href="caso-papa-francisco#manual">
+            <span class="caso-feature-ch-img"><img src="assets/casos/papa-francisco/home/ch-manual.webp" alt="" loading="lazy" width="84" height="112"></span>
+            <span><span class="caso-feature-ch-num">07</span><span class="caso-feature-ch-t">Manual · 35&nbsp;pp</span></span>
+          </a></li>
+          <li><a href="caso-papa-francisco#sede">
+            <span class="caso-feature-ch-img"><img src="assets/casos/papa-francisco/home/ch-sede.webp" alt="" loading="lazy" width="84" height="112"></span>
+            <span><span class="caso-feature-ch-num">08–12</span><span class="caso-feature-ch-t">Sede de prensa</span></span>
+          </a></li>
+          <li><a href="caso-papa-francisco#medalla">
+            <span class="caso-feature-ch-img"><img src="assets/casos/papa-francisco/home/ch-medalla.webp" alt="" loading="lazy" width="84" height="112"></span>
+            <span><span class="caso-feature-ch-num">13–15</span><span class="caso-feature-ch-t">La medalla</span></span>
+          </a></li>
+        </ol>
+        <a href="caso-papa-francisco" class="btn btn-ember caso-feature-cta">Ver caso de estudio <span class="arr">→</span></a>
+      </div>
+
+      <p class="casos-otros">
+        Otros casos:
+        <a href="caso-tml">TML Cipango</a>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <a href="caso-cassaforma">Cassaforma Proyectos</a>
+      </p>
+
     </div>
   </div>
 
