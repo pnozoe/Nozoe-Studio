@@ -144,10 +144,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // las páginas de caso, donde sí se ven grandes.
   var BASE = 'assets/casos/muro/';
   var P = [
-    { n: 'Cassaforma', t: 'Identidad', f: 'identidad-brand-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
+    { n: 'Cassaforma', t: 'Identidad', f: 'identidad-brand-cassaforma-v2.webp', x: '100% rediseño integral: identidad, impresos y web' },
     { n: 'Cassaforma', t: 'Identidad', f: 'identidad-logo-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
     { n: 'TML Cipango', t: 'Identidad', f: 'identidad-logo-tml.webp', x: '14 meses de colaboración continua' },
-    { n: 'Cassaforma', t: 'Identidad', f: 'identidad-tipografia-cassaforma.webp', x: '100% rediseño integral: identidad, impresos y web' },
+    { n: 'Cassaforma', t: 'Identidad', f: 'identidad-tipografia-cassaforma-v2.webp', x: '100% rediseño integral: identidad, impresos y web' },
     { n: 'Wilkamikuy', t: 'Identidad', f: 'identidad-logo-wilkamikuy.webp' },
     { n: 'Papa Francisco', t: 'Identidad', f: 'identidad-logo-francisco.webp' },
     { n: 'Papa Francisco', t: 'Identidad', f: 'identidad-brand-francisco.webp' },
