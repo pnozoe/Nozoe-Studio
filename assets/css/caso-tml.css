@@ -411,6 +411,20 @@
 .tml-impact dd sup { font-size: 0.45em; color: var(--ns-accent); vertical-align: top; }
 .tml-impact dt { margin-top: var(--ns-space-3); max-width: 26ch; font: var(--ns-fw-light) var(--ns-fs-sm)/1.55 var(--ns-font-sans); color: var(--ns-text-secondary); }
 
+/* Testimonio del cliente, bajo las cifras. Sección clara: texto en text-primary.
+   El acento va en el subrayado y no en el texto, porque orange-500 sobre
+   warm-200 solo alcanza AA para texto grande. */
+.tml-testi { max-width: 62rem; margin: clamp(var(--ns-space-16), 8vw, var(--ns-space-24)) 0 0; padding-top: clamp(var(--ns-space-10), 5vw, var(--ns-space-16)); border-top: var(--ns-bw-1) solid var(--ns-ink-100); }
+.tml-testi-mark { height: 0.55em; margin-bottom: var(--ns-space-5); font: var(--ns-fw-extrabold) var(--ns-fs-5xl)/1 var(--ns-font-sans); color: var(--ns-accent); user-select: none; }
+.tml-testi-quote { margin: 0 0 var(--ns-space-10); }
+.tml-testi-quote p { margin: 0; max-width: 58ch; font: var(--ns-fw-light) clamp(1.15rem, 2.4vw, 1.625rem)/1.55 var(--ns-font-sans); color: var(--ns-text-primary); text-wrap: pretty; }
+.tml-testi-quote strong { font-weight: var(--ns-fw-semibold); color: inherit; text-decoration: underline; text-decoration-color: var(--ns-accent); text-decoration-thickness: var(--ns-bw-2); text-underline-offset: 0.22em; }
+.tml-testi-author { display: flex; align-items: center; gap: var(--ns-space-4); }
+.tml-testi-iso { flex-shrink: 0; width: 56px; height: 56px; border-radius: var(--ns-radius-pill); }
+.tml-testi-id { display: flex; flex-direction: column; gap: var(--ns-space-1); padding-left: var(--ns-space-4); border-left: var(--ns-bw-1) solid var(--ns-ink-100); }
+.tml-testi-name { font: var(--ns-fw-extrabold) var(--ns-fs-md)/1.2 var(--ns-font-sans); font-style: normal; letter-spacing: 0.01em; color: var(--ns-text-primary); }
+.tml-testi-role { font: var(--ns-fw-light) var(--ns-fs-sm)/1.4 var(--ns-font-sans); letter-spacing: 0.04em; color: var(--ns-text-secondary); }
+
 /* ══════════════════════════════════════
    CAJA DE LUZ · flechas y contador (la base vive en site.css)
 ══════════════════════════════════════ */
@@ -488,6 +502,9 @@
   .case-hero--reel .case-meta-item,
   .case-hero--reel .case-meta-item:last-child { border: none; margin: 0; padding: 0; }
   .tml-iti-track, .tml-man-track { padding-left: 20px; }
+  .tml-testi-mark { font-size: var(--ns-fs-4xl); margin-bottom: var(--ns-space-3); }
+  .tml-testi-quote { margin-bottom: var(--ns-space-8); }
+  .tml-testi-iso { width: 48px; height: 48px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
