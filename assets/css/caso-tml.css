@@ -224,20 +224,29 @@
 .tml-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ns-space-5); }
 .tml-step {
   position: relative; aspect-ratio: 1 / 1; border-radius: var(--ns-space-2); overflow: hidden;
-  display: grid; place-items: center; text-align: center; isolation: isolate;
+  display: flex; align-items: flex-end; isolation: isolate;
   text-decoration: none; color: var(--ns-warm-200); background: var(--ns-ink-800);
 }
+/* La pieza se ve limpia; el texto va abajo, sobre un degradado que solo oscurece esa franja */
 .tml-step-bg { position: absolute; inset: -9% 0; z-index: -2; }
 .tml-step-bg img, .tml-step-bg video {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  transform: scale(1.06); filter: blur(3px);
-  transition: transform var(--ns-dur-slower) var(--ns-ease-out), filter var(--ns-dur-slower) var(--ns-ease-out);
+  transition: transform var(--ns-dur-slower) var(--ns-ease-out);
 }
-.tml-step::after { content: ""; position: absolute; inset: 0; z-index: -1; background: color-mix(in srgb, var(--ns-ink-950) 60%, transparent); transition: background var(--ns-dur-slow) var(--ns-ease-out); }
-.tml-step:hover .tml-step-bg img, .tml-step:hover .tml-step-bg video { transform: scale(1.02); filter: none; }
-.tml-step:hover::after { background: color-mix(in srgb, var(--ns-ink-950) 72%, transparent); }
+.tml-step::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(0deg,
+    color-mix(in srgb, var(--ns-ink-950) 97%, transparent) 0%,
+    color-mix(in srgb, var(--ns-ink-950) 96%, transparent) 36%,
+    color-mix(in srgb, var(--ns-ink-950) 0%, transparent) 60%);
+}
+/* Las portadas llevan sus propios titulares abajo: se anclan arriba para mostrar la imagen */
+.tml-step-bg img { object-position: top; }
+.tml-step-bg--mid img { object-position: 50% 30%; } /* el reel: muestra la cara y deja su rótulo bajo la franja */
+.tml-step:hover .tml-step-bg img, .tml-step:hover .tml-step-bg video,
+.tml-step:focus-visible .tml-step-bg img, .tml-step:focus-visible .tml-step-bg video { transform: scale(1.08); }
 .tml-step:focus-visible { outline: var(--ns-bw-2) solid var(--ns-accent); outline-offset: 3px; }
-.tml-step-body { padding: clamp(var(--ns-space-5), 4vw, var(--ns-space-12)); max-width: 36ch; display: flex; flex-direction: column; align-items: center; gap: var(--ns-space-3); }
+.tml-step-body { padding: clamp(var(--ns-space-5), 4vw, var(--ns-space-10)); max-width: 40ch; display: flex; flex-direction: column; align-items: flex-start; gap: var(--ns-space-3); }
 .tml-step-num { font: var(--ns-fw-light) 13px/1 var(--ns-font-sans); letter-spacing: 0.1em; color: var(--ns-orange-300); }
 .tml-step-title { font: var(--ns-fw-extrabold) clamp(1.5rem, 2.8vw, 2.4rem)/1.1 var(--ns-font-sans); letter-spacing: var(--ns-ls-tight); }
 .tml-step p { font: var(--ns-fw-light) clamp(0.875rem, 1.1vw, 1rem)/1.6 var(--ns-font-sans); color: var(--ns-ink-100); }
@@ -510,4 +519,6 @@
 @media (prefers-reduced-motion: reduce) {
   .tml-posts-col { animation: none; }
   [data-par], .tml-man-track, .tml-iti-track, .tml-leaf { transform: none !important; } /* !important: anula el movimiento del script */
+  .tml-step:hover .tml-step-bg img, .tml-step:hover .tml-step-bg video,
+  .tml-step:focus-visible .tml-step-bg img, .tml-step:focus-visible .tml-step-bg video { transform: none; }
 }
