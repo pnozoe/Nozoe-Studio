@@ -93,6 +93,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  // Excluye tráfico propio: ?interno=1 marca este navegador (?interno=0 lo desmarca)
+  // y nunca se mide fuera del dominio real (local, vistas previas de Cloudflare)
+  try{var m=location.search.match(/[?&]interno=([01])/);if(m)localStorage.setItem('ns-interno',m[1]);
+  if(localStorage.getItem('ns-interno')==='1'||!/^(www\.)?nozoestudio\.com$/.test(location.hostname))window['ga-disable-G-KT7VG5XMC7']=true}catch(e){}
   gtag('config', 'G-KT7VG5XMC7');
 </script>
 </head>
