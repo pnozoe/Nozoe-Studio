@@ -3,447 +3,887 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daniela Rojas — Demo de landing legal | Nozoe Studio</title>
-<meta name="description" content="Demo ficticia de landing web para estudio jurídico, creada por Nozoe Studio.">
+<title>Daniela Rojas — Abogada en Lima | Demo Nozoe Studio</title>
+<meta name="description" content="Asesoría legal laboral, civil, empresarial y de familia en Lima, explicada en lenguaje simple y con costos acordados por escrito.">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F3F2EE">
 <meta property="og:locale" content="es_PE">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Daniela Rojas — Demo de landing legal">
-<meta property="og:description" content="Demo ficticia de landing web para estudio jurídico, creada por Nozoe Studio.">
-<meta property="og:image" content="assets/daniela-rojas-portrait.webp">
+<meta property="og:title" content="Daniela Rojas — Abogada en Lima | Demo Nozoe Studio">
+<meta property="og:description" content="Tu problema legal, resuelto con claridad y sin letra pequeña.">
+<meta property="og:image" content="assets/reunion-lima.webp">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
-body{margin:0;background:#FAF7F1;color:#1C1917;-webkit-font-smoothing:antialiased}
-html{scroll-behavior:smooth}
-@keyframes heroUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-details summary::-webkit-details-marker{display:none}
-.demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
-.demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
-.demo-ribbon img{width:100%;height:auto;display:block}
-.demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:4px}
-@media(min-width:981px){.main-nav{padding-right:125px!important}}
-@media(max-width:980px){.demo-ribbon{top:77px;right:0;width:30%;transform:none;filter:drop-shadow(0 4px 7px rgba(0,0,0,.25))}.demo-ribbon:hover{transform:translateY(-2px)}}
-@media(max-width:700px){.demo-ribbon{top:137px}}
-body.menu-open{overflow:hidden}
-.mn-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid rgba(28,25,23,.25);border-radius:50%;background:transparent;cursor:pointer;flex:none}
-.mn-toggle svg{width:18px;height:18px}
-@media(max-width:820px){
-  .mn-toggle{display:inline-flex;position:relative;z-index:151}
-  .main-nav .mn-links{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:100vh!important;z-index:150!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:28px!important;padding:6rem 2.5rem 3rem!important;background:#FAF7F1!important;box-sizing:border-box!important;visibility:hidden;opacity:0;transform:translateY(-1rem);transition:opacity .25s ease,transform .25s ease,visibility .25s}
-  .main-nav .mn-links.is-open{visibility:visible;opacity:1;transform:translateY(0)}
-  .main-nav .mn-links a{font-family:'Newsreader',serif;font-size:28px}
-  .main-nav .mn-links a.mn-cta{font-family:'Hanken Grotesk',sans-serif;font-size:16px;align-self:flex-start}
-  [style*="grid-template-columns:repeat(4,1fr)"],
-  [style*="grid-template-columns:repeat(3,1fr)"],
-  [style*="grid-template-columns:.85fr 1.15fr"],
-  [style*="grid-template-columns:1fr 1fr"],
-  [style*="grid-template-columns:60px 1fr 1.4fr auto"],
-  [style*="grid-template-columns: repeat(4, 1fr)"],
-  [style*="grid-template-columns: repeat(3, 1fr)"],
-  [style*="grid-template-columns: .85fr 1.15fr"],
-  [style*="grid-template-columns: 1fr 1fr"],
-  [style*="grid-template-columns: 60px 1fr 1.4fr auto"]{grid-template-columns:1fr!important}
+:root{
+  --bg:#F3F2EE; --bg-2:#E2E0D6; --ink:#2F2F2D; --ink-2:#5E5D58; --line:rgba(47,47,45,.16); --line-2:rgba(47,47,45,.32);
+  --dark:#2B2B29; --dark-2:#363633; --on-dark:#F3F2EE; --on-dark-2:#A9A79F; --line-d:rgba(243,242,238,.16);
+  --gold:#C4A86D; --gold-l:#A0834A; --gold-s:#7D6538;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Red Hat Display",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --g:clamp(20px,4.5vw,64px); --nav:76px;
+  --ease:cubic-bezier(.2,.7,.15,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,p,ul,figure,blockquote{margin:0}
+ul{padding:0;list-style:none}
+[hidden]{display:none!important}
+::selection{background:var(--gold);color:var(--dark)}
+:focus-visible{outline:1.5px solid var(--gold-l);outline-offset:4px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--g)}
+.bn{filter:grayscale(1) sepia(.14) contrast(1.06) brightness(.98)}
+
+/* ---------- tipografía base ---------- */
+.k{font:500 11.5px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);display:flex;align-items:center;gap:.7em}
+.k::after{content:"/";color:var(--gold-l);letter-spacing:0;font-weight:400}
+.dark .k{color:var(--on-dark-2)} .dark .k::after{color:var(--gold)}
+.h2{font:300 clamp(36px,4.9vw,74px)/1.04 var(--sans);letter-spacing:-.025em}
+.h2 em,.h1 em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--gold-l);letter-spacing:-.01em}
+.dark .h2 em{color:var(--gold)}
+.lead{font:300 clamp(18px,1.5vw,21px)/1.6 var(--sans);color:var(--ink-2)}
+.serif{font-family:var(--serif)}
+.nw{white-space:nowrap}
+
+/* botones de trazo fino */
+.btn{display:inline-flex;align-items:center;gap:14px;min-height:48px;padding:0 22px;border:1px solid var(--line-2);font:500 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:transparent;cursor:pointer;transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.btn svg{width:16px;height:16px;flex:none;transition:transform .45s var(--ease)}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover svg{transform:translateX(4px)}
+.btn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+.dark .btn{color:var(--on-dark);border-color:rgba(243,242,238,.38)}
+.dark .btn:hover{background:var(--on-dark);color:var(--dark);border-color:var(--on-dark)}
+
+/* ---------- cinta demo ---------- */
+.ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.22));transition:filter .2s,transform .2s}
+.ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.32));transform:rotate(45deg) translateY(-2px)}
+.ribbon img{width:100%;height:auto}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:120;background:rgba(243,242,238,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .4s}
+.nav.sc{border-bottom-color:var(--line)}
+.nav-in{height:var(--nav);display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand svg{width:26px;height:30px;flex:none}
+.brand b{font:500 13px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase}
+.brand span{display:block;font:400 10.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);margin-top:6px}
+.nav-links{display:flex;gap:30px}
+.nav-links a{position:relative;font:500 11.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);padding:8px 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--gold-l);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--ink)}
+.nav-links a:hover::after,.nav-links a[aria-current="true"]::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{min-height:40px;padding:0 18px;font-size:11px}
+.burger{display:none;width:44px;height:44px;border:0;background:none;padding:0;cursor:pointer;color:var(--ink)}
+.burger svg{width:26px;height:26px;margin:auto}
+.burger .x{display:none}
+.nav[data-open="true"] .burger .o{display:none}
+.nav[data-open="true"] .burger .x{display:block}
+.drawer{display:none}
+@media(min-width:1101px){.nav-in{padding-right:calc(var(--g) + 92px)}}
+@media(max-width:1100px){
+  .nav-links,.nav-in>.nav-cta{display:none}
+  .burger{display:block}
+  .ribbon{top:calc(var(--nav) + 4px);right:0;width:min(42%,300px);transform:none}
+  .ribbon:hover{transform:translateY(-2px)}
+  .js .drawer{display:block;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;visibility:hidden;transition:max-height .5s var(--ease),visibility 0s .5s}
+  .js .nav[data-open="true"] .drawer{max-height:520px;visibility:visible;transition:max-height .6s var(--ease)}
+  .drawer-in{padding:18px var(--g) 30px;display:grid}
+  .drawer a{font:300 26px/1.2 var(--sans);text-decoration:none;padding:13px 0;border-bottom:1px solid var(--line)}
+  .drawer .btn{margin-top:22px;justify-content:space-between;font-size:12px;border-bottom:1px solid var(--ink)}
+  html:not(.js) .drawer{display:block}
+  html:not(.js) .nav{position:relative}
+}
+
+/* ---------- revelado ---------- */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1.1s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.split{opacity:1;transform:none}
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+.split .w>span{display:inline-block;transform:translateY(108%);transition:transform 1.15s var(--ease);transition-delay:calc(var(--i,0) * 42ms + var(--d,0) * 90ms)}
+.split.in .w>span{transform:none}
+/* filetes que se trazan */
+.ln{position:relative}
+.ln::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line-2);transform-origin:left}
+.js .rv.ln::before{transform:scaleX(0);transition:transform 1.4s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+.js .rv.ln.in::before{transform:scaleX(1)}
+.dark .ln::before{background:var(--line-d)}
+
+/* ---------- hero ---------- */
+.hero{position:relative}
+.hero-ph{position:relative;height:clamp(340px,calc(100svh - var(--nav) - 300px),640px);overflow:hidden;background:var(--bg-2)}
+.hz{position:absolute;inset:0}
+.js .hz{transform:scale(1.07);transition:transform 2.6s var(--ease)}
+.js .hero.in .hz{transform:none}
+[data-par]{position:absolute;left:0;top:-9%;width:100%;height:118%;object-fit:cover;will-change:transform}
+.hero-ph img{object-position:center 32%}
+.hero-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,43,41,0) 55%,rgba(43,43,41,.18))}
+.seal{position:absolute;right:calc(var(--g) + 2%);top:calc(clamp(340px,calc(100svh - var(--nav) - 300px),640px) - 66px);width:132px;height:132px;z-index:3}
+.seal svg{width:100%;height:100%;display:block}
+.seal .ring{transform-origin:100px 100px;animation:gira 46s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+.hero-tx{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:clamp(28px,5vw,80px);align-items:end;padding-top:clamp(40px,4.4vw,64px);padding-bottom:clamp(64px,8vw,120px)}
+.h1{font:300 clamp(42px,6.3vw,100px)/1 var(--serif);letter-spacing:-.022em;color:var(--ink)}
+.h1 em{color:var(--gold-l)}
+.hero-side{display:grid;gap:26px;padding-bottom:10px}
+.hero-side .k{margin-bottom:-4px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:10px}
+.micro{font-size:14px;line-height:1.55;color:var(--ink-2);padding-top:18px;border-top:1px solid var(--line)}
+.down{position:absolute;right:var(--g);bottom:28px;width:30px;height:30px;color:var(--ink-2);animation:baja 2.6s var(--ease) infinite}
+@keyframes baja{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ---------- declaración + cifras ---------- */
+.intro{padding:clamp(20px,3vw,40px) 0 clamp(96px,11vw,170px)}
+.intro-g{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(24px,4vw,64px);align-items:start}
+.intro-g .k{padding-top:.9em}
+.statement{font:300 clamp(26px,3.15vw,46px)/1.28 var(--sans);letter-spacing:-.018em;color:var(--ink)}
+.statement b{font-weight:300;color:var(--gold-l)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 clamp(18px,3vw,48px);margin-top:clamp(64px,8vw,120px)}
+.stat{padding-top:26px}
+.stat p:first-child{font:300 clamp(40px,4.6vw,70px)/1 var(--serif);letter-spacing:-.02em}
+.stat p:last-child{margin-top:14px;font-size:14px;line-height:1.5;color:var(--ink-2);max-width:20ch}
+
+/* ---------- marquesina ligada al scroll ---------- */
+.marq{overflow:hidden;padding:clamp(16px,2vw,28px) 0 clamp(10px,1.5vw,20px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.marq-t{white-space:nowrap;font:300 clamp(64px,11vw,180px)/1.08 var(--sans);letter-spacing:-.04em;color:var(--gold);will-change:transform}
+.marq-t em{font-family:var(--serif);font-style:italic;letter-spacing:-.02em}
+.marq-t i{font-style:normal;color:var(--line-2);margin:0 .25em}
+
+/* ---------- secciones ---------- */
+.sec{padding:clamp(96px,11vw,170px) 0}
+.sh{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,5vw,90px);align-items:end;margin-bottom:clamp(52px,6.5vw,96px)}
+.sh .k{margin-bottom:26px}
+.sh .lead{max-width:46ch}
+
+/* dolores: tres columnas de trazo fino */
+.tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.dol{padding:0 clamp(18px,2.6vw,40px) 8px;border-left:1px solid var(--line)}
+.dol:first-child{border-left:0;padding-left:0}
+.num{font:300 clamp(30px,2.6vw,40px)/1 var(--serif);color:var(--gold-l);letter-spacing:-.01em}
+.ic{width:46px;height:46px;margin:30px 0 26px;color:var(--ink)}
+.ic *{vector-effect:non-scaling-stroke}
+.dol h3{font:400 22px/1.3 var(--sans);letter-spacing:-.01em;margin-bottom:14px}
+.dol p{font-size:16px;color:var(--ink-2)}
+
+/* franja de foto */
+.franja{position:relative;height:clamp(340px,62vw,760px);overflow:hidden}
+.franja img{object-position:center 30%}
+.pie{position:absolute;right:var(--g);bottom:18px;font:500 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,242,238,.85)}
+
+/* servicios: filas */
+.filas{border-bottom:1px solid var(--line-2)}
+.fila{display:grid;grid-template-columns:56px minmax(0,4.2fr) minmax(0,5fr) minmax(0,2fr) 56px;gap:clamp(14px,2.4vw,36px);align-items:center;padding:clamp(28px,3vw,42px) 0;transition:background .5s var(--ease)}
+.fila .n{font:300 15px/1 var(--serif);color:var(--gold-s)}
+.fila h3{font:300 clamp(26px,2.7vw,40px)/1.08 var(--serif);text-transform:uppercase;letter-spacing:-.005em;transition:transform .6s var(--ease)}
+.fila p{font-size:15.5px;color:var(--ink-2)}
+.fila .pr{font:400 13px/1.3 var(--sans);letter-spacing:.06em;color:var(--ink);white-space:nowrap}
+.fila .pr span{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.flecha{justify-self:end;width:48px;height:48px;display:grid;place-items:center;color:var(--ink);transition:color .4s}
+.flecha svg{width:34px;height:34px;transition:transform .55s var(--ease)}
+.fila:hover{background:linear-gradient(90deg,transparent,rgba(226,224,214,.55) 12%,rgba(226,224,214,.55) 88%,transparent)}
+.fila:hover h3{transform:translateX(10px)}
+.fila:hover .flecha{color:var(--gold-l)}
+.fila:hover .flecha svg{transform:translate(4px,-4px)}
+.nota{margin-top:26px;font-size:14px;color:var(--ink-2);max-width:62ch}
+
+/* sobre */
+.sobre,.alt{background:var(--bg-2)}
+.sobre-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(36px,7vw,120px);align-items:center}
+.retrato{position:relative;aspect-ratio:4/5;overflow:hidden}
+.retrato img{object-position:center 18%}
+.retrato-w{position:relative}
+.retrato-w::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold-l);z-index:-1;opacity:.7}
+.sobre h2{margin:26px 0 30px}
+.sobre h2 .serif{display:block;font-style:italic;color:var(--gold-l);font-size:.62em;line-height:1.18;margin-top:14px;letter-spacing:-.01em}
+.sobre .lead{margin-bottom:34px;color:var(--ink-2)}
+.creds li{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:15px 0;border-top:1px solid var(--line-2);font-size:15.5px}
+.creds li:last-child{border-bottom:1px solid var(--line-2)}
+.creds li span{color:var(--gold-s)}
+
+/* proceso */
+.pasos{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.4vw,36px);padding-top:40px}
+.riel{position:absolute;left:0;right:0;top:0;height:1px;background:var(--line-2)}
+.riel i{position:absolute;inset:0;background:var(--gold-l);transform-origin:left;transform:scaleX(var(--p,0))}
+.paso{position:relative}
+.paso::before{content:"";position:absolute;top:-44px;left:0;width:9px;height:9px;border-radius:50%;background:var(--bg);border:1px solid var(--gold-l)}
+.paso .ph{aspect-ratio:4/3;overflow:hidden;margin-bottom:24px;background:var(--bg-2)}
+.paso .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.paso:hover .ph img{transform:scale(1.04)}
+.paso .et{font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-s);margin-bottom:12px}
+.paso h3{font:400 21px/1.3 var(--sans);margin-bottom:10px}
+.paso p{font-size:15.5px;color:var(--ink-2)}
+
+/* casos — oscuro */
+.dark{background:var(--dark);color:var(--on-dark)}
+.casos-tit{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:clamp(52px,6vw,90px)}
+.casos .tres{gap:0}
+.caso{padding:32px clamp(18px,2.6vw,40px) 6px;border-left:1px solid var(--line-d)}
+.caso:first-child{border-left:0;padding-left:0}
+.caso .et{font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.caso h3{font:300 clamp(25px,2.3vw,33px)/1.15 var(--serif);margin-bottom:16px}
+.caso p{font-size:15.5px;color:var(--on-dark-2)}
+.caso .res{margin-top:28px;padding-top:18px;border-top:1px solid var(--line-d);display:flex;gap:12px;align-items:baseline;font:400 16px/1.45 var(--sans);color:var(--on-dark)}
+.caso .res::before{content:"";flex:none;width:18px;height:1px;background:var(--gold);transform:translateY(-4px)}
+.aviso{margin-top:clamp(52px,6vw,80px);font-size:13.5px;color:var(--on-dark-2);max-width:70ch}
+.casos-big{font:300 clamp(70px,13vw,210px)/.86 var(--serif);text-transform:uppercase;color:var(--gold);letter-spacing:-.03em;text-align:right;margin-top:clamp(56px,7vw,110px)}
+
+/* testimonios */
+.testi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3vw,48px)}
+.testi figure{padding-top:30px;display:flex;flex-direction:column}
+.testi .q{font:300 64px/.6 var(--serif);color:var(--gold-l);height:30px}
+.testi blockquote{font:300 clamp(19px,1.55vw,22px)/1.5 var(--serif);font-style:italic;color:var(--ink);flex:1}
+.testi figcaption{margin-top:28px;font-size:14px;color:var(--ink-2)}
+.testi figcaption strong{color:var(--ink);font-weight:500}
+
+/* faq */
+.faq-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,6vw,110px);align-items:start}
+.faq-side{position:sticky;top:calc(var(--nav) + 40px)}
+.faq-side .h2{margin:26px 0 40px}
+.faq-ph{aspect-ratio:4/3;overflow:hidden}
+.faq-ph img{width:100%;height:100%;object-fit:cover}
+.acc{border-bottom:1px solid var(--line-2)}
+.acc details{border-top:1px solid var(--line-2)}
+.acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 34px;gap:20px;align-items:center;padding:28px 0;font:400 clamp(18px,1.55vw,22px)/1.35 var(--sans);letter-spacing:-.01em;transition:color .3s}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{color:var(--gold-s)}
+.mas{position:relative;width:34px;height:34px;border:1px solid var(--line-2);border-radius:50%;transition:transform .5s var(--ease),border-color .3s}
+.mas::before,.mas::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:currentColor;transform:translate(-50%,-50%)}
+.mas::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] .mas{transform:rotate(45deg);border-color:var(--gold-l)}
+.acc details p{padding:0 54px 30px 0;color:var(--ink-2);font-size:16.5px}
+details[open] p{animation:aparece .6s var(--ease)}
+@keyframes aparece{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* cierre */
+.cierre{position:relative;overflow:hidden;min-height:clamp(520px,52vw,700px);display:flex;align-items:center}
+.cierre-ph{position:absolute;inset:0 45% 0 0}
+.cierre-ph img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.cierre-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,242,238,0) 30%,var(--bg) 99%)}
+.cierre .wrap{position:relative;width:100%}
+.cierre-tx{margin-left:auto;width:min(100%,760px);text-align:right;display:grid;justify-items:end;gap:26px}
+.cierre-tx .k{justify-content:flex-end}
+.cierre h2{font:300 clamp(46px,6.6vw,104px)/.98 var(--serif);letter-spacing:-.025em}
+.cierre h2 em{font-style:italic;color:var(--gold-l)}
+.cierre-tx>p{max-width:44ch;color:var(--ink-2)}
+.cierre .micro{border:0;padding:0;font-size:13.5px}
+.cierre .seal{position:absolute;left:var(--g);right:auto;bottom:34px;width:112px;height:112px}
+
+/* contacto — oscuro */
+.contacto{padding-top:clamp(96px,11vw,160px)}
+.ct-g{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(40px,7vw,120px);margin-top:clamp(52px,6vw,84px)}
+.form h3{font:300 clamp(26px,2.3vw,34px)/1.1 var(--serif);margin-bottom:22px}
+.campo{display:block;border-bottom:1px solid rgba(243,242,238,.28);transition:border-color .3s}
+.campo:focus-within{border-color:var(--gold)}
+.campo input,.campo select,.campo textarea{width:100%;background:transparent;border:0;outline:0;color:var(--on-dark);font:400 17px/1.5 var(--sans);padding:20px 0 14px;border-radius:0;-webkit-appearance:none;appearance:none}
+.campo textarea{resize:vertical;min-height:110px}
+.campo select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%23A9A79F' stroke-width='1'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;background-size:16px}
+.campo select option{color:var(--ink);background:var(--bg)}
+::placeholder{color:var(--on-dark-2);opacity:1}
+.form .btn{margin-top:34px}
+.form .btn[aria-disabled="true"]{border-color:var(--gold);color:var(--gold);pointer-events:none}
+.priv{margin-top:20px;font-size:13px;color:var(--on-dark-2)}
+.ct-ph{aspect-ratio:16/10;overflow:hidden;margin-bottom:34px}
+.ct-ph img{width:100%;height:100%;object-fit:cover}
+.datos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px}
+.datos div{padding:20px 0;border-top:1px solid var(--line-d)}
+.datos p:first-child{font:500 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.datos p:last-child{font-size:15.5px;line-height:1.55}
+.datos a{text-decoration:none;border-bottom:1px solid var(--line-d);transition:border-color .3s}
+.datos a:hover{border-color:var(--gold)}
+.foot{margin-top:clamp(80px,9vw,130px);border-top:1px solid var(--line-d);padding:30px 0 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 30px;font-size:13px;color:var(--on-dark-2)}
+.foot a{color:var(--on-dark)}
+
+/* ---------- responsive ---------- */
+@media(max-width:1100px){
+  .fila{grid-template-columns:44px minmax(0,1fr) auto 48px;grid-template-areas:"n h pr fl" ". p p p"}
+  .fila .n{grid-area:n}.fila h3{grid-area:h}.fila p{grid-area:p}.fila .pr{grid-area:pr}.fila .flecha{grid-area:fl}
+  .pasos{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:56px}
+  .riel{display:none}
+  .paso::before{display:none}
+}
+@media(max-width:860px){
+  :root{--nav:66px}
+  body{font-size:16px}
+  .hero-tx,.intro-g,.sh,.sobre-g,.faq-g,.ct-g{grid-template-columns:1fr}
+  .hero-ph{height:46vh;min-height:300px}
+  .hero .seal{width:104px;height:104px;top:calc(max(300px,46vh) - 52px)}
+  .hero-tx{padding-top:74px}
+  .down{display:none}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px}
+  .tres{grid-template-columns:1fr}
+  .dol,.caso{border-left:0;padding:34px 0 30px;border-top:1px solid var(--line)}
+  .caso{border-top-color:var(--line-d)}
+  .dol:first-child,.caso:first-child{padding-top:34px}
+  .ic{margin:22px 0 18px}
+  .testi{grid-template-columns:1fr;gap:10px}
+  .testi figure{padding:30px 0 34px;border-top:1px solid var(--line)}
+  .faq-side{position:static}
+  .faq-ph{display:none}
+  .faq-side .h2{margin-bottom:10px}
+  .retrato-w{margin-right:18px}
+  .casos-tit{flex-direction:column;align-items:flex-start}
+  .cierre{min-height:0;display:block;padding-bottom:clamp(80px,12vw,120px)}
+  .cierre-ph{position:relative;inset:auto;height:60vw;min-height:280px}
+  .cierre-ph::after{background:linear-gradient(180deg,rgba(243,242,238,0) 40%,var(--bg))}
+  .cierre-tx{text-align:left;justify-items:start;margin:-40px 0 0}
+  .cierre-tx .k{justify-content:flex-start}
+  .cierre .seal{display:none}
+}
+@media(max-width:560px){
+  .fila{grid-template-columns:minmax(0,1fr) 44px;grid-template-areas:"n fl" "h h" "p p" "pr pr";row-gap:12px}
+  .fila .flecha{width:44px;height:44px}
+  .fila .pr{margin-top:6px}
+  .pasos{grid-template-columns:1fr}
+  .datos{grid-template-columns:1fr}
+  .hero-btns .btn{flex:1 1 100%;justify-content:space-between}
+  .acc details p{padding-right:0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
 }
 </style>
-</helmet>
+</head>
+<body>
 
-<div style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;line-height:1.6">
-  <a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-    <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
-  </a>
+<a class="ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+  <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="315" height="60">
+</a>
 
 <!-- NAV -->
-<nav class="main-nav" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(250,247,241,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,25,23,.08)">
-  <a href="#inicio" style="font-family:'Newsreader',serif;font-size:21px;color:#1C1917;text-decoration:none">Daniela Rojas <span style="color:#96502E;font-style:italic">· abogada</span></a>
-  <button type="button" class="mn-toggle" aria-expanded="false" aria-controls="mn-links" aria-label="Abrir menú">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#1C1917" stroke-linecap="round" stroke-width="1.6"/></svg>
-  </button>
-  <div class="mn-links" id="mn-links" style="display:flex;align-items:center;gap:28px;font-size:14px">
-    <a href="#servicios" style="color:#1C1917;text-decoration:none">Servicios</a>
-    <a href="#sobre" style="color:#1C1917;text-decoration:none">Sobre mí</a>
-    <a href="#casos" style="color:#1C1917;text-decoration:none">Casos</a>
-    <a href="#faq" style="color:#1C1917;text-decoration:none">Preguntas</a>
-    <a href="{{ waLink }}" class="mn-cta" style="background:#1C1917;color:#FAF7F1;padding:10px 22px;border-radius:100px;text-decoration:none;font-weight:500">Agendar consulta</a>
+<header class="nav" id="nav" data-open="false">
+  <div class="wrap nav-in">
+    <a class="brand" href="#inicio" aria-label="Daniela Rojas, abogada — inicio">
+      <svg viewBox="0 0 26 30" aria-hidden="true"><path d="M3 2h8.6C19 2 24 7.4 24 14.5S19 27 11.6 27H3z" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 29.5h26" stroke="#C4A86D" stroke-width="1"/></svg>
+      <div><b>Daniela Rojas</b><span>Abogada</span></div>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#casos">Casos</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a class="btn solid nav-cta" href="https://wa.me/51999888777?text=Hola%20Daniela%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener">Agendar consulta</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menú">
+      <svg class="o" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 9h20M3 17h20" stroke="currentColor" stroke-width="1"/></svg>
+      <svg class="x" viewBox="0 0 26 26" aria-hidden="true"><path d="M6 6l14 14M20 6L6 20" stroke="currentColor" stroke-width="1"/></svg>
+    </button>
   </div>
-</nav>
-
-<!-- HERO -->
-<header id="inicio" style="position:relative;min-height:100svh;box-sizing:border-box;display:flex;align-items:center;overflow:hidden;background:#22281F url('assets/hero-consulta-estudio.webp') center center/cover no-repeat">
-  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,23,19,.82) 0%,rgba(24,23,19,.68) 35%,rgba(24,23,19,.25) 60%,rgba(24,23,19,.05) 100%)"></div>
-  <div style="position:relative;z-index:1;max-width:1240px;width:100%;margin:0 auto;padding:158px 48px 88px;box-sizing:border-box;animation:heroUp .9s cubic-bezier(.2,.7,.2,1) both">
-    <div style="max-width:650px;color:#FAF7F1">
-      <p style="margin:0 0 20px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#E8BC8F;font-weight:600">— Estudio legal · Lima, Perú</p>
-      <h1 style="margin:0 0 24px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(48px,6.1vw,82px);line-height:1.02;letter-spacing:-.02em">Tu problema legal, resuelto con <em style="font-style:italic;color:#E8BC8F">claridad</em> y sin letra pequeña.</h1>
-      <p style="margin:0 0 36px;max-width:52ch;font-size:17px;color:rgba(250,247,241,.82)">Asesoro a personas y pequeñas empresas en derecho laboral, civil, empresarial y de familia. Te explico tus opciones en lenguaje simple y te digo con honestidad si tu caso conviene o no.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="{{ waLink }}" style="display:inline-flex;align-items:center;gap:10px;background:#D9A05B;color:#22281F;padding:15px 30px;border-radius:100px;text-decoration:none;font-weight:600" style-hover="background:#E5B274">Consultar por WhatsApp →</a>
-        <a href="#contacto" style="display:inline-flex;align-items:center;padding:15px 30px;border-radius:100px;border:1px solid rgba(250,247,241,.52);color:#FAF7F1;text-decoration:none;font-weight:500" style-hover="border-color:#FAF7F1">Escribir mensaje</a>
-      </div>
-      <p style="margin:20px 0 0;font-size:13px;color:rgba(250,247,241,.66)">Primera orientación de 15 minutos · sin compromiso ni lenguaje enredado.</p>
+  <div class="drawer" id="drawer">
+    <div class="drawer-in">
+      <a href="#servicios">Servicios</a>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#casos">Casos</a>
+      <a href="#faq">Preguntas</a>
+      <a class="btn" href="https://wa.me/51999888777?text=Hola%20Daniela%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener">Agendar consulta <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor"/></svg></a>
     </div>
   </div>
 </header>
 
-<!-- STATS -->
-<section data-reveal style="border-top:1px solid rgba(28,25,23,.1);border-bottom:1px solid rgba(28,25,23,.1)">
-  <div style="max-width:1240px;margin:0 auto;padding:36px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
-    <div><p style="margin:0;font-family:'Newsreader',serif;font-size:38px;font-weight:400">12 años</p><p style="margin:4px 0 0;font-size:13px;color:rgba(28,25,23,.55)">de ejercicio profesional</p></div>
-    <div><p style="margin:0;font-family:'Newsreader',serif;font-size:38px;font-weight:400">+350</p><p style="margin:4px 0 0;font-size:13px;color:rgba(28,25,23,.55)">casos y consultas atendidas</p></div>
-    <div><p style="margin:0;font-family:'Newsreader',serif;font-size:38px;font-weight:400">93%</p><p style="margin:4px 0 0;font-size:13px;color:rgba(28,25,23,.55)">de casos resueltos favorablemente</p></div>
-    <div><p style="margin:0;font-family:'Newsreader',serif;font-size:38px;font-weight:400">&lt; 24 h</p><p style="margin:4px 0 0;font-size:13px;color:rgba(28,25,23,.55)">de respuesta a tu consulta</p></div>
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-ph"><div class="hz">
+    <img class="bn" data-par="0.12" src="assets/reunion-lima.webp" alt="Daniela Rojas en una reunión con clientes, con Lima de fondo" width="2400" height="1350" fetchpriority="high">
+  </div></div>
+  <div class="seal" aria-hidden="true">
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="98" fill="#F3F2EE"/>
+      <circle cx="100" cy="100" r="91" fill="none" stroke="#A0834A" stroke-width=".8"/>
+      <circle cx="100" cy="100" r="56" fill="none" stroke="#A0834A" stroke-width=".8"/>
+      <g class="ring">
+        <defs><path id="arco" d="M100 100m-73 0a73 73 0 1 1 146 0a73 73 0 1 1-146 0"/></defs>
+        <text font-family="Red Hat Display, sans-serif" font-size="12.5" font-weight="500" letter-spacing="3" fill="#2F2F2D"><textPath href="#arco" textLength="452" lengthAdjust="spacing">ESTUDIO LEGAL · LIMA, PERÚ · CAL N.° 58 423 ·</textPath></text>
+      </g>
+      <path d="M88 78h9.5c12 0 19 9 19 22s-7 22-19 22H88z" fill="none" stroke="#2F2F2D" stroke-width="1.1"/>
+      <path d="M80 128h40" stroke="#A0834A" stroke-width="1.1"/>
+    </svg>
   </div>
+  <div class="wrap hero-tx">
+    <h1 class="h1 split rv" data-d="1">Tu problema legal, resuelto con <em>claridad</em> y sin letra pequeña.</h1>
+    <div class="hero-side rv" style="--d:4">
+      <p class="k">Estudio legal · Lima, Perú</p>
+      <div class="hero-btns">
+        <a class="btn solid" href="https://wa.me/51999888777?text=Hola%20Daniela%2C%20quisiera%20una%20orientaci%C3%B3n%20sobre%20mi%20caso." target="_blank" rel="noopener">Consultar por WhatsApp <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor"/></svg></a>
+        <a class="btn" href="#contacto">Escribir mensaje</a>
+      </div>
+      <p class="micro">Primera orientación de 15 minutos · sin compromiso ni lenguaje enredado.</p>
+    </div>
+  </div>
+  <svg class="down" viewBox="0 0 30 30" aria-hidden="true"><path d="M4 11l11 9 11-9" fill="none" stroke="currentColor" stroke-width="1"/></svg>
 </section>
 
-<!-- DOLORES -->
-<section style="background:#F3EDE1;padding:110px 48px">
-  <div style="max-width:1240px;margin:0 auto">
-    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— ¿Te suena?</p>
-    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px);line-height:1.1;max-width:20ch">Los problemas legales no avisan. Y esperar los <em style="color:#96502E">encarece</em>.</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
-      <div data-reveal style="background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06)">
-        <p style="margin:0 0 14px;font-family:'Newsreader',serif;font-style:italic;font-size:21px;line-height:1.3">«Me despidieron y no sé si fue legal»</p>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Tienes plazos cortos para reclamar. Revisamos tu carta de despido, tu liquidación y CTS, y te decimos si corresponde una indemnización o reposición.</p>
-      </div>
-      <div data-reveal style="background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06)">
-        <p style="margin:0 0 14px;font-family:'Newsreader',serif;font-style:italic;font-size:21px;line-height:1.3">«Mi negocio opera sin contratos claros»</p>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Acuerdos de palabra con socios, clientes o trabajadores terminan costando caro. Ordenamos la base legal de tu empresa antes de que sea un problema.</p>
-      </div>
-      <div data-reveal style="background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06)">
-        <p style="margin:0 0 14px;font-family:'Newsreader',serif;font-style:italic;font-size:21px;line-height:1.3">«Los abogados me hablan en otro idioma»</p>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Términos en latín y honorarios sorpresa. Aquí trabajas con alguien que te explica cada paso, con costos acordados por escrito desde el inicio.</p>
-      </div>
+<!-- DECLARACIÓN + CIFRAS -->
+<section class="intro" aria-label="Presentación">
+  <div class="wrap">
+    <div class="intro-g">
+      <p class="k rv">Daniela Rojas</p>
+      <p class="statement rv" style="--d:1">Asesoro a personas y pequeñas empresas en derecho <b>laboral, civil, empresarial y de familia</b>. Te explico tus opciones en <b>lenguaje simple</b> y te digo con honestidad si tu caso conviene o no.</p>
+    </div>
+    <div class="stats">
+      <div class="stat ln rv" style="--d:0"><p>12 años</p><p>de ejercicio profesional</p></div>
+      <div class="stat ln rv" style="--d:1"><p>+350</p><p>casos y consultas atendidas</p></div>
+      <div class="stat ln rv" style="--d:2"><p>93%</p><p>de casos resueltos favorablemente</p></div>
+      <div class="stat ln rv" style="--d:3"><p>&lt; 24 h</p><p>de respuesta a tu consulta</p></div>
     </div>
   </div>
 </section>
 
+<!-- MARQUESINA -->
+<div class="marq" aria-hidden="true">
+  <p class="marq-t" data-marq>explicado como a una amiga <i>—</i> <em>defendido como en corte</em> <i>—</i> explicado como a una amiga <i>—</i> <em>defendido como en corte</em></p>
+</div>
+
+<!-- DOLORES -->
+<section class="sec" aria-labelledby="t-dol">
+  <div class="wrap">
+    <div class="sh">
+      <div>
+        <p class="k rv">¿Te suena?</p>
+        <h2 class="h2 split rv" id="t-dol">Los problemas legales no avisan. Y esperar los <em>encarece</em>.</h2>
+      </div>
+    </div>
+    <div class="tres">
+      <article class="dol rv" style="--d:0">
+        <p class="num">01.</p>
+        <svg class="ic" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M10 4h19l8 8v30H10z"/><path d="M29 4v8h8"/><path d="M16 20h15M16 26h15M16 32h8"/><path d="M27 35l8-8M27 27l8 8" stroke="#A0834A"/></svg>
+        <h3>«Me despidieron y no sé si fue legal»</h3>
+        <p>Tienes plazos cortos para reclamar. Revisamos tu carta de despido, tu liquidación y CTS, y te decimos si corresponde una indemnización o reposición.</p>
+      </article>
+      <article class="dol rv" style="--d:1">
+        <p class="num">02.</p>
+        <svg class="ic" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M6 10h22v30H6z"/><path d="M16 6h24v30"/><path d="M11 18h12M11 24h12"/><path d="M11 33c3-4 5 2 8-1s3 0 5 0" stroke="#A0834A"/></svg>
+        <h3>«Mi negocio opera sin contratos claros»</h3>
+        <p>Acuerdos de palabra con socios, clientes o trabajadores terminan costando caro. Ordenamos la base legal de tu empresa antes de que sea un problema.</p>
+      </article>
+      <article class="dol rv" style="--d:2">
+        <p class="num">03.</p>
+        <svg class="ic" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M5 8h36v24H20l-9 7v-7H5z"/><path d="M19 16.5c0-2.5 2-4 4-4s4 1.5 4 3.6c0 3-4 3-4 6" stroke="#A0834A"/><circle cx="23" cy="26.5" r=".6" fill="#A0834A" stroke="#A0834A"/></svg>
+        <h3>«Los abogados me hablan en otro idioma»</h3>
+        <p>Términos en latín y honorarios sorpresa. Aquí trabajas con alguien que te explica cada paso, con costos acordados por escrito desde el inicio.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FRANJA -->
+<div class="franja" aria-hidden="true">
+  <img class="bn" data-par="0.1" src="assets/hero-consulta-estudio.webp" alt="" width="2400" height="1350" loading="lazy">
+  <p class="pie">Miraflores, Lima</p>
+</div>
+
 <!-- SERVICIOS -->
-<section id="servicios" style="padding:110px 48px">
-  <div style="max-width:1240px;margin:0 auto">
-    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Servicios</p>
-    <h2 data-reveal style="margin:0 0 12px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px);line-height:1.1">Cinco frentes. Un mismo estándar: <em style="color:#96502E">claridad</em>.</h2>
-    <p data-reveal style="margin:0 0 48px;font-size:14px;color:rgba(28,25,23,.55)">Precios referenciales — el monto exacto se confirma en la consulta inicial, antes de empezar. Sin sorpresas.</p>
-    <div style="display:flex;flex-direction:column">
-      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
-        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">01</span>
-        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Derecho laboral</h3>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Despidos arbitrarios, beneficios sociales impagos, hostilización laboral y liquidaciones. Para trabajadores que necesitan hacer valer sus derechos con estrategia, no con impulso.</p>
-        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 350</span></sc-if>
+<section class="sec" id="servicios" aria-labelledby="t-serv">
+  <div class="wrap">
+    <div class="sh">
+      <div>
+        <p class="k rv">Servicios</p>
+        <h2 class="h2 split rv" id="t-serv">Cinco frentes. Un mismo estándar: <em>claridad</em>.</h2>
       </div>
-      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
-        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">02</span>
-        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Empresarial y contratos</h3>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Constitución de empresas, contratos con clientes y proveedores, acuerdos de socios y protección de tu marca. La base legal de una pyme que quiere crecer tranquila.</p>
-        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 450</span></sc-if>
-      </div>
-      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
-        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">03</span>
-        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Derecho civil</h3>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Deudas, incumplimiento de contratos, indemnizaciones y saneamiento de propiedades. Evaluamos primero si litigar te conviene — a veces la mejor demanda es la que no se presenta.</p>
-        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 400</span></sc-if>
-      </div>
-      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
-        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">04</span>
-        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Familia</h3>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Divorcios, pensión de alimentos, tenencia y régimen de visitas. Procesos sensibles llevados con firmeza legal y trato humano, priorizando acuerdos cuando protegen mejor a los tuyos.</p>
-        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 380</span></sc-if>
-      </div>
-      <div data-reveal style="display:grid;grid-template-columns:60px 1fr 1.4fr auto;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(28,25,23,.12);border-bottom:1px solid rgba(28,25,23,.12)" style-hover="background:rgba(150,80,46,.03)">
-        <span style="font-family:'Newsreader',serif;font-style:italic;color:#96502E;font-size:18px">05</span>
-        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Asesoría mensual para pymes</h3>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65)">Tu abogada de cabecera: revisión de contratos, consultas ilimitadas por WhatsApp y prevención de contingencias laborales. Como tener área legal, sin planilla.</p>
-        <sc-if value="{{ showPrices }}" hint-placeholder-val="{{ true }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">Desde S/ 590/mes</span></sc-if>
-      </div>
+      <p class="lead rv" style="--d:2">Precios referenciales — el monto exacto se confirma en la consulta inicial, antes de empezar. Sin sorpresas.</p>
+    </div>
+    <div class="filas">
+      <article class="fila ln rv">
+        <span class="n">01</span>
+        <h3>Derecho laboral</h3>
+        <p>Despidos arbitrarios, beneficios sociales impagos, hostilización laboral y liquidaciones. Para trabajadores que necesitan hacer valer sus derechos con estrategia, no con impulso.</p>
+        <p class="pr"><span>Desde</span>S/ 350</p>
+        <a class="flecha" href="#contacto" data-tema="Laboral" aria-label="Consultar sobre derecho laboral"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M7 27L27 7M11 7h16v16" fill="none" stroke="currentColor" stroke-width="1"/></svg></a>
+      </article>
+      <article class="fila ln rv">
+        <span class="n">02</span>
+        <h3>Empresarial y contratos</h3>
+        <p>Constitución de empresas, contratos con clientes y proveedores, acuerdos de socios y protección de tu marca. La base legal de una pyme que quiere crecer tranquila.</p>
+        <p class="pr"><span>Desde</span>S/ 450</p>
+        <a class="flecha" href="#contacto" data-tema="Empresarial / contratos" aria-label="Consultar sobre derecho empresarial y contratos"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M7 27L27 7M11 7h16v16" fill="none" stroke="currentColor" stroke-width="1"/></svg></a>
+      </article>
+      <article class="fila ln rv">
+        <span class="n">03</span>
+        <h3>Derecho civil</h3>
+        <p>Deudas, incumplimiento de contratos, indemnizaciones y saneamiento de propiedades. Evaluamos primero si litigar te conviene — a veces la mejor demanda es la que no se presenta.</p>
+        <p class="pr"><span>Desde</span>S/ 400</p>
+        <a class="flecha" href="#contacto" data-tema="Civil" aria-label="Consultar sobre derecho civil"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M7 27L27 7M11 7h16v16" fill="none" stroke="currentColor" stroke-width="1"/></svg></a>
+      </article>
+      <article class="fila ln rv">
+        <span class="n">04</span>
+        <h3>Familia</h3>
+        <p>Divorcios, pensión de alimentos, tenencia y régimen de visitas. Procesos sensibles llevados con firmeza legal y trato humano, priorizando acuerdos cuando protegen mejor a los tuyos.</p>
+        <p class="pr"><span>Desde</span>S/ 380</p>
+        <a class="flecha" href="#contacto" data-tema="Familia" aria-label="Consultar sobre derecho de familia"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M7 27L27 7M11 7h16v16" fill="none" stroke="currentColor" stroke-width="1"/></svg></a>
+      </article>
+      <article class="fila ln rv">
+        <span class="n">05</span>
+        <h3>Asesoría mensual para pymes</h3>
+        <p>Tu abogada de cabecera: revisión de contratos, consultas ilimitadas por WhatsApp y prevención de contingencias laborales. Como tener área legal, sin planilla.</p>
+        <p class="pr"><span>Desde</span>S/ 590/mes</p>
+        <a class="flecha" href="#contacto" data-tema="Asesoría para mi empresa" aria-label="Consultar sobre asesoría mensual para pymes"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M7 27L27 7M11 7h16v16" fill="none" stroke="currentColor" stroke-width="1"/></svg></a>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- SOBRE -->
-<section id="sobre" style="background:#22281F;color:#F4EFE5;padding:110px 48px">
-  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center">
-    <div data-reveal data-parallax>
-      <div style="aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#2E362A;border:1px solid rgba(244,239,229,.12)">
-        <img src="assets/daniela-rojas-portrait.webp" alt="Daniela Rojas en un despacho jurídico" style="width:100%;height:100%;object-fit:cover;object-position:center" loading="lazy">
-      </div>
+<section class="sec sobre" id="sobre" aria-labelledby="t-sobre">
+  <div class="wrap sobre-g">
+    <div class="retrato-w rv">
+      <div class="retrato"><img class="bn" data-par="0.08" src="assets/retrato-daniela.webp" alt="Retrato de Daniela Rojas" width="1440" height="1800" loading="lazy"></div>
     </div>
-    <div data-reveal>
-      <p style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#D9A05B;font-weight:600">— La abogada</p>
-      <h2 style="margin:0 0 24px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3.2vw,44px);line-height:1.15">Daniela Rojas. <em style="color:#D9A05B">Tu caso, explicado como a una amiga — defendido como en corte.</em></h2>
-      <p style="margin:0 0 28px;font-size:16px;color:rgba(244,239,229,.75);max-width:56ch">Después de más de una década litigando, aprendí que la mayoría de conflictos legales se pierden antes de llegar al juzgado: por decisiones tomadas sin información. Por eso mi primer trabajo contigo es que entiendas exactamente dónde estás parada y qué opciones reales tienes.</p>
-      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;font-size:14.5px;color:rgba(244,239,229,.85)">
-        <li style="display:flex;gap:12px"><span style="color:#D9A05B">—</span>Abogada por la Pontificia Universidad Católica del Perú (PUCP)</li>
-        <li style="display:flex;gap:12px"><span style="color:#D9A05B">—</span>Maestría en Derecho del Trabajo · Colegiada CAL N.° 58 423</li>
-        <li style="display:flex;gap:12px"><span style="color:#D9A05B">—</span>Conciliadora extrajudicial acreditada por el MINJUS</li>
-        <li style="display:flex;gap:12px"><span style="color:#D9A05B">—</span>Ex asesora legal de gremio de pequeñas empresas (2018–2022)</li>
+    <div>
+      <p class="k rv">La abogada</p>
+      <h2 class="h2 rv" id="t-sobre" style="--d:1">Daniela Rojas. <span class="serif">Tu caso, explicado como a una amiga — defendido como en corte.</span></h2>
+      <p class="lead rv" style="--d:2">Después de más de una década litigando, aprendí que la mayoría de conflictos legales se pierden antes de llegar al juzgado: por decisiones tomadas sin información. Por eso mi primer trabajo contigo es que entiendas exactamente dónde estás parada y qué opciones reales tienes.</p>
+      <ul class="creds rv" style="--d:3">
+        <li><span>—</span>Abogada por la Pontificia Universidad Católica del Perú (PUCP)</li>
+        <li><span>—</span>Maestría en Derecho del Trabajo · Colegiada CAL N.° 58 423</li>
+        <li><span>—</span>Conciliadora extrajudicial acreditada por el MINJUS</li>
+        <li><span>—</span>Ex asesora legal de gremio de pequeñas empresas (2018–2022)</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- PROCESO -->
-<section style="padding:110px 48px;background:#F3EDE1">
-  <div style="max-width:1240px;margin:0 auto">
-    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Cómo trabajamos</p>
-    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">Cuatro pasos. Cero <em style="color:#96502E">incertidumbre</em>.</h2>
-    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px">
-      <div data-reveal style="background:#FAF7F1;border-radius:16px;overflow:hidden;border:1px solid rgba(28,25,23,.06)">
-        <div style="aspect-ratio:4/3;background:#EDE4D4"><img src="assets/paso-01-mensaje.webp" alt="Mensaje inicial desde un teléfono" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
-        <div style="padding:24px">
-          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#96502E;font-weight:600">Paso 01</p>
-          <h3 style="margin:0 0 8px;font-family:'Newsreader',serif;font-weight:400;font-size:20px">Cuéntame tu caso</h3>
-          <p style="margin:0;font-size:13.5px;color:rgba(28,25,23,.6)">Escríbeme por WhatsApp o el formulario. En menos de 24 horas te digo si puedo ayudarte y qué necesito revisar.</p>
-        </div>
+<section class="sec" id="proceso" aria-labelledby="t-proc">
+  <div class="wrap">
+    <div class="sh">
+      <div>
+        <p class="k rv">Cómo trabajamos</p>
+        <h2 class="h2 split rv" id="t-proc">Cuatro pasos. Cero <em>incertidumbre</em>.</h2>
       </div>
-      <div data-reveal style="background:#FAF7F1;border-radius:16px;overflow:hidden;border:1px solid rgba(28,25,23,.06)">
-        <div style="aspect-ratio:4/3;background:#EDE4D4"><img src="assets/paso-02-consulta.webp" alt="Consulta jurídica en un despacho" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
-        <div style="padding:24px">
-          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#96502E;font-weight:600">Paso 02</p>
-          <h3 style="margin:0 0 8px;font-family:'Newsreader',serif;font-weight:400;font-size:20px">Consulta inicial</h3>
-          <p style="margin:0;font-size:13.5px;color:rgba(28,25,23,.6)">45 minutos, presencial o virtual. Sales sabiendo tus opciones, plazos y riesgos — sin importar si decides continuar.</p>
-        </div>
-      </div>
-      <div data-reveal style="background:#FAF7F1;border-radius:16px;overflow:hidden;border:1px solid rgba(28,25,23,.06)">
-        <div style="aspect-ratio:4/3;background:#EDE4D4"><img src="assets/paso-03-propuesta.webp" alt="Firma de una propuesta profesional" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
-        <div style="padding:24px">
-          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#96502E;font-weight:600">Paso 03</p>
-          <h3 style="margin:0 0 8px;font-family:'Newsreader',serif;font-weight:400;font-size:20px">Propuesta clara</h3>
-          <p style="margin:0;font-size:13.5px;color:rgba(28,25,23,.6)">Honorarios por escrito, alcances definidos y cronograma. Lo que acordamos es lo que pagas, de inicio a fin.</p>
-        </div>
-      </div>
-      <div data-reveal style="background:#FAF7F1;border-radius:16px;overflow:hidden;border:1px solid rgba(28,25,23,.06)">
-        <div style="aspect-ratio:4/3;background:#EDE4D4"><img src="assets/paso-04-caso-en-marcha.webp" alt="Expediente y laptop en un despacho" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
-        <div style="padding:24px">
-          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#96502E;font-weight:600">Paso 04</p>
-          <h3 style="margin:0 0 8px;font-family:'Newsreader',serif;font-weight:400;font-size:20px">Tu caso en marcha</h3>
-          <p style="margin:0;font-size:13.5px;color:rgba(28,25,23,.6)">Te informo de cada avance por WhatsApp, en lenguaje claro. Nunca te enteras de tu proceso por terceros.</p>
-        </div>
-      </div>
+    </div>
+    <div class="pasos" data-riel>
+      <div class="riel" aria-hidden="true"><i></i></div>
+      <article class="paso rv" style="--d:0">
+        <div class="ph"><img class="bn" src="assets/paso-01-mensaje.webp" alt="Mensaje inicial desde un teléfono" width="1800" height="1350" loading="lazy"></div>
+        <p class="et">Paso 01</p>
+        <h3>Cuéntame tu caso</h3>
+        <p>Escríbeme por WhatsApp o el formulario. En menos de 24 horas te digo si puedo ayudarte y qué necesito revisar.</p>
+      </article>
+      <article class="paso rv" style="--d:1">
+        <div class="ph"><img class="bn" src="assets/paso-02-consulta.webp" alt="Consulta jurídica en un despacho" width="1800" height="1350" loading="lazy"></div>
+        <p class="et">Paso 02</p>
+        <h3>Consulta inicial</h3>
+        <p>45 minutos, presencial o virtual. Sales sabiendo tus opciones, plazos y riesgos — sin importar si decides continuar.</p>
+      </article>
+      <article class="paso rv" style="--d:2">
+        <div class="ph"><img class="bn" src="assets/paso-03-propuesta.webp" alt="Firma de una propuesta profesional" width="1800" height="1350" loading="lazy"></div>
+        <p class="et">Paso 03</p>
+        <h3>Propuesta clara</h3>
+        <p>Honorarios por escrito, alcances definidos y cronograma. Lo que acordamos es lo que pagas, de inicio a fin.</p>
+      </article>
+      <article class="paso rv" style="--d:3">
+        <div class="ph"><img class="bn" src="assets/paso-04-caso-en-marcha.webp" alt="Expediente y laptop en un despacho" width="1800" height="1350" loading="lazy"></div>
+        <p class="et">Paso 04</p>
+        <h3>Tu caso en marcha</h3>
+        <p>Te informo de cada avance por WhatsApp, en lenguaje claro. Nunca te enteras de tu proceso por terceros.</p>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- CASOS -->
-<section id="casos" style="padding:110px 48px">
-  <div style="max-width:1240px;margin:0 auto">
-    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Resultados</p>
-    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">Casos reales, nombres <em style="color:#96502E">reservados</em>.</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
-      <div data-reveal style="border:1px solid rgba(28,25,23,.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:14px">
-        <p style="margin:0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Laboral · 2025</p>
-        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:22px">Despido arbitrario en retail</h3>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65);flex:1">Trabajadora con 9 años de servicio despedida sin causa. Negociamos en etapa de conciliación evitando dos años de juicio.</p>
-        <p style="margin:0;padding-top:14px;border-top:1px solid rgba(28,25,23,.1);font-size:14px;font-weight:600;color:#96502E">Indemnización completa + beneficios en 45 días</p>
-      </div>
-      <div data-reveal style="border:1px solid rgba(28,25,23,.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:14px">
-        <p style="margin:0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Empresarial · 2025</p>
-        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:22px">Sociedad sin acuerdo escrito</h3>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65);flex:1">Dos socios de una cafetería en crecimiento, sin pacto social claro. Formalizamos la sociedad y los acuerdos antes de abrir el segundo local.</p>
-        <p style="margin:0;padding-top:14px;border-top:1px solid rgba(28,25,23,.1);font-size:14px;font-weight:600;color:#96502E">Empresa blindada — cero contingencia laboral</p>
-      </div>
-      <div data-reveal style="border:1px solid rgba(28,25,23,.12);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:14px">
-        <p style="margin:0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Civil · 2024</p>
-        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:22px">Deuda comercial impaga</h3>
-        <p style="margin:0;font-size:14px;color:rgba(28,25,23,.65);flex:1">Proveedor con S/ 48 000 impagados por un cliente corporativo. Carta notarial y negociación estructurada, sin llegar a proceso judicial.</p>
-        <p style="margin:0;padding-top:14px;border-top:1px solid rgba(28,25,23,.1);font-size:14px;font-weight:600;color:#96502E">Recuperado el 100% en 4 meses</p>
+<section class="sec dark casos" id="casos" aria-labelledby="t-casos">
+  <div class="wrap">
+    <div class="casos-tit">
+      <div>
+        <p class="k rv">Resultados</p>
+        <h2 class="h2 split rv" id="t-casos" style="margin-top:26px">Casos reales, nombres <em>reservados</em>.</h2>
       </div>
     </div>
-    <p data-reveal style="margin:24px 0 0;font-size:12px;color:rgba(28,25,23,.45)">Resultados de casos anteriores. Cada caso es distinto y ningún resultado pasado garantiza uno futuro — eso también es hablarte con claridad.</p>
+    <div class="tres">
+      <article class="caso rv" style="--d:0">
+        <p class="et">Laboral · 2025</p>
+        <h3>Despido arbitrario en retail</h3>
+        <p>Trabajadora con 9 años de servicio despedida sin causa. Negociamos en etapa de conciliación evitando dos años de juicio.</p>
+        <p class="res">Indemnización completa + beneficios en 45 días</p>
+      </article>
+      <article class="caso rv" style="--d:1">
+        <p class="et">Empresarial · 2025</p>
+        <h3>Sociedad sin acuerdo escrito</h3>
+        <p>Dos socios de una cafetería en crecimiento, sin pacto social claro. Formalizamos la sociedad y los acuerdos antes de abrir el segundo local.</p>
+        <p class="res">Empresa blindada — cero contingencia laboral</p>
+      </article>
+      <article class="caso rv" style="--d:2">
+        <p class="et">Civil · 2024</p>
+        <h3>Deuda comercial impaga</h3>
+        <p>Proveedor con S/ 48 000 impagados por un cliente corporativo. Carta notarial y negociación estructurada, sin llegar a proceso judicial.</p>
+        <p class="res">Recuperado el 100% en 4 meses</p>
+      </article>
+    </div>
+    <p class="aviso rv">Resultados de casos anteriores. Cada caso es distinto y ningún resultado pasado garantiza uno futuro — eso también es hablarte con claridad.</p>
+    <p class="casos-big rv" aria-hidden="true">12 años</p>
   </div>
 </section>
 
 <!-- TESTIMONIOS -->
-<section style="background:#F3EDE1;padding:110px 48px">
-  <div style="max-width:1240px;margin:0 auto">
-    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Testimonios</p>
-    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">Lo que dicen quienes ya <em style="color:#96502E">pasaron por esto</em>.</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
-      <figure data-reveal style="margin:0;background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06);display:flex;flex-direction:column;gap:18px">
-        <blockquote style="margin:0;font-family:'Newsreader',serif;font-style:italic;font-size:18px;line-height:1.45;flex:1">«Llegué asustada después de mi despido y salí de la primera consulta entendiendo todo. Me dijo qué batalla valía la pena dar y cuál no. Eso no tiene precio.»</blockquote>
-        <figcaption style="font-size:13px;color:rgba(28,25,23,.55)"><strong style="color:#1C1917">Carla M.</strong> · Ejecutiva de ventas, San Borja</figcaption>
+<section class="sec" aria-labelledby="t-testi">
+  <div class="wrap">
+    <div class="sh">
+      <div>
+        <p class="k rv">Testimonios</p>
+        <h2 class="h2 split rv" id="t-testi">Lo que dicen quienes ya <em>pasaron por esto</em>.</h2>
+      </div>
+    </div>
+    <div class="testi">
+      <figure class="ln rv" style="--d:0">
+        <span class="q" aria-hidden="true">“</span>
+        <blockquote>«Llegué asustada después de mi despido y salí de la primera consulta entendiendo todo. Me dijo qué batalla valía la pena dar y cuál no. Eso no tiene precio.»</blockquote>
+        <figcaption><strong>Carla M.</strong> · Ejecutiva de ventas, San Borja</figcaption>
       </figure>
-      <figure data-reveal style="margin:0;background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06);display:flex;flex-direction:column;gap:18px">
-        <blockquote style="margin:0;font-family:'Newsreader',serif;font-style:italic;font-size:18px;line-height:1.45;flex:1">«Otros abogados me cotizaban sin explicarme nada. La doctora me dio el presupuesto por escrito y me avisaba de cada avance por WhatsApp. Así da gusto.»</blockquote>
-        <figcaption style="font-size:13px;color:rgba(28,25,23,.55)"><strong style="color:#1C1917">Jorge V.</strong> · Fundador de distribuidora, Ate</figcaption>
+      <figure class="ln rv" style="--d:1">
+        <span class="q" aria-hidden="true">“</span>
+        <blockquote>«Otros abogados me cotizaban sin explicarme nada. La doctora me dio el presupuesto por escrito y me avisaba de cada avance por WhatsApp. Así da gusto.»</blockquote>
+        <figcaption><strong>Jorge V.</strong> · Fundador de distribuidora, Ate</figcaption>
       </figure>
-      <figure data-reveal style="margin:0;background:#FAF7F1;border-radius:16px;padding:32px;border:1px solid rgba(28,25,23,.06);display:flex;flex-direction:column;gap:18px">
-        <blockquote style="margin:0;font-family:'Newsreader',serif;font-style:italic;font-size:18px;line-height:1.45;flex:1">«Pensé que recuperar mi deuda era imposible. En cuatro meses estaba cobrada, sin juicio. Se nota cuándo un abogado pelea por ti y no por alargar el proceso.»</blockquote>
-        <figcaption style="font-size:13px;color:rgba(28,25,23,.55)"><strong style="color:#1C1917">Patricia L.</strong> · Proveedora de insumos, Surquillo</figcaption>
+      <figure class="ln rv" style="--d:2">
+        <span class="q" aria-hidden="true">“</span>
+        <blockquote>«Pensé que recuperar mi deuda era imposible. En cuatro meses estaba cobrada, sin juicio. Se nota cuándo un abogado pelea por ti y no por alargar el proceso.»</blockquote>
+        <figcaption><strong>Patricia L.</strong> · Proveedora de insumos, Surquillo</figcaption>
       </figure>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="padding:110px 48px">
-  <div style="max-width:840px;margin:0 auto">
-    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Preguntas frecuentes</p>
-    <h2 data-reveal style="margin:0 0 48px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">Lo que todos preguntan <em style="color:#96502E">antes de escribir</em>.</h2>
-    <div data-reveal style="display:flex;flex-direction:column">
-      <details style="border-top:1px solid rgba(28,25,23,.12)">
-        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Cuánto cuesta la primera consulta y qué incluye?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
-        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">La orientación inicial de 15 minutos por WhatsApp es gratuita: sirve para saber si puedo ayudarte. La consulta formal de 45 minutos cuesta S/ 120 e incluye revisión de tus documentos y un plan de acción concreto — se descuenta del honorario si continuamos.</p>
+<section class="sec alt" id="faq" aria-labelledby="t-faq">
+  <div class="wrap faq-g">
+    <div class="faq-side">
+      <p class="k rv">Preguntas frecuentes</p>
+      <h2 class="h2 split rv" id="t-faq">Lo que todos preguntan <em>antes de escribir</em>.</h2>
+      <div class="faq-ph rv" style="--d:2"><img class="bn" src="assets/consulta-virtual.webp" alt="Daniela Rojas en una consulta virtual" width="1800" height="1350" loading="lazy"></div>
+    </div>
+    <div class="acc rv" style="--d:1">
+      <details>
+        <summary>¿Cuánto cuesta la primera consulta y qué incluye?<span class="mas" aria-hidden="true"></span></summary>
+        <p>La orientación inicial de 15 minutos por WhatsApp es gratuita: sirve para saber si puedo ayudarte. La consulta formal de 45 minutos cuesta S/ 120 e incluye revisión de tus documentos y un plan de acción concreto — se descuenta del honorario si continuamos.</p>
       </details>
-      <details style="border-top:1px solid rgba(28,25,23,.12)">
-        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Cómo cobras los honorarios?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
-        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Por escrito y antes de empezar. Según el caso: monto fijo, cuotas por etapas del proceso, o un componente de éxito. Nunca vas a recibir un cobro que no acordamos.</p>
+      <details>
+        <summary>¿Cómo cobras los honorarios?<span class="mas" aria-hidden="true"></span></summary>
+        <p>Por escrito y antes de empezar. Según el caso: monto fijo, cuotas por etapas del proceso, o un componente de éxito. Nunca vas a recibir un cobro que no acordamos.</p>
       </details>
-      <details style="border-top:1px solid rgba(28,25,23,.12)">
-        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Atiendes fuera de Lima?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
-        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Sí. Las consultas y la mayor parte del trabajo se hacen de forma virtual, y coordino con abogados de enlace para diligencias en provincias.</p>
+      <details>
+        <summary>¿Atiendes fuera de Lima?<span class="mas" aria-hidden="true"></span></summary>
+        <p>Sí. Las consultas y la mayor parte del trabajo se hacen de forma virtual, y coordino con abogados de enlace para diligencias en provincias.</p>
       </details>
-      <details style="border-top:1px solid rgba(28,25,23,.12)">
-        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Mi caso es muy pequeño para un abogado?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
-        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Ningún caso es pequeño si te quita el sueño. Y si legalmente no conviene moverlo, te lo digo en la primera conversación — gratis — en lugar de cobrarte por un proceso perdido.</p>
+      <details>
+        <summary>¿Mi caso es muy pequeño para un abogado?<span class="mas" aria-hidden="true"></span></summary>
+        <p>Ningún caso es pequeño si te quita el sueño. Y si legalmente no conviene moverlo, te lo digo en la primera conversación — gratis — en lugar de cobrarte por un proceso perdido.</p>
       </details>
-      <details style="border-top:1px solid rgba(28,25,23,.12)">
-        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Cuánto demora un proceso?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
-        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Depende de la materia y de si se puede conciliar. En la consulta te doy rangos realistas para tu caso específico — y siempre exploramos primero la vía más rápida.</p>
+      <details>
+        <summary>¿Cuánto demora un proceso?<span class="mas" aria-hidden="true"></span></summary>
+        <p>Depende de la materia y de si se puede conciliar. En la consulta te doy rangos realistas para tu caso específico — y siempre exploramos primero la vía más rápida.</p>
       </details>
-      <details style="border-top:1px solid rgba(28,25,23,.12);border-bottom:1px solid rgba(28,25,23,.12)">
-        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-family:'Newsreader',serif;font-size:19px">¿Qué necesito llevar a la consulta?<span style="color:#96502E;font-size:24px;font-weight:300">+</span></summary>
-        <p style="margin:0;padding:0 0 22px;font-size:15px;color:rgba(28,25,23,.65)">Todo documento relacionado: contratos, cartas, boletas, conversaciones de WhatsApp, resoluciones. Si no tienes nada, ven igual — parte de mi trabajo es ayudarte a reconstruir el expediente.</p>
+      <details>
+        <summary>¿Qué necesito llevar a la consulta?<span class="mas" aria-hidden="true"></span></summary>
+        <p>Todo documento relacionado: contratos, cartas, boletas, conversaciones de WhatsApp, resoluciones. Si no tienes nada, ven igual — parte de mi trabajo es ayudarte a reconstruir el expediente.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section style="background:#22281F;color:#F4EFE5;padding:120px 48px;text-align:center">
-  <div data-reveal style="max-width:760px;margin:0 auto">
-    <p style="margin:0 0 20px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#D9A05B;font-weight:600">— Empecemos</p>
-    <h2 style="margin:0 0 20px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(36px,4.4vw,58px);line-height:1.1">Tu problema legal no se va a resolver <em style="color:#D9A05B">solo</em>.</h2>
-    <p style="margin:0 0 40px;font-size:16px;color:rgba(244,239,229,.7)">Escríbeme hoy. En menos de 24 horas sabrás si puedo ayudarte y cuál es el siguiente paso.</p>
-    <a href="{{ waLink }}" style="display:inline-flex;align-items:center;gap:10px;background:#D9A05B;color:#22281F;padding:17px 36px;border-radius:100px;text-decoration:none;font-weight:600;font-size:16px" style-hover="background:#E5B274">Escribir por WhatsApp →</a>
-    <p style="margin:20px 0 0;font-size:13px;color:rgba(244,239,229,.5)">Primera orientación gratuita · Lun–Vie 9:00–19:00 · Sáb 9:00–13:00</p>
+<!-- CIERRE -->
+<section class="cierre" aria-labelledby="t-cierre">
+  <div class="cierre-ph"><img class="bn" src="assets/lobby-whatsapp.webp" alt="Daniela Rojas revisando mensajes en su teléfono" width="1800" height="1350" loading="lazy"></div>
+  <div class="wrap">
+    <div class="cierre-tx">
+      <p class="k rv">Empecemos</p>
+      <h2 class="split rv" id="t-cierre">Tu problema legal no se va a resolver <em>solo</em>.</h2>
+      <p class="rv" style="--d:2">Escríbeme hoy. En menos de 24 horas sabrás si puedo ayudarte y cuál es el siguiente paso.</p>
+      <a class="btn solid rv" style="--d:3" href="https://wa.me/51999888777?text=Hola%20Daniela%2C%20quisiera%20una%20orientaci%C3%B3n%20sobre%20mi%20caso." target="_blank" rel="noopener">Escribir por WhatsApp <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor"/></svg></a>
+      <p class="micro rv" style="--d:4"><span class="nw">Primera orientación gratuita</span> · <span class="nw">Lun–Vie 9:00–19:00</span> · <span class="nw">Sáb 9:00–13:00</span></p>
+    </div>
+  </div>
+  <div class="seal" aria-hidden="true">
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="98" fill="#F3F2EE"/>
+      <circle cx="100" cy="100" r="91" fill="none" stroke="#A0834A" stroke-width=".8"/>
+      <circle cx="100" cy="100" r="56" fill="none" stroke="#A0834A" stroke-width=".8"/>
+      <g class="ring">
+        <text font-family="Red Hat Display, sans-serif" font-size="12.5" font-weight="500" letter-spacing="3" fill="#2F2F2D"><textPath href="#arco" textLength="452" lengthAdjust="spacing">ESTUDIO LEGAL · LIMA, PERÚ · CAL N.° 58 423 ·</textPath></text>
+      </g>
+      <path d="M88 78h9.5c12 0 19 9 19 22s-7 22-19 22H88z" fill="none" stroke="#2F2F2D" stroke-width="1.1"/>
+      <path d="M80 128h40" stroke="#A0834A" stroke-width="1.1"/>
+    </svg>
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" style="padding:110px 48px">
-  <div style="max-width:1240px;margin:0 auto">
-    <p data-reveal style="margin:0 0 16px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#96502E;font-weight:600">— Dónde estamos</p>
-    <h2 data-reveal style="margin:0 0 56px;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(32px,3.6vw,48px)">En el corazón de Miraflores. <em style="color:#96502E">O donde estés tú.</em></h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
-      <form data-reveal onSubmit="{{ onFormSubmit }}" style="background:#F3EDE1;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:16px;border:1px solid rgba(28,25,23,.06)">
-        <h3 style="margin:0 0 4px;font-family:'Newsreader',serif;font-weight:400;font-size:24px">Cuéntame tu caso</h3>
-        <input required placeholder="Tu nombre" style="padding:14px 16px;border-radius:10px;border:1px solid rgba(28,25,23,.15);background:#FAF7F1;font-family:inherit;font-size:15px">
-        <input required placeholder="WhatsApp o teléfono" style="padding:14px 16px;border-radius:10px;border:1px solid rgba(28,25,23,.15);background:#FAF7F1;font-family:inherit;font-size:15px">
-        <select style="padding:14px 16px;border-radius:10px;border:1px solid rgba(28,25,23,.15);background:#FAF7F1;font-family:inherit;font-size:15px;color:#1C1917">
-          <option>¿Sobre qué tema es?</option><option>Laboral</option><option>Empresarial / contratos</option><option>Civil</option><option>Familia</option><option>Asesoría para mi empresa</option>
-        </select>
-        <textarea required placeholder="Cuéntame brevemente qué está pasando…" rows="4" style="padding:14px 16px;border-radius:10px;border:1px solid rgba(28,25,23,.15);background:#FAF7F1;font-family:inherit;font-size:15px;resize:vertical"></textarea>
-        <button type="submit" style="padding:15px;border:none;border-radius:100px;background:#1C1917;color:#FAF7F1;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer" style-hover="background:#96502E">{{ formButtonLabel }}</button>
-        <p style="margin:0;font-size:12px;color:rgba(28,25,23,.5)">Tu información es confidencial y está protegida por el secreto profesional.</p>
+<section class="dark contacto" id="contacto" aria-labelledby="t-ct">
+  <div class="wrap">
+    <p class="k rv">Dónde estamos</p>
+    <h2 class="h2 split rv" id="t-ct" style="margin-top:26px">En el corazón de Miraflores. <em>O donde estés tú.</em></h2>
+    <div class="ct-g">
+      <form class="form rv" id="form" novalidate>
+        <h3>Cuéntame tu caso</h3>
+        <label class="campo"><span class="sr">Tu nombre</span><input id="nombre" required placeholder="Tu nombre" autocomplete="name"></label>
+        <label class="campo"><span class="sr">WhatsApp o teléfono</span><input id="tel" required placeholder="WhatsApp o teléfono" inputmode="tel" autocomplete="tel"></label>
+        <label class="campo"><span class="sr">¿Sobre qué tema es?</span>
+          <select id="tema">
+            <option>¿Sobre qué tema es?</option><option>Laboral</option><option>Empresarial / contratos</option><option>Civil</option><option>Familia</option><option>Asesoría para mi empresa</option>
+          </select>
+        </label>
+        <label class="campo"><span class="sr">Cuéntame brevemente qué está pasando</span><textarea id="msg" required placeholder="Cuéntame brevemente qué está pasando…" rows="4"></textarea></label>
+        <button class="btn" type="submit" id="enviar"><span>Enviar mi consulta</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor"/></svg></button>
+        <p class="priv">Tu información es confidencial y está protegida por el secreto profesional.</p>
+        <p class="sr" id="estado" role="status" aria-live="polite"></p>
       </form>
-      <div data-reveal style="display:flex;flex-direction:column;gap:28px">
-        <div style="aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#EDE4D4;border:1px solid rgba(28,25,23,.1)">
-          <img src="assets/miraflores-contacto.webp" alt="Vista urbana de Miraflores, Lima" style="width:100%;height:100%;object-fit:cover" loading="lazy">
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:14.5px">
-          <div><p style="margin:0 0 4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Dirección</p><p style="margin:0">Av. José Larco 742, Of. 502<br>Miraflores, Lima</p></div>
-          <div><p style="margin:0 0 4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">WhatsApp</p><p style="margin:0">+51 999 888 777</p></div>
-          <div><p style="margin:0 0 4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Email</p><p style="margin:0">contacto@danielarojas.pe</p></div>
-          <div><p style="margin:0 0 4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(28,25,23,.5)">Horario</p><p style="margin:0">Lun–Vie 9:00–19:00<br>Sáb 9:00–13:00</p></div>
+      <div class="rv" style="--d:1">
+        <div class="ct-ph"><img class="bn" src="assets/miraflores-contacto.webp" alt="Vista urbana de Miraflores, Lima" width="1800" height="1013" loading="lazy"></div>
+        <div class="datos">
+          <div><p>Dirección</p><p>Av. José Larco 742, Of. 502<br>Miraflores, Lima</p></div>
+          <div><p>WhatsApp</p><p><a href="https://wa.me/51999888777" target="_blank" rel="noopener">+51 999 888 777</a></p></div>
+          <div><p>Email</p><p><a href="mailto:contacto@danielarojas.pe">contacto@danielarojas.pe</a></p></div>
+          <div><p>Horario</p><p>Lun–Vie 9:00–19:00<br>Sáb 9:00–13:00</p></div>
         </div>
       </div>
     </div>
+    <footer class="foot">
+      <span>© 2026 Daniela Rojas · Abogada — Miraflores, Lima</span>
+      <span>Colegiada CAL N.° 58 423 · Esta web es una demo de diseño ficticia por <a href="https://nozoestudio.com" target="_blank" rel="noopener">Nozoe Studio</a></span>
+    </footer>
   </div>
 </section>
+</main>
 
-<footer style="border-top:1px solid rgba(28,25,23,.1);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(28,25,23,.5)">
-  <span>© 2026 Daniela Rojas · Abogada — Miraflores, Lima</span>
-  <span>Colegiada CAL N.° 58 423 · Esta web es una demo de diseño ficticia por <a href="https://nozoestudio.com" style="color:inherit">Nozoe Studio</a></span>
-</footer>
-
-</div>
-</x-dc>
 <script>
-(function(){
-  // Delegated on document (not bound to specific nodes) so it keeps working
-  // even if the dc-runtime re-renders the nav after this script runs.
-  function closeMenu(){
-    var links = document.getElementById('mn-links');
-    var btn = document.querySelector('.mn-toggle');
-    if (!links || !btn) return;
-    links.classList.remove('is-open');
-    btn.setAttribute('aria-expanded','false');
-    btn.setAttribute('aria-label','Abrir menú');
-    document.body.classList.remove('menu-open');
-  }
-  document.addEventListener('click', function(e){
-    var btn = e.target.closest('.mn-toggle');
-    if (btn){
-      var links = document.getElementById('mn-links');
-      if (!links) return;
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      btn.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
-      links.classList.toggle('is-open', !open);
-      document.body.classList.toggle('menu-open', !open);
-      return;
-    }
-    if (e.target.closest('#mn-links a')) closeMenu();
+(function () {
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- titulares palabra a palabra ---------- */
+  $$('.split').forEach(function (h) {
+    var i = 0;
+    var walk = function (node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+            var w = document.createElement('span'); w.className = 'w';
+            var s = document.createElement('span'); s.textContent = part; s.style.setProperty('--i', i++);
+            w.appendChild(s); frag.appendChild(w);
+          });
+          n.parentNode.replaceChild(frag, n);
+        } else if (n.nodeType === 1) { walk(n); }
+      });
+    };
+    walk(h);
+    var d = h.getAttribute('data-d'); if (d) h.style.setProperty('--d', d);
   });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') { closeMenu(); var b = document.querySelector('.mn-toggle'); if (b) b.focus(); }
+
+  /* ---------- entrada del hero ---------- */
+  var hero = $('.hero');
+  setTimeout(function () { hero.classList.add('in'); }, 30);
+
+  /* ---------- menú ---------- */
+  var nav = $('#nav'), burger = $('.burger');
+  var cerrar = function () { nav.dataset.open = 'false'; burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Abrir menú'); };
+  burger.addEventListener('click', function () {
+    var ab = nav.dataset.open === 'true';
+    nav.dataset.open = ab ? 'false' : 'true';
+    burger.setAttribute('aria-expanded', String(!ab));
+    burger.setAttribute('aria-label', ab ? 'Abrir menú' : 'Cerrar menú');
+  });
+  $$('#drawer a').forEach(function (a) { a.addEventListener('click', cerrar); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.dataset.open === 'true') { cerrar(); burger.focus(); } });
+
+  /* ---------- sección activa ---------- */
+  var links = $$('.nav-links a');
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id ? 'true' : 'false'); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    links.forEach(function (a) { var s = $(a.getAttribute('href')); if (s) spy.observe(s); });
+  }
+
+  /* ---------- revelado en tres capas: observador, scroll y sondeo ---------- */
+  var rvs = $$('.rv'), pend = rvs.slice();
+  var quitar = function (el) { var i = pend.indexOf(el); if (i > -1) pend.splice(i, 1); };
+  if (reduce) { rvs.forEach(function (el) { el.classList.add('in'); }); pend.length = 0; }
+  else {
+    if ('IntersectionObserver' in window) {
+      var rio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); quitar(e.target); rio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
+      rvs.forEach(function (el) { rio.observe(el); });
+    }
+    var barrer = function () {
+      for (var i = pend.length - 1; i >= 0; i--) {
+        if (pend[i].getBoundingClientRect().top < window.innerHeight * 0.96) { pend[i].classList.add('in'); pend.splice(i, 1); }
+      }
+    };
+    var t = false;
+    var pedir = function () { if (t) return; t = true; setTimeout(function () { t = false; barrer(); }, 80); };
+    window.addEventListener('scroll', pedir, { passive: true });
+    window.addEventListener('resize', pedir, { passive: true });
+    var sondeo = setInterval(function () { barrer(); if (!pend.length) clearInterval(sondeo); }, 250);
+    window.addEventListener('load', barrer);
+  }
+
+  /* ---------- efectos ligados al scroll: parallax, marquesina, riel ---------- */
+  var pars = $$('[data-par]'), marq = $('[data-marq]'), riel = $('[data-riel]');
+  var fill = riel && $('.riel i', riel);
+  var pintar = function () {
+    var vh = window.innerHeight;
+    nav.classList.toggle('sc', window.scrollY > 10);
+    if (reduce) return;
+    pars.forEach(function (img) {
+      var r = img.parentNode.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      var c = (r.top + r.height / 2 - vh / 2) / vh;
+      var y = Math.max(-0.08, Math.min(0.08, c * parseFloat(img.dataset.par))) * r.height;
+      img.style.transform = 'translate3d(0,' + (-y).toFixed(1) + 'px,0)';
+    });
+    if (marq) {
+      var m = marq.parentNode.getBoundingClientRect();
+      if (m.bottom > 0 && m.top < vh) {
+        var p = (vh - m.top) / (vh + m.height);
+        var dist = Math.max(0, marq.scrollWidth - marq.parentNode.clientWidth * 0.6);
+        marq.style.transform = 'translate3d(' + (-(p * dist * 0.75)).toFixed(1) + 'px,0,0)';
+      }
+    }
+    if (fill) {
+      var q = riel.getBoundingClientRect();
+      var pr = Math.min(1, Math.max(0, (vh * 0.85 - q.top) / (q.height * 0.9)));
+      fill.style.setProperty('--p', pr.toFixed(3));
+    }
+  };
+  var raf = false;
+  var onScroll = function () { if (raf) return; raf = true; requestAnimationFrame(function () { raf = false; pintar(); }); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  window.addEventListener('load', pintar);
+  pintar();
+
+  /* ---------- flechas de servicio: preseleccionan el tema del formulario ---------- */
+  var sel = $('#tema');
+  $$('[data-tema]').forEach(function (a) {
+    a.addEventListener('click', function () { sel.value = a.dataset.tema; });
+  });
+
+  /* ---------- formulario (demo: simula el envío) ---------- */
+  var form = $('#form'), btn = $('#enviar');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var falta = $$('[required]', form).filter(function (f) { return !f.value.trim(); })[0];
+    if (falta) { falta.focus(); $('#estado').textContent = 'Completa este campo para poder responderte.'; return; }
+    btn.querySelector('span').textContent = '✓ Mensaje enviado — te escribo pronto';
+    btn.setAttribute('aria-disabled', 'true');
+    $('#estado').textContent = 'Mensaje enviado. Te escribo pronto.';
   });
 })();
-</script>
-<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;51999888777&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Servicios&quot;}}">
-class Component extends DCLogic {
-  state = { sent: false };
-  renderVals() {
-    const num = (this.props.whatsappNumber ?? '51999888777').replace(/\D/g, '');
-    return {
-      waLink: '#contacto',
-      showPrices: this.props.showPrices ?? true,
-      formButtonLabel: this.state.sent ? '✓ Mensaje enviado — te escribo pronto' : 'Enviar mi consulta',
-      onFormSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
-    };
-  }
-  componentDidMount() {
-    const els = Array.from(document.querySelectorAll('[data-reveal]'));
-    els.forEach((el) => {
-      if (el.getBoundingClientRect().top < document.documentElement.clientHeight * 0.9) { el._shown = true; return; }
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(26px)';
-      el.style.transition = 'opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
-    });
-    const par = document.querySelectorAll('[data-parallax] > div');
-    this._onScroll = () => {
-      els.forEach((el) => {
-        if (el._shown) return;
-        if (el.getBoundingClientRect().top < document.documentElement.clientHeight * 0.88) {
-          el._shown = true;
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }
-      });
-      par.forEach((el) => {
-        const r = el.getBoundingClientRect();
-        const c = (r.top + r.height / 2 - document.documentElement.clientHeight / 2) / document.documentElement.clientHeight;
-        el.style.willChange = 'transform';
-        el.style.transform = 'translateY(' + (c * -22).toFixed(1) + 'px)';
-      });
-    };
-    const tick = () => { this._onScroll(); this._raf = requestAnimationFrame(tick); };
-    tick();
-    this._safety = setTimeout(() => {
-      els.forEach((el) => { if (!el._shown) { el._shown = true; el.style.opacity = '1'; el.style.transform = 'translateY(0)'; } });
-    }, 3000);
-  }
-  componentWillUnmount() {
-    cancelAnimationFrame(this._raf);
-    clearTimeout(this._safety);
-  }
-}
 </script>
 </body>
 </html>
