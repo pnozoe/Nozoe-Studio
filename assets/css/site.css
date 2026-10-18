@@ -2063,6 +2063,20 @@ body::before {
 }
 .pill:hover, .pill.active { background: var(--ns-text-primary); color: var(--ns-surface-base); border-color: var(--ns-text-primary); }
 
+/* Modalidad (por proyecto / mensual): aparece solo con los servicios que admiten retainer */
+.pills-modalidad {
+  display: flex; align-items: center; gap: var(--ns-space-3); flex-wrap: wrap;
+  margin-top: var(--ns-space-3); padding-left: var(--ns-space-3);
+  border-left: var(--ns-bw-1) solid var(--ns-border-default);
+}
+.pills-modalidad[hidden] { display: none; }
+.pills-modalidad .pills { margin-top: 0; }
+.pills-modalidad-lbl {
+  font: 600 10px/1 var(--ns-font-sans);
+  letter-spacing: var(--ns-ls-widest); text-transform: uppercase;
+  color: var(--ns-text-tertiary);
+}
+
 .form-footer {
   display: flex; align-items: center;
   justify-content: space-between; gap: 16px;

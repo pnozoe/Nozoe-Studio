@@ -40,7 +40,7 @@
 <link rel="preload" href="assets/fonts/nunito-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/nunito-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css?v=20260816a">
-<link rel="stylesheet" href="assets/css/site.css?v=20261008a">
+<link rel="stylesheet" href="assets/css/site.css?v=20261018a">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7VG5XMC7"></script>
 <script>
@@ -167,13 +167,22 @@
         <div class="field">
           <label class="field-label">¿Qué necesitas?</label>
           <div class="pills" id="cf-pills">
-            <span class="pill active" data-value="Identidad">Identidad</span>
-            <span class="pill" data-value="Web">Web</span>
-            <span class="pill" data-value="Contenido">Contenido</span>
-            <span class="pill" data-value="Retainer">Retainer</span>
+            <span class="pill active" data-value="Branding">Branding</span>
+            <span class="pill" data-value="Diseño web">Diseño web</span>
+            <span class="pill" data-value="Contenido visual" data-mensual>Contenido visual</span>
+            <span class="pill" data-value="Material corporativo" data-mensual>Material corporativo</span>
             <span class="pill" data-value="Otro">Otro</span>
           </div>
-          <input type="hidden" name="servicio" id="cf-servicio" value="Identidad">
+          <!-- El retainer no es un servicio aparte: es la modalidad mensual
+               de Contenido visual y Material corporativo -->
+          <div class="pills-modalidad" id="cf-modalidad" hidden>
+            <span class="pills-modalidad-lbl">Modalidad</span>
+            <div class="pills">
+              <span class="pill active" data-value="Por proyecto">Por proyecto</span>
+              <span class="pill" data-value="Mensual (retainer)">Mensual · retainer</span>
+            </div>
+          </div>
+          <input type="hidden" name="servicio" id="cf-servicio" value="Branding">
         </div>
 
         <div class="field">
@@ -323,18 +332,35 @@
 <script src="assets/js/site.js?v=20261008a" defer></script>
 
 <script>
-  // Pills del formulario: selección única, escribe el valor en el hidden input "servicio"
+  // Pills del formulario: selección única, escribe el valor en el hidden input "servicio".
+  // Contenido visual y Material corporativo muestran además la modalidad
+  // (por proyecto o mensual), que se suma al valor: "Contenido visual · Mensual (retainer)"
   (function(){
     var pills = document.querySelectorAll('#cf-pills .pill');
     var hidden = document.getElementById('cf-servicio');
+    var modalidad = document.getElementById('cf-modalidad');
+    var modos = modalidad ? modalidad.querySelectorAll('.pill') : [];
     if (!pills.length || !hidden) return;
-    pills.forEach(function(p){
-      p.addEventListener('click', function(){
-        pills.forEach(function(x){ x.classList.remove('active'); });
-        p.classList.add('active');
-        hidden.value = p.dataset.value || p.textContent.trim();
+
+    function valueOf(el){ return el.dataset.value || el.textContent.trim(); }
+    function sync(){
+      var svc = document.querySelector('#cf-pills .pill.active');
+      var modo = modalidad && modalidad.querySelector('.pill.active');
+      var mensual = svc && svc.hasAttribute('data-mensual');
+      if (modalidad) modalidad.hidden = !mensual;
+      hidden.value = valueOf(svc) + (mensual && modo ? ' · ' + valueOf(modo) : '');
+    }
+    function selectable(group){
+      group.forEach(function(p){
+        p.addEventListener('click', function(){
+          group.forEach(function(x){ x.classList.remove('active'); });
+          p.classList.add('active');
+          sync();
+        });
       });
-    });
+    }
+    selectable(pills);
+    selectable(modos);
 
     // Mensaje de confirmación tras envío exitoso (?ok=1 viene del redirect de Web3Forms)
     if (new URLSearchParams(window.location.search).get('ok') === '1') {
