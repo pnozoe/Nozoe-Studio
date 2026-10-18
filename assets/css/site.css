@@ -397,6 +397,8 @@ body::before {
    al hacer scroll, se abre a sangre completa. Sin soporte de
    scroll-timeline o con "reducir movimiento", queda la ventana fija.
    El póster y el video los pide site.js en diferido.
+   Métricas y capítulos viven dentro de la pantalla, al pie, en flujo:
+   si no caben, la pantalla crece en vez de recortarlos.
 ══════════════════════════════════════ */
 .caso-feature {
   /* Margen lateral del contenido: replica el padding de .wrap en cada breakpoint */
@@ -437,8 +439,10 @@ body::before {
 /* ── La pantalla ── */
 .caso-feature-screen {
   position: relative;
-  height: min(86vh, 56vw);
-  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: max(440px, min(86vh, 56vw));
   overflow: hidden;
   background: var(--ns-ink-950);
   /* Reposo: ventana del ancho del contenido */
@@ -452,7 +456,7 @@ body::before {
 .caso-feature-shade {
   position: absolute; inset: 0;
   background:
-    linear-gradient(to top, rgba(10,17,25,0.88) 0%, rgba(10,17,25,0.42) 30%, rgba(10,17,25,0) 58%),
+    linear-gradient(to top, rgba(10,17,25,0.9) 0%, rgba(10,17,25,0.55) 38%, rgba(10,17,25,0) 68%),
     linear-gradient(to bottom, rgba(10,17,25,0.45) 0%, rgba(10,17,25,0) 22%);
 }
 
@@ -497,11 +501,15 @@ body::before {
 .caso-feature-link:focus-visible .caso-feature-go { box-shadow: var(--ns-elev-focus); }
 .caso-feature-link:hover .caso-feature-go .arr { transform: translateX(3px); }
 
+/* Por encima del enlace a pantalla completa (z-index 2). Deja pasar los
+   clics al enlace salvo en los capítulos y el CTA */
+.caso-feature-bottom {
+  position: relative;
+  z-index: 3;
+  padding: var(--ns-space-24) calc(var(--caso-feature-gutter) + var(--ns-space-8)) var(--ns-space-8);
+  pointer-events: none;
+}
 .caso-feature-stats {
-  position: absolute;
-  left: calc(var(--caso-feature-gutter) + var(--ns-space-8));
-  right: calc(var(--caso-feature-gutter) + var(--ns-space-8));
-  bottom: var(--ns-space-8);
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--ns-space-6);
@@ -530,7 +538,9 @@ body::before {
   max-width: 22ch;
 }
 
-/* ── Pie: capítulos del caso + CTA ── */
+/* ── Pie: capítulos del caso + CTA ──
+   Base clara (bloque Papa Francisco). En TML va dentro de la pantalla,
+   en vidrio oscuro: ver .caso-feature-bottom más abajo */
 .caso-feature-foot {
   display: flex;
   align-items: center;
@@ -593,6 +603,39 @@ body::before {
 }
 .caso-feature-cta { flex: none; }
 
+/* TML: el pie va bajo las métricas, separado por una línea fina,
+   con el mismo vidrio oscuro que la píldora «Ver caso» */
+.caso-feature-bottom .caso-feature-foot {
+  gap: var(--ns-space-5);
+  margin-top: var(--ns-space-6);
+  padding-top: var(--ns-space-6);
+  border-top: var(--ns-bw-1) solid rgba(244,241,236,0.22);
+}
+.caso-feature-bottom .caso-feature-chapters { gap: var(--ns-space-2); }
+.caso-feature-bottom .caso-feature-chapters a,
+.caso-feature-bottom .caso-feature-cta { pointer-events: auto; }
+.caso-feature-bottom .caso-feature-chapters a {
+  background: rgba(10,17,25,0.35);
+  border-color: rgba(244,241,236,0.18);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.caso-feature-bottom .caso-feature-chapters a:hover {
+  background: rgba(10,17,25,0.55);
+  border-color: rgba(244,241,236,0.45);
+  box-shadow: none;
+}
+.caso-feature-bottom .caso-feature-chapters a:focus-visible { outline: none; box-shadow: var(--ns-elev-focus); }
+.caso-feature-bottom .caso-feature-ch-img { width: 36px; height: 48px; }
+.caso-feature-bottom .caso-feature-ch-img--logo { border: 0; }
+.caso-feature-bottom .caso-feature-ch-num { color: var(--ns-sky-200); }
+.caso-feature-bottom .caso-feature-ch-t { color: var(--ns-warm-200); }
+/* Bajo 1200px los capítulos piden todo el ancho: el CTA pasa a su propia fila */
+@media (max-width: 1200px) {
+  .caso-feature-bottom .caso-feature-foot { flex-wrap: wrap; justify-content: flex-end; }
+  .caso-feature-bottom .caso-feature-chapters { flex-basis: 100%; }
+}
+
 /* ── Movimiento ligado al scroll ── */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
@@ -630,7 +673,7 @@ body::before {
 @media (max-width: 600px) {
   .caso-feature { --caso-feature-gutter: 20px; padding: var(--ns-space-16) 0 var(--ns-space-12); }
   .caso-feature-claim { font-size: var(--ns-fs-lg); }
-  .caso-feature-screen { height: auto; min-height: 0; aspect-ratio: 4 / 5.4; }
+  .caso-feature-screen { min-height: 0; }
   .caso-feature-video { object-position: 62% 50%; }
   .caso-feature-badge,
   .caso-feature-go { top: var(--ns-space-5); }
@@ -650,10 +693,17 @@ body::before {
     clip-path: inset(50%);
     white-space: nowrap;
   }
+  /* Hueco arriba para que el video se vea antes de métricas y capítulos */
+  .caso-feature-bottom {
+    padding: 58vw calc(var(--caso-feature-gutter) + var(--ns-space-5)) var(--ns-space-5);
+  }
+  .caso-feature-shade {
+    background:
+      linear-gradient(to top, rgba(10,17,25,0.92) 0%, rgba(10,17,25,0.7) 52%, rgba(10,17,25,0) 78%),
+      linear-gradient(to bottom, rgba(10,17,25,0.45) 0%, rgba(10,17,25,0) 22%);
+  }
+  .caso-feature-bottom .caso-feature-foot { margin-top: var(--ns-space-5); padding-top: var(--ns-space-5); }
   .caso-feature-stats {
-    left: calc(var(--caso-feature-gutter) + var(--ns-space-5));
-    right: calc(var(--caso-feature-gutter) + var(--ns-space-5));
-    bottom: var(--ns-space-5);
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--ns-space-5) var(--ns-space-4);
   }
