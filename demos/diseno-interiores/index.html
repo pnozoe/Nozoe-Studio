@@ -3,477 +3,1279 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Valeria Fuentes — Estudio de interiores en Lima</title>
-<meta name="description" content="Demo conceptual de un estudio de diseño de interiores en Lima liderado por la arquitecta Valeria Fuentes: espacios residenciales y comerciales con materiales nobles y luz natural.">
+<title>Terra Interiores — Diseño de interiores en Lima | Demo Nozoe Studio</title>
+<meta name="description" content="Estudio de interiores en Lima liderado por la arquitecta Valeria Fuentes: departamentos, casas y locales comerciales con materiales nobles y luz natural, del anteproyecto a la entrega llave en mano.">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#E8EEF2">
 <meta property="og:locale" content="es_PE">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Valeria Fuentes — Estudio de Interiores en Lima">
-<meta property="og:description" content="Espacios residenciales y comerciales con materiales nobles y luz natural. Demo conceptual de Nozoe Studio.">
-<meta property="og:image" content="assets/hero-barranco.webp">
+<meta property="og:title" content="Terra Interiores — Diseño de interiores en Lima | Demo Nozoe Studio">
+<meta property="og:description" content="Espacios que cuentan quién eres. Interiorismo residencial y comercial en Lima, del anteproyecto a la entrega llave en mano.">
+<meta property="og:image" content="assets/terra-hero-sala.webp">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
-body{margin:0;background:#F6F2EB;color:#201B14;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased}
-a{color:#A85C38;text-decoration:none}a:hover{color:#8A4A2C}
-@keyframes tickerMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes floatPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-html{scroll-behavior:smooth}
-input::placeholder,textarea::placeholder{color:#A99C89}
-.demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
-.demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
-.demo-ribbon img{width:100%;height:auto;display:block}
-.demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:4px}
-.nav-shell{width:min(calc(100% - 96px),1440px);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;box-sizing:border-box}
-@media (min-width:981px) and (max-width:1780px){.nav-shell{padding-right:117px}}
-@media (max-width:980px){
-  .demo-ribbon{top:77px;right:0;width:30%;transform:none;filter:drop-shadow(0 4px 7px rgba(0,0,0,.25))}
-  .demo-ribbon:hover{transform:translateY(-2px)}
+:root{
+  --bg:#E8EEF2; --bg-2:#DEE6EC; --panel:#C7D3DD; --rose:#D6C9C9;
+  --ink:#37393A; --ink-2:#53585B; --line:rgba(55,57,58,.16); --line-2:rgba(55,57,58,.34);
+  --clay:#8A5A48; --clay-d:#6E4636; --clay-l:#C99A85;
+  --dark:#37393A; --dark-2:#2C2E2F; --on-dark:#E8EEF2; --on-dark-2:#A9B3BA; --line-d:rgba(232,238,242,.18);
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --g:15px; --gt:clamp(24px,4.2vw,68px); --nav:64px;
+  --ease:cubic-bezier(.16,1,.3,1); --ease2:cubic-bezier(.65,0,.35,1);
 }
-body.menu-open{overflow:hidden}
-.mn-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid rgba(32,27,20,.25);border-radius:50%;background:transparent;cursor:pointer;flex:none}
-.mn-links{display:none}
-.mn-toggle svg{width:18px;height:18px}
-@media (max-width:760px){
-  body{overflow-x:hidden}
-  .demo-ribbon{top:111px}
-  header{padding:0 20px!important;display:block!important;overflow:hidden}
-  .nav-shell{width:100%;padding:14px 0!important;align-items:center!important;flex-wrap:nowrap!important;gap:12px}
-  .nav-shell>div:first-child{justify-content:flex-start}
-  .mn-toggle{display:inline-flex;position:relative;z-index:151}
-  .desktop-links{display:none!important}
-  .mn-links{position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;z-index:150;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:24px;padding:6rem 2rem 3rem;background:#F6F2EB;box-sizing:border-box;visibility:hidden;opacity:0;transform:translateY(-1rem);transition:opacity .25s ease,transform .25s ease,visibility .25s}
-  .mn-links.is-open{visibility:visible;opacity:1;transform:translateY(0)}
-  .mn-links a{font-size:26px;padding:0;color:#201B14;text-decoration:none;font-family:'Manrope',sans-serif;font-weight:600}
-  .mn-links a.mn-cta{align-self:flex-start;font-size:16px;padding:12px 24px;background:#201B14;color:#F6F2EB;border-radius:999px}
-  section[data-screen-label="Hero"]{padding:154px 20px 0!important}
-  section[data-screen-label="Hero"]>div:first-child{grid-template-columns:minmax(0,1fr)!important;gap:36px!important;align-items:stretch!important}
-  section[data-screen-label="Hero"] h1,section[data-screen-label="Hero"] h2{font-size:clamp(46px,14vw,60px)!important;letter-spacing:-1.8px!important}
-  section[data-screen-label="Hero"]>div:first-child>div:last-child>div:first-child{height:360px!important}
-  section[data-screen-label="Hero"] [style*="left:-40px"]{left:12px!important;bottom:12px!important}
-  section[data-screen-label="Hero"] [style*="margin:34px 0 0"]{flex-wrap:wrap}
-  #servicios{padding:80px 20px!important}
-  #servicios>div:last-child{grid-template-columns:1fr!important}
-  #proyectos{padding:80px 0!important}
-  #proyectos>div{padding:0 20px!important}
-  #proyectos>div>div:nth-child(2){grid-template-columns:1fr!important}
-  #proyectos [style*="grid-column:"]{grid-column:1 / -1!important}
-  #proyectos [style*="height:420px"],#proyectos [style*="height:340px"]{height:300px!important}
-  section[data-screen-label="Cifras"]{padding:70px 20px!important}
-  section[data-screen-label="Cifras"]>div{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 18px!important}
-  #proceso{padding:80px 20px!important}
-  #proceso>div:last-child{grid-template-columns:1fr!important;gap:30px!important}
-  #estudio{padding:80px 20px!important}
-  #estudio>div{grid-template-columns:1fr!important;gap:36px!important}
-  #estudio>div>div:first-child{height:480px!important}
-  #contacto{padding:80px 20px 70px!important}
-  #contacto>div{grid-template-columns:minmax(0,1fr)!important;gap:44px!important}
-  #contacto>div>div{min-width:0}
-  #contacto a{max-width:100%;box-sizing:border-box;white-space:normal}
-  #contacto label{min-width:0}
-  #contacto input,#contacto select,#contacto textarea,#contacto button{width:100%;min-width:0;box-sizing:border-box}
-  #contacto>div>div:last-child{padding:24px!important}
-  #contacto [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
-  footer{padding:30px 20px!important;align-items:flex-start!important;flex-direction:column}
-  body>a[title="WhatsApp"]{right:16px!important;bottom:16px!important}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav)}
+html.ss{scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,figure,blockquote,fieldset,legend{margin:0}
+ul,ol{padding:0;list-style:none}
+fieldset{border:0;padding:0;min-width:0}
+[hidden]{display:none!important}
+::selection{background:var(--clay);color:var(--bg)}
+:focus-visible{outline:1.5px solid var(--clay);outline-offset:3px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{padding:0 var(--gt)}
+.wrap-ph{padding:0 var(--g)}
+.cover{width:100%;height:100%;object-fit:cover}
+
+/* ---------- etiquetas mono, titulares ---------- */
+.tag{display:inline-flex;align-items:center;gap:6px;padding:4px 7px 3px;border:1px solid var(--line-2);font:400 11px/1.2 var(--mono);letter-spacing:-.02em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.tag::before{content:"+";color:var(--clay)}
+.dark .tag,.on-ph .tag{border-color:rgba(232,238,242,.5);color:var(--on-dark)}
+.dark .tag::before,.on-ph .tag::before{color:var(--clay-l)}
+.mono{font:400 12px/1.4 var(--mono);letter-spacing:-.02em;text-transform:uppercase}
+.up{text-transform:uppercase}
+.h2{font:500 clamp(26px,2.6vw,40px)/1.04 var(--sans);text-transform:uppercase;letter-spacing:-.01em}
+.st{font:500 clamp(21px,1.95vw,28px)/1.3 var(--sans);letter-spacing:-.015em}
+.st .mute,.mute{color:var(--ink-2)}
+.dark .mute{color:var(--on-dark-2)}
+.lead{font-size:17px;line-height:1.65;color:var(--ink-2);max-width:52ch}
+.dark .lead{color:var(--on-dark-2)}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:44px;padding:0 14px;border:1px solid var(--line-2);font:400 12px/1 var(--mono);letter-spacing:-.02em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:transparent;cursor:pointer;transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.btn i{font-style:normal;transition:transform .45s var(--ease)}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover i{transform:rotate(90deg)}
+.btn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.solid:hover{background:var(--clay);border-color:var(--clay)}
+.dark .btn{color:var(--on-dark);border-color:rgba(232,238,242,.4)}
+.dark .btn:hover{background:var(--on-dark);color:var(--dark)}
+.dark .btn.solid{background:var(--on-dark);color:var(--dark)}
+.dark .btn.solid:hover{background:var(--clay-l);border-color:var(--clay-l)}
+
+/* ---------- cinta demo ---------- */
+.ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.22));transition:filter .2s,transform .2s}
+.ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.32));transform:rotate(45deg) translateY(-2px)}
+.ribbon img{width:100%;height:auto}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:120;background:rgba(232,238,242,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .4s}
+.nav.sc{border-bottom-color:var(--line)}
+.nav-in{height:var(--nav);display:flex;align-items:center;gap:26px;padding:0 var(--gt)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.brand b{font:600 15px/1 var(--sans);letter-spacing:.02em}
+.brand span{padding:4px 6px 3px;background:var(--ink);color:var(--bg);font:400 10.5px/1 var(--mono);letter-spacing:-.02em;text-transform:uppercase}
+.nav-links{display:flex;gap:22px}
+.nav-links a{font:400 11.5px/1 var(--mono);letter-spacing:-.02em;text-transform:uppercase;text-decoration:none;color:var(--ink-2);padding:10px 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+.nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.nav-cta{min-height:36px;font-size:11px}
+.burger{display:none;width:44px;height:44px;border:0;background:none;padding:0;cursor:pointer;color:var(--ink)}
+.burger svg{width:24px;height:24px;margin:auto}
+.burger .x{display:none}
+.nav[data-open="true"] .burger .o{display:none}
+.nav[data-open="true"] .burger .x{display:block}
+.drawer{display:none}
+@media(min-width:1101px){.nav-in{padding-right:calc(var(--gt) + 84px)}}
+@media(max-width:1100px){
+  .nav-links,.nav-in>.nav-cta{display:none}
+  .burger{display:block}
+  .ribbon{top:calc(var(--nav) + 4px);right:0;width:min(42%,280px);transform:none}
+  .ribbon:hover{transform:translateY(-2px)}
+  .js .drawer{display:block;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;visibility:hidden;transition:max-height .5s var(--ease),visibility 0s .5s}
+  .js .nav[data-open="true"] .drawer{max-height:640px;visibility:visible;transition:max-height .6s var(--ease)}
+  .drawer-in{padding:14px var(--gt) 26px;display:grid}
+  .drawer a{font:500 26px/1.15 var(--sans);text-transform:uppercase;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line)}
+  .drawer .btn{margin-top:22px;font:400 12px/1 var(--mono);padding:0 14px;border:1px solid var(--ink);background:var(--ink);color:var(--bg)}
+  html:not(.js) .drawer{display:block}
+  html:not(.js) .nav{position:relative}
 }
-@media (prefers-reduced-motion:reduce){
+
+/* ---------- revelado ---------- */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity 1.3s var(--ease),transform 1.6s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+.js .rv.in{opacity:1;transform:none}
+/* texto que sube desde una máscara */
+.mk{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.mk>span{display:block}
+.js .rv.mkp{opacity:1;transform:none}
+.js .rv.mkp .mk>span{transform:translateY(108%);transition:transform 1.5s var(--ease);transition-delay:calc(var(--d,0) * 90ms + var(--i,0) * 60ms)}
+.js .rv.mkp.in .mk>span{transform:none}
+/* foto que se descubre: se recorta el hijo, nunca el observado */
+.ph{position:relative;overflow:hidden;background:var(--bg-2)}
+.js .ph.rv{opacity:1;transform:none}
+.js .ph.rv>img{clip-path:inset(0 0 100% 0);transform:scale(1.1);transition:clip-path 1.6s var(--ease),transform 2.2s var(--ease);transition-delay:calc(var(--d,0) * 80ms)}
+.js .ph.rv.in>img{clip-path:inset(0 0 0 0);transform:none}
+.js .py:hover .ph.rv.in>img{transform:scale(1.04);transition-delay:0s}
+/* filete que se traza */
+.ln{position:relative}
+.ln::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line-2);transform-origin:left}
+.js .rv.ln::before{transform:scaleX(0);transition:transform 1.8s var(--ease);transition-delay:calc(var(--d,0) * 80ms)}
+.js .rv.ln.in::before{transform:scaleX(1)}
+.dark .ln::before{background:var(--line-d)}
+
+/* ---------- hero ---------- */
+.hero-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;padding-top:clamp(28px,3.4vw,52px)}
+.h1{font:500 clamp(36px,4.3vw,66px)/.96 var(--sans);text-transform:uppercase;letter-spacing:-.02em;max-width:19ch}
+.hero-eye{margin-bottom:18px}
+.hero-meta{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,3fr) minmax(0,3fr) minmax(0,3fr);gap:var(--g);margin-top:clamp(24px,2.6vw,40px);padding:14px var(--gt) 16px}
+.hero-meta ul li{font:400 11.5px/1.65 var(--mono);letter-spacing:-.02em;text-transform:uppercase}
+.hero-meta .lbl{font:400 11px/1.4 var(--mono);text-transform:uppercase;color:var(--ink-2);margin-bottom:4px;letter-spacing:-.02em}
+.hero-meta .val{font:500 14px/1.4 var(--sans)}
+.hero-meta .cta{justify-self:end;align-self:start}
+.hero-ph{position:relative;margin:0 var(--g);height:clamp(420px,82vh,860px);overflow:hidden;background:var(--bg-2)}
+.hero-ph .zoom{position:absolute;inset:0}
+.js .hero-ph .zoom{transform:scale(1.08);transition:transform 2.6s var(--ease)}
+.js .hero.in .hero-ph .zoom{transform:none}
+[data-par]{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;will-change:transform}
+.hero-ph [data-par]{object-position:center 62%}
+.hero-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(55,57,58,0) 55%,rgba(44,46,47,.42));pointer-events:none}
+.mark{position:absolute;left:clamp(10px,1.4vw,24px);width:40%;bottom:clamp(8px,1vw,16px);z-index:2;font:500 clamp(60px,10vw,180px)/.8 var(--sans);letter-spacing:-.055em;color:var(--bg);white-space:nowrap;will-change:transform;pointer-events:none}
+.hero-cap{position:absolute;right:var(--g);bottom:var(--g);z-index:3;display:flex;gap:8px}
+.hero-cap .tag{background:rgba(232,238,242,.92);border-color:transparent}
+.hero-sub{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:var(--g);padding:clamp(48px,5.4vw,90px) var(--gt) 0}
+.hero-sub .lead{font-size:clamp(18px,1.5vw,21px);color:var(--ink)}
+
+/* ---------- cifras: quedan fijas mientras el scroll las despliega ---------- */
+.sec{padding:clamp(90px,10vw,160px) 0}
+.cifras{position:relative}
+.js .cifras.scrub{height:250vh}
+.cf-pin{display:flex;flex-direction:column;padding:clamp(70px,8vw,120px) 0 clamp(50px,6vw,90px)}
+.js .cifras.scrub .cf-pin{position:sticky;top:var(--nav);height:calc(100vh - var(--nav));padding:clamp(24px,3vw,44px) 0 clamp(18px,2.4vw,34px)}
+.cf-head{padding:0 var(--gt);margin-bottom:clamp(10px,1.6vw,22px)}
+.cf-rows{position:relative;flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
+.cf-axis{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-2);transform-origin:top}
+.cf-row{position:relative;flex:1 1 0;min-height:clamp(110px,15vh,190px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.cf-line{position:absolute;left:var(--g);right:var(--g);bottom:0;height:1px;background:var(--line-2);transform-origin:center}
+.cf-l{height:100%;display:flex;align-items:center;padding:0 var(--gt) 0 var(--g)}
+.cf-r{position:relative;height:100%;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:20px;padding-right:var(--gt)}
+.cf-bar{position:absolute;left:0;top:16%;bottom:16%;width:2px;background:var(--ink);transform-origin:bottom}
+.cf-n{padding-left:clamp(22px,2.6vw,46px);font:500 clamp(40px,4.6vw,78px)/1 var(--sans);letter-spacing:-.035em;white-space:nowrap}
+.cf-t{font:300 clamp(18px,1.85vw,30px)/1.2 var(--sans);letter-spacing:-.01em;color:var(--ink-2);max-width:22ch}
+.cf-mk{display:block;overflow:hidden;padding:.06em 0 .14em;margin:-.06em 0 -.14em}
+.cf-mk>span{display:block;will-change:transform}
+.cf-thumbs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(6px,.9vw,14px);width:100%;height:80%;max-width:760px}
+.cf-th{position:relative;overflow:hidden;background:var(--bg-2)}
+.cf-th img{width:100%;height:100%;object-fit:cover}
+.cf-th i{position:absolute;inset:0;background:var(--bg);transform:translateX(101%);will-change:transform}
+
+/* ---------- principios ---------- */
+.princ{overflow:hidden;padding:clamp(90px,10vw,150px) 0 clamp(70px,8vw,120px)}
+.giant{font-weight:600;line-height:.86;text-transform:uppercase;letter-spacing:-.045em;white-space:nowrap}
+.giant em{font-style:normal;color:var(--clay)}
+.giant .mk{display:inline-block;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.gwrap{padding:0 var(--g);font-size:var(--gfs,8.9vw)}
+.gl{display:block;font-size:1em}
+.g1{display:grid;grid-template-columns:20% minmax(0,1fr);align-items:end;gap:0 4%}
+.g1 .ph{aspect-ratio:4/3;margin-bottom:.12em}
+.g1 .giant{padding-left:2%}
+.g2{text-align:right}
+.g3{margin-top:.02em}
+.princ-foot{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,5fr) minmax(0,4fr);gap:var(--g);margin-top:clamp(36px,4vw,60px);align-items:start}
+.mats{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--g);margin-top:clamp(60px,7vw,110px)}
+.mats .ph{aspect-ratio:4/5}
+.mat-list{display:grid;align-content:end;gap:0}
+.mat{display:grid;grid-template-columns:44px minmax(0,4fr) minmax(0,7fr);gap:20px;align-items:baseline;padding:24px 0}
+.mat .sw{width:28px;height:28px;align-self:center;border:1px solid var(--line)}
+.mat h3{font:500 18px/1.3 var(--sans);text-transform:uppercase;letter-spacing:-.005em}
+.mat p{font-size:15.5px;color:var(--ink-2)}
+
+/* ---------- servicios: paneles apilados ---------- */
+.serv-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:var(--g);align-items:end;margin-bottom:clamp(36px,4vw,60px)}
+.serv-head .h2{margin-top:20px}
+.stack{display:grid;gap:var(--g);padding:0 var(--g)}
+.panel{position:relative;height:clamp(440px,46vw,720px);overflow:hidden;color:var(--on-dark);background:var(--dark-2)}
+.panel-bg{position:absolute;inset:0;overflow:hidden;transition:transform 1.6s var(--ease)}
+.panel-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(44,46,47,0) 50%,rgba(44,46,47,.5))}
+.panel:hover .panel-bg{transform:scale(1.025)}
+.panel-bar{position:absolute;left:var(--g);right:var(--g);bottom:0;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1fr);align-items:center;gap:20px;padding:clamp(28px,3.2vw,50px) var(--g);border-top:1px solid rgba(232,238,242,.5);color:inherit;text-decoration:none;overflow:hidden}
+.panel-bar>:not(.panel-c){position:relative;z-index:1}
+.panel-bar .tag{justify-self:start}
+.panel-c{position:absolute;inset:0;z-index:0;background:rgba(55,57,58,.9);transform:translateY(101%);transition:transform .9s var(--ease2)}
+.panel-t{justify-self:center;position:relative;overflow:hidden;padding:8px 14px;font:500 clamp(24px,2.4vw,38px)/1.05 var(--sans);text-transform:uppercase;letter-spacing:-.015em;text-align:center}
+.panel-t span{position:relative;z-index:1}
+.panel-t i{position:absolute;inset:0;background:var(--clay);transform:translateX(-105%);transition:transform .9s var(--ease2) .08s}
+.panel-ab{justify-self:end;display:grid;justify-items:end;align-items:center;text-align:right}
+.panel-ab>*{grid-area:1/1}
+.panel-ab .p{max-width:32ch;font:500 15px/1.45 var(--sans);opacity:0;transform:translateY(2rem);transition:opacity .5s var(--ease2),transform .9s var(--ease2)}
+.plus{font:300 32px/1 var(--sans);transition:opacity .4s var(--ease2),transform .7s var(--ease2)}
+.panel:hover .panel-c,.panel-bar:focus-visible .panel-c{transform:none}
+.panel:hover .panel-t i,.panel-bar:focus-visible .panel-t i{transform:none}
+.panel:hover .panel-ab .p,.panel-bar:focus-visible .panel-ab .p{opacity:1;transform:none;transition-delay:.14s}
+.panel:hover .plus,.panel-bar:focus-visible .plus{opacity:0;transform:rotate(90deg)}
+.panel-bar:focus-visible{outline:1.5px solid var(--on-dark);outline-offset:-6px}
+@media(hover:none),(max-width:900px){
+  .panel-bar{grid-template-columns:1fr;justify-items:start;gap:12px;padding:22px var(--g)}
+  .panel-t{justify-self:start;padding:0}
+  .panel-t i,.panel-c,.plus{display:none}
+  .panel-ab{justify-self:start;justify-items:start;text-align:left}
+  .panel-ab .p{opacity:1;transform:none;font-weight:400}
+  .panel-bg::after{background:linear-gradient(180deg,rgba(44,46,47,0) 30%,rgba(44,46,47,.78))}
+}
+
+/* ---------- proyectos ---------- */
+.proy-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:clamp(36px,4vw,56px)}
+.proy-head .h2{margin-top:20px}
+.proy{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g)}
+.py{grid-column:span 6;display:grid;gap:12px}
+.py.full{grid-column:1/-1}
+.py.s7{grid-column:span 7}.py.s5{grid-column:span 5}
+.py .ph{aspect-ratio:3/2}
+.py.full .ph{aspect-ratio:21/9}
+.py.s5 .ph{aspect-ratio:auto;height:100%;min-height:0}
+.py .ph img{transition:transform 1.4s var(--ease),clip-path 1.3s var(--ease)}
+.py:hover .ph img{transform:scale(1.04)}
+.py-cap{position:absolute;left:var(--g);bottom:var(--g);z-index:2;display:flex;align-items:center;gap:12px;padding:9px 12px;background:rgba(232,238,242,.94);font:500 clamp(16px,1.4vw,21px)/1.1 var(--sans)}
+.py-cap i{font-style:normal;color:var(--clay);transition:transform .5s var(--ease)}
+.py:hover .py-cap i{transform:rotate(90deg)}
+.py-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.py-meta span{font:400 11.5px/1.4 var(--mono);text-transform:uppercase;letter-spacing:-.02em;color:var(--ink-2)}
+.py-s5{display:grid;grid-template-rows:1fr auto;gap:12px}
+
+/* ---------- caso: antes / después ---------- */
+.caso{background:var(--bg-2)}
+.caso-g{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--g);align-items:end}
+.caso-tx{display:grid;gap:24px;padding-right:clamp(0px,2vw,30px)}
+.caso-tx .st{margin-top:4px}
+.caso-dl{display:grid;border-top:1px solid var(--line-2)}
+.caso-dl div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.caso-dl dt{font:400 11.5px/1.4 var(--mono);text-transform:uppercase;letter-spacing:-.02em;color:var(--ink-2)}
+.caso-dl dd{margin:0;font:500 15px/1.4 var(--sans);text-align:right}
+.ba{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--panel);--p:50%;user-select:none;touch-action:pan-y}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .top{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:4}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--p);width:1px;background:var(--bg);z-index:3;pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:var(--p);z-index:3;transform:translate(-50%,-50%);display:flex;align-items:center;gap:6px;padding:8px 10px;background:var(--bg);font:400 11px/1 var(--mono);text-transform:uppercase;pointer-events:none}
+.ba input:focus-visible~.knob{outline:1.5px solid var(--clay);outline-offset:3px}
+.ba .t1,.ba .t2{position:absolute;top:var(--g);z-index:2}
+.ba .t1{left:var(--g)}.ba .t2{right:var(--g)}
+.ba .tag{background:rgba(232,238,242,.92);border-color:transparent}
+
+/* ---------- proceso ---------- */
+.pasos{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(40px,5vw,70px)}
+.riel{position:absolute;left:0;right:0;top:0;height:1px;background:var(--line-2)}
+.riel i{position:absolute;inset:0;background:var(--ink);transform-origin:left;transform:scaleX(var(--p,0))}
+.paso{padding:28px clamp(14px,1.6vw,26px) 0 0;border-right:1px solid var(--line);margin-right:clamp(14px,1.6vw,26px)}
+.paso:last-child{border-right:0;margin-right:0}
+.paso .num{font:500 clamp(48px,5vw,80px)/1 var(--sans);letter-spacing:-.04em;color:var(--panel);-webkit-text-stroke:0}
+.paso h3{font:500 20px/1.25 var(--sans);text-transform:uppercase;margin:24px 0 10px}
+.paso p{font-size:15.5px;color:var(--ink-2)}
+.paso .tag{margin-top:22px}
+
+/* ---------- modalidades ---------- */
+.mod-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-2);margin-top:clamp(40px,5vw,70px)}
+.mod{display:flex;flex-direction:column;padding:26px clamp(16px,2vw,30px) 30px;border-right:1px solid var(--line)}
+.mod:first-child{padding-left:0}
+.mod:last-child{border-right:0}
+.mod.feat{background:var(--panel);padding-left:clamp(16px,2vw,30px)}
+.mod-top{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:26px}
+.mod h3{font:500 clamp(24px,2.2vw,32px)/1.05 var(--sans);text-transform:uppercase;letter-spacing:-.02em;margin:30px 0 12px}
+.mod .desc{font-size:15.5px;color:var(--ink-2);min-height:3.2em}
+.precio{margin:26px 0 22px;padding:18px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.precio span{display:block;font:400 11px/1.4 var(--mono);text-transform:uppercase;color:var(--ink-2)}
+.precio b{display:block;margin-top:6px;font:500 clamp(28px,2.6vw,38px)/1 var(--sans);letter-spacing:-.025em}
+.precio small{font:400 15px/1 var(--sans);color:var(--ink-2);letter-spacing:0}
+.mod ul{display:grid;gap:0;margin-bottom:28px;flex:1}
+.mod li{display:grid;grid-template-columns:22px 1fr;font-size:15px;padding:9px 0;border-bottom:1px solid var(--line)}
+.mod li::before{content:"+";font-family:var(--mono);color:var(--clay)}
+.mod .btn{align-self:stretch}
+.nota{margin-top:22px;font:400 11.5px/1.5 var(--mono);text-transform:uppercase;letter-spacing:-.02em;color:var(--ink-2)}
+
+/* ---------- estimador ---------- */
+.est{background:var(--panel)}
+.est-g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--g);align-items:stretch}
+.est-form{display:grid;gap:30px;padding-right:clamp(0px,3vw,50px)}
+.est-form legend{font:400 11.5px/1.4 var(--mono);text-transform:uppercase;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line-2);font:500 15px/1 var(--sans);transition:background .3s,color .3s,border-color .3s;cursor:pointer}
+.chip input:checked+span{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip input:focus-visible+span{outline:1.5px solid var(--clay);outline-offset:3px}
+.chip:hover span{border-color:var(--ink)}
+.rango{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}
+.rango output{font:500 26px/1 var(--sans);letter-spacing:-.02em;min-width:5.2ch;text-align:right}
+input[type=range].m2{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer;margin:0}
+input[type=range].m2::-webkit-slider-runnable-track{height:1px;background:var(--ink)}
+input[type=range].m2::-moz-range-track{height:1px;background:var(--ink)}
+input[type=range].m2::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-11px;background:var(--ink);border:4px solid var(--panel);box-shadow:0 0 0 1px var(--ink)}
+input[type=range].m2::-moz-range-thumb{width:16px;height:16px;border-radius:0;background:var(--ink);border:4px solid var(--panel);box-shadow:0 0 0 1px var(--ink)}
+.est-out{background:var(--dark);color:var(--on-dark);padding:clamp(22px,2.6vw,38px);display:flex;flex-direction:column;gap:20px}
+.est-out .lbl{font:400 11.5px/1.4 var(--mono);text-transform:uppercase;color:var(--on-dark-2)}
+.est-out .monto{font:500 clamp(30px,2.9vw,46px)/1.1 var(--sans);letter-spacing:-.03em}
+.est-out .monto b{font-weight:500;white-space:nowrap}
+.est-out .monto span{color:var(--on-dark-2);font-weight:300}
+.est-out .res{display:grid;border-top:1px solid var(--line-d)}
+.est-out .res div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-d);font-size:15px}
+.est-out .res dt{color:var(--on-dark-2)}
+.est-out .res dd{margin:0;text-align:right}
+.est-out .btn.solid{background:var(--on-dark);color:var(--dark);border-color:var(--on-dark)}
+.est-out .btn.solid:hover{background:var(--clay-l);border-color:var(--clay-l)}
+.est-out .fine{font-size:13.5px;color:var(--on-dark-2);margin-top:auto}
+
+/* ---------- testimonios ---------- */
+.testi-head{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,6fr) minmax(0,3fr);gap:var(--g);align-items:center;padding:14px 0;border-top:1px solid var(--line-2);margin-bottom:clamp(40px,5vw,70px)}
+.testi-head .st{text-align:center}
+.testi-head .mono:last-child{text-align:right}
+.testi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--g)}
+.tq{background:var(--bg-2);padding:clamp(18px,2vw,28px);display:flex;flex-direction:column;gap:22px}
+.tq .q{font:600 54px/.5 var(--sans);height:24px;color:var(--ink)}
+.tq .ph{aspect-ratio:4/3;width:62%}
+.tq blockquote{font:400 17.5px/1.55 var(--sans);flex:1}
+.tq figcaption{display:grid;gap:8px}
+.tq figcaption strong{font:500 15px/1.3 var(--sans)}
+
+/* ---------- estudio ---------- */
+.estudio-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--g);align-items:end}
+.estudio-g .ph{aspect-ratio:4/5}
+.estudio-tx{display:grid;gap:22px;padding:0 0 6px clamp(0px,3vw,50px)}
+.estudio-tx .lead{color:var(--ink)}
+.estudio-tx .lead+.lead{color:var(--ink-2);margin-top:-6px}
+.firmas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--g);padding-top:20px;border-top:1px solid var(--line-2)}
+.firmas b{display:block;font:500 15px/1.3 var(--sans)}
+.firmas span{display:block;margin-top:4px;font-size:13.5px;color:var(--ink-2)}
+
+/* ---------- faq ---------- */
+.faq-g{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--g);align-items:start}
+.faq-side{position:sticky;top:calc(var(--nav) + 30px);display:grid;gap:20px}
+.acc{border-bottom:1px solid var(--line-2)}
+.acc details{border-top:1px solid var(--line-2)}
+.acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px minmax(0,1fr) 30px;gap:12px;align-items:center;padding:22px 0;font:500 clamp(17px,1.5vw,21px)/1.35 var(--sans);transition:color .3s}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .mono{color:var(--ink-2)}
+.acc summary:hover{color:var(--clay)}
+.mas{position:relative;width:30px;height:30px;border:1px solid var(--line-2);transition:transform .5s var(--ease),background .3s}
+.mas::before,.mas::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1px;background:currentColor;transform:translate(-50%,-50%)}
+.mas::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] .mas{transform:rotate(45deg)}
+.acc details p{padding:0 42px 26px 56px;color:var(--ink-2);font-size:16px;max-width:70ch}
+details[open] p{animation:aparece .6s var(--ease)}
+@keyframes aparece{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* ---------- servicios en palabras: la foto se encoge y las letras la rodean ---------- */
+.rvl{position:relative;background:var(--dark);color:var(--on-dark)}
+.js .rvl.scrub{height:400vh}
+.rvl-pin{position:relative;height:calc(100vh - var(--nav));min-height:560px;overflow:hidden}
+.js .rvl.scrub .rvl-pin{position:sticky;top:var(--nav)}
+.rvl-ph{position:absolute;inset:0;overflow:hidden;clip-path:inset(17% 21% 21% 21%)}
+.rvl-ph img{width:100%;height:100%;object-fit:cover;transform-origin:center}
+.rvl-ph::after{content:"";position:absolute;inset:0;background:rgba(44,46,47,.12)}
+.rvl-lbl{position:absolute;left:0;right:0;top:50%;z-index:2;margin-top:-.5em;text-align:center;font:500 clamp(13px,1.25vw,19px)/1 var(--sans);letter-spacing:.6em;text-indent:.6em;text-transform:uppercase;color:#fff;opacity:0}
+.rvl-w{position:absolute;left:var(--gt);right:var(--gt);z-index:3;font:600 clamp(40px,6.5vw,118px)/.9 var(--sans);text-transform:uppercase;letter-spacing:-.03em;color:rgba(232,238,242,.86);white-space:nowrap;pointer-events:none}
+.rvl-w .wd{display:inline-block;overflow:hidden;vertical-align:top;padding:.04em 0 .08em}
+.rvl-w .lt{display:inline-block;will-change:transform}
+.w1{top:17%;transform:translateY(-64%);text-align:center}
+.w2{top:50%;transform:translateY(-50%);display:flex;justify-content:space-between}
+.w3{top:79%;transform:translateY(-36%);display:flex;justify-content:center;align-items:center;gap:.22em}
+.rvl-th{flex:none;width:1.25em;height:.92em;overflow:hidden;background:var(--dark-2)}
+.rvl-th img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+@media(max-width:700px){
+  .rvl-ph{clip-path:inset(25% 7% 25% 7%)}
+  .rvl-w{font-size:10.4vw}
+  .w1{top:25%}
+  .w2{flex-direction:column;gap:.1em}
+  .w2 .wd:last-child{align-self:flex-end}
+  .w3{top:75%}
+  .rvl-th{display:none}
+}
+
+/* ---------- consulta + contacto ---------- */
+.dark{background:var(--dark);color:var(--on-dark)}
+.consulta{padding:clamp(100px,14vw,220px) 0 clamp(60px,7vw,100px);overflow:hidden}
+.consulta .giant{color:var(--on-dark-2);text-align:center;letter-spacing:.06em;font-weight:500;font-size:clamp(40px,10vw,170px)}
+.ct-g{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:var(--g);margin-top:clamp(70px,9vw,140px);padding-top:clamp(30px,3vw,44px);border-top:1px solid var(--line-d)}
+.ct-l{display:grid;gap:26px;align-content:start;padding-right:clamp(0px,4vw,70px)}
+.ct-l .h2{font-size:clamp(30px,3.4vw,52px);line-height:1}
+.wa{display:inline-flex;align-items:center;gap:12px;justify-self:start;min-height:48px;padding:0 18px;background:#1F7A4A;color:#fff;text-decoration:none;font:500 15px/1.2 var(--sans);transition:background .3s}
+.wa:hover{background:#17623B}
+.wa svg{width:18px;height:18px;flex:none}
+.datos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--g)}
+.datos div{padding-top:14px;border-top:1px solid var(--line-d)}
+.datos dt{font:400 11px/1.4 var(--mono);text-transform:uppercase;color:var(--on-dark-2);margin-bottom:8px}
+.datos dd{margin:0;font-size:15px;line-height:1.5}
+.datos a{text-decoration:none;border-bottom:1px solid var(--line-d)}
+.form{background:var(--dark-2);padding:clamp(20px,2.6vw,38px);display:grid;gap:4px}
+.f2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--g)}
+.campo{display:grid;gap:4px;padding:14px 0 6px;border-bottom:1px solid rgba(232,238,242,.26);transition:border-color .3s}
+.campo:focus-within{border-color:var(--clay-l)}
+.campo span{font:400 11px/1.4 var(--mono);text-transform:uppercase;color:var(--on-dark-2)}
+.campo input,.campo select,.campo textarea{width:100%;background:transparent;border:0;outline:0;color:var(--on-dark);font:400 16px/1.5 var(--sans);padding:6px 0;border-radius:0;-webkit-appearance:none;appearance:none}
+.campo textarea{resize:vertical;min-height:96px}
+.campo select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%23A9B3BA' stroke-width='1'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;background-size:16px}
+.campo select option{color:var(--ink);background:var(--bg)}
+.campo ::placeholder{color:rgba(169,179,186,.7);opacity:1}
+.err{font-size:13.5px;color:var(--clay-l);margin-top:12px}
+.form .btn{margin-top:24px;width:100%}
+.form .fine{font-size:12.5px;color:var(--on-dark-2);text-align:center;margin-top:10px}
+.ok{padding:clamp(30px,5vw,70px) 10px;text-align:center;display:grid;gap:10px}
+.ok b{font:500 26px/1.2 var(--sans)}
+.ok p{color:var(--on-dark-2)}
+.foot{margin-top:clamp(80px,9vw,130px);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,3fr) minmax(0,3fr) minmax(0,3fr);gap:var(--g);padding:26px 0 0;border-top:1px solid var(--line-d)}
+.foot .brand-f{font:600 15px/1 var(--sans);letter-spacing:.02em}
+.foot ul{display:grid;gap:6px}
+.foot a{text-decoration:none;font:400 11.5px/1.5 var(--mono);text-transform:uppercase;color:var(--on-dark)}
+.foot a:hover{color:var(--clay-l)}
+.foot .lbl{font:400 11px/1.4 var(--mono);text-transform:uppercase;color:var(--on-dark-2);margin-bottom:8px}
+.foot p{font-size:14px;line-height:1.55}
+.foot-b{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 30px;padding:22px 0 26px;margin-top:40px;border-top:1px solid var(--line-d);font:400 11px/1.5 var(--mono);text-transform:uppercase;color:var(--on-dark-2)}
+.foot-b a{font:inherit;color:var(--on-dark);border-bottom:1px solid var(--line-d)}
+
+/* flotante */
+.fab{position:fixed;right:18px;bottom:18px;z-index:90;display:flex;align-items:center;gap:10px;height:48px;padding:0 16px;background:#1F7A4A;color:#fff;text-decoration:none;font:400 11.5px/1 var(--mono);text-transform:uppercase;box-shadow:0 10px 26px rgba(44,46,47,.25);transition:background .3s,transform .4s var(--ease)}
+.fab:hover{background:#17623B}
+.fab svg{width:18px;height:18px}
+.fab i{width:7px;height:7px;border-radius:50%;background:#7CF0AE;font-style:normal}
+
+/* ---------- responsive ---------- */
+@media(max-width:1100px){
+  .pasos{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:46px}
+  .paso:nth-child(odd){border-right:0;margin-right:0}
+  .riel{display:none}
+  .paso{border-top:1px solid var(--line-2)}
+  .mod-g{grid-template-columns:1fr}
+  .mod,.mod:first-child{padding:26px 0 30px;border-right:0;border-bottom:1px solid var(--line-2)}
+  .mod.feat{padding:26px var(--gt) 30px;margin:0 calc(var(--gt) * -1)}
+  .mod .desc{min-height:0}
+  .testi{grid-template-columns:1fr}
+  .tq .ph{width:44%}
+}
+@media(max-width:900px){
+  :root{--nav:60px;--g:12px;--gt:20px}
+  .hero-top{grid-template-columns:1fr}
+  .hero-meta{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}
+  .hero-meta .cta{justify-self:start}
+  .hero-ph{height:68vh;min-height:380px}
+  .hero-sub,.serv-head,.caso-g,.est-g,.estudio-g,.faq-g,.ct-g,.mats,.princ-foot{grid-template-columns:1fr}
+  .hero-sub{row-gap:20px}
+  .faq-side{position:static}
+  .cf-axis{display:none}
+  .cf-row{grid-template-columns:1fr;min-height:96px}
+  .cf-row:not(.th) .cf-l{display:none}
+  .cf-row.th{flex-grow:1.8;grid-template-rows:auto minmax(0,1fr)}
+  .cf-row.th .cf-l{height:auto;padding:12px var(--gt) 6px}
+  .cf-thumbs{height:clamp(64px,10vh,110px)}
+  .cf-r{grid-template-columns:minmax(0,4fr) minmax(0,6fr);padding-left:var(--gt)}
+  .cf-bar{left:var(--gt)}
+  .cf-n{padding-left:18px;font-size:clamp(34px,9vw,52px)}
+  .cf-t{font-size:clamp(15px,4vw,19px)}
+  .proy .py,.proy .py.s7,.proy .py.s5{grid-column:1/-1}
+  .py.s5 .ph{aspect-ratio:3/2;height:auto}
+  .py.full .ph{aspect-ratio:4/3}
+  .proy-head{flex-direction:column;align-items:flex-start}
+  .caso-tx{padding-right:0;margin-bottom:24px}
+  .est-form{padding-right:0;margin-bottom:24px}
+  .testi-head{grid-template-columns:1fr;text-align:left}
+  .testi-head .st,.testi-head .mono:last-child{text-align:left}
+  .estudio-tx{padding:30px 0 0}
+  .ct-l{padding-right:0}
+  .datos{grid-template-columns:1fr}
+  .foot{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
+  .hero-cap{display:none}
+  .mark{width:62%}
+}
+@media(max-width:560px){
+  .h1{font-size:clamp(34px,10.6vw,48px)}
+  .pasos{grid-template-columns:1fr}
+  .paso,.paso:nth-child(odd){border-right:0;margin-right:0;padding-right:0}
+  .mat{grid-template-columns:40px minmax(0,1fr);row-gap:6px}
+  .mat p{grid-column:2}
+  .f2{grid-template-columns:1fr}
+  .acc summary{grid-template-columns:34px minmax(0,1fr) 30px}
+  .acc details p{padding:0 0 24px 46px}
+  .tq .ph{width:60%}
+  .fab span{display:none}
+  .fab{padding:0 15px}
+  .hero-meta .cta .btn{width:100%}
+  .hero-meta .cta{grid-column:1/-1;justify-self:stretch}
+}
+@media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  [data-reveal]{transition:none!important}
-  body>a[title="WhatsApp"],[style*="animation:tickerMove"]{animation:none!important}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
 }
 </style>
-</helmet>
+</head>
+<body>
 
-<a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="./assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
+<a class="ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
+  <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
 </a>
 
-<header style="position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;background:rgba(246,242,235,0.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(32,27,20,0.08)">
-  <div class="nav-shell">
-    <div style="display:flex;align-items:baseline;gap:10px">
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.5px">TERRAL</span>
-      <span style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#6E6353">Estudio de Interiores · Lima</span>
-    </div>
-    <button type="button" class="mn-toggle" aria-expanded="false" aria-controls="mn-links" aria-label="Abrir menú">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="#201B14" stroke-linecap="round" stroke-width="1.6"/></svg>
-    </button>
-    <nav class="desktop-links" style="display:flex;align-items:center;gap:28px;font-size:13.5px;font-weight:600">
-      <a href="#servicios" style="color:#201B14" style-hover="color:#A85C38">Servicios</a>
-      <a href="#proyectos" style="color:#201B14" style-hover="color:#A85C38">Proyectos</a>
-      <a href="#proceso" style="color:#201B14" style-hover="color:#A85C38">Proceso</a>
-      <a href="#estudio" style="color:#201B14" style-hover="color:#A85C38">Estudio</a>
-      <a href="#contacto" class="mn-cta" style="background:#201B14;color:#F6F2EB;padding:10px 20px;border-radius:999px" style-hover="background:#A85C38;color:#fff">Cotiza tu proyecto</a>
+<!-- NAV -->
+<header class="nav" id="nav" data-open="false">
+  <div class="nav-in">
+    <a class="brand" href="#inicio" aria-label="Terra Interiores — inicio"><b>TERRA INTERIORES</b><span>Lima</span></a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#inversion">Inversión</a>
+      <a href="#estudio">Estudio</a>
     </nav>
+    <a class="btn solid nav-cta" href="#contacto">Cotiza tu proyecto <i>+</i></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menú">
+      <svg class="o" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h20M2 16h20" stroke="currentColor" stroke-width="1.2"/></svg>
+      <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.2"/></svg>
+    </button>
+  </div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-in">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#inversion">Inversión</a>
+      <a href="#estudio">Estudio</a>
+      <a class="btn" href="#contacto">Cotiza tu proyecto <i>+</i></a>
+    </div>
   </div>
 </header>
-<nav class="mn-links" id="mn-links">
-  <a href="#servicios" style="color:#201B14" style-hover="color:#A85C38">Servicios</a>
-  <a href="#proyectos" style="color:#201B14" style-hover="color:#A85C38">Proyectos</a>
-  <a href="#proceso" style="color:#201B14" style-hover="color:#A85C38">Proceso</a>
-  <a href="#estudio" style="color:#201B14" style-hover="color:#A85C38">Estudio</a>
-  <a href="#contacto" class="mn-cta" style="background:#201B14;color:#F6F2EB;padding:10px 20px;border-radius:999px" style-hover="background:#A85C38;color:#fff">Cotiza tu proyecto</a>
-</nav>
 
-<!-- ============ HERO — variante Editorial ============ -->
-<sc-if value="{{ heroEditorial }}" hint-placeholder-val="{{ true }}">
-<section data-screen-label="Hero" style="padding:150px 48px 0;max-width:1440px;margin:0 auto">
-  <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:end">
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-top">
     <div>
-      <p data-reveal="" style="margin:0 0 18px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#A85C38;font-weight:700">Diseño de interiores residencial y comercial</p>
-      <h1 data-reveal="" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(48px,6.2vw,88px);line-height:1.02;letter-spacing:-2.5px">Espacios que cuentan quién eres.</h1>
-      <p data-reveal="" style="margin:26px 0 0;max-width:520px;font-size:17px;line-height:1.65;color:#5C5344">Transformamos departamentos, casas y locales comerciales en Lima con un lenguaje cálido, funcional y atemporal. Del anteproyecto a la entrega llave en mano.</p>
-      <div data-reveal="" style="display:flex;gap:14px;margin:34px 0 0">
-        <a href="#contacto" style="background:#201B14;color:#F6F2EB;padding:15px 28px;border-radius:999px;font-weight:700;font-size:14.5px" style-hover="background:#A85C38;color:#fff">Agenda una consulta</a>
-        <a href="#proyectos" style="border:1.5px solid #201B14;color:#201B14;padding:15px 28px;border-radius:999px;font-weight:700;font-size:14.5px" style-hover="background:#201B14;color:#F6F2EB">Ver proyectos</a>
-      </div>
-    </div>
-    <div data-reveal="" style="position:relative">
-      <div style="width:100%;height:520px">
-        <img src="./assets/hero-barranco.webp" alt="Sala remodelada de una casa en Barranco con madera oscura, piedra y textiles naturales" width="1536" height="1024" fetchpriority="high" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:18px">
-      </div>
-      <div style="position:absolute;left:-40px;bottom:36px;background:#F6F2EB;border-radius:14px;padding:16px 20px;box-shadow:0 12px 32px rgba(32,27,20,0.14);pointer-events:none">
-        <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px">Casa Barranco</p>
-        <p style="margin:2px 0 0;font-size:12px;color:#6E6353">Remodelación integral · 180 m²</p>
-      </div>
+      <p class="hero-eye rv"><span class="tag">Diseño de interiores residencial y comercial</span></p>
+      <h1 class="h1 rv mkp" data-mk>Espacios que cuentan quién eres.</h1>
     </div>
   </div>
-  <div style="overflow:hidden;border-top:1px solid rgba(32,27,20,0.12);border-bottom:1px solid rgba(32,27,20,0.12);margin-top:64px;padding:14px 0;white-space:nowrap">
-    <div style="display:inline-flex;gap:48px;animation:tickerMove 28s linear infinite;font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:#6E6353">
-      <span>Interiorismo residencial</span><span>·</span><span>Locales comerciales</span><span>·</span><span>Remodelaciones</span><span>·</span><span>Mobiliario a medida</span><span>·</span><span>Lima — Perú</span><span>·</span>
-      <span>Interiorismo residencial</span><span>·</span><span>Locales comerciales</span><span>·</span><span>Remodelaciones</span><span>·</span><span>Mobiliario a medida</span><span>·</span><span>Lima — Perú</span><span>·</span>
-    </div>
-  </div>
-</section>
-</sc-if>
-
-<!-- ============ HERO — variante Full-bleed ============ -->
-<sc-if value="{{ heroFullbleed }}" hint-placeholder-val="{{ false }}">
-<section data-screen-label="Hero" style="position:relative;height:100vh;min-height:640px">
-  <div style="position:absolute;inset:0">
-    <img src="./assets/hero-fullbleed-comedor.webp" alt="Comedor contemporáneo conectado a un patio y bañado por luz natural" width="1672" height="941" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover">
-  </div>
-  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,10,0.72) 0%,rgba(20,16,10,0.15) 55%,rgba(20,16,10,0) 100%);pointer-events:none"></div>
-  <div style="position:absolute;left:48px;right:48px;bottom:64px;color:#F6F2EB;pointer-events:none">
-    <p data-reveal="" style="margin:0 0 14px;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:#E4B792">Estudio de interiores — Lima</p>
-    <h2 data-reveal="" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(48px,6.5vw,96px);line-height:1;letter-spacing:-2.5px;max-width:900px">Diseñamos la vida que pasa adentro.</h2>
-    <div data-reveal="" style="display:flex;gap:14px;margin-top:32px;pointer-events:auto">
-      <a href="#contacto" style="background:#F6F2EB;color:#201B14;padding:15px 28px;border-radius:999px;font-weight:700;font-size:14.5px" style-hover="background:#A85C38;color:#fff">Agenda una consulta</a>
-      <a href="#proyectos" style="border:1.5px solid rgba(246,242,235,0.7);color:#F6F2EB;padding:15px 28px;border-radius:999px;font-weight:700;font-size:14.5px" style-hover="background:rgba(246,242,235,0.15)">Ver proyectos</a>
-    </div>
-  </div>
-</section>
-</sc-if>
-
-<!-- ============ HERO — variante Collage ============ -->
-<sc-if value="{{ heroCollage }}" hint-placeholder-val="{{ false }}">
-<section data-screen-label="Hero" style="padding:140px 48px 40px;max-width:1440px;margin:0 auto">
-  <h2 data-reveal="" style="margin:0 0 40px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(44px,5.8vw,84px);line-height:1.04;letter-spacing:-2.5px;max-width:1000px">Interiores con carácter, <span style="color:#A85C38">hechos en Lima.</span></h2>
-  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:280px 220px;gap:16px">
-    <div data-reveal="" style="grid-row:span 2"><img src="./assets/hero-collage-san-isidro.webp" alt="Sala contemporánea en un departamento de San Isidro" width="1122" height="1402" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:16px"></div>
-    <div data-reveal=""><img src="./assets/proyecto-casa-los-alamos.webp" alt="Cocina abierta con isla de piedra y carpintería de madera" width="1448" height="1086" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:16px"></div>
-    <div data-reveal="" style="grid-row:span 2;display:flex;flex-direction:column;gap:16px">
-      <div style="flex:1"><img src="./assets/proyecto-duplex-reducto.webp" alt="Dormitorio principal sereno con textiles naturales y madera" width="1448" height="1086" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:16px"></div>
-      <div style="background:#201B14;color:#F6F2EB;border-radius:16px;padding:22px 24px">
-        <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;line-height:1.4">+80 espacios transformados en Lima desde 2017.</p>
-        <a href="#contacto" style="display:inline-block;margin-top:12px;color:#E4B792;font-weight:700;font-size:13.5px" style-hover="color:#fff">Cotiza tu proyecto →</a>
-      </div>
-    </div>
-    <div data-reveal=""><img src="./assets/proyecto-restaurante-solaris.webp" alt="Salón de restaurante cálido en una casona de Barranco" width="1568" height="1003" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:16px"></div>
-  </div>
-</section>
-</sc-if>
-
-<!-- ============ 2 · Servicios ============ -->
-<section id="servicios" data-screen-label="Servicios" style="padding:110px 48px;max-width:1440px;margin:0 auto">
-  <div data-reveal="" style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:52px;flex-wrap:wrap">
-    <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,3.4vw,48px);letter-spacing:-1.5px">Qué hacemos</h2>
-    <p style="margin:0;max-width:420px;font-size:15px;line-height:1.6;color:#6E6353">Acompañamos cada proyecto de principio a fin: diseño, especificación técnica, presupuesto y supervisión de obra.</p>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
-    <div data-reveal="" style="background:#fff;border-radius:18px;padding:34px 30px;border:1px solid rgba(32,27,20,0.07);transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 20px 44px rgba(32,27,20,0.1)">
-      <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#A85C38">01</span>
-      <h3 style="margin:14px 0 12px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.5px">Interiorismo residencial</h3>
-      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#5C5344">Departamentos y casas: distribución, iluminación, paleta de materiales y mobiliario a medida para vivir mejor cada m².</p>
-    </div>
-    <div data-reveal="" style="background:#fff;border-radius:18px;padding:34px 30px;border:1px solid rgba(32,27,20,0.07);transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 20px 44px rgba(32,27,20,0.1)">
-      <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#A85C38">02</span>
-      <h3 style="margin:14px 0 12px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.5px">Espacios comerciales</h3>
-      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#5C5344">Restaurantes, oficinas y retail: diseñamos experiencias que refuerzan tu marca y funcionan para la operación diaria.</p>
-    </div>
-    <div data-reveal="" style="background:#fff;border-radius:18px;padding:34px 30px;border:1px solid rgba(32,27,20,0.07);transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 20px 44px rgba(32,27,20,0.1)">
-      <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#A85C38">03</span>
-      <h3 style="margin:14px 0 12px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.5px">Remodelación integral</h3>
-      <p style="margin:0;font-size:14.5px;line-height:1.65;color:#5C5344">Obra, acabados y gestión de proveedores con cronograma y presupuesto cerrado. Entrega llave en mano.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3 · Portafolio ============ -->
-<section id="proyectos" data-screen-label="Proyectos" style="background:#EDE6DA;padding:110px 0">
-  <div style="max-width:1440px;margin:0 auto;padding:0 48px">
-    <div data-reveal="" style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:52px">
-      <h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,3.4vw,48px);letter-spacing:-1.5px">Proyectos recientes</h2>
-      <span style="font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#A85C38;font-weight:700">2023 — 2026</span>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:18px">
-      <sc-for list="{{ proyectos }}" as="p" hint-placeholder-count="4">
-        <div data-reveal="" style="grid-column:{{ p.span }};display:flex;flex-direction:column;gap:12px">
-          <div style="height:{{ p.h }};position:relative;overflow:hidden;border-radius:16px">
-            <img src="{{ p.src }}" alt="{{ p.alt }}" width="{{ p.w }}" height="{{ p.imgH }}" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover">
-          </div>
-          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
-            <div>
-              <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px">{{ p.nombre }}</p>
-              <p style="margin:2px 0 0;font-size:13px;color:#6E6353">{{ p.detalle }}</p>
-            </div>
-            <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#A85C38;font-weight:700;white-space:nowrap">{{ p.tipo }}</span>
-          </div>
-        </div>
-      </sc-for>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4 · Cifras ============ -->
-<section data-screen-label="Cifras" style="background:#201B14;color:#F6F2EB;padding:90px 48px">
-  <div style="max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
-    <sc-for list="{{ cifras }}" as="c" hint-placeholder-count="4">
-      <div data-reveal="" style="border-left:1px solid rgba(246,242,235,0.2);padding-left:26px">
-        <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(40px,4vw,58px);letter-spacing:-2px;color:#E4B792">{{ c.valor }}</p>
-        <p style="margin:8px 0 0;font-size:14px;color:rgba(246,242,235,0.65);line-height:1.5">{{ c.label }}</p>
-      </div>
-    </sc-for>
-  </div>
-</section>
-
-<!-- ============ 5 · Proceso ============ -->
-<section id="proceso" data-screen-label="Proceso" style="padding:110px 48px;max-width:1440px;margin:0 auto">
-  <div data-reveal="" style="max-width:640px;margin-bottom:56px">
-    <h2 style="margin:0 0 16px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,3.4vw,48px);letter-spacing:-1.5px">Un proceso claro, sin sorpresas</h2>
-    <p style="margin:0;font-size:15.5px;line-height:1.65;color:#6E6353">Sabrás qué esperar en cada etapa: entregables definidos, tiempos realistas y comunicación constante por WhatsApp.</p>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0">
-    <sc-for list="{{ pasos }}" as="s" hint-placeholder-count="4">
-      <div data-reveal="" style="border-top:2px solid #201B14;padding:26px 26px 0 0;margin-right:18px">
-        <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#A85C38">{{ s.num }}</span>
-        <h3 style="margin:12px 0 10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:19px;letter-spacing:-0.3px">{{ s.titulo }}</h3>
-        <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#5C5344">{{ s.desc }}</p>
-        <p style="margin:0;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#A99C89;font-weight:700">{{ s.tiempo }}</p>
-      </div>
-    </sc-for>
-  </div>
-</section>
-
-<!-- ============ 6 · Estudio ============ -->
-<section id="estudio" data-screen-label="Estudio" style="background:#fff;padding:110px 48px">
-  <div style="max-width:1440px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center">
-    <div data-reveal="" style="height:520px">
-      <img src="./assets/estudio-valeria-conceptual-v2.webp" alt="Retrato conceptual de la directora creativa revisando muestras de materiales en el estudio" width="1402" height="1122" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:18px">
+  <div class="wrap hero-meta ln rv" style="--d:3">
+    <ul>
+      <li>Interiorismo residencial</li>
+      <li>Locales comerciales</li>
+      <li>Remodelaciones</li>
+      <li>Mobiliario a medida</li>
+    </ul>
+    <div>
+      <p class="lbl">Proyecto reciente</p>
+      <p class="val">Casa Barranco</p>
+      <p class="mute" style="font-size:14px">Remodelación integral · 180 m²</p>
     </div>
     <div>
-      <p data-reveal="" style="margin:0 0 16px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#A85C38;font-weight:700">El estudio</p>
-      <h2 data-reveal="" style="margin:0 0 22px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(30px,3.2vw,44px);letter-spacing:-1.5px;line-height:1.1">Diseño con oficio, gestión con rigor.</h2>
-      <p data-reveal="" style="margin:0 0 18px;font-size:16px;line-height:1.7;color:#5C5344">Terral nace en 2017 en Lima, liderado por la arquitecta de interiores <strong>Valeria Fuentes</strong>. Creemos en espacios honestos: materiales nobles, luz natural y soluciones que envejecen bien.</p>
-      <p data-reveal="" style="margin:0 0 30px;font-size:16px;line-height:1.7;color:#5C5344">Trabajamos con carpinteros, canteras y talleres locales, y supervisamos la obra en persona. Por eso entregamos a tiempo y dentro del presupuesto.</p>
-      <div data-reveal="" style="display:flex;gap:36px;border-top:1px solid rgba(32,27,20,0.1);padding-top:24px">
-        <div>
-          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px">Valeria Fuentes</p>
-          <p style="margin:2px 0 0;font-size:13px;color:#6E6353">Directora creativa · Arq. de Interiores, PUCP</p>
-        </div>
-        <div>
-          <p style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px">Equipo de 6</p>
-          <p style="margin:2px 0 0;font-size:13px;color:#6E6353">Diseño, presupuestos y supervisión de obra</p>
-        </div>
-      </div>
+      <p class="lbl">Desde 2017</p>
+      <p class="val">+80 espacios transformados en Lima</p>
+    </div>
+    <div class="cta"><a class="btn" href="#contacto">Agenda una consulta <i>+</i></a></div>
+  </div>
+  <div class="hero-ph">
+    <div class="zoom"><img data-par="0.1" src="assets/terra-hero-sala.webp" alt="Sala remodelada de una casa en Barranco con muros de yeso, sofá gris claro y mesa de travertino" width="2400" height="1357" fetchpriority="high"></div>
+    <p class="mark" data-mark data-fit aria-hidden="true">TERRA</p>
+    <div class="hero-cap"><span class="tag">Casa Barranco</span><span class="tag">Lima — Perú</span></div>
+  </div>
+  <div class="hero-sub">
+    <p class="st rv" style="max-width:20ch">Diseñamos la vida <span class="mute">que pasa adentro.</span></p>
+    <div class="rv" style="--d:1">
+      <p class="lead">Transformamos departamentos, casas y locales comerciales en Lima con un lenguaje cálido, funcional y atemporal. Del anteproyecto a la entrega llave en mano.</p>
+      <p style="margin-top:26px"><a class="btn" href="#proyectos">Ver proyectos <i>+</i></a></p>
     </div>
   </div>
 </section>
 
-<!-- ============ 7 · Contacto ============ -->
-<section id="contacto" data-screen-label="Contacto" style="padding:110px 48px 90px;max-width:1440px;margin:0 auto">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+<!-- CIFRAS -->
+<section class="cifras scrub" aria-labelledby="t-cifras">
+  <div class="cf-pin">
+    <p class="cf-head"><span class="tag" id="t-cifras">Cifras</span></p>
+    <div class="cf-rows">
+      <span class="cf-axis" aria-hidden="true"></span>
+      <div class="cf-row"><div class="cf-l"></div><div class="cf-r"><span class="cf-bar" aria-hidden="true"></span><p class="cf-n"><span class="cf-mk"><span>+80</span></span></p><p class="cf-t"><span class="cf-mk"><span>Proyectos entregados en Lima y Callao</span></span></p></div><span class="cf-line" aria-hidden="true"></span></div>
+      <div class="cf-row"><div class="cf-l"></div><div class="cf-r"><span class="cf-bar" aria-hidden="true"></span><p class="cf-n"><span class="cf-mk"><span>9</span></span></p><p class="cf-t"><span class="cf-mk"><span>Años diseñando interiores residenciales y comerciales</span></span></p></div><span class="cf-line" aria-hidden="true"></span></div>
+      <div class="cf-row th"><div class="cf-l"><div class="cf-thumbs" aria-hidden="true"><div class="cf-th"><img src="assets/terra-malecon-balta.webp" alt="" width="1800" height="1195" loading="lazy"><i></i></div><div class="cf-th"><img src="assets/terra-retrato-valeria.webp" alt="" width="1440" height="1800" loading="lazy"><i></i></div><div class="cf-th"><img src="assets/terra-restaurante-solaris.webp" alt="" width="1800" height="1195" loading="lazy"><i></i></div><div class="cf-th"><img src="assets/terra-materiales.webp" alt="" width="1200" height="1500" loading="lazy"><i></i></div><div class="cf-th"><img src="assets/terra-duplex-reducto.webp" alt="" width="1800" height="1195" loading="lazy"><i></i></div></div></div><div class="cf-r"><span class="cf-bar" aria-hidden="true"></span><p class="cf-n"><span class="cf-mk"><span>12 500</span></span></p><p class="cf-t"><span class="cf-mk"><span>m² intervenidos entre obra y mobiliario a medida</span></span></p></div><span class="cf-line" aria-hidden="true"></span></div>
+      <div class="cf-row"><div class="cf-l"></div><div class="cf-r"><span class="cf-bar" aria-hidden="true"></span><p class="cf-n"><span class="cf-mk"><span>96%</span></span></p><p class="cf-t"><span class="cf-mk"><span>De clientes nos recomienda o vuelve con un nuevo proyecto</span></span></p></div><span class="cf-line" aria-hidden="true"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPIOS -->
+<section class="princ" aria-labelledby="t-princ">
+  <h2 class="sr" id="t-princ">Principios: espacios nobles, luminosos, que envejecen bien</h2>
+  <div class="gwrap" data-fit-scope aria-hidden="true">
+    <div class="gl g1"><div class="ph rv"><img class="cover" src="assets/terra-retrato-valeria.webp" alt="" width="1440" height="1800" loading="lazy" style="object-position:center 30%"></div><p class="giant rv mkp" style="--d:1"><span class="mk"><span>Nobles</span></span></p></div>
+    <p class="gl g2 giant rv mkp" style="--d:2"><span class="mk"><span>Luminosos</span></span></p>
+    <p class="gl g3 giant rv mkp" style="--d:3" data-fit><span class="mk"><span>Que envejecen <em>bien</em></span></span></p>
+  </div>
+  <div class="wrap princ-foot">
+    <p class="mono rv">Lo que sostiene el trabajo.</p>
+    <p class="st rv" style="--d:1">Creemos en espacios honestos: materiales nobles, luz natural y soluciones que envejecen bien. <span class="mute">Tres ideas que atraviesan cada proyecto, de un dúplex de 95 m² a un restaurante de 220.</span></p>
+  </div>
+  <div class="wrap mats">
+    <div class="ph rv"><img class="cover" src="assets/terra-materiales.webp" alt="Muestras de travertino, roble claro, piedra caliza gris, yeso rosado, acero y textiles de lino sobre una mesa" width="1200" height="1500" loading="lazy"></div>
+    <div class="mat-list">
+      <article class="mat ln rv"><span class="sw" style="background:#D9D2C6" aria-hidden="true"></span><h3>Travertino</h3><p>Piedra porosa y amable al tacto. La usamos sin pulir, para que envejezca con dignidad.</p></article>
+      <article class="mat ln rv" style="--d:1"><span class="sw" style="background:#CDB89C" aria-hidden="true"></span><h3>Roble claro</h3><p>Carpintería a medida con talleres de Lima: vetas a la vista, sin laca brillante.</p></article>
+      <article class="mat ln rv" style="--d:2"><span class="sw" style="background:#A9B4BC" aria-hidden="true"></span><h3>Piedra gris</h3><p>Para pisos y mesadas que soportan el uso diario sin perder serenidad.</p></article>
+      <article class="mat ln rv" style="--d:3"><span class="sw" style="background:#D6C9C9" aria-hidden="true"></span><h3>Lino y lana</h3><p>Textiles naturales que filtran la luz costera y suavizan la acústica.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="sec" id="servicios" aria-labelledby="t-serv" style="padding-top:clamp(40px,5vw,80px)">
+  <div class="wrap serv-head">
     <div>
-      <h2 data-reveal="" style="margin:0 0 18px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(34px,3.8vw,54px);letter-spacing:-1.8px;line-height:1.05">Conversemos sobre tu espacio.</h2>
-      <p data-reveal="" style="margin:0 0 30px;font-size:16px;line-height:1.7;color:#5C5344;max-width:460px">Cuéntanos qué quieres transformar y te respondemos en menos de 24 horas con los siguientes pasos y un rango estimado de inversión.</p>
-      <a data-reveal="" href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:12px;background:#1FA855;color:#fff;padding:16px 28px;border-radius:999px;font-weight:700;font-size:15px" style-hover="background:#178A45">
-        <span style="width:10px;height:10px;border-radius:50%;background:#fff;display:inline-block"></span>
-        Escríbenos por WhatsApp — +51 999 888 777
+      <p class="rv"><span class="tag">Del concepto a la obra</span></p>
+      <h2 class="h2 rv mkp" id="t-serv" data-mk>Qué hacemos</h2>
+    </div>
+    <p class="lead rv" style="--d:1">Acompañamos cada proyecto de principio a fin: diseño, especificación técnica, presupuesto y supervisión de obra.</p>
+  </div>
+  <div class="stack">
+    <article class="panel">
+      <div class="panel-bg"><img data-par="0.1" src="assets/terra-malecon-balta.webp" alt="Sala de un departamento frente al mar en Miraflores" width="1800" height="1195" loading="lazy"></div>
+      <a class="panel-bar on-ph" href="#proyectos" aria-label="Interiorismo residencial: ver proyectos">
+        <span class="tag">01 · Departamentos y casas</span>
+        <h3 class="panel-t"><span>Interiorismo residencial</span><i aria-hidden="true"></i></h3>
+        <span class="panel-ab"><span class="p">Departamentos y casas: distribución, iluminación, paleta de materiales y mobiliario a medida para vivir mejor cada m².</span><span class="plus" aria-hidden="true">+</span></span>
+        <i class="panel-c" aria-hidden="true"></i>
       </a>
-      <div data-reveal="" style="margin-top:36px;font-size:14px;line-height:2;color:#6E6353">
-        <p style="margin:0"><strong style="color:#201B14">Estudio</strong> — Av. San Martín 340, Barranco, Lima</p>
-        <p style="margin:0"><strong style="color:#201B14">Horario</strong> — Lun a Vie, 9:00 a 18:00</p>
-        <p style="margin:0"><strong style="color:#201B14">Correo</strong> — hola@terral.pe</p>
+    </article>
+    <article class="panel">
+      <div class="panel-bg"><img data-par="0.1" src="assets/terra-restaurante-solaris.webp" alt="Salón de restaurante en una casona restaurada de Barranco" width="1800" height="1195" loading="lazy"></div>
+      <a class="panel-bar on-ph" href="#proyectos" aria-label="Espacios comerciales: ver proyectos">
+        <span class="tag">02 · Restaurantes · oficinas · retail</span>
+        <h3 class="panel-t"><span>Espacios comerciales</span><i aria-hidden="true"></i></h3>
+        <span class="panel-ab"><span class="p">Restaurantes, oficinas y retail: diseñamos experiencias que refuerzan tu marca y funcionan para la operación diaria.</span><span class="plus" aria-hidden="true">+</span></span>
+        <i class="panel-c" aria-hidden="true"></i>
+      </a>
+    </article>
+    <article class="panel">
+      <div class="panel-bg"><img data-par="0.1" src="assets/terra-obra.webp" alt="Carpintero instalando paneles de roble mientras la arquitecta revisa los planos" width="2400" height="1357" loading="lazy" style="object-position:center 40%"></div>
+      <a class="panel-bar on-ph" href="#inversion" aria-label="Remodelación integral: ver inversión">
+        <span class="tag">03 · Llave en mano</span>
+        <h3 class="panel-t"><span>Remodelación integral</span><i aria-hidden="true"></i></h3>
+        <span class="panel-ab"><span class="p">Obra, acabados y gestión de proveedores con cronograma y presupuesto cerrado. Entrega llave en mano.</span><span class="plus" aria-hidden="true">+</span></span>
+        <i class="panel-c" aria-hidden="true"></i>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section class="sec" id="proyectos" aria-labelledby="t-proy" style="padding-top:clamp(40px,5vw,80px)">
+  <div class="wrap">
+    <div class="proy-head">
+      <div>
+        <p class="rv"><span class="tag">2023 — 2026</span></p>
+        <h2 class="h2 rv mkp" id="t-proy" data-mk>Proyectos recientes</h2>
       </div>
+      <p class="mono mute rv">05 proyectos · Lima</p>
     </div>
-    <div data-reveal="" style="background:#fff;border:1px solid rgba(32,27,20,0.08);border-radius:20px;padding:38px;box-shadow:0 18px 48px rgba(32,27,20,0.07)">
-      <sc-if value="{{ enviado }}" hint-placeholder-val="{{ false }}">
-        <div style="text-align:center;padding:60px 20px">
-          <p style="margin:0 0 10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;letter-spacing:-0.5px">¡Gracias por escribirnos!</p>
-          <p style="margin:0;font-size:15px;color:#6E6353;line-height:1.6">Te contactaremos en menos de 24 horas hábiles para agendar tu consulta inicial.</p>
-        </div>
-      </sc-if>
-      <sc-if value="{{ noEnviado }}" hint-placeholder-val="{{ true }}">
-        <div style="display:flex;flex-direction:column;gap:18px">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
-            <label style="display:flex;flex-direction:column;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:0.5px">NOMBRE
-              <input value="{{ fNombre }}" onChange="{{ setNombre }}" placeholder="Tu nombre" style="border:1px solid rgba(32,27,20,0.16);border-radius:10px;padding:13px 14px;font-size:14.5px;font-family:'Manrope',sans-serif;background:#FBF9F5;outline:none" style-focus="border-color:#A85C38">
-            </label>
-            <label style="display:flex;flex-direction:column;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:0.5px">TELÉFONO
-              <input value="{{ fTelefono }}" onChange="{{ setTelefono }}" placeholder="+51 9XX XXX XXX" style="border:1px solid rgba(32,27,20,0.16);border-radius:10px;padding:13px 14px;font-size:14.5px;font-family:'Manrope',sans-serif;background:#FBF9F5;outline:none" style-focus="border-color:#A85C38">
-            </label>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
-            <label style="display:flex;flex-direction:column;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:0.5px">TIPO DE PROYECTO
-              <select value="{{ fTipo }}" onChange="{{ setTipo }}" style="border:1px solid rgba(32,27,20,0.16);border-radius:10px;padding:13px 14px;font-size:14.5px;font-family:'Manrope',sans-serif;background:#FBF9F5;outline:none;color:#201B14">
-                <option value="Departamento">Departamento</option>
-                <option value="Casa">Casa</option>
-                <option value="Local comercial">Local comercial</option>
-                <option value="Oficina">Oficina</option>
-                <option value="Otro">Otro</option>
-              </select>
-            </label>
-            <label style="display:flex;flex-direction:column;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:0.5px">DISTRITO
-              <input value="{{ fDistrito }}" onChange="{{ setDistrito }}" placeholder="Ej. Miraflores" style="border:1px solid rgba(32,27,20,0.16);border-radius:10px;padding:13px 14px;font-size:14.5px;font-family:'Manrope',sans-serif;background:#FBF9F5;outline:none" style-focus="border-color:#A85C38">
-            </label>
-          </div>
-          <label style="display:flex;flex-direction:column;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:0.5px">CUÉNTANOS SOBRE TU PROYECTO
-            <textarea value="{{ fMensaje }}" onChange="{{ setMensaje }}" rows="4" placeholder="Metraje aproximado, ambientes a intervenir, fecha ideal de inicio…" style="border:1px solid rgba(32,27,20,0.16);border-radius:10px;padding:13px 14px;font-size:14.5px;font-family:'Manrope',sans-serif;background:#FBF9F5;outline:none;resize:vertical" style-focus="border-color:#A85C38"></textarea>
-          </label>
-          <sc-if value="{{ errorForm }}" hint-placeholder-val="{{ false }}">
-            <p style="margin:0;font-size:13px;color:#B3402A;font-weight:600">Por favor completa tu nombre y teléfono.</p>
-          </sc-if>
-          <button onClick="{{ enviar }}" style="background:#201B14;color:#F6F2EB;border:none;padding:16px;border-radius:999px;font-weight:700;font-size:15px;font-family:'Manrope',sans-serif;cursor:pointer" style-hover="background:#A85C38">Enviar solicitud</button>
-          <p style="margin:0;font-size:12px;color:#A99C89;text-align:center">Respondemos en menos de 24 horas hábiles.</p>
-        </div>
-      </sc-if>
+  </div>
+  <div class="wrap-ph">
+    <div class="proy">
+      <figure class="py full">
+        <div class="ph rv"><img class="cover" src="assets/terra-malecon-balta.webp" alt="Sala contemporánea con vista al océano desde el Malecón Balta" width="1800" height="1195" loading="lazy"><figcaption class="py-cap">Departamento Malecón Balta <i>+</i></figcaption></div>
+        <div class="py-meta"><span>Miraflores · 140 m² · 2025</span><span>Residencial</span></div>
+      </figure>
+      <figure class="py s7">
+        <div class="ph rv"><img class="cover" src="assets/terra-restaurante-solaris.webp" alt="Salón de restaurante con banquetas rosadas y luz natural en Barranco" width="1800" height="1195" loading="lazy"><figcaption class="py-cap">Restaurante Solaris <i>+</i></figcaption></div>
+        <div class="py-meta"><span>Barranco · 220 m² · 2025</span><span>Comercial</span></div>
+      </figure>
+      <figure class="py s5 py-s5">
+        <div class="ph rv" style="--d:1"><img class="cover" src="assets/terra-duplex-reducto.webp" alt="Dormitorio principal con ropa de cama de lino y vista al mar en Miraflores" width="1800" height="1195" loading="lazy"><figcaption class="py-cap">Dúplex Reducto <i>+</i></figcaption></div>
+        <div class="py-meta"><span>Miraflores · 95 m² · 2023</span><span>Residencial</span></div>
+      </figure>
+      <figure class="py">
+        <div class="ph rv"><img class="cover" src="assets/terra-casa-los-alamos.webp" alt="Cocina abierta con isla de travertino y carpintería de roble en La Molina" width="1800" height="1195" loading="lazy"><figcaption class="py-cap">Casa Los Álamos <i>+</i></figcaption></div>
+        <div class="py-meta"><span>La Molina · 310 m² · 2024</span><span>Remodelación</span></div>
+      </figure>
+      <figure class="py">
+        <div class="ph rv" style="--d:1"><img class="cover" src="assets/terra-oficinas-andino.webp" alt="Recepción de oficina con mostrador de piedra gris azulada en San Isidro" width="1800" height="1195" loading="lazy"><figcaption class="py-cap">Oficinas Andino Capital <i>+</i></figcaption></div>
+        <div class="py-meta"><span>San Isidro · 480 m² · 2024</span><span>Comercial</span></div>
+      </figure>
     </div>
   </div>
 </section>
 
-<footer style="background:#201B14;color:rgba(246,242,235,0.65);padding:34px 48px;display:flex;align-items:center;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:12px">
-  <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:#F6F2EB;font-size:16px;letter-spacing:-0.3px">TERRAL</span>
-  <span>© 2026 Estudio Terral — Lima, Perú · Diseñado por <a href="https://nozoestudio.com" target="_blank" rel="noopener" style="color:inherit"><strong>Nozoe Studio</strong></a></span>
-  <div style="display:flex;gap:20px">
-    <a style="color:rgba(246,242,235,0.65)" style-hover="color:#E4B792">Instagram</a>
-    <a style="color:rgba(246,242,235,0.65)" style-hover="color:#E4B792">Pinterest</a>
+<!-- CASO: ANTES / DESPUÉS -->
+<section class="sec caso" aria-labelledby="t-caso">
+  <div class="wrap caso-g">
+    <div class="caso-tx">
+      <p class="rv"><span class="tag">Caso destacado</span></p>
+      <h2 class="h2 rv mkp" id="t-caso" data-mk>Casa Los Álamos</h2>
+      <p class="st rv" style="--d:1">La cocina que miraba a un muro <span class="mute">ahora mira al jardín.</span></p>
+      <p class="lead rv" style="--d:2">Retiramos el muro a media altura, cambiamos la península de granito por una isla de travertino y unificamos el piso en microcemento hasta la terraza.</p>
+      <dl class="caso-dl rv" style="--d:3">
+        <div><dt>Ubicación</dt><dd>La Molina · 310 m²</dd></div>
+        <div><dt>Alcance</dt><dd>Cocina, comedor y terraza</dd></div>
+        <div><dt>Obra</dt><dd>11 semanas</dd></div>
+        <div><dt>Presupuesto</dt><dd>Cerrado, sin adicionales</dd></div>
+      </dl>
+    </div>
+    <div class="ba rv" data-ba>
+      <img src="assets/terra-casa-los-alamos.webp" alt="Después: cocina abierta con isla de travertino, roble claro y piso de microcemento" width="1800" height="1195" loading="lazy">
+      <img class="top" src="assets/terra-casa-los-alamos-antes.webp" alt="Antes: cocina con muebles de cerezo brillante, granito marrón y cerámico beige" width="1800" height="1195" loading="lazy">
+      <span class="t1"><span class="tag">Antes</span></span>
+      <span class="t2"><span class="tag">Después</span></span>
+      <label class="sr" for="ba-r">Deslizar para comparar antes y después</label>
+      <input id="ba-r" type="range" min="0" max="100" value="50">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="knob" aria-hidden="true">← Deslizar →</span>
+    </div>
   </div>
-</footer>
+</section>
 
-<a href="{{ waLink }}" target="_blank" title="WhatsApp" style="position:fixed;right:26px;bottom:26px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1FA855;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(23,138,69,0.4);animation:floatPulse 3s ease-in-out infinite" style-hover="background:#178A45">
-  <span style="color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.5px">WSP</span>
-</a>
-</x-dc>
+<!-- PROCESO -->
+<section class="sec" id="proceso" aria-labelledby="t-proc">
+  <div class="wrap">
+    <div class="serv-head" style="margin-bottom:0">
+      <div>
+        <p class="rv"><span class="tag">Proceso</span></p>
+        <h2 class="h2 rv mkp" id="t-proc" data-mk>Un proceso claro, sin sorpresas</h2>
+      </div>
+      <p class="lead rv" style="--d:1">Sabrás qué esperar en cada etapa: entregables definidos, tiempos realistas y comunicación constante por WhatsApp.</p>
+    </div>
+    <div class="pasos" data-riel>
+      <div class="riel" aria-hidden="true"><i></i></div>
+      <article class="paso rv" style="--d:0"><p class="num">01</p><h3>Diagnóstico</h3><p>Visita al espacio, escuchamos tus necesidades y definimos alcance, estilo y presupuesto referencial.</p><span class="tag">1 semana</span></article>
+      <article class="paso rv" style="--d:1"><p class="num">02</p><h3>Concepto</h3><p>Moodboard, distribución y paleta de materiales. Iteramos contigo hasta aprobar la dirección.</p><span class="tag">2–3 semanas</span></article>
+      <article class="paso rv" style="--d:2"><p class="num">03</p><h3>Desarrollo</h3><p>Planos técnicos, renders 3D, especificación de acabados y presupuesto cerrado de obra.</p><span class="tag">3–4 semanas</span></article>
+      <article class="paso rv" style="--d:3"><p class="num">04</p><h3>Ejecución</h3><p>Supervisión de obra, gestión de proveedores e instalación de mobiliario. Entrega llave en mano.</p><span class="tag">según proyecto</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section class="sec" id="inversion" aria-labelledby="t-mod" style="padding-top:clamp(30px,4vw,60px)">
+  <div class="wrap">
+    <div class="serv-head" style="margin-bottom:0">
+      <div>
+        <p class="rv"><span class="tag">Modalidades e inversión</span></p>
+        <h2 class="h2 rv mkp" id="t-mod" data-mk>Tres formas de trabajar juntos</h2>
+      </div>
+      <p class="lead rv" style="--d:1">Elige cuánto quieres delegar. Cada modalidad tiene entregables definidos desde el primer día.</p>
+    </div>
+    <div class="mod-g">
+      <article class="mod rv" style="--d:0">
+        <div class="mod-top"><span class="mono mute">01</span></div>
+        <h3>Asesoría</h3>
+        <p class="desc">Para quien ya tiene obra o muebles y necesita criterio experto.</p>
+        <p class="precio"><span>Desde</span><b>S/ 450 <small>por visita</small></b></p>
+        <ul>
+          <li>Visita de 2 horas al espacio</li>
+          <li>Guía de distribución y paleta de materiales</li>
+          <li>Lista de compras con proveedores en Lima</li>
+          <li>Seguimiento por WhatsApp durante 15 días</li>
+        </ul>
+        <a class="btn" href="#contacto" data-tipo-msg="Asesoría">Pedir una asesoría <i>+</i></a>
+      </article>
+      <article class="mod feat rv" style="--d:1">
+        <div class="mod-top"><span class="mono mute">02</span><span class="tag">La más elegida</span></div>
+        <h3>Proyecto de diseño</h3>
+        <p class="desc">Todo lo necesario para construir, con tu contratista o con nosotros.</p>
+        <p class="precio"><span>Desde</span><b>S/ 85 <small>por m²</small></b></p>
+        <ul>
+          <li>Diagnóstico, moodboard y distribución</li>
+          <li>Planos técnicos y de iluminación</li>
+          <li>Renders 3D de los ambientes principales</li>
+          <li>Especificación de acabados y presupuesto cerrado</li>
+        </ul>
+        <a class="btn solid" href="#estimador" data-mod="diseno">Estimar mi proyecto <i>+</i></a>
+      </article>
+      <article class="mod rv" style="--d:2">
+        <div class="mod-top"><span class="mono mute">03</span></div>
+        <h3>Llave en mano</h3>
+        <p class="desc">Diseño, obra y mobiliario con un solo responsable y un solo cronograma.</p>
+        <p class="precio"><span>Desde</span><b>S/ 1 600 <small>por m²</small></b></p>
+        <ul>
+          <li>Todo el proyecto de diseño</li>
+          <li>Supervisión de obra en persona</li>
+          <li>Gestión de proveedores y talleres</li>
+          <li>Mobiliario a medida e instalación final</li>
+        </ul>
+        <a class="btn" href="#estimador" data-mod="llave">Estimar mi proyecto <i>+</i></a>
+      </article>
+    </div>
+    <p class="nota rv">Precios referenciales en soles, IGV incluido. El monto exacto se confirma después del diagnóstico.</p>
+  </div>
+</section>
+
+<!-- ESTIMADOR -->
+<section class="sec est" id="estimador" aria-labelledby="t-est">
+  <div class="wrap">
+    <div class="serv-head">
+      <div>
+        <p class="rv"><span class="tag">Estimador</span></p>
+        <h2 class="h2 rv mkp" id="t-est" data-mk>¿Cuánto costaría tu proyecto?</h2>
+      </div>
+      <p class="lead rv" style="--d:1;color:var(--ink-2)">Mueve los controles y obtén un rango referencial en segundos. Te lo afinamos en la visita de diagnóstico.</p>
+    </div>
+    <div class="est-g">
+      <form class="est-form rv" id="est" onsubmit="return false">
+        <fieldset>
+          <legend>01 · Tipo de espacio</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="tipo" value="Departamento" checked><span>Departamento</span></label>
+            <label class="chip"><input type="radio" name="tipo" value="Casa"><span>Casa</span></label>
+            <label class="chip"><input type="radio" name="tipo" value="Local comercial"><span>Local comercial</span></label>
+            <label class="chip"><input type="radio" name="tipo" value="Oficina"><span>Oficina</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><label for="m2">02 · Metraje aproximado</label></legend>
+          <div class="rango"><input class="m2" id="m2" type="range" min="30" max="600" step="5" value="120"><output for="m2" id="m2o">120 m²</output></div>
+        </fieldset>
+        <fieldset>
+          <legend>03 · Modalidad</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="mod" value="diseno"><span>Proyecto de diseño</span></label>
+            <label class="chip"><input type="radio" name="mod" value="llave" checked><span>Llave en mano</span></label>
+          </div>
+        </fieldset>
+        <fieldset id="acab-f">
+          <legend>04 · Nivel de acabados</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="acab" value="esencial"><span>Esencial</span></label>
+            <label class="chip"><input type="radio" name="acab" value="alto" checked><span>Alto</span></label>
+            <label class="chip"><input type="radio" name="acab" value="premium"><span>Premium</span></label>
+          </div>
+        </fieldset>
+      </form>
+      <div class="est-out rv" style="--d:1" aria-live="polite">
+        <p class="lbl">Inversión referencial</p>
+        <p class="monto" id="monto"><b>S/ 243 000</b> <span>–</span> <b>S/ 309 000</b></p>
+        <dl class="res">
+          <div><dt>Por m²</dt><dd id="r-m2">S/ 2 300</dd></div>
+          <div><dt>Plazo estimado</dt><dd id="r-plazo">6–8 semanas de diseño + 10–14 de obra</dd></div>
+          <div><dt>Incluye</dt><dd id="r-inc">Diseño, obra y mobiliario</dd></div>
+        </dl>
+        <a class="btn solid" id="est-wa" href="https://wa.me/51999888777?text=Hola%20Terra%20Interiores%2C%20quiero%20cotizar%20un%20proyecto%20de%20interiores" target="_blank" rel="noopener">Enviar este rango por WhatsApp <i>+</i></a>
+        <p class="fine">Rango referencial con IGV. El presupuesto cerrado se entrega en la etapa de Desarrollo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="sec" aria-labelledby="t-testi">
+  <div class="wrap">
+    <div class="testi-head rv">
+      <p class="mono">Clientes</p>
+      <h2 class="st" id="t-testi">Lo que dicen quienes ya viven <span class="mute">el resultado todos los días.</span></h2>
+      <p class="mono">Testimonios</p>
+    </div>
+    <div class="testi">
+      <figure class="tq rv" style="--d:0">
+        <span class="q" aria-hidden="true">“</span>
+        <div class="ph"><img class="cover" src="assets/terra-malecon-balta.webp" alt="" width="1800" height="1195" loading="lazy"></div>
+        <blockquote>«Vivimos frente al mar hace diez años y recién ahora sentimos que la casa mira hacia afuera. Valeria entendió cómo vivimos antes de dibujar una sola línea.»</blockquote>
+        <figcaption><span class="tag">Residencial</span><strong>Lucía y Martín P. · Malecón Balta, Miraflores</strong></figcaption>
+      </figure>
+      <figure class="tq rv" style="--d:1">
+        <span class="q" aria-hidden="true">“</span>
+        <div class="ph"><img class="cover" src="assets/terra-restaurante-solaris.webp" alt="" width="1800" height="1195" loading="lazy"></div>
+        <blockquote>«Abrimos Solaris en la fecha prometida y con el presupuesto que firmamos. En un rubro donde todo se atrasa, eso vale oro.»</blockquote>
+        <figcaption><span class="tag">Comercial</span><strong>Rodrigo A. · Restaurante Solaris, Barranco</strong></figcaption>
+      </figure>
+      <figure class="tq rv" style="--d:2">
+        <span class="q" aria-hidden="true">“</span>
+        <div class="ph"><img class="cover" src="assets/terra-casa-los-alamos.webp" alt="" width="1800" height="1195" loading="lazy"></div>
+        <blockquote>«Me mandaban fotos de la obra cada viernes por WhatsApp. Viajé tranquila y volví a una cocina que no reconocía.»</blockquote>
+        <figcaption><span class="tag">Remodelación</span><strong>Carmen V. · Casa Los Álamos, La Molina</strong></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ESTUDIO -->
+<section class="sec" id="estudio" aria-labelledby="t-estudio" style="background:var(--bg-2)">
+  <div class="wrap estudio-g">
+    <div class="ph rv"><img class="cover" src="assets/terra-retrato-valeria.webp" alt="Valeria Fuentes revisando muestras de materiales en el estudio" width="1440" height="1800" loading="lazy" style="object-position:center 20%"></div>
+    <div class="estudio-tx">
+      <p class="rv"><span class="tag">El estudio</span></p>
+      <h2 class="h2 rv mkp" id="t-estudio" data-mk style="font-size:clamp(30px,3.4vw,54px)">Diseño con oficio, gestión con rigor.</h2>
+      <p class="lead rv" style="--d:1">Terra Interiores nace en 2017 en Lima, liderado por la arquitecta de interiores <strong>Valeria Fuentes</strong>. Creemos en espacios honestos: materiales nobles, luz natural y soluciones que envejecen bien.</p>
+      <p class="lead rv" style="--d:2">Trabajamos con carpinteros, canteras y talleres locales, y supervisamos la obra en persona. Por eso entregamos a tiempo y dentro del presupuesto.</p>
+      <div class="firmas rv" style="--d:3">
+        <div><b>Valeria Fuentes</b><span>Directora creativa · Arq. de Interiores, PUCP</span></div>
+        <div><b>Equipo de 6</b><span>Diseño, presupuestos y supervisión de obra</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" aria-labelledby="t-faq">
+  <div class="wrap faq-g">
+    <div class="faq-side">
+      <p class="rv"><span class="tag">Preguntas frecuentes</span></p>
+      <h2 class="h2 rv mkp" id="t-faq" data-mk>Antes de escribirnos</h2>
+      <p class="lead rv" style="--d:1">Lo que casi todos preguntan en la primera conversación.</p>
+    </div>
+    <div class="acc rv" style="--d:1">
+      <details><summary><span class="mono">01</span>¿Cuánto cuesta diseñar mi departamento?<span class="mas" aria-hidden="true"></span></summary><p>Depende del metraje y de la modalidad. Un proyecto de diseño parte de S/ 85 por m² y una asesoría puntual desde S/ 450. Usa el estimador de esta página para un rango inicial; te lo confirmamos tras el diagnóstico.</p></details>
+      <details><summary><span class="mono">02</span>¿Puedo conservar mis muebles actuales?<span class="mas" aria-hidden="true"></span></summary><p>Sí, y muchas veces conviene. En el diagnóstico hacemos un inventario de lo que se queda, lo que se restaura y lo que se reemplaza.</p></details>
+      <details><summary><span class="mono">03</span>¿Se encargan de los permisos del edificio?<span class="mas" aria-hidden="true"></span></summary><p>Coordinamos con la junta de propietarios y la administración: horarios de obra, ingreso de materiales y protección de áreas comunes. Si se requiere licencia municipal, la gestionamos.</p></details>
+      <details><summary><span class="mono">04</span>¿Cuánto demora un proyecto completo?<span class="mas" aria-hidden="true"></span></summary><p>El diseño toma entre 6 y 8 semanas. La obra depende del alcance: la remodelación de un departamento suele tomar de 8 a 14 semanas.</p></details>
+      <details><summary><span class="mono">05</span>¿Cómo se paga?<span class="mas" aria-hidden="true"></span></summary><p>Por etapas: un adelanto al aprobar el concepto, otro al entregar el desarrollo y la obra según avance valorizado. Todo queda por escrito en el contrato.</p></details>
+      <details><summary><span class="mono">06</span>¿Trabajan fuera de Lima?<span class="mas" aria-hidden="true"></span></summary><p>Sí, en proyectos de más de 120 m². Fuera de Lima y Callao coordinamos visitas programadas y un residente de obra local.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS EN PALABRAS -->
+<section class="rvl scrub" aria-labelledby="t-rvl">
+  <h2 class="sr" id="t-rvl">Interiorismo residencial y comercial, llave en mano</h2>
+  <div class="rvl-pin">
+    <div class="rvl-ph"><img src="assets/terra-malecon-balta.webp" alt="" width="1800" height="1195" loading="lazy"></div>
+    <p class="rvl-lbl" aria-hidden="true">Terra Interiores</p>
+    <p class="rvl-w w1" aria-hidden="true"><span class="wd">Interiorismo</span></p>
+    <p class="rvl-w w2" aria-hidden="true"><span class="wd">Residencial</span><span class="wd">Comercial</span></p>
+    <p class="rvl-w w3" aria-hidden="true"><span class="wd">Llave en mano</span><span class="rvl-th"><img src="assets/terra-retrato-valeria.webp" alt="" width="1440" height="1800" loading="lazy"></span></p>
+  </div>
+</section>
+
+<!-- CONSULTA + CONTACTO -->
+<section class="dark consulta" id="contacto" aria-labelledby="t-ct">
+  <div class="wrap"><p class="giant" data-fit aria-hidden="true">Conversemos</p></div>
+  <div class="wrap">
+    <div class="ct-g">
+      <div class="ct-l">
+        <p class="rv"><span class="tag">Contacto</span></p>
+        <h2 class="h2 rv mkp" id="t-ct" data-mk>Conversemos sobre tu espacio.</h2>
+        <p class="lead rv" style="--d:1">Cuéntanos qué quieres transformar y te respondemos en menos de 24 horas con los siguientes pasos y un rango estimado de inversión.</p>
+        <a class="wa rv" style="--d:2" href="https://wa.me/51999888777?text=Hola%20Terra%20Interiores%2C%20quiero%20cotizar%20un%20proyecto%20de%20interiores" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Escríbenos por WhatsApp — <span style="white-space:nowrap">+51 999 888 777</span></a>
+        <dl class="datos rv" style="--d:3">
+          <div><dt>Estudio</dt><dd>Av. San Martín 340, Barranco, Lima</dd></div>
+          <div><dt>Horario</dt><dd>Lun a Vie, 9:00 a 18:00</dd></div>
+          <div><dt>Correo</dt><dd><a href="mailto:hola@terrainteriores.pe">hola@terrainteriores.pe</a></dd></div>
+        </dl>
+      </div>
+      <div class="rv" style="--d:1">
+        <form class="form" id="form" novalidate>
+          <div class="f2">
+            <label class="campo"><span>Nombre</span><input id="f-nombre" placeholder="Tu nombre" autocomplete="name"></label>
+            <label class="campo"><span>Teléfono</span><input id="f-tel" placeholder="+51 9XX XXX XXX" inputmode="tel" autocomplete="tel"></label>
+          </div>
+          <div class="f2">
+            <label class="campo"><span>Tipo de proyecto</span>
+              <select id="f-tipo"><option>Departamento</option><option>Casa</option><option>Local comercial</option><option>Oficina</option><option>Otro</option></select>
+            </label>
+            <label class="campo"><span>Distrito</span><input id="f-dist" placeholder="Ej. Miraflores"></label>
+          </div>
+          <label class="campo"><span>Cuéntanos sobre tu proyecto</span><textarea id="f-msg" rows="4" placeholder="Metraje aproximado, ambientes a intervenir, fecha ideal de inicio…"></textarea></label>
+          <p class="err" id="f-err" role="alert" hidden>Por favor completa tu nombre y teléfono.</p>
+          <button class="btn solid" type="submit">Enviar solicitud <i>+</i></button>
+          <p class="fine">Respondemos en menos de 24 horas hábiles.</p>
+        </form>
+        <div class="form ok" id="ok" hidden role="status">
+          <b>¡Gracias por escribirnos!</b>
+          <p>Te contactaremos en menos de 24 horas hábiles para agendar tu consulta inicial.</p>
+        </div>
+      </div>
+    </div>
+    <footer class="foot">
+      <div><p class="brand-f">TERRA INTERIORES</p><p class="mute" style="margin-top:10px">Estudio de interiores · Lima</p></div>
+      <div><p class="lbl">Estudio</p><p>Av. San Martín 340<br>Barranco, Lima</p></div>
+      <div><p class="lbl">Navegar</p><ul><li><a href="#servicios">Servicios</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#inversion">Inversión</a></li></ul></div>
+      <div><p class="lbl">Seguir</p><ul><li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.pinterest.com/" target="_blank" rel="noopener">Pinterest</a></li><li><a href="mailto:hola@terrainteriores.pe">hola@terrainteriores.pe</a></li></ul></div>
+      <div class="foot-b"><span>© 2026 Terra Interiores — Lima, Perú</span><span>Diseñado por <a href="https://nozoestudio.com" target="_blank" rel="noopener">Nozoe Studio</a> · demo con datos ficticios</span></div>
+    </footer>
+  </div>
+</section>
+</main>
+
+<a class="fab" href="https://wa.me/51999888777?text=Hola%20Terra%20Interiores%2C%20quiero%20cotizar%20un%20proyecto%20de%20interiores" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><i aria-hidden="true"></i><span>WhatsApp</span></a>
+
 <script>
-(function(){
-  function closeMenu(){
-    var links = document.getElementById('mn-links');
-    var btn = document.querySelector('.mn-toggle');
-    if (!links || !btn) return;
-    links.classList.remove('is-open');
-    btn.setAttribute('aria-expanded','false');
-    btn.setAttribute('aria-label','Abrir menú');
-    document.body.classList.remove('menu-open');
-  }
-  document.addEventListener('click', function(e){
-    var btn = e.target.closest('.mn-toggle');
-    if (btn){
-      var links = document.getElementById('mn-links');
-      if (!links) return;
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      btn.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
-      links.classList.toggle('is-open', !open);
-      document.body.classList.toggle('menu-open', !open);
-      return;
-    }
-    if (e.target.closest('#mn-links a')) closeMenu();
-  });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') { closeMenu(); var b = document.querySelector('.mn-toggle'); if (b) b.focus(); }
-  });
-})();
-</script>
-<script type="text/x-dc" data-dc-script data-props="{&quot;heroVariant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;editorial&quot;,&quot;options&quot;:[&quot;editorial&quot;,&quot;fullbleed&quot;,&quot;collage&quot;],&quot;tsType&quot;:&quot;'editorial'|'fullbleed'|'collage'&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
-class Component extends DCLogic {
-  state = { enviado: false, error: false, f: { nombre: '', telefono: '', tipo: 'Departamento', distrito: '', mensaje: '' } };
-  componentDidMount() {
-    this._observeReveals();
-    this._mo = new MutationObserver(() => this._observeReveals());
-    this._mo.observe(document.body, { childList: true, subtree: true });
-  }
-  componentWillUnmount() { this._mo && this._mo.disconnect(); this._io && this._io.disconnect(); }
-  _observeReveals() {
-    if (!this._io) {
-      this._io = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.style.opacity = '1';
-            e.target.style.transform = 'translateY(0)';
-            this._io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12 });
-    }
-    document.querySelectorAll('[data-reveal]:not([data-rv])').forEach(el => {
-      el.setAttribute('data-rv', '1');
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(26px)';
-      el.style.transition = 'opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1)';
-      this._io.observe(el);
-      // Fail-safe: if IO never fires (some embedded contexts), reveal anyway.
-      setTimeout(() => {
-        if (el.style.opacity === '0') { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
-      }, 1200);
+(function () {
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- titulares que suben desde una máscara, línea a línea por palabra ---------- */
+  $$('[data-mk]').forEach(function (h) {
+    var words = h.textContent.trim().split(/\s+/);
+    h.textContent = '';
+    words.forEach(function (w, i) {
+      var m = document.createElement('span'); m.className = 'mk'; m.style.display = 'inline-block';
+      var s = document.createElement('span'); s.textContent = w; s.style.setProperty('--i', i);
+      m.appendChild(s); h.appendChild(m);
+      if (i < words.length - 1) h.appendChild(document.createTextNode(' '));
     });
+  });
+
+  /* ---------- entrada del hero ---------- */
+  var hero = $('.hero');
+  setTimeout(function () { hero.classList.add('in'); }, 30);
+
+  /* ---------- menú ---------- */
+  var nav = $('#nav'), burger = $('.burger');
+  var cerrar = function () { nav.dataset.open = 'false'; burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Abrir menú'); };
+  burger.addEventListener('click', function () {
+    var ab = nav.dataset.open === 'true';
+    nav.dataset.open = ab ? 'false' : 'true';
+    burger.setAttribute('aria-expanded', String(!ab));
+    burger.setAttribute('aria-label', ab ? 'Abrir menú' : 'Cerrar menú');
+  });
+  $$('#drawer a').forEach(function (a) { a.addEventListener('click', cerrar); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.dataset.open === 'true') { cerrar(); burger.focus(); } });
+
+  /* ---------- sección activa ---------- */
+  var links = $$('.nav-links a');
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id ? 'true' : 'false'); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    links.forEach(function (a) { var s = $(a.getAttribute('href')); if (s) spy.observe(s); });
   }
-  setF(k) { return e => this.setState(s => ({ f: Object.assign({}, s.f, { [k]: e.target.value }) })); }
-  renderVals() {
-    const v = this.props.heroVariant ?? 'editorial';
-    const f = this.state.f;
-    return {
-      heroEditorial: v === 'editorial',
-      heroFullbleed: v === 'fullbleed',
-      heroCollage: v === 'collage',
-      waLink: 'https://wa.me/51999888777?text=Hola%20Terral%2C%20quiero%20cotizar%20un%20proyecto%20de%20interiores',
-      proyectos: [
-        { id: 'py-1', span: 'span 7', h: '420px', nombre: 'Departamento Malecón Balta', detalle: 'Miraflores · 140 m² · 2025', tipo: 'Residencial', foto: 'sala con vista al mar — Miraflores', src: './assets/proyecto-malecon-balta.webp', alt: 'Sala contemporánea con vista al océano desde el Malecón Balta', w: '1568', imgH: '1003' },
-        { id: 'py-2', span: 'span 5', h: '420px', nombre: 'Restaurante Solaris', detalle: 'Barranco · 220 m² · 2025', tipo: 'Comercial', foto: 'salón de restaurante — Barranco', src: './assets/proyecto-restaurante-solaris.webp', alt: 'Salón de restaurante con madera oscura y luz cálida en Barranco', w: '1568', imgH: '1003' },
-        { id: 'py-3', span: 'span 4', h: '340px', nombre: 'Casa Los Álamos', detalle: 'La Molina · 310 m² · 2024', tipo: 'Remodelación', foto: 'cocina abierta — La Molina', src: './assets/proyecto-casa-los-alamos.webp', alt: 'Cocina abierta con isla de piedra en una casa de La Molina', w: '1448', imgH: '1086' },
-        { id: 'py-4', span: 'span 4', h: '340px', nombre: 'Oficinas Andino Capital', detalle: 'San Isidro · 480 m² · 2024', tipo: 'Comercial', foto: 'recepción de oficina — San Isidro', src: './assets/proyecto-oficinas-andino.webp', alt: 'Recepción de oficina con piedra y madera oscura en San Isidro', w: '1448', imgH: '1086' },
-        { id: 'py-5', span: 'span 4', h: '340px', nombre: 'Dúplex Reducto', detalle: 'Miraflores · 95 m² · 2023', tipo: 'Residencial', foto: 'dormitorio principal — Miraflores', src: './assets/proyecto-duplex-reducto.webp', alt: 'Dormitorio principal con luz costera y materiales naturales en Miraflores', w: '1448', imgH: '1086' }
-      ],
-      cifras: [
-        { valor: '+80', label: 'Proyectos entregados en Lima y Callao' },
-        { valor: '9', label: 'Años diseñando interiores residenciales y comerciales' },
-        { valor: '12 500', label: 'm² intervenidos entre obra y mobiliario a medida' },
-        { valor: '96%', label: 'De clientes nos recomienda o vuelve con un nuevo proyecto' }
-      ],
-      pasos: [
-        { num: '01', titulo: 'Diagnóstico', desc: 'Visita al espacio, escuchamos tus necesidades y definimos alcance, estilo y presupuesto referencial.', tiempo: '1 semana' },
-        { num: '02', titulo: 'Concepto', desc: 'Moodboard, distribución y paleta de materiales. Iteramos contigo hasta aprobar la dirección.', tiempo: '2–3 semanas' },
-        { num: '03', titulo: 'Desarrollo', desc: 'Planos técnicos, renders 3D, especificación de acabados y presupuesto cerrado de obra.', tiempo: '3–4 semanas' },
-        { num: '04', titulo: 'Ejecución', desc: 'Supervisión de obra, gestión de proveedores e instalación de mobiliario. Entrega llave en mano.', tiempo: 'según proyecto' }
-      ],
-      enviado: this.state.enviado,
-      noEnviado: !this.state.enviado,
-      errorForm: this.state.error,
-      fNombre: f.nombre, fTelefono: f.telefono, fTipo: f.tipo, fDistrito: f.distrito, fMensaje: f.mensaje,
-      setNombre: this.setF('nombre'), setTelefono: this.setF('telefono'), setTipo: this.setF('tipo'),
-      setDistrito: this.setF('distrito'), setMensaje: this.setF('mensaje'),
-      enviar: () => {
-        if (!f.nombre.trim() || !f.telefono.trim()) { this.setState({ error: true }); return; }
-        this.setState({ enviado: true, error: false });
+
+  /* ---------- revelado en tres capas: observador, scroll y sondeo ---------- */
+  var rvs = $$('.rv'), pend = rvs.slice();
+  var quitar = function (el) { var i = pend.indexOf(el); if (i > -1) pend.splice(i, 1); };
+  if (reduce) { rvs.forEach(function (el) { el.classList.add('in'); }); pend.length = 0; }
+  else {
+    if ('IntersectionObserver' in window) {
+      var rio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); quitar(e.target); rio.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
+      rvs.forEach(function (el) { rio.observe(el); });
+    }
+    var barrer = function () {
+      for (var i = pend.length - 1; i >= 0; i--) {
+        if (pend[i].getBoundingClientRect().top < window.innerHeight * 0.96) { pend[i].classList.add('in'); pend.splice(i, 1); }
       }
     };
+    var t = false;
+    var pedir = function () { if (t) return; t = true; setTimeout(function () { t = false; barrer(); }, 80); };
+    window.addEventListener('scroll', pedir, { passive: true });
+    window.addEventListener('resize', pedir, { passive: true });
+    var sondeo = setInterval(function () { barrer(); if (!pend.length) clearInterval(sondeo); }, 250);
+    window.addEventListener('load', barrer);
   }
-}
+
+  /* ---------- titulares que llenan el ancho: mismo dibujo en cualquier pantalla ---------- */
+  var fitAll = function () {
+    $$('[data-fit]').forEach(function (el) {
+      var tgt = el.closest('[data-fit-scope]') || el;
+      tgt.style.fontSize = '100px';
+      var rg = document.createRange(); rg.selectNodeContents(el);
+      var w = rg.getBoundingClientRect().width;
+      var cs = getComputedStyle(el);
+      var avail = el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      if (w > 0 && avail > 0) tgt.style.fontSize = (100 * avail / w * 0.995).toFixed(2) + 'px';
+      else tgt.style.fontSize = '';
+    });
+  };
+
+  /* ---------- cifras: fijas y desplegadas por el scroll (o fila a fila si no caben) ---------- */
+  var cf = $('.cifras'), cfPin = cf && $('.cf-pin', cf), cfAxis = cf && $('.cf-axis', cf);
+  var cfRows = cf ? $$('.cf-row', cf).map(function (row) {
+    return { el: row, line: $('.cf-line', row), bar: $('.cf-bar', row), mk: $$('.cf-mk>span', row), th: $$('.cf-th i', row) };
+  }) : [];
+  var cfCheck = function () {
+    if (!cf) return;
+    if (reduce) { cf.classList.remove('scrub'); return; }
+    cf.classList.add('scrub');
+    if (cfPin.scrollHeight > cfPin.clientHeight + 2) cf.classList.remove('scrub');
+  };
+  var c01 = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
+  var out3 = function (t) { return 1 - Math.pow(1 - t, 3); };
+
+  /* ---------- servicios en palabras: letras sueltas y despliegue ligado al scroll ---------- */
+  var rv = $('.rvl'), rvPh = rv && $('.rvl-ph', rv), rvImg = rv && $('.rvl-ph img', rv), rvLbl = rv && $('.rvl-lbl', rv), rvTh = rv && $('.rvl-th', rv);
+  var rvLt = [];
+  if (rv) {
+    $$('.rvl-w .wd', rv).forEach(function (wd) {
+      var t = wd.textContent; wd.textContent = '';
+      t.split('').forEach(function (ch) { var l = document.createElement('span'); l.className = 'lt'; l.textContent = ch === ' ' ? '\u00a0' : ch; wd.appendChild(l); rvLt.push(l); });
+    });
+  }
+  var rvCheck = function () { if (rv && reduce) rv.classList.remove('scrub'); };
+
+  /* valores suavizados: cada efecto persigue su objetivo con interpolación */
+  var sm = {}, inquieto = false;
+  var suave = function (k, key, to) {
+    var v = sm[key]; if (v === undefined) v = to;
+    v += (to - v) * k;
+    if (Math.abs(to - v) < 0.0004) v = to; else inquieto = true;
+    sm[key] = v; return v;
+  };
+
+  var pars = $$('[data-par]'), mark = $('[data-mark]'), riel = $('[data-riel]');
+  var fill = riel && $('.riel i', riel);
+  var navH = function () { return nav.getBoundingClientRect().height; };
+  var pintar = function (k) {
+    inquieto = false;
+    var vh = window.innerHeight;
+    nav.classList.toggle('sc', window.scrollY > 10);
+    if (reduce) return false;
+    pars.forEach(function (img) {
+      var r = img.parentNode.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      var c = (r.top + r.height / 2 - vh / 2) / vh;
+      var y = Math.max(-0.07, Math.min(0.07, c * parseFloat(img.dataset.par))) * r.height;
+      img.style.transform = 'translate3d(0,' + (-y).toFixed(1) + 'px,0)';
+    });
+    if (mark) {
+      var mr = mark.parentNode.getBoundingClientRect();
+      var mk = suave(k, 'mark', c01(-mr.top / mr.height));
+      mark.style.transform = 'translate3d(0,' + (-mk * 34).toFixed(2) + '%,0)';
+    }
+    if (fill) {
+      var q = riel.getBoundingClientRect();
+      fill.style.setProperty('--p', suave(k, 'riel', c01((vh * 0.85 - q.top) / (q.height * 0.9))).toFixed(4));
+    }
+    if (cf) {
+      var r = cf.getBoundingClientRect(), P = [], ax;
+      if (cf.classList.contains('scrub')) {
+        var nh = navH(), ini = vh * 0.62, fin = nh - (r.height - (vh - nh));
+        var pr = c01((ini - r.top) / (ini - fin));
+        cfRows.forEach(function (o, n) { P.push(c01((pr * 1.12 - n * 0.15) / 0.44)); });
+        ax = c01(pr * 1.12 / 0.7);
+      } else {
+        cfRows.forEach(function (o) { var rr = o.el.getBoundingClientRect(); P.push(c01((vh * 0.96 - rr.top) / (vh * 0.42))); });
+        ax = P[P.length - 1];
+      }
+      cfAxis.style.transform = 'scaleY(' + out3(suave(k, 'ax', ax)).toFixed(4) + ')';
+      cfRows.forEach(function (o, n) {
+        var v = suave(k, 'r' + n, P[n]), e = out3(v);
+        o.line.style.transform = 'scaleX(' + e.toFixed(4) + ')';
+        o.bar.style.transform = 'scaleY(' + out3(c01(v * 1.3)).toFixed(4) + ')';
+        o.mk.forEach(function (sp, m) { var t = out3(c01(v * 1.35 - m * 0.18)); sp.style.transform = 'translate3d(0,' + ((1 - t) * 108).toFixed(2) + '%,0)'; });
+        o.th.forEach(function (c, m) { var t = out3(c01(v * 1.7 - m * 0.13)); c.style.transform = 'translate3d(' + (t * 101).toFixed(2) + '%,0,0)'; });
+      });
+    }
+    if (rv && rv.classList.contains('scrub')) {
+      var rr2 = rv.getBoundingClientRect(), nh2 = navH();
+      var pv = suave(k, 'rvl', c01((nh2 - rr2.top) / (rr2.height - (vh - nh2))));
+      var ang = window.innerWidth <= 700 ? [25, 7, 25, 7] : [17, 21, 21, 21];
+      var a = out3(c01((pv - 0.14) / 0.34));
+      rvPh.style.clipPath = 'inset(' + ang.map(function (v) { return (v * a).toFixed(3) + '%'; }).join(' ') + ')';
+      rvImg.style.transform = 'scale(' + (1.14 - 0.14 * a).toFixed(4) + ')';
+      var li = c01(pv / 0.07), lo = c01((pv - 0.18) / 0.08);
+      rvLbl.style.opacity = (li * (1 - lo)).toFixed(3);
+      rvLbl.style.letterSpacing = (0.25 + 0.45 * out3(li)).toFixed(3) + 'em';
+      var n = rvLt.length;
+      rvLt.forEach(function (l, i) { var t = out3(c01((pv - 0.4 - (i / n) * 0.36) / 0.1)); l.style.transform = 'translate3d(0,' + ((1 - t) * 108).toFixed(2) + '%,0)'; });
+      if (rvTh) { var tt = out3(c01((pv - 0.8) / 0.1)); rvTh.style.clipPath = 'inset(0 ' + ((1 - tt) * 100).toFixed(2) + '% 0 0)'; }
+    }
+    return inquieto;
+  };
+
+  /* ---------- scroll suave con la rueda (sin librerías) + un solo bucle de animación ---------- */
+  var html = document.documentElement;
+  var fino = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  var sy = { cur: 0, tgt: 0, on: false };
+  var maxY = function () { return html.scrollHeight - window.innerHeight; };
+  var corriendo = false, ultimo = 0;
+  var tick = function (now) {
+    var dt = Math.min(64, now - ultimo || 16.7); ultimo = now;
+    var k = 1 - Math.pow(0.9, dt / 16.7);
+    var sigue = false;
+    if (sy.on) {
+      sy.cur += (sy.tgt - sy.cur) * (1 - Math.pow(0.9, dt / 16.7));
+      if (Math.abs(sy.tgt - sy.cur) < 0.5) { sy.cur = sy.tgt; sy.on = false; } else sigue = true;
+      window.scrollTo(0, sy.cur);
+    }
+    if (pintar(k)) sigue = true;
+    if (sigue) requestAnimationFrame(tick); else corriendo = false;
+  };
+  var despertar = function () { if (corriendo) return; corriendo = true; ultimo = performance.now(); requestAnimationFrame(tick); };
+  var irA = function (y) {
+    if (!sy.on) sy.cur = window.scrollY;
+    sy.tgt = Math.max(0, Math.min(maxY(), y)); sy.on = true; despertar();
+  };
+  if (!reduce && fino) {
+    html.classList.add('ss');
+    window.addEventListener('wheel', function (e) {
+      if (e.ctrlKey || e.defaultPrevented || nav.dataset.open === 'true') return;
+      for (var el = e.target; el && el.nodeType === 1 && el !== document.body; el = el.parentElement) {
+        var oy = getComputedStyle(el).overflowY;
+        if ((oy === 'auto' || oy === 'scroll') && el.scrollHeight > el.clientHeight) return;
+      }
+      e.preventDefault();
+      var d = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1);
+      irA((sy.on ? sy.tgt : window.scrollY) + d);
+    }, { passive: false });
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      var id = a.getAttribute('href'), t = id.length > 1 && document.getElementById(id.slice(1));
+      if (!t) return;
+      e.preventDefault();
+      irA(t.getBoundingClientRect().top + window.scrollY - navH());
+      if (history.replaceState) history.replaceState(null, '', id);
+    });
+  }
+  /* si el usuario arrastra la barra o usa el teclado, manda él */
+  window.addEventListener('scroll', function () { if (sy.on && Math.abs(window.scrollY - sy.cur) > 4) sy.on = false; despertar(); }, { passive: true });
+  var rz = 0;
+  window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(function () { fitAll(); cfCheck(); despertar(); }, 120); }, { passive: true });
+  var listo = function () { fitAll(); cfCheck(); rvCheck(); despertar(); };
+  window.addEventListener('load', listo);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(listo);
+  fitAll(); cfCheck(); rvCheck(); pintar(1);
+
+  /* ---------- antes / después ---------- */
+  $$('[data-ba]').forEach(function (ba) {
+    var r = $('input', ba);
+    var set = function () { ba.style.setProperty('--p', r.value + '%'); };
+    r.addEventListener('input', set); set();
+  });
+
+  /* ---------- estimador ---------- */
+  var est = $('#est');
+  var fmt = function (n) { return 'S/ ' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); };
+  var r500 = function (n) { return Math.round(n / 500) * 500; };
+  var val = function (name) { var c = $('input[name="' + name + '"]:checked', est); return c ? c.value : ''; };
+  var calc = function () {
+    var tipo = val('tipo'), mod = val('mod'), acab = val('acab'), m2 = +$('#m2').value;
+    var com = tipo === 'Local comercial' || tipo === 'Oficina';
+    var rate, total, plazo, inc;
+    $('#acab-f').hidden = mod !== 'llave';
+    if (mod === 'diseno') {
+      rate = com ? 110 : 85; total = Math.max(4500, m2 * rate);
+      plazo = '6–8 semanas de diseño'; inc = 'Planos, renders y presupuesto de obra';
+    } else {
+      rate = Math.round({ esencial: 1600, alto: 2300, premium: 3200 }[acab] * (com ? 1.1 : 1));
+      total = m2 * rate;
+      var ob = m2 < 80 ? '8–10' : m2 < 150 ? '10–14' : m2 < 300 ? '14–20' : '20–28';
+      plazo = '6–8 semanas de diseño + ' + ob + ' de obra'; inc = 'Diseño, obra y mobiliario';
+    }
+    var lo = r500(total * 0.88), hi = r500(total * 1.12);
+    $('#m2o').textContent = m2 + ' m²';
+    $('#monto').innerHTML = '<b>' + fmt(lo) + '</b> <span>–</span> <b>' + fmt(hi) + '</b>';
+    $('#r-m2').textContent = fmt(rate);
+    $('#r-plazo').textContent = plazo;
+    $('#r-inc').textContent = inc;
+    var txt = 'Hola Terra Interiores, usé el estimador de su web: ' + tipo + ' de ' + m2 + ' m², ' + (mod === 'diseno' ? 'proyecto de diseño' : 'llave en mano, acabados ' + acab) + '. Rango: ' + fmt(lo) + ' – ' + fmt(hi) + '. Quisiera agendar un diagnóstico.';
+    $('#est-wa').href = 'https://wa.me/51999888777?text=' + encodeURIComponent(txt);
+  };
+  est.addEventListener('input', calc); est.addEventListener('change', calc); calc();
+  $$('[data-mod]').forEach(function (a) {
+    a.addEventListener('click', function () { var i = $('input[name="mod"][value="' + a.dataset.mod + '"]', est); if (i) { i.checked = true; calc(); } });
+  });
+  $$('[data-tipo-msg]').forEach(function (a) {
+    a.addEventListener('click', function () { $('#f-msg').value = 'Me interesa una ' + a.dataset.tipoMsg.toLowerCase() + ' para mi espacio.'; });
+  });
+
+  /* ---------- formulario (demo: simula el envío) ---------- */
+  var form = $('#form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var n = $('#f-nombre'), tel = $('#f-tel');
+    if (!n.value.trim() || !tel.value.trim()) { $('#f-err').hidden = false; (n.value.trim() ? tel : n).focus(); return; }
+    $('#f-err').hidden = true; form.hidden = true; $('#ok').hidden = false;
+  });
+})();
 </script>
 </body>
 </html>
