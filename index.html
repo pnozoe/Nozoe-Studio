@@ -86,7 +86,7 @@
 <link rel="preload" href="assets/fonts/nunito-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/nunito-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="nozoe-design-system/nozoe-tokens.css?v=20260816a">
-<link rel="stylesheet" href="assets/css/site.css?v=20261018a">
+<link rel="stylesheet" href="assets/css/site.css?v=20261018b">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KT7VG5XMC7"></script>
 <script>
@@ -296,60 +296,93 @@
   </div>
 </section>
 
-<!-- ══ COMPARADOR ANTES / DESPUÉS ══ -->
-<section class="comparador">
+<!-- ══ DIAGNÓSTICO ANTES / DESPUÉS ══
+     La misma pieza en dos versiones. Los tres números señalan los errores
+     en «Antes» y su solución en «Después»; data-view lo cambia site.js. -->
+<section class="comparador" id="cmp" data-view="antes" aria-labelledby="cmp-title">
   <div class="wrap">
     <div class="cmp-grid">
 
       <div class="cmp-copy">
         <p class="cmp-kicker"><span class="sm-num">03</span><span class="sm-rule"></span>La prueba, no la promesa</p>
-        <h2 class="cmp-headline">Tu competencia<br>no es mejor.<br><span class="cmp-soft">Solo</span> <span class="hl-em">se ve mejor.</span></h2>
+        <h2 class="cmp-headline" id="cmp-title">Tu competencia no es mejor. Solo <span class="hl-em">se ve mejor.</span></h2>
         <p class="cmp-sub">
-          El mismo negocio, contado de dos maneras distintas. Arrastra y compara — la diferencia no es el presupuesto, es el criterio.
+          El mismo negocio, contado de dos maneras. Te mostramos qué cambia y por qué: la diferencia no es el presupuesto, es el criterio.
         </p>
-        <div class="cmp-cta-row">
-          <a class="btn btn-ember" href="mailto:pedro@nozoestudio.com?subject=Quiero%20mi%20diagn%C3%B3stico%20de%20Nozoe%20Studio">Quiero mi diagnóstico gratis <span style="margin-left:4px">→</span></a>
-          <a class="tlink" href="caso-tml">Ver caso de estudio<span class="arr"> →</span></a>
-        </div>
       </div>
 
-      <div class="cmp-wrap">
-        <div class="cmp-hint"><i></i>Arrastra el divisor · elige un rubro</div>
-        <div class="cmp" id="cmp">
-          <div class="cmp-side">
+      <div class="cmp-rubros" id="cmp-rubros" role="group" aria-labelledby="cmp-rubros-lbl">
+        <p class="cmp-rubros-lbl" id="cmp-rubros-lbl">Elige un rubro</p>
+        <button type="button" class="cmp-rubro" data-i="0" aria-pressed="true"><span class="cmp-rubro-num">01</span><span class="cmp-rubro-name">Restaurante</span><span class="cmp-rubro-arr" aria-hidden="true">→</span></button>
+        <button type="button" class="cmp-rubro" data-i="1" aria-pressed="false"><span class="cmp-rubro-num">02</span><span class="cmp-rubro-name">Clínica dental</span><span class="cmp-rubro-arr" aria-hidden="true">→</span></button>
+        <button type="button" class="cmp-rubro" data-i="2" aria-pressed="false"><span class="cmp-rubro-num">03</span><span class="cmp-rubro-name">Estudio legal</span><span class="cmp-rubro-arr" aria-hidden="true">→</span></button>
+      </div>
+
+      <div class="cmp-stage">
+        <div class="cmp-bar">
+          <div class="cmp-toggle" role="group" aria-label="Versión de la pieza">
+            <button type="button" class="cmp-toggle-btn" data-view="antes" aria-pressed="true">Antes</button>
+            <button type="button" class="cmp-toggle-btn" data-view="despues" aria-pressed="false">Después</button>
+          </div>
+          <p class="cmp-hint"><span class="cmp-v-antes">Tres errores comunes, señalados</span><span class="cmp-v-despues">Los mismos tres puntos, resueltos</span></p>
+        </div>
+
+        <div class="cmp">
+          <!-- Pieza amateur: decorativa, los criterios de abajo la describen -->
+          <div class="cmp-side cmp-side-antes" aria-hidden="true">
             <div class="cmp-bad cmp-theme-resto" id="cmp-bad">
               <div class="cmp-bad-blob"></div>
               <div class="cmp-bad-logo" id="cmp-bad-logo">EL SABOR NORTEÑO</div>
-              <div class="cmp-bad-tit" id="cmp-bad-tit">¡¡GRAN<br>PROMOCIÓN!!</div>
+              <div class="cmp-bad-tit"><span class="cmp-pin">2</span><span id="cmp-bad-tit">¡¡GRAN<br>PROMOCIÓN!!</span></div>
               <div class="cmp-bad-sub" id="cmp-bad-sub">LOS MEJORES PLATOS DE LA ZONA ★ ATENCIÓN DE LUNES A DOMINGO ★ DELIVERY ★ PEDIDOS AL WHATSAPP</div>
               <div class="cmp-bad-badge" id="cmp-bad-badge">50%<br>DCTO</div>
-              <div class="cmp-bad-foot" id="cmp-bad-foot">SÍGUENOS EN NUESTRAS REDES SOCIALES · TELF 999-999-999 · AV. SIEMPRE VIVA 123 · PROMOCIÓN VÁLIDA HASTA AGOTAR STOCK</div>
+              <span class="cmp-pin cmp-pin-badge">3</span>
+              <div class="cmp-bad-foot"><span class="cmp-pin">1</span><span id="cmp-bad-foot">SÍGUENOS EN NUESTRAS REDES SOCIALES · TELF 999-999-999 · AV. SIEMPRE VIVA 123 · PROMOCIÓN VÁLIDA HASTA AGOTAR STOCK</span></div>
             </div>
           </div>
-          <div class="cmp-side cmp-after" id="cmp-after">
+          <div class="cmp-side cmp-side-despues" aria-hidden="true">
             <div class="cmp-good cmp-theme-resto" id="cmp-good">
-              <div class="cmp-g-top">
-                <div class="cmp-g-logo"><span class="cmp-g-dot"></span><span id="cmp-good-logo">Norteño</span></div>
-                <div class="cmp-g-cat" id="cmp-good-cat">Cocina peruana · Lima</div>
-              </div>
               <div class="cmp-g-art"><span class="cmp-g-mark" id="cmp-good-mark">Temporada 01</span></div>
-              <div class="cmp-g-tit" id="cmp-good-tit">Lo de siempre,<br>hecho <span class="hl-em">como siempre.</span></div>
-              <div class="cmp-g-sub" id="cmp-good-sub">Carta de estación, cocina a la vista y una barra que abre a las seis.</div>
-              <div class="cmp-g-foot">
-                <span class="cmp-g-cta" id="cmp-good-cta">Reservar mesa</span>
-                <span class="cmp-g-meta">MIRAFLORES</span>
+              <div class="cmp-g-body">
+                <div class="cmp-g-top">
+                  <span class="cmp-pin">2</span>
+                  <div class="cmp-g-logo"><span class="cmp-g-dot"></span><span id="cmp-good-logo">Norteño</span></div>
+                  <div class="cmp-g-cat" id="cmp-good-cat">Cocina peruana · Lima</div>
+                </div>
+                <div class="cmp-g-tit"><span class="cmp-pin">1</span><span id="cmp-good-tit">Lo de siempre,<br>hecho <span class="hl-em">como siempre.</span></span></div>
+                <div class="cmp-g-sub" id="cmp-good-sub">Carta de estación, cocina a la vista y una barra que abre a las seis.</div>
+                <div class="cmp-g-foot">
+                  <span class="cmp-pin">3</span>
+                  <span class="cmp-g-cta" id="cmp-good-cta">Reservar mesa</span>
+                  <span class="cmp-g-meta" id="cmp-good-meta">Miraflores</span>
+                </div>
               </div>
             </div>
           </div>
-          <span class="cmp-tag cmp-tag-before">Antes</span>
-          <span class="cmp-tag cmp-tag-after">Después</span>
-          <div class="cmp-handle" id="cmp-handle"><div class="cmp-knob cmp-knob-nudge" id="cmp-knob">⇄</div></div>
         </div>
-        <div class="cmp-chips" id="cmp-chips">
-          <button class="cmp-chip on" data-i="0">Restaurante</button>
-          <button class="cmp-chip" data-i="1">Clínica dental</button>
-          <button class="cmp-chip" data-i="2">Estudio legal</button>
-        </div>
+
+        <ol class="cmp-criterios" aria-live="polite">
+          <li class="cmp-crit">
+            <span class="cmp-crit-head"><span class="cmp-crit-n" aria-hidden="true">1</span>Mensaje</span>
+            <p class="cmp-crit-t"><span class="cmp-v-antes">Seis anuncios a la vez.</span><span class="cmp-v-despues">Una idea por pieza.</span></p>
+            <p class="cmp-crit-x"><span class="cmp-v-antes">Promoción, servicios, horario, teléfono, redes y descuento en la misma pieza. Ninguno gana.</span><span class="cmp-v-despues">Lo importante va arriba y se entiende en tres segundos. Lo demás espera su turno.</span></p>
+          </li>
+          <li class="cmp-crit">
+            <span class="cmp-crit-head"><span class="cmp-crit-n" aria-hidden="true">2</span>Tipografía</span>
+            <p class="cmp-crit-t"><span class="cmp-v-antes">La letra grita.</span><span class="cmp-v-despues">Una familia, tres pesos.</span></p>
+            <p class="cmp-crit-x"><span class="cmp-v-antes">Mayúsculas, sombras, contornos y rotación. Todo pide atención y nada ordena.</span><span class="cmp-v-despues">Cuando la letra jerarquiza, el ojo sabe por dónde empezar y dónde terminar.</span></p>
+          </li>
+          <li class="cmp-crit">
+            <span class="cmp-crit-head"><span class="cmp-crit-n" aria-hidden="true">3</span>Color</span>
+            <p class="cmp-crit-t"><span class="cmp-v-antes">Todo resalta.</span><span class="cmp-v-despues">Un acento que manda.</span></p>
+            <p class="cmp-crit-x"><span class="cmp-v-antes">Colores saturados peleando entre sí. Si todo resalta, nada resalta.</span><span class="cmp-v-despues">El color fuerte aparece una vez: en la acción que quieres que hagan.</span></p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="cmp-cta-row">
+        <a class="btn btn-ember" href="mailto:pedro@nozoestudio.com?subject=Quiero%20mi%20diagn%C3%B3stico%20de%20Nozoe%20Studio">Quiero mi diagnóstico gratis <span style="margin-left:4px">→</span></a>
+        <a class="tlink" href="caso-tml">Ver caso de estudio<span class="arr"> →</span></a>
       </div>
 
     </div>
@@ -824,7 +857,7 @@
   </div>
 </div>
 
-<script src="assets/js/site.js?v=20261008a" defer></script>
+<script src="assets/js/site.js?v=20261018a" defer></script>
 
 <!-- FAB WhatsApp (solo móvil) -->
 <a href="https://wa.me/817022124910" class="wa-fab" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener">

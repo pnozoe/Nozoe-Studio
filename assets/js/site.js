@@ -192,52 +192,25 @@ document.addEventListener('DOMContentLoaded', function() {
   wall.innerHTML = html;
 })();
 
-/* Comparador antes/después — arrastrar divisor + chips de rubro */
+/* Diagnóstico antes/después — vista (Antes / Después) + rubro.
+   La vista vive en #cmp[data-view]; el CSS muestra la pieza y los
+   textos que tocan. El rubro reescribe los textos de ambas piezas. */
 (function(){
-  var cmp = document.getElementById('cmp');
-  if (!cmp) return;
-  var after = document.getElementById('cmp-after'),
-      handle = document.getElementById('cmp-handle'),
-      knob = document.getElementById('cmp-knob');
-  var touched = false;
+  var sec = document.getElementById('cmp');
+  if (!sec) return;
+  var stage = sec.querySelector('.cmp');
+  var toggles = sec.querySelectorAll('.cmp-toggle-btn');
+  var rubros = sec.querySelectorAll('.cmp-rubro');
 
-  function set(p){
-    p = Math.max(6, Math.min(94, p));
-    after.style.clipPath = 'inset(0 0 0 ' + p + '%)';
-    handle.style.left = p + '%';
+  function press(list, on){
+    [].forEach.call(list, function(b){ b.setAttribute('aria-pressed', b === on ? 'true' : 'false'); });
   }
-  function fromEvent(e){
-    var r = cmp.getBoundingClientRect();
-    var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
-    set(x / r.width * 100);
-  }
-  var dragging = false;
-  function start(e){ dragging = true; touched = true; knob.classList.remove('cmp-knob-nudge'); fromEvent(e); }
-  function move(e){ if (dragging){ fromEvent(e); if (e.cancelable) e.preventDefault(); } }
-  function end(){ dragging = false; }
-  cmp.addEventListener('mousedown', start);
-  window.addEventListener('mousemove', move);
-  window.addEventListener('mouseup', end);
-  cmp.addEventListener('touchstart', start, { passive: true });
-  window.addEventListener('touchmove', move, { passive: false });
-  window.addEventListener('touchend', end);
-  cmp.addEventListener('mousemove', function(e){
-    if (!dragging && window.innerWidth > 900){ fromEvent(e); touched = true; knob.classList.remove('cmp-knob-nudge'); }
+  [].forEach.call(toggles, function(b){
+    b.addEventListener('click', function(){
+      sec.setAttribute('data-view', b.dataset.view);
+      press(toggles, b);
+    });
   });
-
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduce){
-    var t0 = null;
-    function sweep(ts){
-      if (touched) return;
-      if (!t0) t0 = ts;
-      var k = (ts - t0) / 1400;
-      if (k >= 1){ set(34); return; }
-      set(34 + 12 * Math.sin(k * Math.PI));
-      requestAnimationFrame(sweep);
-    }
-    setTimeout(function(){ requestAnimationFrame(sweep); }, 700);
-  }
 
   var CASES = [
     { theme: 'cmp-theme-resto',
@@ -248,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
       logo: 'Norteño', cat: 'Cocina peruana · Lima', mark: 'Temporada 01',
       tit: 'Lo de siempre,<br>hecho <span class="hl-em">como siempre.</span>',
       sub: 'Carta de estación, cocina a la vista y una barra que abre a las seis.',
-      cta: 'Reservar mesa' },
+      cta: 'Reservar mesa', meta: 'Miraflores' },
     { theme: 'cmp-theme-dental',
       badLogo: 'CLÍNICA DENTAL SONRISAS', badTit: '¡SONRISA<br>PERFECTA!',
       badSub: 'BLANQUEAMIENTO ★ ORTODONCIA ★ IMPLANTES ★ FINANCIAMIENTO SIN INTERESES ★ CONSULTA GRATIS',
@@ -257,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
       logo: 'Aroma', cat: 'Odontología · San Isidro', mark: 'Consulta 01',
       tit: 'Un lugar donde<br>nadie <span class="hl-em">llega nervioso.</span>',
       sub: 'Diagnóstico explicado, plan por escrito y precios cerrados antes de empezar.',
-      cta: 'Agendar consulta' },
+      cta: 'Agendar consulta', meta: 'San Isidro' },
     { theme: 'cmp-theme-legal',
       badLogo: 'ESTUDIO JURÍDICO & ASOCIADOS', badTit: '¡DEFENDEMOS<br>TUS DERECHOS!',
       badSub: 'CIVIL ★ PENAL ★ LABORAL ★ FAMILIA ★ MÁS DE 20 AÑOS DE EXPERIENCIA ★ PRIMERA CONSULTA GRATIS',
@@ -266,29 +239,28 @@ document.addEventListener('DOMContentLoaded', function() {
       logo: 'Vera', cat: 'Derecho laboral · Lima', mark: 'Caso 01',
       tit: 'Le decimos<br>lo que <span class="hl-em">sí se puede.</span>',
       sub: 'Derecho laboral para empresas. Respuestas en lenguaje claro y plazos por escrito.',
-      cta: 'Consultar caso' }
+      cta: 'Consultar caso', meta: 'Lima' }
   ];
   var ids = {
     badLogo: 'cmp-bad-logo', badTit: 'cmp-bad-tit', badSub: 'cmp-bad-sub', badBadge: 'cmp-bad-badge', badFoot: 'cmp-bad-foot',
-    logo: 'cmp-good-logo', cat: 'cmp-good-cat', mark: 'cmp-good-mark', tit: 'cmp-good-tit', sub: 'cmp-good-sub', cta: 'cmp-good-cta'
+    logo: 'cmp-good-logo', cat: 'cmp-good-cat', mark: 'cmp-good-mark', tit: 'cmp-good-tit', sub: 'cmp-good-sub', cta: 'cmp-good-cta', meta: 'cmp-good-meta'
   };
   var THEMES = ['cmp-theme-resto', 'cmp-theme-dental', 'cmp-theme-legal'];
   var badEl = document.getElementById('cmp-bad'), goodEl = document.getElementById('cmp-good');
-  var chips = document.getElementById('cmp-chips');
-  if (chips){
-    chips.addEventListener('click', function(e){
-      var b = e.target.closest('.cmp-chip');
-      if (!b) return;
-      [].forEach.call(this.children, function(c){ c.classList.remove('on'); });
-      b.classList.add('on');
+  [].forEach.call(rubros, function(b){
+    b.addEventListener('click', function(){
+      if (b.getAttribute('aria-pressed') === 'true') return;
+      press(rubros, b);
       var d = CASES[+b.dataset.i];
       for (var k in ids){ var el = document.getElementById(ids[k]); if (el) el.innerHTML = d[k]; }
-      if (badEl){ badEl.classList.remove.apply(badEl.classList, THEMES); badEl.classList.add(d.theme); }
-      if (goodEl){ goodEl.classList.remove.apply(goodEl.classList, THEMES); goodEl.classList.add(d.theme); }
-      set(34);
-      cmp.classList.remove('cmp-fade'); void cmp.offsetWidth; cmp.classList.add('cmp-fade');
+      [badEl, goodEl].forEach(function(el){
+        if (!el) return;
+        el.classList.remove.apply(el.classList, THEMES);
+        el.classList.add(d.theme);
+      });
+      stage.classList.remove('cmp-fade'); void stage.offsetWidth; stage.classList.add('cmp-fade');
     });
-  }
+  });
 })();
 
 /* ── Caja de luz de piezas ──
