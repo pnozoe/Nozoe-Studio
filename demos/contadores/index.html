@@ -104,15 +104,9 @@ a{color:var(--acc)}
 .btn-claro{background:#EAF1F8;border-color:#EAF1F8;color:#0A182B}
 .btn-claro:hover{background:#fff;border-color:#fff;color:#0A182B;box-shadow:none}
 .btn svg{flex:none}
-
-.ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);
-  filter:drop-shadow(0 5px 9px rgba(0,0,0,.5));transition:filter .2s,transform .2s}
-.ribbon:hover{filter:drop-shadow(0 7px 12px rgba(0,0,0,.6));transform:rotate(45deg) translateY(-2px)}
-.ribbon img{width:100%;height:auto}
 /* Horizontal siempre que haya burger (<1140px): en diagonal la cinta se
    come el clic del boton, porque va a z-index 160 sobre la esquina. */
-@media(max-width:1139px){.ribbon{top:74px;right:0;width:min(42%,300px);transform:none}
-  .ribbon:hover{transform:translateY(-2px)}}
+
 /* Entre 1140 y 1379 el ancho util toca los bordes y el CTA del nav cae bajo la
    diagonal. Se aparta de la esquina en ese tramo; por encima, el wrap ya centra. */
 @media(min-width:1140px) and (max-width:1379px){.nav-in{padding-right:calc(var(--gut) + 36px)}}
@@ -465,14 +459,14 @@ html:not(.js) .reg-panel+.reg-panel{margin-top:14px}
   .paso .bar i{transform:none}
   .status i{animation:none}
 }
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="prog" aria-hidden="true"><i id="prog"></i></div>
-<a class="ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="assets/cinta-demo-nozoe.svg" alt="Demo — Nozoe Studio" width="429" height="46">
-</a>
+<a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">

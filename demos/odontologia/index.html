@@ -77,12 +77,6 @@ ul,ol{padding:0;list-style:none}
 .js .rv .ln:nth-child(2)>span{transition-delay:.08s}.js .rv .ln:nth-child(3)>span{transition-delay:.16s}.js .rv .ln:nth-child(4)>span{transition-delay:.24s}
 .js .rv.d1{transition-delay:.1s}.js .rv.d2{transition-delay:.2s}.js .rv.d3{transition-delay:.3s}
 
-/* cinta demo */
-.ribbon{position:fixed;z-index:160;top:44px;right:-92px;display:block;width:316px;line-height:0;transform:rotate(45deg);
-  filter:drop-shadow(0 5px 10px rgba(0,0,0,.22));transition:transform .25s var(--ease)}
-.ribbon:hover{transform:rotate(45deg) translateY(-2px)}
-.ribbon img{width:100%;height:auto}
-@media(max-width:1759px){.ribbon{top:calc(var(--g) + var(--hh) + 6px);right:0;width:min(42%,280px);transform:none}.ribbon:hover{transform:translateY(-2px)}}
 .skip{position:absolute;left:-9999px;top:0;z-index:999;background:var(--ink);color:#fff;padding:12px 20px}
 .skip:focus{left:0}
 
@@ -430,13 +424,13 @@ ul,ol{padding:0;list-style:none}
   .mq-track{animation:none}
   *{scroll-behavior:auto!important}
 }
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
-<a class="ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="assets/cinta-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="429" height="46">
-</a>
+<a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="arr" viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>

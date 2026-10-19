@@ -67,12 +67,6 @@ p{margin:0}
 .btn-g:hover{border-color:var(--ember);color:var(--ember)}
 .btn-s{min-height:44px;padding:0 20px;font-size:13.5px}
 
-/* --- cinta + skip --- */
-.ribbon{position:fixed;z-index:160;top:44px;right:-92px;display:block;width:316px;line-height:0;transform:rotate(45deg);
-  filter:drop-shadow(0 5px 10px rgba(0,0,0,.5));transition:transform .25s var(--ease),filter .25s var(--ease)}
-.ribbon:hover{transform:rotate(45deg) translateY(-2px)}
-.ribbon img{width:100%;height:auto}
-@media(max-width:900px){.ribbon{top:78px;right:0;width:42%;transform:none}.ribbon:hover{transform:translateY(-2px)}}
 .skip{position:absolute;left:-9999px;top:0;z-index:999;background:var(--ember);color:#1A130B;padding:12px 20px}
 .skip:focus{left:0}
 
@@ -447,14 +441,14 @@ p{margin:0}
   .js .wipe > img{clip-path:none;transform:none}
   .hero-bg img.on{animation:none}
 }
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <div class="prog" aria-hidden="true"><i id="prog"></i></div>
-<a class="ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="assets/cinta-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="429" height="46">
-</a>
+<a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
 
 <header class="nav" id="nav">
   <div class="nav-in">
@@ -1179,7 +1173,9 @@ p{margin:0}
     thumbs.forEach(function (t, k) { t.setAttribute('aria-current', String(k === di)); });
     $('#stName').textContent = p.n; $('#stTitle').textContent = p.t; $('#stShort').textContent = p.s;
     $('#stDesc').textContent = p.d; $('#stProd').textContent = p.p; $('#stServ').textContent = p.v; $('#stAlt').textContent = p.a;
-    thumbs[di].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+    // solo la tira se desplaza en horizontal; scrollIntoView movía también la página al cargar
+    var strip = $('#strip'), sr = strip.getBoundingClientRect(), tr = thumbs[di].getBoundingClientRect();
+    if (tr.left < sr.left || tr.right > sr.right) strip.scrollBy({ left: tr.left - sr.left - (sr.width - tr.width) / 2, behavior: reduce ? 'auto' : 'smooth' });
   };
   thumbs.forEach(function (t, i) { t.addEventListener('click', function () { setDish(i); }); });
   $('#stPrev').addEventListener('click', function () { setDish(di - 1); });

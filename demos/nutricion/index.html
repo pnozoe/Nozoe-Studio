@@ -30,10 +30,6 @@ a:hover{color:#5A7D2A}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 input,select,textarea{font-family:'Rubik',sans-serif}
 img{display:block;max-width:100%}
-.demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.24));transition:filter .2s,transform .2s}
-.demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.34));transform:rotate(45deg) translateY(-2px)}
-.demo-ribbon img{width:100%;height:auto}
-.demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .consultation-media{position:relative;border-radius:32px;overflow:hidden;background:#DCD9CE}
 .consultation-media picture,.consultation-media picture img{display:block;width:100%;height:auto}
 .consultation-caption{position:absolute;left:28px;bottom:28px;background:#16181A;color:#fff;border-radius:16px;padding:18px 26px;font-size:15px;font-weight:600;animation:floaty 5s ease-in-out infinite}
@@ -43,7 +39,7 @@ img{display:block;max-width:100%}
 @keyframes heroCarousel{0%,28%{opacity:1;transform:scale(1)}33%,95%{opacity:0;transform:scale(1.015)}100%{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:no-preference){.hero-slide{animation:heroCarousel 19.5s ease-in-out infinite}.hero-slide:nth-child(1){animation-delay:0s}.hero-slide:nth-child(2){animation-delay:-13s}.hero-slide:nth-child(3){animation-delay:-6.5s}}
 @media(min-width:1180px){.header-cta{margin-right:100px}}
-@media(max-width:1179px){.demo-ribbon{top:74px;right:0;width:30%;transform:none;filter:drop-shadow(0 4px 7px rgba(0,0,0,.23))}.demo-ribbon:hover{transform:translateY(-2px)}}
+
 @media(max-width:640px){.consultation-media{border-radius:24px}.consultation-caption{position:static;display:flex;align-items:center;justify-content:space-between;border-radius:0;padding:16px 18px;font-size:13.5px;animation:none}}
 @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}.hero-slide:not(.is-active){display:none}}
 body.menu-open{overflow:hidden}
@@ -66,12 +62,12 @@ body.menu-open{overflow:hidden}
   [style*="padding:80px 56px"],
   [style*="padding: 80px 56px"]{padding:48px 24px!important}
 }
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
 </style>
 </helmet>
 
-<a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="./assets/cinta-demo-nozoe.svg" alt="Demo de Nozoe Studio" width="429" height="46">
-</a>
+<a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="./assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
 
 <header style="position:sticky;top:0;z-index:60;background:rgba(246,245,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(22,24,26,.1)">
   <div style="max-width:1240px;margin:0 auto;padding:0 28px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px">

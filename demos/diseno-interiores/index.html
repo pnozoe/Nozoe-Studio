@@ -71,11 +71,6 @@ fieldset{border:0;padding:0;min-width:0}
 .dark .btn.solid{background:var(--on-dark);color:var(--dark)}
 .dark .btn.solid:hover{background:var(--clay-l);border-color:var(--clay-l)}
 
-/* ---------- cinta demo ---------- */
-.ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.22));transition:filter .2s,transform .2s}
-.ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.32));transform:rotate(45deg) translateY(-2px)}
-.ribbon img{width:100%;height:auto}
-
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;z-index:120;background:rgba(232,238,242,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .4s}
 .nav.sc{border-bottom-color:var(--line)}
@@ -97,8 +92,6 @@ fieldset{border:0;padding:0;min-width:0}
 @media(max-width:1100px){
   .nav-links,.nav-in>.nav-cta{display:none}
   .burger{display:block}
-  .ribbon{top:calc(var(--nav) + 4px);right:0;width:min(42%,280px);transform:none}
-  .ribbon:hover{transform:translateY(-2px)}
   .js .drawer{display:block;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;visibility:hidden;transition:max-height .5s var(--ease),visibility 0s .5s}
   .js .nav[data-open="true"] .drawer{max-height:640px;visibility:visible;transition:max-height .6s var(--ease)}
   .drawer-in{padding:14px var(--gt) 26px;display:grid}
@@ -509,13 +502,13 @@ details[open] p{animation:aparece .6s var(--ease)}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
 }
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
 </style>
 </head>
 <body>
 
-<a class="ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
-</a>
+<a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
 
 <!-- NAV -->
 <header class="nav" id="nav" data-open="false">

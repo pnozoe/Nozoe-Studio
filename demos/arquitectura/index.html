@@ -79,11 +79,6 @@
     .menu-toggle{display:none;background:none;border:0;color:#fff;width:42px;height:42px;cursor:pointer}
     .menu-toggle span{display:block;width:24px;height:1px;background:currentColor;margin:7px auto;transition:.25s}
 
-    .demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
-    .demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
-    .demo-ribbon img{width:100%;height:auto}
-    .demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:4px}
-
     @media(min-width:981px){.nav{padding-right:125px}}
 
     .hero{min-height:100svh;background:var(--ink);color:#fff;position:relative;display:flex;align-items:flex-end;overflow:hidden}
@@ -223,8 +218,6 @@
     [data-reveal].visible{opacity:1;transform:none}
 
     @media(max-width:980px){
-      .demo-ribbon{top:77px;right:0;width:30%;transform:none;filter:drop-shadow(0 4px 7px rgba(0,0,0,.25))}
-      .demo-ribbon:hover{transform:translateY(-2px)}
       .nav-links{position:fixed;inset:0;background:var(--ink);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:90px var(--pad);gap:26px;transform:translateX(100%);transition:transform .3s}
       .nav-links a{font-size:clamp(1.6rem,6vw,3.6rem);letter-spacing:-.03em;text-transform:none}
       .nav-links .nav-cta{font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
@@ -274,13 +267,13 @@
       *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
       [data-reveal]{opacity:1;transform:none}
     }
-  </style>
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
+</style>
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
-  <a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-    <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
-  </a>
+  <a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
   <header id="header">
     <nav class="shell nav" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="Vértice Estudio, inicio"><span class="brand-mark" aria-hidden="true"></span>VÉRTICE / ESTUDIO</a>

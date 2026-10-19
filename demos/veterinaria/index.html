@@ -31,20 +31,12 @@ a{color:#3C7A89}a:hover{color:#2E5F6C}
 @keyframes spin{to{transform:rotate(360deg)}}
 html{scroll-behavior:smooth}
 .hcar::-webkit-scrollbar{display:none}
-.demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
-.demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
-.demo-ribbon img{display:block;width:100%;height:auto}
-.demo-ribbon:focus-visible{outline:3px solid #fff;outline-offset:4px}
-@media (max-width:980px){
-  .demo-ribbon{top:138px;right:0;width:30%;transform:none;filter:drop-shadow(0 4px 7px rgba(0,0,0,.25))}
-  .demo-ribbon:hover{transform:translateY(-2px)}
-}
+
 body.menu-open{overflow:hidden}
 .mn-toggle{display:none;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid rgba(22,38,46,.25);border-radius:50%;background:transparent;cursor:pointer;flex:none}
 .mn-toggle svg{width:17px;height:17px}
 .mn-links{display:none}
 @media (max-width:720px){
-  .demo-ribbon{top:184px}
   header>div{height:64px!important;padding:0 16px!important}
   header nav,header>div>a:last-child{display:none!important}
   header>div>a:first-child{font-size:18px!important}
@@ -72,12 +64,12 @@ body.menu-open{overflow:hidden}
   section:not([data-screen-label^="Hero"]){padding-top:72px!important;padding-bottom:72px!important}
   .hcar{overflow-x:hidden!important}
 }
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
 </style>
 </helmet>
 
-<a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="./assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
-</a>
+<a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="./assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
 
 <div style="background:#16262E;color:#fff;text-align:center;padding:10px 16px;font-size:13.5px;font-weight:700;letter-spacing:.01em">
   🚨 Urgencias 24/7 — respondemos siempre · <a href="https://wa.me/51901222333?text=URGENCIA%3A%20mi%20mascota%20necesita%20atenci%C3%B3n" target="_blank" rel="noopener" style="color:#DBC2CF;font-weight:800">WhatsApp de emergencias →</a>

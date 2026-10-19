@@ -59,11 +59,6 @@
     .button--line { background: transparent; color: var(--ink); }
     .button--line:hover { color: var(--white); }
 
-    .demo-ribbon { position: fixed; z-index: 180; top: 2.7rem; right: -5.75rem; display: block; width: 19.7rem; transform: rotate(45deg); filter: drop-shadow(0 .3rem .45rem rgba(0, 0, 0, .28)); transition: filter .2s, transform .2s; }
-    .demo-ribbon:hover { transform: rotate(45deg) translateY(-2px); filter: drop-shadow(0 .45rem .65rem rgba(0, 0, 0, .38)); }
-    .demo-ribbon img { width: 100%; height: auto; }
-    .demo-ribbon:focus-visible { outline-color: var(--white); }
-
     .site-header { position: sticky; z-index: 100; top: 0; border-bottom: 1px solid var(--line); background: rgba(242, 239, 231, .91); backdrop-filter: blur(14px); }
     .nav { display: flex; min-height: 5rem; align-items: center; justify-content: space-between; gap: 2rem; }
     .brand { display: inline-flex; align-items: baseline; gap: .5rem; font-family: var(--display); font-size: 1.7rem; font-weight: 800; letter-spacing: -.04em; text-decoration: none; text-transform: uppercase; }
@@ -191,8 +186,6 @@
 
     @media (max-width: 960px) {
       :root { --shell: min(100% - 36px, 760px); }
-      .demo-ribbon { top: 5.65rem; right: 0; width: 30%; transform: none; }
-      .demo-ribbon:hover { transform: translateY(-2px); }
       .menu-open .site-header { position: fixed; inset: 0; height: 100svh; background: var(--paper); }
       .menu-open .brand { position: relative; z-index: 2; }
       .js .menu-toggle { display: block; position: relative; z-index: 2; }
@@ -223,7 +216,6 @@
       .nav { min-height: 4.75rem; }
       .brand { font-size: 1.45rem; }
       .brand span { display: none; }
-      .demo-ribbon { top: 5.2rem; }
       .hero-copy { min-height: 36rem; padding-top: 7.5rem; }
       .hero h1 { font-size: clamp(3.8rem, 19vw, 5.5rem); }
       .hero-actions .button { width: 100%; }
@@ -244,13 +236,13 @@
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
       .js .reveal { opacity: 1; transform: none; }
     }
-  </style>
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-    <img src="assets/cinta-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="429" height="46">
-  </a>
+  <a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
 
   <header class="site-header">
     <nav class="shell nav" aria-label="Navegación principal">

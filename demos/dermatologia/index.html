@@ -52,11 +52,6 @@ a:hover{color:var(--muted)}
 :focus-visible{outline:2px solid var(--ink);outline-offset:5px}
 .on-dark :focus-visible,.hero :focus-visible{outline-color:var(--onDark)}
 
-/* ---------- cinta demo ---------- */
-.demo-ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);filter:drop-shadow(0 5px 7px rgba(0,0,0,.28));transition:filter .2s,transform .2s}
-.demo-ribbon:hover{filter:drop-shadow(0 7px 10px rgba(0,0,0,.38));transform:rotate(45deg) translateY(-2px)}
-.demo-ribbon img{width:100%;height:auto}
-
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;z-index:50;background:rgba(244,244,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-faint)}
 .nav-in{max-width:1200px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -211,10 +206,7 @@ html:not(.js) .tratamiento-control,html:not(.js) .faq-q{cursor:default}
 .wa span{width:8px;height:8px;border-radius:50%;background:var(--onDark)}
 
 /* ---------- responsive ---------- */
-@media(max-width:1300px){
-  .demo-ribbon{top:calc(var(--nav-h) + 4px);right:0;width:min(32%,300px);transform:none}
-  .demo-ribbon:hover{transform:translateY(-2px)}
-}
+
 /* En pantallas angostas la caja del hero es mucho más alta que ancha y `right`
    dejaba a la vista solo el pelo: se centra el recorte sobre el rostro, que en
    los tres fotogramas cae en la misma posición. */
@@ -222,7 +214,6 @@ html:not(.js) .tratamiento-control,html:not(.js) .faq-q{cursor:default}
   .hero-frame{object-position:75% center}
 }
 @media(max-width:760px){
-  .demo-ribbon{top:70px;width:30%}
   .mn-toggle{display:inline-flex;position:relative;z-index:151}
   .mn-links{position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100svh;z-index:150;flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:6rem 2rem 3rem;background:var(--bg);visibility:hidden;opacity:0;transform:translateY(-1rem);transition:opacity .25s ease,transform .25s ease,visibility .25s;text-transform:none}
   .mn-links.is-open{visibility:visible;opacity:1;transform:translateY(0)}
@@ -242,14 +233,14 @@ html:not(.js) .tratamiento-control,html:not(.js) .faq-q{cursor:default}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   html{scroll-behavior:auto}
 }
-@media print{.demo-ribbon,.wa,.mn-toggle{display:none!important}}
+@media print{.wa,.mn-toggle{display:none!important}}
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
 </style>
 </head>
 <body>
 
-<a class="demo-ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="assets/cinta-demo-nozoe.svg" alt="Demo - Nozoe Studio" width="429" height="46">
-</a>
+<a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
 
 <!-- ===== NAV ===== -->
 <header class="nav">

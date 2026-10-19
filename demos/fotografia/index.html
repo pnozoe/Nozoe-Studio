@@ -70,13 +70,6 @@ p{margin:0}
 .skip{position:fixed;z-index:400;top:10px;left:10px;padding:12px 16px;border-radius:var(--rp);background:var(--fg);color:var(--bg);text-decoration:none;transform:translateY(-220%)}
 .skip:focus{transform:none}
 
-/* ---- cinta demo ---- */
-.ribbon{position:fixed;z-index:160;top:43px;right:-92px;width:315px;display:block;transform:rotate(45deg);
-  filter:drop-shadow(0 5px 9px rgba(0,0,0,.45));transition:filter .2s,transform .2s}
-.ribbon:hover{filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));transform:rotate(45deg) translateY(-2px)}
-.ribbon img{width:100%;height:auto}
-@media(max-width:1479px){.ribbon{top:calc(var(--nav) + 4px);right:0;width:min(42%,300px);transform:none}
-  .ribbon:hover{transform:translateY(-2px)}}
 
 /* ---- nav ---- */
 .nav{position:sticky;top:0;z-index:120;height:var(--nav);display:flex;align-items:center;
@@ -315,14 +308,14 @@ form{display:flex;flex-direction:column;gap:14px;margin-top:20px}
 .v-p{top:50%;left:clamp(10px,2vw,26px);transform:translateY(-50%)}
 .v-n{top:50%;right:clamp(10px,2vw,26px);transform:translateY(-50%)}
 @media(max-width:700px){.v-p,.v-n{top:auto;bottom:18px;transform:none}.v-p{left:calc(50% - 54px)}.v-n{right:calc(50% - 54px)}}
+/* sello demo Nozoe (2026-10) */
+.nzs-seal{position:fixed;z-index:160;left:16px;bottom:16px;width:84px;height:84px;display:block;border-radius:50%;line-height:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.24));transition:transform .3s cubic-bezier(.2,.7,.1,1)}.nzs-seal:hover{transform:scale(1.06)}.nzs-seal img{display:block;width:100%;height:100%}.nzs-seal:focus-visible{outline:2px solid #E94E1B;outline-offset:4px}@media(max-width:760px){.nzs-seal{left:12px;bottom:12px;width:68px;height:68px}}@media(prefers-reduced-motion:reduce){.nzs-seal{transition:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
-<a class="ribbon" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web">
-  <img src="assets/cinta-demo-nozoe.svg" alt="Demo — Nozoe Studio" width="429" height="46">
-</a>
+<a class="nzs-seal" href="https://nozoestudio.com" target="_blank" rel="noopener noreferrer" aria-label="Esta es una demo de Nozoe Studio; visitar el sitio web"><img src="assets/sello-demo-nozoe.svg" alt="Demo · Nozoe Studio" width="84" height="84"></a>
 
 <header class="nav" id="nav" data-open="false">
   <div class="wrap nav-in">
