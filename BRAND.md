@@ -83,11 +83,12 @@ mensaje principal ni como estética.
 ## Audiencia
 
 **Primaria:** emprendedores y negocios de habla hispana que quieren 
-una marca profesional y lista para crecer. Muchos en Japón o con 
-vínculo Japón–Latinoamérica, pero el filtro es *querer crecer con buen 
-diseño*, no la biculturalidad.
+una marca profesional y lista para crecer, hoy sobre todo en 
+**México y España**. El filtro es *querer crecer con buen diseño*, 
+no la biculturalidad.
 
-**Secundaria:** profesionales del diseño que valoran el rigor 
+**Secundaria:** hispanohablantes en Japón y el resto de 
+Latinoamérica; profesionales del diseño que valoran el rigor 
 editorial; clientes con sensibilidad internacional.
 
 ---
@@ -118,4 +119,4 @@ editorial; clientes con sensibilidad internacional.
 
 ---
 
-*Última actualización: junio 2026 — reenfoque estratégico (sitio en producción).*
+*Última actualización: octubre 2026 — audiencia primaria en México y España.*

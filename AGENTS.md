@@ -17,11 +17,15 @@ Este repositorio contiene el **rediseño 2026 de la web del estudio**
 (en producción). La web es la pieza central de la marca: portafolio, 
 voz editorial, servicios y captación de clientes.
 
-**Audiencia primaria:** empresas y emprendedores del **Perú** que 
-quieren una marca profesional y lista para crecer. Secundariamente, 
-hispanohablantes en Japón y el resto de Latinoamérica. El filtro es 
-*querer crecer con buen diseño*, no la biculturalidad — pero el 
-mercado que nombramos en el copy es Perú.
+**Audiencia primaria (desde octubre de 2026):** empresas y 
+emprendedores de **México y España** que quieren una marca 
+profesional y lista para crecer. Perú sigue siendo un mercado 
+servido (de ahí viene buena parte del portafolio), pero deja de ser 
+el único que nombra el copy. Secundariamente, hispanohablantes en 
+Japón y el resto de Latinoamérica. El filtro es *querer crecer con 
+buen diseño*, no la biculturalidad. El copy del sitio se adapta en 
+la versión 1.5 de reposicionamiento; cada texto nuevo lo aprueba 
+Pedro antes de publicarse.
 
 **Nombres canónicos de los servicios** (no inventar variantes): 
 Identidad de marca · Diseño web · Diseño gráfico y publicitario · 
@@ -342,4 +346,4 @@ y el riesgo es romper lo que ya funciona, no la falta de avance.
 
 ---
 
-*Última actualización: mayo 2026 — sitio en producción (Cloudflare Pages).*
+*Última actualización: octubre 2026 — audiencia primaria en México y España.*
