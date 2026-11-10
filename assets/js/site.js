@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var chat = document.getElementById('wp-feature-chat');
   if (!chat) return;
   var msgs = [
-    { who: 'user', html: 'Cambia mi horario a lun–sáb, 9am a 7pm' },
+    { who: 'user', html: '¿Pueden cambiar mi horario a lun–sáb, 9am a 7pm?' },
     { who: 'bot',  html: 'Listo. Actualizado en Contacto. <span class="wp-feature-ok">Publicado ✓</span>' },
-    { who: 'user', html: 'Sube la consulta inicial a S/ 120' },
-    { who: 'bot',  html: 'Hecho, visible en «Servicios». <span class="wp-feature-ok">Publicado ✓</span>' }
+    { who: 'user', html: 'Les mando la foto nueva para la portada' },
+    { who: 'bot',  html: 'Hecho, ya se ve en la portada. <span class="wp-feature-ok">Publicado ✓</span>' }
   ];
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -382,3 +382,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, { threshold: 0.15 }).observe(video);
 });
+
+/* Analítica: cuenta los clics a WhatsApp en GA4. Los enlaces del
+   diagnóstico se registran aparte para medir esa puerta de entrada. */
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href*="wa.me/"]') : null;
+    if (!a || typeof window.gtag !== 'function') return;
+    var diagnostico = /diagn%C3%B3stico|diagnóstico/i.test(a.getAttribute('href'));
+    window.gtag('event', diagnostico ? 'clic_diagnostico' : 'clic_whatsapp', {
+      ubicacion: location.pathname,
+      texto: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60)
+    });
+  });
+})();
