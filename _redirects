@@ -4,3 +4,15 @@
 # aplican aunque exista el archivo estático, así que lo cierran.
 /docs/*  /  301
 /docs    /  301
+
+# Lo mismo con los documentos y archivos internos de la raíz y del
+# sistema de diseño: contexto para Claude, marca, backlog, servidor
+# local y .gitignore. El sitio no los necesita para funcionar.
+/CLAUDE.md   /  301
+/AGENTS.md   /  301
+/BRAND.md    /  301
+/BACKLOG.md  /  301
+/server.py   /  301
+/.gitignore  /  301
+/nozoe-design-system/CLAUDE.md  /  301
+/nozoe-design-system/README.md  /  301
