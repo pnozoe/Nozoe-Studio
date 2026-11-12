@@ -3806,6 +3806,13 @@ body::before {
   .svc-track-wrap { padding-left: 20px; scroll-padding-left: 20px; }
   .svc-arrows { padding-left: 20px; }
   .svc-section .svc-card { width: calc(100vw - 20px - 20px) !important; min-width: calc(100vw - 20px - 20px) !important; }
+  /* A este ancho el precio y el botón no caben en una fila: el botón
+     se partía en dos líneas y se montaba sobre el precio. Ahora el
+     botón baja a su propia línea y la tarjeta crece en alto si lo
+     necesita, partiendo del mismo 16/9. */
+  .svc-section .svc-card { aspect-ratio: auto; min-height: calc((100vw - 40px) * 9 / 16); }
+  .svc-section .svc-card-footer { flex-wrap: wrap; gap: var(--ns-space-3) var(--ns-space-4); }
+  .svc-section .svc-card-btn { flex-shrink: 0; white-space: nowrap; }
 
   .proceso-steps { grid-template-columns: 1fr; }
 
