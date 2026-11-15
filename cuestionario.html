@@ -214,7 +214,7 @@
     </div>
     <div class="q">
       <label>¿A qué te dedicas, en una frase? <span class="req">*</span></label>
-      <span class="hint">Ejemplo: "Soy abogada laboralista, ayudo a trabajadores a hacer valer sus derechos" — simple y directo.</span>
+      <span class="hint">Ejemplo: "Soy abogada laboralista, ayudo a trabajadores a hacer valer sus derechos". Simple y directo.</span>
       <input type="text" data-q="A qué se dedica (una frase)">
     </div>
     <div class="q">
@@ -302,7 +302,7 @@
     </div>
     <div class="q">
       <label>¿Qué problema o necesidad tiene cuando te busca? <span class="req">*</span></label>
-      <span class="hint">Escríbelo con las palabras que ellos usan, no con términos técnicos. ¿Qué te dicen en el primer mensaje o llamada?</span>
+      <span class="hint">Escríbelo con las palabras que ellos usan, sin términos técnicos. ¿Qué te dicen en el primer mensaje o llamada?</span>
       <textarea data-q="Problema del cliente (en sus palabras)"></textarea>
     </div>
     <div class="q">
@@ -362,7 +362,7 @@
 
     <div class="q">
       <label>¿Qué te diferencia de otros profesionales de tu rubro? <span class="req">*</span></label>
-      <span class="hint">Piensa en lo que tus clientes te dicen que valoran: rapidez, trato, especialización, resultados, precios claros, disponibilidad. Evita "calidad y compromiso" — eso lo dicen todos.</span>
+      <span class="hint">Piensa en lo que tus clientes te dicen que valoran: rapidez, trato, especialización, resultados, precios claros, disponibilidad. Evita "calidad y compromiso": eso lo dicen todos.</span>
       <textarea data-q="Diferenciación real"></textarea>
     </div>
     <div class="q">
@@ -372,7 +372,7 @@
     </div>
     <div class="q">
       <label>¿Tienes testimonios de clientes o podrías conseguir 2–3?</label>
-      <span class="hint">Si ya los tienes, pégalos aquí con nombre y ocupación de la persona (o iniciales si prefieren privacidad). Si no, te enviaremos un mensaje modelo para pedirlos — funciona casi siempre.</span>
+      <span class="hint">Si ya los tienes, pégalos aquí con nombre y ocupación de la persona (o iniciales si prefieren privacidad). Si no, te enviaremos un mensaje modelo para pedirlos. Funciona casi siempre.</span>
       <textarea data-q="Testimonios existentes o por conseguir"></textarea>
     </div>
     <div class="q">
@@ -387,7 +387,7 @@
 <div class="bloque">
   <div class="wrap">
     <div class="bloque-head"><span class="bloque-num">Bloque 6 · 5 min</span><h2>Preguntas y objeciones</h2></div>
-    <p class="desc">Con esto armamos la sección de preguntas frecuentes — la que convierte visitantes dudosos en consultas.</p>
+    <p class="desc">Con esto armamos la sección de preguntas frecuentes, la que convierte visitantes dudosos en consultas.</p>
 
     <div class="q">
       <label>¿Cuáles son las 4–6 preguntas que TODOS te hacen antes de contratar? <span class="req">*</span></label>
@@ -598,7 +598,7 @@ function pintarTotal(){
   const excede = t > LIMITE_TOTAL;
   el.classList.toggle('over', excede);
   document.getElementById('btn-enviar').disabled = excede;
-  if (excede) el.innerHTML += ' — quita alguna foto o envía las más pesadas por WhatsApp';
+  if (excede) el.innerHTML += '. Quita alguna foto o envía las más pesadas por WhatsApp.';
 }
 
 async function comprimirImagen(file){
