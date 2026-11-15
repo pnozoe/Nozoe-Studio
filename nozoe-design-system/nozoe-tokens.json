@@ -1,500 +1,3991 @@
 {
-  "$schema": "https://schemas.tr.designtokens.org/format/",
-  "$description": "Nozoe Studio Design System — W3C Design Tokens Format Module. Compatible with Tokens Studio for Figma, Style Dictionary, and any DTCG-compliant tool.",
-  "$version": "1.0.0",
-
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Nozoe Studio · Sistema de diseño v2.2.0 · Fuente única de tokens (formato Design Tokens 2025.10). Generar salidas con: node tools/construir.mjs",
+  "$extensions": {
+    "com.nozoe": {
+      "version": "2.2.0",
+      "fecha": "2026-11-15",
+      "autor": "Pedro Nozoe",
+      "sello": "Tokio 東京"
+    }
+  },
   "color": {
-    "$description": "Primitive color palette. Reference these via semantic tokens — never use primitives directly in components.",
-
+    "$description": "Primitivas. No se usan directo en componentes: se pasa por tema.*",
     "ink": {
-      "$description": "The brand's deep navy. Anchor for typography, backgrounds in dark mode, structural ink.",
-      "50":  { "$value": "#F0F2F5", "$type": "color" },
-      "100": { "$value": "#D8DCE4", "$type": "color" },
-      "200": { "$value": "#B5BDCC", "$type": "color" },
-      "300": { "$value": "#8B97AE", "$type": "color" },
-      "400": { "$value": "#67748F", "$type": "color" },
-      "500": { "$value": "#475773", "$type": "color" },
-      "600": { "$value": "#324461", "$type": "color" },
-      "700": { "$value": "#243450", "$type": "color" },
-      "800": { "$value": "#1D2A40", "$type": "color", "$description": "Brand ink — primary navy" },
-      "900": { "$value": "#131C2C", "$type": "color" },
-      "950": { "$value": "#0A1119", "$type": "color" }
+      "50": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.949,
+            0.9608
+          ],
+          "hex": "#f0f2f5"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-50"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8471,
+            0.8627,
+            0.8941
+          ],
+          "hex": "#d8dce4"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-100"
+          }
+        }
+      },
+      "200": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7098,
+            0.7412,
+            0.8
+          ],
+          "hex": "#b5bdcc"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-200"
+          }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5451,
+            0.5922,
+            0.6824
+          ],
+          "hex": "#8b97ae"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-300"
+          }
+        }
+      },
+      "400": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4039,
+            0.4549,
+            0.5608
+          ],
+          "hex": "#67748f"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-400"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2784,
+            0.3412,
+            0.451
+          ],
+          "hex": "#475773"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-500"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1961,
+            0.2667,
+            0.3804
+          ],
+          "hex": "#324461"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-600"
+          }
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1412,
+            0.2039,
+            0.3137
+          ],
+          "hex": "#243450"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-700"
+          }
+        }
+      },
+      "800": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1137,
+            0.1647,
+            0.251
+          ],
+          "hex": "#1d2a40"
+        },
+        "$description": "Color de marca.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-800"
+          }
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0745,
+            0.1098,
+            0.1725
+          ],
+          "hex": "#131c2c"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-900"
+          }
+        }
+      },
+      "950": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0392,
+            0.0667,
+            0.098
+          ],
+          "hex": "#0a1119"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-950"
+          }
+        }
+      }
     },
-
     "orange": {
-      "$description": "Single warm accent. Use sparingly — never exceeds 5% of any surface.",
-      "50":  { "$value": "#FFEEE6", "$type": "color" },
-      "100": { "$value": "#FCE8DD", "$type": "color" },
-      "200": { "$value": "#FAC4A8", "$type": "color" },
-      "300": { "$value": "#F7A077", "$type": "color" },
-      "400": { "$value": "#F4754A", "$type": "color" },
-      "500": { "$value": "#E94E1B", "$type": "color", "$description": "Brand orange — primary accent" },
-      "600": { "$value": "#D14418", "$type": "color" },
-      "700": { "$value": "#B83C15", "$type": "color" },
-      "800": { "$value": "#8B2D10", "$type": "color" },
-      "900": { "$value": "#5D1E0B", "$type": "color" }
+      "50": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.9333,
+            0.902
+          ],
+          "hex": "#ffeee6"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-50"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9882,
+            0.9098,
+            0.8667
+          ],
+          "hex": "#fce8dd"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-100"
+          }
+        }
+      },
+      "200": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9804,
+            0.7686,
+            0.6588
+          ],
+          "hex": "#fac4a8"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-200"
+          }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9686,
+            0.6275,
+            0.4667
+          ],
+          "hex": "#f7a077"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-300"
+          }
+        }
+      },
+      "400": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9569,
+            0.4588,
+            0.2902
+          ],
+          "hex": "#f4754a"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-400"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9137,
+            0.3059,
+            0.1059
+          ],
+          "hex": "#e94e1b"
+        },
+        "$description": "Color de marca.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-500"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8196,
+            0.2667,
+            0.0941
+          ],
+          "hex": "#d14418"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-600"
+          }
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7216,
+            0.2353,
+            0.0824
+          ],
+          "hex": "#b83c15"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-700"
+          }
+        }
+      },
+      "800": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5451,
+            0.1765,
+            0.0627
+          ],
+          "hex": "#8b2d10"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-800"
+          }
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3647,
+            0.1176,
+            0.0431
+          ],
+          "hex": "#5d1e0b"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-900"
+          }
+        }
+      }
     },
-
     "sky": {
-      "$description": "Cool neutral derived from #C6D5EA. For borders, dividers, subtle states.",
-      "50":  { "$value": "#F4F8FE", "$type": "color" },
-      "100": { "$value": "#E8EFF8", "$type": "color" },
-      "200": { "$value": "#C6D5EA", "$type": "color", "$description": "Brand sky — neutral border" },
-      "300": { "$value": "#A8BDD8", "$type": "color" },
-      "400": { "$value": "#8B9DB7", "$type": "color", "$description": "Brand sky-mid — secondary text" },
-      "500": { "$value": "#6E84A2", "$type": "color" },
-      "600": { "$value": "#566B89", "$type": "color" },
-      "700": { "$value": "#3F5471", "$type": "color" }
+      "50": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9569,
+            0.9725,
+            0.9961
+          ],
+          "hex": "#f4f8fe"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-sky-50"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9098,
+            0.9373,
+            0.9725
+          ],
+          "hex": "#e8eff8"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-sky-100"
+          }
+        }
+      },
+      "200": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7765,
+            0.8353,
+            0.9176
+          ],
+          "hex": "#c6d5ea"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-sky-200"
+          }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6588,
+            0.7412,
+            0.8471
+          ],
+          "hex": "#a8bdd8"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-sky-300"
+          }
+        }
+      },
+      "400": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5451,
+            0.6157,
+            0.7176
+          ],
+          "hex": "#8b9db7"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-sky-400"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4314,
+            0.5176,
+            0.6353
+          ],
+          "hex": "#6e84a2"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-sky-500"
+          }
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3373,
+            0.4196,
+            0.5373
+          ],
+          "hex": "#566b89"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-sky-600"
+          }
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2471,
+            0.3294,
+            0.4431
+          ],
+          "hex": "#3f5471"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-sky-700"
+          }
+        }
+      }
     },
-
     "warm": {
-      "$description": "Warm off-white system. The 'soul' of Swiss-warm aesthetic.",
-      "50":  { "$value": "#FBFAF7", "$type": "color" },
-      "100": { "$value": "#F8F5EF", "$type": "color" },
-      "200": { "$value": "#F4F1EC", "$type": "color", "$description": "Brand warm — base surface" },
-      "300": { "$value": "#ECE7DF", "$type": "color" },
-      "400": { "$value": "#E0D9CD", "$type": "color" },
-      "500": { "$value": "#C8BFB0", "$type": "color" }
+      "50": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9843,
+            0.9804,
+            0.9686
+          ],
+          "hex": "#fbfaf7"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-warm-50"
+          }
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9725,
+            0.9608,
+            0.9373
+          ],
+          "hex": "#f8f5ef"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-warm-100"
+          }
+        }
+      },
+      "200": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9569,
+            0.9451,
+            0.9255
+          ],
+          "hex": "#f4f1ec"
+        },
+        "$description": "Color de marca.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-warm-200"
+          }
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9255,
+            0.9059,
+            0.8745
+          ],
+          "hex": "#ece7df"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-warm-300"
+          }
+        }
+      },
+      "400": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8784,
+            0.851,
+            0.8039
+          ],
+          "hex": "#e0d9cd"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-warm-400"
+          }
+        }
+      },
+      "500": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7843,
+            0.749,
+            0.6902
+          ],
+          "hex": "#c8bfb0"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-warm-500"
+          }
+        }
+      }
     },
-
+    "oscuro": {
+      "$description": "Acentos y superficies que solo existen en modo oscuro.",
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.4196,
+            0.2392
+          ],
+          "hex": "#ff6b3d"
+        },
+        "$description": "Naranja para modo oscuro.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-dark-500"
+          }
+        }
+      },
+      "accent-hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.4941,
+            0.3333
+          ],
+          "hex": "#ff7e55"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-dark-400"
+          }
+        }
+      },
+      "accent-active": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.5569,
+            0.4118
+          ],
+          "hex": "#ff8e69"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-dark-300"
+          }
+        }
+      },
+      "accent-subtle": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1647,
+            0.0941,
+            0.0706
+          ],
+          "hex": "#2a1812"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-orange-dark-900"
+          }
+        }
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0314,
+            0.0549,
+            0.0941
+          ],
+          "hex": "#080e18"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ink-1000"
+          }
+        }
+      }
+    },
+    "blanco": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "hex": "#ffffff"
+      },
+      "$description": "Blanco puro. Solo fichas, píldoras y superficies elevadas.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-white"
+        }
+      }
+    },
     "feedback": {
-      "$description": "Semantic feedback colors. Tuned to live next to brand palette without clashing.",
       "success": {
-        "subtle":  { "$value": "#E5F1E8", "$type": "color" },
-        "default": { "$value": "#3E8E5C", "$type": "color" },
-        "strong":  { "$value": "#2A6E45", "$type": "color" }
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.898,
+              0.9451,
+              0.9098
+            ],
+            "hex": "#e5f1e8"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-success-subtle"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2431,
+              0.5569,
+              0.3608
+            ],
+            "hex": "#3e8e5c"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-success-default"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1647,
+              0.4314,
+              0.2706
+            ],
+            "hex": "#2a6e45"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-success-strong"
+            }
+          }
+        }
       },
       "warning": {
-        "subtle":  { "$value": "#FBF1DC", "$type": "color" },
-        "default": { "$value": "#C28A0E", "$type": "color" },
-        "strong":  { "$value": "#8C6308", "$type": "color" }
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9843,
+              0.9451,
+              0.8627
+            ],
+            "hex": "#fbf1dc"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-warning-subtle"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7608,
+              0.5412,
+              0.0549
+            ],
+            "hex": "#c28a0e"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-warning-default"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.549,
+              0.3882,
+              0.0314
+            ],
+            "hex": "#8c6308"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-warning-strong"
+            }
+          }
+        }
       },
       "danger": {
-        "subtle":  { "$value": "#FBE3E0", "$type": "color" },
-        "default": { "$value": "#C63A2D", "$type": "color" },
-        "strong":  { "$value": "#8E281F", "$type": "color" }
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9843,
+              0.8902,
+              0.8784
+            ],
+            "hex": "#fbe3e0"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-danger-subtle"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7765,
+              0.2275,
+              0.1765
+            ],
+            "hex": "#c63a2d"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-danger-default"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5569,
+              0.1569,
+              0.1216
+            ],
+            "hex": "#8e281f"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-danger-strong"
+            }
+          }
+        }
       },
       "info": {
-        "subtle":  { "$value": "#E1ECF7", "$type": "color" },
-        "default": { "$value": "#2C6BB0", "$type": "color" },
-        "strong":  { "$value": "#1F4D80", "$type": "color" }
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8824,
+              0.9255,
+              0.9686
+            ],
+            "hex": "#e1ecf7"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-info-subtle"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1725,
+              0.4196,
+              0.6902
+            ],
+            "hex": "#2c6bb0"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-info-default"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1216,
+              0.302,
+              0.502
+            ],
+            "hex": "#1f4d80"
+          },
+          "$extensions": {
+            "com.nozoe": {
+              "css": "--ns-info-strong"
+            }
+          }
+        }
       }
     }
   },
-
-  "semantic": {
-    "$description": "Use these tokens in components. They map to primitives and switch automatically between light & dark themes.",
-
-    "light": {
-      "surface": {
-        "base":    { "$value": "{color.warm.200}", "$type": "color", "$description": "Page background — warm cream" },
-        "raised":  { "$value": "#FFFFFF", "$type": "color", "$description": "Cards, modals, dropdowns" },
-        "sunken":  { "$value": "{color.warm.300}", "$type": "color", "$description": "Inset areas, code blocks" },
-        "inverse": { "$value": "{color.ink.800}", "$type": "color", "$description": "Inverted surfaces (dark CTAs in light mode)" }
+  "marca": {
+    "$description": "Los nueve colores de marca con su nombre de trabajo. Alias de las primitivas.",
+    "tinta": {
+      "$type": "color",
+      "$value": "{color.ink.800}",
+      "$description": "Texto principal, escenas oscuras, ancla estructural.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-tinta"
+        }
+      }
+    },
+    "tinta-profunda": {
+      "$type": "color",
+      "$value": "{color.ink.900}",
+      "$description": "Viñetas, fondo de modo oscuro.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-tinta-profunda"
+        }
+      }
+    },
+    "pizarra": {
+      "$type": "color",
+      "$value": "{color.ink.500}",
+      "$description": "Texto secundario.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-pizarra"
+        }
+      }
+    },
+    "gris-azulado": {
+      "$type": "color",
+      "$value": "{color.sky.600}",
+      "$description": "Texto terciario sobre claro (4,83:1 sobre marfil).",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-gris-azulado"
+        }
+      }
+    },
+    "bruma": {
+      "$type": "color",
+      "$value": "{color.sky.400}",
+      "$description": "Descriptor del logo, separador, adorno. Nunca texto sobre claro (2,45:1).",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-bruma"
+        }
+      }
+    },
+    "cielo": {
+      "$type": "color",
+      "$value": "{color.sky.200}",
+      "$description": "Bordes; texto secundario sobre tinta.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-cielo"
+        }
+      }
+    },
+    "marfil": {
+      "$type": "color",
+      "$value": "{color.warm.200}",
+      "$description": "Fondo de lectura.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-marfil"
+        }
+      }
+    },
+    "blanco": {
+      "$type": "color",
+      "$value": "{color.blanco}",
+      "$description": "Fichas y píldoras.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-blanco"
+        }
+      }
+    },
+    "naranja": {
+      "$type": "color",
+      "$value": "{color.orange.500}",
+      "$description": "Acento. Una palabra o un elemento por escena; máximo 5 % de la superficie.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-naranja",
+          "p3": {
+            "colorSpace": "display-p3",
+            "components": [
+              0.93,
+              0.33,
+              0.11
+            ]
+          },
+          "p3Nota": "Equivalente Display P3. No activo: pendiente de decisión."
+        }
+      }
+    }
+  },
+  "tema": {
+    "$description": "Tokens semánticos. Los componentes solo usan estos.",
+    "claro": {
+      "surface-base": {
+        "$type": "color",
+        "$value": "{color.warm.200}",
+        "$description": "Fondo de página. Marfil en claro, ink-950 en oscuro.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-surface-base"
+          }
+        }
       },
-      "text": {
-        "primary":   { "$value": "{color.ink.800}", "$type": "color" },
-        "secondary": { "$value": "{color.ink.500}", "$type": "color" },
-        "tertiary":  { "$value": "{color.sky.400}", "$type": "color" },
-        "disabled":  { "$value": "{color.sky.300}", "$type": "color" },
-        "inverse":   { "$value": "{color.warm.200}", "$type": "color" },
-        "onAccent":  { "$value": "#FFFFFF", "$type": "color" },
-        "accent":    { "$value": "{color.orange.500}", "$type": "color" },
-        "accentStrong": { "$value": "{color.orange.700}", "$type": "color", "$description": "Accent con contraste AA para texto pequeño sobre surface-base y sunken" }
+      "surface-raised": {
+        "$type": "color",
+        "$value": "{color.blanco}",
+        "$description": "Tarjetas, paneles y modales sobre surface-base.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-surface-raised"
+          }
+        }
       },
-      "border": {
-        "subtle":  { "$value": "{color.warm.400}", "$type": "color" },
-        "default": { "$value": "{color.sky.200}", "$type": "color" },
-        "strong":  { "$value": "{color.sky.400}", "$type": "color" },
-        "focus":   { "$value": "{color.orange.500}", "$type": "color" },
-        "inverse": { "$value": "{color.ink.800}", "$type": "color" }
+      "surface-sunken": {
+        "$type": "color",
+        "$value": "{color.warm.300}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-surface-sunken"
+          }
+        },
+        "$description": "Zonas hundidas: código, escenarios de demo, cabeceras de tabla."
+      },
+      "surface-inverse": {
+        "$type": "color",
+        "$value": "{color.ink.800}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-surface-inverse"
+          }
+        },
+        "$description": "Bloques invertidos (banda de tinta en claro)."
+      },
+      "text-primary": {
+        "$type": "color",
+        "$value": "{color.ink.800}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-primary"
+          }
+        },
+        "$description": "Texto principal sobre surface-base y surface-raised (12,79:1 en claro, 16,84:1 en oscuro)."
+      },
+      "text-secondary": {
+        "$type": "color",
+        "$value": "{color.ink.500}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-secondary"
+          }
+        },
+        "$description": "Texto secundario sobre surface-base y surface-raised (6,48:1 en claro)."
+      },
+      "text-tertiary": {
+        "$type": "color",
+        "$value": "{color.sky.600}",
+        "$description": "Etiquetas, metadatos y pies sobre surface-base (4,83:1 en claro, 6,87:1 en oscuro). v2: antes sky-400.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-tertiary"
+          }
+        }
+      },
+      "text-disabled": {
+        "$type": "color",
+        "$value": "{color.sky.300}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-disabled"
+          }
+        },
+        "$description": "Texto deshabilitado. No comunica nada por sí solo."
+      },
+      "text-inverse": {
+        "$type": "color",
+        "$value": "{color.warm.200}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-inverse"
+          }
+        },
+        "$description": "Texto sobre surface-inverse."
+      },
+      "text-on-accent": {
+        "$type": "color",
+        "$value": "{color.blanco}",
+        "$description": "Texto sobre accent-fill: blanco en claro (4,61:1), tinta profunda en oscuro (6,70:1).",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-on-accent"
+          }
+        }
+      },
+      "text-accent": {
+        "$type": "color",
+        "$value": "{color.orange.500}",
+        "$description": "Naranja en texto solo a 24 px o más, sobre surface-base (3,35:1).",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-accent"
+          }
+        }
+      },
+      "text-accent-strong": {
+        "$type": "color",
+        "$value": "{color.orange.700}",
+        "$description": "Texto naranja en tamaño normal sobre surface-base (5,04:1 en claro).",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-accent-strong"
+          }
+        }
+      },
+      "border-subtle": {
+        "$type": "color",
+        "$value": "{color.warm.400}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-subtle"
+          }
+        },
+        "$description": "Divisores y bordes de tarjeta."
+      },
+      "border-default": {
+        "$type": "color",
+        "$value": "{color.sky.200}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-default"
+          }
+        },
+        "$description": "Bordes de controles en reposo."
+      },
+      "border-strong": {
+        "$type": "color",
+        "$value": "{color.sky.400}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-strong"
+          }
+        },
+        "$description": "Bordes de controles al pasar el cursor; botón secundario."
+      },
+      "border-focus": {
+        "$type": "color",
+        "$value": "{color.orange.500}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-focus"
+          }
+        },
+        "$description": "Anillo de foco."
+      },
+      "border-inverse": {
+        "$type": "color",
+        "$value": "{color.ink.800}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-inverse"
+          }
+        },
+        "$description": "Bordes sobre surface-inverse."
+      },
+      "accent-subtle": {
+        "$type": "color",
+        "$value": "{color.orange.100}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-subtle"
+          }
+        },
+        "$description": "Fondo tenue de acento (etiqueta destacada)."
       },
       "accent": {
-        "subtle":  { "$value": "{color.orange.100}", "$type": "color" },
-        "default": { "$value": "{color.orange.500}", "$type": "color" },
-        "hover":   { "$value": "{color.orange.600}", "$type": "color" },
-        "active":  { "$value": "{color.orange.700}", "$type": "color" }
+        "$type": "color",
+        "$value": "{color.orange.500}",
+        "$description": "El naranja de marca: punto final, rombo, número de sección, una palabra por escena. Máximo 5 % de la superficie.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent"
+          }
+        }
+      },
+      "accent-hover": {
+        "$type": "color",
+        "$value": "{color.orange.600}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-hover"
+          }
+        },
+        "$description": "Naranja al pasar el cursor sobre un elemento de acento."
+      },
+      "accent-active": {
+        "$type": "color",
+        "$value": "{color.orange.700}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-active"
+          }
+        },
+        "$description": "Naranja al presionar."
+      },
+      "accent-fill": {
+        "$type": "color",
+        "$value": "{color.orange.600}",
+        "$description": "Fondo del botón principal. Lleva text-on-accent encima.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-fill"
+          }
+        }
+      },
+      "accent-fill-hover": {
+        "$type": "color",
+        "$value": "{color.orange.700}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-fill-hover"
+          }
+        },
+        "$description": "Fondo del botón principal al pasar el cursor."
+      },
+      "ficha": {
+        "$type": "color",
+        "$value": "{color.blanco}",
+        "$description": "Fichas y píldoras blancas. Lleva text-on-ficha encima.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ficha"
+          }
+        }
+      },
+      "text-on-ficha": {
+        "$type": "color",
+        "$value": "{color.ink.800}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-on-ficha"
+          }
+        },
+        "$description": "Texto sobre ficha (tinta, 14,6:1)."
+      },
+      "logo-wordmark": {
+        "$type": "color",
+        "$value": "{color.ink.800}",
+        "$description": "Color de \"nozoe\" en el logo: tinta en claro, blanco en oscuro.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-logo-wordmark"
+          }
+        }
+      },
+      "logo-descriptor": {
+        "$type": "color",
+        "$value": "{color.sky.400}",
+        "$description": "Color de \"studio\" y del separador del logo. Decorativo: no se usa como texto.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-logo-descriptor"
+          }
+        }
       }
     },
-
-    "dark": {
-      "surface": {
-        "base":    { "$value": "{color.ink.950}", "$type": "color" },
-        "raised":  { "$value": "{color.ink.800}", "$type": "color" },
-        "sunken":  { "$value": "#080E18", "$type": "color" },
-        "inverse": { "$value": "{color.warm.200}", "$type": "color" }
+    "oscuro": {
+      "surface-base": {
+        "$type": "color",
+        "$value": "{color.ink.950}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-surface-base"
+          }
+        }
       },
-      "text": {
-        "primary":   { "$value": "{color.warm.200}", "$type": "color" },
-        "secondary": { "$value": "{color.sky.200}", "$type": "color" },
-        "tertiary":  { "$value": "{color.sky.400}", "$type": "color" },
-        "disabled":  { "$value": "{color.ink.500}", "$type": "color" },
-        "inverse":   { "$value": "{color.ink.800}", "$type": "color" },
-        "onAccent":  { "$value": "#FFFFFF", "$type": "color" },
-        "accent":    { "$value": "#FF6B3D", "$type": "color" },
-        "accentStrong": { "$value": "#FF6B3D", "$type": "color", "$description": "En oscuro coincide con accent: ya supera AA sobre los fondos oscuros" }
+      "surface-raised": {
+        "$type": "color",
+        "$value": "{color.ink.800}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-surface-raised"
+          }
+        }
       },
-      "border": {
-        "subtle":  { "$value": "{color.ink.800}", "$type": "color" },
-        "default": { "$value": "{color.ink.700}", "$type": "color" },
-        "strong":  { "$value": "{color.ink.500}", "$type": "color" },
-        "focus":   { "$value": "#FF6B3D", "$type": "color" },
-        "inverse": { "$value": "{color.warm.200}", "$type": "color" }
+      "surface-sunken": {
+        "$type": "color",
+        "$value": "{color.oscuro.sunken}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-surface-sunken"
+          }
+        }
+      },
+      "surface-inverse": {
+        "$type": "color",
+        "$value": "{color.warm.200}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-surface-inverse"
+          }
+        }
+      },
+      "text-primary": {
+        "$type": "color",
+        "$value": "{color.warm.200}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-primary"
+          }
+        }
+      },
+      "text-secondary": {
+        "$type": "color",
+        "$value": "{color.sky.200}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-secondary"
+          }
+        }
+      },
+      "text-tertiary": {
+        "$type": "color",
+        "$value": "{color.sky.400}",
+        "$description": "6,87:1 sobre ink-950.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-tertiary"
+          }
+        }
+      },
+      "text-disabled": {
+        "$type": "color",
+        "$value": "{color.ink.500}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-disabled"
+          }
+        }
+      },
+      "text-inverse": {
+        "$type": "color",
+        "$value": "{color.ink.800}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-inverse"
+          }
+        }
+      },
+      "text-on-accent": {
+        "$type": "color",
+        "$value": "{color.ink.950}",
+        "$description": "v2: antes blanco (2,83:1). Tinta profunda da 6,70:1.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-on-accent"
+          }
+        }
+      },
+      "text-accent": {
+        "$type": "color",
+        "$value": "{color.oscuro.accent}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-accent"
+          }
+        }
+      },
+      "text-accent-strong": {
+        "$type": "color",
+        "$value": "{color.oscuro.accent}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-accent-strong"
+          }
+        }
+      },
+      "border-subtle": {
+        "$type": "color",
+        "$value": "{color.ink.800}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-subtle"
+          }
+        }
+      },
+      "border-default": {
+        "$type": "color",
+        "$value": "{color.ink.700}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-default"
+          }
+        }
+      },
+      "border-strong": {
+        "$type": "color",
+        "$value": "{color.ink.500}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-strong"
+          }
+        }
+      },
+      "border-focus": {
+        "$type": "color",
+        "$value": "{color.oscuro.accent}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-focus"
+          }
+        }
+      },
+      "border-inverse": {
+        "$type": "color",
+        "$value": "{color.warm.200}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-border-inverse"
+          }
+        }
+      },
+      "accent-subtle": {
+        "$type": "color",
+        "$value": "{color.oscuro.accent-subtle}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-subtle"
+          }
+        }
       },
       "accent": {
-        "subtle":  { "$value": "#2A1812", "$type": "color" },
-        "default": { "$value": "#FF6B3D", "$type": "color" },
-        "hover":   { "$value": "#FF7E55", "$type": "color" },
-        "active":  { "$value": "#FF8E69", "$type": "color" }
-      }
-    }
-  },
-
-  "typography": {
-    "fontFamily": {
-      "sans":     { "$value": "Nunito, ui-sans-serif, system-ui, -apple-system, sans-serif", "$type": "fontFamily" },
-      "mono":     { "$value": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace", "$type": "fontFamily" },
-      "japanese": { "$value": "'Noto Sans JP', Nunito, sans-serif", "$type": "fontFamily", "$description": "For 東京・リマ stamp and JP-language content" }
-    },
-
-    "fontWeight": {
-      "light":     { "$value": 300, "$type": "fontWeight" },
-      "regular":   { "$value": 400, "$type": "fontWeight" },
-      "semibold":  { "$value": 600, "$type": "fontWeight" },
-      "extrabold": { "$value": 800, "$type": "fontWeight" }
-    },
-
-    "fontSize": {
-      "$description": "Modular scale based on 1.25 ratio anchored at 16px. Tabular figures recommended for numbers.",
-      "xs":   { "$value": "0.75rem",  "$type": "dimension" },
-      "sm":   { "$value": "0.875rem", "$type": "dimension" },
-      "base": { "$value": "1rem",     "$type": "dimension" },
-      "md":   { "$value": "1.125rem", "$type": "dimension" },
-      "lg":   { "$value": "1.375rem", "$type": "dimension" },
-      "xl":   { "$value": "1.75rem",  "$type": "dimension" },
-      "2xl":  { "$value": "2.5rem",   "$type": "dimension" },
-      "3xl":  { "$value": "3.5rem",   "$type": "dimension" },
-      "4xl":  { "$value": "4.5rem",   "$type": "dimension" },
-      "5xl":  { "$value": "6rem",     "$type": "dimension" }
-    },
-
-    "lineHeight": {
-      "tight":   { "$value": 1.05, "$type": "number", "$description": "Display headlines" },
-      "snug":    { "$value": 1.2,  "$type": "number", "$description": "Headings" },
-      "normal":  { "$value": 1.5,  "$type": "number", "$description": "Body text" },
-      "relaxed": { "$value": 1.65, "$type": "number", "$description": "Long-form reading" }
-    },
-
-    "letterSpacing": {
-      "tightest": { "$value": "-0.04em",  "$type": "dimension" },
-      "tighter":  { "$value": "-0.02em",  "$type": "dimension" },
-      "tight":    { "$value": "-0.01em",  "$type": "dimension" },
-      "normal":   { "$value": "0em",      "$type": "dimension" },
-      "wide":     { "$value": "0.04em",   "$type": "dimension" },
-      "wider":    { "$value": "0.08em",   "$type": "dimension" },
-      "widest":   { "$value": "0.16em",   "$type": "dimension", "$description": "All-caps labels, eyebrow text" }
-    },
-
-    "textStyle": {
-      "$description": "Composite typography tokens — use these as a single reference in Figma.",
-      "displayXL": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.5xl}",
-          "fontWeight":    "{typography.fontWeight.extrabold}",
-          "lineHeight":    "{typography.lineHeight.tight}",
-          "letterSpacing": "{typography.letterSpacing.tightest}"
+        "$type": "color",
+        "$value": "{color.oscuro.accent}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent"
+          }
         }
       },
-      "displayL": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.4xl}",
-          "fontWeight":    "{typography.fontWeight.extrabold}",
-          "lineHeight":    "{typography.lineHeight.tight}",
-          "letterSpacing": "{typography.letterSpacing.tighter}"
+      "accent-hover": {
+        "$type": "color",
+        "$value": "{color.oscuro.accent-hover}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-hover"
+          }
         }
       },
-      "displayM": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.3xl}",
-          "fontWeight":    "{typography.fontWeight.extrabold}",
-          "lineHeight":    "{typography.lineHeight.tight}",
-          "letterSpacing": "{typography.letterSpacing.tighter}"
+      "accent-active": {
+        "$type": "color",
+        "$value": "{color.oscuro.accent-active}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-active"
+          }
         }
       },
-      "h1": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.2xl}",
-          "fontWeight":    "{typography.fontWeight.extrabold}",
-          "lineHeight":    "{typography.lineHeight.snug}",
-          "letterSpacing": "{typography.letterSpacing.tight}"
+      "accent-fill": {
+        "$type": "color",
+        "$value": "{color.oscuro.accent}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-fill"
+          }
         }
       },
-      "h2": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.xl}",
-          "fontWeight":    "{typography.fontWeight.semibold}",
-          "lineHeight":    "{typography.lineHeight.snug}",
-          "letterSpacing": "{typography.letterSpacing.tight}"
+      "accent-fill-hover": {
+        "$type": "color",
+        "$value": "{color.oscuro.accent-hover}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-accent-fill-hover"
+          }
         }
       },
-      "h3": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.lg}",
-          "fontWeight":    "{typography.fontWeight.semibold}",
-          "lineHeight":    "{typography.lineHeight.snug}",
-          "letterSpacing": "{typography.letterSpacing.normal}"
+      "ficha": {
+        "$type": "color",
+        "$value": "{color.blanco}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ficha"
+          }
         }
       },
-      "h4": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.md}",
-          "fontWeight":    "{typography.fontWeight.semibold}",
-          "lineHeight":    "{typography.lineHeight.snug}",
-          "letterSpacing": "{typography.letterSpacing.normal}"
+      "text-on-ficha": {
+        "$type": "color",
+        "$value": "{color.ink.800}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-text-on-ficha"
+          }
         }
       },
-      "bodyL": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.md}",
-          "fontWeight":    "{typography.fontWeight.regular}",
-          "lineHeight":    "{typography.lineHeight.relaxed}",
-          "letterSpacing": "{typography.letterSpacing.normal}"
+      "logo-wordmark": {
+        "$type": "color",
+        "$value": "{color.blanco}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-logo-wordmark"
+          }
         }
       },
-      "body": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.base}",
-          "fontWeight":    "{typography.fontWeight.regular}",
-          "lineHeight":    "{typography.lineHeight.normal}",
-          "letterSpacing": "{typography.letterSpacing.normal}"
-        }
-      },
-      "bodyS": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.sm}",
-          "fontWeight":    "{typography.fontWeight.regular}",
-          "lineHeight":    "{typography.lineHeight.normal}",
-          "letterSpacing": "{typography.letterSpacing.normal}"
-        }
-      },
-      "caption": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.xs}",
-          "fontWeight":    "{typography.fontWeight.regular}",
-          "lineHeight":    "{typography.lineHeight.normal}",
-          "letterSpacing": "{typography.letterSpacing.normal}"
-        }
-      },
-      "eyebrow": {
-        "$type": "typography",
-        "$description": "All-caps editorial label. The hallmark of Nozoe's Swiss-editorial voice.",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.xs}",
-          "fontWeight":    "{typography.fontWeight.semibold}",
-          "lineHeight":    "{typography.lineHeight.normal}",
-          "letterSpacing": "{typography.letterSpacing.widest}",
-          "textTransform": "uppercase"
-        }
-      },
-      "label": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.sans}",
-          "fontSize":      "{typography.fontSize.sm}",
-          "fontWeight":    "{typography.fontWeight.semibold}",
-          "lineHeight":    "{typography.lineHeight.normal}",
-          "letterSpacing": "{typography.letterSpacing.normal}"
-        }
-      },
-      "mono": {
-        "$type": "typography",
-        "$value": {
-          "fontFamily":    "{typography.fontFamily.mono}",
-          "fontSize":      "{typography.fontSize.sm}",
-          "fontWeight":    "{typography.fontWeight.regular}",
-          "lineHeight":    "{typography.lineHeight.normal}",
-          "letterSpacing": "{typography.letterSpacing.normal}"
+      "logo-descriptor": {
+        "$type": "color",
+        "$value": "{color.sky.400}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-logo-descriptor"
+          }
         }
       }
     }
   },
-
-  "spacing": {
-    "$description": "4px base unit. Use the smallest values for tight component padding, larger ones for layout rhythm.",
-    "0":   { "$value": "0",     "$type": "dimension" },
-    "px":  { "$value": "1px",   "$type": "dimension" },
-    "0.5": { "$value": "0.125rem", "$type": "dimension" },
-    "1":   { "$value": "0.25rem",  "$type": "dimension" },
-    "2":   { "$value": "0.5rem",   "$type": "dimension" },
-    "3":   { "$value": "0.75rem",  "$type": "dimension" },
-    "4":   { "$value": "1rem",     "$type": "dimension" },
-    "5":   { "$value": "1.25rem",  "$type": "dimension" },
-    "6":   { "$value": "1.5rem",   "$type": "dimension" },
-    "8":   { "$value": "2rem",     "$type": "dimension" },
-    "10":  { "$value": "2.5rem",   "$type": "dimension" },
-    "12":  { "$value": "3rem",     "$type": "dimension" },
-    "16":  { "$value": "4rem",     "$type": "dimension" },
-    "20":  { "$value": "5rem",     "$type": "dimension" },
-    "24":  { "$value": "6rem",     "$type": "dimension" },
-    "32":  { "$value": "8rem",     "$type": "dimension" },
-    "40":  { "$value": "10rem",    "$type": "dimension" },
-    "48":  { "$value": "12rem",    "$type": "dimension" }
-  },
-
-  "radius": {
-    "$description": "Minimal — casi cuadrado. The most rounded surface in the system is 4px.",
-    "none": { "$value": "0",     "$type": "dimension" },
-    "xs":   { "$value": "2px",   "$type": "dimension" },
-    "sm":   { "$value": "3px",   "$type": "dimension" },
-    "md":   { "$value": "4px",   "$type": "dimension", "$description": "Default — buttons, cards, inputs" },
-    "pill": { "$value": "9999px","$type": "dimension", "$description": "Tags, badges, avatar circles" }
-  },
-
-  "elevation": {
-    "$description": "Subtle, Swiss. Three steps. Shadows always use the brand ink at low opacity, never grey.",
-    "0": { "$value": "none", "$type": "shadow" },
-    "1": {
-      "$type": "shadow",
+  "escena": {
+    "$description": "Fondos de pantalla (video, redes, presentaciones). Lectura y documentos siguen en marfil plano.",
+    "marfil": {
+      "$type": "gradient",
       "$value": [
-        { "color": "rgba(29, 42, 64, 0.06)", "offsetX": "0", "offsetY": "1px", "blur": "2px", "spread": "0" }
-      ]
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9804,
+              0.9725,
+              0.9569
+            ],
+            "hex": "#faf8f4"
+          },
+          "position": 0
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9569,
+              0.9451,
+              0.9255
+            ],
+            "hex": "#f4f1ec"
+          },
+          "position": 0.5
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.902,
+              0.8784,
+              0.8392
+            ],
+            "hex": "#e6e0d6"
+          },
+          "position": 1
+        }
+      ],
+      "$description": "Marfil con viñeta cálida.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-escena-marfil",
+          "forma": "radial-gradient(120% 80% at 50% 40%, …)"
+        }
+      }
     },
-    "2": {
-      "$type": "shadow",
+    "tinta": {
+      "$type": "gradient",
       "$value": [
-        { "color": "rgba(29, 42, 64, 0.06)", "offsetX": "0", "offsetY": "2px", "blur": "4px", "spread": "0" },
-        { "color": "rgba(29, 42, 64, 0.04)", "offsetX": "0", "offsetY": "4px", "blur": "12px", "spread": "0" }
-      ]
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1412,
+              0.2,
+              0.302
+            ],
+            "hex": "#24334d"
+          },
+          "position": 0
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40"
+          },
+          "position": 0.55
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0863,
+              0.1216,
+              0.1922
+            ],
+            "hex": "#161f31"
+          },
+          "position": 1
+        }
+      ],
+      "$description": "Tinta con viñeta.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-escena-tinta",
+          "forma": "radial-gradient(120% 70% at 50% 45%, …)"
+        }
+      }
     },
-    "3": {
+    "velo": {
+      "$type": "gradient",
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0.88
+          },
+          "position": 0
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0
+          },
+          "position": 0.5
+        }
+      ],
+      "$description": "Velo superior sobre foto para texto blanco.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-velo-tinta",
+          "forma": "linear-gradient(180deg, …)"
+        }
+      }
+    },
+    "muro": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1137,
+          0.1647,
+          0.251
+        ],
+        "hex": "#1d2a40",
+        "alpha": 0.86
+      },
+      "$description": "Velo sobre muro de piezas.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-velo-muro"
+        }
+      }
+    }
+  },
+  "sombra": {
+    "elev-0": {
+      "$type": "shadow",
+      "$value": [],
+      "$description": "Sin sombra.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-elev-0"
+        }
+      }
+    },
+    "elev-1": {
       "$type": "shadow",
       "$value": [
-        { "color": "rgba(29, 42, 64, 0.08)", "offsetX": "0", "offsetY": "8px", "blur": "16px", "spread": "0" },
-        { "color": "rgba(29, 42, 64, 0.04)", "offsetX": "0", "offsetY": "16px", "blur": "32px", "spread": "0" }
-      ]
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0.06
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 1,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 2,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "Tarjeta en reposo.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-elev-1"
+        }
+      }
+    },
+    "elev-2": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0.06
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 2,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 4,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0.04
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 4,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 12,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "Hover, menús.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-elev-2"
+        }
+      }
+    },
+    "elev-3": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0.08
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 8,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 16,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0.04
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 16,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 32,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "Modales.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-elev-3"
+        }
+      }
+    },
+    "ficha": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0.38
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 4,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 5,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "v2: fichas y píldoras blancas en pantalla. Corta, definida.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-shadow-ficha"
+        }
+      }
+    },
+    "ficha-suave": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0.16
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 4,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 5,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "v2: la misma sombra para interfaz web.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-shadow-ficha-suave"
+        }
+      }
+    },
+    "pieza": {
+      "$type": "shadow",
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1647,
+              0.251
+            ],
+            "hex": "#1d2a40",
+            "alpha": 0.25
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 26,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 60,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "v2: piezas, dispositivos y documentos flotando en escena.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-shadow-pieza"
+        }
+      }
     },
     "focus": {
       "$type": "shadow",
       "$value": [
-        { "color": "rgba(233, 78, 27, 0.24)", "offsetX": "0", "offsetY": "0", "blur": "0", "spread": "3px" }
-      ]
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9137,
+              0.3059,
+              0.1059
+            ],
+            "hex": "#e94e1b",
+            "alpha": 0.24
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 3,
+            "unit": "px"
+          }
+        }
+      ],
+      "$description": "Anillo de foco.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-elev-focus"
+        }
+      }
     }
   },
-
-  "border": {
-    "width": {
-      "0":  { "$value": "0",   "$type": "dimension" },
-      "1":  { "$value": "1px", "$type": "dimension" },
-      "2":  { "$value": "2px", "$type": "dimension" },
-      "4":  { "$value": "4px", "$type": "dimension" }
-    }
-  },
-
-  "motion": {
-    "$description": "Easing curves selected to feel precise and editorial — never bouncy.",
-    "duration": {
-      "instant": { "$value": "0ms",   "$type": "duration" },
-      "fast":    { "$value": "150ms", "$type": "duration" },
-      "base":    { "$value": "250ms", "$type": "duration" },
-      "slow":    { "$value": "400ms", "$type": "duration" },
-      "slower":  { "$value": "600ms", "$type": "duration" }
+  "tipografia": {
+    "familia": {
+      "sans": {
+        "$type": "fontFamily",
+        "$value": [
+          "Nunito",
+          "ui-rounded",
+          "Hiragino Maru Gothic ProN",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "Nunito variable 200–1000. Única familia de texto.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-font-sans"
+          }
+        }
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": [
+          "Geist Mono",
+          "ui-monospace",
+          "SF Mono",
+          "Menlo",
+          "Consolas",
+          "monospace"
+        ],
+        "$description": "v2: Geist Mono para datos: medidas, códigos, fechas, fichas técnicas.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-font-mono"
+          }
+        }
+      },
+      "jp": {
+        "$type": "fontFamily",
+        "$value": [
+          "Noto Sans JP",
+          "Hiragino Sans",
+          "Hiragino Kaku Gothic ProN",
+          "Yu Gothic",
+          "sans-serif"
+        ],
+        "$description": "v2: Noto Sans JP. Sello en 500, kanji titular en 900.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-font-jp"
+          }
+        }
+      }
     },
-    "easing": {
-      "linear":     { "$value": "linear", "$type": "cubicBezier" },
-      "out":        { "$value": "cubic-bezier(0.16, 1, 0.3, 1)",   "$type": "cubicBezier", "$description": "Default — content entering" },
-      "in":         { "$value": "cubic-bezier(0.7, 0, 0.84, 0)",   "$type": "cubicBezier", "$description": "Content leaving" },
-      "inOut":      { "$value": "cubic-bezier(0.65, 0, 0.35, 1)",  "$type": "cubicBezier", "$description": "State changes" },
-      "anticipate": { "$value": "cubic-bezier(0.6, -0.05, 0.35, 1)", "$type": "cubicBezier", "$description": "Emphasized" }
+    "peso": {
+      "light": {
+        "$type": "fontWeight",
+        "$value": 300,
+        "$description": "Citas y lede grandes. Nunca cuerpo.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fw-light"
+          }
+        }
+      },
+      "regular": {
+        "$type": "fontWeight",
+        "$value": 400,
+        "$description": "Cuerpo.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fw-regular"
+          }
+        }
+      },
+      "semibold": {
+        "$type": "fontWeight",
+        "$value": 600,
+        "$description": "Interfaz, etiquetas.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fw-semibold"
+          }
+        }
+      },
+      "bold": {
+        "$type": "fontWeight",
+        "$value": 700,
+        "$description": "v2: rótulos, píldoras, subtítulos.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fw-bold"
+          }
+        }
+      },
+      "extrabold": {
+        "$type": "fontWeight",
+        "$value": 800,
+        "$description": "Titulares y ganchos.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fw-extrabold"
+          }
+        }
+      },
+      "black": {
+        "$type": "fontWeight",
+        "$value": 900,
+        "$description": "v2: ganchos de una línea y kanji titular.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fw-black"
+          }
+        }
+      }
+    },
+    "tamano": {
+      "xs": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.75,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-xs"
+          }
+        }
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.875,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-sm"
+          }
+        }
+      },
+      "base": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-base"
+          }
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1.125,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-md"
+          }
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1.375,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-lg"
+          }
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1.75,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-xl"
+          }
+        }
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2.5,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-2xl"
+          }
+        }
+      },
+      "3xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3.5,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-3xl"
+          }
+        }
+      },
+      "4xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4.5,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-4xl"
+          }
+        }
+      },
+      "5xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 6,
+          "unit": "rem"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-fs-5xl"
+          }
+        }
+      }
+    },
+    "video": {
+      "$description": "Tamaños sobre lienzo de 1080 px de ancho (9:16, 4:5, 1:1). En 16:9 se multiplica por 1,0.",
+      "gancho": {
+        "$type": "dimension",
+        "$value": {
+          "value": 150,
+          "unit": "px"
+        },
+        "$description": "Gancho de dos líneas.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-fs-gancho"
+          }
+        }
+      },
+      "titulo": {
+        "$type": "dimension",
+        "$value": {
+          "value": 100,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-fs-titulo"
+          }
+        }
+      },
+      "rotulo": {
+        "$type": "dimension",
+        "$value": {
+          "value": 66,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-fs-rotulo"
+          }
+        }
+      },
+      "texto": {
+        "$type": "dimension",
+        "$value": {
+          "value": 52,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-fs-texto"
+          }
+        }
+      },
+      "subtitulo": {
+        "$type": "dimension",
+        "$value": {
+          "value": 46,
+          "unit": "px"
+        },
+        "$description": "Subtítulos y píldora de la firma.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-fs-subtitulo"
+          }
+        }
+      },
+      "nota": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        },
+        "$description": "Ciudad de la firma, créditos.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-fs-nota"
+          }
+        }
+      },
+      "kanji": {
+        "$type": "dimension",
+        "$value": {
+          "value": 230,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-fs-kanji"
+          }
+        }
+      }
+    },
+    "interlineado": {
+      "gancho": {
+        "$type": "number",
+        "$value": 1.02,
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-lh-gancho"
+          }
+        }
+      },
+      "tight": {
+        "$type": "number",
+        "$value": 1.05,
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-lh-tight"
+          }
+        }
+      },
+      "snug": {
+        "$type": "number",
+        "$value": 1.2,
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-lh-snug"
+          }
+        }
+      },
+      "normal": {
+        "$type": "number",
+        "$value": 1.5,
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-lh-normal"
+          }
+        }
+      },
+      "relaxed": {
+        "$type": "number",
+        "$value": 1.65,
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-lh-relaxed"
+          }
+        }
+      }
+    },
+    "interletraje": {
+      "gancho": {
+        "$type": "dimension",
+        "$value": {
+          "value": -0.045,
+          "unit": "em"
+        },
+        "$description": "v2: el de los reels.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ls-gancho"
+          }
+        }
+      },
+      "tightest": {
+        "$type": "dimension",
+        "$value": {
+          "value": -0.04,
+          "unit": "em"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ls-tightest"
+          }
+        }
+      },
+      "tighter": {
+        "$type": "dimension",
+        "$value": {
+          "value": -0.02,
+          "unit": "em"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ls-tighter"
+          }
+        }
+      },
+      "tight": {
+        "$type": "dimension",
+        "$value": {
+          "value": -0.01,
+          "unit": "em"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ls-tight"
+          }
+        }
+      },
+      "normal": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "em"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ls-normal"
+          }
+        }
+      },
+      "wide": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.04,
+          "unit": "em"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ls-wide"
+          }
+        }
+      },
+      "wider": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.08,
+          "unit": "em"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ls-wider"
+          }
+        }
+      },
+      "widest": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.16,
+          "unit": "em"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ls-widest"
+          }
+        }
+      }
+    },
+    "rol": {
+      "$description": "Estilos por rol. Se publican como clases .ns-<rol>.",
+      "gancho": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.sans}",
+          "fontWeight": 800,
+          "fontSize": {
+            "value": 4.5,
+            "unit": "rem"
+          },
+          "lineHeight": 1.02,
+          "letterSpacing": {
+            "value": -0.045,
+            "unit": "em"
+          }
+        },
+        "$description": "Gancho y display. Peso 800 a 900.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-gancho"
+          }
+        }
+      },
+      "titulo": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.sans}",
+          "fontWeight": 800,
+          "fontSize": {
+            "value": 2.5,
+            "unit": "rem"
+          },
+          "lineHeight": 1.1,
+          "letterSpacing": {
+            "value": -0.03,
+            "unit": "em"
+          }
+        },
+        "$description": "Título de página o sección.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-titulo"
+          }
+        }
+      },
+      "subtitulo": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.sans}",
+          "fontWeight": 700,
+          "fontSize": {
+            "value": 1.375,
+            "unit": "rem"
+          },
+          "lineHeight": 1.25,
+          "letterSpacing": {
+            "value": -0.01,
+            "unit": "em"
+          }
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-subtitulo"
+          }
+        }
+      },
+      "texto": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.sans}",
+          "fontWeight": 400,
+          "fontSize": {
+            "value": 1,
+            "unit": "rem"
+          },
+          "lineHeight": 1.55,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "em"
+          }
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-texto"
+          }
+        }
+      },
+      "lede": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.sans}",
+          "fontWeight": 400,
+          "fontSize": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "lineHeight": 1.5,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "em"
+          }
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-lede"
+          }
+        }
+      },
+      "rotulo": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.sans}",
+          "fontWeight": 700,
+          "fontSize": {
+            "value": 0.9375,
+            "unit": "rem"
+          },
+          "lineHeight": 1.3,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "em"
+          }
+        },
+        "$description": "Rótulo, píldora, botón.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-rotulo"
+          }
+        }
+      },
+      "cita": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.sans}",
+          "fontWeight": 300,
+          "fontSize": {
+            "value": 1.75,
+            "unit": "rem"
+          },
+          "lineHeight": 1.3,
+          "letterSpacing": {
+            "value": -0.01,
+            "unit": "em"
+          }
+        },
+        "$description": "Solo tamaños grandes.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-cita"
+          }
+        }
+      },
+      "dato": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.mono}",
+          "fontWeight": 400,
+          "fontSize": {
+            "value": 0.8125,
+            "unit": "rem"
+          },
+          "lineHeight": 1.45,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "em"
+          }
+        },
+        "$description": "Cifras tabulares.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-dato"
+          }
+        }
+      },
+      "eyebrow": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.mono}",
+          "fontWeight": 500,
+          "fontSize": {
+            "value": 0.75,
+            "unit": "rem"
+          },
+          "lineHeight": 1.4,
+          "letterSpacing": {
+            "value": 0.06,
+            "unit": "em"
+          }
+        },
+        "$description": "v2: etiqueta superior en mono, con rombo naranja delante.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-eyebrow"
+          }
+        }
+      },
+      "kanji": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tipografia.familia.jp}",
+          "fontWeight": 900,
+          "fontSize": {
+            "value": 6,
+            "unit": "rem"
+          },
+          "lineHeight": 1,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "em"
+          }
+        },
+        "$description": "Kanji titular. El sello va en 500.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": null,
+            "clase": "ns-kanji"
+          }
+        }
+      }
     }
   },
-
+  "espacio": {
+    "0": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-0"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "1": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-1"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-2"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-3"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-4"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "5": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1.25,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-5"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-6"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-8"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "10": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2.5,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-10"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": {
+        "value": 3,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-12"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-16"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": {
+        "value": 5,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-20"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": {
+        "value": 6,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-24"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": {
+        "value": 8,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-32"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": {
+        "value": 10,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-40"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": {
+        "value": 12,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-48"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "px": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-px"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    },
+    "0.5": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0.125,
+        "unit": "rem"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-space-0_5"
+        }
+      },
+      "$description": "Espaciado, múltiplo de 4 px. Los más usados: 2, 3, 4, 6, 8, 12, 16."
+    }
+  },
+  "radio": {
+    "none": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-radius-none"
+        }
+      },
+      "$description": "Radio de la v1, se mantiene por compatibilidad."
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-radius-xs"
+        }
+      },
+      "$description": "Radio de la v1, se mantiene por compatibilidad."
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": {
+        "value": 3,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-radius-sm"
+        }
+      },
+      "$description": "Radio de la v1, se mantiene por compatibilidad."
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$description": "Interfaz, tablas, documentos. Igual que radius-ui.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-radius-md"
+        }
+      }
+    },
+    "ui": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$description": "v2 · nivel 1: interfaz, tablas, documentos, botones.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-radius-ui"
+        }
+      }
+    },
+    "ficha": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$description": "v2 · nivel 2: fichas, imágenes y dispositivos en pantalla.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-radius-ficha"
+        }
+      }
+    },
+    "pill": {
+      "$type": "dimension",
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      },
+      "$description": "v2 · nivel 3: etiqueta de función y web de la firma.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-radius-pill"
+        }
+      }
+    }
+  },
+  "borde": {
+    "0": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-bw-0"
+        }
+      }
+    },
+    "1": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-bw-1"
+        }
+      }
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-bw-2"
+        }
+      }
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-bw-4"
+        }
+      }
+    }
+  },
+  "movimiento": {
+    "$description": "Mismos roles en dos escalas: interfaz (web) y pantalla (video). Nada rebota.",
+    "curva": {
+      "llegada": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.16,
+          1,
+          0.3,
+          1
+        ],
+        "$description": "Entradas.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ease-llegada",
+            "gsap": "expo.out"
+          }
+        }
+      },
+      "salida": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.5,
+          0,
+          0.75,
+          0
+        ],
+        "$description": "Salidas, 40 a 50 % más cortas que la llegada.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ease-salida",
+            "gsap": "power3.in"
+          }
+        }
+      },
+      "camara": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.65,
+          0,
+          0.35,
+          1
+        ],
+        "$description": "Cámara, color, cambios de estado.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ease-camara",
+            "gsap": "power2.inOut"
+          }
+        }
+      },
+      "micro": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.33,
+          1,
+          0.68,
+          1
+        ],
+        "$description": "Hover, letras del logo, detalles.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ease-micro",
+            "gsap": "power2.out"
+          }
+        }
+      },
+      "lineal": {
+        "$type": "cubicBezier",
+        "$value": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "$description": "Relojes y marquesinas.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-ease-lineal",
+            "gsap": "none"
+          }
+        }
+      }
+    },
+    "web": {
+      "micro": {
+        "$type": "duration",
+        "$value": {
+          "value": 150,
+          "unit": "ms"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-dur-micro"
+          }
+        },
+        "$description": "Hover, foco, detalles."
+      },
+      "llegada": {
+        "$type": "duration",
+        "$value": {
+          "value": 250,
+          "unit": "ms"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-dur-llegada"
+          }
+        },
+        "$description": "Entrada de componentes."
+      },
+      "salida": {
+        "$type": "duration",
+        "$value": {
+          "value": 150,
+          "unit": "ms"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-dur-salida"
+          }
+        },
+        "$description": "Salida de componentes."
+      },
+      "titulo": {
+        "$type": "duration",
+        "$value": {
+          "value": 400,
+          "unit": "ms"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-dur-titulo"
+          }
+        },
+        "$description": "Titulares y bloques grandes."
+      },
+      "camara": {
+        "$type": "duration",
+        "$value": {
+          "value": 600,
+          "unit": "ms"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-dur-camara"
+          }
+        },
+        "$description": "Cambios de vista, color, cámara."
+      },
+      "escalon": {
+        "$type": "duration",
+        "$value": {
+          "value": 50,
+          "unit": "ms"
+        },
+        "$description": "Entre elementos de una serie.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-dur-escalon"
+          }
+        }
+      }
+    },
+    "video": {
+      "micro": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.22,
+          "unit": "s"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-dur-micro"
+          }
+        }
+      },
+      "llegada": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.45,
+          "unit": "s"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-dur-llegada"
+          }
+        }
+      },
+      "salida": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.28,
+          "unit": "s"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-dur-salida"
+          }
+        }
+      },
+      "titulo": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.55,
+          "unit": "s"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-dur-titulo"
+          }
+        }
+      },
+      "camara": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.9,
+          "unit": "s"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-dur-camara"
+          }
+        }
+      },
+      "escalon": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.09,
+          "unit": "s"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-dur-escalon"
+          }
+        }
+      },
+      "rombo": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.42,
+          "unit": "s"
+        },
+        "$description": "Caída de cada rombo.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-dur-rombo"
+          }
+        }
+      },
+      "rombo-escalon": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.09,
+          "unit": "s"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-dur-rombo-escalon"
+          }
+        }
+      },
+      "cierre": {
+        "$type": "duration",
+        "$value": {
+          "value": 4.6,
+          "unit": "s"
+        },
+        "$description": "Firma completa; queda quieta 2 s como mínimo.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-video-dur-cierre"
+          }
+        }
+      }
+    },
+    "desenfoque": {
+      "llegada": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "Desenfoque inicial de una llegada en pantalla.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-blur-llegada"
+          }
+        }
+      },
+      "salida": {
+        "$type": "dimension",
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-blur-salida"
+          }
+        }
+      }
+    },
+    "lectura": {
+      "base": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.5,
+          "unit": "s"
+        },
+        "$description": "Tiempo mínimo de lectura en pantalla.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-lectura-base"
+          }
+        }
+      },
+      "palabra": {
+        "$type": "duration",
+        "$value": {
+          "value": 0.3,
+          "unit": "s"
+        },
+        "$description": "Se suma por cada palabra.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-lectura-palabra"
+          }
+        }
+      },
+      "final": {
+        "$type": "duration",
+        "$value": {
+          "value": 2,
+          "unit": "s"
+        },
+        "$description": "El último texto queda al menos esto.",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-lectura-final"
+          }
+        }
+      }
+    }
+  },
+  "rombo": {
+    "$description": "Motor del rombo. Retícula diagonal del logo: unidad u = media diagonal del rombo; lado = u·√2. En el logo master u = 4,155.",
+    "unidad": {
+      "$type": "number",
+      "$value": 4.155,
+      "$description": "Unidad en coordenadas del logo master.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-rombo-u-master"
+        }
+      }
+    },
+    "orden": {
+      "$type": "number",
+      "$value": 8,
+      "$description": "La flecha tiene 8 rombos. Orden de armado: cola, segundo, centro, ala superior, diagonal superior, punta, diagonal inferior, ala inferior.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": null,
+          "celdas": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              -2
+            ],
+            [
+              5,
+              -1
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "formato": {
+    "$description": "Lienzos y zonas seguras. Valores en px del lienzo.",
+    "vertical": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1080,
+        "unit": "px"
+      },
+      "$description": "9:16 · 1080×1920 · 60 fps.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-formato-vertical-w",
+          "alto": 1920,
+          "fps": 60,
+          "seguroArriba": 168,
+          "seguroAbajo": 1330,
+          "recorte34": [
+            240,
+            1680
+          ],
+          "centroVisible": 749
+        }
+      }
+    },
+    "carrusel": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1080,
+        "unit": "px"
+      },
+      "$description": "4:5 · 1080×1350.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-formato-carrusel-w",
+          "alto": 1350
+        }
+      }
+    },
+    "alto": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1080,
+        "unit": "px"
+      },
+      "$description": "3:4 · 1080×1440. Recorte de la cuadrícula del perfil.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-formato-alto-w",
+          "alto": 1440
+        }
+      }
+    },
+    "horizontal": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1920,
+        "unit": "px"
+      },
+      "$description": "16:9 · 1920×1080.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-formato-horizontal-w",
+          "alto": 1080
+        }
+      }
+    },
+    "cuadrado": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1080,
+        "unit": "px"
+      },
+      "$description": "1:1 · 1080×1080.",
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-formato-cuadrado-w",
+          "alto": 1080
+        }
+      }
+    }
+  },
   "layout": {
-    "$description": "Container widths and breakpoints for editorial responsive grids.",
-    "breakpoint": {
-      "sm": { "$value": "640px",  "$type": "dimension" },
-      "md": { "$value": "768px",  "$type": "dimension" },
-      "lg": { "$value": "1024px", "$type": "dimension" },
-      "xl": { "$value": "1280px", "$type": "dimension" },
-      "2xl": { "$value": "1536px", "$type": "dimension" }
+    "bp": {
+      "sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 640,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-bp-sm"
+          }
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 768,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-bp-md"
+          }
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1024,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-bp-lg"
+          }
+        }
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1280,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-bp-xl"
+          }
+        }
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1536,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-bp-2xl"
+          }
+        }
+      }
     },
-    "container": {
-      "narrow": { "$value": "720px",  "$type": "dimension", "$description": "Long-form reading" },
-      "default": { "$value": "1200px", "$type": "dimension", "$description": "Standard pages" },
-      "wide":   { "$value": "1440px", "$type": "dimension", "$description": "Editorial / portfolio" },
-      "full":   { "$value": "100%",   "$type": "dimension" }
+    "contenedor": {
+      "narrow": {
+        "$type": "dimension",
+        "$value": {
+          "value": 720,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-container-narrow"
+          }
+        }
+      },
+      "default": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1200,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-container-default"
+          }
+        }
+      },
+      "wide": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1440,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-container-wide"
+          }
+        }
+      }
     },
     "grid": {
-      "columnsDesktop": { "$value": 12, "$type": "number" },
-      "columnsTablet":  { "$value": 8,  "$type": "number" },
-      "columnsMobile":  { "$value": 4,  "$type": "number" },
-      "gutterDesktop":  { "$value": "24px", "$type": "dimension" },
-      "gutterTablet":   { "$value": "16px", "$type": "dimension" },
-      "gutterMobile":   { "$value": "16px", "$type": "dimension" },
-      "marginDesktop":  { "$value": "80px", "$type": "dimension" },
-      "marginTablet":   { "$value": "32px", "$type": "dimension" },
-      "marginMobile":   { "$value": "20px", "$type": "dimension" }
+      "cols-desktop": {
+        "$type": "number",
+        "$value": 12,
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-grid-cols-desktop"
+          }
+        }
+      },
+      "cols-tablet": {
+        "$type": "number",
+        "$value": 8,
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-grid-cols-tablet"
+          }
+        }
+      },
+      "cols-mobile": {
+        "$type": "number",
+        "$value": 4,
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-grid-cols-mobile"
+          }
+        }
+      },
+      "gutter": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-grid-gutter"
+          }
+        }
+      },
+      "margin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 80,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-grid-margin"
+          }
+        }
+      }
     }
   },
-
-  "zIndex": {
-    "behind":     { "$value": -1,   "$type": "number" },
-    "base":       { "$value": 0,    "$type": "number" },
-    "raised":     { "$value": 10,   "$type": "number" },
-    "dropdown":   { "$value": 100,  "$type": "number" },
-    "sticky":     { "$value": 200,  "$type": "number" },
-    "overlay":    { "$value": 300,  "$type": "number" },
-    "modal":      { "$value": 400,  "$type": "number" },
-    "toast":      { "$value": 500,  "$type": "number" },
-    "tooltip":    { "$value": 600,  "$type": "number" }
+  "z": {
+    "behind": {
+      "$type": "number",
+      "$value": -1,
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-z-behind"
+        }
+      }
+    },
+    "base": {
+      "$type": "number",
+      "$value": 0,
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-z-base"
+        }
+      }
+    },
+    "raised": {
+      "$type": "number",
+      "$value": 10,
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-z-raised"
+        }
+      }
+    },
+    "dropdown": {
+      "$type": "number",
+      "$value": 100,
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-z-dropdown"
+        }
+      }
+    },
+    "sticky": {
+      "$type": "number",
+      "$value": 200,
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-z-sticky"
+        }
+      }
+    },
+    "overlay": {
+      "$type": "number",
+      "$value": 300,
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-z-overlay"
+        }
+      }
+    },
+    "modal": {
+      "$type": "number",
+      "$value": 400,
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-z-modal"
+        }
+      }
+    },
+    "toast": {
+      "$type": "number",
+      "$value": 500,
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-z-toast"
+        }
+      }
+    },
+    "tooltip": {
+      "$type": "number",
+      "$value": 600,
+      "$extensions": {
+        "com.nozoe": {
+          "css": "--ns-z-tooltip"
+        }
+      }
+    }
   },
-
-  "component": {
-    "$description": "Component-level tokens. Inherit from semantic tokens.",
-    "button": {
-      "height": {
-        "sm": { "$value": "32px", "$type": "dimension" },
-        "md": { "$value": "40px", "$type": "dimension" },
-        "lg": { "$value": "48px", "$type": "dimension" }
+  "componente": {
+    "boton": {
+      "h-sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-btn-h-sm"
+          }
+        }
       },
-      "paddingX": {
-        "sm": { "$value": "{spacing.3}", "$type": "dimension" },
-        "md": { "$value": "{spacing.5}", "$type": "dimension" },
-        "lg": { "$value": "{spacing.6}", "$type": "dimension" }
+      "h-md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-btn-h-md"
+          }
+        }
+      },
+      "h-lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-btn-h-lg"
+          }
+        }
+      },
+      "px-sm": {
+        "$type": "dimension",
+        "$value": "{espacio.3}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-btn-px-sm"
+          }
+        }
+      },
+      "px-md": {
+        "$type": "dimension",
+        "$value": "{espacio.5}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-btn-px-md"
+          }
+        }
+      },
+      "px-lg": {
+        "$type": "dimension",
+        "$value": "{espacio.6}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-btn-px-lg"
+          }
+        }
       }
     },
     "input": {
-      "height": {
-        "sm": { "$value": "32px", "$type": "dimension" },
-        "md": { "$value": "40px", "$type": "dimension" },
-        "lg": { "$value": "48px", "$type": "dimension" }
+      "h-sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-input-h-sm"
+          }
+        }
+      },
+      "h-md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-input-h-md"
+          }
+        }
+      },
+      "h-lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        },
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-input-h-lg"
+          }
+        }
       }
     },
-    "card": {
-      "padding":      { "$value": "{spacing.6}", "$type": "dimension" },
-      "paddingLarge": { "$value": "{spacing.8}", "$type": "dimension" }
+    "tarjeta": {
+      "padding": {
+        "$type": "dimension",
+        "$value": "{espacio.6}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-card-padding"
+          }
+        }
+      },
+      "padding-large": {
+        "$type": "dimension",
+        "$value": "{espacio.8}",
+        "$extensions": {
+          "com.nozoe": {
+            "css": "--ns-card-padding-large"
+          }
+        }
+      }
     }
   }
 }

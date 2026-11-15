@@ -1,29 +1,21 @@
 /* ================================================================
-   NOZOE STUDIO · DESIGN SYSTEM
-   v1.0.0 — CSS Custom Properties
-   Tokio · Lima  /  東京・リマ
-   ================================================================
-   Usage:
-     1. Import this file once at the root of your project.
-     2. Use semantic tokens in components (--ns-text-primary, etc.)
-     3. Toggle dark mode via [data-theme="dark"] on <html> or <body>
-        — or rely on prefers-color-scheme automatically.
+   NOZOE STUDIO · SISTEMA DE DISEÑO v2.2.0
+   Archivo GENERADO desde nozoe-tokens.json con tools/construir.mjs (2026-11-15).
+   No se edita a mano.
+   Tokio 東京
+   ----------------------------------------------------------------
+   Uso:
+     1. Cargar las fuentes (ver README, "Fuentes").
+     2. Importar este archivo una vez.
+     3. Componentes: solo tokens semánticos (--ns-surface-*, --ns-text-*,
+        --ns-border-*, --ns-accent*, --ns-ficha).
+     4. Modo oscuro automático, o forzado con data-theme="dark|light".
+   Compatible con v1: todos los nombres de v1 siguen existiendo.
    ================================================================ */
 
-/* ----------------------------------------------------------------
-   1. FONT LOADING
-   La fuente Nunito se carga vía <link rel="stylesheet"> en cada HTML
-   para evitar el bloqueo de render secuencial de @import.
-   Los glifos japoneses (kanji decorativos) usan la fuente CJK del
-   sistema operativo (ver --ns-font-jp más abajo).
-   ---------------------------------------------------------------- */
-
-/* ----------------------------------------------------------------
-   2. PRIMITIVE TOKENS — Raw palette. Never reference in components.
-   ---------------------------------------------------------------- */
+/* 1 · PRIMITIVAS Y FUNDAMENTOS ---------------------------------- */
 :root {
-  /* Ink (brand navy) */
-  --ns-ink-50:  #F0F2F5;
+  --ns-ink-50: #F0F2F5;
   --ns-ink-100: #D8DCE4;
   --ns-ink-200: #B5BDCC;
   --ns-ink-300: #8B97AE;
@@ -31,317 +23,333 @@
   --ns-ink-500: #475773;
   --ns-ink-600: #324461;
   --ns-ink-700: #243450;
-  --ns-ink-800: #1D2A40; /* brand */
+  --ns-ink-800: #1D2A40;
   --ns-ink-900: #131C2C;
   --ns-ink-950: #0A1119;
-
-  /* Orange (accent — máx 5%) */
-  --ns-orange-50:  #FFEEE6;
+  --ns-orange-50: #FFEEE6;
   --ns-orange-100: #FCE8DD;
   --ns-orange-200: #FAC4A8;
   --ns-orange-300: #F7A077;
   --ns-orange-400: #F4754A;
-  --ns-orange-500: #E94E1B; /* brand */
+  --ns-orange-500: #E94E1B;
   --ns-orange-600: #D14418;
   --ns-orange-700: #B83C15;
   --ns-orange-800: #8B2D10;
   --ns-orange-900: #5D1E0B;
-
-  /* Sky (cool neutral) */
-  --ns-sky-50:  #F4F8FE;
+  --ns-sky-50: #F4F8FE;
   --ns-sky-100: #E8EFF8;
-  --ns-sky-200: #C6D5EA; /* brand */
+  --ns-sky-200: #C6D5EA;
   --ns-sky-300: #A8BDD8;
-  --ns-sky-400: #8B9DB7; /* brand */
+  --ns-sky-400: #8B9DB7;
   --ns-sky-500: #6E84A2;
   --ns-sky-600: #566B89;
   --ns-sky-700: #3F5471;
-
-  /* Warm (off-white / Swiss-warm) */
-  --ns-warm-50:  #FBFAF7;
+  --ns-warm-50: #FBFAF7;
   --ns-warm-100: #F8F5EF;
-  --ns-warm-200: #F4F1EC; /* brand */
+  --ns-warm-200: #F4F1EC;
   --ns-warm-300: #ECE7DF;
   --ns-warm-400: #E0D9CD;
   --ns-warm-500: #C8BFB0;
-
-  /* Feedback */
-  --ns-success-subtle:  #E5F1E8;
+  --ns-orange-dark-500: #FF6B3D;
+  --ns-orange-dark-400: #FF7E55;
+  --ns-orange-dark-300: #FF8E69;
+  --ns-orange-dark-900: #2A1812;
+  --ns-ink-1000: #080E18;
+  --ns-white: #FFFFFF;
+  --ns-success-subtle: #E5F1E8;
   --ns-success-default: #3E8E5C;
-  --ns-success-strong:  #2A6E45;
-  --ns-warning-subtle:  #FBF1DC;
+  --ns-success-strong: #2A6E45;
+  --ns-warning-subtle: #FBF1DC;
   --ns-warning-default: #C28A0E;
-  --ns-warning-strong:  #8C6308;
-  --ns-danger-subtle:   #FBE3E0;
-  --ns-danger-default:  #C63A2D;
-  --ns-danger-strong:   #8E281F;
-  --ns-info-subtle:     #E1ECF7;
-  --ns-info-default:    #2C6BB0;
-  --ns-info-strong:     #1F4D80;
-
-  /* ----------------------------------------------------------------
-     3. TYPOGRAPHY PRIMITIVES
-     ---------------------------------------------------------------- */
-  --ns-font-sans: 'Nunito', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --ns-font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
-  --ns-font-jp:   'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', 'Yu Gothic', 'Meiryo', 'Nunito', sans-serif;
-
-  --ns-fw-light:     300;
-  --ns-fw-regular:   400;
-  --ns-fw-semibold:  600;
-  --ns-fw-extrabold: 800;
-
-  --ns-fs-xs:   0.75rem;   /* 12 */
-  --ns-fs-sm:   0.875rem;  /* 14 */
-  --ns-fs-base: 1rem;      /* 16 */
-  --ns-fs-md:   1.125rem;  /* 18 */
-  --ns-fs-lg:   1.375rem;  /* 22 */
-  --ns-fs-xl:   1.75rem;   /* 28 */
-  --ns-fs-2xl:  2.5rem;    /* 40 */
-  --ns-fs-3xl:  3.5rem;    /* 56 */
-  --ns-fs-4xl:  4.5rem;    /* 72 */
-  --ns-fs-5xl:  6rem;      /* 96 */
-
-  --ns-lh-tight:   1.05;
-  --ns-lh-snug:    1.2;
-  --ns-lh-normal:  1.5;
-  --ns-lh-relaxed: 1.65;
-
-  --ns-ls-tightest: -0.04em;
-  --ns-ls-tighter:  -0.02em;
-  --ns-ls-tight:    -0.01em;
-  --ns-ls-normal:    0em;
-  --ns-ls-wide:      0.04em;
-  --ns-ls-wider:     0.08em;
-  --ns-ls-widest:    0.16em;
-
-  /* ----------------------------------------------------------------
-     4. SPACING — 4px base
-     ---------------------------------------------------------------- */
-  --ns-space-0:   0;
-  --ns-space-px:  1px;
-  --ns-space-0_5: 0.125rem;  /* 2  */
-  --ns-space-1:   0.25rem;   /* 4  */
-  --ns-space-2:   0.5rem;    /* 8  */
-  --ns-space-3:   0.75rem;   /* 12 */
-  --ns-space-4:   1rem;      /* 16 */
-  --ns-space-5:   1.25rem;   /* 20 */
-  --ns-space-6:   1.5rem;    /* 24 */
-  --ns-space-8:   2rem;      /* 32 */
-  --ns-space-10:  2.5rem;    /* 40 */
-  --ns-space-12:  3rem;      /* 48 */
-  --ns-space-16:  4rem;      /* 64 */
-  --ns-space-20:  5rem;      /* 80 */
-  --ns-space-24:  6rem;      /* 96 */
-  --ns-space-32:  8rem;      /* 128 */
-  --ns-space-40:  10rem;     /* 160 */
-  --ns-space-48:  12rem;     /* 192 */
-
-  /* ----------------------------------------------------------------
-     5. RADIUS — Mínimo, casi cuadrado
-     ---------------------------------------------------------------- */
-  --ns-radius-none: 0;
-  --ns-radius-xs:   2px;
-  --ns-radius-sm:   3px;
-  --ns-radius-md:   4px;
-  --ns-radius-pill: 9999px;
-
-  /* ----------------------------------------------------------------
-     6. BORDER WIDTHS
-     ---------------------------------------------------------------- */
-  --ns-bw-0: 0;
-  --ns-bw-1: 1px;
-  --ns-bw-2: 2px;
-  --ns-bw-4: 4px;
-
-  /* ----------------------------------------------------------------
-     7. ELEVATION — Subtle, ink-based
-     ---------------------------------------------------------------- */
+  --ns-warning-strong: #8C6308;
+  --ns-danger-subtle: #FBE3E0;
+  --ns-danger-default: #C63A2D;
+  --ns-danger-strong: #8E281F;
+  --ns-info-subtle: #E1ECF7;
+  --ns-info-default: #2C6BB0;
+  --ns-info-strong: #1F4D80;
+  --ns-tinta: #1D2A40;
+  --ns-tinta-profunda: #131C2C;
+  --ns-pizarra: #475773;
+  --ns-gris-azulado: #566B89;
+  --ns-bruma: #8B9DB7;
+  --ns-cielo: #C6D5EA;
+  --ns-marfil: #F4F1EC;
+  --ns-blanco: #FFFFFF;
+  --ns-naranja: #E94E1B;
+  --ns-escena-marfil: radial-gradient(120% 80% at 50% 40%, #FAF8F4 0%, #F4F1EC 50%, #E6E0D6 100%);
+  --ns-escena-tinta: radial-gradient(120% 70% at 50% 45%, #24334D 0%, #1D2A40 55%, #161F31 100%);
+  --ns-velo-tinta: linear-gradient(180deg, rgba(29, 42, 64, 0.88) 0%, rgba(29, 42, 64, 0) 50%);
+  --ns-velo-muro: rgba(29, 42, 64, 0.86);
   --ns-elev-0: none;
   --ns-elev-1: 0 1px 2px rgba(29, 42, 64, 0.06);
   --ns-elev-2: 0 2px 4px rgba(29, 42, 64, 0.06), 0 4px 12px rgba(29, 42, 64, 0.04);
   --ns-elev-3: 0 8px 16px rgba(29, 42, 64, 0.08), 0 16px 32px rgba(29, 42, 64, 0.04);
+  --ns-shadow-ficha: 0 4px 5px rgba(29, 42, 64, 0.38);
+  --ns-shadow-ficha-suave: 0 4px 5px rgba(29, 42, 64, 0.16);
+  --ns-shadow-pieza: 0 26px 60px rgba(29, 42, 64, 0.25);
   --ns-elev-focus: 0 0 0 3px rgba(233, 78, 27, 0.24);
-
-  /* ----------------------------------------------------------------
-     8. MOTION
-     ---------------------------------------------------------------- */
-  --ns-dur-instant: 0ms;
-  --ns-dur-fast:    150ms;
-  --ns-dur-base:    250ms;
-  --ns-dur-slow:    400ms;
-  --ns-dur-slower:  600ms;
-
-  --ns-ease-linear:     linear;
-  --ns-ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
-  --ns-ease-in:         cubic-bezier(0.7, 0, 0.84, 0);
-  --ns-ease-in-out:     cubic-bezier(0.65, 0, 0.35, 1);
-  --ns-ease-anticipate: cubic-bezier(0.6, -0.05, 0.35, 1);
-
-  /* ----------------------------------------------------------------
-     9. LAYOUT
-     ---------------------------------------------------------------- */
-  --ns-bp-sm:  640px;
-  --ns-bp-md:  768px;
-  --ns-bp-lg:  1024px;
-  --ns-bp-xl:  1280px;
+  --ns-font-sans: Nunito, ui-rounded, 'Hiragino Maru Gothic ProN', system-ui, sans-serif;
+  --ns-font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --ns-font-jp: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  --ns-fw-light: 300;
+  --ns-fw-regular: 400;
+  --ns-fw-semibold: 600;
+  --ns-fw-bold: 700;
+  --ns-fw-extrabold: 800;
+  --ns-fw-black: 900;
+  --ns-fs-xs: 0.75rem;
+  --ns-fs-sm: 0.875rem;
+  --ns-fs-base: 1rem;
+  --ns-fs-md: 1.125rem;
+  --ns-fs-lg: 1.375rem;
+  --ns-fs-xl: 1.75rem;
+  --ns-fs-2xl: 2.5rem;
+  --ns-fs-3xl: 3.5rem;
+  --ns-fs-4xl: 4.5rem;
+  --ns-fs-5xl: 6rem;
+  --ns-video-fs-gancho: 150px;
+  --ns-video-fs-titulo: 100px;
+  --ns-video-fs-rotulo: 66px;
+  --ns-video-fs-texto: 52px;
+  --ns-video-fs-subtitulo: 46px;
+  --ns-video-fs-nota: 32px;
+  --ns-video-fs-kanji: 230px;
+  --ns-lh-gancho: 1.02;
+  --ns-lh-tight: 1.05;
+  --ns-lh-snug: 1.2;
+  --ns-lh-normal: 1.5;
+  --ns-lh-relaxed: 1.65;
+  --ns-ls-gancho: -0.045em;
+  --ns-ls-tightest: -0.04em;
+  --ns-ls-tighter: -0.02em;
+  --ns-ls-tight: -0.01em;
+  --ns-ls-normal: 0em;
+  --ns-ls-wide: 0.04em;
+  --ns-ls-wider: 0.08em;
+  --ns-ls-widest: 0.16em;
+  --ns-space-0: 0rem;
+  --ns-space-1: 0.25rem;
+  --ns-space-2: 0.5rem;
+  --ns-space-3: 0.75rem;
+  --ns-space-4: 1rem;
+  --ns-space-5: 1.25rem;
+  --ns-space-6: 1.5rem;
+  --ns-space-8: 2rem;
+  --ns-space-10: 2.5rem;
+  --ns-space-12: 3rem;
+  --ns-space-16: 4rem;
+  --ns-space-20: 5rem;
+  --ns-space-24: 6rem;
+  --ns-space-32: 8rem;
+  --ns-space-40: 10rem;
+  --ns-space-48: 12rem;
+  --ns-space-px: 1px;
+  --ns-space-0_5: 0.125rem;
+  --ns-radius-none: 0px;
+  --ns-radius-xs: 2px;
+  --ns-radius-sm: 3px;
+  --ns-radius-md: 4px;
+  --ns-radius-ui: 4px;
+  --ns-radius-ficha: 16px;
+  --ns-radius-pill: 9999px;
+  --ns-bw-0: 0px;
+  --ns-bw-1: 1px;
+  --ns-bw-2: 2px;
+  --ns-bw-4: 4px;
+  --ns-ease-llegada: cubic-bezier(0.16, 1, 0.3, 1);
+  --ns-ease-salida: cubic-bezier(0.5, 0, 0.75, 0);
+  --ns-ease-camara: cubic-bezier(0.65, 0, 0.35, 1);
+  --ns-ease-micro: cubic-bezier(0.33, 1, 0.68, 1);
+  --ns-ease-lineal: linear;
+  --ns-dur-micro: 150ms;
+  --ns-dur-llegada: 250ms;
+  --ns-dur-salida: 150ms;
+  --ns-dur-titulo: 400ms;
+  --ns-dur-camara: 600ms;
+  --ns-dur-escalon: 50ms;
+  --ns-video-dur-micro: 0.22s;
+  --ns-video-dur-llegada: 0.45s;
+  --ns-video-dur-salida: 0.28s;
+  --ns-video-dur-titulo: 0.55s;
+  --ns-video-dur-camara: 0.9s;
+  --ns-video-dur-escalon: 0.09s;
+  --ns-video-dur-rombo: 0.42s;
+  --ns-video-dur-rombo-escalon: 0.09s;
+  --ns-video-dur-cierre: 4.6s;
+  --ns-blur-llegada: 8px;
+  --ns-blur-salida: 10px;
+  --ns-lectura-base: 0.5s;
+  --ns-lectura-palabra: 0.3s;
+  --ns-lectura-final: 2s;
+  --ns-rombo-u-master: 4.155;
+  --ns-formato-vertical-w: 1080px;
+  --ns-formato-carrusel-w: 1080px;
+  --ns-formato-alto-w: 1080px;
+  --ns-formato-horizontal-w: 1920px;
+  --ns-formato-cuadrado-w: 1080px;
+  --ns-bp-sm: 640px;
+  --ns-bp-md: 768px;
+  --ns-bp-lg: 1024px;
+  --ns-bp-xl: 1280px;
   --ns-bp-2xl: 1536px;
-
-  --ns-container-narrow:  720px;
+  --ns-container-narrow: 720px;
   --ns-container-default: 1200px;
-  --ns-container-wide:    1440px;
-
+  --ns-container-wide: 1440px;
   --ns-grid-cols-desktop: 12;
-  --ns-grid-cols-tablet:  8;
-  --ns-grid-cols-mobile:  4;
-  --ns-grid-gutter:       24px;
-  --ns-grid-margin:       80px;
-
-  /* ----------------------------------------------------------------
-     10. Z-INDEX
-     ---------------------------------------------------------------- */
-  --ns-z-behind:   -1;
-  --ns-z-base:      0;
-  --ns-z-raised:    10;
-  --ns-z-dropdown:  100;
-  --ns-z-sticky:    200;
-  --ns-z-overlay:   300;
-  --ns-z-modal:     400;
-  --ns-z-toast:     500;
-  --ns-z-tooltip:   600;
-
-  /* ----------------------------------------------------------------
-     11. COMPONENT TOKENS
-     ---------------------------------------------------------------- */
+  --ns-grid-cols-tablet: 8;
+  --ns-grid-cols-mobile: 4;
+  --ns-grid-gutter: 24px;
+  --ns-grid-margin: 80px;
+  --ns-z-behind: -1;
+  --ns-z-base: 0;
+  --ns-z-raised: 10;
+  --ns-z-dropdown: 100;
+  --ns-z-sticky: 200;
+  --ns-z-overlay: 300;
+  --ns-z-modal: 400;
+  --ns-z-toast: 500;
+  --ns-z-tooltip: 600;
   --ns-btn-h-sm: 32px;
   --ns-btn-h-md: 40px;
   --ns-btn-h-lg: 48px;
-  --ns-btn-px-sm: var(--ns-space-3);
-  --ns-btn-px-md: var(--ns-space-5);
-  --ns-btn-px-lg: var(--ns-space-6);
-
+  --ns-btn-px-sm: 0.75rem;
+  --ns-btn-px-md: 1.25rem;
+  --ns-btn-px-lg: 1.5rem;
   --ns-input-h-sm: 32px;
   --ns-input-h-md: 40px;
   --ns-input-h-lg: 48px;
+  --ns-card-padding: 1.5rem;
+  --ns-card-padding-large: 2rem;
 
-  --ns-card-padding:       var(--ns-space-6);
-  --ns-card-padding-large: var(--ns-space-8);
+  /* Alias de v1 (se mantienen para no romper proyectos existentes) */
+  --ns-dur-instant: 0ms;
+  --ns-dur-fast: var(--ns-dur-micro);
+  --ns-dur-base: var(--ns-dur-llegada);
+  --ns-dur-slow: var(--ns-dur-titulo);
+  --ns-dur-slower: var(--ns-dur-camara);
+  --ns-ease-out: var(--ns-ease-llegada);
+  --ns-ease-in: var(--ns-ease-salida);
+  --ns-ease-in-out: var(--ns-ease-camara);
+  --ns-ease-linear: linear;
+  --ns-ease-anticipate: var(--ns-ease-camara); /* RETIRADA en v2: retrocedía antes de avanzar */
+  --ns-fw-medium: 500;
 }
 
-/* ================================================================
-   12. SEMANTIC TOKENS — LIGHT MODE (default)
-   Use these in components.
-   ================================================================ */
+/* 2 · TEMA CLARO (por defecto) ---------------------------------- */
 :root,
 [data-theme="light"] {
-  /* Surface */
-  --ns-surface-base:    var(--ns-warm-200);
-  --ns-surface-raised:  #FFFFFF;
-  --ns-surface-sunken:  var(--ns-warm-300);
-  --ns-surface-inverse: var(--ns-ink-800);
-
-  /* Text */
-  --ns-text-primary:    var(--ns-ink-800);
-  --ns-text-secondary:  var(--ns-ink-500);
-  --ns-text-tertiary:   var(--ns-sky-400);
-  --ns-text-disabled:   var(--ns-sky-300);
-  --ns-text-inverse:    var(--ns-warm-200);
-  --ns-text-on-accent:  #FFFFFF;
-  --ns-text-accent:     var(--ns-orange-500);
-  /* Variante de accent con contraste AA para texto pequeño sobre
-     surface-base y surface-sunken (orange-500 solo alcanza AA large). */
-  --ns-text-accent-strong: var(--ns-orange-700);
-
-  /* Border */
-  --ns-border-subtle:   var(--ns-warm-400);
-  --ns-border-default:  var(--ns-sky-200);
-  --ns-border-strong:   var(--ns-sky-400);
-  --ns-border-focus:    var(--ns-orange-500);
-  --ns-border-inverse:  var(--ns-ink-800);
-
-  /* Accent */
-  --ns-accent-subtle:   var(--ns-orange-100);
-  --ns-accent:          var(--ns-orange-500);
-  --ns-accent-hover:    var(--ns-orange-600);
-  --ns-accent-active:   var(--ns-orange-700);
+  --ns-surface-base: #F4F1EC;
+  --ns-surface-raised: #FFFFFF;
+  --ns-surface-sunken: #ECE7DF;
+  --ns-surface-inverse: #1D2A40;
+  --ns-text-primary: #1D2A40;
+  --ns-text-secondary: #475773;
+  --ns-text-tertiary: #566B89;
+  --ns-text-disabled: #A8BDD8;
+  --ns-text-inverse: #F4F1EC;
+  --ns-text-on-accent: #FFFFFF;
+  --ns-text-accent: #E94E1B;
+  --ns-text-accent-strong: #B83C15;
+  --ns-border-subtle: #E0D9CD;
+  --ns-border-default: #C6D5EA;
+  --ns-border-strong: #8B9DB7;
+  --ns-border-focus: #E94E1B;
+  --ns-border-inverse: #1D2A40;
+  --ns-accent-subtle: #FCE8DD;
+  --ns-accent: #E94E1B;
+  --ns-accent-hover: #D14418;
+  --ns-accent-active: #B83C15;
+  --ns-accent-fill: #D14418;
+  --ns-accent-fill-hover: #B83C15;
+  --ns-ficha: #FFFFFF;
+  --ns-text-on-ficha: #1D2A40;
+  --ns-logo-wordmark: #1D2A40;
+  --ns-logo-descriptor: #8B9DB7;
 }
 
-/* ================================================================
-   13. SEMANTIC TOKENS — DARK MODE
-   ================================================================ */
+/* 3 · TEMA OSCURO ------------------------------------------------ */
 [data-theme="dark"] {
-  --ns-surface-base:    var(--ns-ink-950);
-  --ns-surface-raised:  var(--ns-ink-800);
-  --ns-surface-sunken:  #080E18;
-  --ns-surface-inverse: var(--ns-warm-200);
-
-  --ns-text-primary:    var(--ns-warm-200);
-  --ns-text-secondary:  var(--ns-sky-200);
-  --ns-text-tertiary:   var(--ns-sky-400);
-  --ns-text-disabled:   var(--ns-ink-500);
-  --ns-text-inverse:    var(--ns-ink-800);
-  --ns-text-on-accent:  #FFFFFF;
-  --ns-text-accent:     #FF6B3D;
+  --ns-surface-base: #0A1119;
+  --ns-surface-raised: #1D2A40;
+  --ns-surface-sunken: #080E18;
+  --ns-surface-inverse: #F4F1EC;
+  --ns-text-primary: #F4F1EC;
+  --ns-text-secondary: #C6D5EA;
+  --ns-text-tertiary: #8B9DB7;
+  --ns-text-disabled: #475773;
+  --ns-text-inverse: #1D2A40;
+  --ns-text-on-accent: #0A1119;
+  --ns-text-accent: #FF6B3D;
   --ns-text-accent-strong: #FF6B3D;
-
-  --ns-border-subtle:   var(--ns-ink-800);
-  --ns-border-default:  var(--ns-ink-700);
-  --ns-border-strong:   var(--ns-ink-500);
-  --ns-border-focus:    #FF6B3D;
-  --ns-border-inverse:  var(--ns-warm-200);
-
-  --ns-accent-subtle:   #2A1812;
-  --ns-accent:          #FF6B3D;
-  --ns-accent-hover:    #FF7E55;
-  --ns-accent-active:   #FF8E69;
-
-  /* Elevation in dark mode uses pure black for depth */
+  --ns-border-subtle: #1D2A40;
+  --ns-border-default: #243450;
+  --ns-border-strong: #475773;
+  --ns-border-focus: #FF6B3D;
+  --ns-border-inverse: #F4F1EC;
+  --ns-accent-subtle: #2A1812;
+  --ns-accent: #FF6B3D;
+  --ns-accent-hover: #FF7E55;
+  --ns-accent-active: #FF8E69;
+  --ns-accent-fill: #FF6B3D;
+  --ns-accent-fill-hover: #FF7E55;
+  --ns-ficha: #FFFFFF;
+  --ns-text-on-ficha: #1D2A40;
+  --ns-logo-wordmark: #FFFFFF;
+  --ns-logo-descriptor: #8B9DB7;
   --ns-elev-1: 0 1px 2px rgba(0, 0, 0, 0.3);
   --ns-elev-2: 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
   --ns-elev-3: 0 8px 16px rgba(0, 0, 0, 0.4), 0 16px 32px rgba(0, 0, 0, 0.2);
   --ns-elev-focus: 0 0 0 3px rgba(255, 107, 61, 0.32);
+  --ns-shadow-ficha-suave: 0 4px 5px rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
 }
-
-/* Auto-dark when user prefers dark and no explicit theme set */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ns-surface-base:    var(--ns-ink-950);
-    --ns-surface-raised:  var(--ns-ink-800);
-    --ns-surface-sunken:  #080E18;
-    --ns-surface-inverse: var(--ns-warm-200);
-    --ns-text-primary:    var(--ns-warm-200);
-    --ns-text-secondary:  var(--ns-sky-200);
-    --ns-text-tertiary:   var(--ns-sky-400);
-    --ns-text-disabled:   var(--ns-ink-500);
-    --ns-text-inverse:    var(--ns-ink-800);
-    --ns-text-accent:     #FF6B3D;
+    --ns-surface-base: #0A1119;
+    --ns-surface-raised: #1D2A40;
+    --ns-surface-sunken: #080E18;
+    --ns-surface-inverse: #F4F1EC;
+    --ns-text-primary: #F4F1EC;
+    --ns-text-secondary: #C6D5EA;
+    --ns-text-tertiary: #8B9DB7;
+    --ns-text-disabled: #475773;
+    --ns-text-inverse: #1D2A40;
+    --ns-text-on-accent: #0A1119;
+    --ns-text-accent: #FF6B3D;
     --ns-text-accent-strong: #FF6B3D;
-    --ns-border-subtle:   var(--ns-ink-800);
-    --ns-border-default:  var(--ns-ink-700);
-    --ns-border-strong:   var(--ns-ink-500);
-    --ns-border-focus:    #FF6B3D;
-    --ns-accent-subtle:   #2A1812;
-    --ns-accent:          #FF6B3D;
-    --ns-accent-hover:    #FF7E55;
-    --ns-accent-active:   #FF8E69;
+    --ns-border-subtle: #1D2A40;
+    --ns-border-default: #243450;
+    --ns-border-strong: #475773;
+    --ns-border-focus: #FF6B3D;
+    --ns-border-inverse: #F4F1EC;
+    --ns-accent-subtle: #2A1812;
+    --ns-accent: #FF6B3D;
+    --ns-accent-hover: #FF7E55;
+    --ns-accent-active: #FF8E69;
+    --ns-accent-fill: #FF6B3D;
+    --ns-accent-fill-hover: #FF7E55;
+    --ns-ficha: #FFFFFF;
+    --ns-text-on-ficha: #1D2A40;
+    --ns-logo-wordmark: #FFFFFF;
+    --ns-logo-descriptor: #8B9DB7;
     --ns-elev-1: 0 1px 2px rgba(0, 0, 0, 0.3);
     --ns-elev-2: 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
     --ns-elev-3: 0 8px 16px rgba(0, 0, 0, 0.4), 0 16px 32px rgba(0, 0, 0, 0.2);
+    --ns-elev-focus: 0 0 0 3px rgba(255, 107, 61, 0.32);
+    --ns-shadow-ficha-suave: 0 4px 5px rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
   }
 }
 
-/* ================================================================
-   14. BASE RESET — minimal, opinionated
-   ================================================================ */
+/* 4 · BASE ------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
-
 html {
   -webkit-text-size-adjust: 100%;
   font-feature-settings: "kern", "liga", "calt";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 body {
   margin: 0;
   background: var(--ns-surface-base);
@@ -352,34 +360,48 @@ body {
   font-weight: var(--ns-fw-regular);
 }
 
-/* ================================================================
-   15. UTILITY CLASSES — Typography
-   ================================================================ */
+/* 5 · TIPOGRAFÍA POR ROLES (v2) ---------------------------------- */
+.ns-gancho { font-family: var(--ns-font-sans); font-weight: 800; font-size: 4.5rem; line-height: 1.02; letter-spacing: -0.045em; text-wrap: balance; }
+.ns-titulo { font-family: var(--ns-font-sans); font-weight: 800; font-size: 2.5rem; line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance; }
+.ns-subtitulo { font-family: var(--ns-font-sans); font-weight: 700; font-size: 1.375rem; line-height: 1.25; letter-spacing: -0.01em; }
+.ns-texto { font-family: var(--ns-font-sans); font-weight: 400; font-size: 1rem; line-height: 1.55; letter-spacing: 0em; }
+.ns-lede { font-family: var(--ns-font-sans); font-weight: 400; font-size: 1.25rem; line-height: 1.5; letter-spacing: 0em; }
+.ns-rotulo { font-family: var(--ns-font-sans); font-weight: 700; font-size: 0.9375rem; line-height: 1.3; letter-spacing: 0em; }
+.ns-cita { font-family: var(--ns-font-sans); font-weight: 300; font-size: 1.75rem; line-height: 1.3; letter-spacing: -0.01em; }
+.ns-dato { font-family: var(--ns-font-mono); font-weight: 400; font-size: 0.8125rem; line-height: 1.45; letter-spacing: 0em; font-variant-numeric: tabular-nums; }
+.ns-eyebrow { font-family: var(--ns-font-mono); font-weight: 500; font-size: 0.75rem; line-height: 1.4; letter-spacing: 0.06em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.8em; color: var(--ns-text-secondary); }
+.ns-kanji { font-family: var(--ns-font-jp); font-weight: 900; font-size: 6rem; line-height: 1; letter-spacing: 0em; }
+.ns-eyebrow::before { content: ""; width: 0.62em; height: 0.62em; background: var(--ns-accent); transform: rotate(45deg); flex: none; }
+.ns-punto { color: var(--ns-accent); }
+.ns-jp { font-family: var(--ns-font-jp); font-weight: 500; }
+
+/* Clases de v1 (compatibilidad) */
 .ns-display-xl { font: var(--ns-fw-extrabold) var(--ns-fs-5xl)/var(--ns-lh-tight) var(--ns-font-sans); letter-spacing: var(--ns-ls-tightest); }
 .ns-display-l  { font: var(--ns-fw-extrabold) var(--ns-fs-4xl)/var(--ns-lh-tight) var(--ns-font-sans); letter-spacing: var(--ns-ls-tighter); }
 .ns-display-m  { font: var(--ns-fw-extrabold) var(--ns-fs-3xl)/var(--ns-lh-tight) var(--ns-font-sans); letter-spacing: var(--ns-ls-tighter); }
-.ns-h1         { font: var(--ns-fw-extrabold) var(--ns-fs-2xl)/var(--ns-lh-snug)  var(--ns-font-sans); letter-spacing: var(--ns-ls-tight); }
-.ns-h2         { font: var(--ns-fw-semibold)  var(--ns-fs-xl)/var(--ns-lh-snug)   var(--ns-font-sans); letter-spacing: var(--ns-ls-tight); }
-.ns-h3         { font: var(--ns-fw-semibold)  var(--ns-fs-lg)/var(--ns-lh-snug)   var(--ns-font-sans); }
-.ns-h4         { font: var(--ns-fw-semibold)  var(--ns-fs-md)/var(--ns-lh-snug)   var(--ns-font-sans); }
-.ns-body-l     { font: var(--ns-fw-regular)   var(--ns-fs-md)/var(--ns-lh-relaxed) var(--ns-font-sans); }
-.ns-body       { font: var(--ns-fw-regular)   var(--ns-fs-base)/var(--ns-lh-normal) var(--ns-font-sans); }
-.ns-body-s     { font: var(--ns-fw-regular)   var(--ns-fs-sm)/var(--ns-lh-normal) var(--ns-font-sans); }
-.ns-caption    { font: var(--ns-fw-regular)   var(--ns-fs-xs)/var(--ns-lh-normal) var(--ns-font-sans); }
-.ns-eyebrow    { font: var(--ns-fw-semibold)  var(--ns-fs-xs)/var(--ns-lh-normal) var(--ns-font-sans); letter-spacing: var(--ns-ls-widest); text-transform: uppercase; }
-.ns-label      { font: var(--ns-fw-semibold)  var(--ns-fs-sm)/var(--ns-lh-normal) var(--ns-font-sans); }
-.ns-mono       { font: var(--ns-fw-regular)   var(--ns-fs-sm)/var(--ns-lh-normal) var(--ns-font-mono); }
+.ns-h1 { font: var(--ns-fw-extrabold) var(--ns-fs-2xl)/var(--ns-lh-snug) var(--ns-font-sans); letter-spacing: var(--ns-ls-tight); }
+.ns-h2 { font: var(--ns-fw-semibold) var(--ns-fs-xl)/var(--ns-lh-snug) var(--ns-font-sans); letter-spacing: var(--ns-ls-tight); }
+.ns-h3 { font: var(--ns-fw-semibold) var(--ns-fs-lg)/var(--ns-lh-snug) var(--ns-font-sans); }
+.ns-h4 { font: var(--ns-fw-semibold) var(--ns-fs-md)/var(--ns-lh-snug) var(--ns-font-sans); }
+.ns-body-l { font: var(--ns-fw-regular) var(--ns-fs-md)/var(--ns-lh-relaxed) var(--ns-font-sans); }
+.ns-body { font: var(--ns-fw-regular) var(--ns-fs-base)/var(--ns-lh-normal) var(--ns-font-sans); }
+.ns-body-s { font: var(--ns-fw-regular) var(--ns-fs-sm)/var(--ns-lh-normal) var(--ns-font-sans); }
+.ns-caption { font: var(--ns-fw-regular) var(--ns-fs-xs)/var(--ns-lh-normal) var(--ns-font-sans); }
+.ns-label { font: var(--ns-fw-semibold) var(--ns-fs-sm)/var(--ns-lh-normal) var(--ns-font-sans); }
+.ns-mono { font: var(--ns-fw-regular) var(--ns-fs-sm)/var(--ns-lh-normal) var(--ns-font-mono); font-variant-numeric: tabular-nums; }
 
-/* ================================================================
-   16. FOCUS RING — Accessibility, brand-aware
-   ================================================================ */
-:focus-visible {
-  outline: none;
-  box-shadow: var(--ns-elev-focus);
-  border-radius: var(--ns-radius-md);
-}
+/* 6 · PIEZAS BÁSICAS (v2) ---------------------------------------- */
+.ns-pildora { display: inline-flex; align-items: center; gap: 0.4em; border-radius: var(--ns-radius-pill); background: var(--ns-naranja); color: var(--ns-white); font-family: var(--ns-font-sans); font-weight: var(--ns-fw-bold); line-height: 1.2; padding: 0.15em 0.8em; white-space: nowrap; }
+.ns-pildora--ficha { background: var(--ns-ficha); color: var(--ns-text-on-ficha); box-shadow: var(--ns-shadow-ficha-suave); }
+.ns-ficha { background: var(--ns-ficha); color: var(--ns-text-on-ficha); border-radius: var(--ns-radius-ficha); box-shadow: var(--ns-shadow-ficha-suave); }
+.ns-boton { display: inline-flex; align-items: center; justify-content: center; gap: 0.5em; min-height: var(--ns-btn-h-md); padding: 0 var(--ns-btn-px-md); border-radius: var(--ns-radius-ui); border: var(--ns-bw-1) solid transparent; background: var(--ns-accent-fill); color: var(--ns-text-on-accent); font: var(--ns-fw-bold) var(--ns-fs-sm)/1 var(--ns-font-sans); text-decoration: none; cursor: pointer; transition: background var(--ns-dur-micro) var(--ns-ease-micro), transform var(--ns-dur-micro) var(--ns-ease-micro); }
+.ns-boton:hover { background: var(--ns-accent-fill-hover); transform: translateY(-1px); }
+.ns-boton:active { transform: none; }
+.ns-boton--secundario { background: transparent; color: var(--ns-text-primary); border-color: var(--ns-border-strong); }
+.ns-boton--secundario:hover { background: var(--ns-surface-sunken); }
 
-/* Reduced motion */
+/* 7 · FOCO Y MOVIMIENTO REDUCIDO --------------------------------- */
+:focus-visible { outline: none; box-shadow: var(--ns-elev-focus); border-radius: var(--ns-radius-ui); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

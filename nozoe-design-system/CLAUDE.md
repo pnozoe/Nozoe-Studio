@@ -28,7 +28,7 @@
 
 La especificación completa del sistema (tokens, escalas, paletas, tipografía, spacing, breakpoints, componentes) vive en:
 
-- `nozoe-design-system/README.md` — documentación canónica
+- `nozoe-design-system/README.md` — nota de la copia v2.2.0; la documentación canónica vive en `Desktop/Nozoe Studio/00-Marca/nozoe-design-system/` (README.md y MARCA.md)
 - `nozoe-design-system/nozoe-tokens.json` — tokens en formato W3C DTCG
 - `nozoe-design-system/nozoe-tokens.css` — variables CSS de uso
 
